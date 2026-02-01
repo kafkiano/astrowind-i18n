@@ -22,3 +22,8 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# agent frameworks
+ACTION*
+.aider*
+.roo/
