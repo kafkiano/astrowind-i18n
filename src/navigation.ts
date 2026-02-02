@@ -1,4 +1,5 @@
 import { getPermalink, getBlogPermalink, getAsset, getPagePermalink } from './utils/permalinks';
+import { getRuntime } from '~/locales/main.loader.js';
 
 export const getHeaderData = (locale: string = 'en') => ({
   links: [

@@ -30,3 +30,6 @@ ARCHITECT*
 dev/logs*
 .aider*
 .roo/
+
+# i18n compiling
+src/locales/.wuchale
