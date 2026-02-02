@@ -5,6 +5,9 @@ import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
+const getLangFromPostId = (id: string): string => id.split('/')[0];
+export const LOCALES = ['en', 'es'];
+
 const generatePermalink = async ({
   id,
   slug,
@@ -100,13 +103,17 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   };
 };
 
-const load = async function (): Promise<Array<Post>> {
+const load = async function (lang?: string): Promise<Array<Post>> {
   const posts = await getCollection('post');
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
-  const results = (await Promise.all(normalizedPosts))
+  let results = (await Promise.all(normalizedPosts))
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
     .filter((post) => !post.draft);
+
+  if (lang) {
+    results = results.filter((post) => getLangFromPostId(post.id) === lang);
+  }
 
   return results;
 };
@@ -176,71 +183,95 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
-    params: { blog: BLOG_BASE || undefined },
-    pageSize: blogPostsPerPage,
-  });
+  const paths = [];
+  for (const locale of LOCALES) {
+    const posts = await load(locale);
+    const paginated = paginate(posts, {
+      params: { locale, blog: BLOG_BASE || undefined },
+      pageSize: blogPostsPerPage,
+    });
+    paths.push(...paginated);
+  }
+  return paths;
 };
 
 /** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  return (await fetchPosts()).flatMap((post) => ({
-    params: {
-      blog: post.permalink,
-    },
-    props: { post },
-  }));
+  const paths = [];
+  for (const locale of LOCALES) {
+    const posts = await load(locale);
+    for (const post of posts) {
+      paths.push({
+        params: {
+          locale,
+          blog: post.permalink,
+        },
+        props: { post, locale },
+      });
+    }
+  }
+  return paths;
 };
 
 /** */
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
-  const posts = await fetchPosts();
-  const categories = {};
-  posts.map((post) => {
-    if (post.category?.slug) {
-      categories[post.category?.slug] = post.category;
-    }
-  });
-
-  return Array.from(Object.keys(categories)).flatMap((categorySlug) =>
-    paginate(
-      posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
-      {
-        params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
-        pageSize: blogPostsPerPage,
-        props: { category: categories[categorySlug] },
+  const paths = [];
+  for (const locale of LOCALES) {
+    const posts = await load(locale);
+    const categories = {};
+    posts.forEach((post) => {
+      if (post.category?.slug) {
+        categories[post.category?.slug] = post.category;
       }
-    )
-  );
+    });
+
+    const localePaths = Array.from(Object.keys(categories)).flatMap((categorySlug) =>
+      paginate(
+        posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
+        {
+          params: { locale, category: categorySlug, blog: CATEGORY_BASE || undefined },
+          pageSize: blogPostsPerPage,
+          props: { category: categories[categorySlug], locale },
+        }
+      )
+    );
+    paths.push(...localePaths);
+  }
+  return paths;
 };
 
 /** */
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
-  const posts = await fetchPosts();
-  const tags = {};
-  posts.map((post) => {
-    if (Array.isArray(post.tags)) {
-      post.tags.map((tag) => {
-        tags[tag?.slug] = tag;
-      });
-    }
-  });
-
-  return Array.from(Object.keys(tags)).flatMap((tagSlug) =>
-    paginate(
-      posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
-      {
-        params: { tag: tagSlug, blog: TAG_BASE || undefined },
-        pageSize: blogPostsPerPage,
-        props: { tag: tags[tagSlug] },
+  const paths = [];
+  for (const locale of LOCALES) {
+    const posts = await load(locale);
+    const tags = {};
+    posts.forEach((post) => {
+      if (Array.isArray(post.tags)) {
+        post.tags.forEach((tag) => {
+          tags[tag?.slug] = tag;
+        });
       }
-    )
-  );
+    });
+
+    const localePaths = Array.from(Object.keys(tags)).flatMap((tagSlug) =>
+      paginate(
+        posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
+        {
+          params: { locale, tag: tagSlug, blog: TAG_BASE || undefined },
+          pageSize: blogPostsPerPage,
+          props: { tag: tags[tagSlug], locale },
+        }
+      )
+    );
+    paths.push(...localePaths);
+  }
+  return paths;
 };
 
 /** */

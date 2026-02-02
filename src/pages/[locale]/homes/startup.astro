@@ -1,4 +1,6 @@
 ---
+import { getStaticPathsForLocale } from '~/utils/i18n';
+
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -16,6 +18,9 @@ import { YouTube } from 'astro-embed';
 const metadata = {
   title: 'Startup Landing Page',
 };
+
+export const getStaticPaths = getStaticPathsForLocale;
+
 ---
 
 <Layout metadata={metadata}>

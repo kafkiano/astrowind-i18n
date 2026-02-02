@@ -4,6 +4,8 @@ import { SITE, APP_BLOG } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
 
+const DEFAULT_LOCALE = 'en';
+
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
   const paths = params
@@ -39,7 +41,7 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+export const getPermalink = (slug = '', type = 'page', locale?: string): string => {
   let permalink: string;
 
   if (
@@ -54,12 +56,10 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 
   switch (type) {
     case 'home':
-      permalink = getHomePermalink();
-      break;
+      return getHomePermalink(locale);
 
     case 'blog':
-      permalink = getBlogPermalink();
-      break;
+      return getBlogPermalink(locale);
 
     case 'asset':
       permalink = getAsset(slug);
@@ -83,14 +83,19 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
   }
 
-  return definitivePermalink(permalink);
+  const prefixed = locale ? `/${locale}${permalink}` : permalink;
+  return definitivePermalink(prefixed);
 };
 
 /** */
-export const getHomePermalink = (): string => getPermalink('/');
+export const getHomePermalink = (locale?: string): string => getPermalink('/', 'page', locale);
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+export const getBlogPermalink = (locale?: string): string => getPermalink(BLOG_BASE, 'page', locale);
+
+/** */
+export const getPagePermalink = (slug: string, locale?: string): string =>
+  getPermalink(`/pages/${slug}`, 'page', locale);
 
 /** */
 export const getAsset = (path: string): string =>

@@ -1,4 +1,6 @@
 ---
+import { getStaticPathsForLocale } from '~/utils/i18n';
+
 import Layout from '~/layouts/LandingLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -7,6 +9,9 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 const metadata = {
   title: 'Lead Generation Landing Page Demo',
 };
+
+export const getStaticPaths = getStaticPathsForLocale;
+
 ---
 
 <Layout metadata={metadata}>
