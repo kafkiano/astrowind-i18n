@@ -11,10 +11,12 @@ This file provides guidance to agents when working with code in this repository.
 
 ## Commands
 
-- `npm run dev` - Start dev server
+- `npm run dev` - Start dev server with logging at: `dev/logs/dev.log`
 - `npm run build` - Build for production
 - `npm run check` - Run all checks (astro check, eslint, prettier)
 - `npm run fix` - Auto-fix eslint and prettier issues
+- `tail -n 50 dev/logs/dev.log` - Check dev logs for errors
+- `pm2 list` - Check running apps
 
 ## Critical Non-Obvious Patterns
 
