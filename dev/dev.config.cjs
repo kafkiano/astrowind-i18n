@@ -1,0 +1,30 @@
+module.exports = {
+  apps: [
+    {
+      name: 'app',
+      script: 'astro dev',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      merge_logs: true,
+      max_memory_restart: '2G',
+      min_uptime: '10s',
+      max_restarts: 10,
+      log_file: 'dev/logs/dev.log'
+    },
+    {
+      name: 'chromium',
+      script: 'dev/scripts/launch_cdp.sh',
+      exec_mode: 'fork',
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      merge_logs: true,
+      log_file: 'dev/logs/chromium.log',
+      env: {
+        DISPLAY: ':0'
+      }
+    }
+  ]
+}
