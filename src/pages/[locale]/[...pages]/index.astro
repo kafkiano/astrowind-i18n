@@ -13,8 +13,6 @@ const { page, locale } = Astro.props as Props;
 const { title } = page;
 ---
 
-<Layout metadata={{ title }}>
-  <MarkdownLayout frontmatter={{ title }}>
-    <slot />
-  </MarkdownLayout>
-</Layout>
+<MarkdownLayout frontmatter={{ title }}>
+  <slot />
+</MarkdownLayout>
