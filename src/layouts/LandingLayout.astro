@@ -15,10 +15,10 @@ const headerData = getHeaderData(locale);
 ---
 
 <PageLayout metadata={metadata}>
-  <Fragment slot="announcement">
+  <div slot="announcement">
     <slot name="announcement" />
-  </Fragment>
-  <Fragment slot="header">
+  </div>
+  <div slot="header">
     <slot name="header">
       <Header
         links={headerData?.links[2] ? [headerData.links[2]] : undefined}
@@ -32,6 +32,6 @@ const headerData = getHeaderData(locale);
         position="right"
       />
     </slot>
-  </Fragment>
+  </div>
   <slot />
 </PageLayout>

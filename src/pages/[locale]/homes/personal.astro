@@ -20,8 +20,8 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
-  <Fragment slot="header">
+  <div slot="announcement"></div>
+  <div slot="header">
     <Header
       links={[
         { text: 'Home', href: '#' },
@@ -40,7 +40,7 @@ const metadata = {
       isSticky
       showToggleTheme
     />
-  </Fragment>
+  </div>
 
   <!-- Hero2 Widget ******************* -->
 
@@ -50,11 +50,11 @@ const metadata = {
     tagline="Personal Web Demo"
     actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
   >
-    <Fragment slot="subtitle">
+    <div slot="subtitle">
       I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
       New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
       realities.
-    </Fragment>
+    </div>
   </Hero>
 
   <!-- Content Widget **************** -->
@@ -94,7 +94,7 @@ const metadata = {
       loading: 'eager',
     }}
   >
-    <Fragment slot="content">
+    <div slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <p>
         Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
@@ -107,11 +107,11 @@ const metadata = {
       </p>
       <br />
       <p>If you're curious to dive deeper into my work, you can follow me:</p>
-    </Fragment>
+    </div>
 
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </Content>
 
   <!-- Steps Widget ****************** -->
@@ -231,15 +231,15 @@ const metadata = {
       href: '#',
     }}
   >
-    <Fragment slot="content">
+    <div slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
       </h3>
-    </Fragment>
+    </div>
 
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </Content>
 
   <!-- Content Widget **************** -->
@@ -269,15 +269,15 @@ const metadata = {
       href: '#',
     }}
   >
-    <Fragment slot="content">
+    <div slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
       </h3>
-    </Fragment>
+    </div>
 
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </Content>
 
   <!-- Content Widget **************** -->
@@ -306,15 +306,15 @@ const metadata = {
       href: '#',
     }}
   >
-    <Fragment slot="content">
+    <div slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
       </h3>
-    </Fragment>
+    </div>
 
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </Content>
 
   <!-- Testimonials Widget *********** -->
@@ -401,8 +401,8 @@ const metadata = {
     title="Explore my insightful articles on my blog"
     information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
   >
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </BlogLatestPosts>
 </Layout>

@@ -39,18 +39,18 @@ export const getStaticPaths = getStaticPathsForLocale;
       { text: 'Learn more', href: '#features' },
     ]}
   >
-    <Fragment slot="title">
+    <div slot="title">
       Improve <span class="hidden sm:inline">the online presence of</span> your <span
         class="text-accent dark:text-white">Startup</span
       > with Astrowind templates
-    </Fragment>
+    </div>
 
-    <Fragment slot="subtitle">
+    <div slot="subtitle">
       Step into the spotlight with <span class="font-semibold">Astrowind</span> templates, your pathway to fortifying your
       startup's digital footprint, fostering credibility, and expanding your reach.
-    </Fragment>
+    </div>
 
-    <Fragment slot="image">
+    <div slot="image">
       <YouTube id="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
       <style is:inline>
         lite-youtube {
@@ -58,7 +58,7 @@ export const getStaticPaths = getStaticPathsForLocale;
           max-width: 100%;
         }
       </style>
-    </Fragment>
+    </div>
   </Hero>
 
   <!-- Features2 Widget ************** -->
@@ -67,9 +67,9 @@ export const getStaticPaths = getStaticPathsForLocale;
     title="About us"
     subtitle="We believe in the magic of turning dreams into stunning realities. Founded by passionate developers with a shared vision, we set out to simplify the website creation process. Our templates bring together the innovation of Astro 5.0 and the versatility of Tailwind CSS, enabling you to express your unique brand identity like never before."
   >
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </Features2>
 
   <!-- Stats Widget ****************** -->
@@ -158,9 +158,9 @@ export const getStaticPaths = getStaticPathsForLocale;
       },
     ]}
   >
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </Features2>
 
   <!-- Features Widget *************** -->
@@ -244,9 +244,9 @@ export const getStaticPaths = getStaticPathsForLocale;
       },
     ]}
   >
-    <Fragment slot="bg">
+    <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </div>
   </FAQs>
 
   <!-- Features3 Widget ************** -->
@@ -312,11 +312,11 @@ export const getStaticPaths = getStaticPathsForLocale;
       },
     ]}
   >
-    <Fragment slot="title">Be a part of our vision</Fragment>
+    <div slot="title">Be a part of our vision</div>
 
-    <Fragment slot="subtitle">
+    <div slot="subtitle">
       Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful
       impact.
-    </Fragment>
+    </div>
   </CallToAction>
 </Layout>

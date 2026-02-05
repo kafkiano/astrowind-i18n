@@ -27,7 +27,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-
+  
+  vite: {
+    plugins: [wuchale()],
+  },
   i18n: {
     locales: ['en', 'es'],
     defaultLocale: 'en',
@@ -81,12 +84,4 @@ export default defineConfig({
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
-  vite: {
-    plugins: [wuchale()],
-    resolve: {
-      alias: {
-        '~': path.resolve(__dirname, './src'),
-      },
-    },
-  },
 });
