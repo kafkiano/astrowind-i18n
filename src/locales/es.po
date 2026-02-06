@@ -14,27 +14,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 
 #: src/pages/404.astro
-#: src/pages/[locale]/404.astro
 msgid "Error 404"
 msgstr "Error 404"
 
 #: src/pages/404.astro
-#: src/pages/[locale]/404.astro
 msgid "Error"
 msgstr "Error"
 
 #: src/pages/404.astro
-#: src/pages/[locale]/404.astro
 msgid "Sorry, we couldn't find this page."
 msgstr "Lo sentimos, no pudimos encontrar esta página."
 
 #: src/pages/404.astro
-#: src/pages/[locale]/404.astro
 msgid "But dont worry, you can find plenty of other things on our homepage."
 msgstr "Pero no te preocupes, puedes encontrar muchas otras cosas en nuestra página de inicio."
 
 #: src/pages/404.astro
-#: src/pages/[locale]/404.astro
 msgid "Back to homepage"
 msgstr "Volver a la página de inicio"
 
@@ -122,6 +117,8 @@ msgstr "Navegación principal"
 msgid "RSS Feed"
 msgstr "Canal RSS"
 
+#: src/navigation.ts
+#: src/pages/[locale]/about.astro
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "About us"
@@ -195,7 +192,10 @@ msgstr "Comercio Electrónico"
 msgid "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 msgstr "La dedicación y el compromiso son la base de nuestro trabajo diario, buscando siempre la satisfacción total en cada uno de los proyectos que emprendemos."
 
+#: src/navigation.ts
+#: src/navigation.ts
 #: src/pages/[locale]/about.astro
+#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/services.astro
 msgid "Blog"
 msgstr "Blog"
@@ -359,6 +359,7 @@ msgstr "Llámanos"
 msgid "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 msgstr "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 
+#: src/navigation.ts
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/index.astro
@@ -472,6 +473,8 @@ msgstr "Filosofía:"
 msgid "Simplicity, Best Practices and High Performance"
 msgstr "Simplicidad, mejores prácticas y alto rendimiento"
 
+#: src/navigation.ts
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/index.astro
 msgid "Features"
@@ -723,7 +726,10 @@ msgstr "Llamada a la acción"
 msgid "That enthusiastic friend who's always urging, \"Do it! Do it!\"? Yeah, that's this button nudging you towards adventure."
 msgstr "¿Ese amigo entusiasta que siempre te insta a \"¡Hazlo! ¡Hazlo!\"? Sí, ese es este botón que te empuja hacia la aventura."
 
+#: src/navigation.ts
+#: src/navigation.ts
 #: src/pages/[locale]/index.astro
+#: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Pricing"
 msgstr "Precios"
@@ -1082,6 +1088,8 @@ msgstr "Únase a nuestra comunidad de clientes satisfechos que han transformado 
 msgid "Get started now"
 msgstr "Empezar ahora"
 
+#: src/navigation.ts
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
 #: src/pages/[locale]/services.astro
 msgid "Services"
@@ -1293,8 +1301,9 @@ msgstr "Un ejemplo de blog generado estáticamente con noticias, tutoriales, rec
 msgid "The Blog"
 msgstr "El Blog"
 
-#~ msgid "Mobile App Homepage"
-#~ msgstr "Página de inicio de la aplicación móvil"
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "Mobile App Homepage"
+msgstr "Página de inicio de la aplicación móvil"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Mobile App Web Demo"
@@ -1535,8 +1544,9 @@ msgstr "¡Descarga nuestra aplicación ahora!"
 msgid "Access a variety of stunning templates, simplify your creative process, and elevate your online presence."
 msgstr "Accede a una variedad de plantillas impresionantes, simplifica tu proceso creativo y eleva tu presencia en línea."
 
-#~ msgid "Personal Homepage Demo"
-#~ msgstr "Demo de página de inicio personal"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Personal Homepage Demo"
+msgstr "Demo de página de inicio personal"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Sarah Johnson"
@@ -1546,6 +1556,7 @@ msgstr "Sarah Johnson"
 msgid "Personal Web Demo"
 msgstr "Demo web personal"
 
+#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Hire me"
@@ -1595,6 +1606,7 @@ msgstr "Maestría en Bellas Artes en Diseño Gráfico <br /> <span class=\"font-
 msgid "Bachelor of Arts in Graphic Design <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2014 - 2018</span>"
 msgstr "Licenciatura en Diseño Gráfico <br /> <span class=\"font-normal\">Escuela de Diseño de la Universidad de Nueva York</span> <br /> <span class=\"text-sm font-normal\">2014 - 2018</span>"
 
+#: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
 msgid "Skills"
 msgstr "Habilidades"
@@ -1853,8 +1865,9 @@ msgstr "Explora los artículos de mi blog"
 msgid "Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey."
 msgstr "Sumérgete en un reino de sabiduría de diseño e inspiración creativa, donde encontrarás ideas invaluables, consejos prácticos y narrativas cautivadoras que elevan y enriquecen tu viaje creativo."
 
-#~ msgid "SaaS Landing Page"
-#~ msgstr "Página de inicio de SaaS"
+#: src/pages/[locale]/homes/saas.astro
+msgid "SaaS Landing Page"
+msgstr "Página de inicio de SaaS"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SaaS Web Demo"
@@ -2003,6 +2016,7 @@ msgstr "Plantillas premium y personalización avanzada"
 msgid "Upgrade to Pro"
 msgstr "Actualizar a Pro"
 
+#: src/navigation.ts
 #: src/pages/[locale]/homes/saas.astro
 msgid "Enterprise"
 msgstr "Empresa"
@@ -2071,8 +2085,9 @@ msgstr "Mantente informado con el blog de AstroWind"
 msgid "Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects."
 msgstr "Explora nuestra colección de artículos, guías y tutoriales sobre desarrollo web, tendencias de diseño y cómo usar AstroWind de manera efectiva para tus proyectos."
 
-#~ msgid "Startup Landing Page"
-#~ msgstr "Página de inicio para startups"
+#: src/pages/[locale]/homes/startup.astro
+msgid "Startup Landing Page"
+msgstr "Página de inicio para startups"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Startup Web Demo"
@@ -2304,8 +2319,9 @@ msgstr "Empezar chat"
 msgid "Chat with support"
 msgstr "Chat con soporte"
 
-#~ msgid "Click-through Landing Page Demo"
-#~ msgstr "Demo de página de destino de clic"
+#: src/pages/[locale]/landing/click-through.astro
+msgid "Click-through Landing Page Demo"
+msgstr "Demo de página de destino de clic"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Demo"
@@ -2359,8 +2375,9 @@ msgstr "Estamos trabajando en el contenido de estas páginas de demostración. L
 msgid "Download Template"
 msgstr "Descargar plantilla"
 
-#~ msgid "Lead Generation Landing Page Demo"
-#~ msgstr "Demo de página de destino de generación de leads"
+#: src/pages/[locale]/landing/lead-generation.astro
+msgid "Lead Generation Landing Page Demo"
+msgstr "Demo de página de destino de generación de leads"
 
 #: src/pages/[locale]/landing/lead-generation.astro
 msgid "Lead Generation Landing Demo"
@@ -2378,8 +2395,9 @@ msgstr "Descubra los secretos para crear una página de destino que convierta a 
 msgid "Magnet attracting screws. Lead generation landing page demo"
 msgstr "Imán atrayendo tornillos. Demo de página de destino de generación de leads"
 
-#~ msgid "Pre-Launch Landing Page"
-#~ msgstr "Página de destino de prelanzamiento"
+#: src/pages/[locale]/landing/pre-launch.astro
+msgid "Pre-Launch Landing Page"
+msgstr "Página de destino de prelanzamiento"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-launch Demo"
@@ -2397,8 +2415,9 @@ msgstr "Cree una atractiva página de destino de prelanzamiento o de \"Próximam
 msgid "Store with a Coming Soon sign. Pre-launch Landing Page"
 msgstr "Tienda con un cartel de Próximamente. Página de destino de prelanzamiento"
 
-#~ msgid "Product Details Landing Page Demo"
-#~ msgstr "Demo de página de destino de detalles del producto"
+#: src/pages/[locale]/landing/product.astro
+msgid "Product Details Landing Page Demo"
+msgstr "Demo de página de destino de detalles del producto"
 
 #: src/pages/[locale]/landing/product.astro
 msgid "Product Details Demo"
@@ -2416,8 +2435,9 @@ msgstr "Guía paso a paso para diseñar una página de destino que destaque cada
 msgid "A spotlight on a product. Product Details Landing Page Demo"
 msgstr "Un foco sobre un producto. Demo de página de destino de detalles del producto"
 
-#~ msgid "Sales Landing Page Demo"
-#~ msgstr "Demo de página de destino de ventas"
+#: src/pages/[locale]/landing/sales.astro
+msgid "Sales Landing Page Demo"
+msgstr "Demo de página de destino de ventas"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Long-form Sales Demo"
@@ -2435,8 +2455,9 @@ msgstr "Sumérgete en la creación de una página de destino que narra, persuade
 msgid "Children telling a story. Long-form Sales Landing Page demo"
 msgstr "Niños contando una historia. Demo de página de destino de ventas de formato largo"
 
-#~ msgid "Subscription Landing Page Demo"
-#~ msgstr "Demo de página de destino de suscripción"
+#: src/pages/[locale]/landing/subscription.astro
+msgid "Subscription Landing Page Demo"
+msgstr "Demo de página de destino de suscripción"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Subscription Landing Demo"
@@ -2471,17 +2492,19 @@ msgstr "Publicaciones por etiqueta '{0}'{1}"
 msgid "Tag: {0}"
 msgstr "Etiqueta: {0}"
 
-#~ msgid "Elevate your online presence with our <0/> <1>Beautiful Website Templates</1>"
-#~ msgstr "Eleva tu presencia online con nuestras <0/> <1>hermosas plantillas de sitios web</1>"
+#: src/pages/[locale]/about.astro
+msgid "Elevate your online presence with our <0/> <1>Beautiful Website Templates</1>"
+msgstr "Eleva tu presencia online con nuestras <0/> <1>hermosas plantillas de sitios web</1>"
 
-#~ msgid ""
-#~ "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-#~ "quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-#~ "Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
-#~ msgstr ""
-#~ "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-#~ "quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-#~ "Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+#: src/pages/[locale]/about.astro
+msgid ""
+"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
+"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
+"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+msgstr ""
+"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
+"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
+"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
 
 #: src/pages/[locale]/index.astro
 msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
@@ -2497,713 +2520,157 @@ msgstr ""
 "+ Tailwind CSS.</0> <1>AstroWind: Listo para producción.</1> Adecuada para Startups, Pequeñas Empresas, sitios web SaaS, Portafolios Profesionales, sitios web de Marketing, Landing Pages y\n"
 "Blogs."
 
-#~ msgid "Simplify web design with Astrowind: <0/> your ultimate <1>SaaS</1> companion<2/>"
-#~ msgstr "Simplifica el diseño web con Astrowind: <0/> tu compañero <1>SaaS</1> definitivo<2/>"
+#: src/pages/[locale]/homes/saas.astro
+msgid "Simplify web design with Astrowind: <0/> your ultimate <1>SaaS</1> companion<2/>"
+msgstr "Simplifica el diseño web con Astrowind: <0/> tu compañero <1>SaaS</1> definitivo<2/>"
 
-#~ msgid "<0>Elevate your website creation process with <0>AstroWind</0>'s SaaS solutions.</0> Seamlessly blend the power of Astro 5.0 and Tailwind CSS to craft websites that resonate with your brand and audience."
-#~ msgstr "<0>Eleva tu proceso de creación de sitios web con las soluciones SaaS de <0>AstroWind</0>.</0> Combina a la perfección la potencia de Astro 5.0 y Tailwind CSS para crear sitios web que resuenen con tu marca y audiencia."
+#: src/pages/[locale]/homes/saas.astro
+msgid "<0>Elevate your website creation process with <0>AstroWind</0>'s SaaS solutions.</0> Seamlessly blend the power of Astro 5.0 and Tailwind CSS to craft websites that resonate with your brand and audience."
+msgstr "<0>Eleva tu proceso de creación de sitios web con las soluciones SaaS de <0>AstroWind</0>.</0> Combina a la perfección la potencia de Astro 5.0 y Tailwind CSS para crear sitios web que resuenen con tu marca y audiencia."
 
-#~ msgid "Login"
-#~ msgstr "Iniciar sesión"
+#: src/pages/[locale]/homes/saas.astro
+msgid "Login"
+msgstr "Iniciar sesión"
 
-#~ msgid "Sign Up"
-#~ msgstr "Registrarse"
+#: src/pages/[locale]/homes/saas.astro
+msgid "Sign Up"
+msgstr "Registrarse"
 
-#~ msgid "Startup success stories: <0/><1>Launching with AstroWind</1>"
-#~ msgstr "Historias de éxito de startups: <0/><1>Lanzamiento con AstroWind</1>"
+#: src/pages/[locale]/homes/saas.astro
+msgid "Startup success stories: <0/><1>Launching with AstroWind</1>"
+msgstr "Historias de éxito de startups: <0/><1>Lanzamiento con AstroWind</1>"
 
-#~ msgid "SaaS showcase: <0/><1>Streamlining user experience</1>"
-#~ msgstr "Escaparate de SaaS: <0/><1>Optimizando la experiencia del usuario</1>"
+#: src/pages/[locale]/homes/saas.astro
+msgid "SaaS showcase: <0/><1>Streamlining user experience</1>"
+msgstr "Escaparate de SaaS: <0/><1>Optimizando la experiencia del usuario</1>"
 
-#~ msgid "Creative portfolios: <0/><1>Highlighting your work</1>"
-#~ msgstr "Portafolios creativos: <0/><1>Destacando su trabajo</1>"
+#: src/pages/[locale]/homes/saas.astro
+msgid "Creative portfolios: <0/><1>Highlighting your work</1>"
+msgstr "Portafolios creativos: <0/><1>Destacando su trabajo</1>"
 
-#~ msgid "Small business growth: <0/><1>Converting visitors into customers</1>"
-#~ msgstr "Crecimiento de pequeñas empresas: <0/><1>Convirtiendo visitantes en clientes</1>"
+#: src/pages/[locale]/homes/saas.astro
+msgid "Small business growth: <0/><1>Converting visitors into customers</1>"
+msgstr "Crecimiento de pequeñas empresas: <0/><1>Convirtiendo visitantes en clientes</1>"
 
-#~ msgid "About"
-#~ msgstr "Acerca de"
+#: src/navigation.ts
+#: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/homes/personal.astro
+msgid "About"
+msgstr "Acerca de"
 
-#~ msgid "Download"
-#~ msgstr "Descargar"
+#: src/layouts/LandingLayout.astro
+#: src/navigation.ts
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "Download"
+msgstr "Descargar"
 
-#~ msgid "<0>AstroWind App</0>: <1/> professional websites <2>made easy</2>"
-#~ msgstr "<0>AstroWind App</0>: <1/> sitios web profesionales <2>de forma sencilla</2>"
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "<0>AstroWind App</0>: <1/> professional websites <2>made easy</2>"
+msgstr "<0>AstroWind App</0>: <1/> sitios web profesionales <2>de forma sencilla</2>"
 
-#~ msgid "<0>Unlock boundless creativity at your fingertips: your gateway to innovative design.</0> Download now and embark on a journey to elevate your projects like never before."
-#~ msgstr "<0>Desbloquea una creatividad sin límites al alcance de tu mano: tu puerta de entrada al diseño innovador.</0> Descárgala ahora y embárcate en un viaje para elevar tus proyectos como nunca antes."
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "<0>Unlock boundless creativity at your fingertips: your gateway to innovative design.</0> Download now and embark on a journey to elevate your projects like never before."
+msgstr "<0>Desbloquea una creatividad sin límites al alcance de tu mano: tu puerta de entrada al diseño innovador.</0> Descárgala ahora y embárcate en un viaje para elevar tus proyectos como nunca antes."
 
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
 msgid "Main Features"
 msgstr "Características principales"
 
-#~ msgid "Other features"
-#~ msgstr "Otras características"
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "Other features"
+msgstr "Otras características"
 
-#~ msgid "Improve <0>the online presence of</0> your <1>Startup</1> with Astrowind templates"
-#~ msgstr "Mejora <0>la presencia online de</0> tu <1>Startup</1> con las plantillas de Astrowind"
+#: src/pages/[locale]/homes/startup.astro
+msgid "Improve <0>the online presence of</0> your <1>Startup</1> with Astrowind templates"
+msgstr "Mejora <0>la presencia online de</0> tu <1>Startup</1> con las plantillas de Astrowind"
 
-#~ msgid ""
-#~ "Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your\n"
-#~ "startup's digital footprint, fostering credibility, and expanding your reach."
-#~ msgstr ""
-#~ "Entra en el centro de atención con las plantillas de <0>Astrowind</0>, tu camino para fortalecer la\n"
-#~ "huella digital de tu startup, fomentar la credibilidad y expandir tu alcance."
+#: src/pages/[locale]/homes/startup.astro
+msgid ""
+"Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your\n"
+"startup's digital footprint, fostering credibility, and expanding your reach."
+msgstr ""
+"Entra en el centro de atención con las plantillas de <0>Astrowind</0>, tu camino para fortalecer la\n"
+"huella digital de tu startup, fomentar la credibilidad y expandir tu alcance."
 
-#~ msgid "Astro just Launched.... Could it be the ultimate web framework?"
-#~ msgstr "Astro acaba de lanzarse.... ¿Podría ser el framework web definitivo?"
+#: src/pages/[locale]/homes/startup.astro
+msgid "Astro just Launched.... Could it be the ultimate web framework?"
+msgstr "Astro acaba de lanzarse.... ¿Podría ser el framework web definitivo?"
 
-#~ msgid "Be a part of our vision"
-#~ msgstr "Sé parte de nuestra visión"
+#: src/pages/[locale]/homes/startup.astro
+msgid "Be a part of our vision"
+msgstr "Sé parte de nuestra visión"
 
-#~ msgid ""
-#~ "Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful\n"
-#~ "impact."
-#~ msgstr ""
-#~ "Descubre un entorno de trabajo dinámico, oportunidades de crecimiento sin igual y la posibilidad de causar un\n"
-#~ "impacto significativo."
+#: src/pages/[locale]/homes/startup.astro
+msgid ""
+"Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful\n"
+"impact."
+msgstr ""
+"Descubre un entorno de trabajo dinámico, oportunidades de crecimiento sin igual y la posibilidad de causar un\n"
+"impacto significativo."
 
-#~ msgid "Home"
-#~ msgstr "Inicio"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Home"
+msgstr "Inicio"
 
-#~ msgid "Resume"
-#~ msgstr "Currículum"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Resume"
+msgstr "Currículum"
 
-#~ msgid "Porfolio"
-#~ msgstr "Portafolio"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Porfolio"
+msgstr "Portafolio"
 
-#~ msgid "Github"
-#~ msgstr "Github"
+#: src/navigation.ts
+#: src/pages/[locale]/homes/personal.astro
+msgid "Github"
+msgstr "Github"
 
-#~ msgid ""
-#~ "I'm a Graphic Designer passionate about crafting visual stories. <0/> With 5 years of experience and a degree from\n"
-#~ "New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating\n"
-#~ "realities."
-#~ msgstr ""
-#~ "Soy un Diseñador Gráfico apasionado por crear historias visuales. <0/> Con 5 años de experiencia y un título de la\n"
-#~ "Escuela de Diseño de la Universidad de Nueva York. Infundo vitalidad en marcas y diseños, transformando conceptos en\n"
-#~ "realidades cautivadoras."
+#: src/pages/[locale]/homes/personal.astro
+msgid ""
+"I'm a Graphic Designer passionate about crafting visual stories. <0/> With 5 years of experience and a degree from\n"
+"New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating\n"
+"realities."
+msgstr ""
+"Soy un Diseñador Gráfico apasionado por crear historias visuales. <0/> Con 5 años de experiencia y un título de la\n"
+"Escuela de Diseño de la Universidad de Nueva York. Infundo vitalidad en marcas y diseños, transformando conceptos en\n"
+"realidades cautivadoras."
 
-#~ msgid "About me"
-#~ msgstr "Sobre mí"
+#: src/pages/[locale]/homes/personal.astro
+msgid "About me"
+msgstr "Sobre mí"
 
-#~ msgid ""
-#~ "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each\n"
-#~ "pixel becomes a brushstroke in the canvas of imagination."
-#~ msgstr ""
-#~ "Bienvenidos a mi viaje creativo. Mi trabajo es un testimonio de mi compromiso de dar vida a las ideas, donde cada\n"
-#~ "píxel se convierte en una pincelada en el lienzo de la imaginación."
+#: src/pages/[locale]/homes/personal.astro
+msgid ""
+"Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each\n"
+"pixel becomes a brushstroke in the canvas of imagination."
+msgstr ""
+"Bienvenidos a mi viaje creativo. Mi trabajo es un testimonio de mi compromiso de dar vida a las ideas, donde cada\n"
+"píxel se convierte en una pincelada en el lienzo de la imaginación."
 
-#~ msgid ""
-#~ "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate\n"
-#~ "details of typography, or the vibrant hues of nature during my outdoor escapades."
-#~ msgstr ""
-#~ "Encuentro inspiración en el mundo que me rodea, ya sea a través de las páginas de una novela cautivadora, los\n"
-#~ "detalles intrincados de la tipografía o los tonos vibrantes de la naturaleza durante mis escapadas al aire libre."
+#: src/pages/[locale]/homes/personal.astro
+msgid ""
+"I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate\n"
+"details of typography, or the vibrant hues of nature during my outdoor escapades."
+msgstr ""
+"Encuentro inspiración en el mundo que me rodea, ya sea a través de las páginas de una novela cautivadora, los\n"
+"detalles intrincados de la tipografía o los tonos vibrantes de la naturaleza durante mis escapadas al aire libre."
 
-#~ msgid "If you're curious to dive deeper into my work, you can follow me:"
-#~ msgstr "Si tienes curiosidad por profundizar en mi trabajo, puedes seguirme:"
+#: src/pages/[locale]/homes/personal.astro
+msgid "If you're curious to dive deeper into my work, you can follow me:"
+msgstr "Si tienes curiosidad por profundizar en mi trabajo, puedes seguirme:"
 
-#~ msgid "Project 1: <0/><1>Brand identity for tech innovators</1>"
-#~ msgstr "Proyecto 1: <0/><1>Identidad de marca para innovadores tecnológicos</1>"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Project 1: <0/><1>Brand identity for tech innovators</1>"
+msgstr "Proyecto 1: <0/><1>Identidad de marca para innovadores tecnológicos</1>"
 
-#~ msgid "Project 2: <0/><1>Event poster for art & music festival</1>"
-#~ msgstr "Proyecto 2: <0/><1>Póster de evento para festival de arte y música</1>"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Project 2: <0/><1>Event poster for art & music festival</1>"
+msgstr "Proyecto 2: <0/><1>Póster de evento para festival de arte y música</1>"
 
-#~ msgid "Project 3: <0/><1>E-commerce website redesign for fashion brand</1>"
-#~ msgstr "Proyecto 3: <0/><1>Rediseño de sitio web de comercio electrónico para marca de moda</1>"
-
-#~ msgid ""
-#~ "function applyTheme(theme) {\n"
-#~ "if (theme === 'dark') {\n"
-#~ "document.documentElement.classList.add('dark');\n"
-#~ "} else {\n"
-#~ "document.documentElement.classList.remove('dark');\n"
-#~ "}\n"
-#~ "const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');\n"
-#~ "\n"
-#~ "if (matches && matches.length) {\n"
-#~ "matches.forEach((elem) => {\n"
-#~ "elem.checked = theme !== 'dark';\n"
-#~ "});\n"
-#~ "}\n"
-#~ "}\n"
-#~ "\n"
-#~ "if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {\n"
-#~ "applyTheme(defaultTheme.replace(':only', ''));\n"
-#~ "} else if (\n"
-#~ "localStorage.theme === 'dark' ||\n"
-#~ "(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)\n"
-#~ ") {\n"
-#~ "applyTheme('dark');\n"
-#~ "} else {\n"
-#~ "applyTheme('light');\n"
-#~ "}"
-#~ msgstr ""
-#~ "function applyTheme(theme) {\n"
-#~ "if (theme === 'dark') {\n"
-#~ "document.documentElement.classList.add('dark');\n"
-#~ "} else {\n"
-#~ "document.documentElement.classList.remove('dark');\n"
-#~ "}\n"
-#~ "const matches = document.querySelectorAll('[data-aw-toggle-color-scheme] > input');\n"
-#~ "\n"
-#~ "if (matches && matches.length) {\n"
-#~ "matches.forEach((elem) => {\n"
-#~ "elem.checked = theme !== 'dark';\n"
-#~ "});\n"
-#~ "}\n"
-#~ "}\n"
-#~ "\n"
-#~ "if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {\n"
-#~ "applyTheme(defaultTheme.replace(':only', ''));\n"
-#~ "} else if (\n"
-#~ "localStorage.theme === 'dark' ||\n"
-#~ "(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)\n"
-#~ ") {\n"
-#~ "applyTheme('dark');\n"
-#~ "} else {\n"
-#~ "applyTheme('light');\n"
-#~ "}"
-
-#~ msgid ""
-#~ "if (window.basic_script) {\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "window.basic_script = true;\n"
-#~ "\n"
-#~ "function applyTheme(theme) {\n"
-#~ "if (theme === 'dark') {\n"
-#~ "document.documentElement.classList.add('dark');\n"
-#~ "} else {\n"
-#~ "document.documentElement.classList.remove('dark');\n"
-#~ "}\n"
-#~ "}\n"
-#~ "\n"
-#~ "const initTheme = function () {\n"
-#~ "if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {\n"
-#~ "applyTheme(defaultTheme.replace(':only', ''));\n"
-#~ "} else if (\n"
-#~ "localStorage.theme === 'dark' ||\n"
-#~ "(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)\n"
-#~ ") {\n"
-#~ "applyTheme('dark');\n"
-#~ "} else {\n"
-#~ "applyTheme('light');\n"
-#~ "}\n"
-#~ "};\n"
-#~ "initTheme();\n"
-#~ "\n"
-#~ "function attachEvent(selector, event, fn) {\n"
-#~ "const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;\n"
-#~ "if (matches && matches.length) {\n"
-#~ "matches.forEach((elem) => {\n"
-#~ "elem.addEventListener(event, (e) => fn(e, elem), false);\n"
-#~ "});\n"
-#~ "}\n"
-#~ "}\n"
-#~ "\n"
-#~ "const onLoad = function () {\n"
-#~ "let lastKnownScrollPosition = window.scrollY;\n"
-#~ "let ticking = true;\n"
-#~ "\n"
-#~ "attachEvent('#header nav', 'click', function () {\n"
-#~ "document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');\n"
-#~ "document.body.classList.remove('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.remove('h-screen');\n"
-#~ "document.getElementById('header')?.classList.remove('expanded');\n"
-#~ "document.getElementById('header')?.classList.remove('bg-page');\n"
-#~ "document.querySelector('#header nav')?.classList.add('hidden');\n"
-#~ "document.querySelector('#header > div > div:last-child')?.classList.add('hidden');\n"
-#~ "});\n"
-#~ "\n"
-#~ "attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {\n"
-#~ "elem.classList.toggle('expanded');\n"
-#~ "document.body.classList.toggle('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.toggle('h-screen');\n"
-#~ "document.getElementById('header')?.classList.toggle('expanded');\n"
-#~ "document.getElementById('header')?.classList.toggle('bg-page');\n"
-#~ "document.querySelector('#header nav')?.classList.toggle('hidden');\n"
-#~ "document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');\n"
-#~ "});\n"
-#~ "\n"
-#~ "attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {\n"
-#~ "if (defaultTheme.endsWith(':only')) {\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "Observer.removeAnimationDelay();\n"
-#~ "\n"
-#~ "document.documentElement.classList.toggle('dark');\n"
-#~ "localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';\n"
-#~ "});\n"
-#~ "\n"
-#~ "attachEvent('[data-aw-social-share]', 'click', function (_, elem) {\n"
-#~ "const network = elem.getAttribute('data-aw-social-share');\n"
-#~ "const url = encodeURIComponent(elem.getAttribute('data-aw-url'));\n"
-#~ "const text = encodeURIComponent(elem.getAttribute('data-aw-text'));\n"
-#~ "\n"
-#~ "let href;\n"
-#~ "switch (network) {\n"
-#~ "case 'facebook':\n"
-#~ "href = `https://www.facebook.com/sharer.php?u=${url}`;\n"
-#~ "break;\n"
-#~ "case 'twitter':\n"
-#~ "href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;\n"
-#~ "break;\n"
-#~ "case 'linkedin':\n"
-#~ "href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;\n"
-#~ "break;\n"
-#~ "case 'whatsapp':\n"
-#~ "href = `https://wa.me/?text=${text}%20${url}`;\n"
-#~ "break;\n"
-#~ "case 'mail':\n"
-#~ "href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;\n"
-#~ "break;\n"
-#~ "\n"
-#~ "default:\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "const newlink = document.createElement('a');\n"
-#~ "newlink.target = '_blank';\n"
-#~ "newlink.href = href;\n"
-#~ "newlink.click();\n"
-#~ "});\n"
-#~ "\n"
-#~ "const screenSize = window.matchMedia('(max-width: 767px)');\n"
-#~ "screenSize.addEventListener('change', function () {\n"
-#~ "document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');\n"
-#~ "document.body.classList.remove('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.remove('h-screen');\n"
-#~ "document.getElementById('header')?.classList.remove('expanded');\n"
-#~ "document.getElementById('header')?.classList.remove('bg-page');\n"
-#~ "document.querySelector('#header nav')?.classList.add('hidden');\n"
-#~ "document.querySelector('#header > div > div:last-child')?.classList.add('hidden');\n"
-#~ "});\n"
-#~ "\n"
-#~ "function applyHeaderStylesOnScroll() {\n"
-#~ "const header = document.querySelector('#header[data-aw-sticky-header]');\n"
-#~ "if (!header) return;\n"
-#~ "if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {\n"
-#~ "header.classList.add('scroll');\n"
-#~ "} else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {\n"
-#~ "header.classList.remove('scroll');\n"
-#~ "}\n"
-#~ "ticking = false;\n"
-#~ "}\n"
-#~ "applyHeaderStylesOnScroll();\n"
-#~ "\n"
-#~ "attachEvent([document], 'scroll', function () {\n"
-#~ "lastKnownScrollPosition = window.scrollY;\n"
-#~ "\n"
-#~ "if (!ticking) {\n"
-#~ "window.requestAnimationFrame(() => {\n"
-#~ "applyHeaderStylesOnScroll();\n"
-#~ "});\n"
-#~ "ticking = true;\n"
-#~ "}\n"
-#~ "});\n"
-#~ "};\n"
-#~ "const onPageShow = function () {\n"
-#~ "document.documentElement.classList.add('motion-safe:scroll-smooth');\n"
-#~ "const elem = document.querySelector('[data-aw-toggle-menu]');\n"
-#~ "if (elem) {\n"
-#~ "elem.classList.remove('expanded');\n"
-#~ "}\n"
-#~ "document.body.classList.remove('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.remove('h-screen');\n"
-#~ "document.getElementById('header')?.classList.remove('expanded');\n"
-#~ "document.querySelector('#header nav')?.classList.add('hidden');\n"
-#~ "};\n"
-#~ "\n"
-#~ "window.onload = onLoad;\n"
-#~ "window.onpageshow = onPageShow;\n"
-#~ "\n"
-#~ "document.addEventListener('astro:after-swap', () => {\n"
-#~ "initTheme();\n"
-#~ "onLoad();\n"
-#~ "onPageShow();\n"
-#~ "});"
-#~ msgstr ""
-#~ "if (window.basic_script) {\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "window.basic_script = true;\n"
-#~ "\n"
-#~ "function applyTheme(theme) {\n"
-#~ "if (theme === 'dark') {\n"
-#~ "document.documentElement.classList.add('dark');\n"
-#~ "} else {\n"
-#~ "document.documentElement.classList.remove('dark');\n"
-#~ "}\n"
-#~ "}\n"
-#~ "\n"
-#~ "const initTheme = function () {\n"
-#~ "if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {\n"
-#~ "applyTheme(defaultTheme.replace(':only', ''));\n"
-#~ "} else if (\n"
-#~ "localStorage.theme === 'dark' ||\n"
-#~ "(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)\n"
-#~ ") {\n"
-#~ "applyTheme('dark');\n"
-#~ "} else {\n"
-#~ "applyTheme('light');\n"
-#~ "}\n"
-#~ "};\n"
-#~ "initTheme();\n"
-#~ "\n"
-#~ "function attachEvent(selector, event, fn) {\n"
-#~ "const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;\n"
-#~ "if (matches && matches.length) {\n"
-#~ "matches.forEach((elem) => {\n"
-#~ "elem.addEventListener(event, (e) => fn(e, elem), false);\n"
-#~ "});\n"
-#~ "}\n"
-#~ "}\n"
-#~ "\n"
-#~ "const onLoad = function () {\n"
-#~ "let lastKnownScrollPosition = window.scrollY;\n"
-#~ "let ticking = true;\n"
-#~ "\n"
-#~ "attachEvent('#header nav', 'click', function () {\n"
-#~ "document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');\n"
-#~ "document.body.classList.remove('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.remove('h-screen');\n"
-#~ "document.getElementById('header')?.classList.remove('expanded');\n"
-#~ "document.getElementById('header')?.classList.remove('bg-page');\n"
-#~ "document.querySelector('#header nav')?.classList.add('hidden');\n"
-#~ "document.querySelector('#header > div > div:last-child')?.classList.add('hidden');\n"
-#~ "});\n"
-#~ "\n"
-#~ "attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {\n"
-#~ "elem.classList.toggle('expanded');\n"
-#~ "document.body.classList.toggle('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.toggle('h-screen');\n"
-#~ "document.getElementById('header')?.classList.toggle('expanded');\n"
-#~ "document.getElementById('header')?.classList.toggle('bg-page');\n"
-#~ "document.querySelector('#header nav')?.classList.toggle('hidden');\n"
-#~ "document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');\n"
-#~ "});\n"
-#~ "\n"
-#~ "attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {\n"
-#~ "if (defaultTheme.endsWith(':only')) {\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "Observer.removeAnimationDelay();\n"
-#~ "\n"
-#~ "document.documentElement.classList.toggle('dark');\n"
-#~ "localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';\n"
-#~ "});\n"
-#~ "\n"
-#~ "attachEvent('[data-aw-social-share]', 'click', function (_, elem) {\n"
-#~ "const network = elem.getAttribute('data-aw-social-share');\n"
-#~ "const url = encodeURIComponent(elem.getAttribute('data-aw-url'));\n"
-#~ "const text = encodeURIComponent(elem.getAttribute('data-aw-text'));\n"
-#~ "\n"
-#~ "let href;\n"
-#~ "switch (network) {\n"
-#~ "case 'facebook':\n"
-#~ "href = `https://www.facebook.com/sharer.php?u=${url}`;\n"
-#~ "break;\n"
-#~ "case 'twitter':\n"
-#~ "href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;\n"
-#~ "break;\n"
-#~ "case 'linkedin':\n"
-#~ "href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;\n"
-#~ "break;\n"
-#~ "case 'whatsapp':\n"
-#~ "href = `https://wa.me/?text=${text}%20${url}`;\n"
-#~ "break;\n"
-#~ "case 'mail':\n"
-#~ "href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;\n"
-#~ "break;\n"
-#~ "\n"
-#~ "default:\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "const newlink = document.createElement('a');\n"
-#~ "newlink.target = '_blank';\n"
-#~ "newlink.href = href;\n"
-#~ "newlink.click();\n"
-#~ "});\n"
-#~ "\n"
-#~ "const screenSize = window.matchMedia('(max-width: 767px)');\n"
-#~ "screenSize.addEventListener('change', function () {\n"
-#~ "document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');\n"
-#~ "document.body.classList.remove('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.remove('h-screen');\n"
-#~ "document.getElementById('header')?.classList.remove('expanded');\n"
-#~ "document.getElementById('header')?.classList.remove('bg-page');\n"
-#~ "document.querySelector('#header nav')?.classList.add('hidden');\n"
-#~ "document.querySelector('#header > div > div:last-child')?.classList.add('hidden');\n"
-#~ "});\n"
-#~ "\n"
-#~ "function applyHeaderStylesOnScroll() {\n"
-#~ "const header = document.querySelector('#header[data-aw-sticky-header]');\n"
-#~ "if (!header) return;\n"
-#~ "if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {\n"
-#~ "header.classList.add('scroll');\n"
-#~ "} else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {\n"
-#~ "header.classList.remove('scroll');\n"
-#~ "}\n"
-#~ "ticking = false;\n"
-#~ "}\n"
-#~ "applyHeaderStylesOnScroll();\n"
-#~ "\n"
-#~ "attachEvent([document], 'scroll', function () {\n"
-#~ "lastKnownScrollPosition = window.scrollY;\n"
-#~ "\n"
-#~ "if (!ticking) {\n"
-#~ "window.requestAnimationFrame(() => {\n"
-#~ "applyHeaderStylesOnScroll();\n"
-#~ "});\n"
-#~ "ticking = true;\n"
-#~ "}\n"
-#~ "});\n"
-#~ "};\n"
-#~ "const onPageShow = function () {\n"
-#~ "document.documentElement.classList.add('motion-safe:scroll-smooth');\n"
-#~ "const elem = document.querySelector('[data-aw-toggle-menu]');\n"
-#~ "if (elem) {\n"
-#~ "elem.classList.remove('expanded');\n"
-#~ "}\n"
-#~ "document.body.classList.remove('overflow-hidden');\n"
-#~ "document.getElementById('header')?.classList.remove('h-screen');\n"
-#~ "document.getElementById('header')?.classList.remove('expanded');\n"
-#~ "document.querySelector('#header nav')?.classList.add('hidden');\n"
-#~ "};\n"
-#~ "\n"
-#~ "window.onload = onLoad;\n"
-#~ "window.onpageshow = onPageShow;\n"
-#~ "\n"
-#~ "document.addEventListener('astro:after-swap', () => {\n"
-#~ "initTheme();\n"
-#~ "onLoad();\n"
-#~ "onPageShow();\n"
-#~ "});"
-
-#~ msgid ""
-#~ "/* Inspired by: https://github.com/heidkaemper/tailwindcss-intersect */\n"
-#~ "const Observer = {\n"
-#~ "observer: null,\n"
-#~ "delayBetweenAnimations: 100,\n"
-#~ "animationCounter: 0,\n"
-#~ "elements: null,\n"
-#~ "\n"
-#~ "start() {\n"
-#~ "const selectors = [\n"
-#~ "'[class*=\" intersect:\"]',\n"
-#~ "'[class*=\":intersect:\"]',\n"
-#~ "'[class^=\"intersect:\"]',\n"
-#~ "'[class=\"intersect\"]',\n"
-#~ "'[class*=\" intersect \"]',\n"
-#~ "'[class^=\"intersect \"]',\n"
-#~ "'[class$=\" intersect\"]',\n"
-#~ "];\n"
-#~ "\n"
-#~ "this.elements = Array.from(document.querySelectorAll(selectors.join(',')));\n"
-#~ "\n"
-#~ "const getThreshold = (element) => {\n"
-#~ "if (element.classList.contains('intersect-full')) return 0.99;\n"
-#~ "if (element.classList.contains('intersect-half')) return 0.5;\n"
-#~ "if (element.classList.contains('intersect-quarter')) return 0.25;\n"
-#~ "return 0;\n"
-#~ "};\n"
-#~ "\n"
-#~ "this.elements.forEach((el) => {\n"
-#~ "el.setAttribute('no-intersect', '');\n"
-#~ "el._intersectionThreshold = getThreshold(el);\n"
-#~ "});\n"
-#~ "\n"
-#~ "const callback = (entries) => {\n"
-#~ "entries.forEach((entry) => {\n"
-#~ "requestAnimationFrame(() => {\n"
-#~ "const target = entry.target;\n"
-#~ "const intersectionRatio = entry.intersectionRatio;\n"
-#~ "const threshold = target._intersectionThreshold;\n"
-#~ "\n"
-#~ "if (target.classList.contains('intersect-no-queue')) {\n"
-#~ "if (entry.isIntersecting) {\n"
-#~ "target.removeAttribute('no-intersect');\n"
-#~ "if (target.classList.contains('intersect-once')) {\n"
-#~ "this.observer.unobserve(target);\n"
-#~ "}\n"
-#~ "} else {\n"
-#~ "target.setAttribute('no-intersect', '');\n"
-#~ "}\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "if (intersectionRatio >= threshold) {\n"
-#~ "if (!target.hasAttribute('data-animated')) {\n"
-#~ "target.removeAttribute('no-intersect');\n"
-#~ "target.setAttribute('data-animated', 'true');\n"
-#~ "\n"
-#~ "const delay = this.animationCounter * this.delayBetweenAnimations;\n"
-#~ "this.animationCounter++;\n"
-#~ "\n"
-#~ "target.style.transitionDelay = `${delay}ms`;\n"
-#~ "target.style.animationDelay = `${delay}ms`;\n"
-#~ "\n"
-#~ "if (target.classList.contains('intersect-once')) {\n"
-#~ "this.observer.unobserve(target);\n"
-#~ "}\n"
-#~ "}\n"
-#~ "} else {\n"
-#~ "target.setAttribute('no-intersect', '');\n"
-#~ "target.removeAttribute('data-animated');\n"
-#~ "target.style.transitionDelay = '';\n"
-#~ "target.style.animationDelay = '';\n"
-#~ "\n"
-#~ "this.animationCounter = 0;\n"
-#~ "}\n"
-#~ "});\n"
-#~ "});\n"
-#~ "};\n"
-#~ "\n"
-#~ "this.observer = new IntersectionObserver(callback.bind(this), { threshold: [0, 0.25, 0.5, 0.99] });\n"
-#~ "\n"
-#~ "this.elements.forEach((el) => {\n"
-#~ "this.observer.observe(el);\n"
-#~ "});\n"
-#~ "},\n"
-#~ "\n"
-#~ "/*\n"
-#~ "REF: #643;\n"
-#~ "We need to remove the delay to fix flickering/delay\n"
-#~ "when toggling the theme. Observer only removes them\n"
-#~ "after data-animated is gone (out of view).\n"
-#~ "*/\n"
-#~ "removeAnimationDelay() {\n"
-#~ "this.elements.forEach((el) => {\n"
-#~ "if (el.getAttribute('data-animated') === 'true') {\n"
-#~ "el.style.transitionDelay = '';\n"
-#~ "el.style.animationDelay = '';\n"
-#~ "}\n"
-#~ "});\n"
-#~ "},\n"
-#~ "};\n"
-#~ "\n"
-#~ "Observer.start();\n"
-#~ "\n"
-#~ "document.addEventListener('astro:after-swap', () => {\n"
-#~ "Observer.start();\n"
-#~ "});"
-#~ msgstr ""
-#~ "/* Inspirado por: https://github.com/heidkaemper/tailwindcss-intersect */\n"
-#~ "const Observer = {\n"
-#~ "observer: null,\n"
-#~ "delayBetweenAnimations: 100,\n"
-#~ "animationCounter: 0,\n"
-#~ "elements: null,\n"
-#~ "\n"
-#~ "start() {\n"
-#~ "const selectors = [\n"
-#~ "'[class*=\" intersect:\"]',\n"
-#~ "'[class*=\":intersect:\"]',\n"
-#~ "'[class^=\"intersect:\"]',\n"
-#~ "'[class=\"intersect\"]',\n"
-#~ "'[class*=\" intersect \"]',\n"
-#~ "'[class^=\"intersect \"]',\n"
-#~ "'[class$=\" intersect\"]',\n"
-#~ "];\n"
-#~ "\n"
-#~ "this.elements = Array.from(document.querySelectorAll(selectors.join(',')));\n"
-#~ "\n"
-#~ "const getThreshold = (element) => {\n"
-#~ "if (element.classList.contains('intersect-full')) return 0.99;\n"
-#~ "if (element.classList.contains('intersect-half')) return 0.5;\n"
-#~ "if (element.classList.contains('intersect-quarter')) return 0.25;\n"
-#~ "return 0;\n"
-#~ "};\n"
-#~ "\n"
-#~ "this.elements.forEach((el) => {\n"
-#~ "el.setAttribute('no-intersect', '');\n"
-#~ "el._intersectionThreshold = getThreshold(el);\n"
-#~ "});\n"
-#~ "\n"
-#~ "const callback = (entries) => {\n"
-#~ "entries.forEach((entry) => {\n"
-#~ "requestAnimationFrame(() => {\n"
-#~ "const target = entry.target;\n"
-#~ "const intersectionRatio = entry.intersectionRatio;\n"
-#~ "const threshold = target._intersectionThreshold;\n"
-#~ "\n"
-#~ "if (target.classList.contains('intersect-no-queue')) {\n"
-#~ "if (entry.isIntersecting) {\n"
-#~ "target.removeAttribute('no-intersect');\n"
-#~ "if (target.classList.contains('intersect-once')) {\n"
-#~ "this.observer.unobserve(target);\n"
-#~ "}\n"
-#~ "} else {\n"
-#~ "target.setAttribute('no-intersect', '');\n"
-#~ "}\n"
-#~ "return;\n"
-#~ "}\n"
-#~ "\n"
-#~ "if (intersectionRatio >= threshold) {\n"
-#~ "if (!target.hasAttribute('data-animated')) {\n"
-#~ "target.removeAttribute('no-intersect');\n"
-#~ "target.setAttribute('data-animated', 'true');\n"
-#~ "\n"
-#~ "const delay = this.animationCounter * this.delayBetweenAnimations;\n"
-#~ "this.animationCounter++;\n"
-#~ "\n"
-#~ "target.style.transitionDelay = `${delay}ms`;\n"
-#~ "target.style.animationDelay = `${delay}ms`;\n"
-#~ "\n"
-#~ "if (target.classList.contains('intersect-once')) {\n"
-#~ "this.observer.unobserve(target);\n"
-#~ "}\n"
-#~ "}\n"
-#~ "} else {\n"
-#~ "target.setAttribute('no-intersect', '');\n"
-#~ "target.removeAttribute('data-animated');\n"
-#~ "target.style.transitionDelay = '';\n"
-#~ "target.style.animationDelay = '';\n"
-#~ "\n"
-#~ "this.animationCounter = 0;\n"
-#~ "}\n"
-#~ "});\n"
-#~ "});\n"
-#~ "};\n"
-#~ "\n"
-#~ "this.observer = new IntersectionObserver(callback.bind(this), { threshold: [0, 0.25, 0.5, 0.99] });\n"
-#~ "\n"
-#~ "this.elements.forEach((el) => {\n"
-#~ "this.observer.observe(el);\n"
-#~ "});\n"
-#~ "},\n"
-#~ "\n"
-#~ "/*\n"
-#~ "REF: #643;\n"
-#~ "Necesitamos eliminar el retraso para corregir el parpadeo/retraso\n"
-#~ "al cambiar el tema. Observer solo los elimina\n"
-#~ "después de que data-animated haya desaparecido (fuera de la vista).\n"
-#~ "*/\n"
-#~ "removeAnimationDelay() {\n"
-#~ "this.elements.forEach((el) => {\n"
-#~ "if (el.getAttribute('data-animated') === 'true') {\n"
-#~ "el.style.transitionDelay = '';\n"
-#~ "el.style.animationDelay = '';\n"
-#~ "}\n"
-#~ "});\n"
-#~ "},\n"
-#~ "};\n"
-#~ "\n"
-#~ "Observer.start();\n"
-#~ "\n"
-#~ "document.addEventListener('astro:after-swap', () => {\n"
-#~ "Observer.start();\n"
-#~ "});"
-
-#~ msgid "<0/>// @wc-ignore-file <1>NEWAstro v5.12 is now available! »</1>"
-#~ msgstr "<0/>// @wc-ignore-file <1>¡NUEVO Astro v5.12 ya está disponible! »</1>"
+#: src/pages/[locale]/homes/personal.astro
+msgid "Project 3: <0/><1>E-commerce website redesign for fashion brand</1>"
+msgstr "Proyecto 3: <0/><1>Rediseño de sitio web de comercio electrónico para marca de moda</1>"
 
 #: src/pages/[locale]/index.astro
 msgid "<0>Building on modern foundations</0> Gain a competitive advantage by incorporating industry leading practices"
@@ -3232,3 +2699,199 @@ msgstr ""
 #: src/pages/[locale]/services.astro
 msgid "Benefits"
 msgstr "Beneficios"
+
+#: src/navigation.ts
+msgid "SaaS"
+msgstr "SPANISH TEST"
+
+#: src/navigation.ts
+msgid "Lead Generation"
+msgstr "SPANISCH TEST"
+
+#: src/navigation.ts
+msgid "Homes"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Startup"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Mobile App"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Personal"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Pages"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Features (Anchor Link)"
+msgstr ""
+
+#: src/navigation.ts
+#: src/navigation.ts
+msgid "Terms"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Privacy policy"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Landing"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Long-form Sales"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Click-Through"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Product Details (or Services)"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Coming Soon or Pre-Launch"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Subscription"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Blog List"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Article"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Article (with MDX)"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Category Page"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Tag Page"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Widgets"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Product"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Security"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Team"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Customer stories"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Resources"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Platform"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Developer API"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Partners"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Atom"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Electron"
+msgstr ""
+
+#: src/navigation.ts
+msgid "AstroWind Desktop"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Support"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Docs"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Community Forum"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Professional Services"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Status"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Company"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Careers"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Press"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Inclusion"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Social Impact"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Shop"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Privacy Policy"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Instagram"
+msgstr ""
+
+#: src/navigation.ts
+msgid "Facebook"
+msgstr ""
+
+#: src/navigation.ts
+msgid ""
+"\n"
+"Made by <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/arthelokyo\"> Arthelokyo</a> · All rights reserved.\n"
+""
+msgstr ""
