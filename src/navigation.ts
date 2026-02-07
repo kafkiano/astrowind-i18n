@@ -1,6 +1,7 @@
 import { getPermalink, getBlogPermalink, getAsset, getPagePermalink } from './utils/permalinks';
+import { DEFAULT_LOCALE } from './utils/locales';
 
-export const getHeaderData = (locale: string = 'en') => ({
+export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({
   links: [
     {
       text: 'Homes',
@@ -118,7 +119,7 @@ export const getHeaderData = (locale: string = 'en') => ({
   actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
 });
 
-export const getFooterData = (locale: string = 'en') => ({
+export const getFooterData = (locale: string = DEFAULT_LOCALE) => ({
   links: [
     {
       title: 'Product',
@@ -182,5 +183,5 @@ export const getFooterData = (locale: string = 'en') => ({
 });
 
 // Keep backward compatibility for now (optional)
-export const headerData = getHeaderData('en');
-export const footerData = getFooterData('en');
+export const headerData = getHeaderData(DEFAULT_LOCALE);
+export const footerData = getFooterData(DEFAULT_LOCALE);

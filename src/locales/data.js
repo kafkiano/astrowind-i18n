@@ -1,4 +1,2 @@
-import { DEFAULT_LOCALE, LOCALES } from '../utils/locales';
-
-export const sourceLocale = DEFAULT_LOCALE
-export const locales = LOCALES
+export const sourceLocale = 'en'
+export const locales = ['en','es']
