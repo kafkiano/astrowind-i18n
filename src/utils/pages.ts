@@ -1,9 +1,9 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { cleanSlug } from './permalinks';
+import { LOCALES } from './locales';
 
 const getLangFromPageId = (id: string): string => id.split('/')[0];
-const LOCALES = ['en', 'es'];
 
 export type NormalizedPage = {
   id: string;

@@ -4,9 +4,10 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { LOCALES } from './locales';
 
 const getLangFromPostId = (id: string): string => id.split('/')[0];
-export const LOCALES = ['en', 'es'];
+export { LOCALES };
 
 const generatePermalink = async ({
   id,

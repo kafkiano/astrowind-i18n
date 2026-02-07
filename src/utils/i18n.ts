@@ -1,4 +1,4 @@
-import { LOCALES } from './blog';
+import { LOCALES } from './locales';
 
 export const getStaticPathsForLocale = () =>
   LOCALES.map((locale: string) => ({

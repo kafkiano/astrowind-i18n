@@ -1,5 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
+import yaml from 'js-yaml';
 
 import { defineConfig } from 'astro/config';
 
@@ -21,6 +23,12 @@ import { wuchale } from '@wuchale/vite-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Read i18n config directly from config.yaml for Astro config
+const configPath = path.join(__dirname, 'src/config.yaml');
+const configContent = fs.readFileSync(configPath, 'utf-8');
+const config = yaml.load(configContent) as any;
+const i18nConfig = config.i18n || { locales: ['en'], defaultLocale: 'en' };
+
 const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
@@ -32,8 +40,8 @@ export default defineConfig({
     plugins: [wuchale()],
   },
   i18n: {
-    locales: ['en', 'es'],
-    defaultLocale: 'en',
+    locales: i18nConfig.locales || ['en'],
+    defaultLocale: i18nConfig.defaultLocale || 'en',
     routing: {
       prefixDefaultLocale: true,
     },
