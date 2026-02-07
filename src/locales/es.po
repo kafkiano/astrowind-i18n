@@ -2710,184 +2710,184 @@ msgstr "SPANISCH TEST"
 
 #: src/navigation.ts
 msgid "Homes"
-msgstr ""
+msgstr "Inicio"
 
 #: src/navigation.ts
 msgid "Startup"
-msgstr ""
+msgstr "Emprendimiento"
 
 #: src/navigation.ts
 msgid "Mobile App"
-msgstr ""
+msgstr "Aplicación Móvil"
 
 #: src/navigation.ts
 msgid "Personal"
-msgstr ""
+msgstr "Personal"
 
 #: src/navigation.ts
 msgid "Pages"
-msgstr ""
+msgstr "Páginas"
 
 #: src/navigation.ts
 msgid "Features (Anchor Link)"
-msgstr ""
+msgstr "Características (Enlace Ancla)"
 
 #: src/navigation.ts
 #: src/navigation.ts
 msgid "Terms"
-msgstr ""
+msgstr "Términos"
 
 #: src/navigation.ts
 msgid "Privacy policy"
-msgstr ""
+msgstr "Política de privacidad"
 
 #: src/navigation.ts
 msgid "Landing"
-msgstr ""
+msgstr "Página de Aterrizaje"
 
 #: src/navigation.ts
 msgid "Long-form Sales"
-msgstr ""
+msgstr "Ventas de Formato Largo"
 
 #: src/navigation.ts
 msgid "Click-Through"
-msgstr ""
+msgstr "Clic a Través"
 
 #: src/navigation.ts
 msgid "Product Details (or Services)"
-msgstr ""
+msgstr "Detalles del Producto (o Servicios)"
 
 #: src/navigation.ts
 msgid "Coming Soon or Pre-Launch"
-msgstr ""
+msgstr "Próximamente o Prelanzamiento"
 
 #: src/navigation.ts
 msgid "Subscription"
-msgstr ""
+msgstr "Suscripción"
 
 #: src/navigation.ts
 msgid "Blog List"
-msgstr ""
+msgstr "Lista del Blog"
 
 #: src/navigation.ts
 msgid "Article"
-msgstr ""
+msgstr "Artículo"
 
 #: src/navigation.ts
 msgid "Article (with MDX)"
-msgstr ""
+msgstr "Artículo (con MDX)"
 
 #: src/navigation.ts
 msgid "Category Page"
-msgstr ""
+msgstr "Página de Categoría"
 
 #: src/navigation.ts
 msgid "Tag Page"
-msgstr ""
+msgstr "Página de Etiqueta"
 
 #: src/navigation.ts
 msgid "Widgets"
-msgstr ""
+msgstr "Widgets"
 
 #: src/navigation.ts
 msgid "Product"
-msgstr ""
+msgstr "Producto"
 
 #: src/navigation.ts
 msgid "Security"
-msgstr ""
+msgstr "Seguridad"
 
 #: src/navigation.ts
 msgid "Team"
-msgstr ""
+msgstr "Equipo"
 
 #: src/navigation.ts
 msgid "Customer stories"
-msgstr ""
+msgstr "Historias de Clientes"
 
 #: src/navigation.ts
 msgid "Resources"
-msgstr ""
+msgstr "Recursos"
 
 #: src/navigation.ts
 msgid "Platform"
-msgstr ""
+msgstr "Plataforma"
 
 #: src/navigation.ts
 msgid "Developer API"
-msgstr ""
+msgstr "API para Desarrolladores"
 
 #: src/navigation.ts
 msgid "Partners"
-msgstr ""
+msgstr "Socios"
 
 #: src/navigation.ts
 msgid "Atom"
-msgstr ""
+msgstr "Átomo"
 
 #: src/navigation.ts
 msgid "Electron"
-msgstr ""
+msgstr "Electrón"
 
 #: src/navigation.ts
 msgid "AstroWind Desktop"
-msgstr ""
+msgstr "Escritorio AstroWind"
 
 #: src/navigation.ts
 msgid "Support"
-msgstr ""
+msgstr "Soporte"
 
 #: src/navigation.ts
 msgid "Docs"
-msgstr ""
+msgstr "Documentación"
 
 #: src/navigation.ts
 msgid "Community Forum"
-msgstr ""
+msgstr "Foro de la Comunidad"
 
 #: src/navigation.ts
 msgid "Professional Services"
-msgstr ""
+msgstr "Servicios Profesionales"
 
 #: src/navigation.ts
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #: src/navigation.ts
 msgid "Company"
-msgstr ""
+msgstr "Empresa"
 
 #: src/navigation.ts
 msgid "Careers"
-msgstr ""
+msgstr "Carreras"
 
 #: src/navigation.ts
 msgid "Press"
-msgstr ""
+msgstr "Prensa"
 
 #: src/navigation.ts
 msgid "Inclusion"
-msgstr ""
+msgstr "Inclusión"
 
 #: src/navigation.ts
 msgid "Social Impact"
-msgstr ""
+msgstr "Impacto Social"
 
 #: src/navigation.ts
 msgid "Shop"
-msgstr ""
+msgstr "Tienda"
 
 #: src/navigation.ts
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de Privacidad"
 
 #: src/navigation.ts
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: src/navigation.ts
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: src/navigation.ts
 msgid ""
@@ -2895,3 +2895,6 @@ msgid ""
 "Made by <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/arthelokyo\"> Arthelokyo</a> · All rights reserved.\n"
 ""
 msgstr ""
+"\n"
+"Hecho por <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/arthelokyo\"> Arthelokyo</a> · Todos los derechos reservados.\n"
+""

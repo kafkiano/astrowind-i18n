@@ -1,5 +1,6 @@
-import type { GetLocaleOptions } from 'astro:i18n';
+// import type { GetLocaleOptions } from 'astro:i18n';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { LOCALES } from '../utils/locales';
 
 /**
  * Get the language from a URL object.
@@ -12,7 +13,7 @@ export function getLangFromUrl(url: URL): string {
   }
   // For client-side or fallback, parse pathname
   const segments = url.pathname.split('/').filter(Boolean);
-  const locales = ['en', 'es']; // Should match astro.config.ts
+  const locales = LOCALES; // Should match astro.config.ts
   if (segments.length > 0 && locales.includes(segments[0])) {
     return segments[0];
   }
