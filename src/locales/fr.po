@@ -100,7 +100,7 @@ msgstr "Basculer entre le mode Sombre et Clair"
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/saas.astro
 msgid "Contact us"
-msgstr ""
+msgstr "Contactez-nous"
 
 #: src/components/widgets/Announcement.astro
 msgid "NEW"
@@ -136,11 +136,11 @@ msgstr "À propos de nous"
 
 #: src/pages/[locale]/about.astro
 msgid "Caos Image"
-msgstr ""
+msgstr "Image Caos"
 
 #: src/pages/[locale]/about.astro
 msgid "Elevate your online presence with our <0/> <1>Beautiful Website Templates</1>"
-msgstr ""
+msgstr "Améliorez votre présence en ligne avec nos <0/> <1>magnifiques modèles de site web</1>"
 
 #: src/pages/[locale]/about.astro
 msgid ""
@@ -148,70 +148,73 @@ msgid ""
 "quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
 "Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
 msgstr ""
+"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
+"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
+"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
 
 #: src/pages/[locale]/about.astro
 msgid "Statistics about us"
-msgstr ""
+msgstr "Statistiques sur nous"
 
 #: src/pages/[locale]/about.astro
 msgid "Offices"
-msgstr ""
+msgstr "Bureaux"
 
 #: src/pages/[locale]/about.astro
 msgid "Employees"
-msgstr ""
+msgstr "Employés"
 
 #: src/pages/[locale]/about.astro
 msgid "Templates"
-msgstr ""
+msgstr "Modèles"
 
 #: src/pages/[locale]/about.astro
 msgid "Awards"
-msgstr ""
+msgstr "Récompenses"
 
 #: src/pages/[locale]/about.astro
 msgid "Our templates"
-msgstr ""
+msgstr "Nos modèles"
 
 #: src/pages/[locale]/about.astro
 msgid "Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-msgstr ""
+msgstr "Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Educational"
-msgstr ""
+msgstr "Éducatif"
 
 #: src/pages/[locale]/about.astro
 msgid "Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla."
-msgstr ""
+msgstr "Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Interior Design"
-msgstr ""
+msgstr "Design d'intérieur"
 
 #: src/pages/[locale]/about.astro
 msgid "Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla."
-msgstr ""
+msgstr "Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Photography"
-msgstr ""
+msgstr "Photographie"
 
 #: src/pages/[locale]/about.astro
 msgid "Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum."
-msgstr ""
+msgstr "Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "E-commerce"
-msgstr ""
+msgstr "Commerce électronique"
 
 #: src/pages/[locale]/about.astro
 msgid "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
-msgstr ""
+msgstr "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 
 #: src/navigation.ts
 #: src/navigation.ts
@@ -223,43 +226,43 @@ msgstr "Blog"
 
 #: src/pages/[locale]/about.astro
 msgid "Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero."
-msgstr ""
+msgstr "Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Business"
-msgstr ""
+msgstr "Affaires"
 
 #: src/pages/[locale]/about.astro
 msgid "Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna."
-msgstr ""
+msgstr "Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Branding"
-msgstr ""
+msgstr "Image de marque"
 
 #: src/pages/[locale]/about.astro
 msgid "Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus."
-msgstr ""
+msgstr "Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Medical"
-msgstr ""
+msgstr "Médical"
 
 #: src/pages/[locale]/about.astro
 msgid "Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst."
-msgstr ""
+msgstr "Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/services.astro
 msgid "Fashion Design"
-msgstr ""
+msgstr "Design de mode"
 
 #: src/pages/[locale]/about.astro
 msgid "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus."
-msgstr ""
+msgstr "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/mobile-app.astro
@@ -271,114 +274,114 @@ msgstr "Image colorée"
 
 #: src/pages/[locale]/about.astro
 msgid "Our values"
-msgstr ""
+msgstr "Nos valeurs"
 
 #: src/pages/[locale]/about.astro
 msgid "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-msgstr ""
+msgstr "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
 
 #: src/pages/[locale]/about.astro
 msgid "Customer-centric approach"
-msgstr ""
+msgstr "Approche axée sur le client"
 
 #: src/pages/[locale]/about.astro
 msgid "Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum."
-msgstr ""
+msgstr "Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum."
 
 #: src/pages/[locale]/about.astro
 msgid "Constant Improvement"
-msgstr ""
+msgstr "Amélioration constante"
 
 #: src/pages/[locale]/about.astro
 msgid "Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo."
-msgstr ""
+msgstr "Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo."
 
 #: src/pages/[locale]/about.astro
 msgid "Ethical Practices"
-msgstr ""
+msgstr "Pratiques éthiques"
 
 #: src/pages/[locale]/about.astro
 msgid "Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-msgstr ""
+msgstr "Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
 
 #: src/pages/[locale]/about.astro
 msgid "Achievements"
-msgstr ""
+msgstr "Réalisations"
 
 #: src/pages/[locale]/about.astro
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-msgstr ""
+msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
 
 #: src/pages/[locale]/about.astro
 msgid "See more"
-msgstr ""
+msgstr "Voir plus"
 
 #: src/pages/[locale]/about.astro
 msgid "Global reach"
-msgstr ""
+msgstr "Portée mondiale"
 
 #: src/pages/[locale]/about.astro
 msgid "Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi."
-msgstr ""
+msgstr "Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi."
 
 #: src/pages/[locale]/about.astro
 msgid "Positive customer feedback and reviews"
-msgstr ""
+msgstr "Commentaires et avis positifs des clients"
 
 #: src/pages/[locale]/about.astro
 msgid "Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum."
-msgstr ""
+msgstr "Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum."
 
 #: src/pages/[locale]/about.astro
 msgid "Awards and recognition as industry experts"
-msgstr ""
+msgstr "Prix et reconnaissance en tant qu'experts de l'industrie"
 
 #: src/pages/[locale]/about.astro
 msgid "Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae."
-msgstr ""
+msgstr "Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae."
 
 #: src/pages/[locale]/about.astro
 msgid "Our locations"
-msgstr ""
+msgstr "Nos emplacements"
 
 #: src/pages/[locale]/about.astro
 msgid "Find us"
-msgstr ""
+msgstr "Trouvez-nous"
 
 #: src/pages/[locale]/about.astro
 msgid "Spain"
-msgstr ""
+msgstr "Espagne"
 
 #: src/pages/[locale]/about.astro
 msgid "Australia"
-msgstr ""
+msgstr "Australie"
 
 #: src/pages/[locale]/about.astro
 msgid "Brazil"
-msgstr ""
+msgstr "Brésil"
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Technical Support"
-msgstr ""
+msgstr "Support technique"
 
 #: src/pages/[locale]/about.astro
 msgid "Chat with us"
-msgstr ""
+msgstr "Discutez avec nous"
 
 #: src/pages/[locale]/about.astro
 msgid "Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi."
-msgstr ""
+msgstr "Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi."
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Call us"
-msgstr ""
+msgstr "Appelez-nous"
 
 #: src/pages/[locale]/about.astro
 msgid "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
-msgstr ""
+msgstr "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 
 #: src/navigation.ts
 #: src/pages/[locale]/contact.astro
@@ -389,74 +392,74 @@ msgstr "Contact"
 
 #: src/pages/[locale]/contact.astro
 msgid "Let's Connect!"
-msgstr ""
+msgstr "Connectons-nous !"
 
 #: src/pages/[locale]/contact.astro
 msgid "Drop us a message today!"
-msgstr ""
+msgstr "Envoyez-nous un message dès aujourd'hui !"
 
 #: src/pages/[locale]/contact.astro
 msgid "For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-msgstr ""
+msgstr "Pour des réponses plus rapides, explorez notre section FAQ. Vous y trouverez peut-être la solution que vous cherchez ! Sinon, notre équipe de support est ravie de vous aider."
 
 #: src/pages/[locale]/contact.astro
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: src/pages/[locale]/contact.astro
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 #: src/pages/[locale]/contact.astro
 msgid "By submitting this contact form, you acknowledge and agree to the collection of your personal information."
-msgstr ""
+msgstr "En soumettant ce formulaire de contact, vous reconnaissez et acceptez la collecte de vos informations personnelles."
 
 #: src/pages/[locale]/contact.astro
 msgid "Our support team typically responds within 24 business hours."
-msgstr ""
+msgstr "Notre équipe de support répond généralement dans les 24 heures ouvrables."
 
 #: src/pages/[locale]/contact.astro
 msgid "We are here to help!"
-msgstr ""
+msgstr "Nous sommes là pour vous aider !"
 
 #: src/pages/[locale]/contact.astro
 msgid "General support"
-msgstr ""
+msgstr "Support général"
 
 #: src/pages/[locale]/contact.astro
 msgid "Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality."
-msgstr ""
+msgstr "Discutez avec nous pour des questions liées à la gestion de compte, la navigation sur le site web, les problèmes de paiement, l'accès aux modèles achetés ou des questions générales sur la fonctionnalité du site web."
 
 #: src/pages/[locale]/contact.astro
 msgid "Contact sales"
-msgstr ""
+msgstr "Contactez les ventes"
 
 #: src/pages/[locale]/contact.astro
 msgid "Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc."
-msgstr ""
+msgstr "Discutez avec nous pour des questions sur les achats, les options de personnalisation, les licences pour usage commercial, les demandes concernant un modèle spécifique, etc."
 
 #: src/pages/[locale]/contact.astro
 msgid "Technical support"
-msgstr ""
+msgstr "Support technique"
 
 #: src/pages/[locale]/contact.astro
 msgid "Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates."
-msgstr ""
+msgstr "Discutez avec nous en cas de problèmes tels que l'installation de modèles, des difficultés d'édition, des problèmes de compatibilité avec des logiciels ou des erreurs de téléchargement, ou d'autres défis techniques liés à l'utilisation des modèles."
 
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #: src/pages/[locale]/contact.astro
 msgid "Location"
-msgstr ""
+msgstr "Localisation"
 
 #: src/pages/[locale]/index.astro
 msgid "AstroWind — Free template for creating websites with Astro + Tailwind CSS"
@@ -914,238 +917,238 @@ msgstr ""
 
 #: src/pages/[locale]/pricing.astro
 msgid "Stellar Pricing for Every Journey"
-msgstr ""
+msgstr "Tarification stellaire pour chaque voyage"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Choose the perfect plan that aligns with your cosmic goals."
-msgstr ""
+msgstr "Choisissez le plan parfait qui correspond à vos objectifs cosmiques."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Our prices"
-msgstr ""
+msgstr "Nos prix"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Only pay for what you need"
-msgstr ""
+msgstr "Ne payez que ce dont vous avez besoin"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Optimal choice for personal use"
-msgstr ""
+msgstr "Choix optimal pour un usage personnel"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Etiam in libero, et volutpat"
-msgstr ""
+msgstr "Etiam in libero, et volutpat"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Aenean ac nunc dolor tristique"
-msgstr ""
+msgstr "Aenean ac nunc dolor tristique"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Cras scelerisque accumsan lib"
-msgstr ""
+msgstr "Cras scelerisque accumsan lib"
 
 #: src/pages/[locale]/pricing.astro
 msgid "In hac habitasse"
-msgstr ""
+msgstr "In hac habitasse"
 
 #: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Get started"
-msgstr ""
+msgstr "Commencer"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Optimal choice for small teams"
-msgstr ""
+msgstr "Choix optimal pour les petites équipes"
 
 #: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Per Month"
-msgstr ""
+msgstr "Par mois"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Proin vel laoreet"
-msgstr ""
+msgstr "Proin vel laoreet"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Ut efficitur habitasse egestas"
-msgstr ""
+msgstr "Ut efficitur habitasse egestas"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Volutpat hac curabitur"
-msgstr ""
+msgstr "Volutpat hac curabitur"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Pellentesque blandit ut nibh"
-msgstr ""
+msgstr "Pellentesque blandit ut nibh"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Donec fringilla sem"
-msgstr ""
+msgstr "Donec fringilla sem"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Optimal choice for companies"
-msgstr ""
+msgstr "Choix optimal pour les entreprises"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Curabitur suscipit risus"
-msgstr ""
+msgstr "Curabitur suscipit risus"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Aliquam habitasse malesuada"
-msgstr ""
+msgstr "Aliquam habitasse malesuada"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Suspendisse sit amet blandit"
-msgstr ""
+msgstr "Suspendisse sit amet blandit"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Suspendisse auctor blandit dui"
-msgstr ""
+msgstr "Suspendisse auctor blandit dui"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Price-related features"
-msgstr ""
+msgstr "Fonctionnalités liées aux prix"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Discover the advantages of choosing our plans"
-msgstr ""
+msgstr "Découvrez les avantages de choisir nos plans"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Tiered Pricing Plans"
-msgstr ""
+msgstr "Plans tarifaires échelonnés"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Choose from a range of pricing plans designed to accommodate different budgets and requirements."
-msgstr ""
+msgstr "Choisissez parmi une gamme de plans tarifaires conçus pour s'adapter à différents budgets et exigences."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Transparent Pricing"
-msgstr ""
+msgstr "Tarification transparente"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges."
-msgstr ""
+msgstr "Détails de prix clairement affichés pour chaque plan, sans coûts cachés ni frais inattendus."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Secure Payment Methods"
-msgstr ""
+msgstr "Méthodes de paiement sécurisées"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Secure payment gateways to protect your financial information during transactions."
-msgstr ""
+msgstr "Des passerelles de paiement sécurisées pour protéger vos informations financières lors des transactions."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Instant Access"
-msgstr ""
+msgstr "Accès instantané"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Immediate access to your chosen plan's features and templates upon subscription."
-msgstr ""
+msgstr "Accès immédiat aux fonctionnalités et modèles de votre plan choisi dès l'abonnement."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Upgrade Value"
-msgstr ""
+msgstr "Valeur de la mise à niveau"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience."
-msgstr ""
+msgstr "Passez à des plans de niveau supérieur pour débloquer plus de fonctionnalités et d'avantages pour une expérience améliorée."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Questions answered via live chat, email or phone, every calendar day."
-msgstr ""
+msgstr "Questions répondues par chat en direct, e-mail ou téléphone, chaque jour calendaire."
 
 #: src/pages/[locale]/pricing.astro
 msgid "A guided journey from plans to creativity"
-msgstr ""
+msgstr "Un voyage guidé des plans à la créativité"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Explore plans"
-msgstr ""
+msgstr "Explorer les plans"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Select a plan"
-msgstr ""
+msgstr "Sélectionner un plan"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Sign Up / Log In"
-msgstr ""
+msgstr "S'inscrire / Se connecter"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Review order"
-msgstr ""
+msgstr "Vérifier la commande"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Enter payment details"
-msgstr ""
+msgstr "Saisir les détails de paiement"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Confirmation"
-msgstr ""
+msgstr "Confirmation"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Download and start using the template(s)"
-msgstr ""
+msgstr "Téléchargez et commencez à utiliser le(s) modèle(s)"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Pricing FAQs"
-msgstr ""
+msgstr "FAQ sur les prix"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
-msgstr ""
+msgstr "Choisir le bon plan est important, et nous sommes là pour répondre à vos questions. Si vous avez des questions sur nos options de tarification, vous êtes au bon endroit."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Do the plans come with customer support?"
-msgstr ""
+msgstr "Les plans incluent-ils un support client ?"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns."
-msgstr ""
+msgstr "Absolument, tous les plans incluent l'accès à notre support client dédié pour vous aider avec toutes vos questions ou préoccupations."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Is there a trial period for the different plans?"
-msgstr ""
+msgstr "Existe-t-il une période d'essai pour les différents plans ?"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates."
-msgstr ""
+msgstr "Malheureusement, nous n'offrons pas de périodes d'essai pour les plans. Cependant, vous pouvez consulter notre section de démonstration pour prévisualiser la qualité de nos modèles."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Can I switch between plans?"
-msgstr ""
+msgstr "Puis-je changer de plan ?"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements."
-msgstr ""
+msgstr "Certainement ! Vous pouvez facilement mettre à niveau ou rétrograder votre plan, à tout moment, pour trouver celui qui correspond le mieux à vos besoins évolutifs."
 
 #: src/pages/[locale]/pricing.astro
 msgid "What payment methods do you accept?"
-msgstr ""
+msgstr "Quels modes de paiement acceptez-vous ?"
 
 #: src/pages/[locale]/pricing.astro
 msgid "We accept major credit cards and online payment methods to ensure a convenient and secure transaction process."
-msgstr ""
+msgstr "Nous acceptons les principales cartes de crédit et les méthodes de paiement en ligne pour garantir un processus de transaction pratique et sécurisé."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Are there any hidden fees beyond the displayed cost?"
-msgstr ""
+msgstr "Y a-t-il des frais cachés au-delà du coût affiché ?"
 
 #: src/pages/[locale]/pricing.astro
 msgid "No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges."
-msgstr ""
+msgstr "Non, le coût de l'abonnement couvre toutes les fonctionnalités et les modèles répertoriés dans chaque plan. Il n'y a pas de frais cachés ou de frais supplémentaires."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Ready to boost your projects?"
-msgstr ""
+msgstr "Prêt à booster vos projets ?"
 
 #: src/pages/[locale]/pricing.astro
 msgid "Join our community of satisfied customers who have transformed their work with our templates."
-msgstr ""
+msgstr "Rejoignez notre communauté de clients satisfaits qui ont transformé leur travail avec nos modèles."
 
 #: src/pages/[locale]/pricing.astro
 msgid "Get started now"
-msgstr ""
+msgstr "Commencer maintenant"
 
 #: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
@@ -1156,205 +1159,205 @@ msgstr "Services"
 
 #: src/pages/[locale]/services.astro
 msgid "Elevate your projects with our stunning templates"
-msgstr ""
+msgstr "Élevez vos projets avec nos superbes modèles"
 
 #: src/pages/[locale]/services.astro
 msgid "Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-msgstr ""
+msgstr "Découvrez nos modèles méticuleusement conçus et adaptés à diverses industries et objectifs. Des présentations captivantes aux conceptions de sites Web fonctionnelles, nous offrons les outils dont vous avez besoin pour réussir."
 
 #: src/pages/[locale]/services.astro
 #: src/pages/[locale]/services.astro
 msgid "Start exploring"
-msgstr ""
+msgstr "Commencez à explorer"
 
 #: src/pages/[locale]/services.astro
 msgid "Explore our diverse templates"
-msgstr ""
+msgstr "Découvrez nos divers modèles"
 
 #: src/pages/[locale]/services.astro
 msgid "Discover our selection below to streamline and elevate your projects."
-msgstr ""
+msgstr "Découvrez notre sélection ci-dessous pour rationaliser et améliorer vos projets."
 
 #: src/pages/[locale]/services.astro
 msgid "By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces."
-msgstr ""
+msgstr "En harmonisant la conception pédagogique et l'attrait visuel, les modèles rationalisent la création de contenu pour divers matériaux, accélérant le développement et cultivant des espaces éducatifs engageants."
 
 #: src/pages/[locale]/services.astro
 msgid "Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision."
-msgstr ""
+msgstr "Créer des espaces fonctionnels et visuellement attrayants pour un usage résidentiel et commercial. Les modèles mettent l'accent sur la disposition, les couleurs et les aménagements de mobilier, offrant une boîte à outils polyvalente pour votre vision du design."
 
 #: src/pages/[locale]/services.astro
 msgid "Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts."
-msgstr ""
+msgstr "Nos modèles permettent aux photographes de raconter des histoires captivantes. En mettant l'accent sur la mise en page, les galeries et la typographie, ils s'adressent aussi bien aux professionnels qu'aux passionnés."
 
 #: src/pages/[locale]/services.astro
 msgid "Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps."
-msgstr ""
+msgstr "Développant des boutiques en ligne attrayantes, nos modèles e-commerce assurent une présence dynamique pour présenter efficacement les produits. Idéal pour les startups ou les refontes."
 
 #: src/pages/[locale]/services.astro
 msgid "With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs."
-msgstr ""
+msgstr "Avec une attention particulière à la typographie, ces modèles permettent une présentation efficace du contenu pour les rédacteurs à toutes les étapes, garantissant des blogs visuellement attrayants et conviviaux."
 
 #: src/pages/[locale]/services.astro
 msgid "Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence."
-msgstr ""
+msgstr "Offrant des options soignées pour une communication visuelle efficace, ces modèles renforcent les startups et les entreprises établies pour une présence de marque professionnelle."
 
 #: src/pages/[locale]/services.astro
 msgid "Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps."
-msgstr ""
+msgstr "Offrant des éléments pré-conçus pour une identité de marque cohérente, y compris des logos et du matériel marketing. Idéal pour les nouvelles entreprises ou les refontes."
 
 #: src/pages/[locale]/services.astro
 msgid "From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits."
-msgstr ""
+msgstr "Des présentations aux formulaires de patients, ces outils améliorent l'efficacité de la communication pour les professionnels de la santé. Idéal pour les cabinets médicaux et les activités de recherche."
 
 #: src/pages/[locale]/services.astro
 msgid "With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers."
-msgstr ""
+msgstr "Grâce à l'attention portée aux détails, à la personnalisation et au design contemporain, ils permettent aux designers de présenter leurs idées de manière cohérente. Idéal pour tous les niveaux de designers."
 
 #: src/pages/[locale]/services.astro
 msgid "High-Quality Designs"
-msgstr ""
+msgstr "Designs de haute qualité"
 
 #: src/pages/[locale]/services.astro
 msgid "Our templates feature top-tier designs that ensure a professional and polished appearance for your projects."
-msgstr ""
+msgstr "Nos modèles présentent des designs de premier ordre qui garantissent une apparence professionnelle et soignée pour vos projets."
 
 #: src/pages/[locale]/services.astro
 msgid "Customization Tools"
-msgstr ""
+msgstr "Outils de personnalisation"
 
 #: src/pages/[locale]/services.astro
 msgid "Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content."
-msgstr ""
+msgstr "Adaptez chaque modèle à vos besoins uniques grâce à des outils de personnalisation conviviaux qui vous permettent de personnaliser les couleurs, les polices et le contenu."
 
 #: src/pages/[locale]/services.astro
 msgid "Pre-Designed Elements"
-msgstr ""
+msgstr "Éléments pré-conçus"
 
 #: src/pages/[locale]/services.astro
 msgid "Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations."
-msgstr ""
+msgstr "Gagnez du temps et des efforts grâce à nos éléments prêts à l'emploi, y compris les graphiques, les icônes et les mises en page qui améliorent l'attrait visuel de vos créations."
 
 #: src/pages/[locale]/services.astro
 msgid "Preview and Mockup Views"
-msgstr ""
+msgstr "Vues de prévisualisation et de maquette"
 
 #: src/pages/[locale]/services.astro
 msgid "Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations."
-msgstr ""
+msgstr "Visualisez le résultat final avant d'apporter des modifications à l'aide de nos vues de prévisualisation et de maquette, en vous assurant que vos projets répondent à vos attentes."
 
 #: src/pages/[locale]/services.astro
 msgid "Features Image"
-msgstr ""
+msgstr "Image des fonctionnalités"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
 msgid "Main Features"
-msgstr ""
+msgstr "Caractéristiques principales"
 
 #: src/pages/[locale]/services.astro
 msgid "Time Savings"
-msgstr ""
+msgstr "Gain de temps"
 
 #: src/pages/[locale]/services.astro
 msgid "Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks."
-msgstr ""
+msgstr "Rationalisez votre flux de travail, vous permettant de créer des matériaux époustouflants efficacement et d'allouer plus de temps à vos tâches principales."
 
 #: src/pages/[locale]/services.astro
 msgid "Professional Appearance"
-msgstr ""
+msgstr "Apparence professionnelle"
 
 #: src/pages/[locale]/services.astro
 msgid "Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience."
-msgstr ""
+msgstr "Élevez vos projets avec l'aspect soigné et sophistiqué que nos modèles offrent, laissant une impression durable sur votre public."
 
 #: src/pages/[locale]/services.astro
 msgid "Cost-Efficiency"
-msgstr ""
+msgstr "Rentabilité"
 
 #: src/pages/[locale]/services.astro
 msgid "Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost."
-msgstr ""
+msgstr "Bénéficiez de réductions de coûts en évitant le besoin de travaux de conception personnalisés, car nos modèles offrent des designs de qualité professionnelle à une fraction du coût."
 
 #: src/pages/[locale]/services.astro
 msgid "Instant Download"
-msgstr ""
+msgstr "Téléchargement instantané"
 
 #: src/pages/[locale]/services.astro
 msgid "Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay."
-msgstr ""
+msgstr "Bénéficiez d'un accès immédiat à vos modèles choisis dès l'achat, vous permettant de commencer à travailler sur vos projets sans délai."
 
 #: src/pages/[locale]/services.astro
 msgid "Benefits Image"
-msgstr ""
+msgstr "Image des avantages"
 
 #: src/pages/[locale]/services.astro
 msgid "Benefits"
-msgstr ""
+msgstr "Avantages"
 
 #: src/pages/[locale]/services.astro
 msgid "Words from real customers"
-msgstr ""
+msgstr "Mots de vrais clients"
 
 #: src/pages/[locale]/services.astro
 msgid "The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients."
-msgstr ""
+msgstr "Les designs sont non seulement visuellement attrayants mais aussi très professionnels. Les modèles m'ont fait gagner un temps considérable tout en m'aidant à faire une impression durable sur mes clients."
 
 #: src/pages/[locale]/services.astro
 msgid "Emily Kennedy"
-msgstr ""
+msgstr "Emily Kennedy"
 
 #: src/pages/[locale]/services.astro
 msgid "Front-end developer"
-msgstr ""
+msgstr "Développeur front-end"
 
 #: src/pages/[locale]/services.astro
 msgid "Emily Kennedy Image"
-msgstr ""
+msgstr "Image d'Emily Kennedy"
 
 #: src/pages/[locale]/services.astro
 msgid "It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments."
-msgstr ""
+msgstr "Il met magnifiquement en valeur mon travail, avec son design épuré et élégant qui fait briller mes photographies. La personnalisation a été un jeu d'enfant, même pour une personne non-technique comme moi. Le résultat est un portfolio professionnel et immersif qui a récolté de nombreux compliments."
 
 #: src/pages/[locale]/services.astro
 msgid "Sarah Hansen"
-msgstr ""
+msgstr "Sarah Hansen"
 
 #: src/pages/[locale]/services.astro
 msgid "Photographer"
-msgstr ""
+msgstr "Photographe"
 
 #: src/pages/[locale]/services.astro
 msgid "Sarah Hansen Image"
-msgstr ""
+msgstr "Image de Sarah Hansen"
 
 #: src/pages/[locale]/services.astro
 msgid "I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance."
-msgstr ""
+msgstr "J'ai découvert ces modèles et je suis impressionné par leur variété et leur qualité. Ils m'ont aidé à établir une image de marque cohérente sur mes plateformes marketing et sociales, améliorant l'apparence générale de mon entreprise."
 
 #: src/pages/[locale]/services.astro
 msgid "Mark Wilkinson"
-msgstr ""
+msgstr "Mark Wilkinson"
 
 #: src/pages/[locale]/services.astro
 msgid "Small business owner"
-msgstr ""
+msgstr "Propriétaire de petite entreprise"
 
 #: src/pages/[locale]/services.astro
 msgid "Mark Wilkinson Image"
-msgstr ""
+msgstr "Image de Mark Wilkinson"
 
 #: src/pages/[locale]/services.astro
 msgid "More testimonials..."
-msgstr ""
+msgstr "Plus de témoignages..."
 
 #: src/pages/[locale]/services.astro
 msgid "Dive into our template collection"
-msgstr ""
+msgstr "Plongez dans notre collection de modèles"
 
 #: src/pages/[locale]/services.astro
 msgid "Whether you're in business, design, or education, our templates are here to elevate your projects."
-msgstr ""
+msgstr "Que vous soyez dans les affaires, le design ou l'éducation, nos modèles sont là pour élever vos projets."
 
 #. placeholder {0}: g${currentPage > 1 ? ` — Page ${currentPage}` :
 #: src/pages/[locale]/[...blog]/[...page].astro
@@ -1371,7 +1374,7 @@ msgstr "Le Blog"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Mobile App Homepage"
-msgstr ""
+msgstr "Page d'accueil de l'application mobile"
 
 #: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
@@ -1381,270 +1384,270 @@ msgstr "À propos"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Mobile App Web Demo"
-msgstr ""
+msgstr "Démo Web de l'application mobile"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "<0>AstroWind App</0>: <1/> professional websites <2>made easy</2>"
-msgstr ""
+msgstr "<0>AstroWind App</0> : <1/> des sites web professionnels <2>simplifiés</2>"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "<0>Unlock boundless creativity at your fingertips: your gateway to innovative design.</0> Download now and embark on a journey to elevate your projects like never before."
-msgstr ""
+msgstr "<0>Libérez une créativité illimitée à portée de main : votre passerelle vers un design innovant.</0> Téléchargez maintenant et embarquez pour un voyage afin d'élever vos projets comme jamais auparavant."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "App Store Image"
-msgstr ""
+msgstr "Image de l'App Store"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Google Play Image"
-msgstr ""
+msgstr "Image de Google Play"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "How to use our app?"
-msgstr ""
+msgstr "Comment utiliser notre application ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Tired of spending hours crafting documents from scratch? Our app offers an innovative solution. With a wide array of professionally designed templates, you can now create stunning documents in minutes. Explore our templates now and experience the difference."
-msgstr ""
+msgstr "Fatigué de passer des heures à créer des documents à partir de zéro ? Notre application offre une solution innovante. Avec un large éventail de modèles conçus par des professionnels, vous pouvez maintenant créer des documents époustouflants en quelques minutes. Explorez nos modèles maintenant et découvrez la différence."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Step-by-step guide"
-msgstr ""
+msgstr "Guide étape par étape"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Download and install the app"
-msgstr ""
+msgstr "Téléchargez et installez l'application"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Begin your journey by downloading our user-friendly app from your device's app store or our official website."
-msgstr ""
+msgstr "Commencez votre parcours en téléchargeant notre application conviviale depuis la boutique d'applications de votre appareil ou notre site Web officiel."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Sign up"
-msgstr ""
+msgstr "S'inscrire"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Create your account by providing the necessary information, enabling you to access our full range of features."
-msgstr ""
+msgstr "Créez votre compte en fournissant les informations nécessaires, vous permettant d'accéder à toutes nos fonctionnalités."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Browse templates"
-msgstr ""
+msgstr "Parcourir les modèles"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Explore our diverse collection of website templates, categorized for easy navigation."
-msgstr ""
+msgstr "Explorez notre collection variée de modèles de sites web, classés pour une navigation facile."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Preview and select a template"
-msgstr ""
+msgstr "Prévisualiser et sélectionner un modèle"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Visualize the potential of each template through previews, then choose the one that aligns best with your project's needs."
-msgstr ""
+msgstr "Visualisez le potentiel de chaque modèle grâce aux aperçus, puis choisissez celui qui correspond le mieux aux besoins de votre projet."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "User-friendly interface"
-msgstr ""
+msgstr "Interface conviviale"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "An intuitive and easy-to-navigate interface that allows users to quickly browse and find the templates they need."
-msgstr ""
+msgstr "Une interface intuitive et facile à naviguer qui permet aux utilisateurs de parcourir et de trouver rapidement les modèles dont ils ont besoin."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Personalization options"
-msgstr ""
+msgstr "Options de personnalisation"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Include basic customization tools that let users modify text, colors, images, and other elements within the templates."
-msgstr ""
+msgstr "Incluez des outils de personnalisation de base qui permettent aux utilisateurs de modifier le texte, les couleurs, les images et d'autres éléments au sein des modèles."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Ready-to-use components"
-msgstr ""
+msgstr "Composants prêts à l'emploi"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Enhance your designs with ready-to-use elements like graphics, icons, and layouts, saving you time and boosting visual appeal."
-msgstr ""
+msgstr "Améliorez vos conceptions avec des éléments prêts à l'emploi comme des graphiques, des icônes et des mises en page, vous faisant gagner du temps et améliorant l'attrait visuel."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Preview Mode"
-msgstr ""
+msgstr "Mode Aperçu"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Provide a preview of each template, allowing users to see how it looks before making a purchase."
-msgstr ""
+msgstr "Fournissez un aperçu de chaque modèle, permettant aux utilisateurs de voir son apparence avant de faire un achat."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Offline Access"
-msgstr ""
+msgstr "Accès hors ligne"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Offer the option for users to download purchased templates for offline use."
-msgstr ""
+msgstr "Offrez la possibilité aux utilisateurs de télécharger les modèles achetés pour une utilisation hors ligne."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Secure Cloud Storage"
-msgstr ""
+msgstr "Stockage Cloud Sécurisé"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Provide cloud storage for purchased templates, ensuring users can access and back up their templates from anywhere securely."
-msgstr ""
+msgstr "Offrez un stockage cloud pour les modèles achetés, garantissant que les utilisateurs peuvent accéder et sauvegarder leurs modèles en toute sécurité, de n'importe où."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Regular Updates"
-msgstr ""
+msgstr "Mises à jour régulières"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Continuously add new templates and features to keep the app fresh and engaging for users."
-msgstr ""
+msgstr "Ajoutez continuellement de nouveaux modèles et fonctionnalités pour maintenir l'application à jour et attrayante pour les utilisateurs."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Wishlist"
-msgstr ""
+msgstr "Liste de souhaits"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Allow users to create a wishlist of templates they're interested in, making it easier for them to revisit and potentially purchase later."
-msgstr ""
+msgstr "Permettez aux utilisateurs de créer une liste de souhaits des modèles qui les intéressent, ce qui leur permet de les revoir et éventuellement de les acheter plus tard."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Vintage Image"
-msgstr ""
+msgstr "Image Vintage"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Other features"
-msgstr ""
+msgstr "Autres fonctionnalités"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Statistics of our app"
-msgstr ""
+msgstr "Statistiques de notre application"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "What our users say?"
-msgstr ""
+msgstr "Que disent nos utilisateurs ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "It's made exploring and downloading website templates a breeze. The interface is intuitive, and I had no trouble finding the perfect template for my project. It's an app that truly empowers users."
-msgstr ""
+msgstr "Cela a rendu l'exploration et le téléchargement de modèles de sites web un jeu d'enfant. L'interface est intuitive, et je n'ai eu aucune difficulté à trouver le modèle parfait pour mon projet. C'est une application qui donne vraiment du pouvoir aux utilisateurs."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Cary Kennedy"
-msgstr ""
+msgstr "Cary Kennedy"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Film director"
-msgstr ""
+msgstr "Réalisateur de film"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Cary Kennedy Image"
-msgstr ""
+msgstr "Image de Cary Kennedy"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "The app's seamless download process and intuitive layout have made selecting templates an enjoyable experience. Being able to preview and experiment with different designs before committing has saved me time and ensured I get the perfect look for my website."
-msgstr ""
+msgstr "Le processus de téléchargement fluide et la mise en page intuitive de l'application ont rendu la sélection de modèles une expérience agréable. Pouvoir prévisualiser et expérimenter différentes conceptions avant de s'engager m'a fait gagner du temps et m'a assuré d'obtenir l'apparence parfaite pour mon site web."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Josh Wilkinson"
-msgstr ""
+msgstr "Josh Wilkinson"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Product Manager"
-msgstr ""
+msgstr "Chef de produit"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Josh Wilkinson Image"
-msgstr ""
+msgstr "Image de Josh Wilkinson"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "I was able to download and use a professional website template within minutes. The step-by-step process and user-friendly interface made it easy for me to create a website that looks as if it was designed by a pro."
-msgstr ""
+msgstr "J'ai pu télécharger et utiliser un modèle de site web professionnel en quelques minutes. Le processus étape par étape et l'interface conviviale m'ont permis de créer facilement un site web qui semble avoir été conçu par un professionnel."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Sidney Hansen"
-msgstr ""
+msgstr "Sidney Hansen"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Decorator"
-msgstr ""
+msgstr "Décorateur"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Sidney Hansen Image"
-msgstr ""
+msgstr "Image de Sidney Hansen"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Read more testimonials"
-msgstr ""
+msgstr "Lire plus de témoignages"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Still have some doubts?"
-msgstr ""
+msgstr "Vous avez encore des doutes ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "What does this app do?"
-msgstr ""
+msgstr "Que fait cette application ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "This app provides a platform for you to easily browse, purchase, download, and use a wide range of website templates for your projects."
-msgstr ""
+msgstr "Cette application vous offre une plateforme pour parcourir, acheter, télécharger et utiliser facilement une large gamme de modèles de sites web pour vos projets."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "How can this app solve my problem?"
-msgstr ""
+msgstr "Comment cette application peut-elle résoudre mon problème ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "This app streamlines the process of finding and implementing professional website designs, saving you time and effort in creating visually appealing and functional websites."
-msgstr ""
+msgstr "Cette application simplifie le processus de recherche et de mise en œuvre de conceptions de sites web professionnels, vous faisant gagner du temps et des efforts dans la création de sites web visuellement attrayants et fonctionnels."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Is it available for my device?"
-msgstr ""
+msgstr "Est-elle disponible pour mon appareil ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Our app is designed for compatibility across various devices and platforms, ensuring accessibility whether you're using a smartphone, tablet, or computer."
-msgstr ""
+msgstr "Notre application est conçue pour être compatible avec divers appareils et plateformes, garantissant l'accessibilité que vous utilisiez un smartphone, une tablette ou un ordinateur."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "What makes this app different from others?"
-msgstr ""
+msgstr "Qu'est-ce qui différencie cette application des autres ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Our app stands out for its user-friendly interface, extensive template collection, and seamless integration of the purchasing and downloading process, making it highly efficient."
-msgstr ""
+msgstr "Notre application se distingue par son interface conviviale, sa vaste collection de modèles et son intégration transparente du processus d'achat et de téléchargement, ce qui la rend très efficace."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Are there any costs involved?"
-msgstr ""
+msgstr "Y a-t-il des coûts impliqués ?"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "While the app itself may be free to download, there may be costs associated with purchasing specific templates based on your preferences and project requirements."
-msgstr ""
+msgstr "Bien que l'application elle-même puisse être téléchargée gratuitement, des coûts peuvent être associés à l'achat de modèles spécifiques en fonction de vos préférences et des exigences de votre projet."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Download our app now!"
-msgstr ""
+msgstr "Téléchargez notre application maintenant !"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Access a variety of stunning templates, simplify your creative process, and elevate your online presence."
-msgstr ""
+msgstr "Accédez à une variété de modèles époustouflants, simplifiez votre processus créatif et améliorez votre présence en ligne."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Personal Homepage Demo"
-msgstr ""
+msgstr "Démo de page d'accueil personnelle"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Resume"
-msgstr ""
+msgstr "CV"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Porfolio"
-msgstr ""
+msgstr "Portfolio"
 
 #: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
@@ -1655,15 +1658,15 @@ msgstr "Github"
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Hire me"
-msgstr ""
+msgstr "M'engager"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Sarah Johnson"
-msgstr ""
+msgstr "Sarah Johnson"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Personal Web Demo"
-msgstr ""
+msgstr "Démo Web personnelle"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid ""
@@ -1671,70 +1674,76 @@ msgid ""
 "New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating\n"
 "realities."
 msgstr ""
+"Je suis une graphiste passionnée par la création d'histoires visuelles. <0/> Avec 5 ans d'expérience et un diplôme de\n"
+"la School of Design de l'Université de New York. J'insuffle de la vitalité aux marques et aux designs, transformant les concepts en réalités captivantes."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Dribbble"
-msgstr ""
+msgstr "Dribbble"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Behance"
-msgstr ""
+msgstr "Behance"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "About me"
-msgstr ""
+msgstr "À propos de moi"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid ""
 "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each\n"
 "pixel becomes a brushstroke in the canvas of imagination."
 msgstr ""
+"Bienvenue dans mon parcours créatif. Mon travail témoigne de mon engagement à donner vie aux idées, où chaque\n"
+"pixel devient un coup de pinceau sur la toile de l'imagination."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid ""
 "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate\n"
 "details of typography, or the vibrant hues of nature during my outdoor escapades."
 msgstr ""
+"Je trouve l'inspiration dans le monde qui m'entoure, que ce soit à travers les pages d'un roman captivant, les détails complexes\n"
+"de la typographie, ou les teintes vibrantes de la nature lors de mes escapades en plein air."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "If you're curious to dive deeper into my work, you can follow me:"
-msgstr ""
+msgstr "Si vous êtes curieux de plonger plus profondément dans mon travail, vous pouvez me suivre :"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Work experience"
-msgstr ""
+msgstr "Expérience professionnelle"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Graphic Designer <br /> <span class=\"font-normal\">ABC Design Studio, New York, NY</span> <br /> <span class=\"text-sm font-normal\">2021 - Present</span>"
-msgstr ""
+msgstr "Graphiste <br /> <span class=\"font-normal\">ABC Design Studio, New York, NY</span> <br /> <span class=\"text-sm font-normal\">2021 - Présent</span>"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications."
-msgstr ""
+msgstr "Collaborer avec les clients pour comprendre les exigences et les objectifs de conception. <br /> Développer des solutions de marque, y compris des logos, des palettes de couleurs et des directives de marque. <br /> Concevoir des supports marketing tels que des brochures, des affiches et des actifs numériques. <br /> Créer des interfaces utilisateur visuellement attrayantes pour les sites web et les applications."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Junior Graphic Designer <br /> <span class=\"font-normal\">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class=\"text-sm font-normal\">2018 - 2021</span>"
-msgstr ""
+msgstr "Graphiste Junior <br /> <span class=\"font-normal\">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class=\"text-sm font-normal\">2018 - 2021</span>"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools."
-msgstr ""
+msgstr "A assisté les designers seniors dans la création de concepts de design et d'actifs visuels. <br /> A contribué au développement d'identités de marque et de supports marketing. <br /> A collaboré avec l'équipe marketing pour assurer une conception cohérente sur l'ensemble des campagnes. <br /> A acquis une expérience pratique avec divers logiciels et outils de conception."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Education"
-msgstr ""
+msgstr "Éducation"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Master of Fine Arts in Graphic Design <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2018 - 2020</span>"
-msgstr ""
+msgstr "Maîtrise en beaux-arts en design graphique <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2018 - 2020</span>"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Bachelor of Arts in Graphic Design <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2014 - 2018</span>"
-msgstr ""
+msgstr "Licence en design graphique <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2014 - 2018</span>"
 
 #: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
@@ -1743,87 +1752,87 @@ msgstr "Compétences"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Discover the proficiencies that allow me to bring imagination to life through design."
-msgstr ""
+msgstr "Découvrez les compétences qui me permettent de donner vie à l'imagination par le design."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Graphic design"
-msgstr ""
+msgstr "Design graphique"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Proficient in crafting visually appealing designs that convey messages effectively."
-msgstr ""
+msgstr "Maîtrise de la création de designs visuellement attrayants qui transmettent des messages efficacement."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Branding and identity"
-msgstr ""
+msgstr "Marque et identité"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Skilled at developing cohesive brand identities, including logos and brand guidelines."
-msgstr ""
+msgstr "Compétent dans le développement d'identités de marque cohérentes, y compris les logos et les directives de marque."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "User-centered design"
-msgstr ""
+msgstr "Conception centrée sur l'utilisateur"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Experienced in creating user-friendly interfaces and optimizing user experiences."
-msgstr ""
+msgstr "Expérimenté dans la création d'interfaces conviviales et l'optimisation des expériences utilisateur."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Adobe Creative Suite"
-msgstr ""
+msgstr "Suite Adobe Creative"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements."
-msgstr ""
+msgstr "Compétent dans l'utilisation de Photoshop, Illustrator et InDesign pour créer et éditer des éléments visuels."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Typography"
-msgstr ""
+msgstr "Typographie"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Adept in selecting and manipulating typefaces to enhance design aesthetics."
-msgstr ""
+msgstr "Adepte de la sélection et de la manipulation des polices de caractères pour améliorer l'esthétique du design."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Color theory"
-msgstr ""
+msgstr "Théorie des couleurs"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Proficient in using color to evoke emotions and enhance visual harmony."
-msgstr ""
+msgstr "Maîtrise de l'utilisation des couleurs pour évoquer des émotions et améliorer l'harmonie visuelle."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Print and digital design"
-msgstr ""
+msgstr "Conception imprimée et numérique"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Knowledgeable in designing for both print materials and digital platforms."
-msgstr ""
+msgstr "Connaissance de la conception pour les supports imprimés et les plateformes numériques."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Attention to detail"
-msgstr ""
+msgstr "Attention aux détails"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Diligent in maintaining precision and quality in all design work."
-msgstr ""
+msgstr "Diligence dans le maintien de la précision et de la qualité dans tous les travaux de conception."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Adaptability"
-msgstr ""
+msgstr "Adaptabilité"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Quick to adapt to new design trends, technologies, and client preferences."
-msgstr ""
+msgstr "Capacité rapide à s'adapter aux nouvelles tendances de design, technologies et préférences des clients."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Elevating visual narratives"
-msgstr ""
+msgstr "Élever les récits visuels"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
-msgstr ""
+msgstr "Embarquez pour un voyage de conception qui dépasse les pixels, entrant dans un royaume d'imagination. Explorez mon portfolio, où la passion et la créativité convergent pour façonner des récits visuels captivants."
 
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
@@ -1833,362 +1842,362 @@ msgstr ""
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 msgid "Description:"
-msgstr ""
+msgstr "Description :"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts."
-msgstr ""
+msgstr "J'ai développé une identité de marque complète pour une startup technologique, Tech Innovators, spécialisée dans les innovations disruptives. L'objectif était de transmettre une image moderne mais accessible qui résonne à la fois avec les clients professionnels et les passionnés de technologie."
 
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Role:"
-msgstr ""
+msgstr "Rôle :"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets."
-msgstr ""
+msgstr "J'ai dirigé l'ensemble du processus de branding, du concept à l'exécution. J'ai créé un logo dynamique qui symbolise l'innovation, j'ai sélectionné une palette de couleurs vibrantes, et j'ai conçu la papeterie d'entreprise, les graphiques de site web et les actifs pour les médias sociaux."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Tech Design Image"
-msgstr ""
+msgstr "Image de design technologique"
 
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Go to the project"
-msgstr ""
+msgstr "Accéder au projet"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Project 1: <0/><1>Brand identity for tech innovators</1>"
-msgstr ""
+msgstr "Projet 1 : <0/><1>Identité de marque pour les innovateurs technologiques</1>"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Designed a captivating event poster for an art and music festival, \"ArtWave Fusion,\" aiming to showcase the synergy between visual art and music genres."
-msgstr ""
+msgstr "J'ai conçu une affiche d'événement captivante pour un festival d'art et de musique, « ArtWave Fusion », visant à présenter la synergie entre l'art visuel et les genres musicaux."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere."
-msgstr ""
+msgstr "J'ai traduit le thème créatif du festival en une affiche visuellement frappante. J'ai utilisé une typographie audacieuse, des couleurs vibrantes et des éléments abstraits pour représenter la fusion de l'art et de la musique. J'ai veillé à ce que le design capture l'atmosphère vibrante du festival."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Art and Music Poster Image"
-msgstr ""
+msgstr "Image d'affiche d'art et de musique"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Project 2: <0/><1>Event poster for art & music festival</1>"
-msgstr ""
+msgstr "Projet 2 : <0/><1>Affiche d'événement pour festival d'art et de musique</1>"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience."
-msgstr ""
+msgstr "J'ai repensé le site web de commerce électronique pour une marque de mode éco-responsable, GreenVogue. L'objectif était d'aligner la présence en ligne de la marque avec son éthique durable et d'améliorer l'expérience utilisateur."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience."
-msgstr ""
+msgstr "J'ai effectué une analyse approfondie des valeurs de la marque et de la clientèle pour guider la direction du design. J'ai créé une interface visuellement attrayante avec une navigation intuitive, en mettant en avant les matériaux durables et en intégrant une expérience d'achat conviviale."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Fashion e-commerce Image"
-msgstr ""
+msgstr "Image de commerce électronique de mode"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Project 3: <0/><1>E-commerce website redesign for fashion brand</1>"
-msgstr ""
+msgstr "Projet 3 : <0/><1>Refonte de site web e-commerce pour marque de mode</1>"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Client testimonials"
-msgstr ""
+msgstr "Témoignages clients"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Discover what clients have to say about their experiences working with me."
-msgstr ""
+msgstr "Découvrez ce que les clients ont à dire sur leurs expériences de travail avec moi."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations."
-msgstr ""
+msgstr "Elle a pris notre concept vague et l'a transformé en un chef-d'œuvre visuel qui correspondait parfaitement à nos objectifs. Son attention aux détails et sa capacité à traduire les idées en visuels percutants ont dépassé nos attentes."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Mark Thompson"
-msgstr ""
+msgstr "Mark Thompson"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Creative director"
-msgstr ""
+msgstr "Directeur créatif"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Mark Thompson Image"
-msgstr ""
+msgstr "Image de Mark Thompson"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work."
-msgstr ""
+msgstr "Elle a transformé notre identité de marque avec sa finesse créative, capturant notre essence dans chaque élément. Son dévouement et son talent transparaissent véritablement dans son travail."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Emily Martinez"
-msgstr ""
+msgstr "Emily Martinez"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Emily Martinez Image"
-msgstr ""
+msgstr "Image d'Emily Martinez"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber."
-msgstr ""
+msgstr "Elle a une capacité étrange à communiquer des émotions et des histoires. Elle a créé un logo pour notre ONG qui non seulement représente notre cause, mais évoque également l'empathie. Son professionnalisme et son engagement en font une designer d'un calibre exceptionnel."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Laura Simmons"
-msgstr ""
+msgstr "Laura Simmons"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Founder of an NGO"
-msgstr ""
+msgstr "Fondatrice d'une ONG"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Laura Simmons Image"
-msgstr ""
+msgstr "Image de Laura Simmons"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality."
-msgstr ""
+msgstr "Nous avons confié à Sarah la refonte de l'interface utilisateur de notre site web, et les résultats ont été stupéfiants. Son sens intuitif du design a amélioré l'expérience utilisateur, entraînant une augmentation significative de l'engagement. C'est une designer qui comprend véritablement la synergie de l'esthétique et de la fonctionnalité."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Alex Foster"
-msgstr ""
+msgstr "Alex Foster"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Director of web services"
-msgstr ""
+msgstr "Directeur des services web"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Alex Foster Image"
-msgstr ""
+msgstr "Image d'Alex Foster"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey."
-msgstr ""
+msgstr "Elle a pris notre vision et l'a élevée au-delà de l'imagination. Sa capacité à saisir l'essence d'une marque et à la traduire en design est tout simplement remarquable. Travailler avec elle a été un voyage inspirant."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Jessica Collins"
-msgstr ""
+msgstr "Jessica Collins"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Jessica Collins Image"
-msgstr ""
+msgstr "Image de Jessica Collins"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project."
-msgstr ""
+msgstr "Sa capacité à transformer des concepts en visuels captivants est tout simplement extraordinaire. Elle a pris notre idée d'affiche d'événement et l'a transformée en un chef-d'œuvre visuel qui a parfaitement capturé l'essence de notre festival. Le dévouement, la créativité et la capacité de Sarah à dépasser les attentes en font un atout inestimable pour tout projet."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Michael Carter"
-msgstr ""
+msgstr "Michael Carter"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Event Coordinator"
-msgstr ""
+msgstr "Coordinateur d'événement"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Michael Carter Image"
-msgstr ""
+msgstr "Image de Michael Carter"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Let's create together"
-msgstr ""
+msgstr "Créons ensemble"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Ready to transform your vision into captivating designs?"
-msgstr ""
+msgstr "Prêt à transformer votre vision en designs captivants ?"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Explore my insightful articles on my blog"
-msgstr ""
+msgstr "Explorez mes articles perspicaces sur mon blog"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey."
-msgstr ""
+msgstr "Plongez dans un royaume de sagesse du design et d'inspiration créative, où vous trouverez des idées précieuses, des conseils pratiques et des récits captivants qui élèveront et enrichiront votre parcours créatif."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SaaS Landing Page"
-msgstr ""
+msgstr "Page d'accueil SaaS"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Login"
-msgstr ""
+msgstr "Connexion"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Sign Up"
-msgstr ""
+msgstr "S'inscrire"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SaaS Web Demo"
-msgstr ""
+msgstr "Démo Web SaaS"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Get Started"
-msgstr ""
+msgstr "Commencer"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Simplify web design with Astrowind: <0/> your ultimate <1>SaaS</1> companion<2/>"
-msgstr ""
+msgstr "Simplifiez la conception web avec Astrowind : <0/> votre compagnon <1>SaaS</1> ultime<2/>"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "<0>Elevate your website creation process with <0>AstroWind</0>'s SaaS solutions.</0> Seamlessly blend the power of Astro 5.0 and Tailwind CSS to craft websites that resonate with your brand and audience."
-msgstr ""
+msgstr "<0>Améliorez votre processus de création de site web avec les solutions SaaS d' <0>AstroWind</0>.</0> Mélangez harmonieusement la puissance d'Astro 5.0 et de Tailwind CSS pour créer des sites web qui résonnent avec votre marque et votre public."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Why choose AstroWind?"
-msgstr ""
+msgstr "Pourquoi choisir AstroWind ?"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Each of the following features enhances AstroWind's value proposition."
-msgstr ""
+msgstr "Chacune des fonctionnalités suivantes améliore la proposition de valeur d'AstroWind."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Integration of Astro 5.0 and Tailwind CSS"
-msgstr ""
+msgstr "Intégration d'Astro 5.0 et de Tailwind CSS"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Offers a powerful combination that enhances both the development process and the end-user experience. Also, allows to build dynamic and visually stunning websites with optimized performance."
-msgstr ""
+msgstr "Offre une combinaison puissante qui améliore à la fois le processus de développement et l'expérience utilisateur finale. Permet également de créer des sites web dynamiques et visuellement époustouflants avec des performances optimisées."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Versatile design for startups, small businesses, and more"
-msgstr ""
+msgstr "Design polyvalent pour les startups, les petites entreprises et plus encore"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Easily customize AstroWind to harmonize with the unique branding and identity of your venture. AstroWind's versatile design adapts to suit your needs."
-msgstr ""
+msgstr "Personnalisez facilement AstroWind pour l'harmoniser avec l'image de marque et l'identité uniques de votre entreprise. Le design polyvalent d'AstroWind s'adapte à vos besoins."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Effortless customization for portfolios and marketing sites"
-msgstr ""
+msgstr "Personnalisation facile pour les portfolios et les sites de marketing"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "With intuitive customization, easily showcase portfolio pieces, case studies, project highlights, and relevant content. Ideal for creative professionals and businesses looking to highlight their expertise."
-msgstr ""
+msgstr "Grâce à une personnalisation intuitive, présentez facilement des éléments de portfolio, des études de cas, des points saillants de projets et du contenu pertinent. Idéal pour les professionnels de la création et les entreprises souhaitant mettre en avant leur expertise."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Optimized landing pages and engaging blogs"
-msgstr ""
+msgstr "Pages de destination optimisées et blogs attrayants"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Landing pages are strategically designed to captivate visitors and prompt specific actions. Additionally, the blog creation feature empowers sharing insights, engaging the audience."
-msgstr ""
+msgstr "Les pages de destination sont conçues stratégiquement pour captiver les visiteurs et les inciter à des actions spécifiques. De plus, la fonction de création de blog permet de partager des idées et d'engager le public."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Fast loading times and production-ready code"
-msgstr ""
+msgstr "Temps de chargement rapides et code prêt pour la production"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Using Astro 5.0 ensures fast loading and seamless rendering, enhancing browsing. The code follows best practices, improving user experience, SEO, and reducing bounce rates."
-msgstr ""
+msgstr "L'utilisation d'Astro 5.0 garantit un chargement rapide et un rendu fluide, améliorant la navigation. Le code respecte les meilleures pratiques, améliorant l'expérience utilisateur, le référencement et réduisant les taux de rebond."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SEO-optimized structure for enhanced visibility"
-msgstr ""
+msgstr "Structure optimisée pour le référencement et une visibilité améliorée"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Follows SEO best practices with clean code, semantic HTML markup, and fast loading, enhancing search engine rankings. AstroWind's SEO structure ensures visibility to potential customers and clients."
-msgstr ""
+msgstr "Suit les meilleures pratiques de référencement avec un code propre, un balisage HTML sémantique et un chargement rapide, améliorant le classement dans les moteurs de recherche. La structure SEO d'AstroWind assure la visibilité auprès des clients potentiels."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Use cases"
-msgstr ""
+msgstr "Cas d'utilisation"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Discover how AstroWind's versatile template serves as the ideal solution for various use cases, providing tailored solutions to drive success."
-msgstr ""
+msgstr "Découvrez comment le modèle polyvalent d'AstroWind constitue la solution idéale pour divers cas d'utilisation, offrant des solutions sur mesure pour favoriser le succès."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Are you a startup with big dreams? AstroWind propels your success. Our template forges a seamless online presence, attracting investors and customers from day one. Astro 5.0 and Tailwind CSS ensure striking, responsive sites, leaving lasting impressions. Countless startups leverage AstroWind to kickstart their journey and resonate with audiences."
-msgstr ""
+msgstr "Êtes-vous une startup avec de grands rêves ? AstroWind propulse votre succès. Notre modèle crée une présence en ligne fluide, attirant investisseurs et clients dès le premier jour. Astro 5.0 et Tailwind CSS garantissent des sites saisissants et réactifs, laissant des impressions durables. D'innombrables startups utilisent AstroWind pour démarrer leur parcours et résonner auprès de leur public."
 
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 msgid "Benefits:"
-msgstr ""
+msgstr "Avantages :"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Allow startups to quickly create professional websites without investing extensive time and resources. <br /> Make a memorable first impression with visually appealing design elements that highlight your startup's unique value proposition. <br /> Ensures your website looks stunning and works well on all devices. <br /> Engage potential investors and customers with engaging content, clear messaging, and intuitive navigation."
-msgstr ""
+msgstr "Permettez aux startups de créer rapidement des sites web professionnels sans investir beaucoup de temps et de ressources. <br /> Faites une première impression mémorable avec des éléments de design visuellement attrayants qui mettent en valeur la proposition de valeur unique de votre startup. <br /> Assurez-vous que votre site web est magnifique et fonctionne parfaitement sur tous les appareils. <br /> Engagez les investisseurs et clients potentiels avec un contenu captivant, une messagerie claire et une navigation intuitive."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Startup Image"
-msgstr ""
+msgstr "Image de startup"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Startup success stories: <0/><1>Launching with AstroWind</1>"
-msgstr ""
+msgstr "Histoires de succès de startups : <0/><1>Lancement avec AstroWind</1>"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "For SaaS businesses, user experience is key. AstroWind enhances showcasing SaaS solutions intuitively. The template's Astro 5.0 and Tailwind CSS integration guarantees user-friendly experience, mirroring your software's efficiency. Customize pages to communicate SaaS value and solutions for your audience."
-msgstr ""
+msgstr "Pour les entreprises SaaS, l'expérience utilisateur est essentielle. AstroWind améliore la présentation intuitive des solutions SaaS. L'intégration d'Astro 5.0 et de Tailwind CSS du modèle garantit une expérience conviviale, reflétant l'efficacité de votre logiciel. Personnalisez les pages pour communiquer la valeur et les solutions SaaS à votre public."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Ensuring a cohesive and user-centric design for your SaaS website. <br /> Effectively communicate complex SaaS features through visual aids, animations, and interactive elements. <br /> Prioritize user needs and pain points through well-structured layouts and clear navigation. <br /> Encourage visitors to take action with strategically placed CTAs. <br /> Ensures your SaaS website works seamlessly across all devices."
-msgstr ""
+msgstr "Assurer une conception cohérente et centrée sur l'utilisateur pour votre site web SaaS. <br /> Communiquer efficacement les fonctionnalités SaaS complexes à l'aide d'aides visuelles, d'animations et d'éléments interactifs. <br /> Prioriser les besoins et les points douloureux de l'utilisateur grâce à des mises en page bien structurées et une navigation claire. <br /> Encourager les visiteurs à agir avec des CTA stratégiquement placés. <br /> Assurer le bon fonctionnement de votre site web SaaS sur tous les appareils."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SaaS Businesses Image"
-msgstr ""
+msgstr "Image des entreprises SaaS"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SaaS showcase: <0/><1>Streamlining user experience</1>"
-msgstr ""
+msgstr "Vitrine SaaS : <0/><1>Optimisation de l'expérience utilisateur</1>"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Your portfolio is your masterpiece, and AstroWind is your canvas. Whether you're a designer, photographer, artist, or any other creative professional, AstroWind empowers you to showcase your work with elegance and sophistication. Tailored to highlight your creative projects, AstroWind's templates offer a visually immersive experience that lets your portfolio shine."
-msgstr ""
+msgstr "Votre portfolio est votre chef-d'œuvre, et AstroWind est votre toile. Que vous soyez un designer, un photographe, un artiste ou tout autre professionnel de la création, AstroWind vous permet de présenter votre travail avec élégance et sophistication. Conçus pour mettre en valeur vos projets créatifs, les modèles d'AstroWind offrent une expérience visuellement immersive qui fait briller votre portfolio."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Serve as a captivating backdrop to showcase your creative work, capturing attention and leaving a lasting impression. <br /> Tailor your portfolio to reflect your unique style and artistic vision. <br /> Prioritizes visuals, allowing you to present your work in high-resolution detail that draws viewers into your creations. <br /> Enables seamless navigation for effortless portfolio exploration."
-msgstr ""
+msgstr "Servez de toile de fond captivante pour présenter votre travail créatif, captivant l'attention et laissant une impression durable. <br /> Adaptez votre portfolio pour refléter votre style unique et votre vision artistique. <br /> Privilégiez les visuels, vous permettant de présenter votre travail avec des détails haute résolution qui attirent les spectateurs dans vos créations. <br /> Permet une navigation fluide pour une exploration sans effort du portfolio."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Portfolio Image"
-msgstr ""
+msgstr "Image de portfolio"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Creative portfolios: <0/><1>Highlighting your work</1>"
-msgstr ""
+msgstr "Portfolios créatifs : <0/><1>Mettre en avant votre travail</1>"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "For small businesses, a well-crafted website can be a game-changer. AstroWind empowers small businesses to not only establish a credible online presence but also convert visitors into loyal customers. The template's thoughtful design and optimization features ensure that your website doesn't just attract attention but also guides visitors through a seamless journey, ultimately leading to conversions."
-msgstr ""
+msgstr "Pour les petites entreprises, un site web bien conçu peut changer la donne. AstroWind permet aux petites entreprises non seulement d'établir une présence en ligne crédible, mais aussi de convertir les visiteurs en clients fidèles. La conception réfléchie et les fonctionnalités d'optimisation du modèle garantissent que votre site web n'attire pas seulement l'attention, mais guide également les visiteurs à travers un parcours fluide, conduisant finalement à des conversions."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Present your small business with a professional and polished website that instills confidence and trust among visitors. <br /> Strategically placed CTAs, user-friendly forms, and optimized layouts work together to drive user engagement and conversions. <br /> Ensure a smooth browsing experience, reducing bounce rates and encouraging interaction."
-msgstr ""
+msgstr "Présentez votre petite entreprise avec un site web professionnel et soigné qui inspire confiance aux visiteurs. <br /> Des CTA stratégiquement placés, des formulaires conviviaux et des mises en page optimisées travaillent ensemble pour stimuler l'engagement des utilisateurs et les conversions. <br /> Assurez une expérience de navigation fluide, réduisant les taux de rebond et encourageant l'interaction."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Small Business Image"
-msgstr ""
+msgstr "Image de petite entreprise"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Small business growth: <0/><1>Converting visitors into customers</1>"
-msgstr ""
+msgstr "Croissance des petites entreprises : <0/><1>Convertir les visiteurs en clients</1>"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Flexible pricing plans"
-msgstr ""
+msgstr "Plans tarifaires flexibles"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Access to core features and a wide range of templates"
-msgstr ""
+msgstr "Accès aux fonctionnalités de base et à une large gamme de modèles"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Get Started for Free"
-msgstr ""
+msgstr "Commencez gratuitement"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Premium templates and advanced customization"
-msgstr ""
+msgstr "Modèles premium et personnalisation avancée"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Upgrade to Pro"
-msgstr ""
+msgstr "Passer à la version Pro"
 
 #: src/navigation.ts
 #: src/pages/[locale]/homes/saas.astro
@@ -2197,341 +2206,345 @@ msgstr "Entreprise"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Tailored solutions for large-scale projects"
-msgstr ""
+msgstr "Solutions sur mesure pour les projets à grande échelle"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Unlock Enterprise Features"
-msgstr ""
+msgstr "Débloquez les fonctionnalités Entreprise"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Is AstroWind compatible with the latest versions of Astro and Tailwind CSS?"
-msgstr ""
+msgstr "AstroWind est-il compatible avec les dernières versions d'Astro et de Tailwind CSS ?"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Yes, AstroWind is designed to be compatible with the latest versions of both Astro and Tailwind CSS. This ensures that you can harness the full capabilities of these technologies while benefiting from the features offered by AstroWind."
-msgstr ""
+msgstr "Oui, AstroWind est conçu pour être compatible avec les dernières versions d'Astro et de Tailwind CSS. Cela vous permet d'exploiter toutes les capacités de ces technologies tout en bénéficiant des fonctionnalités offertes par AstroWind."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Can I use AstroWind for both personal and commercial projects?"
-msgstr ""
+msgstr "Puis-je utiliser AstroWind pour des projets personnels et commerciaux ?"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Certainly! AstroWind is versatile and can be used for a wide range of projects, including both personal and commercial endeavors. Whether you're building a professional portfolio, launching a startup, or creating a marketing website, AstroWind has you covered."
-msgstr ""
+msgstr "Absolument ! AstroWind est polyvalent et peut être utilisé pour un large évent éventail de projets, qu'ils soient personnels ou commerciaux. Que vous construisiez un portfolio professionnel, lanciez une startup ou créiez un site web marketing, AstroWind répondra à vos besoins."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "What level of coding knowledge is required to use AstroWind?"
-msgstr ""
+msgstr "Quel niveau de connaissances en codage est requis pour utiliser AstroWind ?"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "While some familiarity with HTML, CSS, and web development concepts is helpful, the user-friendly interface and customization options allow those with limited coding experience to create impressive websites. For more advanced users, AstroWind offers extensive customization capabilities."
-msgstr ""
+msgstr "Bien qu'une certaine familiarité avec HTML, CSS et les concepts de développement web soit utile, l'interface conviviale et les options de personnalisation permettent à ceux ayant une expérience limitée en codage de créer des sites web impressionnants. Pour les utilisateurs plus avancés, AstroWind offre de vastes capacités de personnalisation."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Is customer support available for AstroWind users seeking guidance?"
-msgstr ""
+msgstr "Un support client est-il disponible pour les utilisateurs d'AstroWind qui recherchent de l'aide ?"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Absolutely, our dedicated customer support team is here to assist you with any questions or challenges you may encounter. Feel free to reach out to us through our support channels, and we'll be happy to provide the help you need."
-msgstr ""
+msgstr "Absolument, notre équipe de support client dédiée est là pour vous aider avec toutes les questions ou défis que vous pourriez rencontrer. N'hésitez pas à nous contacter via nos canaux de support, et nous serons heureux de vous apporter l'aide dont vous avez besoin."
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Reach out to us"
-msgstr ""
+msgstr "Contactez-nous"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Have questions? Feel free to contact us using the form below. We're here to help!"
-msgstr ""
+msgstr "Des questions ? N'hésitez pas à nous contacter via le formulaire ci-dessous. Nous sommes là pour vous aider !"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Email us"
-msgstr ""
+msgstr "Envoyez-nous un e-mail"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Follow us"
-msgstr ""
+msgstr "Suivez-nous"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Stay informed with AstroWind's blog"
-msgstr ""
+msgstr "Restez informé avec le blog d'AstroWind"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects."
-msgstr ""
+msgstr "Découvrez notre collection d'articles, de guides et de tutoriels sur le développement web, les tendances du design et l'utilisation efficace d'AstroWind pour vos projets."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Startup Landing Page"
-msgstr ""
+msgstr "Page de destination de démarrage"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Startup Web Demo"
-msgstr ""
+msgstr "Démo Web de démarrage"
 
 #: src/pages/[locale]/homes/startup.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Get templates"
-msgstr ""
+msgstr "Obtenir des modèles"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Improve <0>the online presence of</0> your <1>Startup</1> with Astrowind templates"
-msgstr ""
+msgstr "Améliorez <0>la présence en ligne de</0> votre <1>Startup</1> avec les modèles Astrowind"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid ""
 "Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your\n"
 "startup's digital footprint, fostering credibility, and expanding your reach."
 msgstr ""
+"Mettez-vous en lumière avec les modèles <0>Astrowind</0>, votre voie pour renforcer l'empreinte numérique de votre\n"
+"startup, favoriser la crédibilité et étendre votre portée."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Astro just Launched.... Could it be the ultimate web framework?"
-msgstr ""
+msgstr "Astro vient d'être lancé.... Pourrait-il être le framework web ultime ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "We believe in the magic of turning dreams into stunning realities. Founded by passionate developers with a shared vision, we set out to simplify the website creation process. Our templates bring together the innovation of Astro 5.0 and the versatility of Tailwind CSS, enabling you to express your unique brand identity like never before."
-msgstr ""
+msgstr "Nous croyons en la magie de transformer les rêves en de superbes réalités. Fondée par des développeurs passionnés avec une vision commune, nous avons cherché à simplifier le processus de création de sites web. Nos modèles combinent l'innovation d'Astro 5.0 et la polyvalence de Tailwind CSS, vous permettant d'exprimer votre identité de marque unique comme jamais auparavant."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Discover the impressive impact of Astrowind"
-msgstr ""
+msgstr "Découvrez l'impact impressionnant d'Astrowind"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
-msgstr ""
+msgstr "Les chiffres ci-dessous reflètent la confiance que nos utilisateurs nous ont accordée et les résultats remarquables que nous les avons aidés à atteindre."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Websites Launched"
-msgstr ""
+msgstr "Sites Web lancés"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "User Ratings"
-msgstr ""
+msgstr "Évaluations des utilisateurs"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Satisfied Clients"
-msgstr ""
+msgstr "Clients satisfaits"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Partnerships & Collaborations"
-msgstr ""
+msgstr "Partenariats et collaborations"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "At Astrowind, we believe in the power of collaboration to drive innovation and create exceptional experiences."
-msgstr ""
+msgstr "Chez Astrowind, nous croyons au pouvoir de la collaboration pour stimuler l'innovation et créer des expériences exceptionnelles."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Paypal"
-msgstr ""
+msgstr "Paypal"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Visa"
-msgstr ""
+msgstr "Visa"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Ebay"
-msgstr ""
+msgstr "Ebay"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Youtube"
-msgstr ""
+msgstr "Youtube"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Microsoft"
-msgstr ""
+msgstr "Microsoft"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Node JS"
-msgstr ""
+msgstr "Node JS"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Yahoo"
-msgstr ""
+msgstr "Yahoo"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "What services do we provide?"
-msgstr ""
+msgstr "Quels services fournissons-nous ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
-msgstr ""
+msgstr "Nous offrons une large gamme de modèles de sites Web adaptés à diverses industries et objectifs tels que les affaires, le portfolio, le commerce électronique, le blog, etc."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Installation Instructions"
-msgstr ""
+msgstr "Instructions d'installation"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Offer clear instructions on how to download the purchased templates and install them on various website platforms or content management systems."
-msgstr ""
+msgstr "Proposez des instructions claires sur la façon de télécharger les modèles achetés et de les installer sur diverses plateformes de sites Web ou systèmes de gestion de contenu."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Demo and Previews"
-msgstr ""
+msgstr "Démonstration et aperçus"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Provide interactive demos and previews that allow customers to see how their chosen template will look and function before making a purchase."
-msgstr ""
+msgstr "Proposez des démonstrations et des aperçus interactifs qui permettent aux clients de voir l'apparence et le fonctionnement de leur modèle choisi avant de faire un achat."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Providing customer support for any technical issues related to the templates or their implementation."
-msgstr ""
+msgstr "Fournir un support client pour tout problème technique lié aux modèles ou à leur implémentation."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Main features of our templates"
-msgstr ""
+msgstr "Principales caractéristiques de nos modèles"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Possess several key characteristics to effectively cater to the needs of startups and entrepreneurs."
-msgstr ""
+msgstr "Posséder plusieurs caractéristiques clés pour répondre efficacement aux besoins des startups et des entrepreneurs."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Modern and Professional Design"
-msgstr ""
+msgstr "Design moderne et professionnel"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Have a contemporary design that reflects current design trends and gives a professional impression."
-msgstr ""
+msgstr "Avoir un design contemporain qui reflète les tendances actuelles et donne une impression professionnelle."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Responsive and Mobile-Friendly"
-msgstr ""
+msgstr "Réactif et adapté aux mobiles"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Adapt seamlessly to different screen sizes and devices to ensure a consistent experience."
-msgstr ""
+msgstr "S'adapte parfaitement à différentes tailles d'écran et appareils pour garantir une expérience cohérente."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Customizability"
-msgstr ""
+msgstr "Personnalisable"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Easily customizable, allowing users to adapt the design, colors, typography, and content to match their brand identity."
-msgstr ""
+msgstr "Facilement personnalisable, permettant aux utilisateurs d'adapter le design, les couleurs, la typographie et le contenu pour correspondre à leur identité de marque."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Fast Loading Times"
-msgstr ""
+msgstr "Temps de chargement rapides"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Optimized for speed to ensure a smooth user experience and favorable search engine rankings."
-msgstr ""
+msgstr "Optimisé pour la vitesse afin d'assurer une expérience utilisateur fluide et un bon classement dans les moteurs de recherche."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Incorporate SEO best practices in template structure and code to improve visibility in search engine results."
-msgstr ""
+msgstr "Intégrer les meilleures pratiques de référencement dans la structure et le code du modèle pour améliorer la visibilité dans les résultats des moteurs de recherche."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Compatibility"
-msgstr ""
+msgstr "Compatibilité"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "The templates work seamlessly across various content management systems and website builders."
-msgstr ""
+msgstr "Les modèles fonctionnent parfaitement sur divers systèmes de gestion de contenu et constructeurs de sites Web."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "What are landing page templates?"
-msgstr ""
+msgstr "Que sont les modèles de pages d'atterrissage ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Landing page templates are pre-designed web page layouts that are specifically created to serve as a foundation for building effective landing pages. These templates are designed to capture the attention of visitors and guide them towards a specific action or goal, such as signing up for a newsletter, making a purchase, or downloading a resource."
-msgstr ""
+msgstr "Les modèles de pages d'atterrissage sont des mises en page web préconçues, spécifiquement créées pour servir de base à la création de pages d'atterrissage efficaces. Ces modèles sont conçus pour capter l'attention des visiteurs et les guider vers une action ou un objectif spécifique, comme s'inscrire à une newsletter, effectuer un achat ou télécharger une ressource."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Why should I use a template?"
-msgstr ""
+msgstr "Pourquoi devrais-je utiliser un modèle ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Some of the advantages are that they provide a ready-to-use structure,  saving you significant time. Are designed with user-friendliness in mind and provide a cost-effective alternative, saving you money while still delivering a quality result."
-msgstr ""
+msgstr "Certains des avantages sont qu'ils fournissent une structure prête à l'emploi, vous faisant gagner un temps précieux. Ils sont conçus dans un souci de convivialité et constituent une alternative rentable, vous faisant économiser de l'argent tout en offrant un résultat de qualité."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Can I preview templates before buying?"
-msgstr ""
+msgstr "Puis-je prévisualiser les modèles avant d'acheter ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Yes, the templates allow you to preview them before making a purchase. There is a \"Demo\" button associated with each template."
-msgstr ""
+msgstr "Oui, les modèles vous permettent de les prévisualiser avant de faire un achat. Il y a un bouton \"Démo\" associé à chaque modèle."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Do I need technical skills to use a template?"
-msgstr ""
+msgstr "Ai-je besoin de compétences techniques pour utiliser un modèle ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Advanced technical skills are not required to use a template, but having a basic understanding of web navigation and familiarity with using online tools can still be beneficial. If you have more specific customization needs, you might need to consult guides or reach out to customer support for assistance."
-msgstr ""
+msgstr "Des compétences techniques avancées ne sont pas requises pour utiliser un modèle, mais une compréhension de base de la navigation Web et une familiarité avec l'utilisation d'outils en ligne peuvent toujours être bénéfiques. Si vous avez des besoins de personnalisation plus spécifiques, vous pourriez avoir besoin de consulter des guides ou de contacter le support client pour obtenir de l'aide."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Can I use the template on multiple websites?"
-msgstr ""
+msgstr "Puis-je utiliser le modèle sur plusieurs sites Web ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "No, the template comes with a single-use license, meaning you can use the template on one website or project only. Using the template on additional websites would require purchasing additional licenses."
-msgstr ""
+msgstr "Non, le modèle est livré avec une licence à usage unique, ce qui signifie que vous ne pouvez utiliser le modèle que sur un seul site Web ou projet. L'utilisation du modèle sur des sites Web supplémentaires nécessiterait l'achat de licences supplémentaires."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "What if I need help with customization?"
-msgstr ""
+msgstr "Que faire si j'ai besoin d'aide pour la personnalisation ?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "The templates provides a comprehensive step-by-step guide that walk you through the customization process. If you still have doubts, you can reach out to our customer support team. They can answer your questions, provide guidance on customization, and address any issues you're facing."
-msgstr ""
+msgstr "Les modèles fournissent un guide détaillé étape par étape qui vous guide tout au long du processus de personnalisation. Si vous avez encore des doutes, vous pouvez contacter notre équipe de support client. Ils pourront répondre à vos questions, vous guider dans la personnalisation et résoudre tous les problèmes que vous rencontrez."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Let us know how we can help"
-msgstr ""
+msgstr "Faites-nous savoir comment nous pouvons vous aider"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "We’re here to help and answer any question you might have."
-msgstr ""
+msgstr "Nous sommes là pour vous aider et répondre à toutes vos questions."
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Write to us"
-msgstr ""
+msgstr "Écrivez-nous"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Chat with sales"
-msgstr ""
+msgstr "Discuter avec les ventes"
 
 #: src/pages/[locale]/homes/startup.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Start chatting"
-msgstr ""
+msgstr "Commencer à discuter"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Chat with support"
-msgstr ""
+msgstr "Discuter avec le support"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Be a part of our vision"
-msgstr ""
+msgstr "Faites partie de notre vision"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid ""
 "Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful\n"
 "impact."
 msgstr ""
+"Découvrez un environnement de travail dynamique, des opportunités de croissance inégalées et la chance de faire un\n"
+"impact significatif."
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Landing Page Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage de type « Click-through »"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Demo"
-msgstr ""
+msgstr "Démo de « Click-through »"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Landing Page: The Perfect Bridge to Conversion!"
-msgstr ""
+msgstr "Page d'atterrissage de type « Click-through » : Le pont parfait vers la conversion !"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Learn how to design a Click-Through Landing Page that seamlessly guides visitors to your main offer."
-msgstr ""
+msgstr "Apprenez à concevoir une page d'atterrissage de type « Click-through » qui guide les visiteurs vers votre offre principale en toute fluidité."
 
 #: src/pages/[locale]/landing/click-through.astro
 #: src/pages/[locale]/landing/lead-generation.astro
@@ -2540,11 +2553,11 @@ msgstr ""
 #: src/pages/[locale]/landing/sales.astro
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Call to Action"
-msgstr ""
+msgstr "Appel à l'action"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Landing Page Hero Image"
-msgstr ""
+msgstr "Image d'en-tête de la page d'atterrissage de type « Click-through »"
 
 #: src/pages/[locale]/landing/click-through.astro
 #: src/pages/[locale]/landing/lead-generation.astro
@@ -2553,7 +2566,7 @@ msgstr ""
 #: src/pages/[locale]/landing/sales.astro
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Coming soon"
-msgstr ""
+msgstr "Bientôt disponible"
 
 #: src/pages/[locale]/landing/click-through.astro
 #: src/pages/[locale]/landing/lead-generation.astro
@@ -2562,7 +2575,7 @@ msgstr ""
 #: src/pages/[locale]/landing/sales.astro
 #: src/pages/[locale]/landing/subscription.astro
 msgid "We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
-msgstr ""
+msgstr "Nous travaillons sur le contenu de ces pages de démonstration. Vous les verrez très bientôt. Restez à l'écoute !"
 
 #: src/pages/[locale]/landing/click-through.astro
 #: src/pages/[locale]/landing/lead-generation.astro
@@ -2571,124 +2584,124 @@ msgstr ""
 #: src/pages/[locale]/landing/sales.astro
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Download Template"
-msgstr ""
+msgstr "Télécharger le modèle"
 
 #: src/pages/[locale]/landing/lead-generation.astro
 msgid "Lead Generation Landing Page Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage pour la génération de prospects"
 
 #: src/pages/[locale]/landing/lead-generation.astro
 msgid "Lead Generation Landing Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage pour la génération de prospects"
 
 #: src/pages/[locale]/landing/lead-generation.astro
 msgid "Effective Lead Generation Landing Page: Unlock the Secrets"
-msgstr ""
+msgstr "Page d'atterrissage efficace pour la génération de prospects : Découvrez les secrets"
 
 #: src/pages/[locale]/landing/lead-generation.astro
 msgid "Discover the secrets to creating a Landing Page that turns curious visitors into eager leads. (Your Hero should grab attention instantly. Use a powerful headline that speaks directly to your target audience.)"
-msgstr ""
+msgstr "Découvrez les secrets pour créer une page d'atterrissage qui transforme les visiteurs curieux en prospects enthousiastes. (Votre partie Héros doit attirer l'attention instantanément. Utilisez un titre percutant qui parle directement à votre public cible.)"
 
 #: src/pages/[locale]/landing/lead-generation.astro
 msgid "Magnet attracting screws. Lead generation landing page demo"
-msgstr ""
+msgstr "Aimant attirant des vis. Démo de page d'atterrissage pour la génération de prospects"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-Launch Landing Page"
-msgstr ""
+msgstr "Page d'atterrissage de pré-lancement"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-launch Demo"
-msgstr ""
+msgstr "Démo de pré-lancement"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-launch Landing Page: Build the Hype Before the Big Reveal!"
-msgstr ""
+msgstr "Page d'atterrissage de pré-lancement : Créez l'engouement avant la grande révélation !"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Craft a tantalizing Coming Soon or Pre-Launch Landing Page that leaves visitors eagerly awaiting your launch."
-msgstr ""
+msgstr "Créez une page d'atterrissage « Bientôt disponible » ou de pré-lancement alléchante qui laissera les visiteurs impatients de votre lancement."
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Store with a Coming Soon sign. Pre-launch Landing Page"
-msgstr ""
+msgstr "Magasin avec une pancarte « Bientôt disponible ». Page d'atterrissage de pré-lancement"
 
 #: src/pages/[locale]/landing/product.astro
 msgid "Product Details Landing Page Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage de détails de produit"
 
 #: src/pages/[locale]/landing/product.astro
 msgid "Product Details Demo"
-msgstr ""
+msgstr "Démo de détails de produit"
 
 #: src/pages/[locale]/landing/product.astro
 msgid "Product Landing Page: Showcase with Precision and Passion!"
-msgstr ""
+msgstr "Page d'atterrissage de produit : Présentez avec précision et passion !"
 
 #: src/pages/[locale]/landing/product.astro
 msgid "Step-by-step guide to designing a Landing Page that highlights every facet of your product or service."
-msgstr ""
+msgstr "Guide étape par étape pour concevoir une page d'atterrissage qui met en valeur chaque facette de votre produit ou service."
 
 #: src/pages/[locale]/landing/product.astro
 msgid "A spotlight on a product. Product Details Landing Page Demo"
-msgstr ""
+msgstr "Un projecteur sur un produit. Démo de page d'atterrissage de détails de produit"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Sales Landing Page Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage de vente"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Long-form Sales Demo"
-msgstr ""
+msgstr "Démo de vente longue"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Long-form Sales: Sell with a Story: The Long-form Way!"
-msgstr ""
+msgstr "Vente longue : Vendez avec une histoire : La manière longue !"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Dive deep into crafting a Landing Page that narrates, persuades, and converts."
-msgstr ""
+msgstr "Plongez dans l'élaboration d'une page d'atterrissage qui raconte, persuade et convertit."
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Children telling a story. Long-form Sales Landing Page demo"
-msgstr ""
+msgstr "Enfants racontant une histoire. Démo de page d'atterrissage de vente longue"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Subscription Landing Page Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage d'abonnement"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Subscription Landing Demo"
-msgstr ""
+msgstr "Démo de page d'atterrissage d'abonnement"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Subscription Landing Page: Turn Casual Browsers into Loyal Subscribers!"
-msgstr ""
+msgstr "Page d'atterrissage d'abonnement : Transformez les navigateurs occasionnels en abonnés fidèles !"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Unlock the formula for a Subscription Landing Page that keeps your audience coming back for more."
-msgstr ""
+msgstr "Découvrez la formule d'une page d'atterrissage d'abonnement qui incite votre public à revenir encore et encore."
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Ironic image associated with canceling a subscription. Subscription Landing Page Demo"
-msgstr ""
+msgstr "Image ironique associée à l'annulation d'un abonnement. Démo de page de destination d'abonnement"
 
 #. placeholder {0}: '${category.ti
 #. placeholder {1}: ${currentPage > 1 ? ` — Page ${currentPage}` :
 #: src/pages/[locale]/[...blog]/[category]/[...page].astro
 msgid "Category '{0}' {1}"
-msgstr ""
+msgstr "Catégorie '{0}' {1}"
 
 #. placeholder {0}: '${tag.ti
 #. placeholder {1}: '${currentPage > 1 ? ` — Page ${currentPage} ` :
 #: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 msgid "Posts by tag '{0}'{1}"
-msgstr ""
+msgstr "Articles par tag '{0}'{1}"
 
 #. placeholder {0}: tag.title
 #: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 msgid "Tag: {0}"
-msgstr ""
+msgstr "Tag : {0}"
 
 #: src/navigation.ts
 msgid "Homes"
