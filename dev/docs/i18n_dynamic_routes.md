@@ -129,7 +129,7 @@ This pattern mirrors the blog but is simplified (no categories, tags, pagination
 
 ## Language Switching
 
-The `LanguagePicker.astro` component uses Astro’s `astro:i18n` utilities (`getRelativeLocaleUrl`) to generate alternate‑language URLs while preserving the current page context.
+The `LocaleSwitcher.astro` component (in `src/components/common/`) uses Astro's `astro:i18n` utilities (`getRelativeLocaleUrl`) to generate alternate‑language URLs while preserving the current page context. It is integrated into the Header component via the `showLocaleSwitcher` prop.
 
 ## SEO and hreflang Tags
 

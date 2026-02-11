@@ -2,6 +2,7 @@
 import '~/assets/styles/tailwind.css';
 
 import { I18N } from 'astrowind:config';
+import { LOCALES, DEFAULT_LOCALE } from '~/utils/locales';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
@@ -27,6 +28,19 @@ const { metadata = {} } = Astro.props;
 const { language: defaultLanguage, textDirection } = I18N;
 const currentLocale = Astro.currentLocale || defaultLanguage;
 const currentPath = Astro.url.pathname;
+
+// Get the current path without locale prefix
+const getPathWithoutLocale = (pathname: string) => {
+  // Remove the locale prefix if present
+  for (const locale of LOCALES) {
+    if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
+      return pathname.replace(`/${locale}`, '') || '/';
+    }
+  }
+  return pathname;
+};
+
+const currentPathWithoutLocale = getPathWithoutLocale(currentPath);
 ---
 
 <!doctype html>
@@ -44,9 +58,20 @@ const currentPath = Astro.url.pathname;
     <ClientRouter fallback="swap" />
 
     <!-- hreflang tags for i18n -->
-    <link rel="alternate" hreflang="en" href={getRelativeLocaleUrl('en', currentPath)} />
-    <link rel="alternate" hreflang="es" href={getRelativeLocaleUrl('es', currentPath)} />
-    <link rel="alternate" hreflang="x-default" href={getRelativeLocaleUrl('en', currentPath)} />
+    {
+      (() => {
+        const removeTrailingSlash = (url: string) => url.endsWith('/') && url !== '/' ? url.slice(0, -1) : url;
+        const enUrl = removeTrailingSlash(getRelativeLocaleUrl('en', currentPathWithoutLocale));
+        const esUrl = removeTrailingSlash(getRelativeLocaleUrl('es', currentPathWithoutLocale));
+        return (
+          <>
+            <link rel="alternate" hreflang="en" href={enUrl} />
+            <link rel="alternate" hreflang="es" href={esUrl} />
+            <link rel="alternate" hreflang="x-default" href={enUrl} />
+          </>
+        );
+      })()
+    }
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">

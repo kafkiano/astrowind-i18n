@@ -2898,3 +2898,15 @@ msgstr ""
 "\n"
 "Made by <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/arthelokyo\"> Arthelokyo</a> · All rights reserved.\n"
 ""
+
+#: src/components/common/LocaleSwitcher.astro
+msgid "Change language"
+msgstr "Change language"
+
+#: src/components/common/LocaleSwitcher.astro
+msgid "English"
+msgstr "English"
+
+#: src/components/common/LocaleSwitcher.astro
+msgid "Español"
+msgstr "Español"

@@ -1,0 +1,119 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { Icon } from 'astro-icon/components';
+import { LOCALES, DEFAULT_LOCALE } from '~/utils/locales';
+
+export interface Props {
+  currentLocale?: string;
+  showLabels?: boolean;
+  class?: string;
+}
+
+const { currentLocale = Astro.currentLocale || 'en', showLabels = false, class: className = '' } = Astro.props;
+
+// Get the current path without locale prefix
+const getPathWithoutLocale = (pathname: string) => {
+  // Remove the locale prefix if present
+  for (const locale of LOCALES) {
+    if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
+      const withoutLocale = pathname.replace(`/${locale}`, '');
+      // Handle empty path (homepage)
+      return withoutLocale === '' ? '' : withoutLocale;
+    }
+  }
+  return pathname;
+};
+
+const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
+---
+
+<div class={`relative inline-block ${className}`}>
+  <button
+    type="button"
+    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+    aria-label="Change language"
+    aria-haspopup="true"
+    aria-expanded="false"
+    data-aw-toggle-locale="locale-dropdown"
+  >
+    <Icon name="tabler:language" class="w-5 h-5" />
+    {showLabels && <span class="ml-2 rtl:ml-0 rtl:mr-2">{currentLocale.toUpperCase()}</span>}
+    <Icon name="tabler:chevron-down" class="w-3 h-3 ml-1 rtl:ml-0 rtl:mr-1" />
+  </button>
+  
+  <div
+    id="locale-dropdown"
+    class="hidden absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+    role="menu"
+  >
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+      {
+        LOCALES.map((locale: string) => {
+          // Generate URL for this locale
+          let url: string;
+          try {
+            // Try using getRelativeLocaleUrl with path without locale
+            url = getRelativeLocaleUrl(locale, currentPathWithoutLocale);
+            // Ensure no trailing slash to match trailingSlash: 'never' config
+            if (url.endsWith('/') && url !== '/') {
+              url = url.slice(0, -1);
+            }
+          } catch (e) {
+            // Fallback: manually construct URL
+            const shouldPrefix = locale !== DEFAULT_LOCALE;
+            const cleanPath = currentPathWithoutLocale === '/' ? '' : currentPathWithoutLocale;
+            url = shouldPrefix ? `/${locale}${cleanPath}` : cleanPath || '/';
+            // Ensure no trailing slash for homepage
+            if (url === '/') {
+              url = '';
+            }
+          }
+          
+          return (
+            <li>
+              <a
+                href={url}
+                class:list={[
+                  'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white',
+                  { 'font-semibold bg-gray-50 dark:bg-gray-600': locale === currentLocale }
+                ]}
+                hreflang={locale}
+                aria-current={locale === currentLocale ? 'page' : undefined}
+              >
+                <span class="inline-flex items-center">
+                  {locale === 'en' && <span class="mr-2">🇺🇸</span>}
+                  {locale === 'es' && <span class="mr-2">🇪🇸</span>}
+                  {locale.toUpperCase()} - {
+                    locale === 'en' ? 'English' :
+                    locale === 'es' ? 'Español' :
+                    locale
+                  }
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Simple dropdown toggle matching existing Header patterns
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('[data-aw-toggle-locale="locale-dropdown"]');
+    const dropdown = document.getElementById('locale-dropdown');
+    
+    if (button && dropdown) {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', () => {
+        dropdown.classList.add('hidden');
+      });
+    }
+  });
+</script>
