@@ -17,23 +17,20 @@ export default defineConfig({
   adapters: {
     // Main astro adapter - uses 'main' catalog
     main: astro(),
-    // Navigation adapter - also uses 'main' catalog (shared)
-    // Use custom loader to avoid catalog lookup errors
+    // Navigation adapter
     navigation: vanilla({
       files: {
         include: ['src/navigation.ts'],
         ignore: []
       },
       catalog: 'main',
-      // Use custom loader that reuses main catalog infrastructure
       loader: 'custom',
-      // Configure heuristic to extract string literals from object properties
       heuristic: (node, context) => {
-        // Check if this is a string literal that's a value of a 'text' or 'title' property
+        // Check if this is a string literal
         if (node.type === 'Literal' || node.type === 'StringLiteral') {
-          // Look at parent to see if this is a property value
+          // Only extract 'text' or 'title' properties from navigation.ts
           const parent = context.parent;
-          if (parent && parent.type === 'Property' && 
+          if (parent && parent.type === 'Property' &&
               (parent.key.name === 'text' || parent.key.name === 'title')) {
             return {
               type: 'script',

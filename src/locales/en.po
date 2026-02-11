@@ -2902,11 +2902,3 @@ msgstr ""
 #: src/components/common/LocaleSwitcher.astro
 msgid "Change language"
 msgstr "Change language"
-
-#: src/components/common/LocaleSwitcher.astro
-msgid "English"
-msgstr "English"
-
-#: src/components/common/LocaleSwitcher.astro
-msgid "Español"
-msgstr "Español"

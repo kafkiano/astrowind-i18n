@@ -2,6 +2,7 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Icon } from 'astro-icon/components';
 import { LOCALES, DEFAULT_LOCALE } from '~/utils/locales';
+import { I18N } from 'astrowind:config';
 
 export interface Props {
   currentLocale?: string;
@@ -25,6 +26,11 @@ const getPathWithoutLocale = (pathname: string) => {
 };
 
 const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
+
+// Helper function to get locale display name directly from config
+const getLocaleDisplayName = (localeCode: string): string => {
+  return I18N.localeNames?.[localeCode] || localeCode.toUpperCase();
+};
 ---
 
 <div class={`relative inline-block ${className}`}>
@@ -34,7 +40,7 @@ const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
     aria-label="Change language"
     aria-haspopup="true"
     aria-expanded="false"
-    data-aw-toggle-locale="locale-dropdown"
+    data-aw-toggle-locale
   >
     <Icon name="tabler:language" class="w-5 h-5" />
     {showLabels && <span class="ml-2 rtl:ml-0 rtl:mr-2">{currentLocale.toUpperCase()}</span>}
@@ -42,7 +48,7 @@ const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
   </button>
   
   <div
-    id="locale-dropdown"
+    data-aw-locale-dropdown
     class="hidden absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
     role="menu"
   >
@@ -81,13 +87,7 @@ const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
                 aria-current={locale === currentLocale ? 'page' : undefined}
               >
                 <span class="inline-flex items-center">
-                  {locale === 'en' && <span class="mr-2">🇺🇸</span>}
-                  {locale === 'es' && <span class="mr-2">🇪🇸</span>}
-                  {locale.toUpperCase()} - {
-                    locale === 'en' ? 'English' :
-                    locale === 'es' ? 'Español' :
-                    locale
-                  }
+                  {getLocaleDisplayName(locale)}
                 </span>
               </a>
             </li>
@@ -97,23 +97,3 @@ const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
     </ul>
   </div>
 </div>
-
-<script>
-  // Simple dropdown toggle matching existing Header patterns
-  document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('[data-aw-toggle-locale="locale-dropdown"]');
-    const dropdown = document.getElementById('locale-dropdown');
-    
-    if (button && dropdown) {
-      button.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('hidden');
-      });
-      
-      // Close dropdown when clicking outside
-      document.addEventListener('click', () => {
-        dropdown.classList.add('hidden');
-      });
-    }
-  });
-</script>

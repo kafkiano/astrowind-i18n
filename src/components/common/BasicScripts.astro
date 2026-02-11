@@ -75,6 +75,18 @@ import { UI } from 'astrowind:config';
       localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     });
 
+    // Locale switcher dropdown
+    attachEvent('[data-aw-toggle-locale]', 'click', function (e, elem) {
+      e.stopPropagation();
+      const dropdown = elem.nextElementSibling;
+      if (dropdown && dropdown.hasAttribute('data-aw-locale-dropdown')) {
+        dropdown.classList.toggle('hidden');
+      }
+    });
+    attachEvent([document], 'click', function () {
+      document.querySelector('[data-aw-locale-dropdown]')?.classList.add('hidden');
+    });
+
     attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
       const network = elem.getAttribute('data-aw-social-share');
       const url = encodeURIComponent(elem.getAttribute('data-aw-url'));

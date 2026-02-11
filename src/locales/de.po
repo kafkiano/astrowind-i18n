@@ -1,0 +1,798 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Source-Language: en\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-11T15:51:31.710Z\n"
+"PO-Revision-Date: 2026-02-11T15:51:31.710Z\n"
+
+#. placeholder {0}: g${currentPage > 1 ? ` — Page ${currentPage}` :
+#: src/pages/[locale]/[...blog]/[...page].astro
+msgid "Blog{0}"
+msgstr "Blog{0}"
+
+#: src/pages/[locale]/[...blog]/[...page].astro
+msgid "A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
+msgstr "Ein statisch generiertes Blog-Beispiel mit Neuigkeiten, Tutorials, Ressourcen und anderen interessanten Inhalten zu AstroWind"
+
+#: src/pages/[locale]/[...blog]/[...page].astro
+msgid "The Blog"
+msgstr "Der Blog"
+
+#: src/components/widgets/Header.astro
+msgid "Main navigation"
+msgstr "Hauptnavigation"
+
+#: src/components/widgets/Header.astro
+msgid "RSS Feed"
+msgstr "RSS-Feed"
+
+#: src/components/common/ToggleTheme.astro
+msgid "Toggle between Dark and Light mode"
+msgstr "Wechseln Sie zwischen Dunkel- und Hellmodus"
+
+#: src/components/common/ToggleMenu.astro
+msgid "Toggle Menu"
+msgstr "Menü umschalten"
+
+#: src/components/common/LocaleSwitcher.astro
+msgid "Change language"
+msgstr "Sprache ändern"
+
+#: src/components/widgets/Announcement.astro
+msgid "NEW"
+msgstr "NEU"
+
+#: src/components/widgets/Announcement.astro
+msgid "Astro v5.12 is now available! »"
+msgstr "Astro v5.12 ist jetzt verfügbar! »"
+
+#: src/components/widgets/Announcement.astro
+msgid "If you like AstroWind, give us a star."
+msgstr "Wenn Ihnen AstroWind gefällt, geben Sie uns einen Stern."
+
+#: src/navigation.ts
+msgid "Homes"
+msgstr "Heim"
+
+#: src/navigation.ts
+msgid "SaaS"
+msgstr "SaaS"
+
+#: src/navigation.ts
+msgid "Startup"
+msgstr "Startup"
+
+#: src/navigation.ts
+msgid "Mobile App"
+msgstr "Mobile App"
+
+#: src/navigation.ts
+msgid "Personal"
+msgstr "Persönlich"
+
+#: src/navigation.ts
+msgid "Pages"
+msgstr "Seiten"
+
+#: src/navigation.ts
+msgid "Features (Anchor Link)"
+msgstr "Funktionen (Anker-Link)"
+
+#: src/navigation.ts
+msgid "Services"
+msgstr "Dienstleistungen"
+
+#: src/navigation.ts
+#: src/navigation.ts
+#: src/pages/[locale]/index.astro
+msgid "Pricing"
+msgstr "Preise"
+
+#: src/navigation.ts
+msgid "About us"
+msgstr "Über uns"
+
+#: src/navigation.ts
+#: src/pages/[locale]/index.astro
+msgid "Contact"
+msgstr "Kontakt"
+
+#: src/navigation.ts
+#: src/navigation.ts
+msgid "Terms"
+msgstr "Bedingungen"
+
+#: src/navigation.ts
+msgid "Privacy policy"
+msgstr "Datenschutzrichtlinie"
+
+#: src/navigation.ts
+msgid "Landing"
+msgstr "Landing"
+
+#: src/navigation.ts
+msgid "Lead Generation"
+msgstr "Lead-Generierung"
+
+#: src/navigation.ts
+msgid "Long-form Sales"
+msgstr "Langform-Vertrieb"
+
+#: src/navigation.ts
+msgid "Click-Through"
+msgstr "Click-Through"
+
+#: src/navigation.ts
+msgid "Product Details (or Services)"
+msgstr "Produktdetails (oder Dienstleistungen)"
+
+#: src/navigation.ts
+msgid "Coming Soon or Pre-Launch"
+msgstr "Demnächst oder Vorab-Start"
+
+#: src/navigation.ts
+msgid "Subscription"
+msgstr "Abonnement"
+
+#: src/navigation.ts
+#: src/navigation.ts
+msgid "Blog"
+msgstr "Blog"
+
+#: src/navigation.ts
+msgid "Blog List"
+msgstr "Blog-Liste"
+
+#: src/navigation.ts
+msgid "Article"
+msgstr "Artikel"
+
+#: src/navigation.ts
+msgid "Article (with MDX)"
+msgstr "Artikel (mit MDX)"
+
+#: src/navigation.ts
+msgid "Category Page"
+msgstr "Kategorieseite"
+
+#: src/navigation.ts
+msgid "Tag Page"
+msgstr "Tag-Seite"
+
+#: src/navigation.ts
+msgid "Widgets"
+msgstr "Widgets"
+
+#: src/navigation.ts
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/navigation.ts
+msgid "Product"
+msgstr "Produkt"
+
+#: src/navigation.ts
+#: src/pages/[locale]/index.astro
+#: src/pages/[locale]/index.astro
+msgid "Features"
+msgstr "Funktionen"
+
+#: src/navigation.ts
+msgid "Security"
+msgstr "Sicherheit"
+
+#: src/navigation.ts
+msgid "Team"
+msgstr "Team"
+
+#: src/navigation.ts
+msgid "Enterprise"
+msgstr "Unternehmen"
+
+#: src/navigation.ts
+msgid "Customer stories"
+msgstr "Kundenreferenzen"
+
+#: src/navigation.ts
+msgid "Resources"
+msgstr "Ressourcen"
+
+#: src/navigation.ts
+msgid "Platform"
+msgstr "Plattform"
+
+#: src/navigation.ts
+msgid "Developer API"
+msgstr "Entwickler-API"
+
+#: src/navigation.ts
+msgid "Partners"
+msgstr "Partner"
+
+#: src/navigation.ts
+msgid "Atom"
+msgstr "Atom"
+
+#: src/navigation.ts
+msgid "Electron"
+msgstr "Elektron"
+
+#: src/navigation.ts
+msgid "AstroWind Desktop"
+msgstr "AstroWind Desktop"
+
+#: src/navigation.ts
+msgid "Support"
+msgstr "Support"
+
+#: src/navigation.ts
+msgid "Docs"
+msgstr "Dokumente"
+
+#: src/navigation.ts
+msgid "Community Forum"
+msgstr "Community-Forum"
+
+#: src/navigation.ts
+msgid "Professional Services"
+msgstr "Professionelle Dienstleistungen"
+
+#: src/navigation.ts
+msgid "Skills"
+msgstr "Fähigkeiten"
+
+#: src/navigation.ts
+msgid "Status"
+msgstr "Status"
+
+#: src/navigation.ts
+msgid "Company"
+msgstr "Unternehmen"
+
+#: src/navigation.ts
+msgid "About"
+msgstr "Über"
+
+#: src/navigation.ts
+msgid "Careers"
+msgstr "Karriere"
+
+#: src/navigation.ts
+msgid "Press"
+msgstr "Presse"
+
+#: src/navigation.ts
+msgid "Inclusion"
+msgstr "Inklusion"
+
+#: src/navigation.ts
+msgid "Social Impact"
+msgstr "Soziale Wirkung"
+
+#: src/navigation.ts
+msgid "Shop"
+msgstr "Shop"
+
+#: src/navigation.ts
+msgid "Privacy Policy"
+msgstr "Datenschutzrichtlinie"
+
+#: src/navigation.ts
+msgid "Instagram"
+msgstr "Instagram"
+
+#: src/navigation.ts
+msgid "Facebook"
+msgstr "Facebook"
+
+#: src/navigation.ts
+msgid "Github"
+msgstr "Github"
+
+#: src/navigation.ts
+msgid ""
+"\n"
+"Made by <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/arthelokyo\"> Arthelokyo</a> · All rights reserved.\n"
+""
+msgstr ""
+"Erstellt von <a class=\"text-blue-600 underline dark:text-muted\" href=\"https://github.com/arthelokyo\"> Arthelokyo</a> · Alle Rechte vorbehalten.\n"
+""
+
+#: src/components/blog/Pagination.astro
+msgid "Newer posts"
+msgstr "Neuere Beiträge"
+
+#: src/components/blog/Pagination.astro
+msgid "Older posts"
+msgstr "Ältere Beiträge"
+
+#: src/pages/[locale]/index.astro
+msgid "AstroWind — Free template for creating websites with Astro + Tailwind CSS"
+msgstr "AstroWind – Kostenlose Vorlage für die Erstellung von Websites mit Astro + Tailwind CSS"
+
+#: src/pages/[locale]/index.astro
+#: src/pages/[locale]/index.astro
+msgid "Get template"
+msgstr "Vorlage erhalten"
+
+#: src/pages/[locale]/index.astro
+msgid "Learn more"
+msgstr "Mehr erfahren"
+
+#: src/pages/[locale]/index.astro
+msgid "AstroWind Hero Image"
+msgstr "AstroWind Hero-Bild"
+
+#: src/pages/[locale]/index.astro
+msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
+msgstr "Kostenlose Vorlage zur <0>Erstellung von Websites mit</0> <1>Astro 5.0</1> + Tailwind CSS"
+
+#: src/pages/[locale]/index.astro
+msgid ""
+"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0\n"
+"+ Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &\n"
+"Blogs."
+msgstr ""
+"<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0\n"
+"+ Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, Kleinunternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages &\n"
+"Blogs."
+
+#: src/pages/[locale]/index.astro
+msgid "Philosophy:"
+msgstr "Philosophie:"
+
+#: src/pages/[locale]/index.astro
+msgid "Simplicity, Best Practices and High Performance"
+msgstr "Einfachheit, Best Practices und hohe Leistung"
+
+#: src/pages/[locale]/index.astro
+msgid "What you get with AstroWind"
+msgstr "Was Sie mit AstroWind erhalten"
+
+#: src/pages/[locale]/index.astro
+msgid "One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
+msgstr "Eine der professionellsten und umfassendsten Vorlagen, die derzeit auf dem Markt erhältlich sind. Das meistgestarnte und geforkte Astro-Theme in den Jahren 2022, 2023 und 2024."
+
+#: src/pages/[locale]/index.astro
+msgid "Astro + Tailwind CSS Integration"
+msgstr "Astro + Tailwind CSS Integration"
+
+#: src/pages/[locale]/index.astro
+msgid "A seamless integration between two great frameworks that offer high productivity, performance and versatility."
+msgstr "Eine nahtlose Integration zwischen zwei großartigen Frameworks, die hohe Produktivität, Leistung und Vielseitigkeit bieten."
+
+#: src/pages/[locale]/index.astro
+msgid "Ready-to-use Components"
+msgstr "Fertige Komponenten"
+
+#: src/pages/[locale]/index.astro
+msgid "Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business..."
+msgstr "Mit Tailwind CSS erstellte Widgets, die für Marketing-Websites, SaaS, Blogs, persönliche Profile, Kleinunternehmen usw. verwendet werden können."
+
+#: src/pages/[locale]/index.astro
+msgid "Best Practices"
+msgstr "Best Practices"
+
+#: src/pages/[locale]/index.astro
+msgid "Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value."
+msgstr "Erstellung sicherer, effizienter und benutzerfreundlicher Websites, die außergewöhnliche Erlebnisse und dauerhaften Wert liefern."
+
+#: src/pages/[locale]/index.astro
+msgid "Excellent Page Speed"
+msgstr "Ausgezeichnete Seitenladezeit"
+
+#: src/pages/[locale]/index.astro
+msgid "Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates."
+msgstr "Eine gute Seitengeschwindigkeit wirkt sich auf das organische Suchranking aus, verbessert die Benutzererfahrung (UI/UX) und erhöht die Konversionsraten."
+
+#: src/pages/[locale]/index.astro
+msgid "Search Engine Optimization (SEO)"
+msgstr "Suchmaschinenoptimierung (SEO)"
+
+#: src/pages/[locale]/index.astro
+msgid "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience."
+msgstr "SEO liegt in seiner Fähigkeit, die Sichtbarkeit einer Website zu verbessern, organischen Traffic zu generieren und ein breiteres Publikum zu erreichen."
+
+#: src/pages/[locale]/index.astro
+msgid "Open to new ideas and contributions"
+msgstr "Offen für neue Ideen und Beiträge"
+
+#: src/pages/[locale]/index.astro
+msgid "Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience."
+msgstr "Eine Kultur zu pflegen, die offen für neue Ideen und Beiträge ist, ist unerlässlich, um Innovation, Zusammenarbeit und eine dynamische Benutzererfahrung zu fördern."
+
+#: src/pages/[locale]/index.astro
+msgid "Inside template"
+msgstr "In der Vorlage"
+
+#: src/pages/[locale]/index.astro
+msgid "AstroWind's Blueprint: Fun Meets Functionality!"
+msgstr "AstroWinds Bauplan: Spaß trifft Funktionalität!"
+
+#: src/pages/[locale]/index.astro
+msgid "Built on top of Astro 5.0"
+msgstr "Basierend auf Astro 5.0"
+
+#: src/pages/[locale]/index.astro
+msgid "Benefiting from the performance and developer-friendly features of this modern static site generator."
+msgstr "Profitieren Sie von der Leistung und den entwicklerfreundlichen Funktionen dieses modernen statischen Seitengenerators."
+
+#: src/pages/[locale]/index.astro
+msgid "Styled using Tailwind CSS"
+msgstr "Gestylt mit Tailwind CSS"
+
+#: src/pages/[locale]/index.astro
+msgid "Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework."
+msgstr "Schnelles Design und konsistentes Styling mit diesem sehr beliebten Utility-First CSS-Framework."
+
+#: src/pages/[locale]/index.astro
+msgid "Cross-browser compatibility"
+msgstr "Browserübergreifende Kompatibilität"
+
+#: src/pages/[locale]/index.astro
+msgid "Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users."
+msgstr "Stellen Sie sicher, dass Ihre Website in verschiedenen Webbrowsern konsistent aussieht und funktioniert, und bieten Sie allen Benutzern ein nahtloses Erlebnis."
+
+#: src/pages/[locale]/index.astro
+msgid "Colorful Image"
+msgstr "Farbenfrohes Bild"
+
+#: src/pages/[locale]/index.astro
+msgid "<0>Building on modern foundations</0> Gain a competitive advantage by incorporating industry leading practices"
+msgstr "<0>Auf modernen Fundamenten aufbauend</0> Erhalten Sie einen Wettbewerbsvorteil durch die Integration branchenführender Praktiken"
+
+#: src/pages/[locale]/index.astro
+msgid "High level of customization"
+msgstr "Hoher Grad an Anpassung"
+
+#: src/pages/[locale]/index.astro
+msgid "Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time."
+msgstr "Passen Sie die Vorlage mühelos an die Identität und die Anforderungen Ihrer Marke an, machen Sie Ihre Website unverwechselbar und sparen Sie Zeit."
+
+#: src/pages/[locale]/index.astro
+msgid "Multiple layout possibilities"
+msgstr "Vielfältige Layout-Möglichkeiten"
+
+#: src/pages/[locale]/index.astro
+msgid "Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation."
+msgstr "Entdecken Sie verschiedene Layout-Optionen, um die Struktur zu finden, die Ihre Inhalte am besten präsentiert und die Benutzerbindung und Navigation verbessert."
+
+#: src/pages/[locale]/index.astro
+msgid "Fully responsive design"
+msgstr "Vollständig responsives Design"
+
+#: src/pages/[locale]/index.astro
+msgid "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience."
+msgstr "Stellen Sie die optimale Leistung Ihrer Website auf verschiedenen Geräten und Bildschirmgrößen sicher und bieten Sie ein konsistentes und angenehmes Benutzererlebnis."
+
+#: src/pages/[locale]/index.astro
+msgid "Integration of media"
+msgstr "Integration von Medien"
+
+#: src/pages/[locale]/index.astro
+msgid "Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively."
+msgstr "Integrieren Sie nahtlos Bilder, Videos und Multimedia-Elemente, die Ihre Inhalte verbessern und Besucher effektiv ansprechen."
+
+#: src/pages/[locale]/index.astro
+msgid "Blueprint Image"
+msgstr "Blueprint Bild"
+
+#: src/pages/[locale]/index.astro
+msgid "Ensure your online presence truly represents you."
+msgstr "Stellen Sie sicher, dass Ihre Online-Präsenz Sie wirklich repräsentiert."
+
+#: src/pages/[locale]/index.astro
+msgid "Enhanced user engagement"
+msgstr "Verbesserte Benutzerbindung"
+
+#: src/pages/[locale]/index.astro
+msgid "Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits."
+msgstr "Fesseln Sie Ihr Publikum mit interaktiven Elementen, intuitiver Navigation und optisch ansprechenden Layouts, die längere Besuche fördern."
+
+#: src/pages/[locale]/index.astro
+msgid "Continuous improvement"
+msgstr "Kontinuierliche Verbesserung"
+
+#: src/pages/[locale]/index.astro
+msgid "Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements."
+msgstr "Stellen Sie durch regelmäßige Updates und Verbesserungen sicher, dass Ihre Website mit den neuesten Trends und Technologien Schritt hält."
+
+#: src/pages/[locale]/index.astro
+msgid "Time and resource efficiency"
+msgstr "Zeit- und Ressourceneffizienz"
+
+#: src/pages/[locale]/index.astro
+msgid "Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind."
+msgstr "Überspringen Sie den zeitraubenden Prozess des Aufbaus einer Website von Grund auf und starten Sie Ihre Online-Präsenz früher mit AstroWind."
+
+#: src/pages/[locale]/index.astro
+msgid "Community support"
+msgstr "Community-Unterstützung"
+
+#: src/pages/[locale]/index.astro
+msgid "Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey."
+msgstr "Treten Sie der wachsenden AstroWind-Community bei, um Einblicke, Ressourcen und Unterstützung zu erhalten, damit Sie auf Ihrer Webentwicklungsreise nie allein sind."
+
+#: src/pages/[locale]/index.astro
+msgid "Astronauts Image"
+msgstr "Astronauten Bild"
+
+#: src/pages/[locale]/index.astro
+msgid "Designed to foster growth and success."
+msgstr "Entwickelt, um Wachstum und Erfolg zu fördern."
+
+#: src/pages/[locale]/index.astro
+msgid "Get your dream website up and running in no time with AstroWind."
+msgstr "Mit AstroWind ist Ihre Traumwebsite im Handumdrehen einsatzbereit."
+
+#: src/pages/[locale]/index.astro
+msgid "Step 1: <span class=\"font-medium\">Download</span>"
+msgstr "Schritt 1: <span class=\"font-medium\">Herunterladen</span>"
+
+#: src/pages/[locale]/index.astro
+msgid "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation."
+msgstr "Starten Sie mit GitHub! Forken Sie entweder die AstroWind-Vorlage oder klicken Sie einfach auf „Diese Vorlage verwenden“. Ihre Leinwand wartet, bereit für Ihr digitales Meisterwerk. Mit nur wenigen Klicks haben Sie bereits das Fundament gelegt."
+
+#: src/pages/[locale]/index.astro
+msgid "Step 2: <span class=\"font-medium\">Add content</span>"
+msgstr "Schritt 2: <span class=\"font-medium\">Inhalt hinzufügen</span>"
+
+#: src/pages/[locale]/index.astro
+msgid "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating."
+msgstr "Gießen Sie Ihre Vision hinein. Fügen Sie Bilder, Texte und all das hinzu, um Ihrem digitalen Raum Leben einzuhauchen. Denken Sie daran, es ist der Inhalt, der Ihre Geschichte erzählt, also gestalten Sie ihn fesselnd."
+
+#: src/pages/[locale]/index.astro
+msgid "Step 3: <span class=\"font-medium\">Customize styles</span>"
+msgstr "Schritt 3: <span class=\"font-medium\">Stile anpassen</span>"
+
+#: src/pages/[locale]/index.astro
+msgid "Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience."
+msgstr "Verleihen Sie ihm Ihre persönliche Note. Passen Sie Farben, Schriftarten und Layouts an, bis es genau richtig ist. Ihr einzigartiges Flair, verstärkt durch AstroWind! Präzision im Design sorgt für ein nahtloses Benutzererlebnis."
+
+#: src/pages/[locale]/index.astro
+msgid "Ready!"
+msgstr "Fertig!"
+
+#: src/pages/[locale]/index.astro
+msgid "Steps image"
+msgstr "Schritte Bild"
+
+#: src/pages/[locale]/index.astro
+msgid "Most used widgets"
+msgstr "Meistgenutzte Widgets"
+
+#: src/pages/[locale]/index.astro
+msgid "Provides frequently used components for building websites using Tailwind CSS"
+msgstr "Bietet häufig verwendete Komponenten für den Aufbau von Websites mit Tailwind CSS"
+
+#: src/pages/[locale]/index.astro
+msgid "Components"
+msgstr "Komponenten"
+
+#: src/pages/[locale]/index.astro
+msgid "Headers"
+msgstr "Header"
+
+#: src/pages/[locale]/index.astro
+msgid "Ever tried driving without GPS? Boom! That's why websites need headers for direction."
+msgstr "Schon mal versucht, ohne GPS zu fahren? Boom! Deshalb brauchen Websites Header für die Orientierung."
+
+#: src/pages/[locale]/index.astro
+msgid "Heros"
+msgstr "Helden"
+
+#: src/pages/[locale]/index.astro
+msgid "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!"
+msgstr "Stellen Sie sich eine Superheldenlandung vor – episch, oder? Das ist die Aufgabe eines Hero-Bereichs, der große Auftritte inszeniert!"
+
+#: src/pages/[locale]/index.astro
+msgid "Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!"
+msgstr "Wo Websites ihr Zeug zur Schau stellen und Superkräfte zeigen. Hier gibt es keine Zurückhaltung, wenn es ums Prahlen geht!"
+
+#: src/pages/[locale]/index.astro
+msgid "Content"
+msgstr "Inhalt"
+
+#: src/pages/[locale]/index.astro
+msgid "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king."
+msgstr "Tauchen Sie ein in das Herzstück einer Website; ohne sie würden Sie nur Schaufensterbummel machen. Inhalt ist König."
+
+#: src/pages/[locale]/index.astro
+msgid "Call-to-Action"
+msgstr "Aufruf zum Handeln"
+
+#: src/pages/[locale]/index.astro
+msgid "That enthusiastic friend who's always urging, \"Do it! Do it!\"? Yeah, that's this button nudging you towards adventure."
+msgstr "Dieser enthusiastische Freund, der immer drängt: „Mach es! Mach es!“? Ja, das ist dieser Knopf, der Sie zum Abenteuer drängt."
+
+#: src/pages/[locale]/index.astro
+msgid "Behold the dessert menu of the website world. Tempting choices await, can you resist?"
+msgstr "Siehe die Dessertkarte der Website-Welt. Verlockende Auswahl wartet, können Sie widerstehen?"
+
+#: src/pages/[locale]/index.astro
+msgid "Testimonial"
+msgstr "Testimonial"
+
+#: src/pages/[locale]/index.astro
+msgid "Step into the gossip corner! Here, other visitors spill the beans and share the juicy details."
+msgstr "Treten Sie ein in die Klatsch-Ecke! Hier plaudern andere Besucher aus dem Nähkästchen und teilen die saftigen Details."
+
+#: src/pages/[locale]/index.astro
+msgid "Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in."
+msgstr "Wie ein digitales Postfach, aber schneller! Schreiben Sie eine Zeile, stellen Sie eine Frage oder senden Sie ein virtuelles High-Five. Ding! Nachricht angekommen."
+
+#: src/pages/[locale]/index.astro
+msgid "Footers"
+msgstr "Fußzeilen"
+
+#: src/pages/[locale]/index.astro
+msgid "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!"
+msgstr "Die Fußzeile ist wie der Abspann eines Films, aber mit Ostereiern gespickt. Zeit zur Jagd!"
+
+#: src/pages/[locale]/index.astro
+msgid "Find out more content in our Blog"
+msgstr "Weitere Inhalte finden Sie in unserem Blog"
+
+#: src/pages/[locale]/index.astro
+msgid ""
+"The blog is used to display AstroWind documentation.\n"
+"Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
+"Astro is a very interesting technology. Thanks.\n"
+""
+msgstr ""
+"Der Blog dient zur Anzeige der AstroWind-Dokumentation.\n"
+"Jeder neue Artikel ist ein wichtiger Schritt, den Sie kennen müssen, um ein Experte in der Erstellung einer Website mit Astro + Tailwind CSS zu werden.\n"
+"Astro ist eine sehr interessante Technologie. Danke.\n"
+""
+
+#: src/pages/[locale]/index.astro
+msgid "Frequently Asked Questions"
+msgstr "Häufig gestellte Fragen"
+
+#: src/pages/[locale]/index.astro
+msgid "Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+msgstr "Tauchen Sie ein in die folgenden Fragen, um Einblicke in die leistungsstarken Funktionen von AstroWind zu erhalten und wie es Ihre Webentwicklungsreise bereichern kann."
+
+#: src/pages/[locale]/index.astro
+msgid "FAQs"
+msgstr "FAQs"
+
+#: src/pages/[locale]/index.astro
+msgid "Why AstroWind?"
+msgstr "Warum AstroWind?"
+
+#: src/pages/[locale]/index.astro
+msgid "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels."
+msgstr "Michael Knight, ein junger Einzelgänger auf einem Kreuzzug, um die Sache der Unschuldigen zu verteidigen. Der Hilflosen. Der Machtlosen in einer Welt von Kriminellen, die über dem Gesetz stehen. Hier kommt er, hier kommt Speed Racer. Er ist ein Dämon auf Rädern."
+
+#: src/pages/[locale]/index.astro
+msgid "What do I need to start?"
+msgstr "Was brauche ich, um zu beginnen?"
+
+#: src/pages/[locale]/index.astro
+msgid "Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations."
+msgstr "Der Weltraum, unendliche Weiten. Dies sind die Reisen des Raumschiffs Enterprise. Ihre fünfjährige Mission: neue, fremde Welten zu entdecken. Viele sagen, Erkundung sei Teil unseres Schicksals, aber es ist tatsächlich unsere Pflicht gegenüber zukünftigen Generationen."
+
+#: src/pages/[locale]/index.astro
+msgid "How to install the Astro + Tailwind CSS template?"
+msgstr "Wie installiere ich die Astro + Tailwind CSS Vorlage?"
+
+#: src/pages/[locale]/index.astro
+msgid "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows."
+msgstr "Nun, die Art und Weise, wie sie Shows machen, ist, sie machen eine Show. Diese Show wird Pilot genannt. Dann zeigen sie diese Show den Leuten, die Shows machen, und aufgrund dieser einen Show entscheiden sie, ob sie weitere Shows machen werden."
+
+#: src/pages/[locale]/index.astro
+msgid "What's something that you don't understand?"
+msgstr "Was ist etwas, das Sie nicht verstehen?"
+
+#: src/pages/[locale]/index.astro
+msgid "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear."
+msgstr "Eine Blume in meinem Garten, ein Geheimnis in meiner Unterhose. Herzinfarkt hat den alten Big Bear nie aufgehalten. Ich wusste nicht einmal, dass wir ihn Big Bear nannten."
+
+#: src/pages/[locale]/index.astro
+msgid "What is something that you would like to try again?"
+msgstr "Was möchten Sie gerne noch einmal versuchen?"
+
+#: src/pages/[locale]/index.astro
+msgid "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in."
+msgstr "Ein so großes Geschäft, dass es an der NASDAQ gelistet sein könnte, geht bankrott. Verschwindet! Es hört auf zu existieren ohne mich. Nein, Sie wissen eindeutig nicht, mit wem Sie sprechen, also lassen Sie mich Sie aufklären."
+
+#: src/pages/[locale]/index.astro
+msgid "If you could only ask one question to each person you meet, what would that question be?"
+msgstr "Wenn Sie jeder Person, die Sie treffen, nur eine Frage stellen könnten, welche Frage wäre das?"
+
+#: src/pages/[locale]/index.astro
+msgid "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked."
+msgstr "Hier geht es nicht um Rache. Hier geht es um Gerechtigkeit. Viele Dinge können sich in zwölf Jahren ändern, Admiral. Nun, das ist sicherlich gut zu wissen. Etwa vier Jahre. Ich war es leid, zu hören, wie jung ich aussah."
+
+#: src/pages/[locale]/index.astro
+msgid "Downloads"
+msgstr "Downloads"
+
+#: src/pages/[locale]/index.astro
+msgid "Stars"
+msgstr "Sterne"
+
+#: src/pages/[locale]/index.astro
+msgid "Forks"
+msgstr "Forks"
+
+#: src/pages/[locale]/index.astro
+msgid "Users"
+msgstr "Benutzer"
+
+#: src/pages/[locale]/index.astro
+msgid "Astro&nbsp;+&nbsp;<0/><1>Tailwind CSS</1>"
+msgstr "Astro&nbsp;+&nbsp;<0/><1>Tailwind CSS</1>"
+
+#: src/pages/[locale]/index.astro
+msgid ""
+"Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't\n"
+"waste more time! :P"
+msgstr "Seien Sie sehr überrascht von diesen riesigen gefälschten Zahlen, die Sie auf dieser Seite sehen. <0/>Verlieren Sie keine Zeit mehr! :P"
+
+#: src/components/widgets/BlogHighlightedPosts.astro
+#: src/components/widgets/BlogLatestPosts.astro
+msgid "View all posts"
+msgstr "Alle Beiträge ansehen"
+
+#: src/components/common/SocialShare.astro
+msgid "Share:"
+msgstr "Teilen:"
+
+#: src/components/common/SocialShare.astro
+msgid "Twitter Share"
+msgstr "Auf Twitter teilen"
+
+#: src/components/common/SocialShare.astro
+msgid "Facebook Share"
+msgstr "Auf Facebook teilen"
+
+#: src/components/common/SocialShare.astro
+msgid "Linkedin Share"
+msgstr "Auf LinkedIn teilen"
+
+#: src/components/common/SocialShare.astro
+msgid "Whatsapp Share"
+msgstr "Auf Whatsapp teilen"
+
+#: src/components/common/SocialShare.astro
+msgid "Email Share"
+msgstr "Per E-Mail teilen"
+
+#. placeholder {0}: textDirection === 'rtl' ? ( <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> ) : ( <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> )
+#: src/components/blog/ToBlogLink.astro
+msgid "{0} Back to Blog"
+msgstr "{0} Zurück zum Blog"
+
+#: src/components/blog/RelatedPosts.astro
+msgid "Related Posts"
+msgstr "Ähnliche Beiträge"
+
+#: src/components/blog/RelatedPosts.astro
+msgid "View All Posts"
+msgstr "Alle Beiträge ansehen"
+
+#: src/pages/404.astro
+msgid "Error 404"
+msgstr "Fehler 404"
+
+#: src/pages/404.astro
+msgid "Error"
+msgstr "Fehler"
+
+#: src/pages/404.astro
+msgid "Sorry, we couldn't find this page."
+msgstr "Entschuldigung, diese Seite konnten wir nicht finden."
+
+#: src/pages/404.astro
+msgid "But dont worry, you can find plenty of other things on our homepage."
+msgstr "Aber keine Sorge, auf unserer Homepage finden Sie viele andere Dinge."
+
+#: src/pages/404.astro
+msgid "Back to homepage"
+msgstr "Zurück zur Startseite"

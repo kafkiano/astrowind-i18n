@@ -30,8 +30,14 @@ metadata:
 i18n:
   language: en
   textDirection: ltr
-  locales: ['en', 'es']
+  locales: ['en', 'es', 'fr', 'de']
   defaultLocale: en
+  localeNames:
+    en: English
+    es: Español
+    fr: Français
+    de: Deutsch
+    # Add more as needed
 
 apps:
   blog:

@@ -31,6 +31,7 @@ export interface I18NConfig {
   textDirection: string;
   locales: string[];
   defaultLocale: string;
+  localeNames?: Record<string, string>; // { en: 'English', es: 'Español' }
   dateFormatter?: Intl.DateTimeFormat;
 }
 export interface AppBlogConfig {
@@ -126,9 +127,19 @@ const getI18N = (config: Config) => {
     textDirection: 'ltr',
     locales: ['en'],
     defaultLocale: 'en',
+    localeNames: { en: 'English' },
   };
 
   const value = merge({}, _default, config?.i18n ?? {});
+
+  // Ensure localeNames has entries for all locales
+  const localeNames = value.localeNames || {};
+  value.locales.forEach((locale: string) => {
+    if (!localeNames[locale]) {
+      localeNames[locale] = locale.toUpperCase(); // Fallback to code
+    }
+  });
+  value.localeNames = localeNames;
 
   return value as I18NConfig;
 };
