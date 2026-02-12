@@ -11,12 +11,14 @@ This file provides guidance to agents when working with code in this repository.
 
 ## Commands
 
-- `npm run dev` - Start dev server with logging at: `dev/logs/dev.log`
+- `npm run dev` - Start dev server & chromium with logging at: `dev/logs/dev.log`
+- `pm2 restart app` - Restart the dev server
 - `npm run build` - Build for production
 - `npm run check` - Run all checks (astro check, eslint, prettier)
 - `npm run fix` - Auto-fix eslint and prettier issues
 - `tail -n 50 dev/logs/dev.log` - Check dev logs for errors
 - `pm2 list` - Check running apps
+- `cdp-cli` - Browser automation, html inspection, `eval` tests
 
 ## Critical Non-Obvious Patterns
 
@@ -71,53 +73,3 @@ This file provides guidance to agents when working with code in this repository.
 - Prettier: 120 char width, single quotes, 2 spaces, trailing commas (es5)
 - ESLint: TypeScript strict, unused vars with `_` prefix ignored
 - Astro files use `astro-eslint-parser` with TypeScript parser
-
-## Browser Automation with Cdp‑Cli
-
-**Rationale**: Automate front‑end inspection, interaction, and debugging via Chrome DevTools Protocol. Output is NDJSON (newline‑delimited JSON), ideal for parsing with `jq`.
-
-**Since `npm run dev` starts a chromium instance this feature is always available**
-
-### Quick start
-
-```bash
-# Extract page titles
-# Chromium launches always with a localhost:4321 new tab
-cdp-cli tabs | jq -r '.title'
-
-# Inspect page content
-cdp-cli snapshot "PAGE_TITLE" --format dom
-```
-
-### Command reference
-
-| Category   | Command example                                    | Purpose                   |
-| ---------- | -------------------------------------------------- | ------------------------- |
-| Navigation | `cdp-cli tabs`                                     | List open pages           |
-|            | `cdp-cli new <url>`                                | Create new tab            |
-|            | `cdp-cli go <page> <url\|back\|forward\|reload>`   | Navigate                  |
-| Inspection | `cdp-cli snapshot <page> [--format ax\|text\|dom]` | Get page structure        |
-|            | `cdp-cli console <page> [--verbose\|--all]`        | Retrieve console messages |
-|            | `cdp-cli eval <page> "<expression>"`               | Execute JavaScript        |
-| Automation | `cdp-cli click <page> <selector>`                  | Click element             |
-|            | `cdp-cli fill <page> <text> <selector>`            | Fill input field          |
-|            | `cdp-cli key <page> <key>`                         | Press keyboard key        |
-| Capture    | `cdp-cli screenshot <page> <output>`               | Take screenshot           |
-| Network    | `cdp-cli network <page> [--duration 5]`            | Monitor network requests  |
-
-**Example parsing with `jq`**
-
-```bash
-# Filter console errors
-cdp-cli console "PAGE_TITLE" --verbose | jq -c 'select(.type == "error")'
-
-# Run eval in chrome
-cdp-cli eval "PAGE_TITLE" "javascript code here" | jq -r '.value'
-```
-
-### Troubleshooting
-
-- **Page not found**: Use `cdp-cli tabs` to see current page titles.
-- **No console output**: Ensure `--duration` is set and page has logged messages.
-
-**Detailed Reference**: Read `dev/docs/cdp-cli.md` for detailed examples and command patterns for `cdp-cli` in a case of heavy debugging.

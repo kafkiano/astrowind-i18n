@@ -24,6 +24,9 @@ pnpm-lock.yaml
 .astro
 .astro_*
 
+# temporary docs
+dev/docs
+
 # agent frameworks
 ACTION*
 ARCHITECT*
