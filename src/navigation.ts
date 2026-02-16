@@ -29,7 +29,7 @@ export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({
       links: [
         {
           text: 'Features (Anchor Link)',
-          href: getPermalink('/#features', 'page', locale),
+          href: getPermalink('#features', 'page', locale),
         },
         {
           text: 'Services',
