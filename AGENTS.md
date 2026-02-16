@@ -11,7 +11,7 @@ This file provides guidance to agents when working with code in this repository.
 
 ## Commands
 
-- `npm run dev` - Start dev server & chromium with logging at: `dev/logs/dev.log`
+- `npm run dev` - Start dev server & chromium instance with logging at: `dev/logs/dev.log`
 - `pm2 restart app` - Restart the dev server
 - `npm run build` - Build for production
 - `npm run check` - Run all checks (astro check, eslint, prettier)
@@ -19,6 +19,7 @@ This file provides guidance to agents when working with code in this repository.
 - `tail -n 50 dev/logs/dev.log` - Check dev logs for errors
 - `pm2 list` - Check running apps
 - `cdp-cli` - Browser automation, html inspection, `eval` tests
+- `gitingest` - Turn codebase into text digest.txt file for further processing or piping
 
 ## Critical Non-Obvious Patterns
 
