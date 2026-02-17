@@ -55,6 +55,10 @@ export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({
           text: 'Privacy policy',
           href: getPagePermalink('privacy', locale),
         },
+        {
+          text: 'Markdown Page',
+          href: getPagePermalink('markdown', locale),
+        },
       ],
     },
     {
