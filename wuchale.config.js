@@ -11,6 +11,7 @@ const configPath = path.join(__dirname, 'src/config.yaml');
 const configContent = fs.readFileSync(configPath, 'utf-8');
 const config = yaml.load(configContent);
 const locales = config.i18n?.locales || ['en'];
+const geminiKey = config.ai?.geminiApiKey;
 
 export default defineConfig({
   locales,
@@ -23,7 +24,7 @@ export default defineConfig({
         include: ['src/navigation.ts'],
         ignore: []
       },
-      catalog: 'main',
+      catalog: 'navigation',
       loader: 'custom',
       heuristic: (node, context) => {
         // Check if this is a string literal
@@ -42,4 +43,8 @@ export default defineConfig({
       }
     }),
   },
+  writeFiles: {
+    compiled: true,
+  },
+  ...(geminiKey && { ai: { geminiApiKey: geminiKey } }),
 });

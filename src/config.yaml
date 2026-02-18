@@ -78,3 +78,7 @@ analytics:
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+
+ai:
+  geminiApiKey: null   # or string
+  provider: 'gemini'   # optional

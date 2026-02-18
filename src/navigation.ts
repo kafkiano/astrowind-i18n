@@ -181,6 +181,7 @@ export const getFooterData = (locale: string = DEFAULT_LOCALE) => ({
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
   ],
+  /* @wc-ignore */
   footNote: `
     Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
   `,
