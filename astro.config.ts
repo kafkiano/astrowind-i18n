@@ -17,8 +17,6 @@ import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
-import sentry from '@sentry/astro';
-import spotlightjs from '@spotlightjs/astro';
 import { wuchale } from '@wuchale/vite-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -81,7 +79,7 @@ export default defineConfig({
     Logger: 1,
   }), astrowind({
     config: './src/config.yaml',
-  }), sentry(), spotlightjs()],
+  })],
 
   image: {
     domains: ['cdn.pixabay.com'],
