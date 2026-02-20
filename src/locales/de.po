@@ -180,10 +180,6 @@ msgstr "Kategorieseite"
 msgid "Tag Page"
 msgstr "Tag-Seite"
 
-#: src/navigation.ts
-msgid "Widgets"
-msgstr "Widgets"
-
 #: src/layouts/LandingLayout.astro
 #: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro

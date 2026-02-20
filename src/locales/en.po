@@ -2878,10 +2878,6 @@ msgid "Terms"
 msgstr "Terms"
 
 #: src/navigation.ts
-msgid "Widgets"
-msgstr "Widgets"
-
-#: src/navigation.ts
 msgid "Instagram"
 msgstr "Instagram"
 

@@ -2789,10 +2789,6 @@ msgid "Tag Page"
 msgstr "Page de tags"
 
 #: src/navigation.ts
-msgid "Widgets"
-msgstr "Widgets"
-
-#: src/navigation.ts
 msgid "Product"
 msgstr "Produit"
 
