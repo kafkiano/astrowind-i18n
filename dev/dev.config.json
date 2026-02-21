@@ -2,7 +2,9 @@
   "apps": [
     {
       "name": "app",
-      "script": "astro dev",
+      "script": "/bin/sh",
+      "args": "-c 'bun --bun run astro dev'",
+      "interpreter": "none",
       "exec_mode": "fork",
       "instances": 1,
       "autorestart": false,

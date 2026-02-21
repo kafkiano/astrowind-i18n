@@ -228,6 +228,16 @@ Now, your website is ready to be deployed. All generated files are located at
 `dist` folder, which you can deploy the folder to any hosting service you
 prefer.
 
+#### Deploy to production (docker)
+
+```shell
+docker build --target artifact --output type=local,dest=./dist .
+```
+
+This is particularly useful if you want to deploy on a production server without nodejs installed.
+
+
+
 #### Deploy to Netlify
 
 Clone this repository on your own GitHub account and deploy it to Netlify:
