@@ -1,5 +1,6 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import { cleanSlug } from './permalinks';
 import { LOCALES } from './locales';
 
@@ -10,7 +11,7 @@ export type NormalizedPage = {
   slug: string;
   permalink: string;
   title: string;
-  Content: any;
+  Content: AstroComponentFactory;
 };
 
 const getNormalizedPage = async (page: CollectionEntry<'pages'>): Promise<NormalizedPage> => {
@@ -66,10 +67,12 @@ export const findPageBySlug = async (slug: string, lang?: string): Promise<Norma
 };
 
 /** */
-export const getStaticPathsPages = async (): Promise<Array<{
-  params: { locale: string; pages: string };
-  props: { page: NormalizedPage; locale: string };
-}>> => {
+export const getStaticPathsPages = async (): Promise<
+  Array<{
+    params: { locale: string; pages: string };
+    props: { page: NormalizedPage; locale: string };
+  }>
+> => {
   const paths: Array<{
     params: { locale: string; pages: string };
     props: { page: NormalizedPage; locale: string };

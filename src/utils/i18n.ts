@@ -1,14 +1,22 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { LOCALES, DEFAULT_LOCALE } from './locales';
 
+interface AstroGlobal {
+  i18n?: {
+    currentLocale?: string;
+  };
+}
+
+declare const Astro: AstroGlobal;
+
 /**
  * Get the language from a URL object.
  * If Astro.i18n is available, returns current locale.
  * Fallback to DEFAULT_LOCALE.
  */
 export function getLangFromUrl(url: URL): string {
-  if (import.meta.env.SSR && (Astro as any).i18n) {
-    return (Astro as any).currentLocale || DEFAULT_LOCALE;
+  if (import.meta.env.SSR && Astro.i18n) {
+    return Astro.i18n?.currentLocale || DEFAULT_LOCALE;
   }
   // For client-side or fallback, parse pathname
   const segments = url.pathname.split('/').filter(Boolean);
@@ -31,8 +39,8 @@ export function useTranslatedPath(targetLocale?: string): (path: string, locale?
     }
     try {
       // Use Astro's i18n utilities if available
-      if (import.meta.env.SSR && (Astro as any).i18n) {
-        return getRelativeLocaleUrl(target as any, path);
+      if (import.meta.env.SSR && Astro.i18n) {
+        return getRelativeLocaleUrl(target, path);
       }
     } catch (e) {
       console.warn('Failed to generate translated path', e);
@@ -49,8 +57,8 @@ export function useTranslatedPath(targetLocale?: string): (path: string, locale?
  * Get the current locale from Astro context (SSR only).
  */
 export function getCurrentLocale(): string {
-  if (import.meta.env.SSR && (Astro as any).currentLocale) {
-    return (Astro as any).currentLocale;
+  if (import.meta.env.SSR && Astro.i18n?.currentLocale) {
+    return Astro.i18n?.currentLocale;
   }
   return DEFAULT_LOCALE;
 }

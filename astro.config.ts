@@ -24,7 +24,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Read i18n config directly from config.yaml for Astro config
 const configPath = path.join(__dirname, 'src/config.yaml');
 const configContent = fs.readFileSync(configPath, 'utf-8');
-const config = yaml.load(configContent) as any;
+
+interface AstroConfig {
+  i18n?: {
+    locales: string[];
+    defaultLocale: string;
+  };
+}
+
+const config = yaml.load(configContent) as AstroConfig;
 const i18nConfig = config.i18n || { locales: ['en'], defaultLocale: 'en' };
 
 const hasExternalScripts = false;
@@ -33,7 +41,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-  
+
   vite: {
     plugins: [wuchale()],
   },
@@ -45,41 +53,49 @@ export default defineConfig({
     },
   },
 
-  integrations: [tailwind({
-    applyBaseStyles: false,
-  }), sitemap(), mdx(), icon({
-    include: {
-      tabler: ['*'],
-      'flat-color-icons': [
-        'template',
-        'gallery',
-        'approval',
-        'document',
-        'advertising',
-        'currency-exchange',
-        'voice-presentation',
-        'business-contact',
-        'database',
-      ],
-    },
-  }), ...whenExternalScripts(() =>
-    partytown({
-      config: { forward: ['dataLayer.push'] },
-    })
-  ), compress({
-    CSS: true,
-    HTML: {
-      'html-minifier-terser': {
-        removeAttributeQuotes: false,
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    mdx(),
+    icon({
+      include: {
+        tabler: ['*'],
+        'flat-color-icons': [
+          'template',
+          'gallery',
+          'approval',
+          'document',
+          'advertising',
+          'currency-exchange',
+          'voice-presentation',
+          'business-contact',
+          'database',
+        ],
       },
-    },
-    Image: false,
-    JavaScript: true,
-    SVG: false,
-    Logger: 1,
-  }), astrowind({
-    config: './src/config.yaml',
-  })],
+    }),
+    ...whenExternalScripts(() =>
+      partytown({
+        config: { forward: ['dataLayer.push'] },
+      })
+    ),
+    compress({
+      CSS: true,
+      HTML: {
+        'html-minifier-terser': {
+          removeAttributeQuotes: false,
+        },
+      },
+      Image: false,
+      JavaScript: true,
+      SVG: false,
+      Logger: 1,
+    }),
+    astrowind({
+      config: './src/config.yaml',
+    }),
+  ],
 
   image: {
     domains: ['cdn.pixabay.com'],
@@ -89,5 +105,4 @@ export default defineConfig({
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
-
 });
