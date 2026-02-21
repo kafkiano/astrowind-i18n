@@ -1,5 +1,7 @@
 ---
-import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from 'astro';
+import type { Page } from 'astro';
+import type { Post } from '~/types';
 
 import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
@@ -15,7 +17,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   return await getStaticPathsBlogList({ paginate });
 }) satisfies GetStaticPaths;
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+type Props = { page: Page<Post>; locale?: string; };
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;

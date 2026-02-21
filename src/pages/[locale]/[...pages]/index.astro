@@ -1,14 +1,15 @@
 ---
-import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from 'astro';
 import MarkdownLayout from '~/layouts/MarkdownLayout.astro';
 import { getStaticPathsPages } from '~/utils/pages';
+import type { NormalizedPage } from '~/utils/pages';
 
 export const getStaticPaths = (async () => {
   return await getStaticPathsPages();
 }) satisfies GetStaticPaths;
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-const { page, locale } = Astro.props as Props;
+type Props = { page: NormalizedPage; locale?: string; };
+const { page } = Astro.props as Props;
 const { title, Content } = page;
 ---
 

@@ -184,7 +184,7 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  const paths = [];
+  const paths: any[] = [];
   for (const locale of LOCALES) {
     const posts = await load(locale);
     const paginated = paginate(posts, {
@@ -197,9 +197,15 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
 };
 
 /** */
-export const getStaticPathsBlogPost = async () => {
+export const getStaticPathsBlogPost = async (): Promise<Array<{
+  params: { locale: string; blog: string };
+  props: { post: Post; locale: string };
+}>> => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  const paths = [];
+  const paths: Array<{
+    params: { locale: string; blog: string };
+    props: { post: Post; locale: string };
+  }> = [];
   for (const locale of LOCALES) {
     const posts = await load(locale);
     for (const post of posts) {
@@ -219,7 +225,7 @@ export const getStaticPathsBlogPost = async () => {
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
-  const paths = [];
+  const paths: any[] = [];
   for (const locale of LOCALES) {
     const posts = await load(locale);
     const categories = {};
@@ -248,7 +254,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
-  const paths = [];
+  const paths: any[] = [];
   for (const locale of LOCALES) {
     const posts = await load(locale);
     const tags = {};

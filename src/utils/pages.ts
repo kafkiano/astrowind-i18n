@@ -66,8 +66,14 @@ export const findPageBySlug = async (slug: string, lang?: string): Promise<Norma
 };
 
 /** */
-export const getStaticPathsPages = async () => {
-  const paths = [];
+export const getStaticPathsPages = async (): Promise<Array<{
+  params: { locale: string; pages: string };
+  props: { page: NormalizedPage; locale: string };
+}>> => {
+  const paths: Array<{
+    params: { locale: string; pages: string };
+    props: { page: NormalizedPage; locale: string };
+  }> = [];
   for (const locale of LOCALES) {
     const pages = await load(locale);
     for (const page of pages) {

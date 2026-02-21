@@ -1,5 +1,7 @@
 ---
-import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from 'astro';
+import type { Page } from 'astro';
+import type { Post } from '~/types';
 import { blogCategoryRobots, getStaticPathsBlogCategory } from '~/utils/blog';
 
 import Layout from '~/layouts/PageLayout.astro';
@@ -13,7 +15,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   return await getStaticPathsBlogCategory({ paginate });
 }) satisfies GetStaticPaths;
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths> & { category: Record<string, string> };
+type Props = { page: Page<Post>; category: Record<string, string>; locale?: string; };
 
 const { page, category } = Astro.props as Props;
 
