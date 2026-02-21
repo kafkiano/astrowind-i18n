@@ -2892,3 +2892,10 @@ msgstr "Change language"
 #: src/navigation.ts
 msgid "Markdown Page"
 msgstr "Markdown Page"
+
+#~ msgid ""
+#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
+#~ "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+#~ msgstr ""
+#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
+#~ "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."

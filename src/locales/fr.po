@@ -2892,3 +2892,7 @@ msgstr "Facebook"
 msgid "Markdown Page"
 msgstr "Page Markdown"
 
+#~ msgid ""
+#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
+#~ "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+#~ msgstr "<0><0>AstroWind</0> est un modèle gratuit, personnalisable et prêt pour la production pour Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Prêt pour la production.</1> Convient pour les startups, les petites entreprises, les sites web SaaS, les portfolios professionnels, les sites web marketing, les pages de destination et les blogs."
