@@ -22,7 +22,7 @@ export default defineConfig({
     navigation: vanilla({
       files: {
         include: ['src/navigation.ts'],
-        ignore: []
+        ignore: [],
       },
       catalog: 'navigation',
       loader: 'custom',
@@ -31,16 +31,15 @@ export default defineConfig({
         if (node.type === 'Literal' || node.type === 'StringLiteral') {
           // Only extract 'text' or 'title' properties from navigation.ts
           const parent = context.parent;
-          if (parent && parent.type === 'Property' &&
-              (parent.key.name === 'text' || parent.key.name === 'title')) {
+          if (parent && parent.type === 'Property' && (parent.key.name === 'text' || parent.key.name === 'title')) {
             return {
               type: 'script',
-              message: node.value
+              message: node.value,
             };
           }
         }
         return null;
-      }
+      },
     }),
   },
   writeFiles: {

@@ -11,7 +11,6 @@
 - ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
 - ✅ **Internationalization (i18n)** with hybrid system: Wuchale for UI strings, Astro routing, locale‑fallback pages.
 
-
 **AstroWind** tries to give you quick access to creating a website using [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
 
 Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
@@ -93,7 +92,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run check`     | Check your project for errors                      |
 | `npm run fix`       | Run Eslint and format codes with Prettier          |
 | `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
-
 
 ### Configuration
 
@@ -183,6 +181,7 @@ Astrowind uses a hybrid i18n system:
 3. **Content collections** – markdown pages stored in `src/data/pages/{locale}/`. Pages missing in a locale fall back to the default locale (English) automatically.
 
 **Configuration** (in `src/config.yaml`):
+
 ```yaml
 i18n:
   language: en
@@ -197,11 +196,13 @@ i18n:
 ```
 
 **Adding a new locale**:
+
 1. Add locale code to `locales` array in `src/config.yaml`.
 2. Create `src/data/pages/{locale}/` directory for translated pages.
 3. Run `npm run dev` – Wuchale will generate corresponding `.po` files in `src/locales/`.
 
 **Fallback behavior**:
+
 - UI strings: Untranslated strings show the source (English) text.
 - Pages: Missing locale‑specific pages automatically render the default‑locale version with a visual notice.
 - URLs: Always locale‑prefixed; the default locale also receives a prefix (`/en/...`).
@@ -238,7 +239,6 @@ Clone this repository on your own GitHub account and deploy it to Netlify:
 Clone this repository on your own GitHub account and deploy to Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Fastrowind)
-
 
 ## Acknowledgements
 

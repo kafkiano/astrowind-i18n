@@ -30,7 +30,6 @@ A efectos de esta Política de Privacidad:
 - **Sitio Web** se refiere a AstroWind, accesible desde [https://astrowind.vercel.app](https://astrowind.vercel.app)
 - **Usted** se refiere a la persona que accede o utiliza el Servicio, o a la empresa u otra entidad legal en nombre de la cual dicha persona accede o utiliza el Servicio, según corresponda.
 
-
 ## Recopilación y Uso de sus Datos Personales
 
 ### Tipos de Datos Recopilados
@@ -50,7 +49,6 @@ Los Datos de Uso pueden incluir información como la dirección IP de su disposi
 Cuando accede al Servicio a través de un dispositivo móvil, podemos recopilar cierta información automáticamente, incluyendo, entre otros, el tipo de dispositivo móvil que utiliza, el ID único de su dispositivo móvil, la dirección IP de su dispositivo móvil, su sistema operativo móvil, el tipo de navegador de internet móvil que utiliza, identificadores únicos del dispositivo y otros datos de diagnóstico.
 
 También podemos recopilar información que su navegador envía cada vez que visita nuestro Servicio o cuando accede a él a través de un dispositivo móvil.
-
 
 Tecnologías de Seguimiento y Cookies
 

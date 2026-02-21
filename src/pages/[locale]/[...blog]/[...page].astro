@@ -17,7 +17,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   return await getStaticPathsBlogList({ paginate });
 }) satisfies GetStaticPaths;
 
-type Props = { page: Page<Post>; locale?: string; };
+type Props = { page: Page<Post>; locale?: string };
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;

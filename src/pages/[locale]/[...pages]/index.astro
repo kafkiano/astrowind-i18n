@@ -8,7 +8,7 @@ export const getStaticPaths = (async () => {
   return await getStaticPathsPages();
 }) satisfies GetStaticPaths;
 
-type Props = { page: NormalizedPage; locale?: string; };
+type Props = { page: NormalizedPage; locale?: string };
 const { page } = Astro.props as Props;
 const { title, Content } = page;
 ---

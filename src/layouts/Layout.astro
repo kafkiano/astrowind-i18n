@@ -60,7 +60,7 @@ const currentPathWithoutLocale = getPathWithoutLocale(currentPath);
     <!-- hreflang tags for i18n -->
     {
       (() => {
-        const removeTrailingSlash = (url: string) => url.endsWith('/') && url !== '/' ? url.slice(0, -1) : url;
+        const removeTrailingSlash = (url: string) => (url.endsWith('/') && url !== '/' ? url.slice(0, -1) : url);
         const enUrl = removeTrailingSlash(getRelativeLocaleUrl('en', currentPathWithoutLocale));
         const esUrl = removeTrailingSlash(getRelativeLocaleUrl('es', currentPathWithoutLocale));
         return (

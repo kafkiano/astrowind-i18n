@@ -19,7 +19,7 @@ export const getStaticPaths = (async () => {
   return await getStaticPathsBlogPost();
 }) satisfies GetStaticPaths;
 
-type Props = { post: Post; locale?: string; };
+type Props = { post: Post; locale?: string };
 
 const { post } = Astro.props as Props;
 

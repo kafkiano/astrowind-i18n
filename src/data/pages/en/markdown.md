@@ -1,9 +1,11 @@
 ---
 title: 'Markdown Page'
 ---
+
 ### What is Markdown?
+
 Markdown is a lightweight markup language that you can use to format plain text documents.  
-Write docs for your GitHub projects, edit your GitHub profile _README_ etc. You fill find it all here.  
+Write docs for your GitHub projects, edit your GitHub profile _README_ etc. You fill find it all here.
 
 Let's dive into it. ⤵️
 
@@ -17,9 +19,9 @@ Let's dive into it. ⤵️
 6. [Links](#links)
 7. [Code](#code)
 8. [Lists](#lists)
-    - [Ordered List](#orderedlist)
-    - [Unordered List](#unorderedlist)
-    - [Mixed List](#mixedlist)
+   - [Ordered List](#orderedlist)
+   - [Unordered List](#unorderedlist)
+   - [Mixed List](#mixedlist)
 9. [Table](#table)
 10. [Task List](#tasklist)
 11. [Footnote](#footnote)
@@ -30,16 +32,19 @@ Let's dive into it. ⤵️
 ---
 
 ## Paragraph
+
 By writing regular text you are basically writing a paragraph.
 
 ```
 This is a paragraph.
 ```
+
 This is a paragraph.
 
 ---
 
 ## Headings
+
 There are 6 heading variants. The number of "#" symbols, followed by text, indicates the importance of the heading.
 
 ```
@@ -52,37 +57,43 @@ There are 6 heading variants. The number of "#" symbols, followed by text, indic
 ```
 
 # Heading 1
+
 ## Heading 2
+
 ### Heading 3
+
 #### Heading 4
+
 ##### Heading 5
+
 ###### Heading 6
 
 ---
 
 ## Emphasis
+
 Modifying text is so neat and easy. You can make your text bold, italic and strikethrough.
 
 ```
-Using two asterisks **this text is bold**.  
-Two underscores __work as well__.  
-Let's make it *italic now*.  
-You guessed it, _one underscore is also enough_.  
+Using two asterisks **this text is bold**.
+Two underscores __work as well__.
+Let's make it *italic now*.
+You guessed it, _one underscore is also enough_.
 Can we combine **_both of that_?** Absolutely.
 What if I want to ~~strikethrough~~?
 ```
 
 Using two asterisks **this text is bold**.  
-Two underscores __work as well__.  
-Let's make it *italic now*.  
+Two underscores **work as well**.  
+Let's make it _italic now_.  
 You guessed it, _one underscore is also enough_.  
 Can we combine **_both of that_?** Absolutely.  
 What if I want to ~~strikethrough~~?
 
 ---
 
-
 ## Blockquote
+
 Want to emphasise importance of the text? Say no more.
 
 ```
@@ -103,8 +114,8 @@ Want to emphasise importance of the text? Say no more.
 
 ---
 
-
 ## Images
+
 The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  
 Here is the syntax.
 
@@ -115,15 +126,16 @@ Here is the syntax.
 ![error text][logo]
 ```
 
-![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png "Text displayed on hover")
+![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Text displayed on hover')
 
-[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png "Hover me"
+[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Hover me'
+
 ![error text][logo]
 
 ---
 
-
 ## Links
+
 Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links.
 
 ```
@@ -144,11 +156,11 @@ Find some great docs [here][docs]
 
 ---
 
-
 ## Code
+
 You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks.
 
-```
+````
     I created `.env` file at the root.
     Backticks inside backticks? `` `No problem.` ``
 
@@ -163,7 +175,7 @@ You can cerate both inline and full block code snippets. You can also define pro
     const x = "Block code snippet in JS";
     console.log(x);
     ```
-```
+````
 
 I created `.env` file at the root.
 Backticks inside backticks? `` `No problem.` ``
@@ -176,16 +188,15 @@ Backticks inside backticks? `` `No problem.` ``
 ```
 
 ```js
-const x = "Block code snippet in JS";
+const x = 'Block code snippet in JS';
 console.log(x);
 ```
 
 ---
 
-
 ## Lists
-As you can do in HTML, Markdown allows creating of both ordered and unordered lists.
 
+As you can do in HTML, Markdown allows creating of both ordered and unordered lists.
 
 ### Ordered List
 
@@ -201,8 +212,7 @@ As you can do in HTML, Markdown allows creating of both ordered and unordered li
 2. CSS
 3. Javascript
 4. React
-7. I'm Frontend Dev now 👨🏼‍🎨
-
+5. I'm Frontend Dev now 👨🏼‍🎨
 
 ### Unordered List
 
@@ -214,12 +224,15 @@ As you can do in HTML, Markdown allows creating of both ordered and unordered li
 ```
 
 - Node.js
-+ Express
-* Nest.js
-- Learning Backend ⌛️
 
+* Express
+
+- Nest.js
+
+* Learning Backend ⌛️
 
 ### Mixed List
+
 You can also mix both of the lists and create sublists.  
 **PS.** Try not to create lists deeper than two levels. It is the best practice.
 
@@ -229,7 +242,7 @@ You can also mix both of the lists and create sublists.
    2. CSS
    7. Javascript
 2. Learn One Framework
-   - React 
+   - React
      - Router
      - Redux
    * Vue
@@ -239,18 +252,18 @@ You can also mix both of the lists and create sublists.
 1. Learn Basics
    1. HTML
    2. CSS
-   7. Javascript
+   3. Javascript
 2. Learn One Framework
-   - React 
+   - React
      - Router
      - Redux
    * Vue
-   + Svelte
+   - Svelte
 
 ---
 
-
 ## Table
+
 Great way to display well-arranged data. Use "|" symbol to separate columns and ":" symbol to align row content.
 
 ```
@@ -263,14 +276,14 @@ Great way to display well-arranged data. Use "|" symbol to separate columns and 
 
 | Left Align (default) | Center Align | Right Align |
 | :------------------- | :----------: | ----------: |
-| React.js             | Node.js      | MySQL       |
-| Next.js              | Express      | MongoDB     |
-| Vue.js               | Nest.js      | Redis       |
+| React.js             |   Node.js    |       MySQL |
+| Next.js              |   Express    |     MongoDB |
+| Vue.js               |   Nest.js    |       Redis |
 
 ---
 
-
 ## Task List
+
 Keeping track of the tasks that are done, and those that need to be done.
 
 ```
@@ -285,13 +298,13 @@ Keeping track of the tasks that are done, and those that need to be done.
 
 ---
 
-
 ## Footnote
+
 Want to describe something at the end of the file? Use footnote!
 
 ```
 #### I am working on a new project. [^1]
-[^1]: Stack is: React, Typescript, Tailwind CSS  
+[^1]: Stack is: React, Typescript, Tailwind CSS
 
 Project is about music & movies.
 
@@ -300,25 +313,26 @@ Project is about music & movies.
 ```
 
 #### I am working on a new project. [^1]
-[^1]: Stack is: React, Typescript, Tailwind CSS  
+
+[^1]: Stack is: React, Typescript, Tailwind CSS
 
 Project is about music & movies.
 
 ##### Hope you will like it. [^see]
+
 [^see]: Loading... ⌛️
 
 ---
 
-
 ## Jump to section
-Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name="...">` tags.
 
+Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name="...">` tags.
 
 ---
 
-
 ## Horizontal Line
-You can use asterisks, hyphens or underlines (*, -, _) to create horizontal line.  
+
+You can use asterisks, hyphens or underlines (\*, -, \_) to create horizontal line.  
 The only rule is that you must include at least three chars of the symbol.
 
 ```
@@ -337,21 +351,20 @@ _________
 
 First Horizontal Line
 
-***
+---
 
 Second One
 
------
+---
 
 Third
 
-_________
-
+---
 
 ---
 
-
 ## HTML
+
 You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work.
 
 ```
@@ -371,12 +384,11 @@ You can also use raw HTML in your Markdown file. Most of the times that will wor
 
 <details>
   <summary>One more quick hack? 🎭</summary>
-  
-  → Easy  
+
+  → Easy
   → And simple
 </details>
 ```
-
 
 <h1>This is a heading</h1>
 <p>Paragraph...</p>
@@ -400,7 +412,6 @@ You can also use raw HTML in your Markdown file. Most of the times that will wor
 </details>
 
 ---
-
 
 ## Mermaid Diagrams
 
@@ -430,7 +441,6 @@ mindmap
       Cost Efficiency
 ```
 
-
 ### Flowchart
 
 ```mermaid
@@ -447,6 +457,4 @@ flowchart LR
 
 ---
 
-
 ##### Section with some ID
-
