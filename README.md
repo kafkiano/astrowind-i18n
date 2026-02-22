@@ -230,12 +230,17 @@ prefer.
 
 #### Deploy to production (docker)
 
+This is particularly useful if you want to deploy on a production server without nodejs installed.
+
 ```shell
 docker build --target artifact --output type=local,dest=./dist .
 ```
 
-This is particularly useful if you want to deploy on a production server without nodejs installed.
+#### Deploy to production (docker+nginx)
 
+```shell
+docker build --target deploy -t astrowind-prod .
+```
 
 
 #### Deploy to Netlify
