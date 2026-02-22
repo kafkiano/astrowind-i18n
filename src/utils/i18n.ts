@@ -2,6 +2,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { LOCALES, DEFAULT_LOCALE } from './locales';
 
 interface AstroGlobal {
+  currentLocale?: string;
   i18n?: {
     currentLocale?: string;
   };
@@ -54,13 +55,43 @@ export function useTranslatedPath(targetLocale?: string): (path: string, locale?
 }
 
 /**
- * Get the current locale from Astro context (SSR only).
+ * Get the current locale from Astro context with robust fallback chain.
+ * 1. Try Astro.currentLocale (Astro 5+)
+ * 2. Try Astro.i18n (legacy)
+ * 3. Parse from URL (client-side fallback)
+ * 4. Default to DEFAULT_LOCALE
  */
 export function getCurrentLocale(): string {
-  if (import.meta.env.SSR && Astro.i18n?.currentLocale) {
-    return Astro.i18n?.currentLocale;
+  // 1. Try Astro.currentLocale (Astro 5+)
+  if (typeof Astro !== 'undefined' && Astro.currentLocale) {
+    return Astro.currentLocale;
   }
+  // 2. Try Astro.i18n (legacy)
+  if (typeof Astro !== 'undefined' && Astro.i18n?.currentLocale) {
+    return Astro.i18n.currentLocale;
+  }
+  // 3. Parse from URL (client-side fallback)
+  if (typeof window !== 'undefined') {
+    const seg = window.location.pathname.split('/').filter(Boolean);
+    if (seg.length > 0 && LOCALES.includes(seg[0])) return seg[0];
+  }
+  // 4. Default
   return DEFAULT_LOCALE;
+}
+
+/**
+ * Remove locale prefix from a pathname.
+ * @param pathname - The pathname to strip locale from
+ * @returns Pathname without locale prefix
+ */
+export function getPathWithoutLocale(pathname: string): string {
+  for (const locale of LOCALES) {
+    if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
+      const withoutLocale = pathname.replace(`/${locale}`, '');
+      return withoutLocale === '' ? '' : withoutLocale;
+    }
+  }
+  return pathname;
 }
 
 /**

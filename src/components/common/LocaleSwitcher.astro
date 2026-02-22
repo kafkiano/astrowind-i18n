@@ -3,6 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Icon } from 'astro-icon/components';
 import { LOCALES, DEFAULT_LOCALE } from '~/utils/locales';
 import { I18N } from 'astrowind:config';
+import { getPathWithoutLocale } from '~/utils/i18n';
 
 export interface Props {
   currentLocale?: string;
@@ -11,19 +12,6 @@ export interface Props {
 }
 
 const { currentLocale = Astro.currentLocale || 'en', showLabels = false, class: className = '' } = Astro.props;
-
-// Get the current path without locale prefix
-const getPathWithoutLocale = (pathname: string) => {
-  // Remove the locale prefix if present
-  for (const locale of LOCALES) {
-    if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
-      const withoutLocale = pathname.replace(`/${locale}`, '');
-      // Handle empty path (homepage)
-      return withoutLocale === '' ? '' : withoutLocale;
-    }
-  }
-  return pathname;
-};
 
 const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
 

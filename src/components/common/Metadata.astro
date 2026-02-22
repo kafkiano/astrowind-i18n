@@ -24,6 +24,8 @@ const {
   twitter = {},
 } = Astro.props;
 
+const locale = Astro.currentLocale || I18N?.language || 'en';
+
 const seoProps: AstroSeoProps = merge(
   {
     title: '',
@@ -36,7 +38,7 @@ const seoProps: AstroSeoProps = merge(
       url: canonical,
       site_name: SITE?.name,
       images: [],
-      locale: I18N?.language || 'en',
+      locale: locale, // use current locale, not default
       type: 'website',
     },
     twitter: {

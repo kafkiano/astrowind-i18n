@@ -3,6 +3,7 @@ import slugify from 'limax';
 import { SITE, APP_BLOG } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
+import { getCurrentLocale } from '~/utils/i18n';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
@@ -81,7 +82,9 @@ export const getPermalink = (slug = '', type = 'page', locale?: string): string 
       break;
   }
 
-  const prefixed = locale ? `/${locale}${permalink}` : permalink;
+  // AUTO-DETECT LOCALE WHEN NOT PROVIDED
+  const effectiveLocale = locale ?? getCurrentLocale();
+  const prefixed = effectiveLocale ? `/${effectiveLocale}${permalink}` : permalink;
   return definitivePermalink(prefixed);
 };
 
