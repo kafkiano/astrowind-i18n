@@ -239,9 +239,11 @@ docker build --target artifact --output type=local,dest=./dist .
 #### Deploy to production (docker+nginx)
 
 ```shell
+# Create container image
 docker build --target deploy -t astrowind-prod .
+# Run the container and map localhost:8080
+docker run -d -p 8080:8080 --name astrowind-server astrowind-prod
 ```
-
 
 #### Deploy to Netlify
 
