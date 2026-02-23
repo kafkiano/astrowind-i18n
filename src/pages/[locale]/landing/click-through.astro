@@ -6,11 +6,17 @@ import Layout from '~/layouts/LandingLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+export const getStaticPaths = getStaticPathsForLocale;
+
+export const navigation = {
+  // @wc-ignore
+  title: 'Click-through Landing',
+  showIn: 'footer',
+};
+
 const metadata = {
   title: 'Click-through Landing Page Demo',
 };
-
-export const getStaticPaths = getStaticPathsForLocale;
 ---
 
 <Layout metadata={metadata}>

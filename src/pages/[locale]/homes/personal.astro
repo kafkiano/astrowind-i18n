@@ -14,8 +14,14 @@ import { getPermalink } from '~/utils/permalinks';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
+export const navigation = {
+  // @wc-ignore
+  title: 'Personal Homepage',
+  showIn: 'header',
+};
+
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: navigation.title, // navigation title, can be replaced with a more meaningful static title
 };
 ---
 

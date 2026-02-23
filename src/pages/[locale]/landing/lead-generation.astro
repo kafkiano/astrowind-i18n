@@ -6,11 +6,17 @@ import Layout from '~/layouts/LandingLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+export const getStaticPaths = getStaticPathsForLocale;
+
+export const navigation = {
+  // @wc-ignore
+  title: 'Lead Generation',
+  showIn: 'footer',
+};
+
 const metadata = {
   title: 'Lead Generation Landing Page Demo',
 };
-
-export const getStaticPaths = getStaticPathsForLocale;
 ---
 
 <Layout metadata={metadata}>

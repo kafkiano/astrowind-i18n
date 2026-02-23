@@ -9,13 +9,15 @@ import Layout from '~/layouts/PageLayout.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
-const metadata = {
+export const navigation = {
+  // @wc-ignore
   title: 'Services',
+  showIn: 'header',
+  order: 1,
 };
 
-const navigation = {
-  showIn: ['header', 'footer'],
-  order: 2,
+const metadata = {
+  title: navigation.title, // navigation title, can be replaced with a more meaningful static title
 };
 ---
 
