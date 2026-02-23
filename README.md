@@ -85,13 +85,13 @@ All commands are run from the root of the project, from a terminal:
 
 | Command             | Action                                             |
 | :------------------ | :------------------------------------------------- |
-| `npm install`       | Installs dependencies                              |
-| `npm run dev`       | Starts local dev server at `localhost:4321`        |
-| `npm run build`     | Build your production site to `./dist/`            |
-| `npm run preview`   | Preview your build locally, before deploying       |
-| `npm run check`     | Check your project for errors                      |
-| `npm run fix`       | Run Eslint and format codes with Prettier          |
-| `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
+| `bun install`       | Installs dependencies                              |
+| `bun run dev`       | Starts local dev server at `localhost:4321`        |
+| `bun run build`     | Build your production site to `./dist/`            |
+| `bun run preview`   | Preview your build locally, before deploying       |
+| `bun run check`     | Check your project for errors                      |
+| `bun run fix`       | Run Eslint and format codes with Prettier          |
+| `bun run astro ...` | Run CLI commands like `astro add`, `astro preview` |
 
 ### Configuration
 
@@ -199,7 +199,7 @@ i18n:
 
 1. Add locale code to `locales` array in `src/config.yaml`.
 2. Create `src/data/pages/{locale}/` directory for translated pages.
-3. Run `npm run dev` – Wuchale will generate corresponding `.po` files in `src/locales/`.
+3. Run `bun run dev` – Wuchale will generate corresponding `.po` files in `src/locales/`.
 
 **Fallback behavior**:
 
@@ -221,7 +221,7 @@ To customize Font families, Colors or more Elements refer to the following files
 You can create an optimized production build with:
 
 ```shell
-npm run build
+bun run build
 ```
 
 Now, your website is ready to be deployed. All generated files are located at

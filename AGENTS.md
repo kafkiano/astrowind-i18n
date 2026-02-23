@@ -7,15 +7,15 @@ This file provides guidance to agents when working with code in this repository.
 - **Framework**: Astro 5.0 with static output
 - **Styling**: Tailwind CSS (base styles NOT applied automatically - see astro.config.ts)
 - **Language**: TypeScript with strict null checks
-- **Package Manager**: npm
+- **Package Manager**: Bun v1.3.9
 
 ## Commands
 
-- `npm run dev` - Start dev server & chromium instance as background process with pm2 and logs in `dev/logs/dev.log`
+- `bun run dev` - Start dev server & chromium instance as background process with pm2 and logs in `dev/logs/dev.log`
 - `pm2 restart app` - Restart the dev server
-- `npm run build` - Build for production
-- `npm run check` - Run all checks (astro check, eslint, prettier)
-- `npm run fix` - Auto-fix eslint and prettier issues
+- `bun run build` - Build for production
+- `bun run check` - Run all checks (astro check, eslint, prettier)
+- `bun run fix` - Auto-fix eslint and prettier issues
 - `tail -n 50 dev/logs/dev.log` - Check dev logs for errors
 - `pm2 list` - Check running apps
 
@@ -23,7 +23,7 @@ This file provides guidance to agents when working with code in this repository.
 
 ### Development Environment
 
-- `npm run dev` starts two pm2 processes: Astro dev server (`app`) and a headless Chromium instance (`chromium`) for CDP‑CLI automation.
+- `bun run dev` starts two pm2 processes: Astro dev server (`app`) and a headless Chromium instance (`chromium`) for CDP‑CLI automation.
 - Configuration in `dev/dev.config.json`; logs go to `dev/logs/dev.log`.
 - Use `pm2 restart app` to restart dev server without killing Chromium.
 - Chromium launches with `localhost:4321` open; enables browser automation via `cdp-cli` (see `dev/docs/cdp-cli.md`).
