@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getPagePermalink, getAsset } from './permalinks';
+import { getPermalink, getBlogPermalink, getPagePermalink } from './permalinks';
 import { DEFAULT_LOCALE } from './locales';
 import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
@@ -10,7 +10,6 @@ import { APP_BLOG } from 'astrowind:config';
 function isDynamicSegment(segment: string): boolean {
   return segment.startsWith('[...');
 }
-
 
 /**
  * Extract the route path from a file path
