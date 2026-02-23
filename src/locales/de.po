@@ -71,7 +71,6 @@ msgid "Pricing"
 msgstr "Preise"
 
 #: src/pages/[locale]/about.astro
-#: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "About us"
 msgstr "Über uns"
@@ -1999,9 +1998,8 @@ msgstr "Entdecken Sie meine aufschlussreichen Artikel in meinem Blog"
 msgid "Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey."
 msgstr "Tauchen Sie ein in eine Welt voller Designweisheit und kreativer Inspiration, wo Sie unschätzbare Einblicke, praktische Tipps und fesselnde Erzählungen finden, die Ihre kreative Reise bereichern und aufwerten."
 
-#: src/pages/[locale]/homes/saas.astro
-msgid "SaaS Landing Page"
-msgstr "SaaS Landingpage"
+#~ msgid "SaaS Landing Page"
+#~ msgstr "SaaS Landingpage"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Login"
@@ -2720,4 +2718,14 @@ msgstr "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife
 #~ "// Keep backward compatibility for now (optional)\n"
 #~ "export const headerData = getHeaderData(DEFAULT_LOCALE);\n"
 #~ "export const footerData = getFooterData(DEFAULT_LOCALE);"
+#~ msgstr ""
+
+#~ msgid "Mobile App Homepage Demo"
+#~ msgstr ""
+
+#: src/pages/[locale]/homes/saas.astro
+msgid "SaaS Landing Page Demo"
+msgstr ""
+
+#~ msgid "Startup Landing Page Demo"
 #~ msgstr ""

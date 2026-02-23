@@ -127,7 +127,6 @@ msgid "RSS Feed"
 msgstr "Fil RSS"
 
 #: src/pages/[locale]/about.astro
-#: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "About us"
 msgstr "À propos de nous"
@@ -2003,9 +2002,8 @@ msgstr "Explorez mes articles perspicaces sur mon blog"
 msgid "Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey."
 msgstr "Plongez dans un royaume de sagesse du design et d'inspiration créative, où vous trouverez des idées précieuses, des conseils pratiques et des récits captivants qui élèveront et enrichiront votre parcours créatif."
 
-#: src/pages/[locale]/homes/saas.astro
-msgid "SaaS Landing Page"
-msgstr "Page d'accueil SaaS"
+#~ msgid "SaaS Landing Page"
+#~ msgstr "Page d'accueil SaaS"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Login"
@@ -2695,3 +2693,12 @@ msgid ""
 "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
 msgstr "<0><0>AstroWind</0> est un modèle gratuit, personnalisable et prêt pour la production pour Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Prêt pour la production.</1> Convient pour les startups, les petites entreprises, les sites web SaaS, les portfolios professionnels, les sites web marketing, les pages de destination et les blogs."
 
+#~ msgid "Mobile App Homepage Demo"
+#~ msgstr ""
+
+#: src/pages/[locale]/homes/saas.astro
+msgid "SaaS Landing Page Demo"
+msgstr ""
+
+#~ msgid "Startup Landing Page Demo"
+#~ msgstr ""
