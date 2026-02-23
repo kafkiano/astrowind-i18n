@@ -4,7 +4,7 @@ import { AstroSeo } from '@astrolib/seo';
 
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
-import { SITE, METADATA, I18N } from 'astrowind:config';
+import { SITE, METADATA } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
@@ -24,7 +24,7 @@ const {
   twitter = {},
 } = Astro.props;
 
-const locale = Astro.currentLocale || I18N?.language;
+const locale = Astro.currentLocale;
 
 const seoProps: AstroSeoProps = merge(
   {

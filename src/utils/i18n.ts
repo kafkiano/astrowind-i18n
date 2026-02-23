@@ -14,6 +14,7 @@ declare const Astro: AstroGlobal;
  * Get the language from a URL object.
  * If Astro.i18n is available, returns current locale.
  * Fallback to DEFAULT_LOCALE.
+ * @throws {Error} If i18n configuration is missing and no locale can be determined
  */
 export function getLangFromUrl(url: URL): string {
   if (import.meta.env.SSR && Astro.i18n) {
@@ -60,6 +61,7 @@ export function useTranslatedPath(targetLocale?: string): (path: string, locale?
  * 2. Try Astro.i18n (legacy)
  * 3. Parse from URL (client-side fallback)
  * 4. Default to DEFAULT_LOCALE
+ * @throws {Error} If called outside an i18n route context and no locale can be determined
  */
 export function getCurrentLocale(): string {
   // 1. Try Astro.currentLocale (Astro 5+)

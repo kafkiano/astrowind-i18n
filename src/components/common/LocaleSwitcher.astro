@@ -11,14 +11,19 @@ export interface Props {
   class?: string;
 }
 
-const { currentLocale = Astro.currentLocale, showLabels = false, class: className = '' } = Astro.props;
+const { currentLocale = Astro.currentLocale!, showLabels = false, class: className = '' } = Astro.props;
 
 const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
 
 // Helper function to get locale display name directly from config
 const getLocaleDisplayName = (localeCode: string): string => {
-  return I18N.localeNames?.[localeCode] || localeCode.toUpperCase();
+  return I18N.localeNames[localeCode];
 };
+
+// Hide locale switcher for monolingual sites
+if (LOCALES.length <= 1) {
+  return null;
+}
 ---
 
 <div class={`relative inline-block ${className}`}>

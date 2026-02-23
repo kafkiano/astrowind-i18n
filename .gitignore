@@ -11,7 +11,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
@@ -19,8 +18,7 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-pnpm-lock.yaml
-
+# Astro Files
 .astro
 .astro_*
 
@@ -28,11 +26,11 @@ pnpm-lock.yaml
 dev/docs
 
 # agent frameworks
-ACTION*
-ARCHITECT*
-dev/logs*
 .aider*
 .roo/
+dev/logs*
+ACTION*
+ARCHITECT*
 digest.txt
 
 # wuchale

@@ -17,7 +17,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 const metadata = {
   title: 'SaaS Landing Page',
 };
-const locale = Astro.currentLocale || 'en';
+const locale = Astro.currentLocale;
 const headerData = getHeaderData(locale);
 
 export const getStaticPaths = getStaticPathsForLocale;

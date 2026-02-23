@@ -26,8 +26,8 @@ export interface Props {
 }
 
 const { metadata = {} } = Astro.props;
-const { language: defaultLanguage, textDirection } = I18N;
-const currentLocale = Astro.currentLocale || defaultLanguage;
+const { textDirection } = I18N;
+const currentLocale = Astro.currentLocale;
 const currentPath = Astro.url.pathname;
 
 const currentPathWithoutLocale = getPathWithoutLocale(currentPath);

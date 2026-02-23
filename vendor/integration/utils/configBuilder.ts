@@ -122,18 +122,39 @@ const getMetadata = (config: Config) => {
 };
 
 const getI18N = (config: Config) => {
-  const _default = {
-    language: 'en',
-    textDirection: 'ltr',
-    locales: ['en'],
-    defaultLocale: 'en',
-    localeNames: { en: 'English' },
+  // Validate i18n configuration exists
+  if (!config?.i18n) {
+    throw new Error('i18n configuration is required in src/config.yaml');
+  }
+
+  const i18nConfig = config.i18n;
+
+  // Validate locales array
+  if (!Array.isArray(i18nConfig.locales) || i18nConfig.locales.length === 0) {
+    throw new Error('i18n.locales must be a non-empty array in src/config.yaml');
+  }
+
+  // Validate defaultLocale
+  if (!i18nConfig.defaultLocale || typeof i18nConfig.defaultLocale !== 'string') {
+    throw new Error('i18n.defaultLocale is required and must be a string in src/config.yaml');
+  }
+
+  // Validate defaultLocale is in locales
+  if (!i18nConfig.locales.includes(i18nConfig.defaultLocale)) {
+    throw new Error(`i18n.defaultLocale "${i18nConfig.defaultLocale}" must be included in i18n.locales [${i18nConfig.locales.join(', ')}] in src/config.yaml`);
+  }
+
+  // Build validated configuration
+  const value = {
+    language: i18nConfig.language || i18nConfig.defaultLocale,
+    textDirection: i18nConfig.textDirection || 'ltr',
+    locales: i18nConfig.locales,
+    defaultLocale: i18nConfig.defaultLocale,
+    localeNames: i18nConfig.localeNames || {},
   };
 
-  const value = merge({}, _default, config?.i18n ?? {});
-
   // Ensure localeNames has entries for all locales
-  const localeNames = value.localeNames || {};
+  const localeNames = value.localeNames;
   value.locales.forEach((locale: string) => {
     if (!localeNames[locale]) {
       localeNames[locale] = locale.toUpperCase(); // Fallback to code
