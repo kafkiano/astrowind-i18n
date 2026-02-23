@@ -58,258 +58,60 @@ msgstr "Astro v5.12 ist jetzt verfügbar! »"
 msgid "If you like AstroWind, give us a star."
 msgstr "Wenn Ihnen AstroWind gefällt, geben Sie uns einen Stern."
 
-#: src/navigation.ts
-msgid "Homes"
-msgstr "Heim"
-
-#: src/navigation.ts
-msgid "SaaS"
-msgstr "SaaS"
-
-#: src/navigation.ts
-msgid "Startup"
-msgstr "Startup"
-
-#: src/navigation.ts
-msgid "Mobile App"
-msgstr "Mobile App"
-
-#: src/navigation.ts
-msgid "Personal"
-msgstr "Persönlich"
-
-#: src/navigation.ts
-msgid "Pages"
-msgstr "Seiten"
-
-#: src/navigation.ts
-msgid "Features (Anchor Link)"
-msgstr "Funktionen (Anker-Link)"
-
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
 #: src/pages/[locale]/services.astro
 msgid "Services"
 msgstr "Dienstleistungen"
 
-#: src/navigation.ts
-#: src/navigation.ts
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Pricing"
 msgstr "Preise"
 
-#: src/navigation.ts
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "About us"
 msgstr "Über uns"
 
-#: src/navigation.ts
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/index.astro
 msgid "Contact"
 msgstr "Kontakt"
 
-#: src/navigation.ts
-#: src/navigation.ts
-msgid "Terms"
-msgstr "Bedingungen"
-
-#: src/navigation.ts
-msgid "Privacy policy"
-msgstr "Datenschutzrichtlinie"
-
-#: src/navigation.ts
-msgid "Landing"
-msgstr "Landing"
-
-#: src/navigation.ts
-msgid "Lead Generation"
-msgstr "Lead-Generierung"
-
-#: src/navigation.ts
-msgid "Long-form Sales"
-msgstr "Langform-Vertrieb"
-
-#: src/navigation.ts
-msgid "Click-Through"
-msgstr "Click-Through"
-
-#: src/navigation.ts
-msgid "Product Details (or Services)"
-msgstr "Produktdetails (oder Dienstleistungen)"
-
-#: src/navigation.ts
-msgid "Coming Soon or Pre-Launch"
-msgstr "Demnächst oder Vorab-Start"
-
-#: src/navigation.ts
-msgid "Subscription"
-msgstr "Abonnement"
-
-#: src/navigation.ts
-#: src/navigation.ts
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/services.astro
 msgid "Blog"
 msgstr "Blog"
 
-#: src/navigation.ts
-msgid "Blog List"
-msgstr "Blog-Liste"
-
-#: src/navigation.ts
-msgid "Article"
-msgstr "Artikel"
-
-#: src/navigation.ts
-msgid "Article (with MDX)"
-msgstr "Artikel (mit MDX)"
-
-#: src/navigation.ts
-msgid "Category Page"
-msgstr "Kategorieseite"
-
-#: src/navigation.ts
-msgid "Tag Page"
-msgstr "Tag-Seite"
-
 #: src/layouts/LandingLayout.astro
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/navigation.ts
-msgid "Product"
-msgstr "Produkt"
-
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/index.astro
 msgid "Features"
 msgstr "Funktionen"
 
-#: src/navigation.ts
-msgid "Security"
-msgstr "Sicherheit"
-
-#: src/navigation.ts
-msgid "Team"
-msgstr "Team"
-
-#: src/navigation.ts
 #: src/pages/[locale]/homes/saas.astro
 msgid "Enterprise"
 msgstr "Unternehmen"
 
-#: src/navigation.ts
-msgid "Customer stories"
-msgstr "Kundenreferenzen"
-
-#: src/navigation.ts
-msgid "Resources"
-msgstr "Ressourcen"
-
-#: src/navigation.ts
-msgid "Platform"
-msgstr "Plattform"
-
-#: src/navigation.ts
-msgid "Developer API"
-msgstr "Entwickler-API"
-
-#: src/navigation.ts
-msgid "Partners"
-msgstr "Partner"
-
-#: src/navigation.ts
-msgid "Atom"
-msgstr "Atom"
-
-#: src/navigation.ts
-msgid "Electron"
-msgstr "Elektron"
-
-#: src/navigation.ts
-msgid "AstroWind Desktop"
-msgstr "AstroWind Desktop"
-
-#: src/navigation.ts
-msgid "Support"
-msgstr "Support"
-
-#: src/navigation.ts
-msgid "Docs"
-msgstr "Dokumente"
-
-#: src/navigation.ts
-msgid "Community Forum"
-msgstr "Community-Forum"
-
-#: src/navigation.ts
-msgid "Professional Services"
-msgstr "Professionelle Dienstleistungen"
-
-#: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
 msgid "Skills"
 msgstr "Fähigkeiten"
 
-#: src/navigation.ts
-msgid "Status"
-msgstr "Status"
-
-#: src/navigation.ts
-msgid "Company"
-msgstr "Unternehmen"
-
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "About"
 msgstr "Über"
 
-#: src/navigation.ts
-msgid "Careers"
-msgstr "Karriere"
-
-#: src/navigation.ts
-msgid "Press"
-msgstr "Presse"
-
-#: src/navigation.ts
-msgid "Inclusion"
-msgstr "Inklusion"
-
-#: src/navigation.ts
-msgid "Social Impact"
-msgstr "Soziale Wirkung"
-
-#: src/navigation.ts
-msgid "Shop"
-msgstr "Shop"
-
-#: src/navigation.ts
-msgid "Privacy Policy"
-msgstr "Datenschutzrichtlinie"
-
-#: src/navigation.ts
-msgid "Instagram"
-msgstr "Instagram"
-
-#: src/navigation.ts
-msgid "Facebook"
-msgstr "Facebook"
-
-#: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
 msgid "Github"
 msgstr "Github"
@@ -354,15 +156,14 @@ msgstr "AstroWind Hero-Bild"
 msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
 msgstr "Kostenlose Vorlage zur <0>Erstellung von Websites mit</0> <1>Astro 5.0</1> + Tailwind CSS"
 
-#: src/pages/[locale]/index.astro
-msgid ""
-"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0\n"
-"+ Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &\n"
-"Blogs."
-msgstr ""
-"<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0\n"
-"+ Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, Kleinunternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages &\n"
-"Blogs."
+#~ msgid ""
+#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0\n"
+#~ "+ Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &\n"
+#~ "Blogs."
+#~ msgstr ""
+#~ "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0\n"
+#~ "+ Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, Kleinunternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages &\n"
+#~ "Blogs."
 
 #: src/pages/[locale]/index.astro
 msgid "Philosophy:"
@@ -2880,11 +2681,43 @@ msgstr "Beiträge nach Tag '{0}'{1}"
 msgid "Tag: {0}"
 msgstr "Tag: {0}"
 
-#: src/navigation.ts
-msgid "Markdown Page"
-msgstr "Markdown-Seite"
+#~ msgid "Markdown Page"
+#~ msgstr "Markdown-Seite"
+
+#: src/pages/[locale]/index.astro
+msgid ""
+"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
+"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+msgstr "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, kleine Unternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages & Blogs."
 
 #~ msgid ""
-#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
-#~ "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
-#~ msgstr "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, kleine Unternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages & Blogs."
+#~ "Step into the spotlight with Astrowind templates, your pathway to fortifying your\n"
+#~ "startup's digital footprint, fostering credibility, and expanding your reach."
+#~ msgstr "Treten Sie ins Rampenlicht mit Astrowind-Vorlagen, Ihrem Weg zur Stärkung der digitalen Präsenz Ihres Startups, zur Förderung der Glaubwürdigkeit und zur Erweiterung Ihrer Reichweite."
+
+#~ msgid ""
+#~ "import {0} from './utils/permalinks';\n"
+#~ "import {1} from './utils/locales';\n"
+#~ "\n"
+#~ "export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({2});\n"
+#~ "\n"
+#~ "export const getFooterData = (locale: string = DEFAULT_LOCALE) => ({3});\n"
+#~ "\n"
+#~ "// Keep backward compatibility for now (optional)\n"
+#~ "export const headerData = getHeaderData(DEFAULT_LOCALE);\n"
+#~ "export const footerData = getFooterData(DEFAULT_LOCALE);"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "// @wc-ignore\n"
+#~ "import {0} from './utils/permalinks';\n"
+#~ "import {1} from './utils/locales';\n"
+#~ "\n"
+#~ "export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({2});\n"
+#~ "\n"
+#~ "export const getFooterData = (locale: string = DEFAULT_LOCALE) => ({3});\n"
+#~ "\n"
+#~ "// Keep backward compatibility for now (optional)\n"
+#~ "export const headerData = getHeaderData(DEFAULT_LOCALE);\n"
+#~ "export const footerData = getFooterData(DEFAULT_LOCALE);"
+#~ msgstr ""

@@ -12,6 +12,11 @@ export const getStaticPaths = getStaticPathsForLocale;
 const metadata = {
   title: 'Services',
 };
+
+const navigation = {
+  showIn: ['header', 'footer'],
+  order: 2,
+};
 ---
 
 <Layout metadata={metadata}>

@@ -14,7 +14,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 
 #: src/layouts/LandingLayout.astro
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Download"
 msgstr "Télécharger"
@@ -127,7 +126,6 @@ msgstr "Navigation principale"
 msgid "RSS Feed"
 msgstr "Fil RSS"
 
-#: src/navigation.ts
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
@@ -216,8 +214,6 @@ msgstr "Commerce électronique"
 msgid "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 msgstr "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 
-#: src/navigation.ts
-#: src/navigation.ts
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/services.astro
@@ -383,7 +379,6 @@ msgstr "Appelez-nous"
 msgid "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 msgstr "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 
-#: src/navigation.ts
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/index.astro
@@ -493,15 +488,14 @@ msgstr "Image d'en-tête AstroWind"
 msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
 msgstr "Modèle gratuit pour <0>créer des sites web avec</0> <1>Astro 5.0</1> + Tailwind CSS"
 
-#: src/pages/[locale]/index.astro
-msgid ""
-"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0\n"
-"+ Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &\n"
-"Blogs."
-msgstr ""
-"<0><0>AstroWind</0> est un modèle gratuit, personnalisable et prêt pour la production pour Astro 5.0\n"
-"+ Tailwind CSS.</0> <1>AstroWind: Prêt pour la production.</1> Convient aux startups, petites entreprises, sites web SaaS, portfolios professionnels, sites web marketing, pages d'atterrissage &\n"
-"blogs."
+#~ msgid ""
+#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0\n"
+#~ "+ Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &\n"
+#~ "Blogs."
+#~ msgstr ""
+#~ "<0><0>AstroWind</0> est un modèle gratuit, personnalisable et prêt pour la production pour Astro 5.0\n"
+#~ "+ Tailwind CSS.</0> <1>AstroWind: Prêt pour la production.</1> Convient aux startups, petites entreprises, sites web SaaS, portfolios professionnels, sites web marketing, pages d'atterrissage &\n"
+#~ "blogs."
 
 #: src/pages/[locale]/index.astro
 msgid "Philosophy:"
@@ -511,7 +505,6 @@ msgstr "Philosophie :"
 msgid "Simplicity, Best Practices and High Performance"
 msgstr "Simplicité, Bonnes Pratiques et Haute Performance"
 
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/index.astro
@@ -776,8 +769,6 @@ msgstr "Appel à l'action"
 msgid "That enthusiastic friend who's always urging, \"Do it! Do it!\"? Yeah, that's this button nudging you towards adventure."
 msgstr "Cet ami enthousiaste qui vous exhorte toujours, \"Fais-le ! Fais-le !\" ? Oui, c'est ce bouton qui vous pousse vers l'aventure."
 
-#: src/navigation.ts
-#: src/navigation.ts
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
@@ -1150,7 +1141,6 @@ msgstr "Rejoignez notre communauté de clients satisfaits qui ont transformé le
 msgid "Get started now"
 msgstr "Commencer maintenant"
 
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
 #: src/pages/[locale]/services.astro
@@ -1376,7 +1366,6 @@ msgstr "Le Blog"
 msgid "Mobile App Homepage"
 msgstr "Page d'accueil de l'application mobile"
 
-#: src/navigation.ts
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "About"
@@ -1649,7 +1638,6 @@ msgstr "CV"
 msgid "Porfolio"
 msgstr "Portfolio"
 
-#: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
 msgid "Github"
 msgstr "Github"
@@ -1745,7 +1733,6 @@ msgstr "Maîtrise en beaux-arts en design graphique <br /> <span class=\"font-no
 msgid "Bachelor of Arts in Graphic Design <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2014 - 2018</span>"
 msgstr "Licence en design graphique <br /> <span class=\"font-normal\">New York University's School of Design</span> <br /> <span class=\"text-sm font-normal\">2014 - 2018</span>"
 
-#: src/navigation.ts
 #: src/pages/[locale]/homes/personal.astro
 msgid "Skills"
 msgstr "Compétences"
@@ -2199,7 +2186,6 @@ msgstr "Modèles premium et personnalisation avancée"
 msgid "Upgrade to Pro"
 msgstr "Passer à la version Pro"
 
-#: src/navigation.ts
 #: src/pages/[locale]/homes/saas.astro
 msgid "Enterprise"
 msgstr "Entreprise"
@@ -2703,196 +2689,9 @@ msgstr "Articles par tag '{0}'{1}"
 msgid "Tag: {0}"
 msgstr "Tag : {0}"
 
-#: src/navigation.ts
-msgid "Homes"
-msgstr "Accueils"
+#: src/pages/[locale]/index.astro
+msgid ""
+"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
+"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+msgstr "<0><0>AstroWind</0> est un modèle gratuit, personnalisable et prêt pour la production pour Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Prêt pour la production.</1> Convient pour les startups, les petites entreprises, les sites web SaaS, les portfolios professionnels, les sites web marketing, les pages de destination et les blogs."
 
-#: src/navigation.ts
-msgid "SaaS"
-msgstr "SaaS"
-
-#: src/navigation.ts
-msgid "Startup"
-msgstr "Startup"
-
-#: src/navigation.ts
-msgid "Mobile App"
-msgstr "Application Mobile"
-
-#: src/navigation.ts
-msgid "Personal"
-msgstr "Personnel"
-
-#: src/navigation.ts
-msgid "Pages"
-msgstr "Pages"
-
-#: src/navigation.ts
-msgid "Features (Anchor Link)"
-msgstr "Fonctionnalités (Lien d'ancrage)"
-
-#: src/navigation.ts
-#: src/navigation.ts
-msgid "Terms"
-msgstr "Conditions"
-
-#: src/navigation.ts
-msgid "Privacy policy"
-msgstr "Politique de confidentialité"
-
-#: src/navigation.ts
-msgid "Landing"
-msgstr "Landing"
-
-#: src/navigation.ts
-msgid "Lead Generation"
-msgstr "Génération de leads"
-
-#: src/navigation.ts
-msgid "Long-form Sales"
-msgstr "Ventes à long terme"
-
-#: src/navigation.ts
-msgid "Click-Through"
-msgstr "Click-Through"
-
-#: src/navigation.ts
-msgid "Product Details (or Services)"
-msgstr "Détails du produit (ou services)"
-
-#: src/navigation.ts
-msgid "Coming Soon or Pre-Launch"
-msgstr "Bientôt disponible ou pré-lancement"
-
-#: src/navigation.ts
-msgid "Subscription"
-msgstr "Abonnement"
-
-#: src/navigation.ts
-msgid "Blog List"
-msgstr "Liste de blogs"
-
-#: src/navigation.ts
-msgid "Article"
-msgstr "Article"
-
-#: src/navigation.ts
-msgid "Article (with MDX)"
-msgstr "Article (avec MDX)"
-
-#: src/navigation.ts
-msgid "Category Page"
-msgstr "Page de catégorie"
-
-#: src/navigation.ts
-msgid "Tag Page"
-msgstr "Page de tags"
-
-#: src/navigation.ts
-msgid "Product"
-msgstr "Produit"
-
-#: src/navigation.ts
-msgid "Security"
-msgstr "Sécurité"
-
-#: src/navigation.ts
-msgid "Team"
-msgstr "Équipe"
-
-#: src/navigation.ts
-msgid "Customer stories"
-msgstr "Témoignages clients"
-
-#: src/navigation.ts
-msgid "Resources"
-msgstr "Ressources"
-
-#: src/navigation.ts
-msgid "Platform"
-msgstr "Plateforme"
-
-#: src/navigation.ts
-msgid "Developer API"
-msgstr "API Développeur"
-
-#: src/navigation.ts
-msgid "Partners"
-msgstr "Partenaires"
-
-#: src/navigation.ts
-msgid "Atom"
-msgstr "Atom"
-
-#: src/navigation.ts
-msgid "Electron"
-msgstr "Électron"
-
-#: src/navigation.ts
-msgid "AstroWind Desktop"
-msgstr "AstroWind Desktop"
-
-#: src/navigation.ts
-msgid "Support"
-msgstr "Support"
-
-#: src/navigation.ts
-msgid "Docs"
-msgstr "Docs"
-
-#: src/navigation.ts
-msgid "Community Forum"
-msgstr "Forum Communautaire"
-
-#: src/navigation.ts
-msgid "Professional Services"
-msgstr "Services Professionnels"
-
-#: src/navigation.ts
-msgid "Status"
-msgstr "Statut"
-
-#: src/navigation.ts
-msgid "Company"
-msgstr "Entreprise"
-
-#: src/navigation.ts
-msgid "Careers"
-msgstr "Carrières"
-
-#: src/navigation.ts
-msgid "Press"
-msgstr "Presse"
-
-#: src/navigation.ts
-msgid "Inclusion"
-msgstr "Inclusion"
-
-#: src/navigation.ts
-msgid "Social Impact"
-msgstr "Impact Social"
-
-#: src/navigation.ts
-msgid "Shop"
-msgstr "Boutique"
-
-#: src/navigation.ts
-msgid "Privacy Policy"
-msgstr "Politique de confidentialité"
-
-#: src/navigation.ts
-msgid "Instagram"
-msgstr "Instagram"
-
-#: src/navigation.ts
-msgid "Facebook"
-msgstr "Facebook"
-
-#: src/navigation.ts
-msgid "Markdown Page"
-msgstr "Page Markdown"
-
-#~ msgid ""
-#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
-#~ "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
-#~ msgstr "<0><0>AstroWind</0> est un modèle gratuit, personnalisable et prêt pour la production pour Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Prêt pour la production.</1> Convient pour les startups, les petites entreprises, les sites web SaaS, les portfolios professionnels, les sites web marketing, les pages de destination et les blogs."

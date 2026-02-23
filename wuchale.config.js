@@ -1,5 +1,4 @@
 import { adapter as astro } from '@wuchale/astro';
-import { adapter as vanilla } from 'wuchale/adapter-vanilla';
 import { defineConfig } from 'wuchale';
 import fs from 'fs';
 import yaml from 'js-yaml';
@@ -18,29 +17,6 @@ export default defineConfig({
   adapters: {
     // Main astro adapter - uses 'main' catalog
     main: astro(),
-    // Navigation adapter
-    navigation: vanilla({
-      files: {
-        include: ['src/navigation.ts'],
-        ignore: [],
-      },
-      catalog: 'navigation',
-      loader: 'custom',
-      heuristic: (node, context) => {
-        // Check if this is a string literal
-        if (node.type === 'Literal' || node.type === 'StringLiteral') {
-          // Only extract 'text' or 'title' properties from navigation.ts
-          const parent = context.parent;
-          if (parent && parent.type === 'Property' && (parent.key.name === 'text' || parent.key.name === 'title')) {
-            return {
-              type: 'script',
-              message: node.value,
-            };
-          }
-        }
-        return null;
-      },
-    }),
   },
   writeFiles: {
     compiled: true,

@@ -279,3 +279,36 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+// Navigation types
+export interface AutoNavConfig {
+  showIn?: ('header' | 'footer' | 'none')[];
+  order?: number;
+  anchorLinks?: Array<{ text: string; href: string }>;
+}
+
+export interface AutoNavPage {
+  path: string;
+  title: string;
+  href: string;
+  navigation?: AutoNavConfig;
+  children?: AutoNavPage[];
+}
+
+export interface NavigationLink {
+  text?: string; // Optional for footer section titles
+  href?: string;
+  links?: NavigationLink[];
+  title?: string; // For footer section titles
+}
+
+export interface NavigationData {
+  links: NavigationLink[];
+  actions?: Array<{ text: string; href: string; target?: string }>;
+}
+
+export interface FooterData extends NavigationData {
+  secondaryLinks?: Array<{ text: string; href: string }>;
+  socialLinks?: Array<{ ariaLabel: string; icon: string; href: string }>;
+  footNote?: string;
+}
