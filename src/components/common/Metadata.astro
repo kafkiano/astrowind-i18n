@@ -24,7 +24,7 @@ const {
   twitter = {},
 } = Astro.props;
 
-const locale = Astro.currentLocale || I18N?.language || 'en';
+const locale = Astro.currentLocale || I18N?.language;
 
 const seoProps: AstroSeoProps = merge(
   {

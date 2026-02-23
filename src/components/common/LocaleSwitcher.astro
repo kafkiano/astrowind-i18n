@@ -11,7 +11,7 @@ export interface Props {
   class?: string;
 }
 
-const { currentLocale = Astro.currentLocale || 'en', showLabels = false, class: className = '' } = Astro.props;
+const { currentLocale = Astro.currentLocale, showLabels = false, class: className = '' } = Astro.props;
 
 const currentPathWithoutLocale = getPathWithoutLocale(Astro.url.pathname);
 

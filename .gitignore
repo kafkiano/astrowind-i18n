@@ -35,7 +35,7 @@ dev/logs*
 .roo/
 digest.txt
 
-# i18n compiling
+# wuchale
 src/locales/.wuchale
 src/locales/data.js
 src/locales/main.loader.js
