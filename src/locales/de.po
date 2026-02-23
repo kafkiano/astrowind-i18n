@@ -60,12 +60,10 @@ msgstr "Wenn Ihnen AstroWind gefällt, geben Sie uns einen Stern."
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
-#: src/pages/[locale]/services.astro
 msgid "Services"
 msgstr "Dienstleistungen"
 
 #: src/pages/[locale]/index.astro
-#: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Pricing"
 msgstr "Preise"
@@ -75,7 +73,6 @@ msgstr "Preise"
 msgid "About us"
 msgstr "Über uns"
 
-#: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/index.astro
 msgid "Contact"
@@ -154,15 +151,6 @@ msgstr "AstroWind Hero-Bild"
 #: src/pages/[locale]/index.astro
 msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
 msgstr "Kostenlose Vorlage zur <0>Erstellung von Websites mit</0> <1>Astro 5.0</1> + Tailwind CSS"
-
-#~ msgid ""
-#~ "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0\n"
-#~ "+ Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &\n"
-#~ "Blogs."
-#~ msgstr ""
-#~ "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0\n"
-#~ "+ Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, Kleinunternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages &\n"
-#~ "Blogs."
 
 #: src/pages/[locale]/index.astro
 msgid "Philosophy:"
@@ -1377,10 +1365,6 @@ msgid "Whether you're in business, design, or education, our templates are here 
 msgstr "Egal, ob Sie im Geschäftsleben, im Design oder in der Bildung tätig sind, unsere Vorlagen sind hier, um Ihre Projekte zu verbessern."
 
 #: src/pages/[locale]/homes/mobile-app.astro
-msgid "Mobile App Homepage"
-msgstr "Startseite der mobilen App"
-
-#: src/pages/[locale]/homes/mobile-app.astro
 msgid "Mobile App Web Demo"
 msgstr "Web-Demo der mobilen App"
 
@@ -1630,10 +1614,6 @@ msgstr "Laden Sie unsere App jetzt herunter!"
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Access a variety of stunning templates, simplify your creative process, and elevate your online presence."
 msgstr "Greifen Sie auf eine Vielzahl atemberaubender Vorlagen zu, vereinfachen Sie Ihren kreativen Prozess und verbessern Sie Ihre Online-Präsenz."
-
-#: src/pages/[locale]/homes/personal.astro
-msgid "Personal Homepage Demo"
-msgstr "Demo der persönlichen Homepage"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Home"
@@ -1998,9 +1978,6 @@ msgstr "Entdecken Sie meine aufschlussreichen Artikel in meinem Blog"
 msgid "Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey."
 msgstr "Tauchen Sie ein in eine Welt voller Designweisheit und kreativer Inspiration, wo Sie unschätzbare Einblicke, praktische Tipps und fesselnde Erzählungen finden, die Ihre kreative Reise bereichern und aufwerten."
 
-#~ msgid "SaaS Landing Page"
-#~ msgstr "SaaS Landingpage"
-
 #: src/pages/[locale]/homes/saas.astro
 msgid "Login"
 msgstr "Anmelden"
@@ -2243,10 +2220,6 @@ msgstr "Bleiben Sie mit dem AstroWind-Blog auf dem Laufenden"
 #: src/pages/[locale]/homes/saas.astro
 msgid "Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects."
 msgstr "Entdecken Sie unsere Sammlung von Artikeln, Leitfäden und Tutorials zu Webentwicklung, Designtrends und der effektiven Nutzung von AstroWind für Ihre Projekte."
-
-#: src/pages/[locale]/homes/startup.astro
-msgid "Startup Landing Page"
-msgstr "Startup-Landingpage"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Startup Web Demo"
@@ -2583,10 +2556,6 @@ msgid "Magnet attracting screws. Lead generation landing page demo"
 msgstr "Magnet zieht Schrauben an. Lead-Generierungs-Landingpage-Demo"
 
 #: src/pages/[locale]/landing/pre-launch.astro
-msgid "Pre-Launch Landing Page"
-msgstr "Pre-Launch Landing Page"
-
-#: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-launch Demo"
 msgstr "Pre-Launch Demo"
 
@@ -2679,53 +2648,6 @@ msgstr "Beiträge nach Tag '{0}'{1}"
 msgid "Tag: {0}"
 msgstr "Tag: {0}"
 
-#~ msgid "Markdown Page"
-#~ msgstr "Markdown-Seite"
-
-#: src/pages/[locale]/index.astro
-msgid ""
-"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
-"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
-msgstr "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Produktionsbereit.</1> Geeignet für Startups, kleine Unternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages & Blogs."
-
-#~ msgid ""
-#~ "Step into the spotlight with Astrowind templates, your pathway to fortifying your\n"
-#~ "startup's digital footprint, fostering credibility, and expanding your reach."
-#~ msgstr "Treten Sie ins Rampenlicht mit Astrowind-Vorlagen, Ihrem Weg zur Stärkung der digitalen Präsenz Ihres Startups, zur Förderung der Glaubwürdigkeit und zur Erweiterung Ihrer Reichweite."
-
-#~ msgid ""
-#~ "import {0} from './utils/permalinks';\n"
-#~ "import {1} from './utils/locales';\n"
-#~ "\n"
-#~ "export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({2});\n"
-#~ "\n"
-#~ "export const getFooterData = (locale: string = DEFAULT_LOCALE) => ({3});\n"
-#~ "\n"
-#~ "// Keep backward compatibility for now (optional)\n"
-#~ "export const headerData = getHeaderData(DEFAULT_LOCALE);\n"
-#~ "export const footerData = getFooterData(DEFAULT_LOCALE);"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "// @wc-ignore\n"
-#~ "import {0} from './utils/permalinks';\n"
-#~ "import {1} from './utils/locales';\n"
-#~ "\n"
-#~ "export const getHeaderData = (locale: string = DEFAULT_LOCALE) => ({2});\n"
-#~ "\n"
-#~ "export const getFooterData = (locale: string = DEFAULT_LOCALE) => ({3});\n"
-#~ "\n"
-#~ "// Keep backward compatibility for now (optional)\n"
-#~ "export const headerData = getHeaderData(DEFAULT_LOCALE);\n"
-#~ "export const footerData = getFooterData(DEFAULT_LOCALE);"
-#~ msgstr ""
-
-#~ msgid "Mobile App Homepage Demo"
-#~ msgstr ""
-
-#: src/pages/[locale]/homes/saas.astro
-msgid "SaaS Landing Page Demo"
+#: src/pages/[locale]/landing/pre-launch.astro
+msgid "Pre-Launch Landing Page Demo"
 msgstr ""
-
-#~ msgid "Startup Landing Page Demo"
-#~ msgstr ""
