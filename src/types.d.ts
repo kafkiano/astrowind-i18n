@@ -282,7 +282,7 @@ export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 
 // Navigation types
 export interface AutoNavConfig {
-  title?: string;  // Added for consolidated navigation
+  title?: string; // Added for consolidated navigation
   showIn?: ('header' | 'footer' | 'none')[];
   order?: number;
   anchorLinks?: Array<{ text: string; href: string }>;
@@ -308,8 +308,21 @@ export interface NavigationData {
   actions?: Array<{ text: string; href: string; target?: string }>;
 }
 
-export interface FooterData extends NavigationData {
-  secondaryLinks?: Array<{ text: string; href: string }>;
-  socialLinks?: Array<{ ariaLabel: string; icon: string; href: string }>;
+export interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+export interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+export interface FooterData extends Omit<NavigationData, 'links'> {
+  links: Links[];
+  secondaryLinks?: Link[];
+  socialLinks?: Link[];
   footNote?: string;
 }

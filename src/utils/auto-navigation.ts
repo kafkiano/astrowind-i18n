@@ -1,6 +1,6 @@
 import { getPermalink, getBlogPermalink, getPagePermalink } from './permalinks';
 import { DEFAULT_LOCALE } from './locales';
-import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink } from '~/types';
+import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 
 /**
@@ -62,7 +62,7 @@ function buildNavigationTree(pages: AutoNavPage[]): NavigationLink[] {
   // Group pages by their parent directory
   for (const page of pages) {
     const segments = page.path.split('/').filter(Boolean);
-    
+
     if (segments.length === 0) {
       // Root page (index)
       continue;
@@ -121,12 +121,26 @@ function buildNavigationTree(pages: AutoNavPage[]): NavigationLink[] {
 }
 
 /**
+ * Transform NavigationLink[] to Links[] for footer consumption
+ * Maps parent nodes to footer sections (Links) and child nodes to footer links (Link)
+ */
+function navigationLinksToFooterLinks(navLinks: NavigationLink[]): Links[] {
+  return navLinks.map((section) => ({
+    title: section.text || section.title || '',
+    links: (section.links || []).map((link) => ({
+      text: link.text || '',
+      href: link.href || '#',
+    })),
+  }));
+}
+
+/**
  * Generate navigation data for a specific locale
  */
 export function generateNavigation(locale: string = DEFAULT_LOCALE): NavigationData {
   // Scan all pages
   const pageModules = import.meta.glob<{
-    navigation?: AutoNavConfig;  // Now includes title
+    navigation?: AutoNavConfig; // Now includes title
   }>('/src/pages/[locale]/**/*.astro', { eager: true });
 
   const pages: AutoNavPage[] = [];
@@ -216,7 +230,7 @@ export function generateNavigation(locale: string = DEFAULT_LOCALE): NavigationD
 export function generateFooterData(locale: string = DEFAULT_LOCALE): FooterData {
   // Scan all pages for footer links
   const pageModules = import.meta.glob<{
-    navigation?: AutoNavConfig;  // Now includes title
+    navigation?: AutoNavConfig; // Now includes title
   }>('/src/pages/[locale]/**/*.{astro,md,mdx}', { eager: true });
 
   const footerPages: AutoNavPage[] = [];
@@ -264,7 +278,8 @@ export function generateFooterData(locale: string = DEFAULT_LOCALE): FooterData 
 
   // Build footer links using automatic grouping (same as header)
   const sortedFooterPages = sortPages(footerPages);
-  const links = buildNavigationTree(sortedFooterPages);
+  const navLinks = buildNavigationTree(sortedFooterPages);
+  const links = navigationLinksToFooterLinks(navLinks);
 
   const result: FooterData = {
     links,

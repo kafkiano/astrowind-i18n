@@ -141,7 +141,9 @@ const getI18N = (config: Config) => {
 
   // Validate defaultLocale is in locales
   if (!i18nConfig.locales.includes(i18nConfig.defaultLocale)) {
-    throw new Error(`i18n.defaultLocale "${i18nConfig.defaultLocale}" must be included in i18n.locales [${i18nConfig.locales.join(', ')}] in src/config.yaml`);
+    throw new Error(
+      `i18n.defaultLocale "${i18nConfig.defaultLocale}" must be included in i18n.locales [${i18nConfig.locales.join(', ')}] in src/config.yaml`
+    );
   }
 
   // Build validated configuration

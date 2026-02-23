@@ -4,9 +4,7 @@ import { locales } from './locales/data.js';
 import { I18N } from 'astrowind:config';
 
 let ready = false;
-const readyPromise = Promise.all([
-  loadLocales(main.key, main.loadIDs, main.loadCatalog, locales),
-]).then(() => {
+const readyPromise = Promise.all([loadLocales(main.key, main.loadIDs, main.loadCatalog, locales)]).then(() => {
   ready = true;
 });
 
