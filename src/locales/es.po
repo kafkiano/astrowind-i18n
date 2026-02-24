@@ -49,7 +49,7 @@ msgstr "Entradas relacionadas"
 msgid "View All Posts"
 msgstr "Ver todas las entradas"
 
-#. placeholder {0}: textDirection === 'rtl' ? ( <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> ) : ( <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> )
+#. 0: textDirection === 'rtl' ? ( <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> ) : ( <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> )
 #: src/components/blog/ToBlogLink.astro
 msgid "{0} Back to Blog"
 msgstr "{0} Volver al blog"
@@ -238,7 +238,6 @@ msgstr "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit
 
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/mobile-app.astro
-#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/index.astro
 msgid "Colorful Image"
@@ -377,7 +376,6 @@ msgid "Name"
 msgstr "Nombre"
 
 #: src/pages/[locale]/contact.astro
-#: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Email"
 msgstr "Correo electrónico"
@@ -436,7 +434,6 @@ msgid "AstroWind — Free template for creating websites with Astro + Tailwind C
 msgstr "AstroWind — Plantilla gratuita para crear sitios web con Astro + Tailwind CSS"
 
 #: src/pages/[locale]/index.astro
-#: src/pages/[locale]/index.astro
 msgid "Get template"
 msgstr "Obtener plantilla"
 
@@ -468,7 +465,6 @@ msgid "Simplicity, Best Practices and High Performance"
 msgstr "Simplicidad, mejores prácticas y alto rendimiento"
 
 #: src/pages/[locale]/homes/mobile-app.astro
-#: src/pages/[locale]/index.astro
 #: src/pages/[locale]/index.astro
 msgid "Features"
 msgstr "Características"
@@ -880,8 +876,6 @@ msgid "In hac habitasse"
 msgstr "In hac habitasse"
 
 #: src/pages/[locale]/pricing.astro
-#: src/pages/[locale]/pricing.astro
-#: src/pages/[locale]/pricing.astro
 msgid "Get started"
 msgstr "Empezar"
 
@@ -889,7 +883,6 @@ msgstr "Empezar"
 msgid "Optimal choice for small teams"
 msgstr "Opción óptima para equipos pequeños"
 
-#: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Per Month"
 msgstr "Al mes"
@@ -1092,7 +1085,6 @@ msgid "Explore our meticulously crafted templates tailored to various industries
 msgstr "Explora nuestras plantillas meticulosamente diseñadas y adaptadas a diversas industrias y propósitos. Desde presentaciones cautivadoras hasta diseños de sitios web funcionales, ofrecemos las herramientas que necesitas para triunfar."
 
 #: src/pages/[locale]/services.astro
-#: src/pages/[locale]/services.astro
 msgid "Start exploring"
 msgstr "Empezar a explorar"
 
@@ -1276,7 +1268,7 @@ msgstr "Sumérgete en nuestra colección de plantillas"
 msgid "Whether you're in business, design, or education, our templates are here to elevate your projects."
 msgstr "Tanto si estás en el mundo de los negocios, el diseño o la educación, nuestras plantillas están aquí para elevar tus proyectos."
 
-#. placeholder {0}: g${currentPage > 1 ? ` — Page ${currentPage}` :
+#. 0: g${currentPage > 1 ? ` — Page ${currentPage}` :
 #: src/pages/[locale]/[...blog]/[...page].astro
 msgid "Blog{0}"
 msgstr "Blog{0}"
@@ -1294,11 +1286,9 @@ msgid "Mobile App Web Demo"
 msgstr "Demostración web de la aplicación móvil"
 
 #: src/pages/[locale]/homes/mobile-app.astro
-#: src/pages/[locale]/homes/mobile-app.astro
 msgid "App Store Image"
 msgstr "Imagen de App Store"
 
-#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Google Play Image"
 msgstr "Imagen de Google Play"
@@ -1537,8 +1527,6 @@ msgid "Personal Web Demo"
 msgstr "Demo web personal"
 
 #: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/personal.astro
 msgid "Hire me"
 msgstr "Contrátame"
 
@@ -1675,11 +1663,6 @@ msgid "Embark on a design journey that surpasses pixels, entering a realm of ima
 msgstr "Embárcate en un viaje de diseño que trasciende los píxeles, entrando en un reino de imaginación. Explora mi portafolio, donde la pasión y la creatividad convergen para dar forma a narrativas visuales cautivadoras."
 
 #: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/saas.astro
-#: src/pages/[locale]/homes/saas.astro
-#: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 msgid "Description:"
 msgstr "Descripción:"
@@ -1688,8 +1671,6 @@ msgstr "Descripción:"
 msgid "Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts."
 msgstr "Desarrollé una identidad de marca integral para una startup tecnológica, Tech Innovators, especializada en innovaciones disruptivas. El objetivo era transmitir una imagen moderna pero accesible que resonara tanto con clientes corporativos como con entusiastas de la tecnología."
 
-#: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Role:"
 msgstr "Rol:"
@@ -1702,8 +1683,6 @@ msgstr "Lideré todo el proceso de branding, desde el concepto hasta la ejecuci�
 msgid "Tech Design Image"
 msgstr "Imagen de diseño tecnológico"
 
-#: src/pages/[locale]/homes/personal.astro
-#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Go to the project"
 msgstr "Ir al proyecto"
@@ -1921,9 +1900,6 @@ msgid "Are you a startup with big dreams? AstroWind propels your success. Our te
 msgstr "¿Eres una startup con grandes sueños? AstroWind impulsa tu éxito. Nuestra plantilla forja una presencia en línea fluida, atrayendo inversores y clientes desde el primer día. Astro 5.0 y Tailwind CSS garantizan sitios impactantes y adaptables, dejando impresiones duraderas. Innumerables startups aprovechan AstroWind para iniciar su camino y conectar con sus audiencias."
 
 #: src/pages/[locale]/homes/saas.astro
-#: src/pages/[locale]/homes/saas.astro
-#: src/pages/[locale]/homes/saas.astro
-#: src/pages/[locale]/homes/saas.astro
 msgid "Benefits:"
 msgstr "Beneficios:"
 
@@ -2063,7 +2039,6 @@ msgstr "Explora nuestra colección de artículos, guías y tutoriales sobre desa
 msgid "Startup Web Demo"
 msgstr "Demostración web para startups"
 
-#: src/pages/[locale]/homes/startup.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Get templates"
 msgstr "Obtener plantillas"
@@ -2281,7 +2256,6 @@ msgid "Chat with sales"
 msgstr "Chat con ventas"
 
 #: src/pages/[locale]/homes/startup.astro
-#: src/pages/[locale]/homes/startup.astro
 msgid "Start chatting"
 msgstr "Empezar chat"
 
@@ -2441,19 +2415,17 @@ msgstr "Descubre la fórmula para una página de destino de suscripción que hag
 msgid "Ironic image associated with canceling a subscription. Subscription Landing Page Demo"
 msgstr "Imagen irónica asociada con la cancelación de una suscripción. Demo de página de aterrizaje de suscripción"
 
-#. placeholder {0}: '${category.ti
-#. placeholder {1}: ${currentPage > 1 ? ` — Page ${currentPage}` :
+#. 0: '${category.ti; 1: ${currentPage > 1 ? ` — Page ${currentPage}` :
 #: src/pages/[locale]/[...blog]/[category]/[...page].astro
 msgid "Category '{0}' {1}"
 msgstr "Categoría '{0}' {1}"
 
-#. placeholder {0}: '${tag.ti
-#. placeholder {1}: '${currentPage > 1 ? ` — Page ${currentPage} ` :
+#. 0: '${tag.ti; 1: '${currentPage > 1 ? ` — Page ${currentPage} ` :
 #: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 msgid "Posts by tag '{0}'{1}"
 msgstr "Publicaciones por etiqueta '{0}'{1}"
 
-#. placeholder {0}: tag.title
+#. 0: tag.title
 #: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 msgid "Tag: {0}"
 msgstr "Etiqueta: {0}"
@@ -2659,4 +2631,10 @@ msgstr "Cambiar idioma"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-Launch Landing Page Demo"
-msgstr ""
+msgstr "Demostración de página de aterrizaje de prelanzamiento"
+
+#: src/pages/[locale]/index.astro
+msgid ""
+"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
+"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+msgstr "<0><0>AstroWind</0> es una plantilla gratuita, personalizable y lista para producción para Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Lista para producción.</1> Adecuada para Startups, Pequeñas Empresas, sitios web SaaS, Portafolios Profesionales, sitios web de Marketing, Landing Pages y Blogs."
