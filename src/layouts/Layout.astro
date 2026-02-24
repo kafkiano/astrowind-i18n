@@ -2,7 +2,6 @@
 import '~/assets/styles/tailwind.css';
 
 import { I18N } from 'astrowind:config';
-import { LOCALES, DEFAULT_LOCALE } from '~/utils/locales';
 import { getPathWithoutLocale } from '~/utils/i18n';
 
 import CommonMeta from '~/components/common/CommonMeta.astro';
@@ -51,10 +50,10 @@ const currentPathWithoutLocale = getPathWithoutLocale(currentPath);
     {
       (() => {
         const removeTrailingSlash = (url: string) => (url.endsWith('/') && url !== '/' ? url.slice(0, -1) : url);
-        const defaultUrl = removeTrailingSlash(getRelativeLocaleUrl(DEFAULT_LOCALE, currentPathWithoutLocale));
+        const defaultUrl = removeTrailingSlash(getRelativeLocaleUrl(I18N.defaultLocale, currentPathWithoutLocale));
         return (
           <>
-            {LOCALES.map((locale: string) => (
+            {I18N.locales.map((locale: string) => (
               <link
                 rel="alternate"
                 hreflang={locale}

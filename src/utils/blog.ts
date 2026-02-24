@@ -2,12 +2,12 @@ import type { PaginateFunction, GetStaticPathsResult } from 'astro';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
+import { I18N } from 'astrowind:config';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
-import { LOCALES } from './locales';
 
 const getLangFromPostId = (id: string): string => id.split('/')[0];
-export { LOCALES };
+export { I18N };
 
 const generatePermalink = async ({
   id,
@@ -189,7 +189,7 @@ export const getStaticPathsBlogList = async ({
 }): Promise<GetStaticPathsResult> => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
   const paths: GetStaticPathsResult = [];
-  for (const locale of LOCALES) {
+  for (const locale of I18N.locales) {
     const posts = await load(locale);
     const paginated = paginate(posts, {
       params: { locale, blog: BLOG_BASE || undefined },
@@ -212,7 +212,7 @@ export const getStaticPathsBlogPost = async (): Promise<
     params: { locale: string; blog: string };
     props: { post: Post; locale: string };
   }> = [];
-  for (const locale of LOCALES) {
+    for (const locale of I18N.locales) {
     const posts = await load(locale);
     for (const post of posts) {
       paths.push({
@@ -236,7 +236,7 @@ export const getStaticPathsBlogCategory = async ({
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
   const paths: GetStaticPathsResult = [];
-  for (const locale of LOCALES) {
+  for (const locale of I18N.locales) {
     const posts = await load(locale);
     const categories = {};
     posts.forEach((post) => {
@@ -269,7 +269,7 @@ export const getStaticPathsBlogTag = async ({
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
   const paths: GetStaticPathsResult = [];
-  for (const locale of LOCALES) {
+  for (const locale of I18N.locales) {
     const posts = await load(locale);
     const tags = {};
     posts.forEach((post) => {

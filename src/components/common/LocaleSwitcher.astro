@@ -1,7 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Icon } from 'astro-icon/components';
-import { LOCALES, DEFAULT_LOCALE } from '~/utils/locales';
 import { I18N } from 'astrowind:config';
 import { getPathWithoutLocale } from '~/utils/i18n';
 
@@ -21,7 +20,7 @@ const getLocaleDisplayName = (localeCode: string): string => {
 };
 
 // Hide locale switcher for monolingual sites
-if (LOCALES.length <= 1) {
+if (I18N.locales.length <= 1) {
   return null;
 }
 ---
@@ -47,7 +46,7 @@ if (LOCALES.length <= 1) {
   >
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
       {
-        LOCALES.map((locale: string) => {
+        I18N.locales.map((locale: string) => {
           // Generate URL for this locale
           let url: string;
           try {
@@ -59,7 +58,7 @@ if (LOCALES.length <= 1) {
             }
           } catch {
             // Fallback: manually construct URL
-            const shouldPrefix = locale !== DEFAULT_LOCALE;
+            const shouldPrefix = locale !== I18N.defaultLocale;
             const cleanPath = currentPathWithoutLocale === '/' ? '' : currentPathWithoutLocale;
             url = shouldPrefix ? `/${locale}${cleanPath}` : cleanPath || '/';
             // Ensure no trailing slash for homepage

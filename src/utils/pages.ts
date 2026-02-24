@@ -1,8 +1,8 @@
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import { I18N } from 'astrowind:config';
 import { cleanSlug } from './permalinks';
-import { LOCALES } from './locales';
 
 const getLangFromPageId = (id: string): string => id.split('/')[0];
 
@@ -77,7 +77,7 @@ export const getStaticPathsPages = async (): Promise<
     params: { locale: string; pages: string };
     props: { page: NormalizedPage; locale: string };
   }> = [];
-  for (const locale of LOCALES) {
+  for (const locale of I18N.locales) {
     const pages = await load(locale);
     for (const page of pages) {
       paths.push({

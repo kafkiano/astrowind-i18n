@@ -1,18 +1,14 @@
-import { DEFAULT_LOCALE } from './utils/locales';
+import { I18N } from 'astrowind:config';
 import { getHeaderData as getAutoHeaderData, getFooterData as getAutoFooterData } from './utils/auto-navigation';
 
 /**
  * Get header navigation data
- * @param locale - The locale code (defaults to DEFAULT_LOCALE)
+ * @param locale - The locale code (defaults to I18N.defaultLocale)
  */
-export const getHeaderData = (locale: string = DEFAULT_LOCALE) => getAutoHeaderData(locale);
+export const getHeaderData = (locale: string = I18N.defaultLocale) => getAutoHeaderData(locale);
 
 /**
  * Get footer navigation data
- * @param locale - The locale code (defaults to DEFAULT_LOCALE)
+ * @param locale - The locale code (defaults to I18N.defaultLocale)
  */
-export const getFooterData = (locale: string = DEFAULT_LOCALE) => getAutoFooterData(locale);
-
-// Keep backward compatibility for now (optional)
-export const headerData = getHeaderData(DEFAULT_LOCALE);
-export const footerData = getFooterData(DEFAULT_LOCALE);
+export const getFooterData = (locale: string = I18N.defaultLocale) => getAutoFooterData(locale);

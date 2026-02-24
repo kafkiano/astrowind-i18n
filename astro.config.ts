@@ -26,14 +26,17 @@ const configPath = path.join(__dirname, 'src/config.yaml');
 const configContent = fs.readFileSync(configPath, 'utf-8');
 
 interface AstroConfig {
-  i18n?: {
+  i18n: {
     locales: string[];
     defaultLocale: string;
   };
 }
 
 const config = yaml.load(configContent) as AstroConfig;
-const i18nConfig = config.i18n || { locales: ['en'], defaultLocale: 'en' };
+// configBuilder validates i18n configuration; if validation passes,
+// config.i18n is guaranteed to exist with valid locales/defaultLocale.
+// No fallback needed - missing i18n section causes early build failure.
+const i18nConfig = config.i18n;
 
 const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
@@ -45,11 +48,13 @@ export default defineConfig({
   vite: {
     plugins: [wuchale()],
   },
+  // configBuilder validates i18n configuration; locales/defaultLocale are guaranteed present
   i18n: {
-    locales: i18nConfig.locales || ['en'],
-    defaultLocale: i18nConfig.defaultLocale || 'en',
+    locales: i18nConfig.locales,
+    defaultLocale: i18nConfig.defaultLocale,
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
   },
 

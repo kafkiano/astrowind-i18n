@@ -26,7 +26,6 @@ pnpm-debug.log*
 dev/docs
 
 # agent frameworks
-.aider*
 .roo/
 dev/logs*
 ACTION*

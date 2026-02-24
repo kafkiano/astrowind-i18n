@@ -1,5 +1,5 @@
 import { getPermalink, getBlogPermalink, getPagePermalink } from './permalinks';
-import { DEFAULT_LOCALE } from './locales';
+import { I18N } from 'astrowind:config';
 import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 
@@ -137,7 +137,7 @@ function navigationLinksToFooterLinks(navLinks: NavigationLink[]): Links[] {
 /**
  * Generate navigation data for a specific locale
  */
-export function generateNavigation(locale: string = DEFAULT_LOCALE): NavigationData {
+export function generateNavigation(locale: string = I18N.defaultLocale): NavigationData {
   // Scan all pages
   const pageModules = import.meta.glob<{
     navigation?: AutoNavConfig; // Now includes title
@@ -227,7 +227,7 @@ export function generateNavigation(locale: string = DEFAULT_LOCALE): NavigationD
 /**
  * Generate footer data for a specific locale
  */
-export function generateFooterData(locale: string = DEFAULT_LOCALE): FooterData {
+export function generateFooterData(locale: string = I18N.defaultLocale): FooterData {
   // Scan all pages for footer links
   const pageModules = import.meta.glob<{
     navigation?: AutoNavConfig; // Now includes title
@@ -299,9 +299,9 @@ export function generateFooterData(locale: string = DEFAULT_LOCALE): FooterData 
 /**
  * Get header navigation data (wrapper for backward compatibility)
  */
-export const getHeaderData = (locale: string = DEFAULT_LOCALE) => generateNavigation(locale);
+export const getHeaderData = (locale: string = I18N.defaultLocale) => generateNavigation(locale);
 
 /**
  * Get footer navigation data (wrapper for backward compatibility)
  */
-export const getFooterData = (locale: string = DEFAULT_LOCALE) => generateFooterData(locale);
+export const getFooterData = (locale: string = I18N.defaultLocale) => generateFooterData(locale);
