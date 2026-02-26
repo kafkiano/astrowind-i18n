@@ -212,7 +212,7 @@ export const getStaticPathsBlogPost = async (): Promise<
     params: { locale: string; blog: string };
     props: { post: Post; locale: string };
   }> = [];
-    for (const locale of I18N.locales) {
+  for (const locale of I18N.locales) {
     const posts = await load(locale);
     for (const post of posts) {
       paths.push({
