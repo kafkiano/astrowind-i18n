@@ -287,6 +287,8 @@ export interface AutoNavConfig {
   order?: number;
   anchorLinks?: Array<{ text: string; href: string }>;
   exclude?: boolean; // Exclude from all navigation
+  type?: 'page' | 'blog' | 'category' | 'tag' | 'home' | 'asset' | 'post';
+  slug?: string;
 }
 
 export interface AutoNavPage {

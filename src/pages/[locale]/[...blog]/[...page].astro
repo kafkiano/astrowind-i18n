@@ -11,6 +11,14 @@ import Pagination from '~/components/blog/Pagination.astro';
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
+export const navigation = {
+  // @wc-ignore
+  title: 'Blog',
+  showIn: ['header'],
+  order: 1,
+  type: 'blog',
+};
+
 export const prerender = true;
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -24,13 +32,6 @@ const currentPage = page.currentPage ?? 1;
 
 // const allCategories = await findCategories();
 // const allTags = await findTags();
-
-// export const navigation = {
-//   // @wc-ignore
-//   title: 'Blog2',
-//   showIn: 'header',
-//   order: 1,
-// };
 
 const metadata = {
   title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,

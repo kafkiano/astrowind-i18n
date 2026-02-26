@@ -4,6 +4,10 @@ import MarkdownLayout from '~/layouts/MarkdownLayout.astro';
 import { getStaticPathsPages } from '~/utils/pages';
 import type { NormalizedPage } from '~/utils/pages';
 
+export const navigation = {
+  exclude: true,
+};
+
 export const getStaticPaths = (async () => {
   return await getStaticPathsPages();
 }) satisfies GetStaticPaths;

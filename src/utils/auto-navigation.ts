@@ -1,7 +1,6 @@
-import { getPermalink, getBlogPermalink, getPagePermalink } from './permalinks';
+import { getPermalink, getPagePermalink, cleanSlug, trimSlash } from './permalinks';
 import { I18N, NAVIGATION } from 'astrowind:config';
 import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
-import { APP_BLOG } from 'astrowind:config';
 
 /**
  * Normalize showIn to array for consistent handling
@@ -33,7 +32,7 @@ function extractRoutePath(filePath: string): string {
   if (withoutExt === '/index' || withoutExt === 'index') {
     return '/';
   }
-  return withoutExt;
+  return trimSlash(withoutExt);
 }
 
 /**
@@ -43,7 +42,8 @@ function extractRoutePath(filePath: string): string {
 function formatTitle(path: string): string {
   const segments = path.split('/').filter(Boolean);
   const lastSegment = segments[segments.length - 1];
-  return lastSegment
+  const cleaned = cleanSlug(lastSegment);
+  return cleaned
     .split(/[-_]/)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
@@ -213,6 +213,39 @@ function buildNavigationTree(pages: AutoNavPage[]): NavigationLink[] {
 }
 
 /**
+ * Collapse intermediate nodes that have no href and exactly one child
+ * This flattens unnecessary nesting (e.g., Category → Categories)
+ */
+function collapseSingleChildNodes(links: NavigationLink[]): NavigationLink[] {
+  const result: NavigationLink[] = [];
+
+  for (const link of links) {
+    // Recursively collapse children first
+    if (link.links && link.links.length > 0) {
+      link.links = collapseSingleChildNodes(link.links);
+    }
+
+    // If this node has no href and exactly one child, merge with child
+    if (!link.href && link.links?.length === 1) {
+      const child = link.links[0];
+      // Merge: keep child's title, href, and links
+      result.push({
+        title: child.title,
+        href: child.href,
+        links: child.links,
+        _childMap: child._childMap,
+      });
+    } else {
+      result.push(link);
+    }
+  }
+
+  return result;
+}
+
+/**
+
+/**
  * Transform NavigationLink[] to Links[] for footer consumption
  * Maps parent nodes to footer sections (Links) and child nodes to footer links (Link)
  */
@@ -287,8 +320,18 @@ function scanPages(
       continue;
     }
 
-    // Generate href based on route path
-    const href = getPermalink(routePath, 'page', locale);
+    // Determine type and slug
+    const type = navigation?.type ?? 'page';
+    const slug = navigation?.slug ?? routePath;
+
+    // Validation: category and tag types require a slug
+    if ((type === 'category' || type === 'tag') && !slug) {
+      console.warn(`Page ${routePath} omitted from navigation: ${type} requires a slug`);
+      continue;
+    }
+
+    // Generate href with locale awareness
+    const href = getPermalink(slug, type, locale);
 
     pages.push({
       path: routePath,
@@ -317,39 +360,11 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
   // Build navigation tree
   const links = buildNavigationTree(sortedPages);
 
-  // Add blog section only if blog is enabled
-  if (APP_BLOG?.isEnabled) {
-    const blogLinks: NavigationLink[] = [
-      {
-        title: 'Blog List',
-        href: getBlogPermalink(locale),
-      },
-    ];
-
-    // Add category link if categories are enabled
-    if (APP_BLOG.category?.isEnabled) {
-      blogLinks.push({
-        title: 'Categories',
-        href: getPermalink(NAVIGATION.blog?.categorySlug || 'tutorials', 'category', locale),
-      });
-    }
-
-    // Add tag link if tags are enabled
-    if (APP_BLOG.tag?.isEnabled) {
-      blogLinks.push({
-        title: 'Tags',
-        href: getPermalink(NAVIGATION.blog?.tagSlug || 'astro', 'tag', locale),
-      });
-    }
-
-    links.push({
-      title: 'Blog',
-      links: blogLinks,
-    });
-  }
+  // Collapse single-child nodes to flatten unnecessary nesting
+  const collapsedLinks = collapseSingleChildNodes(links);
 
   const result: NavigationData = {
-    links,
+    links: collapsedLinks,
     actions: NAVIGATION.actions || [],
   };
 

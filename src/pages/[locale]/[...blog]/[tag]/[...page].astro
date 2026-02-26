@@ -8,6 +8,16 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import { NAVIGATION } from 'astrowind:config';
+
+export const navigation = {
+  // @wc-ignore
+  title: 'Tags',
+  showIn: 'header',
+  order: 3,
+  type: 'tag',
+  slug: NAVIGATION.blog?.tagSlug,
+};
 
 export const prerender = true;
 

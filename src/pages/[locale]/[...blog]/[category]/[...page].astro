@@ -8,6 +8,16 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import { NAVIGATION } from 'astrowind:config';
+
+export const navigation = {
+  // @wc-ignore
+  title: 'Categories',
+  showIn: 'header',
+  order: 2,
+  type: 'category',
+  slug: NAVIGATION.blog?.categorySlug,
+};
 
 export const prerender = true;
 
