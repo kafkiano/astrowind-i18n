@@ -11,6 +11,7 @@ export type Config = {
   };
   ui?: unknown;
   analytics?: unknown;
+  navigation?: NavigationConfig;
 };
 
 export interface SiteConfig {
@@ -83,6 +84,18 @@ export interface AnalyticsConfig {
 
 export interface UIConfig {
   theme: string;
+}
+
+export interface NavigationConfig {
+  actions?: Array<{ text: string; href: string; target?: string }>;
+  footer?: {
+    secondaryLinks?: Array<{ text: string; page: string }>;
+    footNote?: string;
+  };
+  blog?: {
+    categorySlug?: string;
+    tagSlug?: string;
+  };
 }
 
 const DEFAULT_SITE_NAME = 'Website';
@@ -231,6 +244,22 @@ const getAnalytics = (config: Config) => {
   return merge({}, _default, config?.analytics ?? {}) as AnalyticsConfig;
 };
 
+const getNavigation = (config: Config) => {
+  const _default = {
+    actions: [],
+    footer: {
+      secondaryLinks: [],
+      footNote: '',
+    },
+    blog: {
+      categorySlug: 'tutorials',
+      tagSlug: 'astro',
+    },
+  };
+
+  return merge({}, _default, config?.navigation ?? {}) as NavigationConfig;
+};
+
 export default (config: Config) => ({
   SITE: getSite(config),
   I18N: getI18N(config),
@@ -238,4 +267,5 @@ export default (config: Config) => ({
   APP_BLOG: getAppBlog(config),
   UI: getUI(config),
   ANALYTICS: getAnalytics(config),
+  NAVIGATION: getNavigation(config),
 });

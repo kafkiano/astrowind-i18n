@@ -79,6 +79,24 @@ analytics:
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
+navigation:
+  actions:
+    - text: 'Download'
+      href: 'https://github.com/kafkiano/astrowind-i18n'
+      target: '_blank'
+
+  footer:
+    secondaryLinks:
+      - text: 'Terms'
+        page: 'terms'
+      - text: 'Privacy Policy'
+        page: 'privacy'
+    footNote: 'Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/kafkiano/astrowind-i18n">Kafkiano</a> · All rights reserved.'
+
+  blog:
+    categorySlug: 'tutorials' # Default category to link to
+    tagSlug: 'astro' # Default tag to link to
+
 ai:
   geminiApiKey: null # or string
   provider: 'gemini' # optional

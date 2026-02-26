@@ -30,16 +30,16 @@ const metadata = {
   <div slot="header">
     <Header
       links={[
-        { text: 'Home', href: '#' },
-        { text: 'About', href: '#about' },
-        { text: 'Resume', href: '#resume' },
-        { text: 'Porfolio', href: '#porfolio' },
-        { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/arthelokyo' },
+        { title: 'Home', href: '#' },
+        { title: 'About', href: '#about' },
+        { title: 'Resume', href: '#resume' },
+        { title: 'Porfolio', href: '#porfolio' },
+        { title: 'Blog', href: '#blog' },
+        { title: 'Github', href: 'https://github.com/arthelokyo' },
       ]}
       actions={[
         {
-          text: 'Hire me',
+          title: 'Hire me',
           href: '#',
         },
       ]}
@@ -54,7 +54,7 @@ const metadata = {
     id="hero"
     title="Sarah Johnson"
     tagline="Personal Web Demo"
-    actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
+    actions={[{ variant: 'primary', title: 'Hire me', href: getPermalink('/contact#form') }]}
   >
     <span slot="subtitle">
       I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
@@ -73,7 +73,7 @@ const metadata = {
         icon: 'tabler:brand-dribbble',
         callToAction: {
           target: '_blank',
-          text: 'Dribbble',
+          title: 'Dribbble',
           href: '#',
         },
       },
@@ -81,7 +81,7 @@ const metadata = {
         icon: 'tabler:brand-behance',
         callToAction: {
           target: '_blank',
-          text: 'Behance',
+          title: 'Behance',
           href: '#',
         },
       },
@@ -89,7 +89,7 @@ const metadata = {
         icon: 'tabler:brand-pinterest',
         callToAction: {
           target: '_blank',
-          text: 'Pinterest',
+          title: 'Pinterest',
           href: '#',
         },
       },
@@ -232,7 +232,7 @@ const metadata = {
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      title: 'Go to the project',
       icon: 'tabler:chevron-right',
       href: '#',
     }}
@@ -270,7 +270,7 @@ const metadata = {
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      title: 'Go to the project',
       icon: 'tabler:chevron-right',
       href: '#',
     }}
@@ -307,7 +307,7 @@ const metadata = {
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      title: 'Go to the project',
       icon: 'tabler:chevron-right',
       href: '#',
     }}
@@ -394,7 +394,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Hire me',
+        title: 'Hire me',
         href: '/',
       },
     ]}

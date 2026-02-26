@@ -1,7 +1,16 @@
 import { getPermalink, getBlogPermalink, getPagePermalink } from './permalinks';
-import { I18N } from 'astrowind:config';
+import { I18N, NAVIGATION } from 'astrowind:config';
 import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
+
+/**
+ * Normalize showIn to array for consistent handling
+ * Handles both string ('header') and array (['header', 'footer']) formats
+ */
+function normalizeShowIn(showIn?: string | string[]): string[] {
+  if (!showIn) return [];
+  return Array.isArray(showIn) ? showIn : [showIn];
+}
 
 /**
  * Check if a path segment is a rest parameter (starts with [...])
@@ -44,7 +53,7 @@ function formatTitle(path: string): string {
  * Sort pages by navigation.order (ascending), with alphabetical order as tie-breaker
  */
 function sortPages(pages: AutoNavPage[]): AutoNavPage[] {
-  return pages.sort((a, b) => {
+  return [...pages].sort((a, b) => {
     const aOrder = a.navigation?.order ?? Infinity;
     const bOrder = b.navigation?.order ?? Infinity;
     if (aOrder !== bOrder) return aOrder - bOrder;
@@ -53,71 +62,154 @@ function sortPages(pages: AutoNavPage[]): AutoNavPage[] {
 }
 
 /**
+ * Inject virtual parent nodes for directories containing multiple pages
+ * Groups pages by first path segment and creates parent nodes for groups with >1 page
+ */
+function injectDirectoryNodes(pages: AutoNavPage[]): AutoNavPage[] {
+  // Group pages by first path segment
+  const groups = new Map<string, AutoNavPage[]>();
+
+  for (const page of pages) {
+    const segments = page.path.split('/').filter(Boolean);
+    if (segments.length === 0) continue;
+
+    const firstSegment = segments[0];
+    if (!groups.has(firstSegment)) {
+      groups.set(firstSegment, []);
+    }
+    groups.get(firstSegment)!.push(page);
+  }
+
+  const result: AutoNavPage[] = [];
+
+  for (const [segment, groupPages] of groups.entries()) {
+    if (groupPages.length === 1) {
+      // Single page - add directly
+      result.push(groupPages[0]);
+    } else {
+      // Multiple pages - create virtual parent node
+      const parentPage: AutoNavPage = {
+        path: segment,
+        title: formatTitle(segment),
+        href: '#', // Virtual parent - no actual page
+        navigation: {
+          title: formatTitle(segment),
+          showIn: ['header'],
+        },
+      };
+      result.push(parentPage);
+      // Add child pages
+      result.push(...groupPages);
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Convert Map-based tree structure to array format
+ * Recursively converts _childMap to links array
+ */
+function convertMapToArray(node: NavigationLink): NavigationLink {
+  if (node._childMap && node._childMap.size > 0) {
+    node.links = Array.from(node._childMap.values());
+    // Recursively convert children
+    for (const child of node.links) {
+      convertMapToArray(child);
+    }
+  }
+  return node;
+}
+
+/**
  * Build a navigation tree from flat page list
+ * Supports N-level nesting through recursive tree building
  */
 function buildNavigationTree(pages: AutoNavPage[]): NavigationLink[] {
+  // Tree structure: Map<pathSegment, NavigationLink>
   const tree: Map<string, NavigationLink> = new Map();
-  const rootLinks: NavigationLink[] = [];
 
-  // Group pages by their parent directory
   for (const page of pages) {
     const segments = page.path.split('/').filter(Boolean);
 
     if (segments.length === 0) {
-      // Root page (index)
+      // Root page (index) - skip
       continue;
     }
 
-    if (segments.length === 1) {
-      // Top-level page
-      rootLinks.push({
-        text: page.title,
-        href: page.href,
-      });
-    } else {
-      // Nested page - group under parent
-      const parentKey = segments[0];
-      const parentTitle = formatTitle(parentKey);
+    // Build path recursively
+    let currentLevel = tree;
+    let currentPath = '';
 
-      if (!tree.has(parentKey)) {
-        const parentLink: NavigationLink = {
-          text: parentTitle,
-          links: [],
+    for (let i = 0; i < segments.length; i++) {
+      const segment = segments[i];
+      currentPath = currentPath ? `${currentPath}/${segment}` : segment;
+      const isLeaf = i === segments.length - 1;
+
+      if (!currentLevel.has(segment)) {
+        // Create new node
+        const node: NavigationLink = {
+          title: isLeaf ? page.title : formatTitle(segment),
         };
-        tree.set(parentKey, parentLink);
-        rootLinks.push(parentLink);
+
+        if (isLeaf) {
+          node.href = page.href;
+        } else {
+          node.links = [];
+        }
+
+        currentLevel.set(segment, node);
+      } else if (isLeaf) {
+        // Update existing leaf node with page data
+        const existingNode = currentLevel.get(segment)!;
+        existingNode.title = page.title;
+        existingNode.href = page.href;
       }
 
-      const parent = tree.get(parentKey)!;
-      if (parent.links) {
-        parent.links.push({
-          text: page.title,
-          href: page.href,
-        });
+      // Move to next level
+      if (!isLeaf) {
+        const node = currentLevel.get(segment)!;
+        if (!node.links) {
+          node.links = [];
+        }
+        // Create or retrieve child Map for this node to maintain hierarchy
+        if (!node._childMap) {
+          node._childMap = new Map<string, NavigationLink>();
+        }
+        currentLevel = node._childMap;
       }
     }
   }
 
-  // Sort links by order if specified, otherwise by title
+  // Convert tree to array and sort
   const sortLinks = (links: NavigationLink[]): NavigationLink[] => {
-    return links.sort((a, b) => {
-      // If both have order, sort by order
-      // Otherwise, sort alphabetically by text or title
-      const aText = a.text || a.title || '';
-      const bText = b.text || b.title || '';
-      return aText.localeCompare(bText);
+    return [...links].sort((a, b) => {
+      return a.title.localeCompare(b.title);
     });
   };
 
-  // Sort root links and their children
-  const sortedRootLinks = sortLinks(rootLinks);
-  for (const link of sortedRootLinks) {
-    if (link.links) {
-      link.links = sortLinks(link.links);
-    }
+  const sortedLinks = sortLinks(Array.from(tree.values()));
+
+  // Convert Map structure to array format
+  for (const link of sortedLinks) {
+    convertMapToArray(link);
   }
 
-  return sortedRootLinks;
+  // Recursively sort children
+  const sortChildren = (link: NavigationLink) => {
+    if (link.links) {
+      link.links = sortLinks(link.links);
+      for (const child of link.links) {
+        sortChildren(child);
+      }
+    }
+  };
+
+  for (const link of sortedLinks) {
+    sortChildren(link);
+  }
+
+  return sortedLinks;
 }
 
 /**
@@ -126,22 +218,33 @@ function buildNavigationTree(pages: AutoNavPage[]): NavigationLink[] {
  */
 function navigationLinksToFooterLinks(navLinks: NavigationLink[]): Links[] {
   return navLinks.map((section) => ({
-    title: section.text || section.title || '',
+    title: section.title,
     links: (section.links || []).map((link) => ({
-      text: link.text || '',
-      href: link.href || '#',
+      title: link.title,
+      href: link.href,
     })),
   }));
 }
 
 /**
- * Generate navigation data for a specific locale
+ * Scan pages for navigation generation
+ * @param locale - The locale to generate permalinks for
+ * @param visibility - Filter by visibility ('header', 'footer', or undefined for all)
+ * @param options - Additional options
+ * @returns Array of pages matching the criteria
  */
-export function generateNavigation(locale: string = I18N.defaultLocale): NavigationData {
-  // Scan all pages
+function scanPages(
+  locale: string,
+  visibility?: 'header' | 'footer',
+  options?: { skipDynamic?: boolean }
+): AutoNavPage[] {
+  const { skipDynamic = false } = options ?? {};
+
+  // Vite requires LITERAL glob patterns - no variables allowed
+  // Single pattern covers all file types: {astro,md,mdx} already includes .astro
   const pageModules = import.meta.glob<{
-    navigation?: AutoNavConfig; // Now includes title
-  }>('/src/pages/[locale]/**/*.astro', { eager: true });
+    navigation?: AutoNavConfig;
+  }>('/src/pages/[locale]/**/*.{astro,md,mdx}', { eager: true });
 
   const pages: AutoNavPage[] = [];
 
@@ -153,9 +256,23 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
       continue;
     }
 
+    // Skip dynamic routes if requested
+    if (skipDynamic) {
+      const segments = routePath.split('/').filter(Boolean);
+      const hasDynamicSegment = segments.some(isDynamicSegment);
+      if (hasDynamicSegment) {
+        continue;
+      }
+    }
+
     // Extract navigation
     const navigation = module.navigation;
     const title = navigation?.title;
+
+    // Skip pages marked for exclusion
+    if (navigation?.exclude) {
+      continue;
+    }
 
     // Skip pages without navigation.title
     if (!title) {
@@ -163,8 +280,10 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
       continue;
     }
 
-    // Check if page should be shown in header
-    if (navigation?.showIn && !navigation.showIn.includes('header')) {
+    // Check visibility filter
+    const showInArray = normalizeShowIn(navigation?.showIn);
+    const shouldShow = showInArray.length === 0 || showInArray.includes(visibility ?? '');
+    if (visibility && !shouldShow) {
       continue;
     }
 
@@ -179,8 +298,21 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
     });
   }
 
+  return pages;
+}
+
+/**
+ * Generate navigation data for a specific locale
+ */
+export function generateNavigation(locale: string = I18N.defaultLocale): NavigationData {
+  // Scan pages for header navigation
+  const pages = scanPages(locale, 'header', { skipDynamic: false });
+
+  // Inject virtual parent nodes for directories
+  const pagesWithParents = injectDirectoryNodes(pages);
+
   // Sort pages by order before building navigation tree
-  const sortedPages = sortPages(pages);
+  const sortedPages = sortPages(pagesWithParents);
 
   // Build navigation tree
   const links = buildNavigationTree(sortedPages);
@@ -189,7 +321,7 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
   if (APP_BLOG?.isEnabled) {
     const blogLinks: NavigationLink[] = [
       {
-        text: 'Blog List',
+        title: 'Blog List',
         href: getBlogPermalink(locale),
       },
     ];
@@ -197,28 +329,28 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
     // Add category link if categories are enabled
     if (APP_BLOG.category?.isEnabled) {
       blogLinks.push({
-        text: 'Categories',
-        href: getPermalink('tutorials', 'category', locale),
+        title: 'Categories',
+        href: getPermalink(NAVIGATION.blog?.categorySlug || 'tutorials', 'category', locale),
       });
     }
 
     // Add tag link if tags are enabled
     if (APP_BLOG.tag?.isEnabled) {
       blogLinks.push({
-        text: 'Tags',
-        href: getPermalink('astro', 'tag', locale),
+        title: 'Tags',
+        href: getPermalink(NAVIGATION.blog?.tagSlug || 'astro', 'tag', locale),
       });
     }
 
     links.push({
-      text: 'Blog',
+      title: 'Blog',
       links: blogLinks,
     });
   }
 
   const result: NavigationData = {
     links,
-    actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+    actions: NAVIGATION.actions || [],
   };
 
   return result;
@@ -228,53 +360,8 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
  * Generate footer data for a specific locale
  */
 export function generateFooterData(locale: string = I18N.defaultLocale): FooterData {
-  // Scan all pages for footer links
-  const pageModules = import.meta.glob<{
-    navigation?: AutoNavConfig; // Now includes title
-  }>('/src/pages/[locale]/**/*.{astro,md,mdx}', { eager: true });
-
-  const footerPages: AutoNavPage[] = [];
-
-  for (const [filePath, module] of Object.entries(pageModules)) {
-    const routePath = extractRoutePath(filePath);
-
-    // Skip dynamic routes
-    const segments = routePath.split('/').filter(Boolean);
-    const hasDynamicSegment = segments.some(isDynamicSegment);
-    if (hasDynamicSegment) {
-      continue;
-    }
-
-    // Skip index.astro
-    if (routePath === '/' || routePath === '/index') {
-      continue;
-    }
-
-    // Extract navigation
-    const navigation = module.navigation;
-    const title = navigation?.title;
-
-    // Skip pages without navigation.title
-    if (!title) {
-      console.warn(`Page ${routePath} omitted from footer: missing navigation.title`);
-      continue;
-    }
-
-    // Check if page should be shown in footer
-    if (navigation?.showIn && !navigation.showIn.includes('footer')) {
-      continue;
-    }
-
-    // Generate href
-    const href = getPermalink(routePath, 'page', locale);
-
-    footerPages.push({
-      path: routePath,
-      title,
-      href,
-      navigation,
-    });
-  }
+  // Scan pages for footer navigation
+  const footerPages = scanPages(locale, 'footer', { skipDynamic: true });
 
   // Build footer links using automatic grouping (same as header)
   const sortedFooterPages = sortPages(footerPages);
@@ -283,14 +370,12 @@ export function generateFooterData(locale: string = I18N.defaultLocale): FooterD
 
   const result: FooterData = {
     links,
-    secondaryLinks: [
-      { text: 'Terms', href: getPagePermalink('terms', locale) },
-      { text: 'Privacy Policy', href: getPagePermalink('privacy', locale) },
-    ],
+    secondaryLinks: (NAVIGATION.footer?.secondaryLinks || []).map((link: { title: string; page: string }) => ({
+      title: link.title,
+      href: getPagePermalink(link.page, locale),
+    })),
     /* @wc-ignore */
-    footNote: `
-      Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
-    `,
+    footNote: NAVIGATION.footer?.footNote || '',
   };
 
   return result;

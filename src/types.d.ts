@@ -286,6 +286,7 @@ export interface AutoNavConfig {
   showIn?: ('header' | 'footer' | 'none')[];
   order?: number;
   anchorLinks?: Array<{ text: string; href: string }>;
+  exclude?: boolean; // Exclude from all navigation
 }
 
 export interface AutoNavPage {
@@ -297,10 +298,11 @@ export interface AutoNavPage {
 }
 
 export interface NavigationLink {
-  text?: string; // Optional for footer section titles
+  title: string;
   href?: string;
   links?: NavigationLink[];
-  title?: string; // For footer section titles
+  /** Internal Map for tree building - not part of public API */
+  _childMap?: Map<string, NavigationLink>;
 }
 
 export interface NavigationData {

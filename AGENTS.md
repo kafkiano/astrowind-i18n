@@ -12,12 +12,12 @@ This file provides guidance to agents when working with code in this repository.
 ## Commands
 
 - `bun run dev` - Start dev server & chromium instance as background process with pm2 and logs in `dev/logs/dev.log`
-- `pm2 restart app` - Restart the dev server
+- `bunx pm2 restart app` - Restart the dev server
 - `bun run build` - Build for production
 - `bun run check` - Run all checks (astro check, eslint, prettier)
 - `bun run fix` - Auto-fix eslint and prettier issues
 - `tail -n 50 dev/logs/dev.log` - Check dev logs for errors
-- `pm2 list` - Check running apps
+- `bunx pm2 list` - Check running apps
 
 ## Critical Non-Obvious Patterns
 
@@ -69,6 +69,10 @@ This file provides guidance to agents when working with code in this repository.
 - Import config values via `import { SITE, I18N, APP_BLOG, METADATA, UI, ANALYTICS } from 'astrowind:config'`.
 - Navigation defined in `src/navigation.ts` – NOT in config file.
 - Integration also updates `robots.txt` with sitemap URL automatically after build.
+
+### Typescript
+
+- The Typescript Type Declaration file is at `src/types.d.ts`
 
 ### Internationalization (i18n)
 
