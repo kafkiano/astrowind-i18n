@@ -283,7 +283,7 @@ export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 // Navigation types
 export interface AutoNavConfig {
   title?: string; // Added for consolidated navigation
-  showIn?: ('header' | 'footer' | 'none')[];
+  showIn?: 'header' | 'footer' | 'none';
   order?: number;
   anchorLinks?: Array<{ text: string; href: string }>;
   exclude?: boolean; // Exclude from all navigation

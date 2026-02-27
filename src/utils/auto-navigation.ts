@@ -3,15 +3,6 @@ import { I18N, NAVIGATION } from 'astrowind:config';
 import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 
 /**
- * Normalize showIn to array for consistent handling
- * Handles both string ('header') and array (['header', 'footer']) formats
- */
-function normalizeShowIn(showIn?: string | string[]): string[] {
-  if (!showIn) return [];
-  return Array.isArray(showIn) ? showIn : [showIn];
-}
-
-/**
  * Check if a path segment is a rest parameter (starts with [...])
  * This excludes structural dynamic segments like [category] and [tag]
  */
@@ -94,7 +85,7 @@ function injectDirectoryNodes(pages: AutoNavPage[]): AutoNavPage[] {
         href: '#', // Virtual parent - no actual page
         navigation: {
           title: formatTitle(segment),
-          showIn: ['header'],
+          showIn: 'header',
         },
       };
       result.push(parentPage);
@@ -314,8 +305,8 @@ function scanPages(
     }
 
     // Check visibility filter
-    const showInArray = normalizeShowIn(navigation?.showIn);
-    const shouldShow = showInArray.length === 0 || showInArray.includes(visibility ?? '');
+    const showIn = navigation?.showIn;
+    const shouldShow = !showIn || showIn === visibility;
     if (visibility && !shouldShow) {
       continue;
     }
