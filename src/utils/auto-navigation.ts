@@ -1,14 +1,6 @@
 import { getPermalink, getPagePermalink, trimSlash } from './permalinks';
 import { I18N, NAVIGATION } from 'astrowind:config';
-import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links, Link } from '~/types';
-
-/**
- * Check if a path segment is a rest parameter (starts with [...])
- * This excludes structural dynamic segments like [category] and [tag]
- */
-function isDynamicSegment(segment: string): boolean {
-  return segment.startsWith('[...');
-}
+import type { AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 
 /**
  * Extract route path from a file path
@@ -43,10 +35,7 @@ function extractRoutePath(filePath: string): string {
 function scanPages(
   locale: string,
   visibility?: 'header' | 'footer',
-  options?: { skipDynamic?: boolean }
 ): NavigationLink[] {
-  const { skipDynamic = false } = options ?? {};
-
   // Vite requires LITERAL glob patterns - no variables allowed
   // Single pattern covers all file types: {astro,md,mdx}
   const pageModules = import.meta.glob<{
@@ -70,15 +59,6 @@ function scanPages(
     // Skip index.astro (home page) from navigation
     if (routePath === '/' || routePath === '/index') {
       continue;
-    }
-
-    // Skip dynamic routes if requested
-    if (skipDynamic) {
-      const segments = routePath.split('/').filter(Boolean);
-      const hasDynamicSegment = segments.some(isDynamicSegment);
-      if (hasDynamicSegment) {
-        continue;
-      }
     }
 
     // Extract navigation
@@ -237,7 +217,7 @@ function scanPages(
  */
 export function generateNavigation(locale: string = I18N.defaultLocale): NavigationData {
   // Scan pages for header navigation - returns hierarchical structure directly
-  const links = scanPages(locale, 'header', { skipDynamic: false });
+  const links = scanPages(locale, 'header');
 
   const result: NavigationData = {
     links,
@@ -252,7 +232,7 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
  */
 export function generateFooterData(locale: string = I18N.defaultLocale): FooterData {
   // Scan pages for footer navigation - returns hierarchical structure directly
-  const navLinks = scanPages(locale, 'footer', { skipDynamic: true });
+  const navLinks = scanPages(locale, 'footer');
 
   // Convert NavigationLink[] to Links[] format for footer
   const links: Links[] = [];

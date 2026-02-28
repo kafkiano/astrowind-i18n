@@ -292,14 +292,6 @@ export interface AutoNavConfig {
   slug?: string;
 }
 
-export interface AutoNavPage {
-  path: string;
-  title: string;
-  href: string;
-  navigation?: AutoNavConfig;
-  children?: AutoNavPage[];
-}
-
 export interface NavigationLink {
   title: string;
   href?: string;
