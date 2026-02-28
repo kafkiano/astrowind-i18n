@@ -1,6 +1,6 @@
-import { getPermalink, getPagePermalink, cleanSlug, trimSlash } from './permalinks';
+import { getPermalink, getPagePermalink, trimSlash } from './permalinks';
 import { I18N, NAVIGATION } from 'astrowind:config';
-import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
+import type { AutoNavPage, AutoNavConfig, NavigationData, FooterData, NavigationLink, Links, Link } from '~/types';
 
 /**
  * Check if a path segment is a rest parameter (starts with [...])
@@ -11,266 +11,58 @@ function isDynamicSegment(segment: string): boolean {
 }
 
 /**
- * Extract the route path from a file path
+ * Extract route path from a file path
  * e.g., /src/pages/[locale]/homes/saas.astro -> /homes/saas
+ * e.g., /src/pages/[locale]/homes/index.astro -> /homes
  */
 function extractRoutePath(filePath: string): string {
   // Remove /src/pages/[locale]/ prefix
   const withoutPrefix = filePath.replace(/^\/src\/pages\/\[locale\]/, '');
   // Remove file extension
   const withoutExt = withoutPrefix.replace(/\.(astro|md|mdx)$/, '');
-  // Handle index files
-  if (withoutExt === '/index' || withoutExt === 'index') {
+  // Handle index files at any level (e.g., /index -> /, /homes/index -> /homes)
+  const segments = withoutExt.split('/').filter(Boolean);
+  if (segments.length > 0 && segments[segments.length - 1] === 'index') {
+    segments.pop(); // Remove 'index' segment
+    const pathWithoutIndex = segments.join('/');
+    return pathWithoutIndex === '' ? '/' : trimSlash(pathWithoutIndex);
+  }
+  if (withoutExt === '' || withoutExt === '/') {
     return '/';
   }
   return trimSlash(withoutExt);
 }
 
 /**
- * Format a title from a filename or path
- * e.g., 'mobile-app' -> 'Mobile App', 'about' -> 'About'
- */
-function formatTitle(path: string): string {
-  const segments = path.split('/').filter(Boolean);
-  const lastSegment = segments[segments.length - 1];
-  const cleaned = cleanSlug(lastSegment);
-  return cleaned
-    .split(/[-_]/)
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-/**
- * Sort pages by navigation.order (ascending), with alphabetical order as tie-breaker
- */
-function sortPages(pages: AutoNavPage[]): AutoNavPage[] {
-  return [...pages].sort((a, b) => {
-    const aOrder = a.navigation?.order ?? Infinity;
-    const bOrder = b.navigation?.order ?? Infinity;
-    if (aOrder !== bOrder) return aOrder - bOrder;
-    return a.title.localeCompare(b.title);
-  });
-}
-
-/**
- * Inject virtual parent nodes for directories containing multiple pages
- * Groups pages by first path segment and creates parent nodes for groups with >1 page
- */
-function injectDirectoryNodes(pages: AutoNavPage[]): AutoNavPage[] {
-  // Group pages by first path segment
-  const groups = new Map<string, AutoNavPage[]>();
-
-  for (const page of pages) {
-    const segments = page.path.split('/').filter(Boolean);
-    if (segments.length === 0) continue;
-
-    const firstSegment = segments[0];
-    if (!groups.has(firstSegment)) {
-      groups.set(firstSegment, []);
-    }
-    groups.get(firstSegment)!.push(page);
-  }
-
-  const result: AutoNavPage[] = [];
-
-  for (const [segment, groupPages] of groups.entries()) {
-    if (groupPages.length === 1) {
-      // Single page - add directly
-      result.push(groupPages[0]);
-    } else {
-      // Multiple pages - create virtual parent node
-      const parentPage: AutoNavPage = {
-        path: segment,
-        title: formatTitle(segment),
-        href: '#', // Virtual parent - no actual page
-        navigation: {
-          title: formatTitle(segment),
-          showIn: 'header',
-        },
-      };
-      result.push(parentPage);
-      // Add child pages
-      result.push(...groupPages);
-    }
-  }
-
-  return result;
-}
-
-/**
- * Convert Map-based tree structure to array format
- * Recursively converts _childMap to links array
- */
-function convertMapToArray(node: NavigationLink): NavigationLink {
-  if (node._childMap && node._childMap.size > 0) {
-    node.links = Array.from(node._childMap.values());
-    // Recursively convert children
-    for (const child of node.links) {
-      convertMapToArray(child);
-    }
-  }
-  return node;
-}
-
-/**
- * Build a navigation tree from flat page list
- * Supports N-level nesting through recursive tree building
- */
-function buildNavigationTree(pages: AutoNavPage[]): NavigationLink[] {
-  // Tree structure: Map<pathSegment, NavigationLink>
-  const tree: Map<string, NavigationLink> = new Map();
-
-  for (const page of pages) {
-    const segments = page.path.split('/').filter(Boolean);
-
-    if (segments.length === 0) {
-      // Root page (index) - skip
-      continue;
-    }
-
-    // Build path recursively
-    let currentLevel = tree;
-    let currentPath = '';
-
-    for (let i = 0; i < segments.length; i++) {
-      const segment = segments[i];
-      currentPath = currentPath ? `${currentPath}/${segment}` : segment;
-      const isLeaf = i === segments.length - 1;
-
-      if (!currentLevel.has(segment)) {
-        // Create new node
-        const node: NavigationLink = {
-          title: isLeaf ? page.title : formatTitle(segment),
-        };
-
-        if (isLeaf) {
-          node.href = page.href;
-        } else {
-          node.links = [];
-        }
-
-        currentLevel.set(segment, node);
-      } else if (isLeaf) {
-        // Update existing leaf node with page data
-        const existingNode = currentLevel.get(segment)!;
-        existingNode.title = page.title;
-        existingNode.href = page.href;
-      }
-
-      // Move to next level
-      if (!isLeaf) {
-        const node = currentLevel.get(segment)!;
-        if (!node.links) {
-          node.links = [];
-        }
-        // Create or retrieve child Map for this node to maintain hierarchy
-        if (!node._childMap) {
-          node._childMap = new Map<string, NavigationLink>();
-        }
-        currentLevel = node._childMap;
-      }
-    }
-  }
-
-  // Convert tree to array and sort
-  const sortLinks = (links: NavigationLink[]): NavigationLink[] => {
-    return [...links].sort((a, b) => {
-      return a.title.localeCompare(b.title);
-    });
-  };
-
-  const sortedLinks = sortLinks(Array.from(tree.values()));
-
-  // Convert Map structure to array format
-  for (const link of sortedLinks) {
-    convertMapToArray(link);
-  }
-
-  // Recursively sort children
-  const sortChildren = (link: NavigationLink) => {
-    if (link.links) {
-      link.links = sortLinks(link.links);
-      for (const child of link.links) {
-        sortChildren(child);
-      }
-    }
-  };
-
-  for (const link of sortedLinks) {
-    sortChildren(link);
-  }
-
-  return sortedLinks;
-}
-
-/**
- * Collapse intermediate nodes that have no href and exactly one child
- * This flattens unnecessary nesting (e.g., Category → Categories)
- */
-function collapseSingleChildNodes(links: NavigationLink[]): NavigationLink[] {
-  const result: NavigationLink[] = [];
-
-  for (const link of links) {
-    // Recursively collapse children first
-    if (link.links && link.links.length > 0) {
-      link.links = collapseSingleChildNodes(link.links);
-    }
-
-    // If this node has no href and exactly one child, merge with child
-    if (!link.href && link.links?.length === 1) {
-      const child = link.links[0];
-      // Merge: keep child's title, href, and links
-      result.push({
-        title: child.title,
-        href: child.href,
-        links: child.links,
-        _childMap: child._childMap,
-      });
-    } else {
-      result.push(link);
-    }
-  }
-
-  return result;
-}
-
-/**
-
-/**
- * Transform NavigationLink[] to Links[] for footer consumption
- * Maps parent nodes to footer sections (Links) and child nodes to footer links (Link)
- */
-function navigationLinksToFooterLinks(navLinks: NavigationLink[]): Links[] {
-  return navLinks.map((section) => ({
-    title: section.title,
-    links: (section.links || []).map((link) => ({
-      title: link.title,
-      href: link.href,
-    })),
-  }));
-}
-
-/**
- * Scan pages for navigation generation
+ * Scan pages for navigation generation and build hierarchical structure
  * @param locale - The locale to generate permalinks for
  * @param visibility - Filter by visibility ('header', 'footer', or undefined for all)
  * @param options - Additional options
- * @returns Array of pages matching the criteria
+ * @returns Hierarchical NavigationLink array
  */
 function scanPages(
   locale: string,
   visibility?: 'header' | 'footer',
   options?: { skipDynamic?: boolean }
-): AutoNavPage[] {
+): NavigationLink[] {
   const { skipDynamic = false } = options ?? {};
 
   // Vite requires LITERAL glob patterns - no variables allowed
-  // Single pattern covers all file types: {astro,md,mdx} already includes .astro
+  // Single pattern covers all file types: {astro,md,mdx}
   const pageModules = import.meta.glob<{
     navigation?: AutoNavConfig;
   }>('/src/pages/[locale]/**/*.{astro,md,mdx}', { eager: true });
 
-  const pages: AutoNavPage[] = [];
+  // Flat array with all pages and their metadata
+  type PageWithMeta = {
+    path: string;
+    title: string;
+    href: string;
+    navigation: AutoNavConfig;
+    isGroup?: boolean;
+  };
+
+  let pages: PageWithMeta[] = [];
 
   for (const [filePath, module] of Object.entries(pageModules)) {
     const routePath = extractRoutePath(filePath);
@@ -291,12 +83,13 @@ function scanPages(
 
     // Extract navigation
     const navigation = module.navigation;
-    const title = navigation?.title;
 
-    // Skip pages marked for exclusion
-    if (navigation?.exclude) {
+    // Skip pages without navigation export
+    if (!navigation) {
       continue;
     }
+
+    const title = navigation.title;
 
     // Skip pages without navigation.title
     if (!title) {
@@ -329,33 +122,125 @@ function scanPages(
       title,
       href,
       navigation,
+      isGroup: type === 'group',
     });
   }
 
-  return pages;
+  // Helper: sort pages by order and title
+  function sortPageMeta(items: PageWithMeta[]): PageWithMeta[] {
+    return [...items].sort((a, b) => {
+      const aOrder = a.navigation?.order ?? Infinity;
+      const bOrder = b.navigation?.order ?? Infinity;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return a.title.localeCompare(b.title);
+    });
+  }
+
+  // Type-based grouping for blog pages
+  // Blog page acts as parent for category and tag pages
+  const blogPage = pages.find((p) => p.navigation?.type === 'blog');
+  const blogChildren = pages.filter((p) => p.navigation?.type === 'category' || p.navigation?.type === 'tag');
+
+  // Build blog group if blog page exists and has children
+  const blogGroupLinks: NavigationLink[] = [];
+  if (blogPage && blogChildren.length > 0) {
+    const sortedChildren = sortPageMeta(blogChildren);
+    blogGroupLinks.push({
+      title: blogPage.title,
+      href: blogPage.href, // Keep parent clickable
+      links: sortedChildren.map((child) => ({
+        title: child.title,
+        href: child.href,
+      })),
+    });
+    // Remove blogPage and its children from further processing
+    pages = pages.filter((p) => p !== blogPage && !blogChildren.includes(p));
+  }
+
+  // Post-processing: Build hierarchical structure
+  // Separate groups from leaf pages
+  const groups = pages.filter((p) => p.isGroup);
+  const leafPages = pages.filter((p) => !p.isGroup);
+
+  // Build a Map of groups keyed by their directory path
+  // For a group at path /homes, its directory is /homes
+  const groupsByDirectory = new Map<string, PageWithMeta>();
+  for (const group of groups) {
+    // Group directory is the path itself (e.g., /homes)
+    groupsByDirectory.set(group.path, group);
+  }
+
+  // For each group, find its children (pages whose path starts with group.path + '/')
+  const groupLinks: NavigationLink[] = [];
+
+  // First, create group nodes with their children (sorted by group order)
+  for (const group of sortPageMeta(groups)) {
+    const groupDir = group.path + '/';
+    const children = leafPages.filter((page) => page.path.startsWith(groupDir));
+
+    // Only include group if it has visible children
+    if (children.length > 0) {
+      // Sort children by order
+      const sortedChildren = sortPageMeta(children);
+
+      groupLinks.push({
+        title: group.title,
+        links: sortedChildren.map((child) => ({
+          title: child.title,
+          href: child.href,
+        })),
+      });
+    }
+  }
+
+  // Second, add top-level pages (leaf pages not belonging to any group)
+  const topLevelLinks: NavigationLink[] = [];
+
+  for (const page of leafPages) {
+    // Check if this page belongs to any group
+    let belongsToGroup = false;
+    for (const groupPath of groupsByDirectory.keys()) {
+      if (page.path.startsWith(groupPath + '/')) {
+        belongsToGroup = true;
+        break;
+      }
+    }
+
+    // If not part of any group, add as top-level link
+    if (!belongsToGroup) {
+      topLevelLinks.push({
+        title: page.title,
+        href: page.href,
+      });
+    }
+  }
+
+  // Sort top-level links by order
+  const sortedTopLevel = sortPageMeta(
+    topLevelLinks.map((link) => ({
+      path: link.href || '',
+      title: link.title,
+      href: link.href || '',
+      navigation: { order: 0 },
+    }))
+  ).map((item) => ({
+    title: item.title,
+    href: item.href,
+  }));
+
+  // Return combined: blog group first, then other groups, then top-level pages
+  return [...blogGroupLinks, ...groupLinks, ...sortedTopLevel];
 }
 
 /**
  * Generate navigation data for a specific locale
  */
 export function generateNavigation(locale: string = I18N.defaultLocale): NavigationData {
-  // Scan pages for header navigation
-  const pages = scanPages(locale, 'header', { skipDynamic: false });
-
-  // Inject virtual parent nodes for directories
-  const pagesWithParents = injectDirectoryNodes(pages);
-
-  // Sort pages by order before building navigation tree
-  const sortedPages = sortPages(pagesWithParents);
-
-  // Build navigation tree
-  const links = buildNavigationTree(sortedPages);
-
-  // Collapse single-child nodes to flatten unnecessary nesting
-  const collapsedLinks = collapseSingleChildNodes(links);
+  // Scan pages for header navigation - returns hierarchical structure directly
+  const links = scanPages(locale, 'header', { skipDynamic: false });
 
   const result: NavigationData = {
-    links: collapsedLinks,
+    links,
     actions: NAVIGATION.actions || [],
   };
 
@@ -366,25 +251,40 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
  * Generate footer data for a specific locale
  */
 export function generateFooterData(locale: string = I18N.defaultLocale): FooterData {
-  // Scan pages for footer navigation
-  const footerPages = scanPages(locale, 'footer', { skipDynamic: true });
+  // Scan pages for footer navigation - returns hierarchical structure directly
+  const navLinks = scanPages(locale, 'footer', { skipDynamic: true });
 
-  // Build footer links using automatic grouping (same as header)
-  const sortedFooterPages = sortPages(footerPages);
-  const navLinks = buildNavigationTree(sortedFooterPages);
-  const links = navigationLinksToFooterLinks(navLinks);
+  // Convert NavigationLink[] to Links[] format for footer
+  const links: Links[] = [];
 
-  const result: FooterData = {
+  for (const navLink of navLinks) {
+    if (navLink.links && navLink.links.length > 0) {
+      // Group: convert children to Link[] format
+      links.push({
+        title: navLink.title,
+        links: navLink.links.map((child) => ({
+          text: child.title,
+          href: child.href,
+        })),
+      });
+    } else if (navLink.href) {
+      // Top-level page: add as a standalone link group
+      links.push({
+        title: '',
+        links: [{ text: navLink.title, href: navLink.href }],
+      });
+    }
+  }
+
+  return {
     links,
-    secondaryLinks: (NAVIGATION.footer?.secondaryLinks || []).map((link: { title: string; page: string }) => ({
-      title: link.title,
+    secondaryLinks: (NAVIGATION.footer?.secondaryLinks || []).map((link: { text: string; page: string }) => ({
+      text: link.text,
       href: getPagePermalink(link.page, locale),
     })),
     /* @wc-ignore */
     footNote: NAVIGATION.footer?.footNote || '',
   };
-
-  return result;
 }
 
 /**

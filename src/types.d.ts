@@ -286,8 +286,9 @@ export interface AutoNavConfig {
   showIn?: 'header' | 'footer' | 'none';
   order?: number;
   anchorLinks?: Array<{ text: string; href: string }>;
+  /** @deprecated Use absence of navigation export instead to exclude from navigation */
   exclude?: boolean; // Exclude from all navigation
-  type?: 'page' | 'blog' | 'category' | 'tag' | 'home' | 'asset' | 'post';
+  type?: 'page' | 'blog' | 'category' | 'tag' | 'home' | 'asset' | 'post' | 'group';
   slug?: string;
 }
 
@@ -303,8 +304,6 @@ export interface NavigationLink {
   title: string;
   href?: string;
   links?: NavigationLink[];
-  /** Internal Map for tree building - not part of public API */
-  _childMap?: Map<string, NavigationLink>;
 }
 
 export interface NavigationData {
