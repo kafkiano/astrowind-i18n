@@ -28,8 +28,6 @@ dev/docs
 # agent frameworks
 .roo/
 dev/logs*
-ACTION*
-ARCHITECT*
 digest.txt
 
 # wuchale

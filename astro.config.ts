@@ -33,9 +33,6 @@ interface AstroConfig {
 }
 
 const config = yaml.load(configContent) as AstroConfig;
-// configBuilder validates i18n configuration; if validation passes,
-// config.i18n is guaranteed to exist with valid locales/defaultLocale.
-// No fallback needed - missing i18n section causes early build failure.
 const i18nConfig = config.i18n;
 
 const hasExternalScripts = false;
@@ -48,7 +45,7 @@ export default defineConfig({
   vite: {
     plugins: [wuchale()],
   },
-  // configBuilder validates i18n configuration; locales/defaultLocale are guaranteed present
+  
   i18n: {
     locales: i18nConfig.locales,
     defaultLocale: i18nConfig.defaultLocale,
@@ -57,6 +54,12 @@ export default defineConfig({
       redirectToDefaultLocale: false,
     },
   },
+
+  // Redirect to default locale. Generates ugly unstyled redirect page for static output.
+  // Current workaround is a dedicated index.astro file for desired redirects.
+  // redirects: {
+  //   '/': i18nConfig.defaultLocale,
+  // },
 
   integrations: [
     tailwind({
