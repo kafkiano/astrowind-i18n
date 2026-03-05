@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "app",
+      "name": "astro-dev",
       "script": "/bin/sh",
       "args": "-c 'bun --bun run astro dev'",
       "interpreter": "none",
@@ -14,17 +14,6 @@
       "min_uptime": "10s",
       "max_restarts": 10,
       "log_file": "dev/logs/dev.log"
-    },
-    {
-      "name": "chromium",
-      "script": "dev/scripts/launch_cdp.sh",
-      "exec_mode": "fork",
-      "autorestart": false,
-      "watch": false,
-      "instances": 1,
-      "env": {
-        "DISPLAY": ":0"
-      }
     }
   ]
 }

@@ -24,10 +24,11 @@ pnpm-debug.log*
 
 # temporary docs
 dev/docs
+dev/logs*
 
 # agent frameworks
 .roo/
-dev/logs*
+.crush/
 digest.txt
 
 # wuchale
