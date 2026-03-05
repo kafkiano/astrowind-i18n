@@ -13,23 +13,23 @@ msgstr ""
 "Source-Language: en\n"
 "MIME-Version: 1.0\n"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Error 404"
 msgstr "Error 404"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Error"
 msgstr "Error"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Sorry, we couldn't find this page."
 msgstr "Lo sentimos, no pudimos encontrar esta página."
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "But dont worry, you can find plenty of other things on our homepage."
 msgstr "Pero no te preocupes, puedes encontrar muchas otras cosas en nuestra página de inicio."
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Back to homepage"
 msgstr "Volver a la página de inicio"
 

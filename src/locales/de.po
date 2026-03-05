@@ -594,23 +594,23 @@ msgstr "Ähnliche Beiträge"
 msgid "View All Posts"
 msgstr "Alle Beiträge ansehen"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Error 404"
 msgstr "Fehler 404"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Error"
 msgstr "Fehler"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Sorry, we couldn't find this page."
 msgstr "Entschuldigung, diese Seite konnten wir nicht finden."
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "But dont worry, you can find plenty of other things on our homepage."
 msgstr "Aber keine Sorge, auf unserer Homepage finden Sie viele andere Dinge."
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Back to homepage"
 msgstr "Zurück zur Startseite"
 

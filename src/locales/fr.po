@@ -18,23 +18,23 @@ msgstr ""
 msgid "Download"
 msgstr "Télécharger"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Error 404"
 msgstr "Erreur 404"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Error"
 msgstr "Erreur"
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Sorry, we couldn't find this page."
 msgstr "Désolé, nous n'avons pas pu trouver cette page."
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "But dont worry, you can find plenty of other things on our homepage."
 msgstr "Mais ne vous inquiétez pas, vous pouvez trouver plein d'autres choses sur notre page d'accueil."
 
-#: src/pages/404.astro
+#: src/pages/[locale]/404.astro
 msgid "Back to homepage"
 msgstr "Retour à la page d'accueil"
 
