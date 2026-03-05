@@ -1,5 +1,7 @@
 dist
+docs
 node_modules
 .github
 .changeset
 src/locales/
+src/data/
