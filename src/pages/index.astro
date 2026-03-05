@@ -6,7 +6,7 @@ const supportedLocales = I18N.locales;
 const defaultLocale = I18N.defaultLocale;
 ---
 
-<script define:vars={{ supportedLocales, defaultLocale }}>
+<script is:inline define:vars={{ supportedLocales, defaultLocale }}>
   // Find first matching locale from browser preferences
   const preferred = navigator.languages.find((lang) => {
     const base = lang.split('-')[0];
