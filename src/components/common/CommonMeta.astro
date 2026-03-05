@@ -8,6 +8,4 @@ import { I18N } from 'astrowind:config';
 
 <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
 
-{I18N.locales.map((locale: string) => (
-  <link rel="alternate" hreflang={locale} href={getCanonical(`/${locale}`)} />
-))}
+{I18N.locales.map((locale: string) => <link rel="alternate" hreflang={locale} href={getCanonical(`/${locale}`)} />)}

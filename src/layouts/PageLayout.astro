@@ -23,7 +23,7 @@ const footerData = getFooterData(locale);
     <Announcement />
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme showLocaleSwitcher />
+    <Header {...headerData} isSticky showRssFeed showToggleTheme showLocaleSwitcher currentLocale={locale} />
   </slot>
   <main>
     <slot />

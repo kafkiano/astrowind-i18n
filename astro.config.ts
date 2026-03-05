@@ -45,7 +45,7 @@ export default defineConfig({
   vite: {
     plugins: [wuchale()],
   },
-  
+
   i18n: {
     locales: i18nConfig.locales,
     defaultLocale: i18nConfig.defaultLocale,

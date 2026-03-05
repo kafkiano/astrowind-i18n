@@ -3,7 +3,7 @@ import slugify from 'limax';
 import { SITE, APP_BLOG } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
-import { getCurrentLocale } from '~/utils/i18n';
+import { getPathWithoutLocale } from '~/utils/i18n';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
@@ -53,6 +53,9 @@ export const getPermalink = (slug = '', type = 'page', locale?: string): string 
     return slug;
   }
 
+  // Strip any existing locale prefix (allows '/en/about' → '/es/about')
+  const slugWithoutLocale = getPathWithoutLocale(slug);
+
   switch (type) {
     case 'home':
       return getHomePermalink(locale);
@@ -61,30 +64,28 @@ export const getPermalink = (slug = '', type = 'page', locale?: string): string 
       return getBlogPermalink(locale);
 
     case 'asset':
-      permalink = getAsset(slug);
+      permalink = getAsset(slugWithoutLocale);
       break;
 
     case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(CATEGORY_BASE, trimSlash(slugWithoutLocale));
       break;
 
     case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slug));
+      permalink = createPath(TAG_BASE, trimSlash(slugWithoutLocale));
       break;
 
     case 'post':
-      permalink = createPath(trimSlash(slug));
+      permalink = createPath(trimSlash(slugWithoutLocale));
       break;
 
     case 'page':
     default:
-      permalink = createPath(slug);
+      permalink = createPath(slugWithoutLocale);
       break;
   }
 
-  // AUTO-DETECT LOCALE WHEN NOT PROVIDED
-  const effectiveLocale = locale ?? getCurrentLocale();
-  const prefixed = effectiveLocale ? `/${effectiveLocale}${permalink}` : permalink;
+  const prefixed = locale ? `/${locale}${permalink}` : permalink;
   return definitivePermalink(prefixed);
 };
 
