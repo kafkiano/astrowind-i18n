@@ -32,10 +32,7 @@ function extractRoutePath(filePath: string): string {
  * @param options - Additional options
  * @returns Hierarchical NavigationLink array
  */
-function scanPages(
-  locale: string,
-  visibility?: 'header' | 'footer',
-): NavigationLink[] {
+function scanPages(locale: string, visibility?: 'header' | 'footer'): NavigationLink[] {
   // Vite requires LITERAL glob patterns - no variables allowed
   // Single pattern covers all file types: {astro,md,mdx}
   const pageModules = import.meta.glob<{

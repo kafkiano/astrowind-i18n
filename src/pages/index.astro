@@ -1,7 +1,30 @@
 ---
+import { I18N } from 'astrowind:config';
 import Layout from '~/layouts/Layout.astro';
----
 
-<meta http-equiv="refresh" content="0;url=/en" />
+const supportedLocales = I18N.locales;
+const defaultLocale = I18N.defaultLocale;
+---
+<script define:vars={{ supportedLocales, defaultLocale }}>
+  // Find first matching locale from browser preferences
+  const preferred = navigator.languages.find(lang => {
+    const base = lang.split('-')[0];
+    return supportedLocales.includes(base) || supportedLocales.includes(lang);
+  });
+  
+  const targetLocale = preferred ? preferred.split('-')[0] : defaultLocale;
+  const targetUrl = `/${targetLocale}`;
+  
+  // Dynamically build regex from supportedLocales to avoid hardcoding
+  const localeRegex = new RegExp(`^/(${supportedLocales.join('|')})(/|$)`);
+  if (!localeRegex.test(window.location.pathname)) {
+    window.location.replace(targetUrl);
+  }
+</script>
+
+<!-- Fallback for non-JS: meta refresh to default locale (dynamic) -->
+<noscript>
+  <meta http-equiv="refresh" content={`0;url=/${defaultLocale}`} />
+</noscript>
 
 <Layout></Layout>

@@ -55,12 +55,6 @@ export default defineConfig({
     },
   },
 
-  // Redirect to default locale. Generates ugly unstyled redirect page for static output.
-  // Current workaround is a dedicated index.astro file for desired redirects.
-  // redirects: {
-  //   '/': i18nConfig.defaultLocale,
-  // },
-
   integrations: [
     tailwind({
       applyBaseStyles: false,

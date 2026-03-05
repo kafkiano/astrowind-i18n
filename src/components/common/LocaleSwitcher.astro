@@ -48,24 +48,7 @@ if (I18N.locales.length <= 1) {
       {
         I18N.locales.map((locale: string) => {
           // Generate URL for this locale
-          let url: string;
-          try {
-            // Try using getRelativeLocaleUrl with path without locale
-            url = getRelativeLocaleUrl(locale, currentPathWithoutLocale);
-            // Ensure no trailing slash to match trailingSlash: 'never' config
-            if (url.endsWith('/') && url !== '/') {
-              url = url.slice(0, -1);
-            }
-          } catch {
-            // Fallback: manually construct URL
-            const shouldPrefix = locale !== I18N.defaultLocale;
-            const cleanPath = currentPathWithoutLocale === '/' ? '' : currentPathWithoutLocale;
-            url = shouldPrefix ? `/${locale}${cleanPath}` : cleanPath || '/';
-            // Ensure no trailing slash for homepage
-            if (url === '/') {
-              url = '';
-            }
-          }
+          let url = getRelativeLocaleUrl(locale, currentPathWithoutLocale);
 
           return (
             <li>

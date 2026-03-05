@@ -10,7 +10,7 @@ const configPath = path.join(__dirname, 'src/config.yaml');
 const configContent = fs.readFileSync(configPath, 'utf-8');
 const config = yaml.load(configContent);
 const locales = config.i18n?.locales;
-const geminiKey = config.ai?.geminiApiKey;
+const geminiKey = config.i18n?.ai?.geminiApiKey;
 
 export default defineConfig({
   locales,

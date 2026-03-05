@@ -38,6 +38,9 @@ i18n:
     fr: Français
     de: Deutsch
     # Add more as needed
+  ai:
+    geminiApiKey: null # or string
+    provider: 'gemini' # optional
 
 apps:
   blog:
@@ -97,6 +100,3 @@ navigation:
     categorySlug: 'tutorials'
     tagSlug: 'astro'
 
-ai:
-  geminiApiKey: null # or string
-  provider: 'gemini' # optional
