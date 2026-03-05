@@ -5,3 +5,4 @@ node_modules
 .changeset
 src/locales/
 src/data/
+*.md
