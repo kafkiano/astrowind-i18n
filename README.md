@@ -1,10 +1,11 @@
 # 🚀 AstroWind
 
-[![Built with Bun](https://img.shields.io/badge/Built%20with-Bun-F472B6?style=flat&logo=bun&logoColor=white)](https://bun.sh)
 ![GitHub License](https://img.shields.io/github/license/kafkiano/astrowind-i18n)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kafkiano/astrowind-i18n/actions.yaml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/kafkiano/astrowind-i18n)
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kafkiano/astrowind-i18n/github-code-scanning%2Fcodeql?logo=github&label=CodeQL)
+[![Built with Bun](https://img.shields.io/badge/Built%20with-Bun-F472B6?style=flat&logo=bun&logoColor=white)](https://bun.sh)
 
 
 **AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
