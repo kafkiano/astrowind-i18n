@@ -14,7 +14,6 @@ jobs:
     strategy:
       matrix:
         bun-version:
-          - 1.1.38
           - latest
     steps:
       - uses: actions/checkout@v4
