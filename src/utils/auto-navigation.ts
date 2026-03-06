@@ -1,4 +1,4 @@
-import { getPermalink, getPagePermalink, trimSlash } from './permalinks';
+import { getPermalink, getPagePermalink } from './permalinks';
 import { I18N, NAVIGATION } from 'astrowind:config';
 import type { AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 
@@ -9,20 +9,18 @@ import type { AutoNavConfig, NavigationData, FooterData, NavigationLink, Links }
  */
 function extractRoutePath(filePath: string): string {
   // Remove /src/pages/[locale]/ prefix
-  const withoutPrefix = filePath.replace(/^\/src\/pages\/\[locale\]/, '');
+  const relativePath = filePath.replace(/^\/src\/pages\/\[locale\]/, '');
   // Remove file extension
-  const withoutExt = withoutPrefix.replace(/\.(astro|md|mdx)$/, '');
+  const withoutExt = relativePath.replace(/\.(astro|md|mdx)$/, '');
   // Handle index files at any level (e.g., /index -> /, /homes/index -> /homes)
   const segments = withoutExt.split('/').filter(Boolean);
-  if (segments.length > 0 && segments[segments.length - 1] === 'index') {
-    segments.pop(); // Remove 'index' segment
-    const pathWithoutIndex = segments.join('/');
-    return pathWithoutIndex === '' ? '/' : trimSlash(pathWithoutIndex);
+  
+  // Remove 'index' segment if present
+  if (segments[segments.length - 1] === 'index') {
+    segments.pop();
   }
-  if (withoutExt === '' || withoutExt === '/') {
-    return '/';
-  }
-  return trimSlash(withoutExt);
+  
+  return segments.length > 0 ? `/${segments.join('/')}` : '/';
 }
 
 /**

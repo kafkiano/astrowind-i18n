@@ -68,15 +68,15 @@ export const getPermalink = (slug = '', type = 'page', locale?: string): string 
       break;
 
     case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slugWithoutLocale));
+      permalink = createPath(CATEGORY_BASE, slugWithoutLocale);
       break;
 
     case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slugWithoutLocale));
+      permalink = createPath(TAG_BASE, slugWithoutLocale);
       break;
 
     case 'post':
-      permalink = createPath(trimSlash(slugWithoutLocale));
+      permalink = createPath(slugWithoutLocale);
       break;
 
     case 'page':
@@ -103,7 +103,6 @@ export const getPagePermalink = (slug: string, locale?: string): string =>
 export const getAsset = (path: string): string =>
   '/' +
   [BASE_PATHNAME, path]
-    .map((el) => trimSlash(el))
     .filter((el) => !!el)
     .join('/');
 
