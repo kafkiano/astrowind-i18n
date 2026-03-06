@@ -14,7 +14,8 @@ export interface Props {
 const { post } = Astro.props;
 const image = await findImage(post.image);
 
-const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
+const currentLocale = Astro.currentLocale;
+const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post', currentLocale) : '';
 ---
 
 <article

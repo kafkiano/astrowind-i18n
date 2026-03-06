@@ -1,10 +1,8 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import { getStaticPathsForLocale } from '~/utils/i18n';
-import { getHomePermalink } from '~/utils/permalinks';
-import { I18N } from 'astrowind:config';
-export const getStaticPaths = getStaticPathsForLocale;
 
+export const getStaticPaths = getStaticPathsForLocale;
 export const navigation = {
   // @wc-ignore
   title: 'Homes',
@@ -13,9 +11,12 @@ export const navigation = {
   order: 1,
 };
 
-const currentLocale = Astro.currentLocale ?? I18N.defaultLocale;
+const metadata = {title: navigation.title};
+const currentLocale = Astro.currentLocale;
 ---
 
-<meta http-equiv="refresh" content={`0;url=${getHomePermalink(currentLocale)}`} />
-
-<Layout />
+<Layout metadata={metadata}>
+  <head>
+    <meta http-equiv="refresh" content={`0;url=/${currentLocale}`} />
+  </head>
+</Layout>
