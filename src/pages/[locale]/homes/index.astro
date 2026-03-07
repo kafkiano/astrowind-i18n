@@ -11,12 +11,11 @@ export const navigation = {
   order: 1,
 };
 
-const metadata = {title: navigation.title};
 const currentLocale = Astro.currentLocale;
 ---
 
-<Layout metadata={metadata}>
+<Layout>
   <head>
-    <meta http-equiv="refresh" content={`0;url=/${currentLocale}`} />
+    <meta http-equiv="refresh" content={`0;url=/${currentLocale}/404`} />
   </head>
 </Layout>
