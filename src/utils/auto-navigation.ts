@@ -4,312 +4,207 @@ import { I18N, NAVIGATION } from 'astrowind:config';
 import type { AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 
 /**
- * Extract route path from a file path
- * e.g., /src/pages/[locale]/homes/saas.astro -> /homes/saas
- * e.g., /src/pages/[locale]/homes/index.astro -> /homes
+ * Unified page type for all navigation sources
  */
-function extractRoutePath(filePath: string): string {
-  // Remove /src/pages/[locale]/ prefix
-  const relativePath = filePath.replace(/^\/src\/pages\/\[locale\]/, '');
-  // Remove file extension
-  const withoutExt = relativePath.replace(/\.(astro|md|mdx)$/, '');
-  // Handle index files at any level (e.g., /index -> /, /homes/index -> /homes)
-  const segments = withoutExt.split('/').filter(Boolean);
-
-  // Remove 'index' segment if present
-  if (segments[segments.length - 1] === 'index') {
-    segments.pop();
-  }
-
-  return segments.length > 0 ? `/${segments.join('/')}` : '/';
-}
+type Page = {
+  title: string;
+  href: string;
+  showIn: 'header' | 'footer' | 'all' | 'none';
+  order: number;
+  group?: string;
+  type: 'page' | 'blog' | 'category' | 'tag' | 'group' | 'post' | 'home' | 'asset';
+  path: string; // For directory-based grouping
+};
 
 /**
- * Scan pages for navigation generation and build hierarchical structure
- * @param locale - The locale to generate permalinks for
- * @param visibility - Filter by visibility ('header', 'footer', or undefined for all)
- * @param options - Additional options
- * @returns Hierarchical NavigationLink array
+ * Scan all pages from file-based routes
  */
-function scanPages(locale: string, visibility?: 'header' | 'footer'): NavigationLink[] {
-  // Vite requires LITERAL glob patterns - no variables allowed
-  // Single pattern covers all file types: {astro,md,mdx}
+function scanFilePages(locale: string): Page[] {
   const pageModules = import.meta.glob<{
     navigation?: AutoNavConfig;
-  }>('/src/pages/[locale]/**/*.{astro,md,mdx}', { eager: true });
+  }>('/src/pages/[locale]/**/*.astro', { eager: true });
 
-  // Flat array with all pages and their metadata
-  type PageWithMeta = {
-    path: string;
-    title: string;
-    href: string;
-    navigation: AutoNavConfig;
-    isGroup?: boolean;
-  };
-
-  let pages: PageWithMeta[] = [];
+  const pages: Page[] = [];
 
   for (const [filePath, module] of Object.entries(pageModules)) {
-    const routePath = extractRoutePath(filePath);
+    const routePath =
+      filePath
+        .replace(/^\/src\/pages\/\[locale\]/, '')
+        .replace(/\.astro$/, '')
+        .replace(/\/index$/, '/') || '/';
 
-    // Skip index.astro (home page) from navigation
-    if (routePath === '/' || routePath === '/index') {
-      continue;
-    }
+    // Skip home page
+    if (routePath === '/') continue;
 
-    // Extract navigation
     const navigation = module.navigation;
+    if (!navigation?.title) continue;
 
-    // Skip pages without navigation export
-    if (!navigation) {
-      continue;
-    }
+    const showIn = navigation.showIn ?? 'none';
+    if (showIn === 'none') continue;
 
-    const title = navigation.title;
+    const type = navigation.type ?? 'page';
+    const slug = navigation.slug ?? routePath;
 
-    // Skip pages without navigation.title
-    if (!title) {
-      console.warn(`Page ${routePath} omitted from navigation: missing navigation.title`);
-      continue;
-    }
-
-    // Check visibility filter
-    const showIn = navigation?.showIn;
-    // Skip pages explicitly hidden from navigation
-    if (showIn === 'none') {
-      continue;
-    }
-    const shouldShow = !showIn || showIn === visibility;
-    if (visibility && !shouldShow) {
-      continue;
-    }
-
-    // Determine type and slug
-    const type = navigation?.type ?? 'page';
-    const slug = navigation?.slug ?? routePath;
-
-    // Validation: category and tag types require a slug
-    if ((type === 'category' || type === 'tag') && !slug) {
-      console.warn(`Page ${routePath} omitted from navigation: ${type} requires a slug`);
-      continue;
-    }
-
-    // Generate href with locale awareness
-    const href = getPermalink(slug, type, locale);
+    if ((type === 'category' || type === 'tag') && !slug) continue;
 
     pages.push({
+      title: navigation.title,
+      href: getPermalink(slug, type, locale),
+      showIn,
+      order: navigation.order ?? 999,
+      group: navigation.group,
+      type,
       path: routePath,
-      title,
-      href,
-      navigation,
-      isGroup: type === 'group',
     });
   }
 
-  // Helper: sort pages by order and title
-  function sortPageMeta(items: PageWithMeta[]): PageWithMeta[] {
-    return [...items].sort((a, b) => {
-      const aOrder = a.navigation?.order ?? Infinity;
-      const bOrder = b.navigation?.order ?? Infinity;
-      if (aOrder !== bOrder) return aOrder - bOrder;
-      return a.title.localeCompare(b.title);
-    });
-  }
-
-  // Type-based grouping for blog pages
-  // Blog page acts as parent for category and tag pages
-  const blogPage = pages.find((p) => p.navigation?.type === 'blog');
-  const blogChildren = pages.filter((p) => p.navigation?.type === 'category' || p.navigation?.type === 'tag');
-
-  // Build blog group if blog page exists and has children
-  const blogGroupLinks: NavigationLink[] = [];
-  if (blogPage && blogChildren.length > 0) {
-    const sortedChildren = sortPageMeta(blogChildren);
-    blogGroupLinks.push({
-      title: blogPage.title,
-      href: blogPage.href, // Keep parent clickable
-      links: sortedChildren.map((child) => ({
-        title: child.title,
-        href: child.href,
-      })),
-    });
-    // Remove blogPage and its children from further processing
-    pages = pages.filter((p) => p !== blogPage && !blogChildren.includes(p));
-  }
-
-  // Post-processing: Build hierarchical structure
-  // Separate groups from leaf pages
-  const groups = pages.filter((p) => p.isGroup);
-  const leafPages = pages.filter((p) => !p.isGroup);
-
-  // Build a Map of groups keyed by their directory path
-  // For a group at path /homes, its directory is /homes
-  const groupsByDirectory = new Map<string, PageWithMeta>();
-  for (const group of groups) {
-    // Group directory is the path itself (e.g., /homes)
-    groupsByDirectory.set(group.path, group);
-  }
-
-  // For each group, find its children (pages whose path starts with group.path + '/')
-  const groupLinks: NavigationLink[] = [];
-
-  // First, create group nodes with their children (sorted by group order)
-  for (const group of sortPageMeta(groups)) {
-    const groupDir = group.path + '/';
-    const children = leafPages.filter((page) => page.path.startsWith(groupDir));
-
-    // Only include group if it has visible children
-    if (children.length > 0) {
-      // Sort children by order
-      const sortedChildren = sortPageMeta(children);
-
-      groupLinks.push({
-        title: group.title,
-        links: sortedChildren.map((child) => ({
-          title: child.title,
-          href: child.href,
-        })),
-      });
-    }
-  }
-
-  // Second, group top-level pages by their 'group' field
-  const groupedPages = new Map<string, { title: string; href: string; order: number }[]>();
-  const ungroupedLinks: NavigationLink[] = [];
-
-  for (const page of leafPages) {
-    // Skip if belongs to directory-based group
-    let belongsToDirGroup = false;
-    for (const groupPath of groupsByDirectory.keys()) {
-      if (page.path.startsWith(groupPath + '/')) {
-        belongsToDirGroup = true;
-        break;
-      }
-    }
-    if (belongsToDirGroup) continue;
-
-    const groupName = page.navigation?.group;
-    if (groupName) {
-      if (!groupedPages.has(groupName)) groupedPages.set(groupName, []);
-      groupedPages.get(groupName)!.push({
-        title: page.title,
-        href: page.href,
-        order: page.navigation?.order ?? 999,
-      });
-    } else {
-      ungroupedLinks.push({ title: page.title, href: page.href });
-    }
-  }
-
-  // Convert grouped pages to NavigationLink format
-  const explicitGroupLinks: NavigationLink[] = Array.from(groupedPages.entries()).map(([title, items]) => ({
-    title,
-    links: items.sort((a, b) => a.order - b.order).map(({ title, href }) => ({ title, href })),
-  }));
-
-  // Sort ungrouped links by order
-  const sortedUngrouped = sortPageMeta(
-    ungroupedLinks.map((link) => ({
-      path: link.href || '',
-      title: link.title,
-      href: link.href || '',
-      navigation: { order: 0 },
-    }))
-  ).map((item) => ({
-    title: item.title,
-    href: item.href,
-  }));
-
-  // Return combined: blog group, directory groups, explicit groups, ungrouped links
-  return [...blogGroupLinks, ...groupLinks, ...explicitGroupLinks, ...sortedUngrouped];
+  return pages;
 }
 
 /**
- * Scan markdown pages from content collection for navigation generation
- * @param locale - The locale to generate permalinks for
- * @param visibility - Filter by visibility ('header', 'footer', or undefined for all)
- * @returns Hierarchical NavigationLink array grouped by 'group' frontmatter
+ * Scan all pages from content collections
  */
-async function scanMarkdownPages(locale: string, visibility?: 'header' | 'footer'): Promise<NavigationLink[]> {
+async function scanContentPages(locale: string): Promise<Page[]> {
   const pages = await getCollection('pages', ({ id }) => id.startsWith(`${locale}/`));
 
-  const groups = new Map<string, { title: string; href: string; order: number }[]>();
+  return pages.map((page) => ({
+    title: page.data.title,
+    href: `/${locale}/${page.id
+      .split('/')
+      .pop()
+      ?.replace(/\.(md|mdx)$/, '')}`,
+    showIn: page.data.showIn ?? 'footer',
+    order: page.data.order ?? 999,
+    group: page.data.group,
+    type: 'page',
+    path: '',
+  }));
+}
 
-  for (const page of pages) {
-    const { showIn = 'footer', order = 999, group } = page.data;
-    // Skip pages explicitly hidden from navigation
-    if (showIn === 'none') continue;
-    if (visibility && showIn !== visibility) continue;
+/**
+ * Scan all pages (file-based + content collections)
+ */
+async function scanAllPages(locale: string): Promise<Page[]> {
+  const filePages = scanFilePages(locale);
+  const contentPages = await scanContentPages(locale);
+  return [...filePages, ...contentPages];
+}
 
-    const slug =
-      page.id
-        .split('/')
-        .pop()
-        ?.replace(/\.(md|mdx)$/, '') || page.id;
-    const href = `/${locale}/${slug}`;
+/**
+ * Filter pages by showIn value
+ */
+function filterByShowIn(pages: Page[], target: 'header' | 'footer'): Page[] {
+  return pages.filter((p) => p.showIn === target || p.showIn === 'all');
+}
 
-    const groupName = group || 'Pages';
-    if (!groups.has(groupName)) groups.set(groupName, []);
-    groups.get(groupName)!.push({ title: page.data.title, href, order });
+/**
+ * Sort pages by order and title
+ */
+function sortPages(pages: Page[]): Page[] {
+  return [...pages].sort((a, b) => {
+    if (a.order !== b.order) return a.order - b.order;
+    return a.title.localeCompare(b.title);
+  });
+}
+
+/**
+ * Group pages by blog, directory, or explicit group
+ */
+function groupPages(pages: Page[]): NavigationLink[] {
+  const sorted = sortPages(pages);
+
+  // Blog grouping
+  const blogPage = sorted.find((p) => p.type === 'blog');
+  const blogChildren = sorted.filter((p) => p.type === 'category' || p.type === 'tag');
+  const blogGroup: NavigationLink[] = [];
+
+  if (blogPage && blogChildren.length > 0) {
+    blogGroup.push({
+      title: blogPage.title,
+      href: blogPage.href,
+      links: sortPages(blogChildren).map((c) => ({ title: c.title, href: c.href })),
+    });
   }
 
-  return Array.from(groups.entries()).map(([title, items]) => ({
+  // Remove blog pages from further processing
+  const remaining = sorted.filter((p) => p !== blogPage && !blogChildren.includes(p));
+
+  // Directory-based grouping
+  const groups = remaining.filter((p) => p.type === 'group');
+  const leaves = remaining.filter((p) => p.type !== 'group');
+  const directoryGroups: NavigationLink[] = [];
+
+  for (const group of groups) {
+    const children = leaves.filter((p) => p.path.startsWith(group.path + '/'));
+    if (children.length > 0) {
+      directoryGroups.push({
+        title: group.title,
+        links: sortPages(children).map((c) => ({ title: c.title, href: c.href })),
+      });
+    }
+  }
+
+  // Remove directory-grouped pages
+  const ungrouped = leaves.filter((p) => !groups.some((g) => p.path.startsWith(g.path + '/')));
+
+  // Explicit group field grouping
+  const explicitGroups = new Map<string, Page[]>();
+  const standalone: NavigationLink[] = [];
+
+  for (const page of ungrouped) {
+    if (page.group) {
+      if (!explicitGroups.has(page.group)) explicitGroups.set(page.group, []);
+      explicitGroups.get(page.group)!.push(page);
+    } else {
+      standalone.push({ title: page.title, href: page.href });
+    }
+  }
+
+  const explicitGroupLinks: NavigationLink[] = Array.from(explicitGroups.entries()).map(([title, items]) => ({
     title,
-    links: items.sort((a, b) => a.order - b.order).map(({ title, href }) => ({ title, href })),
+    links: sortPages(items).map((p) => ({ title: p.title, href: p.href })),
   }));
+
+  return [...blogGroup, ...directoryGroups, ...explicitGroupLinks, ...standalone];
 }
 
 /**
  * Generate navigation data for a specific locale
  */
 export async function generateNavigation(locale: string = I18N.defaultLocale): Promise<NavigationData> {
-  // Scan pages for header navigation - returns hierarchical structure directly
-  const routeLinks = scanPages(locale, 'header');
-  const markdownLinks = await scanMarkdownPages(locale, 'header');
+  const pages = await scanAllPages(locale);
+  const filtered = filterByShowIn(pages, 'header');
+  const grouped = groupPages(filtered);
 
-  // Merge route and markdown links
-  const allLinks = [...routeLinks, ...markdownLinks];
-
-  const result: NavigationData = {
-    links: allLinks,
+  return {
+    links: grouped,
     actions: NAVIGATION.actions || [],
   };
-
-  return result;
 }
 
 /**
  * Generate footer data for a specific locale
  */
 export async function generateFooterData(locale: string = I18N.defaultLocale): Promise<FooterData> {
-  // Scan pages for footer navigation - returns hierarchical structure directly
-  const navLinks = scanPages(locale, 'footer');
-  const markdownLinks = await scanMarkdownPages(locale, 'footer');
+  const pages = await scanAllPages(locale);
+  const filtered = filterByShowIn(pages, 'footer');
+  const grouped = groupPages(filtered);
 
-  // Merge navLinks and markdownLinks
-  const allLinks = [...navLinks, ...markdownLinks];
-
-  // Convert NavigationLink[] to Links[] format for footer
-  const links: Links[] = [];
-
-  for (const navLink of allLinks) {
+  const links: Links[] = grouped.map((navLink) => {
     if (navLink.links && navLink.links.length > 0) {
-      // Group: convert children to Link[] format
-      links.push({
+      return {
         title: navLink.title,
         links: navLink.links.map((child) => ({
           text: child.title,
           href: child.href,
         })),
-      });
-    } else if (navLink.href) {
-      // Top-level page: add as a standalone link group
-      links.push({
-        title: '',
-        links: [{ text: navLink.title, href: navLink.href }],
-      });
+      };
     }
-  }
+    return {
+      title: '',
+      links: [{ text: navLink.title, href: navLink.href || '' }],
+    };
+  });
 
   return {
     links,

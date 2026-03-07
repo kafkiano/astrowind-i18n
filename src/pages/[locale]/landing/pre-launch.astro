@@ -8,9 +8,11 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
+// @wc-ignore
 export const navigation = {
-  // @wc-ignore
   title: 'Pre-Launch',
+  group: 'Landing',
+  showIn: 'all',
 };
 
 const metadata = {

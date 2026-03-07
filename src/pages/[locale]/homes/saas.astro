@@ -15,11 +15,11 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
+// @wc-ignore
 export const navigation = {
-  // @wc-ignore
   title: 'SaaS Homepage',
   showIn: 'header',
-  order: 1,
+  group: 'Homes',
 };
 
 const metadata = {
