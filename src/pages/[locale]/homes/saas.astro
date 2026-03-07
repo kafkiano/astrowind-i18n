@@ -27,7 +27,7 @@ const metadata = {
 };
 
 const currentLocale = Astro.currentLocale;
-const headerData = getHeaderData(currentLocale);
+const headerData = await getHeaderData(currentLocale);
 ---
 
 <Layout metadata={metadata}>

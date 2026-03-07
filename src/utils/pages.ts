@@ -21,7 +21,7 @@ const getNormalizedPage = async (page: CollectionEntry<'pages'>): Promise<Normal
   const { title } = data;
 
   const slug = cleanSlug(id.split('/').pop() || id);
-  const permalink = `/${getLangFromPageId(id)}/pages/${slug}`;
+  const permalink = `/${getLangFromPageId(id)}/${slug}`;
 
   return {
     id,
@@ -83,7 +83,7 @@ export const getStaticPathsPages = async (): Promise<
       paths.push({
         params: {
           locale,
-          pages: `pages/${page.slug}`,
+          pages: page.slug,
         },
         props: { page, locale },
       });

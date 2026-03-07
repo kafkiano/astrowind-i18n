@@ -14,8 +14,8 @@ export interface Props {
 
 const { metadata } = Astro.props;
 const locale = Astro.currentLocale;
-const headerData = getHeaderData(locale);
-const footerData = getFooterData(locale);
+const headerData = await getHeaderData(locale);
+const footerData = await getFooterData(locale);
 ---
 
 <Layout metadata={metadata}>

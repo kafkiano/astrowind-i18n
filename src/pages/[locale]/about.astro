@@ -9,10 +9,11 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
 
+// @wc-ignore
 export const navigation = {
-  // @wc-ignore
   title: 'About us',
   showIn: 'footer',
+  group: 'Company',
 };
 
 const metadata = {

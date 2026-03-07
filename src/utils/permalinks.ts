@@ -97,7 +97,7 @@ export const getBlogPermalink = (locale?: string): string => getPermalink(BLOG_B
 
 /** */
 export const getPagePermalink = (slug: string, locale?: string): string =>
-  getPermalink(`/pages/${slug}`, 'page', locale);
+  getPermalink(slug, 'page', locale);
 
 /** */
 export const getAsset = (path: string): string =>

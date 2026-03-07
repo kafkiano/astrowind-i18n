@@ -285,6 +285,7 @@ export interface AutoNavConfig {
   title?: string; // Added for consolidated navigation
   showIn?: 'header' | 'footer' | 'none';
   order?: number;
+  group?: string;
   anchorLinks?: Array<{ text: string; href: string }>;
   /** @deprecated Use absence of navigation export instead to exclude from navigation */
   exclude?: boolean; // Exclude from all navigation

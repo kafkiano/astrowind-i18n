@@ -55,7 +55,7 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   │   ├── post-slug-1.md
 │   │   │   ├── post-slug-2.mdx
 │   │   │   └── ...
-│   │   └-- config.ts
+│   │   └── config.ts
 │   ├── layouts/
 │   │   ├── Layout.astro
 │   │   ├── MarkdownLayout.astro
@@ -67,10 +67,12 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │       │   └── [tag]
 │   │       ├── homes
 │   │       ├── landing
-│   │       └── [...pages]
+│   │       ├── [...pages]
+│   │       ├── 404.astro
+│   │       ├── index.astro
+│   │       └── ...
 │   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
+│   │   ├── rss.xml.ts
 │   │   └── ...
 │   ├── utils/
 │   ├── config.yaml
@@ -138,6 +140,17 @@ metadata:
 i18n:
   language: en
   textDirection: ltr
+  locales: ['en', 'es', 'fr', 'de']
+  defaultLocale: en
+  localeNames:
+    en: English
+    es: Español
+    fr: Français
+    de: Deutsch
+    # Add more as needed
+  ai:
+    geminiApiKey: null # or string
+    provider: 'gemini' # optional
 
 apps:
   blog:
@@ -201,6 +214,10 @@ i18n:
     es: Español
     fr: Français
     de: Deutsch
+    # Add more as needed
+  ai:
+    geminiApiKey: null # or string
+    provider: 'gemini' # optional
 ```
 
 **Adding a new locale**:

@@ -1,3 +1,4 @@
+import { getCollection } from 'astro:content';
 import { getPermalink, getPagePermalink } from './permalinks';
 import { I18N, NAVIGATION } from 'astrowind:config';
 import type { AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
@@ -14,12 +15,12 @@ function extractRoutePath(filePath: string): string {
   const withoutExt = relativePath.replace(/\.(astro|md|mdx)$/, '');
   // Handle index files at any level (e.g., /index -> /, /homes/index -> /homes)
   const segments = withoutExt.split('/').filter(Boolean);
-  
+
   // Remove 'index' segment if present
   if (segments[segments.length - 1] === 'index') {
     segments.pop();
   }
-  
+
   return segments.length > 0 ? `/${segments.join('/')}` : '/';
 }
 
@@ -168,31 +169,43 @@ function scanPages(locale: string, visibility?: 'header' | 'footer'): Navigation
     }
   }
 
-  // Second, add top-level pages (leaf pages not belonging to any group)
-  const topLevelLinks: NavigationLink[] = [];
+  // Second, group top-level pages by their 'group' field
+  const groupedPages = new Map<string, { title: string; href: string; order: number }[]>();
+  const ungroupedLinks: NavigationLink[] = [];
 
   for (const page of leafPages) {
-    // Check if this page belongs to any group
-    let belongsToGroup = false;
+    // Skip if belongs to directory-based group
+    let belongsToDirGroup = false;
     for (const groupPath of groupsByDirectory.keys()) {
       if (page.path.startsWith(groupPath + '/')) {
-        belongsToGroup = true;
+        belongsToDirGroup = true;
         break;
       }
     }
+    if (belongsToDirGroup) continue;
 
-    // If not part of any group, add as top-level link
-    if (!belongsToGroup) {
-      topLevelLinks.push({
+    const groupName = page.navigation?.group;
+    if (groupName) {
+      if (!groupedPages.has(groupName)) groupedPages.set(groupName, []);
+      groupedPages.get(groupName)!.push({
         title: page.title,
         href: page.href,
+        order: page.navigation?.order ?? 999,
       });
+    } else {
+      ungroupedLinks.push({ title: page.title, href: page.href });
     }
   }
 
-  // Sort top-level links by order
-  const sortedTopLevel = sortPageMeta(
-    topLevelLinks.map((link) => ({
+  // Convert grouped pages to NavigationLink format
+  const explicitGroupLinks: NavigationLink[] = Array.from(groupedPages.entries()).map(([title, items]) => ({
+    title,
+    links: items.sort((a, b) => a.order - b.order).map(({ title, href }) => ({ title, href })),
+  }));
+
+  // Sort ungrouped links by order
+  const sortedUngrouped = sortPageMeta(
+    ungroupedLinks.map((link) => ({
       path: link.href || '',
       title: link.title,
       href: link.href || '',
@@ -203,19 +216,56 @@ function scanPages(locale: string, visibility?: 'header' | 'footer'): Navigation
     href: item.href,
   }));
 
-  // Return combined: blog group first, then other groups, then top-level pages
-  return [...blogGroupLinks, ...groupLinks, ...sortedTopLevel];
+  // Return combined: blog group, directory groups, explicit groups, ungrouped links
+  return [...blogGroupLinks, ...groupLinks, ...explicitGroupLinks, ...sortedUngrouped];
+}
+
+/**
+ * Scan markdown pages from content collection for navigation generation
+ * @param locale - The locale to generate permalinks for
+ * @param visibility - Filter by visibility ('header', 'footer', or undefined for all)
+ * @returns Hierarchical NavigationLink array grouped by 'group' frontmatter
+ */
+async function scanMarkdownPages(locale: string, visibility?: 'header' | 'footer'): Promise<NavigationLink[]> {
+  const pages = await getCollection('pages', ({ id }) => id.startsWith(`${locale}/`));
+
+  const groups = new Map<string, { title: string; href: string; order: number }[]>();
+
+  for (const page of pages) {
+    const { showIn = 'footer', order = 999, group } = page.data;
+    if (visibility && showIn !== visibility) continue;
+
+    const slug =
+      page.id
+        .split('/')
+        .pop()
+        ?.replace(/\.(md|mdx)$/, '') || page.id;
+    const href = `/${locale}/${slug}`;
+
+    const groupName = group || 'Pages';
+    if (!groups.has(groupName)) groups.set(groupName, []);
+    groups.get(groupName)!.push({ title: page.data.title, href, order });
+  }
+
+  return Array.from(groups.entries()).map(([title, items]) => ({
+    title,
+    links: items.sort((a, b) => a.order - b.order).map(({ title, href }) => ({ title, href })),
+  }));
 }
 
 /**
  * Generate navigation data for a specific locale
  */
-export function generateNavigation(locale: string = I18N.defaultLocale): NavigationData {
+export async function generateNavigation(locale: string = I18N.defaultLocale): Promise<NavigationData> {
   // Scan pages for header navigation - returns hierarchical structure directly
-  const links = scanPages(locale, 'header');
+  const routeLinks = scanPages(locale, 'header');
+  const markdownLinks = await scanMarkdownPages(locale, 'header');
+
+  // Merge route and markdown links
+  const allLinks = [...routeLinks, ...markdownLinks];
 
   const result: NavigationData = {
-    links,
+    links: allLinks,
     actions: NAVIGATION.actions || [],
   };
 
@@ -225,14 +275,18 @@ export function generateNavigation(locale: string = I18N.defaultLocale): Navigat
 /**
  * Generate footer data for a specific locale
  */
-export function generateFooterData(locale: string = I18N.defaultLocale): FooterData {
+export async function generateFooterData(locale: string = I18N.defaultLocale): Promise<FooterData> {
   // Scan pages for footer navigation - returns hierarchical structure directly
   const navLinks = scanPages(locale, 'footer');
+  const markdownLinks = await scanMarkdownPages(locale, 'footer');
+
+  // Merge navLinks and markdownLinks
+  const allLinks = [...navLinks, ...markdownLinks];
 
   // Convert NavigationLink[] to Links[] format for footer
   const links: Links[] = [];
 
-  for (const navLink of navLinks) {
+  for (const navLink of allLinks) {
     if (navLink.links && navLink.links.length > 0) {
       // Group: convert children to Link[] format
       links.push({
@@ -265,9 +319,9 @@ export function generateFooterData(locale: string = I18N.defaultLocale): FooterD
 /**
  * Get header navigation data (wrapper for backward compatibility)
  */
-export const getHeaderData = (locale: string = I18N.defaultLocale) => generateNavigation(locale);
+export const getHeaderData = async (locale: string = I18N.defaultLocale) => await generateNavigation(locale);
 
 /**
  * Get footer navigation data (wrapper for backward compatibility)
  */
-export const getFooterData = (locale: string = I18N.defaultLocale) => generateFooterData(locale);
+export const getFooterData = async (locale: string = I18N.defaultLocale) => await generateFooterData(locale);

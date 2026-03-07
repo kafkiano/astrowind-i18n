@@ -1,5 +1,8 @@
 ---
 title: 'Markdown Page'
+showIn: 'header'
+order: 1
+group: 'Resources'
 ---
 
 ### What is Markdown?

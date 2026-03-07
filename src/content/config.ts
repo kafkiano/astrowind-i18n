@@ -69,7 +69,10 @@ const pagesCollection = defineCollection({
   loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: 'src/data/pages' }),
   schema: z.object({
     title: z.string(),
-    // optional fields: description, layout, etc.
+    // Navigation metadata (optional)
+    showIn: z.enum(['header', 'footer', 'none']).optional().default('footer'),
+    order: z.number().optional().default(999),
+    group: z.string().optional(),
   }),
 });
 
