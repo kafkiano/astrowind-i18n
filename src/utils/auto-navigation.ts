@@ -75,6 +75,10 @@ function scanPages(locale: string, visibility?: 'header' | 'footer'): Navigation
 
     // Check visibility filter
     const showIn = navigation?.showIn;
+    // Skip pages explicitly hidden from navigation
+    if (showIn === 'none') {
+      continue;
+    }
     const shouldShow = !showIn || showIn === visibility;
     if (visibility && !shouldShow) {
       continue;
@@ -233,6 +237,8 @@ async function scanMarkdownPages(locale: string, visibility?: 'header' | 'footer
 
   for (const page of pages) {
     const { showIn = 'footer', order = 999, group } = page.data;
+    // Skip pages explicitly hidden from navigation
+    if (showIn === 'none') continue;
     if (visibility && showIn !== visibility) continue;
 
     const slug =

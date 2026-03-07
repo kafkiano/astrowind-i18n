@@ -7,10 +7,11 @@ import Features2 from '~/components/widgets/Features2.astro';
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
 
+// @wc-ignore
 export const navigation = {
-  // @wc-ignore
   title: 'Contact',
-  showIn: 'header',
+  showIn: 'footer',
+  group: 'Company',
 };
 
 const metadata = {

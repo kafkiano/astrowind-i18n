@@ -96,15 +96,10 @@ export const getHomePermalink = (locale?: string): string => getPermalink('/', '
 export const getBlogPermalink = (locale?: string): string => getPermalink(BLOG_BASE, 'page', locale);
 
 /** */
-export const getPagePermalink = (slug: string, locale?: string): string =>
-  getPermalink(slug, 'page', locale);
+export const getPagePermalink = (slug: string, locale?: string): string => getPermalink(slug, 'page', locale);
 
 /** */
-export const getAsset = (path: string): string =>
-  '/' +
-  [BASE_PATHNAME, path]
-    .filter((el) => !!el)
-    .join('/');
+export const getAsset = (path: string): string => '/' + [BASE_PATHNAME, path].filter((el) => !!el).join('/');
 
 /** */
 const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);

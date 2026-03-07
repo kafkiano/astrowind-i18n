@@ -1,5 +1,6 @@
 ---
 title: 'Privacy Policy'
+showIn: 'none'
 ---
 
 _Last updated_: January 06, 2023
