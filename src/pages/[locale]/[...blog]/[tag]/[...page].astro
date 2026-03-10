@@ -10,12 +10,12 @@ import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
 import { NAVIGATION } from 'astrowind:config';
 
+// @wc-ignore
 export const navigation = {
-  // @wc-ignore
   title: 'Tags',
   showIn: 'header',
   order: 3,
-  type: 'tag',
+  group: 'Blog',
   slug: NAVIGATION.blog?.tagSlug,
 };
 

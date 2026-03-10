@@ -11,12 +11,12 @@ import Pagination from '~/components/blog/Pagination.astro';
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
+// @wc-ignore
 export const navigation = {
-  // @wc-ignore
-  title: 'Blog',
+  title: 'List',
   showIn: 'header',
   order: 3,
-  type: 'blog',
+  group: 'Blog',
 };
 
 export const prerender = true;

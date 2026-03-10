@@ -12,7 +12,7 @@ type Page = {
   showIn: 'header' | 'footer' | 'all' | 'none';
   order: number;
   group?: string;
-  type: 'page' | 'blog' | 'category' | 'tag' | 'group' | 'post' | 'home' | 'asset';
+  type: 'page'; // Only 'page' needed for permalink generation
   path: string; // For directory-based grouping
 };
 
@@ -42,14 +42,12 @@ function scanFilePages(locale: string): Page[] {
     const showIn = navigation.showIn ?? 'none';
     if (showIn === 'none') continue;
 
-    const type = navigation.type ?? 'page';
+    const type = 'page';
     const slug = navigation.slug ?? routePath;
-
-    if ((type === 'category' || type === 'tag') && !slug) continue;
 
     pages.push({
       title: navigation.title,
-      href: getPermalink(slug, type, locale),
+      href: getPermalink(slug, 'page', locale),
       showIn,
       order: navigation.order ?? 999,
       group: navigation.group,
@@ -82,7 +80,7 @@ async function scanContentPages(locale: string): Promise<Page[]> {
 }
 
 /**
- * Scan all pages (file-based + content collections)
+ * Scan all pages
  */
 async function scanAllPages(locale: string): Promise<Page[]> {
   const filePages = scanFilePages(locale);
@@ -108,50 +106,16 @@ function sortPages(pages: Page[]): Page[] {
 }
 
 /**
- * Group pages by blog, directory, or explicit group
+ * Group pages by explicit group field
  */
 function groupPages(pages: Page[]): NavigationLink[] {
   const sorted = sortPages(pages);
-
-  // Blog grouping
-  const blogPage = sorted.find((p) => p.type === 'blog');
-  const blogChildren = sorted.filter((p) => p.type === 'category' || p.type === 'tag');
-  const blogGroup: NavigationLink[] = [];
-
-  if (blogPage && blogChildren.length > 0) {
-    blogGroup.push({
-      title: blogPage.title,
-      href: blogPage.href,
-      links: sortPages(blogChildren).map((c) => ({ title: c.title, href: c.href })),
-    });
-  }
-
-  // Remove blog pages from further processing
-  const remaining = sorted.filter((p) => p !== blogPage && !blogChildren.includes(p));
-
-  // Directory-based grouping
-  const groups = remaining.filter((p) => p.type === 'group');
-  const leaves = remaining.filter((p) => p.type !== 'group');
-  const directoryGroups: NavigationLink[] = [];
-
-  for (const group of groups) {
-    const children = leaves.filter((p) => p.path.startsWith(group.path + '/'));
-    if (children.length > 0) {
-      directoryGroups.push({
-        title: group.title,
-        links: sortPages(children).map((c) => ({ title: c.title, href: c.href })),
-      });
-    }
-  }
-
-  // Remove directory-grouped pages
-  const ungrouped = leaves.filter((p) => !groups.some((g) => p.path.startsWith(g.path + '/')));
 
   // Explicit group field grouping
   const explicitGroups = new Map<string, Page[]>();
   const standalone: NavigationLink[] = [];
 
-  for (const page of ungrouped) {
+  for (const page of sorted) {
     if (page.group) {
       if (!explicitGroups.has(page.group)) explicitGroups.set(page.group, []);
       explicitGroups.get(page.group)!.push(page);
@@ -165,7 +129,7 @@ function groupPages(pages: Page[]): NavigationLink[] {
     links: sortPages(items).map((p) => ({ title: p.title, href: p.href })),
   }));
 
-  return [...blogGroup, ...directoryGroups, ...explicitGroupLinks, ...standalone];
+  return [...explicitGroupLinks, ...standalone];
 }
 
 /**
