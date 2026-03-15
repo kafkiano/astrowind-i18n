@@ -2,7 +2,7 @@
 import { UI } from 'astrowind:config';
 ---
 
-<script is:inline define:vars={{ defaultTheme: UI.theme }}>
+<script is:inline define:vars={{ defaultTheme: UI.theme, defaultStyle: UI.style || 'default' }}>
   if (window.basic_script) {
     return;
   }
@@ -17,6 +17,14 @@ import { UI } from 'astrowind:config';
     }
   }
 
+  function applyStyle(style) {
+    if (style === 'cyberpunk') {
+      document.documentElement.classList.add('cyberpunk');
+    } else {
+      document.documentElement.classList.remove('cyberpunk');
+    }
+  }
+
   const initTheme = function () {
     if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
       applyTheme(defaultTheme.replace(':only', ''));
@@ -28,6 +36,7 @@ import { UI } from 'astrowind:config';
     } else {
       applyTheme('light');
     }
+    applyStyle(defaultStyle);
   };
   initTheme();
 

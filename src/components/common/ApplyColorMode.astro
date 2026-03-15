@@ -4,7 +4,7 @@ import { UI } from 'astrowind:config';
 // TODO: This code is temporary
 ---
 
-<script is:inline define:vars={{ defaultTheme: UI.theme || 'system' }}>
+<script is:inline define:vars={{ defaultTheme: UI.theme || 'system', defaultStyle: UI.style || 'default' }}>
   function applyTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -29,5 +29,9 @@ import { UI } from 'astrowind:config';
     applyTheme('dark');
   } else {
     applyTheme('light');
+  }
+
+  if (defaultStyle === 'cyberpunk') {
+    document.documentElement.classList.add('cyberpunk');
   }
 </script>
