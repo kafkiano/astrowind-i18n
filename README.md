@@ -201,35 +201,15 @@ Astrowind uses a hybrid i18n system:
 2. **Astro i18n routing** – locale‑prefixed URLs (`/[locale]/...`). Configured in `astro.config.ts` and `src/config.yaml` (`i18n.locales`, `i18n.defaultLocale`).
 3. **Content collections** – markdown pages stored in `src/data/pages/{locale}/`. Pages missing in a locale fall back to the default locale (English) automatically.
 
-**Configuration** (in `src/config.yaml`):
-
-```yaml
-i18n:
-  language: en
-  textDirection: ltr
-  locales: ['en', 'es', 'fr', 'de']
-  defaultLocale: en
-  localeNames:
-    en: English
-    es: Español
-    fr: Français
-    de: Deutsch
-    # Add more as needed
-  ai:
-    geminiApiKey: null # or string
-    provider: 'gemini' # optional
-```
-
 **Adding a new locale**:
 
 1. Add locale code to `locales` array in `src/config.yaml`.
-2. Create `src/data/pages/{locale}/` directory for translated pages.
 3. Run `bun run dev` – Wuchale will generate corresponding `.po` files in `src/locales/`.
 
 **Fallback behavior**:
 
 - UI strings: Untranslated strings show the source (English) text.
-- Pages: Missing locale‑specific pages automatically render the default‑locale version with a visual notice.
+- Pages: No Fallback - missing locale‑specific pages currently show a 404. 
 - URLs: Always locale‑prefixed; the default locale also receives a prefix (`/en/...`).
 
 #### Customize Design

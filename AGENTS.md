@@ -21,15 +21,7 @@ This file provides guidance to agents when working with code in this repository.
 - `tail -n 50 dev/logs/dev.log` - Check dev logs for errors
 - `bunx pm2 list` - Check running apps
 
-You only need to run dev server (`bun run dev`) for html page inspection with `cdp-cli`.
 In the most cases a `bun run build` or `bun run check` might be enough to check changes.
-
-### Development Environment
-
-- `bun run dev` starts two pm2 processes: Astro dev server (`app`) and a headless Chromium instance (`chromium`) for CDP‑CLI automation.
-- Configuration in `dev/dev.config.json`; logs go to `dev/logs/dev.log`.
-- Use `pm2 restart app` to restart dev server without killing Chromium.
-- Chromium launches with `localhost:4321` open; enables browser automation via `cdp-cli` (see `dev/docs/cdp-cli.md`).
 
 ### Image Handling
 
