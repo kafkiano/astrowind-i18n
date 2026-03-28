@@ -16,7 +16,7 @@ export const navigation = {
   showIn: 'header',
   order: 2,
   group: 'Blog',
-  slug: NAVIGATION.blog?.categorySlug,
+  slug: `category/${NAVIGATION.blog?.categorySlug ?? ''}`,
 };
 
 export const prerender = true;
