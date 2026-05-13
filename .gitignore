@@ -35,3 +35,6 @@ digest.txt
 src/locales/.wuchale
 src/locales/data.js
 src/locales/main.loader.js
+
+# generated content
+.wuchale-content/

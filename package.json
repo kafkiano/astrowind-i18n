@@ -35,6 +35,7 @@
     "astro-icon": "^1.1.5",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "remark-frontmatter": "^5.0.0",
     "unpic": "^4.1.3",
     "wuchale": "^0.20.0"
   },

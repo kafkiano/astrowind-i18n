@@ -66,10 +66,9 @@ const postCollection = defineCollection({
 });
 
 const pagesCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: 'src/data/pages' }),
+  loader: glob({ pattern: ['**/*.md'], base: '.wuchale-content/pages' }),
   schema: z.object({
     title: z.string(),
-    // Navigation metadata (optional)
     showIn: z.enum(['header', 'footer', 'none']).optional().default('footer'),
     order: z.number().optional().default(999),
     group: z.string().optional(),

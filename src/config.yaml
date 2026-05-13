@@ -39,7 +39,7 @@ i18n:
     de: Deutsch
     # Add more as needed
   ai:
-    geminiApiKey: null # or string
+    geminiApiKey: null
     provider: 'gemini' # optional
 
 apps:

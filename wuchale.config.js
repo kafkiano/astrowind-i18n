@@ -12,6 +12,8 @@ const config = yaml.load(configContent);
 const locales = config.i18n?.locales;
 const geminiKey = config.i18n?.ai?.geminiApiKey;
 
+import { gemini } from 'wuchale';
+
 export default defineConfig({
   locales,
   adapters: {
@@ -21,5 +23,5 @@ export default defineConfig({
   writeFiles: {
     compiled: true,
   },
-  ...(geminiKey && { ai: { geminiApiKey: geminiKey } }),
+  ...(geminiKey && { ai: gemini({ apiKey: geminiKey }) }),
 });

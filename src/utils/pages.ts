@@ -14,14 +14,16 @@ export type NormalizedPage = {
   Content: AstroComponentFactory;
 };
 
-const getNormalizedPage = async (page: CollectionEntry<'pages'>): Promise<NormalizedPage> => {
+const getNormalizedPage = async (page: CollectionEntry<'pages'>, locale: string): Promise<NormalizedPage> => {
   const { id, data } = page;
   const { Content } = await render(page);
 
   const { title } = data;
 
-  const slug = cleanSlug(id.split('/').pop() || id);
-  const permalink = `/${getLangFromPageId(id)}/${slug}`;
+  // Extract slug from the file path: .wuchale-content/pages/{locale}/{slug}.md
+  const pathParts = id.split('/');
+  const slug = cleanSlug(pathParts[pathParts.length - 1] || id);
+  const permalink = `/${locale}/${slug}`;
 
   return {
     id,
@@ -34,7 +36,11 @@ const getNormalizedPage = async (page: CollectionEntry<'pages'>): Promise<Normal
 
 const load = async function (lang?: string): Promise<Array<NormalizedPage>> {
   const pages = await getCollection('pages');
-  const normalizedPages = pages.map(async (page) => await getNormalizedPage(page));
+  const normalizedPages = pages.map(async (page) => {
+    // Extract locale from path: .wuchale-content/pages/{locale}/...
+    const locale = getLangFromPageId(page.id);
+    return await getNormalizedPage(page, locale);
+  });
 
   let results = await Promise.all(normalizedPages);
 

@@ -18,6 +18,7 @@ import astrowind from './vendor/integration';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 import { wuchale } from '@wuchale/vite-plugin';
+import { markdownPlugin } from './src/utils/markdown-vite-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -43,7 +44,17 @@ export default defineConfig({
   output: 'static',
 
   vite: {
-    plugins: [wuchale()],
+    plugins: [
+      wuchale(),
+      markdownPlugin({
+        sourceDir: 'src/data/pages',
+        outputDir: '.wuchale-content/pages',
+        localesDir: 'src/locales',
+        locales: i18nConfig.locales,
+        sourceLocale: i18nConfig.defaultLocale,
+        translatableFrontmatterKeys: ['title', 'description', 'excerpt'],
+      }),
+    ],
   },
 
   i18n: {

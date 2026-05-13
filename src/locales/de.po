@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-11T15:51:31.710Z\n"
-"PO-Revision-Date: 2026-02-11T15:51:31.710Z\n"
+"POT-Creation-Date: 2026-05-13T22:53:50.734Z\n"
+"PO-Revision-Date: 2026-05-13T22:53:50.734Z\n"
 "Last-Translator: \n"
 "Language: de\n"
 "Language-Team: \n"
@@ -13,7 +13,6 @@ msgstr ""
 "Source-Language: en\n"
 "MIME-Version: 1.0\n"
 
-#. 0: g${currentPage > 1 ? ` — Page ${currentPage}` :
 #: src/pages/[locale]/[...blog]/[...page].astro
 msgid "Blog{0}"
 msgstr "Blog{0}"
@@ -184,7 +183,7 @@ msgstr "Mit Tailwind CSS erstellte Widgets, die für Marketing-Websites, SaaS, B
 
 #: src/pages/[locale]/index.astro
 msgid "Best Practices"
-msgstr "Best Practices"
+msgstr "Bewährte Praktiken"
 
 #: src/pages/[locale]/index.astro
 msgid "Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value."
@@ -429,7 +428,7 @@ msgstr "Siehe die Dessertkarte der Website-Welt. Verlockende Auswahl wartet, kö
 
 #: src/pages/[locale]/index.astro
 msgid "Testimonial"
-msgstr "Testimonial"
+msgstr "Referenz"
 
 #: src/pages/[locale]/index.astro
 msgid "Step into the gossip corner! Here, other visitors spill the beans and share the juicy details."
@@ -581,7 +580,6 @@ msgstr "Auf Whatsapp teilen"
 msgid "Email Share"
 msgstr "Per E-Mail teilen"
 
-#. 0: textDirection === 'rtl' ? ( <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> ) : ( <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" /> )
 #: src/components/blog/ToBlogLink.astro
 msgid "{0} Back to Blog"
 msgstr "{0} Zurück zum Blog"
@@ -633,10 +631,7 @@ msgid ""
 "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
 "quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
 "Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
-msgstr ""
-"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+msgstr "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus. Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
 
 #: src/pages/[locale]/about.astro
 msgid "Statistics about us"
@@ -1967,7 +1962,7 @@ msgstr "Registrieren"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "SaaS Web Demo"
-msgstr "SaaS Web Demo"
+msgstr "SaaS Web-Demo"
 
 #: src/pages/[locale]/homes/saas.astro
 msgid "Get Started"
@@ -2567,7 +2562,7 @@ msgstr "Ein Scheinwerfer auf ein Produkt. Produktdetails-Landingpage-Demo"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Sales Landing Page Demo"
-msgstr "Sales Landing Page Demo"
+msgstr "Verkaufs-Landingpage-Demo"
 
 #: src/pages/[locale]/landing/sales.astro
 msgid "Long-form Sales Demo"
@@ -2605,20 +2600,17 @@ msgstr "Entdecken Sie die Formel für eine Abonnement-Landingpage, die Ihr Publi
 msgid "Ironic image associated with canceling a subscription. Subscription Landing Page Demo"
 msgstr "Ironisches Bild, das mit dem Kündigen eines Abonnements verbunden ist. Demo der Abonnement-Landingpage"
 
-#. 0: '${category.ti; 1: ${currentPage > 1 ? ` — Page ${currentPage}` :
 #: src/pages/[locale]/[...blog]/[category]/[...page].astro
 msgid "Category '{0}' {1}"
 msgstr "Kategorie '{0}' {1}"
 
-#. 0: '${tag.ti; 1: '${currentPage > 1 ? ` — Page ${currentPage} ` :
 #: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 msgid "Posts by tag '{0}'{1}"
 msgstr "Beiträge nach Tag '{0}'{1}"
 
-#. 0: tag.title
 #: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 msgid "Tag: {0}"
-msgstr "Tag: {0}"
+msgstr "Stichwort: {0}"
 
 #: src/pages/[locale]/landing/pre-launch.astro
 msgid "Pre-Launch Landing Page Demo"
@@ -2629,3 +2621,997 @@ msgid ""
 "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
 "Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
 msgstr "<0><0>AstroWind</0> ist eine kostenlose, anpassbare und produktionsreife Vorlage für Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Produktionsreif.</1> Geeignet für Startups, kleine Unternehmen, SaaS-Websites, professionelle Portfolios, Marketing-Websites, Landing Pages & Blogs."
+
+#: src/data/pages/en/privacy.md
+msgid "Privacy Policy"
+msgstr "Datenschutzrichtlinie"
+
+#: src/data/pages/en/terms.md
+msgid "*Last updated*: January 06, 2023"
+msgstr "*Zuletzt aktualisiert*: 06. Januar 2023"
+
+#: src/data/pages/en/privacy.md
+msgid "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You."
+msgstr "Diese Datenschutzrichtlinie beschreibt unsere Richtlinien und Verfahren zur Erfassung, Nutzung und Offenlegung Ihrer Informationen, wenn Sie den Dienst nutzen, und informiert Sie über Ihre Datenschutzrechte und wie das Gesetz Sie schützt."
+
+#: src/data/pages/en/privacy.md
+msgid "We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy is just a Demo."
+msgstr "Wir verwenden Ihre persönlichen Daten, um den Dienst bereitzustellen und zu verbessern. Durch die Nutzung des Dienstes erklären Sie sich mit der Erfassung und Nutzung von Informationen gemäß dieser Datenschutzrichtlinie einverstanden. Diese Datenschutzrichtlinie ist nur eine Demo."
+
+#: src/data/pages/en/terms.md
+msgid "Interpretation and Definitions"
+msgstr "Auslegung und Definitionen"
+
+#: src/data/pages/en/terms.md
+msgid "Interpretation"
+msgstr "Auslegung"
+
+#: src/data/pages/en/terms.md
+msgid "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural."
+msgstr "Die Wörter, deren Anfangsbuchstabe großgeschrieben ist, haben unter den folgenden Bedingungen definierte Bedeutungen. Die folgenden Definitionen haben die gleiche Bedeutung, unabhängig davon, ob sie im Singular oder Plural erscheinen."
+
+#: src/data/pages/en/terms.md
+msgid "Definitions"
+msgstr "Definitionen"
+
+#: src/data/pages/en/privacy.md
+msgid "For the purposes of this Privacy Policy:"
+msgstr "Für die Zwecke dieser Datenschutzrichtlinie:"
+
+#: src/data/pages/en/privacy.md
+msgid "**Account** means a unique account created for You to access our Service or parts of our Service."
+msgstr "**Konto** bezeichnet ein einzigartiges Konto, das für Sie erstellt wurde, um auf unseren Dienst oder Teile unseres Dienstes zuzugreifen."
+
+#: src/data/pages/en/terms.md
+msgid "**Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014."
+msgstr "**Unternehmen** (in dieser Vereinbarung als „das Unternehmen“, „Wir“, „Uns“ oder „Unser“ bezeichnet) bezieht sich auf AstroWind LLC, 1 Cupertino, CA 95014."
+
+#: src/data/pages/en/privacy.md
+msgid "**Cookies** are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses."
+msgstr "**Cookies** sind kleine Dateien, die von einer Website auf Ihrem Computer, Mobilgerät oder einem anderen Gerät platziert werden und unter anderem die Details Ihres Browserverlaufs auf dieser Website enthalten."
+
+#: src/data/pages/en/terms.md
+msgid "**Country** refers to: California, United States"
+msgstr "**Land** bezieht sich auf: Kalifornien, Vereinigte Staaten"
+
+#: src/data/pages/en/terms.md
+msgid "**Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet."
+msgstr "**Gerät** bezeichnet jedes Gerät, das auf den Dienst zugreifen kann, wie z.B. einen Computer, ein Mobiltelefon oder ein digitales Tablet."
+
+#: src/data/pages/en/privacy.md
+msgid "**Personal Data** is any information that relates to an identified or identifiable individual."
+msgstr "**Personenbezogene Daten** sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+
+#: src/data/pages/en/terms.md
+msgid "**Service** refers to the Website."
+msgstr "**Dienst** bezieht sich auf die Website."
+
+#: src/data/pages/en/privacy.md
+msgid "**Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used."
+msgstr "**Dienstanbieter** bezeichnet jede natürliche oder juristische Person, die Daten im Auftrag des Unternehmens verarbeitet. Dies bezieht sich auf Drittunternehmen oder Personen, die vom Unternehmen beauftragt werden, den Dienst zu erleichtern, den Dienst im Auftrag des Unternehmens bereitzustellen, Dienstleistungen im Zusammenhang mit dem Dienst zu erbringen oder dem Unternehmen bei der Analyse der Nutzung des Dienstes zu helfen."
+
+#: src/data/pages/en/privacy.md
+msgid "**Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit)."
+msgstr "**Nutzungsdaten** beziehen sich auf automatisch erhobene Daten, die entweder durch die Nutzung des Dienstes oder von der Dienstinfrastruktur selbst generiert werden (zum Beispiel die Dauer eines Seitenbesuchs)."
+
+#: src/data/pages/en/terms.md
+msgid "**Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)"
+msgstr "**Website** bezieht sich auf AstroWind, erreichbar unter [https://astrowind.vercel.app](https://astrowind.vercel.app)"
+
+#: src/data/pages/en/terms.md
+msgid "**You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable."
+msgstr "**Sie** bezeichnet die Person, die den Dienst nutzt oder darauf zugreift, oder das Unternehmen oder eine andere juristische Person, in deren Namen diese Person den Dienst nutzt oder darauf zugreift, je nach Anwendbarkeit."
+
+#: src/data/pages/en/privacy.md
+msgid "Collecting and Using Your Personal Data"
+msgstr "Erhebung und Nutzung Ihrer persönlichen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "Types of Data Collected"
+msgstr "Arten der erhobenen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "Personal Data"
+msgstr "Personenbezogene Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:"
+msgstr "Während der Nutzung unseres Dienstes können wir Sie bitten, uns bestimmte persönlich identifizierbare Informationen zur Verfügung zu stellen, die zur Kontaktaufnahme oder Identifizierung Ihrer Person verwendet werden können. Persönlich identifizierbare Informationen können unter anderem Folgendes umfassen:"
+
+#: src/data/pages/en/privacy.md
+msgid "Usage Data"
+msgstr "Nutzungsdaten"
+
+#: src/data/pages/en/privacy.md
+msgid "Usage Data is collected automatically when using the Service."
+msgstr "Nutzungsdaten werden bei der Nutzung des Dienstes automatisch erfasst."
+
+#: src/data/pages/en/privacy.md
+msgid "Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data."
+msgstr "Nutzungsdaten können Informationen wie die Internetprotokolladresse Ihres Geräts (z. B. IP-Adresse), Browsertyp, Browserversion, die von Ihnen besuchten Seiten unseres Dienstes, Uhrzeit und Datum Ihres Besuchs, die auf diesen Seiten verbrachte Zeit, eindeutige Gerätekennungen und andere Diagnosedaten umfassen."
+
+#: src/data/pages/en/privacy.md
+msgid "When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data."
+msgstr "Wenn Sie über ein mobiles Gerät auf den Dienst zugreifen, können wir automatisch bestimmte Informationen erfassen, einschließlich, aber nicht beschränkt auf, den Typ des von Ihnen verwendeten mobilen Geräts, die eindeutige ID Ihres mobilen Geräts, die IP-Adresse Ihres mobilen Geräts, Ihr mobiles Betriebssystem, den Typ des von Ihnen verwendeten mobilen Internetbrowsers, eindeutige Gerätekennungen und andere Diagnosedaten."
+
+#: src/data/pages/en/privacy.md
+msgid "We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device."
+msgstr "Wir können auch Informationen erfassen, die Ihr Browser sendet, wenn Sie unseren Dienst besuchen oder wenn Sie über ein mobiles Gerät auf den Dienst zugreifen."
+
+#: src/data/pages/en/privacy.md
+msgid "Tracking Technologies and Cookies"
+msgstr "Tracking-Technologien und Cookies"
+
+#: src/data/pages/en/privacy.md
+msgid "We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:"
+msgstr "Wir verwenden Cookies und ähnliche Tracking-Technologien, um die Aktivitäten auf unserem Dienst zu verfolgen und bestimmte Informationen zu speichern. Die verwendeten Tracking-Technologien sind Beacons, Tags und Skripte, um Informationen zu sammeln und zu verfolgen und unseren Dienst zu verbessern und zu analysieren. Die von uns verwendeten Technologien können Folgendes umfassen:"
+
+#: src/data/pages/en/privacy.md
+msgid "**Cookies or Browser Cookies.** A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies."
+msgstr "**Cookies oder Browser-Cookies.** Ein Cookie ist eine kleine Datei, die auf Ihrem Gerät platziert wird. Sie können Ihren Browser anweisen, alle Cookies abzulehnen oder anzuzeigen, wann ein Cookie gesendet wird. Wenn Sie jedoch keine Cookies akzeptieren, können Sie möglicherweise einige Teile unseres Dienstes nicht nutzen. Sofern Sie Ihre Browsereinstellung nicht so angepasst haben, dass sie Cookies ablehnt, kann unser Dienst Cookies verwenden."
+
+#: src/data/pages/en/privacy.md
+msgid "**Web Beacons.** Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity)."
+msgstr "**Web Beacons.** Bestimmte Bereiche unseres Dienstes und unsere E-Mails können kleine elektronische Dateien, bekannt als Web Beacons (auch als Clear Gifs, Pixel Tags und Single-Pixel Gifs bezeichnet), enthalten, die es dem Unternehmen ermöglichen, beispielsweise die Anzahl der Benutzer zu zählen, die diese Seiten besucht oder eine E-Mail geöffnet haben, und für andere verwandte Website-Statistiken (z. B. die Aufzeichnung der Beliebtheit eines bestimmten Abschnitts und die Überprüfung der System- und Serverintegrität)."
+
+#: src/data/pages/en/privacy.md
+msgid "Cookies can be \"Persistent\" or \"Session\" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser."
+msgstr "Cookies können „dauerhafte“ oder „Sitzungs“-Cookies sein. Dauerhafte Cookies verbleiben auf Ihrem persönlichen Computer oder Mobilgerät, wenn Sie offline gehen, während Sitzungs-Cookies gelöscht werden, sobald Sie Ihren Webbrowser schließen."
+
+#: src/data/pages/en/privacy.md
+msgid "We use both Session and Persistent Cookies for the purposes set out below:"
+msgstr "Wir verwenden sowohl Sitzungs- als auch dauerhafte Cookies für die unten aufgeführten Zwecke:"
+
+#: src/data/pages/en/privacy.md
+msgid "**Necessary / Essential Cookies**"
+msgstr "**Notwendige / Essentielle Cookies**"
+
+#: src/data/pages/en/privacy.md
+msgid "**Cookies Policy / Notice Acceptance Cookies**"
+msgstr "**Cookie-Richtlinie / Zustimmung zu Cookies**"
+
+#: src/data/pages/en/privacy.md
+msgid "**Functionality Cookies**"
+msgstr "**Funktionalitäts-Cookies**"
+
+#: src/data/pages/en/privacy.md
+msgid "For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy."
+msgstr "Weitere Informationen über die von uns verwendeten Cookies und Ihre Auswahlmöglichkeiten bezüglich Cookies finden Sie in unserer Cookie-Richtlinie oder im Abschnitt „Cookies“ unserer Datenschutzrichtlinie."
+
+#: src/data/pages/en/privacy.md
+msgid "Use of Your Personal Data"
+msgstr "Verwendung Ihrer persönlichen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "The Company may use Personal Data for the following purposes:"
+msgstr "Das Unternehmen kann personenbezogene Daten für die folgenden Zwecke verwenden:"
+
+#: src/data/pages/en/privacy.md
+msgid "**To provide and maintain our Service**, including to monitor the usage of our Service."
+msgstr "**Zur Bereitstellung und Aufrechterhaltung unseres Dienstes**, einschließlich der Überwachung der Nutzung unseres Dienstes."
+
+#: src/data/pages/en/privacy.md
+msgid "**To manage Your Account:** to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user."
+msgstr "**Zur Verwaltung Ihres Kontos:** zur Verwaltung Ihrer Registrierung als Nutzer des Dienstes. Die von Ihnen bereitgestellten persönlichen Daten können Ihnen den Zugriff auf verschiedene Funktionen des Dienstes ermöglichen, die Ihnen als registriertem Nutzer zur Verfügung stehen."
+
+#: src/data/pages/en/privacy.md
+msgid "**For the performance of a contract:** the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service."
+msgstr "**Zur Erfüllung eines Vertrages:** die Entwicklung, Einhaltung und Durchführung des Kaufvertrages für die von Ihnen erworbenen Produkte, Artikel oder Dienstleistungen oder eines anderen Vertrages mit Uns über den Dienst."
+
+#: src/data/pages/en/privacy.md
+msgid "**To contact You:** To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation."
+msgstr "**Um Sie zu kontaktieren:** Um Sie per E-Mail, Telefonanrufe, SMS oder andere gleichwertige Formen der elektronischen Kommunikation zu kontaktieren, wie z.B. Push-Benachrichtigungen einer mobilen Anwendung bezüglich Aktualisierungen oder informativer Mitteilungen im Zusammenhang mit den Funktionalitäten, Produkten oder vertraglich vereinbarten Diensten, einschließlich der Sicherheitsupdates, wenn dies für deren Implementierung notwendig oder angemessen ist."
+
+#: src/data/pages/en/privacy.md
+msgid "**To provide You** with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information."
+msgstr "**Um Ihnen** Neuigkeiten, Sonderangebote und allgemeine Informationen über andere Waren, Dienstleistungen und Veranstaltungen zukommen zu lassen, die wir anbieten und die denen ähneln, die Sie bereits gekauft oder angefragt haben, es sei denn, Sie haben sich gegen den Erhalt solcher Informationen entschieden."
+
+#: src/data/pages/en/privacy.md
+msgid "**To manage Your requests:** To attend and manage Your requests to Us."
+msgstr "**Zur Verwaltung Ihrer Anfragen:** Zur Bearbeitung und Verwaltung Ihrer Anfragen an Uns."
+
+#: src/data/pages/en/privacy.md
+msgid "**For business transfers:** We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred."
+msgstr "**Für Geschäftsübertragungen:** Wir können Ihre Informationen verwenden, um eine Fusion, Veräußerung, Umstrukturierung, Reorganisation, Auflösung oder einen anderen Verkauf oder die Übertragung eines Teils oder aller unserer Vermögenswerte zu bewerten oder durchzuführen, sei es als fortgeführtes Unternehmen oder im Rahmen eines Konkurses, einer Liquidation oder eines ähnlichen Verfahrens, bei dem personenbezogene Daten, die von uns über unsere Dienstnutzer gespeichert werden, zu den übertragenen Vermögenswerten gehören."
+
+#: src/data/pages/en/privacy.md
+msgid "**For other purposes**: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience."
+msgstr "**Für andere Zwecke**: Wir können Ihre Informationen für andere Zwecke verwenden, wie z.B. Datenanalyse, Identifizierung von Nutzungstrends, Bestimmung der Wirksamkeit unserer Werbekampagnen und zur Bewertung und Verbesserung unseres Dienstes, Produkte, Dienstleistungen, Marketing und Ihrer Erfahrung."
+
+#: src/data/pages/en/privacy.md
+msgid "We may share Your personal information in the following situations:"
+msgstr "Wir können Ihre persönlichen Daten in den folgenden Situationen teilen:"
+
+#: src/data/pages/en/privacy.md
+msgid "**With Service Providers:** We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You."
+msgstr "**Mit Dienstleistern:** Wir können Ihre persönlichen Daten an Dienstleister weitergeben, um die Nutzung unseres Dienstes zu überwachen und zu analysieren, um Sie zu kontaktieren."
+
+#: src/data/pages/en/privacy.md
+msgid "**For business transfers:** We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company."
+msgstr "**Für Geschäftsübertragungen:** Wir können Ihre persönlichen Daten im Zusammenhang mit oder während der Verhandlungen über eine Fusion, den Verkauf von Unternehmensvermögen, die Finanzierung oder den Erwerb aller oder eines Teils unseres Geschäfts an ein anderes Unternehmen weitergeben oder übertragen."
+
+#: src/data/pages/en/privacy.md
+msgid "**With Affiliates:** We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us."
+msgstr "**Mit verbundenen Unternehmen:** Wir können Ihre Informationen mit unseren verbundenen Unternehmen teilen, wobei wir von diesen verbundenen Unternehmen verlangen, diese Datenschutzrichtlinie einzuhalten. Verbundene Unternehmen umfassen unsere Muttergesellschaft und alle anderen Tochtergesellschaften, Joint-Venture-Partner oder andere Unternehmen, die wir kontrollieren oder die unter unserer gemeinsamen Kontrolle stehen."
+
+#: src/data/pages/en/privacy.md
+msgid "**With business partners:** We may share Your information with Our business partners to offer You certain products, services or promotions."
+msgstr "**Mit Geschäftspartnern:** Wir können Ihre Informationen mit unseren Geschäftspartnern teilen, um Ihnen bestimmte Produkte, Dienstleistungen oder Aktionen anzubieten."
+
+#: src/data/pages/en/privacy.md
+msgid "**With other users:** when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside."
+msgstr "**Mit anderen Benutzern:** Wenn Sie persönliche Informationen teilen oder auf andere Weise in den öffentlichen Bereichen mit anderen Benutzern interagieren, können solche Informationen von allen Benutzern eingesehen und öffentlich verbreitet werden."
+
+#: src/data/pages/en/privacy.md
+msgid "**With Your consent**: We may disclose Your personal information for any other purpose with Your consent."
+msgstr "**Mit Ihrer Zustimmung**: Wir können Ihre persönlichen Daten zu jedem anderen Zweck mit Ihrer Zustimmung offenlegen."
+
+#: src/data/pages/en/privacy.md
+msgid "Retention of Your Personal Data"
+msgstr "Speicherung Ihrer persönlichen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies."
+msgstr "Das Unternehmen speichert Ihre personenbezogenen Daten nur so lange, wie es für die in dieser Datenschutzrichtlinie dargelegten Zwecke erforderlich ist. Wir werden Ihre personenbezogenen Daten in dem Umfang speichern und verwenden, der erforderlich ist, um unseren gesetzlichen Verpflichtungen nachzukommen (z. B. wenn wir Ihre Daten zur Einhaltung geltender Gesetze aufbewahren müssen), Streitigkeiten zu lösen und unsere rechtlichen Vereinbarungen und Richtlinien durchzusetzen."
+
+#: src/data/pages/en/privacy.md
+msgid "The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods."
+msgstr "Das Unternehmen speichert Nutzungsdaten auch zu internen Analysezwecken. Nutzungsdaten werden im Allgemeinen für einen kürzeren Zeitraum aufbewahrt, es sei denn, diese Daten werden zur Stärkung der Sicherheit oder zur Verbesserung der Funktionalität unseres Dienstes verwendet, oder wir sind gesetzlich verpflichtet, diese Daten für längere Zeiträume aufzubewahren."
+
+#: src/data/pages/en/privacy.md
+msgid "Transfer of Your Personal Data"
+msgstr "Übertragung Ihrer persönlichen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction."
+msgstr "Ihre Informationen, einschließlich personenbezogener Daten, werden in den Betriebsräumen des Unternehmens und an allen anderen Orten verarbeitet, an denen sich die an der Verarbeitung beteiligten Parteien befinden. Dies bedeutet, dass diese Informationen an Computer außerhalb Ihres Bundesstaates, Ihrer Provinz, Ihres Landes oder einer anderen staatlichen Gerichtsbarkeit übertragen und dort gespeichert werden können, wo die Datenschutzgesetze von denen Ihrer Gerichtsbarkeit abweichen können."
+
+#: src/data/pages/en/privacy.md
+msgid "Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer."
+msgstr "Ihre Zustimmung zu dieser Datenschutzrichtlinie, gefolgt von Ihrer Übermittlung solcher Informationen, stellt Ihre Zustimmung zu dieser Übertragung dar."
+
+#: src/data/pages/en/privacy.md
+msgid "The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information."
+msgstr "Das Unternehmen wird alle zumutbaren Schritte unternehmen, um sicherzustellen, dass Ihre Daten sicher und in Übereinstimmung mit dieser Datenschutzrichtlinie behandelt werden und dass keine Übertragung Ihrer personenbezogenen Daten an eine Organisation oder ein Land erfolgt, es sei denn, es sind angemessene Kontrollen vorhanden, einschließlich der Sicherheit Ihrer Daten und anderer persönlicher Informationen."
+
+#: src/data/pages/en/privacy.md
+msgid "Delete Your Personal Data"
+msgstr "Ihre persönlichen Daten löschen"
+
+#: src/data/pages/en/privacy.md
+msgid "You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You."
+msgstr "Sie haben das Recht, die von uns über Sie gesammelten personenbezogenen Daten zu löschen oder uns bei der Löschung zu unterstützen."
+
+#: src/data/pages/en/privacy.md
+msgid "Our Service may give You the ability to delete certain information about You from within the Service."
+msgstr "Unser Dienst kann Ihnen die Möglichkeit geben, bestimmte Informationen über Sie innerhalb des Dienstes zu löschen."
+
+#: src/data/pages/en/privacy.md
+msgid "You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us."
+msgstr "Sie können Ihre Informationen jederzeit aktualisieren, ändern oder löschen, indem Sie sich in Ihr Konto einloggen, falls Sie eines haben, und den Abschnitt „Kontoeinstellungen“ besuchen, der Ihnen die Verwaltung Ihrer persönlichen Informationen ermöglicht. Sie können uns auch kontaktieren, um Zugang zu persönlichen Informationen, die Sie uns zur Verfügung gestellt haben, anzufordern, diese zu korrigieren oder zu löschen."
+
+#: src/data/pages/en/privacy.md
+msgid "Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so."
+msgstr "Bitte beachten Sie jedoch, dass wir bestimmte Informationen möglicherweise aufbewahren müssen, wenn wir eine rechtliche Verpflichtung oder eine rechtliche Grundlage dazu haben."
+
+#: src/data/pages/en/privacy.md
+msgid "Disclosure of Your Personal Data"
+msgstr "Offenlegung Ihrer persönlichen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "Business Transactions"
+msgstr "Geschäftliche Transaktionen"
+
+#: src/data/pages/en/privacy.md
+msgid "If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy."
+msgstr "Wenn das Unternehmen an einer Fusion, einem Erwerb oder einem Verkauf von Vermögenswerten beteiligt ist, können Ihre personenbezogenen Daten übertragen werden. Wir werden Sie benachrichtigen, bevor Ihre personenbezogenen Daten übertragen werden und einer anderen Datenschutzrichtlinie unterliegen."
+
+#: src/data/pages/en/privacy.md
+msgid "Law enforcement"
+msgstr "Strafverfolgung"
+
+#: src/data/pages/en/privacy.md
+msgid "Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency)."
+msgstr "Unter bestimmten Umständen kann das Unternehmen verpflichtet sein, Ihre personenbezogenen Daten offenzulegen, wenn dies gesetzlich vorgeschrieben ist oder auf gültige Anfragen von Behörden (z. B. einem Gericht oder einer Regierungsbehörde) reagiert wird."
+
+#: src/data/pages/en/privacy.md
+msgid "Other legal requirements"
+msgstr "Weitere rechtliche Anforderungen"
+
+#: src/data/pages/en/privacy.md
+msgid "The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:"
+msgstr "Das Unternehmen kann Ihre personenbezogenen Daten in gutem Glauben offenlegen, wenn eine solche Maßnahme erforderlich ist, um:"
+
+#: src/data/pages/en/privacy.md
+msgid "Comply with a legal obligation"
+msgstr "Einer rechtlichen Verpflichtung nachkommen"
+
+#: src/data/pages/en/privacy.md
+msgid "Protect and defend the rights or property of the Company"
+msgstr "Rechte oder Eigentum des Unternehmens schützen und verteidigen"
+
+#: src/data/pages/en/privacy.md
+msgid "Prevent or investigate possible wrongdoing in connection with the Service"
+msgstr "Mögliche Fehlverhaltensweisen im Zusammenhang mit dem Dienst verhindern oder untersuchen"
+
+#: src/data/pages/en/privacy.md
+msgid "Protect the personal safety of Users of the Service or the public"
+msgstr "Die persönliche Sicherheit der Nutzer des Dienstes oder der Öffentlichkeit schützen"
+
+#: src/data/pages/en/privacy.md
+msgid "Protect against legal liability"
+msgstr "Vor rechtlicher Haftung schützen"
+
+#: src/data/pages/en/privacy.md
+msgid "Security of Your Personal Data"
+msgstr "Sicherheit Ihrer persönlichen Daten"
+
+#: src/data/pages/en/privacy.md
+msgid "The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security."
+msgstr "Die Sicherheit Ihrer persönlichen Daten ist uns wichtig, aber bedenken Sie, dass keine Methode der Übertragung über das Internet oder der elektronischen Speicherung zu 100% sicher ist. Obwohl wir uns bemühen, kommerziell akzeptable Mittel zum Schutz Ihrer persönlichen Daten einzusetzen, können wir deren absolute Sicherheit nicht garantieren."
+
+#: src/data/pages/en/privacy.md
+msgid "Children's Privacy"
+msgstr "Datenschutz für Kinder"
+
+#: src/data/pages/en/privacy.md
+msgid "Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers."
+msgstr "Unser Dienst richtet sich nicht an Personen unter 13 Jahren. Wir erfassen wissentlich keine persönlich identifizierbaren Informationen von Personen unter 13 Jahren. Wenn Sie ein Elternteil oder Vormund sind und wissen, dass Ihr Kind uns personenbezogene Daten zur Verfügung gestellt hat, kontaktieren Sie uns bitte. Wenn wir Kenntnis davon erhalten, dass wir personenbezogene Daten von Personen unter 13 Jahren ohne Überprüfung der elterlichen Zustimmung erfasst haben, unternehmen wir Schritte, um diese Informationen von unseren Servern zu entfernen."
+
+#: src/data/pages/en/privacy.md
+msgid "If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information."
+msgstr "Wenn wir uns auf die Einwilligung als Rechtsgrundlage für die Verarbeitung Ihrer Daten verlassen müssen und Ihr Land die Einwilligung eines Elternteils vorschreibt, können wir die Einwilligung Ihrer Eltern einholen, bevor wir diese Daten erfassen und verwenden."
+
+#: src/data/pages/en/terms.md
+msgid "Links to Other Websites"
+msgstr "Links zu anderen Websites"
+
+#: src/data/pages/en/privacy.md
+msgid "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit."
+msgstr "Unser Dienst kann Links zu anderen Websites enthalten, die nicht von uns betrieben werden. Wenn Sie auf einen Drittanbieter-Link klicken, werden Sie auf die Website dieses Drittanbieters weitergeleitet. Wir empfehlen Ihnen dringend, die Datenschutzrichtlinie jeder Website, die Sie besuchen, zu überprüfen."
+
+#: src/data/pages/en/privacy.md
+msgid "We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
+msgstr "Wir haben keine Kontrolle über und übernehmen keine Verantwortung für den Inhalt, die Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter."
+
+#: src/data/pages/en/privacy.md
+msgid "Changes to this Privacy Policy"
+msgstr "Änderungen an dieser Datenschutzrichtlinie"
+
+#: src/data/pages/en/privacy.md
+msgid "We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page."
+msgstr "Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über alle Änderungen informieren, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen."
+
+#: src/data/pages/en/privacy.md
+msgid "We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the \"Last updated\" date at the top of this Privacy Policy."
+msgstr "Wir werden Sie per E-Mail und/oder durch einen prominenten Hinweis auf unserem Dienst informieren, bevor die Änderung wirksam wird, und das Datum „Zuletzt aktualisiert“ oben in dieser Datenschutzrichtlinie aktualisieren."
+
+#: src/data/pages/en/privacy.md
+msgid "You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page."
+msgstr "Es wird Ihnen empfohlen, diese Datenschutzrichtlinie regelmäßig auf Änderungen zu überprüfen. Änderungen an dieser Datenschutzrichtlinie werden wirksam, sobald sie auf dieser Seite veröffentlicht werden."
+
+#: src/data/pages/en/terms.md
+msgid "Contact Us"
+msgstr "Kontaktieren Sie uns"
+
+#: src/data/pages/en/privacy.md
+msgid "If you have any questions about this Privacy Policy, You can contact us:"
+msgstr "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, können Sie uns kontaktieren:"
+
+#: src/data/pages/en/terms.md
+msgid "By email: somecoolemail@domain.com"
+msgstr "Per E-Mail: somecoolemail@domain.com"
+
+#: src/data/pages/en/markdown.md
+msgid "Markdown Page"
+msgstr "Markdown-Seite"
+
+#: src/data/pages/en/markdown.md
+msgid "What is Markdown?"
+msgstr "Was ist Markdown?"
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"Markdown is a lightweight markup language that you can use to format plain text documents.  \n"
+"Write docs for your GitHub projects, edit your GitHub profile *README* etc. You fill find it all here."
+msgstr ""
+"Markdown ist eine leichtgewichtige Auszeichnungssprache, die Sie verwenden können, um einfache Textdokumente zu formatieren.  \n"
+"Schreiben Sie Dokumente für Ihre GitHub-Projekte, bearbeiten Sie Ihr GitHub-Profil *README* usw. Hier finden Sie alles."
+
+#: src/data/pages/en/markdown.md
+msgid "Let's dive into it. ⤵️"
+msgstr "Lassen Sie uns eintauchen. ⤵️"
+
+#: src/data/pages/en/markdown.md
+msgid "Table of Contents"
+msgstr "Inhaltsverzeichnis"
+
+#: src/data/pages/en/markdown.md
+msgid "[Paragraph](#paragraph)"
+msgstr "[Absatz](#paragraph)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Headings](#headings)"
+msgstr "[Überschriften](#headings)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Emphasis](#emphasis)"
+msgstr "[Hervorhebung](#emphasis)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Blockquote](#blockquote)"
+msgstr "[Blockzitat](#blockquote)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Images](#images)"
+msgstr "[Bilder](#images)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Links](#links)"
+msgstr "[Links](#links)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Code](#code)"
+msgstr "[Code](#code)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Lists](#lists)"
+msgstr "[Listen](#lists)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Table](#table)"
+msgstr "[Tabelle](#table)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Task List](#tasklist)"
+msgstr "[Aufgabenliste](#tasklist)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Footnote](#footnote)"
+msgstr "[Fußnote](#footnote)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Jump to section](#sectionjump)"
+msgstr "[Zum Abschnitt springen](#sectionjump)"
+
+#: src/data/pages/en/markdown.md
+msgid "[Horizontal Line](#horizontalline)"
+msgstr "[Horizontale Linie](#horizontalline)"
+
+#: src/data/pages/en/markdown.md
+msgid "[HTML](#html)"
+msgstr "[HTML](#html)"
+
+#: src/data/pages/en/markdown.md
+msgid "Paragraph"
+msgstr "Absatz"
+
+#: src/data/pages/en/markdown.md
+msgid "By writing regular text you are basically writing a paragraph."
+msgstr "Indem Sie normalen Text schreiben, schreiben Sie im Grunde einen Absatz."
+
+#: src/data/pages/en/markdown.md
+msgid "This is a paragraph."
+msgstr "Das ist ein Absatz."
+
+#: src/data/pages/en/markdown.md
+msgid "Headings"
+msgstr "Überschriften"
+
+#: src/data/pages/en/markdown.md
+msgid "There are 6 heading variants. The number of \"#\" symbols, followed by text, indicates the importance of the heading."
+msgstr "Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von Text, gibt die Wichtigkeit der Überschrift an."
+
+#: src/data/pages/en/markdown.md
+msgid "Heading 1"
+msgstr "Überschrift 1"
+
+#: src/data/pages/en/markdown.md
+msgid "Heading 2"
+msgstr "Überschrift 2"
+
+#: src/data/pages/en/markdown.md
+msgid "Heading 3"
+msgstr "Überschrift 3"
+
+#: src/data/pages/en/markdown.md
+msgid "Heading 4"
+msgstr "Überschrift 4"
+
+#: src/data/pages/en/markdown.md
+msgid "Heading 5"
+msgstr "Überschrift 5"
+
+#: src/data/pages/en/markdown.md
+msgid "Heading 6"
+msgstr "Überschrift 6"
+
+#: src/data/pages/en/markdown.md
+msgid "Emphasis"
+msgstr "Hervorhebung"
+
+#: src/data/pages/en/markdown.md
+msgid "Modifying text is so neat and easy. You can make your text bold, italic and strikethrough."
+msgstr "Text zu ändern ist so einfach und ordentlich. Sie können Ihren Text fett, kursiv und durchgestrichen gestalten."
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"Using two asterisks **this text is bold**.  \n"
+"Two underscores **work as well**.  \n"
+"Let's make it *italic now*.  \n"
+"You guessed it, *one underscore is also enough*.  \n"
+"Can we combine ***both of that*?** Absolutely.  \n"
+"What if I want to ~~strikethrough~~?"
+msgstr ""
+"Zwei Sternchen machen **diesen Text fett**.  \n"
+"Zwei Unterstriche **funktionieren auch**.  \n"
+"Machen wir es *jetzt kursiv*.  \n"
+"Sie haben es erraten, *ein Unterstrich reicht auch*.  \n"
+"Können wir ***beides kombinieren*?** Absolut.  \n"
+"Was, wenn ich etwas ~~durchstreichen~~ möchte?"
+
+#: src/data/pages/en/markdown.md
+msgid "Blockquote"
+msgstr "Blockzitat"
+
+#: src/data/pages/en/markdown.md
+msgid "Want to emphasise importance of the text? Say no more."
+msgstr "Möchten Sie die Wichtigkeit des Textes betonen? Sagen Sie nichts mehr."
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"This is a blockquote.\n"
+"Want to write on a new line with space between?"
+msgstr ""
+"Das ist ein Blockzitat.\n"
+"Möchten Sie in einer neuen Zeile mit Abstand dazwischen schreiben?"
+
+#: src/data/pages/en/markdown.md
+msgid "Images"
+msgstr "Bilder"
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  \n"
+"Here is the syntax."
+msgstr ""
+"Am besten ziehen Sie das Bild einfach direkt von Ihrem Computer per Drag & Drop. Sie können auch eine Referenz zum Bild erstellen und es auf diese Weise zuweisen.  \n"
+"Hier ist die Syntax."
+
+#: src/data/pages/en/markdown.md
+msgid "![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png \"Text displayed on hover\")"
+msgstr "![Text, wenn das Bild nicht geladen werden kann](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png „Text, der beim Überfahren angezeigt wird“)"
+
+#: src/data/pages/en/markdown.md
+msgid "Links"
+msgstr "Links"
+
+#: src/data/pages/en/markdown.md
+msgid "Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links."
+msgstr "Ähnlich wie bei Bildern können Links auch direkt oder durch Erstellen einer Referenz eingefügt werden. Sie können sowohl Inline- als auch Block-Links erstellen."
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"[Like it so far? Follow me on GitHub](https://github.com/im-luka)  \n"
+"My Markdown Cheatsheet - star it if you like it  \n"
+"Find some great docs here"
+msgstr ""
+"[Gefällt es Ihnen bisher? Folgen Sie mir auf GitHub](https://github.com/im-luka)  \n"
+"Mein Markdown-Spickzettel – markieren Sie ihn mit einem Stern, wenn er Ihnen gefällt  \n"
+"Hier finden Sie einige großartige Dokumente"
+
+#: src/data/pages/en/markdown.md
+msgid "Code"
+msgstr "Code"
+
+#: src/data/pages/en/markdown.md
+msgid "You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks."
+msgstr "Sie können sowohl Inline- als auch vollständige Block-Code-Snippets erstellen. Sie können auch die Programmiersprache definieren, die Sie in Ihrem Snippet verwendet haben. Alles durch die Verwendung von Backticks."
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"I created `.env` file at the root.\n"
+"Backticks inside backticks? ``No problem.``"
+msgstr ""
+"Ich habe die `.env`-Datei im Stammverzeichnis erstellt.\n"
+"Backticks innerhalb von Backticks? ``Kein Problem.``"
+
+#: src/data/pages/en/markdown.md
+msgid "Lists"
+msgstr "Listen"
+
+#: src/data/pages/en/markdown.md
+msgid "As you can do in HTML, Markdown allows creating of both ordered and unordered lists."
+msgstr "Wie in HTML können Sie in Markdown sowohl geordnete als auch ungeordnete Listen erstellen."
+
+#: src/data/pages/en/markdown.md
+msgid "Ordered List"
+msgstr "Geordnete Liste"
+
+#: src/data/pages/en/markdown.md
+msgid "HTML"
+msgstr "HTML"
+
+#: src/data/pages/en/markdown.md
+msgid "CSS"
+msgstr "CSS"
+
+#: src/data/pages/en/markdown.md
+msgid "Javascript"
+msgstr "Javascript"
+
+#: src/data/pages/en/markdown.md
+msgid "React"
+msgstr "React"
+
+#: src/data/pages/en/markdown.md
+msgid "I'm Frontend Dev now 👨🏼‍🎨"
+msgstr "Ich bin jetzt Frontend-Entwickler 👨🏼‍🎨"
+
+#: src/data/pages/en/markdown.md
+msgid "Unordered List"
+msgstr "Ungeordnete Liste"
+
+#: src/data/pages/en/markdown.md
+msgid "Node.js"
+msgstr "Node.js"
+
+#: src/data/pages/en/markdown.md
+msgid "Express"
+msgstr "Express"
+
+#: src/data/pages/en/markdown.md
+msgid "Nest.js"
+msgstr "Nest.js"
+
+#: src/data/pages/en/markdown.md
+msgid "Learning Backend ⌛️"
+msgstr "Backend lernen ⌛️"
+
+#: src/data/pages/en/markdown.md
+msgid "Mixed List"
+msgstr "Gemischte Liste"
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"You can also mix both of the lists and create sublists.  \n"
+"**PS.** Try not to create lists deeper than two levels. It is the best practice."
+msgstr ""
+"Sie können auch beide Listen mischen und Unterlisten erstellen.  \n"
+"**PS.** Versuchen Sie, Listen nicht tiefer als zwei Ebenen zu erstellen. Dies ist die beste Praxis."
+
+#: src/data/pages/en/markdown.md
+msgid "Learn Basics"
+msgstr "Grundlagen lernen"
+
+#: src/data/pages/en/markdown.md
+msgid "Learn One Framework"
+msgstr "Ein Framework lernen"
+
+#: src/data/pages/en/markdown.md
+msgid "Table"
+msgstr "Tabelle"
+
+#: src/data/pages/en/markdown.md
+msgid "Great way to display well-arranged data. Use \"|\" symbol to separate columns and \":\" symbol to align row content."
+msgstr "Eine großartige Möglichkeit, gut geordnete Daten anzuzeigen. Verwenden Sie das Symbol „|“, um Spalten zu trennen, und das Symbol „:“, um den Zeileninhalt auszurichten."
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"| Left Align (default) | Center Align | Right Align |\n"
+"| :------------------- | :----------: | ----------: |\n"
+"| React.js             |   Node.js    |       MySQL |\n"
+"| Next.js              |   Express    |     MongoDB |\n"
+"| Vue.js               |   Nest.js    |       Redis |"
+msgstr ""
+"| Linksbündig (Standard) | Zentriert | Rechtsbündig |\n"
+"| :------------------- | :----------: | ----------: |\n"
+"| React.js             |   Node.js    |       MySQL |\n"
+"| Next.js              |   Express    |     MongoDB |\n"
+"| Vue.js               |   Nest.js    |       Redis |"
+
+#: src/data/pages/en/markdown.md
+msgid "Task List"
+msgstr "Aufgabenliste"
+
+#: src/data/pages/en/markdown.md
+msgid "Keeping track of the tasks that are done, and those that need to be done."
+msgstr "Verfolgen Sie die erledigten Aufgaben und die Aufgaben, die noch zu erledigen sind."
+
+#: src/data/pages/en/markdown.md
+msgid "[x] Learn Markdown"
+msgstr "[x] Markdown lernen"
+
+#: src/data/pages/en/markdown.md
+msgid "[ ] Learn Frontend Development"
+msgstr "[ ] Frontend-Entwicklung lernen"
+
+#: src/data/pages/en/markdown.md
+msgid "[ ] Learn Full Stack Development"
+msgstr "[ ] Full-Stack-Entwicklung lernen"
+
+#: src/data/pages/en/markdown.md
+msgid "Footnote"
+msgstr "Fußnote"
+
+#: src/data/pages/en/markdown.md
+msgid "Want to describe something at the end of the file? Use footnote!"
+msgstr "Möchten Sie etwas am Ende der Datei beschreiben? Verwenden Sie eine Fußnote!"
+
+#: src/data/pages/en/markdown.md
+msgid "I am working on a new project. [^1]"
+msgstr "Ich arbeite an einem neuen Projekt. [^1]"
+
+#: src/data/pages/en/markdown.md
+msgid "[^1]: Stack is: React, Typescript, Tailwind CSS"
+msgstr "[^1]: Stack ist: React, Typescript, Tailwind CSS"
+
+#: src/data/pages/en/markdown.md
+msgid "Project is about music & movies."
+msgstr "Das Projekt handelt von Musik und Filmen."
+
+#: src/data/pages/en/markdown.md
+msgid "Hope you will like it. [^see]"
+msgstr "Ich hoffe, es wird Ihnen gefallen. [^siehe]"
+
+#: src/data/pages/en/markdown.md
+msgid "[^see]: Loading... ⌛️"
+msgstr "[^siehe]: Lädt... ⌛️"
+
+#: src/data/pages/en/markdown.md
+msgid "Jump to section"
+msgstr "Zum Abschnitt springen"
+
+#: src/data/pages/en/markdown.md
+msgid "Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name=\"...\">` tags."
+msgstr "Astro (und die meisten Markdown-Parser) generiert automatisch IDs für Ihre Überschriften. Sie müssen normalerweise keine manuellen `<a name=\"...\">`-Tags erstellen."
+
+#: src/data/pages/en/markdown.md
+msgid "Horizontal Line"
+msgstr "Horizontale Linie"
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"You can use asterisks, hyphens or underlines (*, -, _) to create horizontal line.  \n"
+"The only rule is that you must include at least three chars of the symbol."
+msgstr ""
+"Sie können Sternchen, Bindestriche oder Unterstriche (*, -, _) verwenden, um eine horizontale Linie zu erstellen.  \n"
+"Die einzige Regel ist, dass Sie mindestens drei Zeichen des Symbols verwenden müssen."
+
+#: src/data/pages/en/markdown.md
+msgid "First Horizontal Line"
+msgstr "Erste horizontale Linie"
+
+#: src/data/pages/en/markdown.md
+msgid "Second One"
+msgstr "Zweite"
+
+#: src/data/pages/en/markdown.md
+msgid "Third"
+msgstr "Dritte"
+
+#: src/data/pages/en/markdown.md
+msgid "You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work."
+msgstr "Sie können auch reines HTML in Ihrer Markdown-Datei verwenden. Meistens funktioniert das gut, aber manchmal kann es zu Unterschieden kommen, die Sie beim Arbeiten mit Standard-HTML nicht gewohnt sind. Die Verwendung von CSS funktioniert nicht."
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"→ Easy  \n"
+"→ And simple"
+msgstr ""
+"→ Einfach  \n"
+"→ Und unkompliziert"
+
+#: src/data/pages/en/markdown.md
+msgid "Mermaid Diagrams"
+msgstr "Mermaid-Diagramme"
+
+#: src/data/pages/en/markdown.md
+msgid "Mindmap"
+msgstr "Mindmap"
+
+#: src/data/pages/en/markdown.md
+msgid "Flowchart"
+msgstr "Flussdiagramm"
+
+#: src/data/pages/en/markdown.md
+msgid "Section with some ID"
+msgstr "Abschnitt mit einer ID"
+
+#: src/data/pages/en/terms.md
+msgid "Terms and Conditions"
+msgstr "Allgemeine Geschäftsbedingungen"
+
+#: src/data/pages/en/terms.md
+msgid "Please read these terms and conditions carefully before using Our Service."
+msgstr "Bitte lesen Sie diese Allgemeinen Geschäftsbedingungen sorgfältig durch, bevor Sie unseren Dienst nutzen."
+
+#: src/data/pages/en/terms.md
+msgid "For the purposes of these Terms and Conditions:"
+msgstr "Für die Zwecke dieser Allgemeinen Geschäftsbedingungen:"
+
+#: src/data/pages/en/terms.md
+msgid "**Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority."
+msgstr "**Verbundene Unternehmen** bezeichnet eine Einheit, die eine Partei kontrolliert, von ihr kontrolliert wird oder mit ihr unter gemeinsamer Kontrolle steht, wobei „Kontrolle“ den Besitz von 50 % oder mehr der Aktien, Beteiligungen oder anderer Wertpapiere bedeutet, die zur Wahl von Direktoren oder einer anderen Verwaltungsbehörde berechtigt sind."
+
+#: src/data/pages/en/terms.md
+msgid "**Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo."
+msgstr "**Allgemeine Geschäftsbedingungen** (auch als „Bedingungen“ bezeichnet) bedeuten diese Allgemeinen Geschäftsbedingungen, die die gesamte Vereinbarung zwischen Ihnen und dem Unternehmen bezüglich der Nutzung des Dienstes bilden. Diese Vereinbarung über die Allgemeinen Geschäftsbedingungen ist eine Demo."
+
+#: src/data/pages/en/terms.md
+msgid "**Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service."
+msgstr "**Drittanbieter-Social-Media-Dienst** bezeichnet alle Dienste oder Inhalte (einschließlich Daten, Informationen, Produkte oder Dienste), die von einem Drittanbieter bereitgestellt werden und vom Dienst angezeigt, aufgenommen oder verfügbar gemacht werden können."
+
+#: src/data/pages/en/terms.md
+msgid "Acknowledgment"
+msgstr "Bestätigung"
+
+#: src/data/pages/en/terms.md
+msgid "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service."
+msgstr "Dies sind die Allgemeinen Geschäftsbedingungen, die die Nutzung dieses Dienstes regeln, und die Vereinbarung, die zwischen Ihnen und dem Unternehmen besteht. Diese Allgemeinen Geschäftsbedingungen legen die Rechte und Pflichten aller Nutzer in Bezug auf die Nutzung des Dienstes fest."
+
+#: src/data/pages/en/terms.md
+msgid "Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service."
+msgstr "Ihr Zugriff auf und Ihre Nutzung des Dienstes ist an Ihre Annahme und Einhaltung dieser Allgemeinen Geschäftsbedingungen gebunden. Diese Allgemeinen Geschäftsbedingungen gelten für alle Besucher, Benutzer und andere, die auf den Dienst zugreifen oder ihn nutzen."
+
+#: src/data/pages/en/terms.md
+msgid "By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service."
+msgstr "Durch den Zugriff auf oder die Nutzung des Dienstes erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie mit einem Teil dieser Allgemeinen Geschäftsbedingungen nicht einverstanden sind, dürfen Sie den Dienst nicht nutzen."
+
+#: src/data/pages/en/terms.md
+msgid "You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service."
+msgstr "Sie versichern, dass Sie über 18 Jahre alt sind. Das Unternehmen gestattet Personen unter 18 Jahren nicht die Nutzung des Dienstes."
+
+#: src/data/pages/en/terms.md
+msgid "Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service."
+msgstr "Ihr Zugang und Ihre Nutzung des Dienstes sind auch an Ihre Annahme und Einhaltung der Datenschutzrichtlinie des Unternehmens gebunden. Unsere Datenschutzrichtlinie beschreibt unsere Richtlinien und Verfahren zur Erfassung, Nutzung und Offenlegung Ihrer persönlichen Daten, wenn Sie die Anwendung oder die Website nutzen, und informiert Sie über Ihre Datenschutzrechte und wie das Gesetz Sie schützt. Bitte lesen Sie unsere Datenschutzrichtlinie sorgfältig durch, bevor Sie unseren Dienst nutzen."
+
+#: src/data/pages/en/terms.md
+msgid "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company."
+msgstr "Unser Dienst kann Links zu Websites oder Diensten Dritter enthalten, die nicht im Besitz oder unter der Kontrolle des Unternehmens sind."
+
+#: src/data/pages/en/terms.md
+msgid "The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services."
+msgstr "Das Unternehmen hat keine Kontrolle über und übernimmt keine Verantwortung für den Inhalt, die Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter. Sie erkennen ferner an und stimmen zu, dass das Unternehmen weder direkt noch indirekt für Schäden oder Verluste verantwortlich oder haftbar ist, die durch die Nutzung oder das Vertrauen auf solche Inhalte, Waren oder Dienstleistungen, die auf oder über solche Websites oder Dienste verfügbar sind, verursacht oder angeblich verursacht wurden."
+
+#: src/data/pages/en/terms.md
+msgid "We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit."
+msgstr "Wir empfehlen Ihnen dringend, die Allgemeinen Geschäftsbedingungen und Datenschutzrichtlinien aller Websites oder Dienste Dritter, die Sie besuchen, zu lesen."
+
+#: src/data/pages/en/terms.md
+msgid "Termination"
+msgstr "Kündigung"
+
+#: src/data/pages/en/terms.md
+msgid "We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions."
+msgstr "Wir können Ihren Zugang sofort, ohne vorherige Ankündigung oder Haftung, aus beliebigem Grund kündigen oder aussetzen, einschließlich, aber nicht beschränkt auf den Fall, dass Sie diese Allgemeinen Geschäftsbedingungen verletzen."
+
+#: src/data/pages/en/terms.md
+msgid "Upon termination, Your right to use the Service will cease immediately."
+msgstr "Bei Beendigung erlischt Ihr Recht zur Nutzung des Dienstes sofort."
+
+#: src/data/pages/en/terms.md
+msgid "Limitation of Liability"
+msgstr "Haftungsbeschränkung"
+
+#: src/data/pages/en/terms.md
+msgid "Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service."
+msgstr "Ungeachtet etwaiger Schäden, die Ihnen entstehen könnten, ist die gesamte Haftung des Unternehmens und seiner Lieferanten gemäß dieser Bedingungen und Ihr ausschließliches Rechtsmittel für all das Vorstehende auf den Betrag begrenzt, den Sie tatsächlich über den Dienst bezahlt haben, oder auf 100 USD, falls Sie nichts über den Dienst gekauft haben."
+
+#: src/data/pages/en/terms.md
+msgid "To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose."
+msgstr "Soweit nach geltendem Recht zulässig, haften das Unternehmen oder seine Lieferanten in keinem Fall für besondere, zufällige, indirekte oder Folgeschäden jeglicher Art (einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Datenverlust oder anderen Informationen, Betriebsunterbrechung, Personenschaden, Verlust der Privatsphäre, die sich aus der Nutzung oder der Unfähigkeit zur Nutzung des Dienstes, Drittanbieter-Software und/oder Drittanbieter-Hardware, die mit dem Dienst verwendet wird, oder in sonstiger Weise im Zusammenhang mit einer Bestimmung dieser Bedingungen ergeben), selbst wenn das Unternehmen oder ein Lieferant auf die Möglichkeit solcher Schäden hingewiesen wurde und selbst wenn das Rechtsmittel seinen wesentlichen Zweck verfehlt."
+
+#: src/data/pages/en/terms.md
+msgid "Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law."
+msgstr "Einige Staaten gestatten den Ausschluss stillschweigender Garantien oder die Beschränkung der Haftung für Neben- oder Folgeschäden nicht, was bedeutet, dass einige der oben genannten Beschränkungen möglicherweise nicht auf Sie zutreffen. In diesen Staaten ist die Haftung jeder Partei im größtmöglichen gesetzlich zulässigen Umfang begrenzt."
+
+#: src/data/pages/en/terms.md
+msgid "\"AS IS\" and \"AS AVAILABLE\" Disclaimer"
+msgstr "„WIE BESEHEN“ und „WIE VERFÜGBAR“ Haftungsausschluss"
+
+#: src/data/pages/en/terms.md
+msgid "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected."
+msgstr "Der Dienst wird Ihnen „WIE BESEHEN“ und „WIE VERFÜGBAR“ und mit allen Fehlern und Mängeln ohne Gewährleistung jeglicher Art zur Verfügung gestellt. Soweit dies nach geltendem Recht zulässig ist, lehnt das Unternehmen im eigenen Namen und im Namen seiner verbundenen Unternehmen und deren jeweiligen Lizenzgebern und Dienstleistern ausdrücklich alle Garantien, ob ausdrücklich, stillschweigend, gesetzlich oder anderweitig, in Bezug auf den Dienst ab, einschließlich aller stillschweigenden Garantien der Marktgängigkeit, der Eignung für einen bestimmten Zweck, des Titels und der Nichtverletzung, sowie Garantien, die sich aus dem Geschäftsverlauf, der Leistung, der Nutzung oder der Handelspraxis ergeben können. Ohne Einschränkung des Vorstehenden gibt das Unternehmen keine Gewährleistung oder Zusage und macht keine Zusicherung jeglicher Art, dass der Dienst Ihren Anforderungen entspricht, die beabsichtigten Ergebnisse erzielt, mit anderer Software, Anwendungen, Systemen oder Diensten kompatibel ist oder damit funktioniert, ohne Unterbrechung funktioniert, Leistungs- oder Zuverlässigkeitsstandards erfüllt oder fehlerfrei ist oder dass Fehler oder Mängel behoben werden können oder werden."
+
+#: src/data/pages/en/terms.md
+msgid "Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components."
+msgstr "Ohne das Vorstehende einzuschränken, gibt weder das Unternehmen noch einer der Anbieter des Unternehmens eine ausdrückliche oder stillschweigende Zusicherung oder Garantie ab: (i) bezüglich des Betriebs oder der Verfügbarkeit des Dienstes oder der darin enthaltenen Informationen, Inhalte und Materialien oder Produkte; (ii) dass der Dienst ununterbrochen oder fehlerfrei sein wird; (iii) bezüglich der Genauigkeit, Zuverlässigkeit oder Aktualität von Informationen oder Inhalten, die über den Dienst bereitgestellt werden; oder (iv) dass der Dienst, seine Server, die Inhalte oder E-Mails, die vom oder im Namen des Unternehmens gesendet werden, frei von Viren, Skripten, Trojanern, Würmern, Malware, Zeitbomben oder anderen schädlichen Komponenten sind."
+
+#: src/data/pages/en/terms.md
+msgid "Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law."
+msgstr "Einige Gerichtsbarkeiten gestatten den Ausschluss bestimmter Arten von Garantien oder Einschränkungen der geltenden gesetzlichen Rechte eines Verbrauchers nicht, sodass einige oder alle der oben genannten Ausschlüsse und Einschränkungen möglicherweise nicht auf Sie zutreffen. In einem solchen Fall werden die in diesem Abschnitt dargelegten Ausschlüsse und Einschränkungen jedoch im größtmöglichen gesetzlich zulässigen Umfang angewendet."
+
+#: src/data/pages/en/terms.md
+msgid "Governing Law"
+msgstr "Geltendes Recht"
+
+#: src/data/pages/en/terms.md
+msgid "The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws."
+msgstr "Die Gesetze des Landes, unter Ausschluss seiner Kollisionsnormen, regeln diese Bedingungen und Ihre Nutzung des Dienstes. Ihre Nutzung der Anwendung kann auch anderen lokalen, staatlichen, nationalen oder internationalen Gesetzen unterliegen."
+
+#: src/data/pages/en/terms.md
+msgid "Disputes Resolution"
+msgstr "Streitbeilegung"
+
+#: src/data/pages/en/terms.md
+msgid "If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company."
+msgstr "Wenn Sie Bedenken oder Streitigkeiten bezüglich des Dienstes haben, erklären Sie sich damit einverstanden, den Streit zunächst informell durch Kontaktaufnahme mit dem Unternehmen beizulegen."
+
+#: src/data/pages/en/terms.md
+msgid "For European Union (EU) Users"
+msgstr "Für Benutzer in der Europäischen Union (EU)"
+
+#: src/data/pages/en/terms.md
+msgid "If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in."
+msgstr "Wenn Sie ein Verbraucher der Europäischen Union sind, profitieren Sie von den zwingenden Bestimmungen des Rechts des Landes, in dem Sie Ihren Wohnsitz haben."
+
+#: src/data/pages/en/terms.md
+msgid "United States Legal Compliance"
+msgstr "Einhaltung der US-Gesetze"
+
+#: src/data/pages/en/terms.md
+msgid "You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a \"terrorist supporting\" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties."
+msgstr "Sie erklären und gewährleisten, dass (i) Sie sich nicht in einem Land befinden, das einem Embargo der Regierung der Vereinigten Staaten unterliegt oder von der Regierung der Vereinigten Staaten als „terrorismusunterstützendes“ Land eingestuft wurde, und (ii) Sie nicht auf einer Liste der Regierung der Vereinigten Staaten von verbotenen oder eingeschränkten Parteien aufgeführt sind."
+
+#: src/data/pages/en/terms.md
+msgid "Severability and Waiver"
+msgstr "Salvatorische Klausel und Verzicht"
+
+#: src/data/pages/en/terms.md
+msgid "Severability"
+msgstr "Salvatorische Klausel"
+
+#: src/data/pages/en/terms.md
+msgid "If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect."
+msgstr "Sollte eine Bestimmung dieser Bedingungen als nicht durchsetzbar oder ungültig erachtet werden, wird diese Bestimmung geändert und ausgelegt, um die Ziele dieser Bestimmung im größtmöglichen Umfang nach geltendem Recht zu erreichen, und die verbleibenden Bestimmungen bleiben in vollem Umfang in Kraft und wirksam."
+
+#: src/data/pages/en/terms.md
+msgid "Waiver"
+msgstr "Verzicht"
+
+#: src/data/pages/en/terms.md
+msgid "Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach."
+msgstr "Sofern hierin nicht anders vorgesehen, beeinträchtigt die Nichtausübung eines Rechts oder die Nichtanforderung der Erfüllung einer Verpflichtung gemäß diesen Bedingungen nicht die Fähigkeit einer Partei, dieses Recht auszuüben oder diese Erfüllung zu einem späteren Zeitpunkt zu verlangen, noch stellt der Verzicht auf eine Verletzung einen Verzicht auf eine spätere Verletzung dar."
+
+#: src/data/pages/en/terms.md
+msgid "Translation Interpretation"
+msgstr "Übersetzung und Interpretation"
+
+#: src/data/pages/en/terms.md
+msgid "These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute."
+msgstr "Diese Allgemeinen Geschäftsbedingungen können übersetzt worden sein, wenn wir sie Ihnen auf unserem Dienst zur Verfügung gestellt haben. Sie erklären sich damit einverstanden, dass im Streitfall der ursprüngliche englische Text maßgebend ist."
+
+#: src/data/pages/en/terms.md
+msgid "Changes to These Terms and Conditions"
+msgstr "Änderungen an diesen Allgemeinen Geschäftsbedingungen"
+
+#: src/data/pages/en/terms.md
+msgid "We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion."
+msgstr "Wir behalten uns das Recht vor, diese Bedingungen nach eigenem Ermessen jederzeit zu ändern oder zu ersetzen. Ist eine Überarbeitung wesentlich, werden wir uns in angemessenem Umfang bemühen, mindestens 30 Tage vor Inkrafttreten neuer Bedingungen darauf hinzuweisen. Was eine wesentliche Änderung darstellt, wird nach unserem alleinigen Ermessen bestimmt."
+
+#: src/data/pages/en/terms.md
+msgid "By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service."
+msgstr "Durch die fortgesetzte Nutzung unseres Dienstes nach Inkrafttreten dieser Überarbeitungen erklären Sie sich mit den überarbeiteten Bedingungen einverstanden. Wenn Sie den neuen Bedingungen ganz oder teilweise nicht zustimmen, stellen Sie bitte die Nutzung der Website und des Dienstes ein."
+
+#: src/data/pages/en/terms.md
+msgid "If you have any questions about these Terms and Conditions, You can contact us:"
+msgstr "Wenn Sie Fragen zu diesen Allgemeinen Geschäftsbedingungen haben, können Sie uns kontaktieren:"
+
+#: src/data/pages/en/terms.md
+msgid "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
+msgstr "**Website** bezieht sich auf AstroWind, zugänglich unter https://astrowind.vercel.app"
+
+#: src/data/pages/en/markdown.md
+msgid "text if the image fails to load"
+msgstr "Text, wenn das Bild nicht geladen werden kann"
+
+#: src/data/pages/en/markdown.md
+msgid ""
+"Like it so far? Follow me on GitHub  \n"
+"My Markdown Cheatsheet - star it if you like it  \n"
+"Find some great docs here"
+msgstr ""
+"Gefällt es Ihnen bisher? Folgen Sie mir auf GitHub  \n"
+"Mein Markdown-Spickzettel – markieren Sie ihn mit einem Stern, wenn er Ihnen gefällt  \n"
+"Hier finden Sie großartige Dokumente"
