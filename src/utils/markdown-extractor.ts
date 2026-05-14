@@ -239,6 +239,69 @@ function parseMarkdown(source: string): {
 }
 
 /**
+ * Walk phrasing content (inline nodes) and extract link text as separate messages.
+ * Keeps the link structure in the skeleton, only replacing the link text with sentinels.
+ * Returns the modified phrasing content array.
+ */
+function extractPhrasingLinks(
+  nodes: PhrasingContent[],
+  messages: Message[],
+  messageIndexRef: { value: number },
+  context: string
+): PhrasingContent[] {
+  const result: PhrasingContent[] = [];
+
+  for (const node of nodes) {
+    switch (node.type) {
+      case 'link': {
+        // Extract link text as a separate message
+        const linkText = serializePhrasingForExtraction(node.children);
+        if (linkText && linkText.trim()) {
+          const index = messageIndexRef.value++;
+          messages.push({
+            index,
+            text: linkText,
+            context: `${context}:link`,
+          });
+          // Keep link structure, replace text with sentinel
+          result.push({
+            ...node,
+            children: [{ type: 'text', value: makeSentinel(index) }],
+          });
+        } else {
+          result.push(node);
+        }
+        break;
+      }
+      case 'emphasis':
+        result.push({ ...node, children: extractPhrasingLinks(node.children, messages, messageIndexRef, `${context}:em`) });
+        break;
+      case 'strong':
+        result.push({ ...node, children: extractPhrasingLinks(node.children, messages, messageIndexRef, `${context}:strong`) });
+        break;
+      case 'delete':
+        result.push({ ...node, children: extractPhrasingLinks(node.children, messages, messageIndexRef, `${context}:del`) });
+        break;
+      default:
+        result.push(node);
+        break;
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Check if a list item contains only a single link (e.g., TOC entries).
+ */
+function isLinkOnlyListItem(node: RootContent): boolean {
+  if (node.type !== 'listItem') return false;
+  const para = node.children.find((c) => c.type === 'paragraph');
+  if (!para || para.type !== 'paragraph') return false;
+  return para.children.length === 1 && para.children[0].type === 'link';
+}
+
+/**
  * Extract translatable strings from a markdown file.
  *
  * @param source - Raw markdown string
@@ -306,6 +369,14 @@ export function extract(
           // Replace alt with sentinel
           (child as Image).alt = makeSentinel(index);
         }
+        continue;
+      }
+
+      // Special handling for list items that are entirely a single link (e.g., TOC entries)
+      // Don't extract these - preserve the original link structure
+      // The link text won't be translated, but the links will work correctly
+      if (childType === 'listItem' && isLinkOnlyListItem(child)) {
+        // Don't recurse - preserve the list item as-is
         continue;
       }
 

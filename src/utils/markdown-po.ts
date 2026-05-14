@@ -74,11 +74,13 @@ export async function savePO(
 
 /**
  * Find messages that have no translation (empty msgstr).
+ * Does NOT treat msgstr === msgid as untranslated,
+ * since some words are legitimately the same in both languages.
  */
 export function findUntranslated(messages: Map<string, PoMessage>): PoMessage[] {
   const untranslated: PoMessage[] = [];
   for (const msg of messages.values()) {
-    if (!msg.msgstr || msg.msgstr === msg.msgid) {
+    if (!msg.msgstr || msg.msgstr.trim() === '') {
       untranslated.push(msg);
     }
   }

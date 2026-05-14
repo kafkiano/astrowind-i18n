@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-13T22:53:36.006Z\n"
-"PO-Revision-Date: 2026-05-13T22:53:36.006Z\n"
+"POT-Creation-Date: 2026-05-14T01:32:14.543Z\n"
+"PO-Revision-Date: 2026-05-14T01:32:14.543Z\n"
 "Last-Translator: \n"
 "Language: es\n"
 "Language-Team: \n"
@@ -2556,7 +2556,7 @@ msgstr ""
 "Escuela de Diseño de la Universidad de Nueva York. Infundo vitalidad en marcas y diseños, transformando conceptos en\n"
 "realidades cautivadoras."
 
-#: src/pages/[locale]/homes/personal.astro
+#: src/data/snippets/personal/about-content.md
 msgid "About me"
 msgstr "Sobre mí"
 
@@ -2576,7 +2576,7 @@ msgstr ""
 "Encuentro inspiración en el mundo que me rodea, ya sea a través de las páginas de una novela cautivadora, los\n"
 "detalles intrincados de la tipografía o los tonos vibrantes de la naturaleza durante mis escapadas al aire libre."
 
-#: src/pages/[locale]/homes/personal.astro
+#: src/data/snippets/personal/about-content.md
 msgid "If you're curious to dive deeper into my work, you can follow me:"
 msgstr "Si tienes curiosidad por profundizar en mi trabajo, puedes seguirme:"
 
@@ -3627,3 +3627,83 @@ msgstr ""
 "¿Te gusta hasta ahora? Sígueme en GitHub  \n"
 "Mi hoja de trucos de Markdown - márcala con una estrella si te gusta  \n"
 "Encuentra excelentes documentos aquí"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_5__"
+msgstr "Base de datos"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_7__"
+msgstr "Python"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_9__"
+msgstr "Django"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_11__"
+msgstr "Flask"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_13__"
+msgstr "FastAPI"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_15__"
+msgstr "Go"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_17__"
+msgstr "PHP"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_19__"
+msgstr "Laravel"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_21__"
+msgstr "Java"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_23__"
+msgstr "Spring"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_25__"
+msgstr "C#"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_27__"
+msgstr "ASP.NET Core"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_29__"
+msgstr "Ruby"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_31__"
+msgstr "Ruby on Rails"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_33__"
+msgstr "Bases de Datos"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_35__"
+msgstr "MySQL"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_37__"
+msgstr "PostgreSQL"
+
+#: src/data/snippets/personal/hero-subtitle.md
+msgid "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities."
+msgstr "Soy un Diseñador Gráfico apasionado por la creación de historias visuales. Con 5 años de experiencia y un título de la Escuela de Diseño de la Universidad de Nueva York, infundo vitalidad en marcas y diseños, transformando conceptos en realidades cautivadoras."
+
+#: src/data/snippets/personal/about-content.md
+msgid "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
+msgstr "Bienvenido a mi viaje creativo. Mi trabajo es un testimonio de mi compromiso de dar vida a las ideas, donde cada píxel se convierte en una pincelada en el lienzo de la imaginación."
+
+#: src/data/snippets/personal/about-content.md
+msgid "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
+msgstr "Encuentro inspiración en el mundo que me rodea, ya sea a través de las páginas de una novela cautivadora, los intrincados detalles de la tipografía o los vibrantes tonos de la naturaleza durante mis escapadas al aire libre."

@@ -75,7 +75,15 @@ const pagesCollection = defineCollection({
   }),
 });
 
+const snippetsCollection = defineCollection({
+  loader: glob({ pattern: ['**/*.md'], base: '.wuchale-content/snippets' }),
+  schema: z.object({
+    title: z.string().optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   pages: pagesCollection,
+  snippets: snippetsCollection,
 };

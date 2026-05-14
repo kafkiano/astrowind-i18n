@@ -11,6 +11,12 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+import MarkdownSlot from '~/components/common/MarkdownSlot.astro';
+
+const locale = Astro.currentLocale;
+const heroSubtitle = await getEntry('snippets', `${locale}/personal/hero-subtitle`);
+const aboutContent = await getEntry('snippets', `${locale}/personal/about-content`);
 
 export const getStaticPaths = getStaticPathsForLocale;
 
@@ -57,11 +63,7 @@ const metadata = {
     tagline="Personal Web Demo"
     actions={[{ variant: 'primary', title: 'Hire me', href: getPermalink('/contact#form') }]}
   >
-    <span slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
-      New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
-      realities.
-    </span>
+    <MarkdownSlot slot="subtitle" content={heroSubtitle} />
   </Hero>
 
   <!-- Content Widget **************** -->
@@ -101,19 +103,8 @@ const metadata = {
       loading: 'eager',
     }}
   >
-    <div slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-      <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
-      </p>
-      <br />
-      <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
-      </p>
-      <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+    <div slot="content" class="prose prose-h2:text-2xl prose-h2:font-bold prose-h2:tracking-tight prose-h2:mb-2 sm:prose-h2:text-3xl dark:prose-h2:text-white">
+      <MarkdownSlot content={aboutContent} />
     </div>
 
     <div slot="bg">

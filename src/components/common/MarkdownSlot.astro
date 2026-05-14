@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+export interface Props {
+  /** Content entry from getEntry() */
+  content?: CollectionEntry<'snippets'> | undefined;
+  /** Inline markdown string (for simple cases) */
+  inline?: string;
+}
+
+const { content, inline } = Astro.props;
+
+let Content: any = null;
+
+if (content) {
+  const rendered = await render(content);
+  Content = rendered.Content;
+}
+---
+
+{Content && <Content />}
+{inline && <Fragment set:html={inline} />}

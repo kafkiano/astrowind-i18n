@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-13T22:53:50.734Z\n"
-"PO-Revision-Date: 2026-05-13T22:53:50.734Z\n"
+"POT-Creation-Date: 2026-05-14T01:32:17.100Z\n"
+"PO-Revision-Date: 2026-05-14T01:32:17.100Z\n"
 "Last-Translator: \n"
 "Language: de\n"
 "Language-Team: \n"
@@ -474,7 +474,7 @@ msgstr "Tauchen Sie ein in die folgenden Fragen, um Einblicke in die leistungsst
 
 #: src/pages/[locale]/index.astro
 msgid "FAQs"
-msgstr "FAQs"
+msgstr "Häufig gestellte Fragen"
 
 #: src/pages/[locale]/index.astro
 msgid "Why AstroWind?"
@@ -1643,7 +1643,7 @@ msgstr "Behance"
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: src/pages/[locale]/homes/personal.astro
+#: src/data/snippets/personal/about-content.md
 msgid "About me"
 msgstr "Über mich"
 
@@ -1659,7 +1659,7 @@ msgid ""
 "details of typography, or the vibrant hues of nature during my outdoor escapades."
 msgstr "Ich finde Inspiration in der Welt um mich herum, sei es durch die Seiten eines fesselnden Romans, die komplizierten Details der Typografie oder die lebendigen Farbtöne der Natur während meiner Ausflüge ins Freie."
 
-#: src/pages/[locale]/homes/personal.astro
+#: src/data/snippets/personal/about-content.md
 msgid "If you're curious to dive deeper into my work, you can follow me:"
 msgstr "Wenn Sie tiefer in meine Arbeit eintauchen möchten, können Sie mir folgen:"
 
@@ -3615,3 +3615,83 @@ msgstr ""
 "Gefällt es Ihnen bisher? Folgen Sie mir auf GitHub  \n"
 "Mein Markdown-Spickzettel – markieren Sie ihn mit einem Stern, wenn er Ihnen gefällt  \n"
 "Hier finden Sie großartige Dokumente"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_5__"
+msgstr "__W_MSG_5__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_7__"
+msgstr "__W_MSG_7__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_9__"
+msgstr "__W_MSG_9__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_11__"
+msgstr "__W_MSG_11__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_13__"
+msgstr "__W_MSG_13__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_15__"
+msgstr "__W_MSG_15__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_17__"
+msgstr "__W_MSG_17__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_19__"
+msgstr "__W_MSG_19__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_21__"
+msgstr "__W_MSG_21__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_23__"
+msgstr "__W_MSG_23__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_25__"
+msgstr "__W_MSG_25__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_27__"
+msgstr "__W_MSG_27__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_29__"
+msgstr "__W_MSG_29__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_31__"
+msgstr "__W_MSG_31__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_33__"
+msgstr "__W_MSG_33__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_35__"
+msgstr "__W_MSG_35__"
+
+#: src/data/pages/en/markdown.md
+msgid "__W_MSG_37__"
+msgstr "__W_MSG_37__"
+
+#: src/data/snippets/personal/hero-subtitle.md
+msgid "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities."
+msgstr "Ich bin eine Grafikdesignerin mit einer Leidenschaft für visuelle Geschichten. Mit 5 Jahren Erfahrung und einem Abschluss von der School of Design der New York University verleihe ich Marken und Designs Vitalität und verwandle Konzepte in fesselnde Realitäten."
+
+#: src/data/snippets/personal/about-content.md
+msgid "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
+msgstr "Willkommen auf meiner kreativen Reise. Meine Arbeit ist ein Beweis für mein Engagement, Ideen zum Leben zu erwecken, wobei jedes Pixel zu einem Pinselstrich auf der Leinwand der Fantasie wird."
+
+#: src/data/snippets/personal/about-content.md
+msgid "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
+msgstr "Ich finde Inspiration in der Welt um mich herum, sei es durch die Seiten eines fesselnden Romans, die komplizierten Details der Typografie oder die lebendigen Farbtöne der Natur bei meinen Ausflügen ins Freie."

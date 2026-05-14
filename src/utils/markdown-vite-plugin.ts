@@ -9,11 +9,18 @@ import { extname } from 'node:path';
  * - Watches .md and .po files for HMR during dev
  */
 export function markdownPlugin(options: EmitterOptions): Plugin {
+  let hasEmitted = false;
+
   return {
     name: 'astrowind-markdown',
 
     async buildStart() {
-      // Generate all locale files at build start
+      // Only emit once per build cycle
+      if (hasEmitted) {
+        console.log('[markdown] Already emitted, skipping...');
+        return;
+      }
+      hasEmitted = true;
       console.log('[markdown] Generating locale files...');
       await emitAll(options);
       console.log('[markdown] Locale files generated.');

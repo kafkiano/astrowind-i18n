@@ -1,5 +1,5 @@
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
-import { join, relative, extname } from 'node:path';
+import { join, relative, extname, dirname } from 'node:path';
 import { extract } from './markdown-extractor';
 import { render } from './markdown-renderer';
 import { loadPO, savePO, findUntranslated, mergeMessages } from './markdown-po';
@@ -164,7 +164,7 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
 
       const outputDirForLocale = join(outputDir, locale);
       const outputPath = join(outputDirForLocale, relativePath);
-      await mkdir(outputDirForLocale, { recursive: true });
+      await mkdir(dirname(outputPath), { recursive: true });
       await writeFile(outputPath, rendered, 'utf-8');
 
       // Get slug from frontmatter or use file path
@@ -220,7 +220,7 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
 
       const outputDirForLocale = join(outputDir, locale);
       const outputPath = join(outputDirForLocale, relativePath);
-      await mkdir(outputDirForLocale, { recursive: true });
+      await mkdir(dirname(outputPath), { recursive: true });
       await writeFile(outputPath, rendered, 'utf-8');
 
       // Get translated slug or fall back to source slug
