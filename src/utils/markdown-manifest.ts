@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
 export interface LocaleEntry {
@@ -13,18 +13,6 @@ export interface ManifestEntry {
 }
 
 export type Manifest = Record<string, ManifestEntry>;
-
-/**
- * Load manifest from disk. Returns empty manifest if file doesn't exist.
- */
-export async function loadManifest(manifestPath: string): Promise<Manifest> {
-  try {
-    const content = await readFile(manifestPath, 'utf-8');
-    return JSON.parse(content);
-  } catch {
-    return {};
-  }
-}
 
 /**
  * Save manifest to disk.

@@ -37,7 +37,7 @@ async function translateBatch(
       if (!response || response.trim().length === 0) {
         if (attempt < maxRetries) {
           console.warn(`[markdown-translator] Empty response, retrying (${attempt}/${maxRetries})...`);
-          await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+          await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
           continue;
         }
         return new Map();
@@ -47,7 +47,7 @@ async function translateBatch(
     } catch (error) {
       if (attempt < maxRetries) {
         console.warn(`[markdown-translator] Batch failed, retrying (${attempt}/${maxRetries})...`);
-        await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+        await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
         continue;
       }
       throw error;
@@ -88,7 +88,9 @@ export async function translateMessages(options: TranslateOptions): Promise<Map<
     batches.push(messages.slice(i, i + batchSize));
   }
 
-  console.log(`[markdown-translator] Translating ${messages.length} messages to ${targetLocale} in ${batches.length} batches...`);
+  console.log(
+    `[markdown-translator] Translating ${messages.length} messages to ${targetLocale} in ${batches.length} batches...`
+  );
 
   const result = new Map<string, string>();
 
@@ -99,7 +101,9 @@ export async function translateMessages(options: TranslateOptions): Promise<Map<
       batchGroup.map(async (batch, batchIndex) => {
         try {
           const batchResult = await translateBatch(ai, batch, sourceLang, targetLang);
-          console.log(`[markdown-translator] Batch ${i + batchIndex + 1}/${batches.length}: got ${batchResult.size} translations`);
+          console.log(
+            `[markdown-translator] Batch ${i + batchIndex + 1}/${batches.length}: got ${batchResult.size} translations`
+          );
           return batchResult;
         } catch (error) {
           console.error(`[markdown-translator] Batch ${i + batchIndex + 1}/${batches.length} failed:`, error);

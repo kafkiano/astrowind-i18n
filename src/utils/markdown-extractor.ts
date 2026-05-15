@@ -15,11 +15,10 @@ export interface Skeleton {
 }
 
 // Sentinel pattern: __W_MSG_<n>__
-const SENTINEL_RE = /__W_MSG_(\d+)__/g;
 export const SENTINEL_PREFIX = '__W_MSG_';
-export const SENTINEL_SUFFIX = '__';
+const SENTINEL_SUFFIX = '__';
 
-export function makeSentinel(index: number): string {
+function makeSentinel(index: number): string {
   return `${SENTINEL_PREFIX}${index}${SENTINEL_SUFFIX}`;
 }
 
@@ -28,78 +27,11 @@ export function parseSentinel(text: string): number | null {
   return match ? Number(match[1]) : null;
 }
 
-export function hasSentinel(text: string): boolean {
-  return SENTINEL_RE.test(text);
-}
-
 /**
- * Extract all sentinel indices from a string.
- */
-export function extractSentinelIndices(text: string): number[] {
-  const indices: number[] = [];
-  let match: RegExpExecArray | null;
-  const re = /__W_MSG_(\d+)__/g;
-  while ((match = re.exec(text)) !== null) {
-    indices.push(Number(match[1]));
-  }
-  return indices;
-}
-
-/**
- * Serialize phrasing content for extraction.
- * Only extracts translatable text, preserving inline formatting as literal markdown.
- * Link URLs are NOT included - only link text is extracted.
+ * Serialize phrasing content to a plain text string.
+ * Preserves inline formatting as literal markdown.
+ * Link URLs are NOT included — only link text is extracted.
  * Inline code is preserved as-is (not translatable).
- */
-function serializePhrasingForExtraction(nodes: PhrasingContent[]): string {
-  let result = '';
-  for (const node of nodes) {
-    switch (node.type) {
-      case 'text':
-        result += node.value;
-        break;
-      case 'emphasis':
-        result += `*${serializePhrasingForExtraction(node.children)}*`;
-        break;
-      case 'strong':
-        result += `**${serializePhrasingForExtraction(node.children)}**`;
-        break;
-      case 'inlineCode':
-        // Inline code is not translated - keep as-is
-        result += `\`${node.value}\``;
-        break;
-      case 'link':
-        // Only extract link text, NOT the URL
-        result += serializePhrasingForExtraction(node.children);
-        break;
-      case 'image':
-        // Images handled separately (alt text extracted in walkNode)
-        result += node.alt || '';
-        break;
-      case 'break':
-        result += '  \n';
-        break;
-      case 'delete':
-        result += `~~${serializePhrasingForExtraction(node.children)}~~`;
-        break;
-      default: {
-        const nodeRecord = node as unknown as Record<string, unknown>;
-        if ('value' in nodeRecord && typeof nodeRecord.value === 'string') {
-          result += nodeRecord.value;
-        } else if ('children' in nodeRecord && Array.isArray(nodeRecord.children)) {
-          result += serializePhrasingForExtraction(nodeRecord.children as PhrasingContent[]);
-        }
-        break;
-      }
-    }
-  }
-  return result;
-}
-
-/**
- * Serialize phrasing content (inline nodes) to a markdown string.
- * This preserves inline formatting as literal markdown INCLUDING link URLs.
- * Used for rendering, not extraction.
  */
 function serializePhrasing(nodes: PhrasingContent[]): string {
   let result = '';
@@ -115,13 +47,16 @@ function serializePhrasing(nodes: PhrasingContent[]): string {
         result += `**${serializePhrasing(node.children)}**`;
         break;
       case 'inlineCode':
+        // Inline code is not translated - keep as-is
         result += `\`${node.value}\``;
         break;
       case 'link':
-        result += `[${serializePhrasing(node.children)}](${node.url}${node.title ? ` "${node.title}"` : ''})`;
+        // Only extract link text, NOT the URL
+        result += serializePhrasing(node.children);
         break;
       case 'image':
-        result += `![${node.alt || ''}](${node.url}${node.title ? ` "${node.title}"` : ''})`;
+        // Images handled separately (alt text extracted in walkNode)
+        result += node.alt || '';
         break;
       case 'break':
         result += '  \n';
@@ -130,7 +65,6 @@ function serializePhrasing(nodes: PhrasingContent[]): string {
         result += `~~${serializePhrasing(node.children)}~~`;
         break;
       default: {
-        // For any unknown inline node, try to serialize its value or children
         const nodeRecord = node as unknown as Record<string, unknown>;
         if ('value' in nodeRecord && typeof nodeRecord.value === 'string') {
           result += nodeRecord.value;
@@ -145,17 +79,16 @@ function serializePhrasing(nodes: PhrasingContent[]): string {
 }
 
 /**
- * Serialize a block-level node's text content to markdown.
+ * Serialize a block-level node's text content for extraction.
  * Only extracts the text/inline portion, not structural markdown.
- * Uses serializePhrasingForExtraction to exclude link URLs from extracted text.
  */
 function serializeBlockText(node: RootContent): string | null {
   switch (node.type) {
     case 'paragraph':
-      return serializePhrasingForExtraction(node.children);
+      return serializePhrasing(node.children);
     case 'heading': {
       // Strip heading anchor {#id} from the text
-      const text = serializePhrasingForExtraction(node.children);
+      const text = serializePhrasing(node.children);
       return text.replace(/\s*\{#[a-zA-Z0-9_-]+\}\s*$/, '');
     }
     case 'listItem': {
@@ -168,7 +101,7 @@ function serializeBlockText(node: RootContent): string | null {
         if (para.children.length === 1 && para.children[0].type === 'link') {
           return null;
         }
-        return serializePhrasingForExtraction(para.children);
+        return serializePhrasing(para.children);
       }
       // For complex list items (with nested lists), only extract first paragraph
       const firstPara = node.children.find((c) => c.type === 'paragraph');
@@ -177,37 +110,27 @@ function serializeBlockText(node: RootContent): string | null {
         if (firstPara.children.length === 1 && firstPara.children[0].type === 'link') {
           return null;
         }
-        return serializePhrasingForExtraction(firstPara.children);
+        return serializePhrasing(firstPara.children);
       }
       return null;
     }
     case 'blockquote': {
-      // blockquote contains block children, we recursively handle
-      // For now, extract text from direct paragraph children
       const texts: string[] = [];
       for (const child of node.children) {
         if (child.type === 'paragraph') {
-          texts.push(serializePhrasingForExtraction(child.children));
+          texts.push(serializePhrasing(child.children));
         }
       }
       return texts.length > 0 ? texts.join('\n\n') : null;
     }
     case 'tableRow':
-      // Table rows contain cells
-      // We don't extract from tableRow directly; handled at cell level
+      // Table rows contain cells — handled at cell level
       return null;
     case 'tableCell':
-      return serializePhrasingForExtraction(node.children);
+      return serializePhrasing(node.children);
     default:
       return null;
   }
-}
-
-/**
- * Check if a node type is a translatable block type.
- */
-function isTranslatableBlock(type: string): boolean {
-  return ['paragraph', 'heading', 'listItem', 'blockquote', 'tableCell'].includes(type);
 }
 
 /**
@@ -217,7 +140,6 @@ function parseMarkdown(source: string): {
   frontmatter: Record<string, string | number | boolean | null | Record<string, unknown>>;
   body: Root;
 } {
-  // Split frontmatter from body
   let frontmatter: Skeleton['frontmatter'] = {};
   let bodySource = source;
 
@@ -236,59 +158,6 @@ function parseMarkdown(source: string): {
   const tree = unified().use(remarkParse).parse(bodySource) as Root;
 
   return { frontmatter, body: tree };
-}
-
-/**
- * Walk phrasing content (inline nodes) and extract link text as separate messages.
- * Keeps the link structure in the skeleton, only replacing the link text with sentinels.
- * Returns the modified phrasing content array.
- */
-function extractPhrasingLinks(
-  nodes: PhrasingContent[],
-  messages: Message[],
-  messageIndexRef: { value: number },
-  context: string
-): PhrasingContent[] {
-  const result: PhrasingContent[] = [];
-
-  for (const node of nodes) {
-    switch (node.type) {
-      case 'link': {
-        // Extract link text as a separate message
-        const linkText = serializePhrasingForExtraction(node.children);
-        if (linkText && linkText.trim()) {
-          const index = messageIndexRef.value++;
-          messages.push({
-            index,
-            text: linkText,
-            context: `${context}:link`,
-          });
-          // Keep link structure, replace text with sentinel
-          result.push({
-            ...node,
-            children: [{ type: 'text', value: makeSentinel(index) }],
-          });
-        } else {
-          result.push(node);
-        }
-        break;
-      }
-      case 'emphasis':
-        result.push({ ...node, children: extractPhrasingLinks(node.children, messages, messageIndexRef, `${context}:em`) });
-        break;
-      case 'strong':
-        result.push({ ...node, children: extractPhrasingLinks(node.children, messages, messageIndexRef, `${context}:strong`) });
-        break;
-      case 'delete':
-        result.push({ ...node, children: extractPhrasingLinks(node.children, messages, messageIndexRef, `${context}:del`) });
-        break;
-      default:
-        result.push(node);
-        break;
-    }
-  }
-
-  return result;
 }
 
 /**
@@ -337,7 +206,9 @@ export function extract(
   }
 
   // --- Extract from body AST ---
-  // Walk the tree depth-first, extracting text from translatable nodes
+
+  const translatableBlocks = new Set(['paragraph', 'heading', 'listItem', 'blockquote', 'tableCell']);
+
   function walkNode(node: Parent, path: string[] = []): void {
     if (!('children' in node)) return;
 
@@ -351,13 +222,12 @@ export function extract(
       childCounters[childType] = (childCounters[childType] || 0) + 1;
       const count = childCounters[childType];
 
-      // Skip code blocks and HTML - never extract
+      // Skip code blocks and HTML — never extract
       if (childType === 'code' || childType === 'html' || childType === 'yaml') {
         continue;
       }
 
       if (childType === 'image') {
-        // Extract alt text from images
         const imageNode = child as Image;
         if (imageNode.alt && imageNode.alt.trim()) {
           const index = messageIndex++;
@@ -366,21 +236,17 @@ export function extract(
             text: imageNode.alt,
             context: `body:image:${count}`,
           });
-          // Replace alt with sentinel
           (child as Image).alt = makeSentinel(index);
         }
         continue;
       }
 
-      // Special handling for list items that are entirely a single link (e.g., TOC entries)
-      // Don't extract these - preserve the original link structure
-      // The link text won't be translated, but the links will work correctly
+      // Skip list items that are entirely a single link (e.g., TOC entries)
       if (childType === 'listItem' && isLinkOnlyListItem(child)) {
-        // Don't recurse - preserve the list item as-is
         continue;
       }
 
-      if (isTranslatableBlock(childType) && 'children' in child) {
+      if (translatableBlocks.has(childType) && 'children' in child) {
         const text = serializeBlockText(child as RootContent);
         if (text && text.trim()) {
           const index = messageIndex++;
@@ -390,8 +256,6 @@ export function extract(
             text,
             context: `body:${contextPath}`,
           });
-
-          // Replace text content with sentinel
           replaceBlockText(child as RootContent, makeSentinel(index));
           continue;
         }
@@ -417,7 +281,6 @@ export function extract(
 
 /**
  * Replace the text content of a block node with a sentinel string.
- * Replaces the entire block's children with a single text node.
  * The translated text (which includes inline formatting as literal markdown)
  * will be substituted back by the renderer.
  */
@@ -432,7 +295,6 @@ function replaceBlockText(node: RootContent, sentinel: string): void {
       node.children = [textNode];
       break;
     case 'listItem': {
-      // Replace first paragraph's children
       const para = node.children.find((c) => c.type === 'paragraph');
       if (para && para.type === 'paragraph') {
         para.children = [textNode];
@@ -440,7 +302,6 @@ function replaceBlockText(node: RootContent, sentinel: string): void {
       break;
     }
     case 'blockquote':
-      // Replace with single paragraph containing sentinel
       node.children = [{ type: 'paragraph', children: [textNode] }];
       break;
     case 'tableCell':
