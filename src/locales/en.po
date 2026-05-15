@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15T01:41:49.908Z\n"
-"PO-Revision-Date: 2026-05-15T01:41:49.908Z\n"
+"POT-Creation-Date: 2026-05-15T17:13:56.709Z\n"
+"PO-Revision-Date: 2026-05-15T17:13:56.709Z\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: \n"
@@ -117,6 +117,7 @@ msgid "RSS Feed"
 msgstr "RSS Feed"
 
 #: src/pages/[locale]/about.astro
+#: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "About us"
 msgstr "About us"
@@ -189,6 +190,9 @@ msgstr "E-commerce"
 msgid "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 msgstr "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 
+#: src/pages/[locale]/[...blog]/[...page].astro
+#: src/pages/[locale]/[...blog]/[category]/[...page].astro
+#: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/services.astro
@@ -236,6 +240,7 @@ msgid "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit 
 msgstr "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus."
 
 #: src/pages/[locale]/about.astro
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/index.astro
@@ -354,6 +359,7 @@ msgid "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitas
 msgstr "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 
 #: src/pages/[locale]/contact.astro
+#: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/index.astro
 msgid "Contact"
 msgstr "Contact"
@@ -374,6 +380,7 @@ msgstr "For quicker answers, explore our FAQs section. You may find the solution
 msgid "Name"
 msgstr "Name"
 
+#: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Email"
@@ -433,6 +440,7 @@ msgid "AstroWind — Free template for creating websites with Astro + Tailwind C
 msgstr "AstroWind — Free template for creating websites with Astro + Tailwind CSS"
 
 #: src/pages/[locale]/index.astro
+#: src/pages/[locale]/index.astro
 msgid "Get template"
 msgstr "Get template"
 
@@ -464,6 +472,7 @@ msgid "Simplicity, Best Practices and High Performance"
 msgstr "Simplicity, Best Practices and High Performance"
 
 #: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/index.astro
 #: src/pages/[locale]/index.astro
 msgid "Features"
 msgstr "Features"
@@ -716,6 +725,7 @@ msgstr "That enthusiastic friend who's always urging, \"Do it! Do it!\"? Yeah, t
 
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/pricing.astro
+#: src/pages/[locale]/pricing.astro
 msgid "Pricing"
 msgstr "Pricing"
 
@@ -746,18 +756,6 @@ msgstr "The footer's like the credits of a movie but sprinkled with easter eggs.
 #: src/pages/[locale]/index.astro
 msgid "Find out more content in our Blog"
 msgstr "Find out more content in our Blog"
-
-#: src/pages/[locale]/index.astro
-msgid ""
-"The blog is used to display AstroWind documentation.\n"
-"Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
-"Astro is a very interesting technology. Thanks.\n"
-""
-msgstr ""
-"The blog is used to display AstroWind documentation.\n"
-"Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
-"Astro is a very interesting technology. Thanks.\n"
-""
 
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/startup.astro
@@ -875,6 +873,8 @@ msgid "In hac habitasse"
 msgstr "In hac habitasse"
 
 #: src/pages/[locale]/pricing.astro
+#: src/pages/[locale]/pricing.astro
+#: src/pages/[locale]/pricing.astro
 msgid "Get started"
 msgstr "Get started"
 
@@ -882,6 +882,7 @@ msgstr "Get started"
 msgid "Optimal choice for small teams"
 msgstr "Optimal choice for small teams"
 
+#: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Per Month"
 msgstr "Per Month"
@@ -1072,6 +1073,7 @@ msgstr "Get started now"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
+#: src/pages/[locale]/services.astro
 msgid "Services"
 msgstr "Services"
 
@@ -1083,6 +1085,7 @@ msgstr "Elevate your projects with our stunning templates"
 msgid "Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
 msgstr "Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
 
+#: src/pages/[locale]/services.astro
 #: src/pages/[locale]/services.astro
 msgid "Start exploring"
 msgstr "Start exploring"
@@ -1284,9 +1287,11 @@ msgid "Mobile App Web Demo"
 msgstr "Mobile App Web Demo"
 
 #: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/homes/mobile-app.astro
 msgid "App Store Image"
 msgstr "App Store Image"
 
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Google Play Image"
 msgstr "Google Play Image"
@@ -1525,6 +1530,8 @@ msgid "Personal Web Demo"
 msgstr "Personal Web Demo"
 
 #: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
 msgid "Hire me"
 msgstr "Hire me"
 
@@ -1661,6 +1668,11 @@ msgid "Embark on a design journey that surpasses pixels, entering a realm of ima
 msgstr "Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
 
 #: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 msgid "Description:"
 msgstr "Description:"
@@ -1669,6 +1681,8 @@ msgstr "Description:"
 msgid "Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts."
 msgstr "Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts."
 
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Role:"
 msgstr "Role:"
@@ -1681,6 +1695,8 @@ msgstr "Led the entire branding process from concept to execution. Created a dyn
 msgid "Tech Design Image"
 msgstr "Tech Design Image"
 
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Go to the project"
 msgstr "Go to the project"
@@ -1898,6 +1914,9 @@ msgid "Are you a startup with big dreams? AstroWind propels your success. Our te
 msgstr "Are you a startup with big dreams? AstroWind propels your success. Our template forges a seamless online presence, attracting investors and customers from day one. Astro 5.0 and Tailwind CSS ensure striking, responsive sites, leaving lasting impressions. Countless startups leverage AstroWind to kickstart their journey and resonate with audiences."
 
 #: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
 msgid "Benefits:"
 msgstr "Benefits:"
 
@@ -2037,6 +2056,7 @@ msgstr "Explore our collection of articles, guides, and tutorials on web develop
 msgid "Startup Web Demo"
 msgstr "Startup Web Demo"
 
+#: src/pages/[locale]/homes/startup.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Get templates"
 msgstr "Get templates"
@@ -2254,16 +2274,13 @@ msgid "Chat with sales"
 msgstr "Chat with sales"
 
 #: src/pages/[locale]/homes/startup.astro
+#: src/pages/[locale]/homes/startup.astro
 msgid "Start chatting"
 msgstr "Start chatting"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Chat with support"
 msgstr "Chat with support"
-
-#: src/pages/[locale]/landing/click-through.astro
-msgid "Click-through Landing Page Demo"
-msgstr "Click-through Landing Page Demo"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Demo"
@@ -2318,10 +2335,6 @@ msgid "Download Template"
 msgstr "Download Template"
 
 #: src/pages/[locale]/landing/lead-generation.astro
-msgid "Lead Generation Landing Page Demo"
-msgstr "Lead Generation Landing Page Demo"
-
-#: src/pages/[locale]/landing/lead-generation.astro
 msgid "Lead Generation Landing Demo"
 msgstr "Lead Generation Landing Demo"
 
@@ -2354,10 +2367,6 @@ msgid "Store with a Coming Soon sign. Pre-launch Landing Page"
 msgstr "Store with a Coming Soon sign. Pre-launch Landing Page"
 
 #: src/pages/[locale]/landing/product.astro
-msgid "Product Details Landing Page Demo"
-msgstr "Product Details Landing Page Demo"
-
-#: src/pages/[locale]/landing/product.astro
 msgid "Product Details Demo"
 msgstr "Product Details Demo"
 
@@ -2374,10 +2383,6 @@ msgid "A spotlight on a product. Product Details Landing Page Demo"
 msgstr "A spotlight on a product. Product Details Landing Page Demo"
 
 #: src/pages/[locale]/landing/sales.astro
-msgid "Sales Landing Page Demo"
-msgstr "Sales Landing Page Demo"
-
-#: src/pages/[locale]/landing/sales.astro
 msgid "Long-form Sales Demo"
 msgstr "Long-form Sales Demo"
 
@@ -2392,10 +2397,6 @@ msgstr "Dive deep into crafting a Landing Page that narrates, persuades, and con
 #: src/pages/[locale]/landing/sales.astro
 msgid "Children telling a story. Long-form Sales Landing Page demo"
 msgstr "Children telling a story. Long-form Sales Landing Page demo"
-
-#: src/pages/[locale]/landing/subscription.astro
-msgid "Subscription Landing Page Demo"
-msgstr "Subscription Landing Page Demo"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Subscription Landing Demo"
@@ -2428,16 +2429,6 @@ msgstr "Tag: {0}"
 #: src/pages/[locale]/about.astro
 msgid "Elevate your online presence with our <0/> <1>Beautiful Website Templates</1>"
 msgstr "Elevate your online presence with our <0/> <1>Beautiful Website Templates</1>"
-
-#: src/pages/[locale]/about.astro
-msgid ""
-"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
-msgstr ""
-"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
 
 #: src/pages/[locale]/index.astro
 msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
@@ -2507,28 +2498,12 @@ msgid "Improve <0>the online presence of</0> your <1>Startup</1> with Astrowind 
 msgstr "Improve <0>the online presence of</0> your <1>Startup</1> with Astrowind templates"
 
 #: src/pages/[locale]/homes/startup.astro
-msgid ""
-"Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your\n"
-"startup's digital footprint, fostering credibility, and expanding your reach."
-msgstr ""
-"Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your\n"
-"startup's digital footprint, fostering credibility, and expanding your reach."
-
-#: src/pages/[locale]/homes/startup.astro
 msgid "Astro just Launched.... Could it be the ultimate web framework?"
 msgstr "Astro just Launched.... Could it be the ultimate web framework?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Be a part of our vision"
 msgstr "Be a part of our vision"
-
-#: src/pages/[locale]/homes/startup.astro
-msgid ""
-"Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful\n"
-"impact."
-msgstr ""
-"Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful\n"
-"impact."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Home"
@@ -2545,40 +2520,6 @@ msgstr "Porfolio"
 #: src/pages/[locale]/homes/personal.astro
 msgid "Github"
 msgstr "Github"
-
-#: src/pages/[locale]/homes/personal.astro
-msgid ""
-"I'm a Graphic Designer passionate about crafting visual stories. <0/> With 5 years of experience and a degree from\n"
-"New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating\n"
-"realities."
-msgstr ""
-"I'm a Graphic Designer passionate about crafting visual stories. <0/> With 5 years of experience and a degree from\n"
-"New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating\n"
-"realities."
-
-#: src/data/snippets/personal/about-content.md
-msgid "About me"
-msgstr "About me"
-
-#: src/pages/[locale]/homes/personal.astro
-msgid ""
-"Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each\n"
-"pixel becomes a brushstroke in the canvas of imagination."
-msgstr ""
-"Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each\n"
-"pixel becomes a brushstroke in the canvas of imagination."
-
-#: src/pages/[locale]/homes/personal.astro
-msgid ""
-"I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate\n"
-"details of typography, or the vibrant hues of nature during my outdoor escapades."
-msgstr ""
-"I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate\n"
-"details of typography, or the vibrant hues of nature during my outdoor escapades."
-
-#: src/data/snippets/personal/about-content.md
-msgid "If you're curious to dive deeper into my work, you can follow me:"
-msgstr "If you're curious to dive deeper into my work, you can follow me:"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Project 1: <0/><1>Brand identity for tech innovators</1>"
@@ -2608,14 +2549,6 @@ msgstr "Designed to foster growth and success."
 msgid "Astro&nbsp;+&nbsp;<0/><1>Tailwind CSS</1>"
 msgstr "Astro&nbsp;+&nbsp;<0/><1>Tailwind CSS</1>"
 
-#: src/pages/[locale]/index.astro
-msgid ""
-"Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't\n"
-"waste more time! :P"
-msgstr ""
-"Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't\n"
-"waste more time! :P"
-
 #: src/pages/[locale]/services.astro
 msgid "Benefits"
 msgstr "Benefits"
@@ -2624,17 +2557,110 @@ msgstr "Benefits"
 msgid "Change language"
 msgstr "Change language"
 
-#: src/pages/[locale]/landing/pre-launch.astro
-msgid "Pre-Launch Landing Page Demo"
-msgstr "Pre-Launch Landing Page Demo"
+#: src/pages/[locale]/about.astro
+#: src/pages/[locale]/contact.astro
+msgid "Company"
+msgstr "Company"
+
+#: src/pages/[locale]/about.astro
+msgid "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus. Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+msgstr "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus. Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+
+#: src/pages/[locale]/index.astro
+msgid "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+msgstr "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
 
 #: src/pages/[locale]/index.astro
 msgid ""
-"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
-"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+"The blog is used to display AstroWind documentation.\n"
+"                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
+"                        Astro is a very interesting technology. Thanks.\n"
+"                "
 msgstr ""
-"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
-"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+"The blog is used to display AstroWind documentation.\n"
+"                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
+"                        Astro is a very interesting technology. Thanks.\n"
+"                "
+
+#: src/pages/[locale]/index.astro
+msgid "Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't waste more time! :P"
+msgstr "Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't waste more time! :P"
+
+#: src/pages/[locale]/[...blog]/[...page].astro
+msgid "List"
+msgstr "List"
+
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "Mobile App Homepage"
+msgstr "Mobile App Homepage"
+
+#: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/startup.astro
+msgid "Homes"
+msgstr "Homes"
+
+#: src/pages/[locale]/homes/personal.astro
+msgid "Personal Homepage"
+msgstr "Personal Homepage"
+
+#: src/pages/[locale]/homes/saas.astro
+msgid "SaaS Homepage"
+msgstr "SaaS Homepage"
+
+#: src/pages/[locale]/homes/startup.astro
+msgid "Startup Homepage"
+msgstr "Startup Homepage"
+
+#: src/pages/[locale]/homes/startup.astro
+msgid "Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your startup's digital footprint, fostering credibility, and expanding your reach."
+msgstr "Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your startup's digital footprint, fostering credibility, and expanding your reach."
+
+#: src/pages/[locale]/homes/startup.astro
+msgid "Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful impact."
+msgstr "Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful impact."
+
+#: src/pages/[locale]/landing/click-through.astro
+msgid "Click-through Landing"
+msgstr "Click-through Landing"
+
+#: src/pages/[locale]/landing/click-through.astro
+#: src/pages/[locale]/landing/lead-generation.astro
+#: src/pages/[locale]/landing/pre-launch.astro
+#: src/pages/[locale]/landing/product.astro
+#: src/pages/[locale]/landing/sales.astro
+#: src/pages/[locale]/landing/subscription.astro
+msgid "Landing"
+msgstr "Landing"
+
+#: src/pages/[locale]/landing/lead-generation.astro
+msgid "Lead Generation"
+msgstr "Lead Generation"
+
+#: src/pages/[locale]/landing/pre-launch.astro
+msgid "Pre-Launch"
+msgstr "Pre-Launch"
+
+#: src/pages/[locale]/landing/product.astro
+msgid "Product Details"
+msgstr "Product Details"
+
+#: src/pages/[locale]/landing/sales.astro
+msgid "Sales Landing"
+msgstr "Sales Landing"
+
+#: src/pages/[locale]/landing/subscription.astro
+msgid "Subscription Landing"
+msgstr "Subscription Landing"
+
+#: src/pages/[locale]/[...blog]/[category]/[...page].astro
+msgid "Categories"
+msgstr "Categories"
+
+#: src/pages/[locale]/[...blog]/[tag]/[...page].astro
+msgid "Tags"
+msgstr "Tags"
 
 #: src/data/pages/en/privacy.md
 msgid "Privacy Policy"
@@ -2709,8 +2735,8 @@ msgid "**Usage Data** refers to data collected automatically, either generated b
 msgstr "**Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit)."
 
 #: src/data/pages/en/terms.md
-msgid "**Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)"
-msgstr "**Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)"
+msgid "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
+msgstr "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
 
 #: src/data/pages/en/terms.md
 msgid "**You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable."
@@ -3016,6 +3042,326 @@ msgstr "If you have any questions about this Privacy Policy, You can contact us:
 msgid "By email: somecoolemail@domain.com"
 msgstr "By email: somecoolemail@domain.com"
 
+#: src/data/snippets/personal/about-content.md
+msgid "About me"
+msgstr "About me"
+
+#: src/data/snippets/personal/about-content.md
+msgid "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
+msgstr "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
+
+#: src/data/snippets/personal/about-content.md
+msgid "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
+msgstr "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
+
+#: src/data/snippets/personal/about-content.md
+msgid "If you're curious to dive deeper into my work, you can follow me:"
+msgstr "If you're curious to dive deeper into my work, you can follow me:"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Mastering Landing Pages: Practical Guide for 2023"
+msgstr "Mastering Landing Pages: Practical Guide for 2023"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!"
+msgstr "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them."
+msgstr "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Landing Pages Unveiled"
+msgstr "Landing Pages Unveiled"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad."
+msgstr "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer."
+msgstr "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "The Power of Precision"
+msgstr "The Power of Precision"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience."
+msgstr "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Target"
+msgstr "Target"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward."
+msgstr "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Why Landing Pages Matter"
+msgstr "Why Landing Pages Matter"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:"
+msgstr "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Guide Traffic**: Directing visitors seamlessly through the sales funnel."
+msgstr "**Guide Traffic**: Directing visitors seamlessly through the sales funnel."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Boost ROI**: Maximizing returns on marketing investments."
+msgstr "**Boost ROI**: Maximizing returns on marketing investments."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Personalize User Experience**: Tailoring content to specific audience segments."
+msgstr "**Personalize User Experience**: Tailoring content to specific audience segments."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with."
+msgstr "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Crafting the Perfect Landing Page"
+msgstr "Crafting the Perfect Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:"
+msgstr "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition."
+msgstr "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Engaging Imagery**: Visuals that complement and enhance the content."
+msgstr "**Engaging Imagery**: Visuals that complement and enhance the content."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs."
+msgstr "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action."
+msgstr "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind."
+msgstr "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility."
+msgstr "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up."
+msgstr "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Homepage vs. Landing Page"
+msgstr "Homepage vs. Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "While both are pivotal, they serve distinct roles:"
+msgstr "While both are pivotal, they serve distinct roles:"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents."
+msgstr "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading."
+msgstr "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\""
+msgstr "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\""
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "The Art of Optimization"
+msgstr "The Art of Optimization"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results."
+msgstr "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns."
+msgstr "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Landing Pages in Action"
+msgstr "Landing Pages in Action"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them."
+msgstr "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide."
+msgstr "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type."
+msgstr "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Lead Generation Landing Page"
+msgstr "Lead Generation Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details."
+msgstr "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial."
+msgstr "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return."
+msgstr "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data."
+msgstr "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details."
+msgstr "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Long-form Sales Landing Page"
+msgstr "Long-form Sales Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers."
+msgstr "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses."
+msgstr "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor."
+msgstr "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page."
+msgstr "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others."
+msgstr "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Click-through Landing Page"
+msgstr "Click-through Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment."
+msgstr "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page."
+msgstr "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form."
+msgstr "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action."
+msgstr "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page."
+msgstr "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Product Details Landing Page"
+msgstr "Product Details Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Purpose**: Designed to inform by providing specific details about a product or service."
+msgstr "**Purpose**: Designed to inform by providing specific details about a product or service."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews."
+msgstr "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Focus**: Presents the product or service transparently and attractively."
+msgstr "**Focus**: Presents the product or service transparently and attractively."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner."
+msgstr "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews."
+msgstr "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Coming Soon or Pre-Launch Landing Page"
+msgstr "Coming Soon or Pre-Launch Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Purpose**: Creates excitement for an upcoming product, service, or event."
+msgstr "**Purpose**: Creates excitement for an upcoming product, service, or event."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications."
+msgstr "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Focus**: To generate buzz and capture early interest."
+msgstr "**Focus**: To generate buzz and capture early interest."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible."
+msgstr "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access."
+msgstr "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Subscription Landing Page"
+msgstr "Subscription Landing Page"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product."
+msgstr "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers."
+msgstr "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Focus**: To secure a long-term commitment from the visitor."
+msgstr "**Focus**: To secure a long-term commitment from the visitor."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment."
+msgstr "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits."
+msgstr "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Conclusion"
+msgstr "Conclusion"
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success."
+msgstr "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success."
+
+#: src/data/post/en/mastering-landing-pages.md
+msgid "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement."
+msgstr "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement."
+
 #: src/data/pages/en/markdown.md
 msgid "Markdown Page"
 msgstr "Markdown Page"
@@ -3039,62 +3385,6 @@ msgstr "Let's dive into it. ⤵️"
 #: src/data/pages/en/markdown.md
 msgid "Table of Contents"
 msgstr "Table of Contents"
-
-#: src/data/pages/en/markdown.md
-msgid "[Paragraph](#paragraph)"
-msgstr "[Paragraph](#paragraph)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Headings](#headings)"
-msgstr "[Headings](#headings)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Emphasis](#emphasis)"
-msgstr "[Emphasis](#emphasis)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Blockquote](#blockquote)"
-msgstr "[Blockquote](#blockquote)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Images](#images)"
-msgstr "[Images](#images)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Links](#links)"
-msgstr "[Links](#links)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Code](#code)"
-msgstr "[Code](#code)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Lists](#lists)"
-msgstr "[Lists](#lists)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Table](#table)"
-msgstr "[Table](#table)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Task List](#tasklist)"
-msgstr "[Task List](#tasklist)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Footnote](#footnote)"
-msgstr "[Footnote](#footnote)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Jump to section](#sectionjump)"
-msgstr "[Jump to section](#sectionjump)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Horizontal Line](#horizontalline)"
-msgstr "[Horizontal Line](#horizontalline)"
-
-#: src/data/pages/en/markdown.md
-msgid "[HTML](#html)"
-msgstr "[HTML](#html)"
 
 #: src/data/pages/en/markdown.md
 msgid "Paragraph"
@@ -3193,8 +3483,8 @@ msgstr ""
 "Here is the syntax."
 
 #: src/data/pages/en/markdown.md
-msgid "![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png \"Text displayed on hover\")"
-msgstr "![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png \"Text displayed on hover\")"
+msgid "text if the image fails to load"
+msgstr "text if the image fails to load"
 
 #: src/data/pages/en/markdown.md
 msgid "Links"
@@ -3206,11 +3496,11 @@ msgstr "Similar to images, links can also be inserted directly or by creating a 
 
 #: src/data/pages/en/markdown.md
 msgid ""
-"[Like it so far? Follow me on GitHub](https://github.com/im-luka)  \n"
+"Like it so far? Follow me on GitHub  \n"
 "My Markdown Cheatsheet - star it if you like it  \n"
 "Find some great docs here"
 msgstr ""
-"[Like it so far? Follow me on GitHub](https://github.com/im-luka)  \n"
+"Like it so far? Follow me on GitHub  \n"
 "My Markdown Cheatsheet - star it if you like it  \n"
 "Find some great docs here"
 
@@ -3611,425 +3901,3 @@ msgstr "By continuing to access or use Our Service after those revisions become 
 #: src/data/pages/en/terms.md
 msgid "If you have any questions about these Terms and Conditions, You can contact us:"
 msgstr "If you have any questions about these Terms and Conditions, You can contact us:"
-
-#: src/data/pages/en/terms.md
-msgid "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
-msgstr "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
-
-#: src/data/pages/en/markdown.md
-msgid "text if the image fails to load"
-msgstr "text if the image fails to load"
-
-#: src/data/pages/en/markdown.md
-msgid ""
-"Like it so far? Follow me on GitHub  \n"
-"My Markdown Cheatsheet - star it if you like it  \n"
-"Find some great docs here"
-msgstr ""
-"Like it so far? Follow me on GitHub  \n"
-"My Markdown Cheatsheet - star it if you like it  \n"
-"Find some great docs here"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_5__"
-msgstr "__W_MSG_5__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_7__"
-msgstr "__W_MSG_7__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_9__"
-msgstr "__W_MSG_9__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_11__"
-msgstr "__W_MSG_11__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_13__"
-msgstr "__W_MSG_13__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_15__"
-msgstr "__W_MSG_15__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_17__"
-msgstr "__W_MSG_17__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_19__"
-msgstr "__W_MSG_19__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_21__"
-msgstr "__W_MSG_21__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_23__"
-msgstr "__W_MSG_23__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_25__"
-msgstr "__W_MSG_25__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_27__"
-msgstr "__W_MSG_27__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_29__"
-msgstr "__W_MSG_29__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_31__"
-msgstr "__W_MSG_31__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_33__"
-msgstr "__W_MSG_33__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_35__"
-msgstr "__W_MSG_35__"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_37__"
-msgstr "__W_MSG_37__"
-
-#: src/data/snippets/personal/hero-subtitle.md
-msgid "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities."
-msgstr "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities."
-
-#: src/data/snippets/personal/about-content.md
-msgid "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
-msgstr "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
-
-#: src/data/snippets/personal/about-content.md
-msgid "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
-msgstr "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Mastering Landing Pages: Practical Guide for 2023"
-msgstr "Mastering Landing Pages: Practical Guide for 2023"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!"
-msgstr "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them."
-msgstr "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Landing Pages Unveiled"
-msgstr "Landing Pages Unveiled"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad."
-msgstr "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer."
-msgstr "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "The Power of Precision"
-msgstr "The Power of Precision"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience."
-msgstr "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Target"
-msgstr "Target"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward."
-msgstr "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Why Landing Pages Matter"
-msgstr "Why Landing Pages Matter"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:"
-msgstr "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Guide Traffic**: Directing visitors seamlessly through the sales funnel."
-msgstr "**Guide Traffic**: Directing visitors seamlessly through the sales funnel."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Boost ROI**: Maximizing returns on marketing investments."
-msgstr "**Boost ROI**: Maximizing returns on marketing investments."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Personalize User Experience**: Tailoring content to specific audience segments."
-msgstr "**Personalize User Experience**: Tailoring content to specific audience segments."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with."
-msgstr "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Crafting the Perfect Landing Page"
-msgstr "Crafting the Perfect Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:"
-msgstr "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition."
-msgstr "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Engaging Imagery**: Visuals that complement and enhance the content."
-msgstr "**Engaging Imagery**: Visuals that complement and enhance the content."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs."
-msgstr "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action."
-msgstr "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind."
-msgstr "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility."
-msgstr "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up."
-msgstr "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Homepage vs. Landing Page"
-msgstr "Homepage vs. Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "While both are pivotal, they serve distinct roles:"
-msgstr "While both are pivotal, they serve distinct roles:"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents."
-msgstr "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading."
-msgstr "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\""
-msgstr "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\""
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "The Art of Optimization"
-msgstr "The Art of Optimization"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results."
-msgstr "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns."
-msgstr "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Landing Pages in Action"
-msgstr "Landing Pages in Action"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them."
-msgstr "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide."
-msgstr "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type."
-msgstr "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Lead Generation Landing Page"
-msgstr "Lead Generation Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details."
-msgstr "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial."
-msgstr "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return."
-msgstr "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data."
-msgstr "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details."
-msgstr "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Long-form Sales Landing Page"
-msgstr "Long-form Sales Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers."
-msgstr "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses."
-msgstr "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor."
-msgstr "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page."
-msgstr "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others."
-msgstr "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Click-through Landing Page"
-msgstr "Click-through Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment."
-msgstr "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page."
-msgstr "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form."
-msgstr "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action."
-msgstr "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page."
-msgstr "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Product Details Landing Page"
-msgstr "Product Details Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Designed to inform by providing specific details about a product or service."
-msgstr "**Purpose**: Designed to inform by providing specific details about a product or service."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews."
-msgstr "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: Presents the product or service transparently and attractively."
-msgstr "**Focus**: Presents the product or service transparently and attractively."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner."
-msgstr "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews."
-msgstr "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Coming Soon or Pre-Launch Landing Page"
-msgstr "Coming Soon or Pre-Launch Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Creates excitement for an upcoming product, service, or event."
-msgstr "**Purpose**: Creates excitement for an upcoming product, service, or event."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications."
-msgstr "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: To generate buzz and capture early interest."
-msgstr "**Focus**: To generate buzz and capture early interest."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible."
-msgstr "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access."
-msgstr "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Subscription Landing Page"
-msgstr "Subscription Landing Page"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product."
-msgstr "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers."
-msgstr "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: To secure a long-term commitment from the visitor."
-msgstr "**Focus**: To secure a long-term commitment from the visitor."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment."
-msgstr "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits."
-msgstr "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Conclusion"
-msgstr "Conclusion"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success."
-msgstr "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement."
-msgstr "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement."
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "AstroWind template in depth"
-msgstr "AstroWind template in depth"
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "While easy to get started, Astrowind is quite complex internally.  This page provides documentation on some of the more intricate parts."
-msgstr "While easy to get started, Astrowind is quite complex internally.  This page provides documentation on some of the more intricate parts."
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "Documentation"
-msgstr "Documentation"
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "Mauris velit laoreet vitae cursus augue"
-msgstr "Mauris velit laoreet vitae cursus augue"
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "Some text here"
-msgstr "Some text here"

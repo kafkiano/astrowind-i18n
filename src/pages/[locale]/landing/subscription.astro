@@ -8,19 +8,14 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
-// @wc-ignore
 export const navigation = {
   title: 'Subscription Landing',
   group: 'Landing',
   showIn: 'all',
 };
-
-const metadata = {
-  title: 'Subscription Landing Page Demo',
-};
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={navigation}>
   <!-- Hero2 Widget ******************* -->
 
   <Hero2

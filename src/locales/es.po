@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15T01:41:48.515Z\n"
-"PO-Revision-Date: 2026-05-15T01:41:48.515Z\n"
+"POT-Creation-Date: 2026-05-15T17:14:14.181Z\n"
+"PO-Revision-Date: 2026-05-15T17:14:14.181Z\n"
 "Last-Translator: \n"
 "Language: es\n"
 "Language-Team: \n"
@@ -117,6 +117,7 @@ msgid "RSS Feed"
 msgstr "Canal RSS"
 
 #: src/pages/[locale]/about.astro
+#: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "About us"
 msgstr "Sobre nosotros"
@@ -189,6 +190,9 @@ msgstr "Comercio Electrónico"
 msgid "Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien."
 msgstr "La dedicación y el compromiso son la base de nuestro trabajo diario, buscando siempre la satisfacción total en cada uno de los proyectos que emprendemos."
 
+#: src/pages/[locale]/[...blog]/[...page].astro
+#: src/pages/[locale]/[...blog]/[category]/[...page].astro
+#: src/pages/[locale]/[...blog]/[tag]/[...page].astro
 #: src/pages/[locale]/about.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/services.astro
@@ -236,6 +240,7 @@ msgid "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit 
 msgstr "Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus."
 
 #: src/pages/[locale]/about.astro
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/index.astro
@@ -354,6 +359,7 @@ msgid "Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitas
 msgstr "Mauris faucibus finibus orci, en posuere elit viverra no. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue."
 
 #: src/pages/[locale]/contact.astro
+#: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/index.astro
 msgid "Contact"
 msgstr "Contacto"
@@ -374,6 +380,7 @@ msgstr "Para obtener respuestas más rápidas, explora nuestra sección de pregu
 msgid "Name"
 msgstr "Nombre"
 
+#: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/contact.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Email"
@@ -433,6 +440,7 @@ msgid "AstroWind — Free template for creating websites with Astro + Tailwind C
 msgstr "AstroWind — Plantilla gratuita para crear sitios web con Astro + Tailwind CSS"
 
 #: src/pages/[locale]/index.astro
+#: src/pages/[locale]/index.astro
 msgid "Get template"
 msgstr "Obtener plantilla"
 
@@ -464,6 +472,7 @@ msgid "Simplicity, Best Practices and High Performance"
 msgstr "Simplicidad, mejores prácticas y alto rendimiento"
 
 #: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/index.astro
 #: src/pages/[locale]/index.astro
 msgid "Features"
 msgstr "Características"
@@ -716,6 +725,7 @@ msgstr "¿Ese amigo entusiasta que siempre te insta a \"¡Hazlo! ¡Hazlo!\"? Sí
 
 #: src/pages/[locale]/index.astro
 #: src/pages/[locale]/pricing.astro
+#: src/pages/[locale]/pricing.astro
 msgid "Pricing"
 msgstr "Precios"
 
@@ -746,18 +756,6 @@ msgstr "El pie de página es como los créditos de una película pero salpicado 
 #: src/pages/[locale]/index.astro
 msgid "Find out more content in our Blog"
 msgstr "Encuentra más contenido en nuestro Blog"
-
-#: src/pages/[locale]/index.astro
-msgid ""
-"The blog is used to display AstroWind documentation.\n"
-"Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
-"Astro is a very interesting technology. Thanks.\n"
-""
-msgstr ""
-"El blog se utiliza para mostrar la documentación de AstroWind.\n"
-"Cada nuevo artículo será un paso importante que deberás conocer para ser un experto en la creación de un sitio web utilizando Astro + Tailwind CSS.\n"
-"Astro es una tecnología muy interesante. Gracias.\n"
-""
 
 #: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/startup.astro
@@ -875,6 +873,8 @@ msgid "In hac habitasse"
 msgstr "En hac habitasse"
 
 #: src/pages/[locale]/pricing.astro
+#: src/pages/[locale]/pricing.astro
+#: src/pages/[locale]/pricing.astro
 msgid "Get started"
 msgstr "Empezar"
 
@@ -882,6 +882,7 @@ msgstr "Empezar"
 msgid "Optimal choice for small teams"
 msgstr "Opción óptima para equipos pequeños"
 
+#: src/pages/[locale]/pricing.astro
 #: src/pages/[locale]/pricing.astro
 msgid "Per Month"
 msgstr "Al mes"
@@ -1072,6 +1073,7 @@ msgstr "Empezar ahora"
 
 #: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/services.astro
+#: src/pages/[locale]/services.astro
 msgid "Services"
 msgstr "Servicios"
 
@@ -1083,6 +1085,7 @@ msgstr "Eleva tus proyectos con nuestras impresionantes plantillas"
 msgid "Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
 msgstr "Explora nuestras plantillas meticulosamente diseñadas y adaptadas a diversas industrias y propósitos. Desde presentaciones cautivadoras hasta diseños de sitios web funcionales, ofrecemos las herramientas que necesitas para triunfar."
 
+#: src/pages/[locale]/services.astro
 #: src/pages/[locale]/services.astro
 msgid "Start exploring"
 msgstr "Empezar a explorar"
@@ -1284,9 +1287,11 @@ msgid "Mobile App Web Demo"
 msgstr "Demostración web de la aplicación móvil"
 
 #: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/homes/mobile-app.astro
 msgid "App Store Image"
 msgstr "Imagen de App Store"
 
+#: src/pages/[locale]/homes/mobile-app.astro
 #: src/pages/[locale]/homes/mobile-app.astro
 msgid "Google Play Image"
 msgstr "Imagen de Google Play"
@@ -1525,6 +1530,8 @@ msgid "Personal Web Demo"
 msgstr "Demo web personal"
 
 #: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
 msgid "Hire me"
 msgstr "Contrátame"
 
@@ -1661,6 +1668,11 @@ msgid "Embark on a design journey that surpasses pixels, entering a realm of ima
 msgstr "Embárcate en un viaje de diseño que trasciende los píxeles, entrando en un reino de imaginación. Explora mi portafolio, donde la pasión y la creatividad convergen para dar forma a narrativas visuales cautivadoras."
 
 #: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
 #: src/pages/[locale]/homes/saas.astro
 msgid "Description:"
 msgstr "Descripción:"
@@ -1669,6 +1681,8 @@ msgstr "Descripción:"
 msgid "Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts."
 msgstr "Desarrollé una identidad de marca integral para una startup tecnológica, Tech Innovators, especializada en innovaciones disruptivas. El objetivo era transmitir una imagen moderna pero accesible que resonara tanto con clientes corporativos como con entusiastas de la tecnología."
 
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Role:"
 msgstr "Rol:"
@@ -1681,6 +1695,8 @@ msgstr "Lideré todo el proceso de branding, desde el concepto hasta la ejecuci�
 msgid "Tech Design Image"
 msgstr "Imagen de diseño tecnológico"
 
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/personal.astro
 #: src/pages/[locale]/homes/personal.astro
 msgid "Go to the project"
 msgstr "Ir al proyecto"
@@ -1898,6 +1914,9 @@ msgid "Are you a startup with big dreams? AstroWind propels your success. Our te
 msgstr "¿Eres una startup con grandes sueños? AstroWind impulsa tu éxito. Nuestra plantilla forja una presencia en línea fluida, atrayendo inversores y clientes desde el primer día. Astro 5.0 y Tailwind CSS garantizan sitios impactantes y adaptables, dejando impresiones duraderas. Innumerables startups aprovechan AstroWind para iniciar su camino y conectar con sus audiencias."
 
 #: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/saas.astro
 msgid "Benefits:"
 msgstr "Beneficios:"
 
@@ -2037,6 +2056,7 @@ msgstr "Explora nuestra colección de artículos, guías y tutoriales sobre desa
 msgid "Startup Web Demo"
 msgstr "Demostración web para startups"
 
+#: src/pages/[locale]/homes/startup.astro
 #: src/pages/[locale]/homes/startup.astro
 msgid "Get templates"
 msgstr "Obtener plantillas"
@@ -2254,16 +2274,13 @@ msgid "Chat with sales"
 msgstr "Chat con ventas"
 
 #: src/pages/[locale]/homes/startup.astro
+#: src/pages/[locale]/homes/startup.astro
 msgid "Start chatting"
 msgstr "Empezar chat"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Chat with support"
 msgstr "Chat con soporte"
-
-#: src/pages/[locale]/landing/click-through.astro
-msgid "Click-through Landing Page Demo"
-msgstr "Demo de página de destino de clic"
 
 #: src/pages/[locale]/landing/click-through.astro
 msgid "Click-through Demo"
@@ -2318,10 +2335,6 @@ msgid "Download Template"
 msgstr "Descargar plantilla"
 
 #: src/pages/[locale]/landing/lead-generation.astro
-msgid "Lead Generation Landing Page Demo"
-msgstr "Demo de página de destino de generación de leads"
-
-#: src/pages/[locale]/landing/lead-generation.astro
 msgid "Lead Generation Landing Demo"
 msgstr "Demo de generación de leads"
 
@@ -2354,10 +2367,6 @@ msgid "Store with a Coming Soon sign. Pre-launch Landing Page"
 msgstr "Tienda con un cartel de Próximamente. Página de destino de prelanzamiento"
 
 #: src/pages/[locale]/landing/product.astro
-msgid "Product Details Landing Page Demo"
-msgstr "Demo de página de destino de detalles del producto"
-
-#: src/pages/[locale]/landing/product.astro
 msgid "Product Details Demo"
 msgstr "Demo de detalles del producto"
 
@@ -2374,10 +2383,6 @@ msgid "A spotlight on a product. Product Details Landing Page Demo"
 msgstr "Un foco sobre un producto. Demo de página de destino de detalles del producto"
 
 #: src/pages/[locale]/landing/sales.astro
-msgid "Sales Landing Page Demo"
-msgstr "Demo de página de destino de ventas"
-
-#: src/pages/[locale]/landing/sales.astro
 msgid "Long-form Sales Demo"
 msgstr "Demo de ventas de formato largo"
 
@@ -2392,10 +2397,6 @@ msgstr "Sumérgete en la creación de una página de destino que narra, persuade
 #: src/pages/[locale]/landing/sales.astro
 msgid "Children telling a story. Long-form Sales Landing Page demo"
 msgstr "Niños contando una historia. Demo de página de destino de ventas de formato largo"
-
-#: src/pages/[locale]/landing/subscription.astro
-msgid "Subscription Landing Page Demo"
-msgstr "Demo de página de destino de suscripción"
 
 #: src/pages/[locale]/landing/subscription.astro
 msgid "Subscription Landing Demo"
@@ -2428,16 +2429,6 @@ msgstr "Etiqueta: {0}"
 #: src/pages/[locale]/about.astro
 msgid "Elevate your online presence with our <0/> <1>Beautiful Website Templates</1>"
 msgstr "Eleva tu presencia online con nuestras <0/> <1>hermosas plantillas de sitios web</1>"
-
-#: src/pages/[locale]/about.astro
-msgid ""
-"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
-msgstr ""
-"Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec\n"
-"quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.\n"
-"Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
 
 #: src/pages/[locale]/index.astro
 msgid "Free template for <0>creating websites with</0> <1>Astro 5.0</1> + Tailwind CSS"
@@ -2507,28 +2498,12 @@ msgid "Improve <0>the online presence of</0> your <1>Startup</1> with Astrowind 
 msgstr "Mejora <0>la presencia online de</0> tu <1>Startup</1> con las plantillas de Astrowind"
 
 #: src/pages/[locale]/homes/startup.astro
-msgid ""
-"Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your\n"
-"startup's digital footprint, fostering credibility, and expanding your reach."
-msgstr ""
-"Entra en el centro de atención con las plantillas de <0>Astrowind</0>, tu camino para fortalecer la\n"
-"huella digital de tu startup, fomentar la credibilidad y expandir tu alcance."
-
-#: src/pages/[locale]/homes/startup.astro
 msgid "Astro just Launched.... Could it be the ultimate web framework?"
 msgstr "Astro acaba de lanzarse.... ¿Podría ser el framework web definitivo?"
 
 #: src/pages/[locale]/homes/startup.astro
 msgid "Be a part of our vision"
 msgstr "Sé parte de nuestra visión"
-
-#: src/pages/[locale]/homes/startup.astro
-msgid ""
-"Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful\n"
-"impact."
-msgstr ""
-"Descubre un entorno de trabajo dinámico, oportunidades de crecimiento sin igual y la posibilidad de causar un\n"
-"impacto significativo."
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Home"
@@ -2545,40 +2520,6 @@ msgstr "Portafolio"
 #: src/pages/[locale]/homes/personal.astro
 msgid "Github"
 msgstr "Github"
-
-#: src/pages/[locale]/homes/personal.astro
-msgid ""
-"I'm a Graphic Designer passionate about crafting visual stories. <0/> With 5 years of experience and a degree from\n"
-"New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating\n"
-"realities."
-msgstr ""
-"Soy un Diseñador Gráfico apasionado por crear historias visuales. <0/> Con 5 años de experiencia y un título de la\n"
-"Escuela de Diseño de la Universidad de Nueva York. Infundo vitalidad en marcas y diseños, transformando conceptos en\n"
-"realidades cautivadoras."
-
-#: src/data/snippets/personal/about-content.md
-msgid "About me"
-msgstr "Sobre mí"
-
-#: src/pages/[locale]/homes/personal.astro
-msgid ""
-"Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each\n"
-"pixel becomes a brushstroke in the canvas of imagination."
-msgstr ""
-"Bienvenidos a mi viaje creativo. Mi trabajo es un testimonio de mi compromiso de dar vida a las ideas, donde cada\n"
-"píxel se convierte en una pincelada en el lienzo de la imaginación."
-
-#: src/pages/[locale]/homes/personal.astro
-msgid ""
-"I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate\n"
-"details of typography, or the vibrant hues of nature during my outdoor escapades."
-msgstr ""
-"Encuentro inspiración en el mundo que me rodea, ya sea a través de las páginas de una novela cautivadora, los\n"
-"detalles intrincados de la tipografía o los tonos vibrantes de la naturaleza durante mis escapadas al aire libre."
-
-#: src/data/snippets/personal/about-content.md
-msgid "If you're curious to dive deeper into my work, you can follow me:"
-msgstr "Si tienes curiosidad por profundizar en mi trabajo, puedes seguirme:"
 
 #: src/pages/[locale]/homes/personal.astro
 msgid "Project 1: <0/><1>Brand identity for tech innovators</1>"
@@ -2608,14 +2549,6 @@ msgstr "Diseñado para fomentar el crecimiento y el éxito."
 msgid "Astro&nbsp;+&nbsp;<0/><1>Tailwind CSS</1>"
 msgstr "Astro&nbsp;+&nbsp;<0/><1>Tailwind CSS</1>"
 
-#: src/pages/[locale]/index.astro
-msgid ""
-"Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't\n"
-"waste more time! :P"
-msgstr ""
-"Sorpréndete con estas enormes cifras falsas que estás viendo en esta página. <0/>¡No\n"
-"pierdas más tiempo! :P"
-
 #: src/pages/[locale]/services.astro
 msgid "Benefits"
 msgstr "Beneficios"
@@ -2624,123 +2557,218 @@ msgstr "Beneficios"
 msgid "Change language"
 msgstr "Cambiar idioma"
 
-#: src/pages/[locale]/landing/pre-launch.astro
-msgid "Pre-Launch Landing Page Demo"
-msgstr "Demostración de página de aterrizaje de prelanzamiento"
+#: src/pages/[locale]/about.astro
+#: src/pages/[locale]/contact.astro
+msgid "Company"
+msgstr "Empresa"
+
+#: src/pages/[locale]/about.astro
+msgid "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus. Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+msgstr "Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus. Suspendisse vitae nisi eget tortor luctus maximus sed non lectus."
+
+#: src/pages/[locale]/index.astro
+msgid "<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
+msgstr "<0><0>AstroWind</0> es una plantilla gratuita, personalizable y lista para producción para Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Lista para producción.</1> Adecuada para Startups, Pequeñas Empresas, sitios web SaaS, Portafolios Profesionales, sitios web de Marketing, Páginas de Aterrizaje y Blogs."
 
 #: src/pages/[locale]/index.astro
 msgid ""
-"<0><0>AstroWind</0> is a free, customizable and production-ready template for Astro 5.0 +\n"
-"Tailwind CSS.</0> <1>AstroWind: Production-ready.</1> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs."
-msgstr "<0><0>AstroWind</0> es una plantilla gratuita, personalizable y lista para producción para Astro 5.0 + Tailwind CSS.</0> <1>AstroWind: Lista para producción.</1> Adecuada para Startups, Pequeñas Empresas, sitios web SaaS, Portafolios Profesionales, sitios web de Marketing, Landing Pages y Blogs."
+"The blog is used to display AstroWind documentation.\n"
+"                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.\n"
+"                        Astro is a very interesting technology. Thanks.\n"
+"                "
+msgstr ""
+"El blog se utiliza para mostrar la documentación de AstroWind.\n"
+"                        Cada nuevo artículo será un paso importante que deberás conocer para ser un experto en la creación de un sitio web usando Astro + Tailwind CSS.\n"
+"                        Astro es una tecnología muy interesante. Gracias.\n"
+"                "
+
+#: src/pages/[locale]/index.astro
+msgid "Be very surprised by these huge fake numbers you are seeing on this page. <0/>Don't waste more time! :P"
+msgstr "Sorpréndete mucho con estos enormes números falsos que estás viendo en esta página. <0/>¡No pierdas más el tiempo! :P"
+
+#: src/pages/[locale]/[...blog]/[...page].astro
+msgid "List"
+msgstr "Lista"
+
+#: src/pages/[locale]/homes/mobile-app.astro
+msgid "Mobile App Homepage"
+msgstr "Página de inicio de aplicación móvil"
+
+#: src/pages/[locale]/homes/mobile-app.astro
+#: src/pages/[locale]/homes/personal.astro
+#: src/pages/[locale]/homes/saas.astro
+#: src/pages/[locale]/homes/startup.astro
+msgid "Homes"
+msgstr "Inicio"
+
+#: src/pages/[locale]/homes/personal.astro
+msgid "Personal Homepage"
+msgstr "Página de inicio personal"
+
+#: src/pages/[locale]/homes/saas.astro
+msgid "SaaS Homepage"
+msgstr "Página de inicio SaaS"
+
+#: src/pages/[locale]/homes/startup.astro
+msgid "Startup Homepage"
+msgstr "Página de inicio de Startup"
+
+#: src/pages/[locale]/homes/startup.astro
+msgid "Step into the spotlight with <0>Astrowind</0> templates, your pathway to fortifying your startup's digital footprint, fostering credibility, and expanding your reach."
+msgstr "Destaca con las plantillas de <0>Astrowind</0>, tu camino para fortalecer la huella digital de tu startup, fomentar la credibilidad y expandir tu alcance."
+
+#: src/pages/[locale]/homes/startup.astro
+msgid "Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful impact."
+msgstr "Descubre un entorno de trabajo dinámico, oportunidades de crecimiento inigualables y la posibilidad de generar un impacto significativo."
+
+#: src/pages/[locale]/landing/click-through.astro
+msgid "Click-through Landing"
+msgstr "Página de destino de clic"
+
+#: src/pages/[locale]/landing/click-through.astro
+#: src/pages/[locale]/landing/lead-generation.astro
+#: src/pages/[locale]/landing/pre-launch.astro
+#: src/pages/[locale]/landing/product.astro
+#: src/pages/[locale]/landing/sales.astro
+#: src/pages/[locale]/landing/subscription.astro
+msgid "Landing"
+msgstr "Página de destino"
+
+#: src/pages/[locale]/landing/lead-generation.astro
+msgid "Lead Generation"
+msgstr "Generación de Leads"
+
+#: src/pages/[locale]/landing/pre-launch.astro
+msgid "Pre-Launch"
+msgstr "Pre-lanzamiento"
+
+#: src/pages/[locale]/landing/product.astro
+msgid "Product Details"
+msgstr "Detalles del producto"
+
+#: src/pages/[locale]/landing/sales.astro
+msgid "Sales Landing"
+msgstr "Página de destino de ventas"
+
+#: src/pages/[locale]/landing/subscription.astro
+msgid "Subscription Landing"
+msgstr "Página de destino de suscripción"
+
+#: src/pages/[locale]/[...blog]/[category]/[...page].astro
+msgid "Categories"
+msgstr "Categorías"
+
+#: src/pages/[locale]/[...blog]/[tag]/[...page].astro
+msgid "Tags"
+msgstr "Etiquetas"
 
 #: src/data/pages/en/privacy.md
 msgid "Privacy Policy"
-msgstr "Política de privacidad"
+msgstr "Política de Privacidad"
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "*Last updated*: January 06, 2023"
 msgstr "*Última actualización*: 06 de enero de 2023"
 
 #: src/data/pages/en/privacy.md
 msgid "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You."
-msgstr "Esta Política de privacidad describe Nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de Su información cuando utiliza el Servicio y le informa sobre Sus derechos de privacidad y cómo la ley lo protege."
+msgstr "Esta Política de Privacidad describe Nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de Su información cuando utiliza el Servicio y le informa sobre Sus derechos de privacidad y cómo la ley lo protege."
 
 #: src/data/pages/en/privacy.md
 msgid "We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy is just a Demo."
-msgstr "Utilizamos Sus datos personales para proporcionar y mejorar el Servicio. Al utilizar el Servicio, Usted acepta la recopilación y el uso de información de acuerdo con esta Política de privacidad. Esta Política de privacidad es solo una demostración."
+msgstr "Utilizamos Sus datos personales para proporcionar y mejorar el Servicio. Al utilizar el Servicio, Usted acepta la recopilación y el uso de información de acuerdo con esta Política de Privacidad. Esta Política de Privacidad es solo una demostración."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "Interpretation and Definitions"
-msgstr "Interpretación y definiciones"
+msgstr "Interpretación y Definiciones"
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "Interpretation"
 msgstr "Interpretación"
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural."
 msgstr "Las palabras cuya letra inicial está en mayúscula tienen significados definidos bajo las siguientes condiciones. Las siguientes definiciones tendrán el mismo significado independientemente de si aparecen en singular o en plural."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "Definitions"
 msgstr "Definiciones"
 
 #: src/data/pages/en/privacy.md
 msgid "For the purposes of this Privacy Policy:"
-msgstr "Para los fines de esta Política de privacidad:"
+msgstr "Para los fines de esta Política de Privacidad:"
 
 #: src/data/pages/en/privacy.md
 msgid "**Account** means a unique account created for You to access our Service or parts of our Service."
 msgstr "**Cuenta** significa una cuenta única creada para que Usted acceda a nuestro Servicio o partes de nuestro Servicio."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "**Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014."
 msgstr "**Compañía** (referida como \"la Compañía\", \"Nosotros\" o \"Nuestro\" en este Acuerdo) se refiere a AstroWind LLC, 1 Cupertino, CA 95014."
 
 #: src/data/pages/en/privacy.md
 msgid "**Cookies** are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses."
-msgstr "**Cookies** son pequeños archivos que un sitio web coloca en Su computadora, dispositivo móvil o cualquier otro dispositivo, que contienen los detalles de Su historial de navegación en ese sitio web entre sus muchos usos."
+msgstr "**Cookies** son pequeños archivos que un sitio web coloca en Su computadora, dispositivo móvil o cualquier otro dispositivo, conteniendo los detalles de Su historial de navegación en ese sitio web entre sus muchos usos."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "**Country** refers to: California, United States"
 msgstr "**País** se refiere a: California, Estados Unidos"
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "**Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet."
-msgstr "**Dispositivo** significa cualquier dispositivo que puede acceder al Servicio, como una computadora, un teléfono móvil o una tableta digital."
+msgstr "**Dispositivo** significa cualquier dispositivo que pueda acceder al Servicio, como una computadora, un teléfono móvil o una tableta digital."
 
 #: src/data/pages/en/privacy.md
 msgid "**Personal Data** is any information that relates to an identified or identifiable individual."
-msgstr "**Datos personales** es cualquier información que se relaciona con un individuo identificado o identificable."
+msgstr "**Datos Personales** es cualquier información que se relacione con un individuo identificado o identificable."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "**Service** refers to the Website."
 msgstr "**Servicio** se refiere al Sitio web."
 
 #: src/data/pages/en/privacy.md
 msgid "**Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used."
-msgstr "**Proveedor de servicios** significa cualquier persona natural o jurídica que procesa los datos en nombre de la Compañía. Se refiere a empresas o individuos de terceros empleados por la Compañía para facilitar el Servicio, para proporcionar el Servicio en nombre de la Compañía, para realizar servicios relacionados con el Servicio o para ayudar a la Compañía a analizar cómo se utiliza el Servicio."
+msgstr "**Proveedor de Servicios** significa cualquier persona natural o jurídica que procese los datos en nombre de la Compañía. Se refiere a empresas o individuos de terceros empleados por la Compañía para facilitar el Servicio, para proporcionar el Servicio en nombre de la Compañía, para realizar servicios relacionados con el Servicio o para ayudar a la Compañía a analizar cómo se utiliza el Servicio."
 
 #: src/data/pages/en/privacy.md
 msgid "**Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit)."
-msgstr "**Datos de uso** se refiere a los datos recopilados automáticamente, ya sea generados por el uso del Servicio o de la propia infraestructura del Servicio (por ejemplo, la duración de una visita a la página)."
+msgstr "**Datos de Uso** se refiere a datos recopilados automáticamente, ya sea generados por el uso del Servicio o de la propia infraestructura del Servicio (por ejemplo, la duración de una visita a la página)."
 
 #: src/data/pages/en/terms.md
-msgid "**Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)"
-msgstr "**Sitio web** se refiere a AstroWind, accesible desde [https://astrowind.vercel.app](https://astrowind.vercel.app)"
+msgid "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
+msgstr "**Sitio web** se refiere a AstroWind, accesible desde https://astrowind.vercel.app"
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "**You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable."
-msgstr "**Usted** significa el individuo que accede o utiliza el Servicio, o la compañía, u otra entidad legal en nombre de la cual dicho individuo accede o utiliza el Servicio, según corresponda."
+msgstr "**Usted** significa el individuo que accede o utiliza el Servicio, o la empresa u otra entidad legal en nombre de la cual dicho individuo accede o utiliza el Servicio, según corresponda."
 
 #: src/data/pages/en/privacy.md
 msgid "Collecting and Using Your Personal Data"
-msgstr "Recopilación y uso de sus datos personales"
+msgstr "Recopilación y Uso de Sus Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "Types of Data Collected"
-msgstr "Tipos de datos recopilados"
+msgstr "Tipos de Datos Recopilados"
 
 #: src/data/pages/en/privacy.md
 msgid "Personal Data"
-msgstr "Datos personales"
+msgstr "Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:"
-msgstr "Al utilizar Nuestro Servicio, podemos solicitarle que Nos proporcione cierta información de identificación personal que se puede utilizar para contactarlo o identificarlo. La información de identificación personal puede incluir, entre otros:"
+msgstr "Mientras utiliza Nuestro Servicio, podemos solicitarle que Nos proporcione cierta información de identificación personal que puede utilizarse para contactarlo o identificarlo. La información de identificación personal puede incluir, entre otros:"
 
 #: src/data/pages/en/privacy.md
 msgid "Usage Data"
-msgstr "Datos de uso"
+msgstr "Datos de Uso"
 
 #: src/data/pages/en/privacy.md
 msgid "Usage Data is collected automatically when using the Service."
-msgstr "Los datos de uso se recopilan automáticamente al utilizar el Servicio."
+msgstr "Los Datos de Uso se recopilan automáticamente al utilizar el Servicio."
 
 #: src/data/pages/en/privacy.md
 msgid "Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data."
-msgstr "Los datos de uso pueden incluir información como la dirección de Protocolo de Internet de Su Dispositivo (por ejemplo, dirección IP), tipo de navegador, versión del navegador, las páginas de nuestro Servicio que visita, la hora y fecha de Su visita, el tiempo que pasó en esas páginas, identificadores únicos de dispositivo y otros datos de diagnóstico."
+msgstr "Los Datos de Uso pueden incluir información como la dirección de Protocolo de Internet de Su Dispositivo (por ejemplo, dirección IP), tipo de navegador, versión del navegador, las páginas de nuestro Servicio que visita, la hora y fecha de Su visita, el tiempo que pasó en esas páginas, identificadores únicos de dispositivo y otros datos de diagnóstico."
 
 #: src/data/pages/en/privacy.md
 msgid "When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data."
@@ -2752,7 +2780,7 @@ msgstr "También podemos recopilar información que Su navegador envía cada vez
 
 #: src/data/pages/en/privacy.md
 msgid "Tracking Technologies and Cookies"
-msgstr "Tecnologías de seguimiento y Cookies"
+msgstr "Tecnologías de Seguimiento y Cookies"
 
 #: src/data/pages/en/privacy.md
 msgid "We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:"
@@ -2760,71 +2788,71 @@ msgstr "Utilizamos Cookies y tecnologías de seguimiento similares para rastrear
 
 #: src/data/pages/en/privacy.md
 msgid "**Cookies or Browser Cookies.** A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies."
-msgstr "**Cookies o Cookies del navegador.** Una cookie es un pequeño archivo colocado en Su Dispositivo. Puede indicar a Su navegador que rechace todas las Cookies o que indique cuándo se está enviando una Cookie. Sin embargo, si no acepta las Cookies, es posible que no pueda utilizar algunas partes de nuestro Servicio. A menos que haya ajustado la configuración de Su navegador para que rechace las Cookies, nuestro Servicio puede utilizar Cookies."
+msgstr "**Cookies o Cookies del Navegador.** Una cookie es un pequeño archivo colocado en Su Dispositivo. Puede instruir a Su navegador para que rechace todas las Cookies o para que indique cuándo se está enviando una Cookie. Sin embargo, si no acepta las Cookies, es posible que no pueda utilizar algunas partes de nuestro Servicio. A menos que haya ajustado la configuración de Su navegador para que rechace las Cookies, nuestro Servicio puede utilizar Cookies."
 
 #: src/data/pages/en/privacy.md
 msgid "**Web Beacons.** Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity)."
-msgstr "**Balizas web.** Ciertas secciones de nuestro Servicio y nuestros correos electrónicos pueden contener pequeños archivos electrónicos conocidos como balizas web (también denominadas gifs transparentes, etiquetas de píxeles y gifs de un solo píxel) que permiten a la Compañía, por ejemplo, contar los usuarios que han visitado esas páginas o abierto un correo electrónico y para otras estadísticas relacionadas con el sitio web (por ejemplo, registrar la popularidad de una sección determinada y verificar la integridad del sistema y del servidor)."
+msgstr "**Balizas web.** Ciertas secciones de nuestro Servicio y nuestros correos electrónicos pueden contener pequeños archivos electrónicos conocidos como balizas web (también denominados gifs transparentes, etiquetas de píxeles y gifs de un solo píxel) que permiten a la Compañía, por ejemplo, contar los usuarios que han visitado esas páginas o abierto un correo electrónico y para otras estadísticas relacionadas con el sitio web (por ejemplo, registrar la popularidad de una determinada sección y verificar la integridad del sistema y del servidor)."
 
 #: src/data/pages/en/privacy.md
 msgid "Cookies can be \"Persistent\" or \"Session\" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser."
-msgstr "Las Cookies pueden ser \"Persistentes\" o de \"Sesión\". Las Cookies persistentes permanecen en Su computadora personal o dispositivo móvil cuando se desconecta, mientras que las Cookies de sesión se eliminan tan pronto como cierra Su navegador web."
+msgstr "Las Cookies pueden ser \"Persistentes\" o de \"Sesión\". Las Cookies Persistentes permanecen en Su computadora personal o dispositivo móvil cuando se desconecta, mientras que las Cookies de Sesión se eliminan tan pronto como cierra Su navegador web."
 
 #: src/data/pages/en/privacy.md
 msgid "We use both Session and Persistent Cookies for the purposes set out below:"
-msgstr "Utilizamos Cookies de sesión y persistentes para los fines que se detallan a continuación:"
+msgstr "Utilizamos Cookies de Sesión y Persistentes para los fines que se detallan a continuación:"
 
 #: src/data/pages/en/privacy.md
 msgid "**Necessary / Essential Cookies**"
-msgstr "**Cookies necesarias / esenciales**"
+msgstr "**Cookies Necesarias / Esenciales**"
 
 #: src/data/pages/en/privacy.md
 msgid "**Cookies Policy / Notice Acceptance Cookies**"
-msgstr "**Cookies de política / aceptación de avisos de cookies**"
+msgstr "**Cookies de Política / Aceptación de Aviso de Cookies**"
 
 #: src/data/pages/en/privacy.md
 msgid "**Functionality Cookies**"
-msgstr "**Cookies de funcionalidad**"
+msgstr "**Cookies de Funcionalidad**"
 
 #: src/data/pages/en/privacy.md
 msgid "For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy."
-msgstr "Para obtener más información sobre las cookies que utilizamos y sus opciones con respecto a las cookies, visite nuestra Política de cookies o la sección de Cookies de nuestra Política de privacidad."
+msgstr "Para obtener más información sobre las cookies que utilizamos y sus opciones con respecto a las cookies, visite nuestra Política de Cookies o la sección de Cookies de nuestra Política de Privacidad."
 
 #: src/data/pages/en/privacy.md
 msgid "Use of Your Personal Data"
-msgstr "Uso de sus datos personales"
+msgstr "Uso de Sus Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "The Company may use Personal Data for the following purposes:"
-msgstr "La Compañía puede utilizar los Datos Personales para los siguientes propósitos:"
+msgstr "La Compañía puede utilizar los Datos Personales para los siguientes fines:"
 
 #: src/data/pages/en/privacy.md
 msgid "**To provide and maintain our Service**, including to monitor the usage of our Service."
-msgstr "**Para proporcionar y mantener nuestro Servicio**, incluyendo el monitoreo del uso de nuestro Servicio."
+msgstr "**Para proporcionar y mantener nuestro Servicio**, incluyendo monitorear el uso de nuestro Servicio."
 
 #: src/data/pages/en/privacy.md
 msgid "**To manage Your Account:** to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user."
-msgstr "**Para gestionar Su Cuenta:** para gestionar Su registro como usuario del Servicio. Los Datos Personales que Usted proporciona pueden darle acceso a diferentes funcionalidades del Servicio que están disponibles para Usted como usuario registrado."
+msgstr "**Para administrar Su Cuenta:** para administrar Su registro como usuario del Servicio. Los Datos Personales que proporcione pueden darle acceso a diferentes funcionalidades del Servicio que están disponibles para Usted como usuario registrado."
 
 #: src/data/pages/en/privacy.md
 msgid "**For the performance of a contract:** the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service."
-msgstr "**Para la ejecución de un contrato:** el desarrollo, cumplimiento y ejecución del contrato de compra de los productos, artículos o servicios que Usted ha adquirido o de cualquier otro contrato con Nosotros a través del Servicio."
+msgstr "**Para la ejecución de un contrato:** el desarrollo, cumplimiento y ejecución del contrato de compra de los productos, artículos o servicios que ha adquirido o de cualquier otro contrato con Nosotros a través del Servicio."
 
 #: src/data/pages/en/privacy.md
 msgid "**To contact You:** To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation."
-msgstr "**Para contactarle:** Para contactarle por correo electrónico, llamadas telefónicas, SMS u otras formas equivalentes de comunicación electrónica, como las notificaciones push de una aplicación móvil sobre actualizaciones o comunicaciones informativas relacionadas con las funcionalidades, productos o servicios contratados, incluidas las actualizaciones de seguridad, cuando sea necesario o razonable para su implementación."
+msgstr "**Para contactarlo:** Para contactarlo por correo electrónico, llamadas telefónicas, SMS u otras formas equivalentes de comunicación electrónica, como notificaciones push de una aplicación móvil con respecto a actualizaciones o comunicaciones informativas relacionadas con las funcionalidades, productos o servicios contratados, incluyendo las actualizaciones de seguridad, cuando sea necesario o razonable para su implementación."
 
 #: src/data/pages/en/privacy.md
 msgid "**To provide You** with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information."
-msgstr "**Para proporcionarle** noticias, ofertas especiales e información general sobre otros bienes, servicios y eventos que ofrecemos y que son similares a los que ya ha comprado o sobre los que ha preguntado, a menos que haya optado por no recibir dicha información."
+msgstr "**Para proporcionarle** noticias, ofertas especiales e información general sobre otros bienes, servicios y eventos que ofrecemos que son similares a los que ya ha comprado o sobre los que ha consultado, a menos que haya optado por no recibir dicha información."
 
 #: src/data/pages/en/privacy.md
 msgid "**To manage Your requests:** To attend and manage Your requests to Us."
-msgstr "**Para gestionar Sus solicitudes:** Para atender y gestionar Sus solicitudes."
+msgstr "**Para gestionar Sus solicitudes:** Para atender y gestionar Sus solicitudes dirigidas a Nosotros."
 
 #: src/data/pages/en/privacy.md
 msgid "**For business transfers:** We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred."
-msgstr "**Para transferencias comerciales:** Podemos utilizar Su información para evaluar o llevar a cabo una fusión, desinversión, reestructuración, reorganización, disolución u otra venta o transferencia de algunos o todos Nuestros activos, ya sea como una empresa en funcionamiento o como parte de un proceso de quiebra, liquidación o procedimiento similar, en el que los Datos Personales que tenemos sobre los usuarios de nuestro Servicio se encuentran entre los activos transferidos."
+msgstr "**Para transferencias de negocios:** Podemos usar Su información para evaluar o llevar a cabo una fusión, desinversión, reestructuración, reorganización, disolución u otra venta o transferencia de algunos o todos Nuestros activos, ya sea como una empresa en funcionamiento o como parte de un proceso de quiebra, liquidación o similar, en el que los Datos Personales que tenemos sobre los usuarios de nuestro Servicio se encuentran entre los activos transferidos."
 
 #: src/data/pages/en/privacy.md
 msgid "**For other purposes**: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience."
@@ -2836,15 +2864,15 @@ msgstr "Podemos compartir Su información personal en las siguientes situaciones
 
 #: src/data/pages/en/privacy.md
 msgid "**With Service Providers:** We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You."
-msgstr "**Con Proveedores de Servicios:** Podemos compartir Su información personal con Proveedores de Servicios para monitorear y analizar el uso de nuestro Servicio, para contactarle."
+msgstr "**Con proveedores de servicios:** Podemos compartir Su información personal con proveedores de servicios para monitorear y analizar el uso de nuestro Servicio, para contactarlo."
 
 #: src/data/pages/en/privacy.md
 msgid "**For business transfers:** We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company."
-msgstr "**Para transferencias comerciales:** Podemos compartir o transferir Su información personal en relación con, o durante las negociaciones de, cualquier fusión, venta de activos de la Compañía, financiación o adquisición de la totalidad o una parte de Nuestro negocio a otra empresa."
+msgstr "**Por transferencias de negocio:** Podemos compartir o transferir Su información personal en conexión con, o durante negociaciones de, cualquier fusión, venta de activos de la Compañía, financiamiento o adquisición de la totalidad o una porción de Nuestro negocio a otra compañía."
 
 #: src/data/pages/en/privacy.md
 msgid "**With Affiliates:** We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us."
-msgstr "**Con Afiliadas:** Podemos compartir Su información con Nuestras afiliadas, en cuyo caso les exigiremos que respeten esta Política de Privacidad. Las afiliadas incluyen Nuestra empresa matriz y cualquier otra subsidiaria, socios de empresas conjuntas u otras empresas que controlemos o que estén bajo control común con Nosotros."
+msgstr "**Con Afiliados:** Podemos compartir Su información con Nuestros afiliados, en cuyo caso requeriremos que dichos afiliados respeten esta Política de Privacidad. Los afiliados incluyen Nuestra empresa matriz y cualquier otra subsidiaria, socios de empresas conjuntas u otras compañías que controlemos o que estén bajo control común con Nosotros."
 
 #: src/data/pages/en/privacy.md
 msgid "**With business partners:** We may share Your information with Our business partners to offer You certain products, services or promotions."
@@ -2856,15 +2884,15 @@ msgstr "**Con otros usuarios:** cuando Usted comparte información personal o in
 
 #: src/data/pages/en/privacy.md
 msgid "**With Your consent**: We may disclose Your personal information for any other purpose with Your consent."
-msgstr "**Con Su consentimiento**: Podemos divulgar Su información personal para cualquier otro fin con Su consentimiento."
+msgstr "**Con Su consentimiento**: Podemos divulgar Su información personal para cualquier otro propósito con Su consentimiento."
 
 #: src/data/pages/en/privacy.md
 msgid "Retention of Your Personal Data"
-msgstr "Conservación de Sus Datos Personales"
+msgstr "Retención de Sus Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies."
-msgstr "La Compañía conservará Sus Datos Personales solo durante el tiempo que sea necesario para los fines establecidos en esta Política de Privacidad. Conservaremos y utilizaremos Sus Datos Personales en la medida necesaria para cumplir con nuestras obligaciones legales (por ejemplo, si se nos exige conservar Sus datos para cumplir con las leyes aplicables), resolver disputas y hacer cumplir nuestros acuerdos y políticas legales."
+msgstr "La Compañía retendrá Sus Datos Personales solo durante el tiempo que sea necesario para los fines establecidos en esta Política de Privacidad. Retendremos y usaremos Sus Datos Personales en la medida necesaria para cumplir con nuestras obligaciones legales (por ejemplo, si se nos exige retener sus datos para cumplir con las leyes aplicables), resolver disputas y hacer cumplir nuestros acuerdos y políticas legales."
 
 #: src/data/pages/en/privacy.md
 msgid "The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods."
@@ -2876,15 +2904,15 @@ msgstr "Transferencia de Sus Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction."
-msgstr "Su información, incluyendo Datos Personales, se procesa en las oficinas operativas de la Compañía y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Esto significa que esta información puede ser transferida y mantenida en computadoras ubicadas fuera de Su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de Su jurisdicción."
+msgstr "Su información, incluidos los Datos Personales, se procesa en las oficinas operativas de la Compañía y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Significa que esta información puede ser transferida y mantenida en computadoras ubicadas fuera de Su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de Su jurisdicción."
 
 #: src/data/pages/en/privacy.md
 msgid "Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer."
-msgstr "Su consentimiento a esta Política de Privacidad, seguido de Su envío de dicha información, representa Su acuerdo con esa transferencia."
+msgstr "Su consentimiento a esta Política de Privacidad seguido de Su envío de dicha información representa Su acuerdo con esa transferencia."
 
 #: src/data/pages/en/privacy.md
 msgid "The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information."
-msgstr "La Compañía tomará todas las medidas razonablemente necesarias para garantizar que Sus datos sean tratados de forma segura y de acuerdo con esta Política de Privacidad y no se realizará ninguna transferencia de Sus Datos Personales a una organización o un país a menos que existan controles adecuados, incluida la seguridad de Sus datos y otra información personal."
+msgstr "La Compañía tomará todas las medidas razonablemente necesarias para garantizar que Sus datos sean tratados de forma segura y de acuerdo con esta Política de Privacidad, y no se realizará ninguna transferencia de Sus Datos Personales a una organización o un país a menos que existan controles adecuados, incluida la seguridad de Sus datos y otra información personal."
 
 #: src/data/pages/en/privacy.md
 msgid "Delete Your Personal Data"
@@ -2896,7 +2924,7 @@ msgstr "Usted tiene derecho a eliminar o solicitar que le ayudemos a eliminar lo
 
 #: src/data/pages/en/privacy.md
 msgid "Our Service may give You the ability to delete certain information about You from within the Service."
-msgstr "Nuestro Servicio puede darle la capacidad de eliminar cierta información sobre Usted dentro del Servicio."
+msgstr "Nuestro Servicio puede darle la capacidad de eliminar cierta información sobre Usted desde dentro del Servicio."
 
 #: src/data/pages/en/privacy.md
 msgid "You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us."
@@ -2904,7 +2932,7 @@ msgstr "Usted puede actualizar, modificar o eliminar Su información en cualquie
 
 #: src/data/pages/en/privacy.md
 msgid "Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so."
-msgstr "Tenga en cuenta, sin embargo, que es posible que necesitemos conservar cierta información cuando tengamos una obligación legal o una base legítima para hacerlo."
+msgstr "Tenga en cuenta, sin embargo, que es posible que necesitemos retener cierta información cuando tengamos una obligación legal o una base legítima para hacerlo."
 
 #: src/data/pages/en/privacy.md
 msgid "Disclosure of Your Personal Data"
@@ -2912,7 +2940,7 @@ msgstr "Divulgación de Sus Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "Business Transactions"
-msgstr "Transacciones comerciales"
+msgstr "Transacciones Comerciales"
 
 #: src/data/pages/en/privacy.md
 msgid "If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy."
@@ -2920,7 +2948,7 @@ msgstr "Si la Compañía está involucrada en una fusión, adquisición o venta 
 
 #: src/data/pages/en/privacy.md
 msgid "Law enforcement"
-msgstr "Aplicación de la ley"
+msgstr "Cumplimiento de la ley"
 
 #: src/data/pages/en/privacy.md
 msgid "Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency)."
@@ -2944,7 +2972,7 @@ msgstr "Proteger y defender los derechos o la propiedad de la Compañía"
 
 #: src/data/pages/en/privacy.md
 msgid "Prevent or investigate possible wrongdoing in connection with the Service"
-msgstr "Prevenir o investigar posibles irregularidades en relación con el Servicio"
+msgstr "Prevenir o investigar posibles infracciones en relación con el Servicio"
 
 #: src/data/pages/en/privacy.md
 msgid "Protect the personal safety of Users of the Service or the public"
@@ -2952,7 +2980,7 @@ msgstr "Proteger la seguridad personal de los Usuarios del Servicio o del públi
 
 #: src/data/pages/en/privacy.md
 msgid "Protect against legal liability"
-msgstr "Protegerse contra la responsabilidad legal"
+msgstr "Proteger contra la responsabilidad legal"
 
 #: src/data/pages/en/privacy.md
 msgid "Security of Your Personal Data"
@@ -2960,7 +2988,7 @@ msgstr "Seguridad de Sus Datos Personales"
 
 #: src/data/pages/en/privacy.md
 msgid "The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security."
-msgstr "La seguridad de Sus Datos Personales es importante para Nosotros, pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro. Si bien Nos esforzamos por utilizar medios comercialmente aceptables para proteger Sus Datos Personales, no podemos garantizar su seguridad absoluta."
+msgstr "La seguridad de Sus Datos Personales es importante para Nosotros, pero recuerde que ningún método de transmisión por Internet, o método de almacenamiento electrónico es 100% seguro. Si bien Nos esforzamos por utilizar medios comercialmente aceptables para proteger Sus Datos Personales, no podemos garantizar su seguridad absoluta."
 
 #: src/data/pages/en/privacy.md
 msgid "Children's Privacy"
@@ -2968,15 +2996,15 @@ msgstr "Privacidad de los niños"
 
 #: src/data/pages/en/privacy.md
 msgid "Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers."
-msgstr "Nuestro Servicio no se dirige a nadie menor de 13 años. No recopilamos intencionadamente información de identificación personal de nadie menor de 13 años. Si Usted es padre o tutor y sabe que Su hijo Nos ha proporcionado Datos Personales, póngase en contacto con Nosotros. Si Nos damos cuenta de que hemos recopilado Datos Personales de alguien menor de 13 años sin verificación del consentimiento de los padres, tomamos medidas para eliminar esa información de Nuestros servidores."
+msgstr "Nuestro Servicio no se dirige a ninguna persona menor de 13 años. No recopilamos conscientemente información de identificación personal de ninguna persona menor de 13 años. Si Usted es padre o tutor y sabe que Su hijo Nos ha proporcionado Datos Personales, por favor contáctenos. Si Nos damos cuenta de que hemos recopilado Datos Personales de cualquier persona menor de 13 años sin verificación del consentimiento de los padres, tomamos medidas para eliminar esa información de Nuestros servidores."
 
 #: src/data/pages/en/privacy.md
 msgid "If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information."
-msgstr "Si necesitamos basarnos en el consentimiento como base legal para procesar Su información y Su país requiere el consentimiento de un padre, es posible que solicitemos el consentimiento de Su padre antes de recopilar y utilizar esa información."
+msgstr "Si necesitamos basarnos en el consentimiento como base legal para procesar Su información y Su país requiere el consentimiento de un padre, podemos requerir el consentimiento de Su padre antes de recopilar y usar esa información."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "Links to Other Websites"
-msgstr "Enlaces a otros sitios web"
+msgstr "Enlaces a Otros Sitios Web"
 
 #: src/data/pages/en/privacy.md
 msgid "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit."
@@ -2984,7 +3012,7 @@ msgstr "Nuestro Servicio puede contener enlaces a otros sitios web que no son op
 
 #: src/data/pages/en/privacy.md
 msgid "We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
-msgstr "No tenemos control ni asumimos responsabilidad alguna por el contenido, las políticas de privacidad o las prácticas de ningún sitio o servicio de terceros."
+msgstr "No tenemos control ni asumimos responsabilidad alguna por el contenido, las políticas de privacidad o las prácticas de los sitios o servicios de terceros."
 
 #: src/data/pages/en/privacy.md
 msgid "Changes to this Privacy Policy"
@@ -2992,25 +3020,25 @@ msgstr "Cambios en esta Política de Privacidad"
 
 #: src/data/pages/en/privacy.md
 msgid "We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page."
-msgstr "Es posible que actualicemos nuestra Política de privacidad ocasionalmente. Le notificaremos cualquier cambio publicando la nueva Política de privacidad en esta página."
+msgstr "Podemos actualizar Nuestra Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página."
 
 #: src/data/pages/en/privacy.md
 msgid "We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the \"Last updated\" date at the top of this Privacy Policy."
-msgstr "Le informaremos por correo electrónico y/o un aviso destacado en nuestro Servicio, antes de que el cambio entre en vigor y actualizaremos la fecha de \"Última actualización\" en la parte superior de esta Política de privacidad."
+msgstr "Le informaremos por correo electrónico y/o mediante un aviso destacado en Nuestro Servicio, antes de que el cambio entre en vigor y actualizaremos la fecha de \"Última actualización\" en la parte superior de esta Política de Privacidad."
 
 #: src/data/pages/en/privacy.md
 msgid "You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page."
-msgstr "Se le aconseja revisar esta Política de privacidad periódicamente para cualquier cambio. Los cambios a esta Política de privacidad son efectivos cuando se publican en esta página."
+msgstr "Se le aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio. Los cambios a esta Política de Privacidad son efectivos cuando se publican en esta página."
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "Contact Us"
 msgstr "Contáctenos"
 
 #: src/data/pages/en/privacy.md
 msgid "If you have any questions about this Privacy Policy, You can contact us:"
-msgstr "Si tiene alguna pregunta sobre esta Política de privacidad, puede contactarnos:"
+msgstr "Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos:"
 
-#: src/data/pages/en/privacy.md
+#: src/data/pages/en/terms.md
 msgid "By email: somecoolemail@domain.com"
 msgstr "Por correo electrónico: somecoolemail@domain.com"
 
@@ -3027,72 +3055,16 @@ msgid ""
 "Markdown is a lightweight markup language that you can use to format plain text documents.  \n"
 "Write docs for your GitHub projects, edit your GitHub profile *README* etc. You fill find it all here."
 msgstr ""
-"Markdown es un lenguaje de marcado ligero que puedes usar para formatear documentos de texto plano.  \n"
-"Escribe documentos para tus proyectos de GitHub, edita tu perfil de GitHub *README*, etc. Todo lo encontrarás aquí."
+"Markdown es un lenguaje de marcado ligero que puedes usar para formatear documentos de texto sin formato.  \n"
+"Escribe documentos para tus proyectos de GitHub, edita tu perfil de GitHub *README*, etc. Lo encontrarás todo aquí."
 
 #: src/data/pages/en/markdown.md
 msgid "Let's dive into it. ⤵️"
-msgstr "Vamos a ello. ⤵️"
+msgstr "Vamos a sumergirnos. ⤵️"
 
 #: src/data/pages/en/markdown.md
 msgid "Table of Contents"
 msgstr "Tabla de Contenidos"
-
-#: src/data/pages/en/markdown.md
-msgid "[Paragraph](#paragraph)"
-msgstr "[Párrafo](#paragraph)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Headings](#headings)"
-msgstr "[Encabezados](#headings)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Emphasis](#emphasis)"
-msgstr "[Énfasis](#emphasis)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Blockquote](#blockquote)"
-msgstr "[Cita en bloque](#blockquote)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Images](#images)"
-msgstr "[Imágenes](#images)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Links](#links)"
-msgstr "[Enlaces](#links)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Code](#code)"
-msgstr "[Código](#code)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Lists](#lists)"
-msgstr "[Listas](#lists)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Table](#table)"
-msgstr "[Tabla](#table)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Task List](#tasklist)"
-msgstr "[Lista de Tareas](#tasklist)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Footnote](#footnote)"
-msgstr "[Nota al pie](#footnote)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Jump to section](#sectionjump)"
-msgstr "[Saltar a la sección](#sectionjump)"
-
-#: src/data/pages/en/markdown.md
-msgid "[Horizontal Line](#horizontalline)"
-msgstr "[Línea Horizontal](#horizontalline)"
-
-#: src/data/pages/en/markdown.md
-msgid "[HTML](#html)"
-msgstr "[HTML](#html)"
 
 #: src/data/pages/en/markdown.md
 msgid "Paragraph"
@@ -3112,7 +3084,7 @@ msgstr "Encabezados"
 
 #: src/data/pages/en/markdown.md
 msgid "There are 6 heading variants. The number of \"#\" symbols, followed by text, indicates the importance of the heading."
-msgstr "Hay 6 variantes de encabezado. El número de símbolos \"#\", seguido del texto, indica la importancia del encabezado."
+msgstr "Existen 6 variantes de encabezados. El número de símbolos \"#\", seguido del texto, indica la importancia del encabezado."
 
 #: src/data/pages/en/markdown.md
 msgid "Heading 1"
@@ -3144,7 +3116,7 @@ msgstr "Énfasis"
 
 #: src/data/pages/en/markdown.md
 msgid "Modifying text is so neat and easy. You can make your text bold, italic and strikethrough."
-msgstr "Modificar texto es muy ordenado y fácil. Puedes hacer tu texto en negrita, cursiva y tachado."
+msgstr "Modificar texto es muy práctico y fácil. Puedes poner tu texto en negrita, cursiva y tachado."
 
 #: src/data/pages/en/markdown.md
 msgid ""
@@ -3155,9 +3127,9 @@ msgid ""
 "Can we combine ***both of that*?** Absolutely.  \n"
 "What if I want to ~~strikethrough~~?"
 msgstr ""
-"Usando dos asteriscos, **este texto está en negrita**.  \n"
+"Usando dos asteriscos **este texto está en negrita**.  \n"
 "Dos guiones bajos **también funcionan**.  \n"
-"Hagámoslo *cursiva ahora*.  \n"
+"Hagámoslo *ahora en cursiva*.  \n"
 "Lo adivinaste, *un guion bajo también es suficiente*.  \n"
 "¿Podemos combinar ***ambos*?** Absolutamente.  \n"
 "¿Y si quiero ~~tachar~~?"
@@ -3187,12 +3159,12 @@ msgid ""
 "The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  \n"
 "Here is the syntax."
 msgstr ""
-"La mejor manera es simplemente arrastrar y soltar la imagen directamente desde tu ordenador. También puedes crear una referencia a la imagen y asignarla de esa manera.  \n"
+"La mejor manera es simplemente arrastrar y soltar la imagen directamente desde tu computadora. También puedes crear una referencia a la imagen y asignarla de esa manera.  \n"
 "Aquí está la sintaxis."
 
 #: src/data/pages/en/markdown.md
-msgid "![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png \"Text displayed on hover\")"
-msgstr "![texto si la imagen no carga](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png \"Texto mostrado al pasar el ratón\")"
+msgid "text if the image fails to load"
+msgstr "texto si la imagen falla al cargar"
 
 #: src/data/pages/en/markdown.md
 msgid "Links"
@@ -3200,15 +3172,15 @@ msgstr "Enlaces"
 
 #: src/data/pages/en/markdown.md
 msgid "Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links."
-msgstr "Al igual que las imágenes, los enlaces también se pueden insertar directamente o creando una referencia. Puedes crear enlaces tanto en línea como en bloque."
+msgstr "Similar a las imágenes, los enlaces también se pueden insertar directamente o creando una referencia. Puedes crear enlaces tanto en línea como en bloque."
 
 #: src/data/pages/en/markdown.md
 msgid ""
-"[Like it so far? Follow me on GitHub](https://github.com/im-luka)  \n"
+"Like it so far? Follow me on GitHub  \n"
 "My Markdown Cheatsheet - star it if you like it  \n"
 "Find some great docs here"
 msgstr ""
-"[¿Te gusta hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  \n"
+"¿Te gusta hasta ahora? Sígueme en GitHub  \n"
 "Mi hoja de trucos de Markdown - dale una estrella si te gusta  \n"
 "Encuentra excelentes documentos aquí"
 
@@ -3225,7 +3197,7 @@ msgid ""
 "I created `.env` file at the root.\n"
 "Backticks inside backticks? ``No problem.``"
 msgstr ""
-"Creé el archivo `.env` en la raíz.\n"
+"Creé un archivo `.env` en la raíz.\n"
 "¿Comillas invertidas dentro de comillas invertidas? ``No hay problema.``"
 
 #: src/data/pages/en/markdown.md
@@ -3234,7 +3206,7 @@ msgstr "Listas"
 
 #: src/data/pages/en/markdown.md
 msgid "As you can do in HTML, Markdown allows creating of both ordered and unordered lists."
-msgstr "Como puedes hacer en HTML, Markdown permite crear tanto listas ordenadas como desordenadas."
+msgstr "Como puedes hacer en HTML, Markdown permite la creación de listas ordenadas y desordenadas."
 
 #: src/data/pages/en/markdown.md
 msgid "Ordered List"
@@ -3258,7 +3230,7 @@ msgstr "React"
 
 #: src/data/pages/en/markdown.md
 msgid "I'm Frontend Dev now 👨🏼‍🎨"
-msgstr "Ahora soy Desarrollador Frontend 👨🏼‍🎨"
+msgstr "Ahora soy desarrollador Frontend 👨🏼‍🎨"
 
 #: src/data/pages/en/markdown.md
 msgid "Unordered List"
@@ -3294,11 +3266,11 @@ msgstr ""
 
 #: src/data/pages/en/markdown.md
 msgid "Learn Basics"
-msgstr "Aprende lo Básico"
+msgstr "Aprender lo Básico"
 
 #: src/data/pages/en/markdown.md
 msgid "Learn One Framework"
-msgstr "Aprende un Framework"
+msgstr "Aprender un Framework"
 
 #: src/data/pages/en/markdown.md
 msgid "Table"
@@ -3306,7 +3278,7 @@ msgstr "Tabla"
 
 #: src/data/pages/en/markdown.md
 msgid "Great way to display well-arranged data. Use \"|\" symbol to separate columns and \":\" symbol to align row content."
-msgstr "Una excelente manera de mostrar datos bien organizados. Usa el símbolo \"|\" para separar columnas y el símbolo \":\" para alinear el contenido de las filas."
+msgstr "Excelente manera de mostrar datos bien organizados. Utiliza el símbolo \"|\" para separar columnas y el símbolo \":\" para alinear el contenido de las filas."
 
 #: src/data/pages/en/markdown.md
 msgid ""
@@ -3317,10 +3289,10 @@ msgid ""
 "| Vue.js               |   Nest.js    |       Redis |"
 msgstr ""
 "| Alinear a la izquierda (predeterminado) | Alinear al centro | Alinear a la derecha |\n"
-"| :--------------------------------- | :----------------: | -------------------: |\n"
-"| React.js                           | Node.js            | MySQL                |\n"
-"| Next.js                            | Express            | MongoDB              |\n"
-"| Vue.js                             | Nest.js            | Redis                |"
+"| :------------------- | :----------: | ----------: |\n"
+"| React.js             |   Node.js    |       MySQL |\n"
+"| Next.js              |   Express    |     MongoDB |\n"
+"| Vue.js               |   Nest.js    |       Redis |"
 
 #: src/data/pages/en/markdown.md
 msgid "Task List"
@@ -3328,7 +3300,7 @@ msgstr "Lista de Tareas"
 
 #: src/data/pages/en/markdown.md
 msgid "Keeping track of the tasks that are done, and those that need to be done."
-msgstr "Llevando un registro de las tareas que están hechas y las que necesitan ser hechas."
+msgstr "Llevando un registro de las tareas que están hechas y las que necesitan hacerse."
 
 #: src/data/pages/en/markdown.md
 msgid "[x] Learn Markdown"
@@ -3344,7 +3316,7 @@ msgstr "[ ] Aprender Desarrollo Full Stack"
 
 #: src/data/pages/en/markdown.md
 msgid "Footnote"
-msgstr "Nota al Pie"
+msgstr "Nota al pie"
 
 #: src/data/pages/en/markdown.md
 msgid "Want to describe something at the end of the file? Use footnote!"
@@ -3372,11 +3344,11 @@ msgstr "[^ver]: Cargando... ⌛️"
 
 #: src/data/pages/en/markdown.md
 msgid "Jump to section"
-msgstr "Ir a la sección"
+msgstr "Saltar a sección"
 
 #: src/data/pages/en/markdown.md
 msgid "Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name=\"...\">` tags."
-msgstr "Astro (y la mayoría de los analizadores de Markdown) genera automáticamente IDs para tus encabezados. Normalmente no necesitas crear etiquetas `<a name=\"...\">` manuales."
+msgstr "Astro (y la mayoría de los analizadores de Markdown) genera automáticamente IDs para tus encabezados. Normalmente no necesitas crear etiquetas `<a name=\"...\">` manualmente."
 
 #: src/data/pages/en/markdown.md
 msgid "Horizontal Line"
@@ -3400,7 +3372,7 @@ msgstr "La Segunda"
 
 #: src/data/pages/en/markdown.md
 msgid "Third"
-msgstr "La Tercera"
+msgstr "Tercera"
 
 #: src/data/pages/en/markdown.md
 msgid "You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work."
@@ -3416,43 +3388,43 @@ msgstr ""
 
 #: src/data/pages/en/markdown.md
 msgid "Mermaid Diagrams"
-msgstr "Diagramas Mermaid"
+msgstr "Diagramas de Mermaid"
 
 #: src/data/pages/en/markdown.md
 msgid "Mindmap"
-msgstr "Mapa mental"
+msgstr "Mapa Mental"
 
 #: src/data/pages/en/markdown.md
 msgid "Flowchart"
-msgstr "Diagrama de flujo"
+msgstr "Diagrama de Flujo"
 
 #: src/data/pages/en/markdown.md
 msgid "Section with some ID"
-msgstr "Sección con un ID"
+msgstr "Sección con algún ID"
 
 #: src/data/pages/en/terms.md
 msgid "Terms and Conditions"
-msgstr "Términos y Condiciones"
+msgstr "Términos y condiciones"
 
 #: src/data/pages/en/terms.md
 msgid "Please read these terms and conditions carefully before using Our Service."
-msgstr "Por favor, lee estos términos y condiciones cuidadosamente antes de usar Nuestro Servicio."
+msgstr "Por favor, lea estos términos y condiciones cuidadosamente antes de utilizar nuestro Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "For the purposes of these Terms and Conditions:"
-msgstr "Para los propósitos de estos Términos y Condiciones:"
+msgstr "A los efectos de estos Términos y Condiciones:"
 
 #: src/data/pages/en/terms.md
 msgid "**Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority."
-msgstr "**Afiliado** significa una entidad que controla, es controlada por o está bajo control común con una parte, donde \"control\" significa la propiedad del 50% o más de las acciones, intereses de capital u otros valores con derecho a voto para la elección de directores u otra autoridad de gestión."
+msgstr "**Afiliada** significa una entidad que controla, es controlada por o está bajo control común con una parte, donde \"control\" significa la propiedad del 50% o más de las acciones, participación accionaria u otros valores con derecho a voto para la elección de directores u otra autoridad de gestión."
 
 #: src/data/pages/en/terms.md
 msgid "**Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo."
-msgstr "**Términos y Condiciones** (también denominados \"Términos\") significan estos Términos y Condiciones que forman el acuerdo completo entre Tú y la Compañía con respecto al uso del Servicio. Este acuerdo de Términos y Condiciones es una Demostración."
+msgstr "**Términos y condiciones** (también denominados \"Términos\") se refieren a estos Términos y condiciones que constituyen el acuerdo completo entre Usted y la Empresa en relación con el uso del Servicio. Este acuerdo de Términos y condiciones es una demostración."
 
 #: src/data/pages/en/terms.md
 msgid "**Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service."
-msgstr "**Servicio de Red Social de Terceros** significa cualquier servicio o contenido (incluyendo datos, información, productos o servicios) proporcionado por un tercero que pueda ser mostrado, incluido o puesto a disposición por el Servicio."
+msgstr "**Servicio de Medios Sociales de Terceros** se refiere a cualquier servicio o contenido (incluyendo datos, información, productos o servicios) proporcionado por un tercero que puede ser mostrado, incluido o puesto a disposición por el Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "Acknowledgment"
@@ -3460,7 +3432,7 @@ msgstr "Reconocimiento"
 
 #: src/data/pages/en/terms.md
 msgid "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service."
-msgstr "Estos son los Términos y Condiciones que rigen el uso de este Servicio y el acuerdo que opera entre Usted y la Compañía. Estos Términos y Condiciones establecen los derechos y obligaciones de todos los usuarios con respecto al uso del Servicio."
+msgstr "Estos son los Términos y Condiciones que rigen el uso de este Servicio y el acuerdo que opera entre Usted y la Empresa. Estos Términos y Condiciones establecen los derechos y obligaciones de todos los usuarios con respecto al uso del Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service."
@@ -3468,23 +3440,23 @@ msgstr "Su acceso y uso del Servicio está condicionado a Su aceptación y cumpl
 
 #: src/data/pages/en/terms.md
 msgid "By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service."
-msgstr "Al acceder o utilizar el Servicio, Usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos Términos y Condiciones, entonces no podrá acceder al Servicio."
+msgstr "Al acceder o utilizar el Servicio, Usted acepta estar obligado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos Términos y Condiciones, entonces no podrá acceder al Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service."
-msgstr "Usted declara que tiene más de 18 años. La Compañía no permite que los menores de 18 años utilicen el Servicio."
+msgstr "Usted declara que es mayor de 18 años. La Empresa no permite que los menores de 18 años utilicen el Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service."
-msgstr "Su acceso y uso del Servicio también está condicionado a Su aceptación y cumplimiento de la Política de Privacidad de la Compañía. Nuestra Política de Privacidad describe Nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de Su información personal cuando Usted utiliza la Aplicación o el Sitio Web y le informa sobre Sus derechos de privacidad y cómo la ley le protege. Por favor, lea Nuestra Política de Privacidad cuidadosamente antes de utilizar Nuestro Servicio."
+msgstr "Su acceso y uso del Servicio también está condicionado a Su aceptación y cumplimiento de la Política de Privacidad de la Empresa. Nuestra Política de Privacidad describe Nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de Su información personal cuando Usted utiliza la Aplicación o el Sitio Web y le informa sobre Sus derechos de privacidad y cómo la ley le protege. Por favor, lea Nuestra Política de Privacidad cuidadosamente antes de utilizar Nuestro Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company."
-msgstr "Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por la Compañía."
+msgstr "Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados por la Empresa."
 
 #: src/data/pages/en/terms.md
 msgid "The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services."
-msgstr "La Compañía no tiene control sobre, y no asume ninguna responsabilidad por, el contenido, las políticas de privacidad o las prácticas de los sitios web o servicios de terceros. Usted reconoce y acepta además que la Compañía no será responsable, directa o indirectamente, de ningún daño o pérdida causada o supuestamente causada por o en conexión con el uso o la confianza en dicho contenido, bienes o servicios disponibles en o a través de dichos sitios web o servicios."
+msgstr "La Empresa no tiene control sobre, y no asume responsabilidad alguna por, el contenido, las políticas de privacidad o las prácticas de cualquier sitio web o servicio de terceros. Además, Usted reconoce y acepta que la Empresa no será responsable, directa o indirectamente, de ningún daño o pérdida causado o supuestamente causado por o en relación con el uso o la confianza en cualquier contenido, bienes o servicios disponibles en o a través de dichos sitios web o servicios."
 
 #: src/data/pages/en/terms.md
 msgid "We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit."
@@ -3496,23 +3468,23 @@ msgstr "Terminación"
 
 #: src/data/pages/en/terms.md
 msgid "We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions."
-msgstr "Podemos terminar o suspender Su acceso inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo, sin limitación, si Usted incumple estos Términos y Condiciones."
+msgstr "Podemos terminar o suspender Su acceso inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo sin limitación si Usted incumple estos Términos y Condiciones."
 
 #: src/data/pages/en/terms.md
 msgid "Upon termination, Your right to use the Service will cease immediately."
-msgstr "Al terminar, Su derecho a usar el Servicio cesará inmediatamente."
+msgstr "Tras la terminación, Su derecho a utilizar el Servicio cesará inmediatamente."
 
 #: src/data/pages/en/terms.md
 msgid "Limitation of Liability"
-msgstr "Limitación de Responsabilidad"
+msgstr "Limitación de responsabilidad"
 
 #: src/data/pages/en/terms.md
 msgid "Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service."
-msgstr "Sin perjuicio de los daños que Usted pueda sufrir, la responsabilidad total de la Compañía y de cualquiera de sus proveedores bajo cualquier disposición de estos Términos y Su remedio exclusivo para todo lo anterior se limitará a la cantidad realmente pagada por Usted a través del Servicio o 100 USD si no ha comprado nada a través del Servicio."
+msgstr "No obstante cualquier daño que Usted pueda sufrir, la responsabilidad total de la Empresa y de cualquiera de sus proveedores bajo cualquier disposición de estos Términos y Su recurso exclusivo para todo lo anterior se limitará a la cantidad realmente pagada por Usted a través del Servicio o 100 USD si Usted no ha comprado nada a través del Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose."
-msgstr "En la máxima medida permitida por la ley aplicable, en ningún caso la Compañía o sus proveedores serán responsables de daños especiales, incidentales, indirectos o consecuentes de ningún tipo (incluyendo, pero no limitado a, daños por pérdida de ganancias, pérdida de datos u otra información, por interrupción del negocio, por lesiones personales, pérdida de privacidad que surjan de o de alguna manera relacionados con el uso o la incapacidad de usar el Servicio, software de terceros y/o hardware de terceros utilizado con el Servicio, o de otro modo en conexión con cualquier disposición de estos Términos), incluso si la Compañía o cualquier proveedor ha sido advertido de la posibilidad de tales daños e incluso si el remedio falla en su propósito esencial."
+msgstr "En la máxima medida permitida por la ley aplicable, en ningún caso la Empresa o sus proveedores serán responsables de ningún daño especial, incidental, indirecto o consecuente de ningún tipo (incluyendo, pero no limitado a, daños por pérdida de beneficios, pérdida de datos u otra información, por interrupción del negocio, por lesiones personales, pérdida de privacidad que surja de o de alguna manera relacionada con el uso o la incapacidad de usar el Servicio, software de terceros y/o hardware de terceros utilizado con el Servicio, o de otro modo en relación con cualquier disposición de estos Términos), incluso si la Empresa o cualquier proveedor ha sido advertido de la posibilidad de tales daños e incluso si el remedio falla en su propósito esencial."
 
 #: src/data/pages/en/terms.md
 msgid "Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law."
@@ -3520,63 +3492,63 @@ msgstr "Algunos estados no permiten la exclusión de garantías implícitas o la
 
 #: src/data/pages/en/terms.md
 msgid "\"AS IS\" and \"AS AVAILABLE\" Disclaimer"
-msgstr "Descargo de Responsabilidad \"TAL CUAL\" y \"SEGÚN DISPONIBILIDAD\""
+msgstr "Exención de responsabilidad \"TAL CUAL\" y \"SEGÚN DISPONIBILIDAD\""
 
 #: src/data/pages/en/terms.md
 msgid "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected."
-msgstr "El Servicio se le proporciona \"TAL CUAL\" y \"SEGÚN DISPONIBILIDAD\" y con todos sus fallos y defectos sin garantía de ningún tipo. En la máxima medida permitida por la ley aplicable, la Compañía, en su propio nombre y en nombre de sus Afiliadas y sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluyendo todas las garantías implícitas de comerciabilidad, idoneidad para un propósito particular, título y no infracción, y garantías que puedan surgir del curso del trato, el curso del rendimiento, el uso o la práctica comercial. Sin limitar lo anterior, la Compañía no ofrece ninguna garantía o compromiso, y no hace ninguna declaración de ningún tipo de que el Servicio satisfará Sus requisitos, logrará los resultados previstos, será compatible o funcionará con cualquier otro software, aplicaciones, sistemas o servicios, operará sin interrupción, cumplirá con los estándares de rendimiento o fiabilidad o estará libre de errores o de que cualquier error o defecto pueda o será corregido."
+msgstr "El Servicio se le proporciona \"TAL CUAL\" y \"SEGÚN DISPONIBILIDAD\" y con todos los fallos y defectos sin garantía de ningún tipo. En la máxima medida permitida por la ley aplicable, la Empresa, en su propio nombre y en nombre de sus Afiliadas y sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, estatutarias o de otro tipo, con respecto al Servicio, incluyendo todas las garantías implícitas de comerciabilidad, idoneidad para un propósito particular, título y no infracción, y garantías que puedan surgir del curso de los tratos, el curso de la ejecución, el uso o la práctica comercial. Sin limitar lo anterior, la Empresa no ofrece ninguna garantía ni compromiso, y no hace ninguna representación de ningún tipo de que el Servicio satisfará Sus requisitos, logrará los resultados previstos, será compatible o funcionará con cualquier otro software, aplicaciones, sistemas o servicios, funcionará sin interrupciones, cumplirá con los estándares de rendimiento o fiabilidad o estará libre de errores o que cualquier error o defecto pueda o será corregido."
 
 #: src/data/pages/en/terms.md
 msgid "Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components."
-msgstr "Sin limitar lo anterior, ni la Compañía ni ninguno de los proveedores de la compañía ofrecen ninguna representación o garantía de ningún tipo, expresa o implícita: (i) en cuanto al funcionamiento o la disponibilidad del Servicio, o la información, el contenido y los materiales o productos incluidos en el mismo; (ii) que el Servicio será ininterrumpido o estará libre de errores; (iii) en cuanto a la exactitud, fiabilidad o actualidad de cualquier información o contenido proporcionado a través del Servicio; o (iv) que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde o en nombre de la Compañía están libres de virus, scripts, troyanos, gusanos, malware, bombas de tiempo u otros componentes dañinos."
+msgstr "Sin limitar lo anterior, ni la Empresa ni ninguno de sus proveedores hacen ninguna representación o garantía de ningún tipo, expresa o implícita: (i) en cuanto al funcionamiento o disponibilidad del Servicio, o la información, contenido y materiales o productos incluidos en el mismo; (ii) que el Servicio será ininterrumpido o libre de errores; (iii) en cuanto a la exactitud, fiabilidad o actualidad de cualquier información o contenido proporcionado a través del Servicio; o (iv) que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde o en nombre de la Empresa estén libres de virus, scripts, caballos de Troya, gusanos, malware, bombas de tiempo u otros componentes dañinos."
 
 #: src/data/pages/en/terms.md
 msgid "Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law."
-msgstr "Algunas jurisdicciones no permiten la exclusión de ciertos tipos de garantías o limitaciones en los derechos legales aplicables de un consumidor, por lo que algunas o todas las exclusiones y limitaciones anteriores pueden no aplicarse a Usted. Pero en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la mayor medida posible según la ley aplicable."
+msgstr "Algunas jurisdicciones no permiten la exclusión de ciertos tipos de garantías o limitaciones de los derechos legales aplicables de un consumidor, por lo que algunas o todas las exclusiones y limitaciones anteriores pueden no aplicarse a Usted. Pero en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la mayor medida exigible bajo la ley aplicable."
 
 #: src/data/pages/en/terms.md
 msgid "Governing Law"
-msgstr "Ley Aplicable"
+msgstr "Ley aplicable"
 
 #: src/data/pages/en/terms.md
 msgid "The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws."
-msgstr "Las leyes del País, excluyendo sus reglas de conflicto de leyes, regirán estos Términos y Su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales."
+msgstr "Las leyes del País, excluyendo sus normas sobre conflicto de leyes, regirán estos Términos y Su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales."
 
 #: src/data/pages/en/terms.md
 msgid "Disputes Resolution"
-msgstr "Resolución de Disputas"
+msgstr "Resolución de disputas"
 
 #: src/data/pages/en/terms.md
 msgid "If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company."
-msgstr "Si tiene alguna preocupación o disputa sobre el Servicio, Usted acepta intentar primero resolver la disputa informalmente contactando a la Compañía."
+msgstr "Si tiene alguna preocupación o disputa sobre el Servicio, Usted acepta intentar primero resolver la disputa de manera informal contactando con la Empresa."
 
 #: src/data/pages/en/terms.md
 msgid "For European Union (EU) Users"
-msgstr "Para Usuarios de la Unión Europea (UE)"
+msgstr "Para usuarios de la Unión Europea (UE)"
 
 #: src/data/pages/en/terms.md
 msgid "If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in."
-msgstr "Si Usted es un consumidor de la Unión Europea, se beneficiará de cualquier disposición obligatoria de la ley del país en el que reside."
+msgstr "Si Usted es un consumidor de la Unión Europea, se beneficiará de cualquier disposición obligatoria de la ley del país en el que resida."
 
 #: src/data/pages/en/terms.md
 msgid "United States Legal Compliance"
-msgstr "Cumplimiento Legal en los Estados Unidos"
+msgstr "Cumplimiento Legal de los Estados Unidos"
 
 #: src/data/pages/en/terms.md
 msgid "You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a \"terrorist supporting\" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties."
-msgstr "Usted declara y garantiza que (i) no se encuentra en un país sujeto a un embargo del gobierno de los Estados Unidos, o que ha sido designado por el gobierno de los Estados Unidos como un país que \"apoya el terrorismo\", y (ii) no está incluido en ninguna lista del gobierno de los Estados Unidos de partes prohibidas o restringidas."
+msgstr "Usted declara y garantiza que (i) no se encuentra en un país sujeto a un embargo del gobierno de los Estados Unidos, o que ha sido designado por el gobierno de los Estados Unidos como un país que \"apoya el terrorismo\", y (ii) no figura en ninguna lista del gobierno de los Estados Unidos de partes prohibidas o restringidas."
 
 #: src/data/pages/en/terms.md
 msgid "Severability and Waiver"
-msgstr "Separabilidad y Renuncia"
+msgstr "Divisibilidad y Renuncia"
 
 #: src/data/pages/en/terms.md
 msgid "Severability"
-msgstr "Separabilidad"
+msgstr "Divisibilidad"
 
 #: src/data/pages/en/terms.md
 msgid "If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect."
-msgstr "Si alguna disposición de estos Términos se considera inaplicable o inválida, dicha disposición se modificará e interpretará para lograr los objetivos de dicha disposición en la mayor medida posible según la ley aplicable y las disposiciones restantes continuarán en pleno vigor y efecto."
+msgstr "Si alguna disposición de estos Términos se considera inaplicable o inválida, dicha disposición se modificará e interpretará para lograr los objetivos de dicha disposición en la mayor medida posible bajo la ley aplicable y las disposiciones restantes continuarán en pleno vigor y efecto."
 
 #: src/data/pages/en/terms.md
 msgid "Waiver"
@@ -3584,7 +3556,7 @@ msgstr "Renuncia"
 
 #: src/data/pages/en/terms.md
 msgid "Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach."
-msgstr "Salvo lo dispuesto en el presente documento, el hecho de no ejercer un derecho o de no exigir el cumplimiento de una obligación en virtud de estos Términos no afectará la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en cualquier momento posterior, ni la renuncia a un incumplimiento constituirá una renuncia a cualquier incumplimiento posterior."
+msgstr "Excepto según lo dispuesto en el presente, la falta de ejercicio de un derecho o de exigencia de cumplimiento de una obligación en virtud de estos Términos no afectará la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en cualquier momento posterior, ni la renuncia a un incumplimiento constituirá una renuncia a cualquier incumplimiento posterior."
 
 #: src/data/pages/en/terms.md
 msgid "Translation Interpretation"
@@ -3600,434 +3572,12 @@ msgstr "Cambios a estos Términos y Condiciones"
 
 #: src/data/pages/en/terms.md
 msgid "We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion."
-msgstr "Nos reservamos el derecho, a Nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigencia. Lo que constituye un cambio material se determinará a Nuestra sola discreción."
+msgstr "Nos reservamos el derecho, a Nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material se determinará a Nuestra entera discreción."
 
 #: src/data/pages/en/terms.md
 msgid "By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service."
-msgstr "Al continuar accediendo o utilizando Nuestro Servicio después de que esas revisiones entren en vigencia, Usted acepta estar sujeto a los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, deje de usar el sitio web y el Servicio."
+msgstr "Al continuar accediendo o utilizando Nuestro Servicio después de que esas revisiones entren en vigor, Usted acepta estar obligado por los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, por favor, deje de usar el sitio web y el Servicio."
 
 #: src/data/pages/en/terms.md
 msgid "If you have any questions about these Terms and Conditions, You can contact us:"
 msgstr "Si tiene alguna pregunta sobre estos Términos y Condiciones, puede contactarnos:"
-
-#: src/data/pages/en/privacy.md
-msgid "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app"
-msgstr "**Sitio web** se refiere a AstroWind, accesible desde https://astrowind.vercel.app"
-
-#: src/data/pages/en/markdown.md
-msgid "text if the image fails to load"
-msgstr "texto si la imagen no se carga"
-
-#: src/data/pages/en/markdown.md
-msgid ""
-"Like it so far? Follow me on GitHub  \n"
-"My Markdown Cheatsheet - star it if you like it  \n"
-"Find some great docs here"
-msgstr ""
-"¿Te gusta hasta ahora? Sígueme en GitHub  \n"
-"Mi hoja de trucos de Markdown - márcala con una estrella si te gusta  \n"
-"Encuentra excelentes documentos aquí"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_5__"
-msgstr "Base de datos"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_7__"
-msgstr "Python"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_9__"
-msgstr "Django"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_11__"
-msgstr "Flask"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_13__"
-msgstr "FastAPI"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_15__"
-msgstr "Go"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_17__"
-msgstr "PHP"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_19__"
-msgstr "Laravel"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_21__"
-msgstr "Java"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_23__"
-msgstr "Spring"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_25__"
-msgstr "C#"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_27__"
-msgstr "ASP.NET Core"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_29__"
-msgstr "Ruby"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_31__"
-msgstr "Ruby on Rails"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_33__"
-msgstr "Bases de Datos"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_35__"
-msgstr "MySQL"
-
-#: src/data/pages/en/markdown.md
-msgid "__W_MSG_37__"
-msgstr "PostgreSQL"
-
-#: src/data/snippets/personal/hero-subtitle.md
-msgid "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities."
-msgstr "Soy un Diseñador Gráfico apasionado por la creación de historias visuales. Con 5 años de experiencia y un título de la Escuela de Diseño de la Universidad de Nueva York, infundo vitalidad en marcas y diseños, transformando conceptos en realidades cautivadoras."
-
-#: src/data/snippets/personal/about-content.md
-msgid "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination."
-msgstr "Bienvenido a mi viaje creativo. Mi trabajo es un testimonio de mi compromiso de dar vida a las ideas, donde cada píxel se convierte en una pincelada en el lienzo de la imaginación."
-
-#: src/data/snippets/personal/about-content.md
-msgid "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades."
-msgstr "Encuentro inspiración en el mundo que me rodea, ya sea a través de las páginas de una novela cautivadora, los intrincados detalles de la tipografía o los vibrantes tonos de la naturaleza durante mis escapadas al aire libre."
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "AstroWind template in depth"
-msgstr "Plantilla AstroWind en profundidad"
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "While easy to get started, Astrowind is quite complex internally.  This page provides documentation on some of the more intricate parts."
-msgstr "Aunque es fácil empezar, Astrowind es bastante complejo internamente. Esta página proporciona documentación sobre algunas de las partes más intrincadas."
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "Documentation"
-msgstr "Documentación"
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "Mauris velit laoreet vitae cursus augue"
-msgstr "Mauris velit laoreet vitae cursus augue"
-
-#: src/data/post/en/astrowind-template-in-depth.mdx
-msgid "Some text here"
-msgstr "Un texto aquí"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Mastering Landing Pages: Practical Guide for 2023"
-msgstr "Dominando las Páginas de Aterrizaje: Guía Práctica para 2023"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!"
-msgstr "¿Alguna vez has hecho clic en un anuncio y te has encontrado en una página que parecía querer realmente que hicieras algo? ¡Felicidades, has aterrizado en una Página de Aterrizaje!"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them."
-msgstr "En el vasto panorama digital, destacarse es más que un deseo, es una necesidad. Entra en el mundo de las Landing Pages, los héroes anónimos del marketing digital. Con el poder de la plantilla AstroWind, desarrollada usando Astro y Tailwind CSS, la creación de estas páginas se vuelve aún más intuitiva. Vamos a sumergirnos en la comprensión, creación y optimización de las mismas."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Landing Pages Unveiled"
-msgstr "Páginas de Aterrizaje Desveladas"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad."
-msgstr "Una **Página de Aterrizaje** es una página web independiente, distinta de tu sitio web principal. Creada con un objetivo singular: convertir visitantes en leads o ventas accionables. Es donde un visitante \"aterriza\" después de hacer clic en un enlace de marketing o un anuncio."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer."
-msgstr "Imagina que haces clic en un anuncio de un descuento por tiempo limitado en una marca de zapatos popular. Esta acción te lleva a una página que muestra los zapatos con descuento, con un botón claro de \"Comprar ahora\". Eso es una Página de Aterrizaje en acción, centrando tu atención únicamente en la oferta."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "The Power of Precision"
-msgstr "El Poder de la Precisión"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience."
-msgstr "A diferencia de una página de inicio repleta de contenido diverso, una Página de Aterrizaje está enfocada con precisión. Elimina posibles distracciones como una navegación excesiva, asegurando que la atención del visitante permanezca indivisa. ¿El resultado? Mayores tasas de conversión y una experiencia de usuario más optimizada."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Target"
-msgstr "Objetivo"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward."
-msgstr "Piensa en una Página de Aterrizaje como un vendedor digital. Así como un vendedor presentaría un producto sin distracciones, una Página de Aterrizaje promueve una oferta sin enlaces o información innecesarios. Es como entrar en una tienda con un solo producto en exhibición, haciendo tu elección sencilla."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Why Landing Pages Matter"
-msgstr "Por qué las Páginas de Aterrizaje son Importantes"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:"
-msgstr "En la vorágine digital actual, esperar que los clientes te encuentren por casualidad es una estrategia del pasado. Las Páginas de Aterrizaje son el futuro. Ellas:"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Guide Traffic**: Directing visitors seamlessly through the sales funnel."
-msgstr "**Guían el Tráfico**: Dirigen a los visitantes sin problemas a través del embudo de ventas."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Boost ROI**: Maximizing returns on marketing investments."
-msgstr "**Aumentan el ROI**: Maximizan los retornos de las inversiones en marketing."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Personalize User Experience**: Tailoring content to specific audience segments."
-msgstr "**Personalizan la Experiencia del Usuario**: Adaptan el contenido a segmentos específicos de la audiencia."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with."
-msgstr "Por ejemplo, si estás lanzando una nueva aplicación de fitness. Una Página de Aterrizaje bien elaborada puede dirigirse a personas interesadas en la salud y el bienestar, ofreciéndoles una prueba gratuita. Este enfoque dirigido asegura que aquellos genuinamente interesados en el fitness son con quienes te estás relacionando."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Crafting the Perfect Landing Page"
-msgstr "Creando la Página de Aterrizaje Perfecta"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:"
-msgstr "Cada elemento de tu Página de Aterrizaje debe resonar con su objetivo principal. Esto es lo que implica una Página de Aterrizaje de alta conversión:"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition."
-msgstr "**Titular Centrado en el Beneficio**: Tu titular debe transmitir instantáneamente la propuesta de valor."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Engaging Imagery**: Visuals that complement and enhance the content."
-msgstr "**Imágenes Atractivas**: Elementos visuales que complementan y realzan el contenido."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs."
-msgstr "**Texto Persuasivo**: Texto claro, conciso y persuasivo que hable directamente a las necesidades del visitante."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action."
-msgstr "**Llamada a la Acción (CTA) Clara**: Un botón o enlace destacado que impulse al visitante a actuar."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind."
-msgstr "**Diseño Minimalista**: Un diseño sin desorden que enfatiza la oferta. Por ejemplo, usando una plantilla web de Tailwind CSS como AstroWind."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility."
-msgstr "**Indicadores de Confianza**: Respaldo, reseñas y distintivos que refuerzan la credibilidad."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up."
-msgstr "Imagina que navegas en línea buscando un curso de escritura. Aterrizas en una página con un titular cautivador: \"Desbloquea al Escritor que Llevas Dentro\". Abajo, hay una imagen atractiva de una persona escribiendo, seguida de un texto persuasivo y un botón brillante de \"Inscribirse Ahora\". Esta Página de Aterrizaje ha utilizado eficazmente sus elementos para incitarte a registrarte."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Homepage vs. Landing Page"
-msgstr "Página de Inicio vs. Página de Aterrizaje"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "While both are pivotal, they serve distinct roles:"
-msgstr "Aunque ambos son fundamentales, cumplen roles distintos:"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents."
-msgstr "**Página de Inicio**: Ofrece una vista panorámica de tu marca, atendiendo a diversas intenciones de los visitantes."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading."
-msgstr "**Página de Aterrizaje**: Se centra en una única acción específica, ya sea registrarse, comprar o descargar."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\""
-msgstr "Considera una tienda online popular. Su página de inicio podría mostrar varias categorías de productos, desde electrónica hasta ropa. Sin embargo, si están promocionando una venta de verano, la Landing Page se centraría únicamente en productos de verano. Este enfoque centrado insta a los visitantes a tomar acción, animándolos a \"¡Comprar ahora en la venta de verano!\""
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "The Art of Optimization"
-msgstr "El Arte de la Optimización"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results."
-msgstr "El ámbito digital está en constante evolución. Los ajustes regulares basados en análisis pueden asegurar que tu Página de Aterrizaje siga siendo una potencia de conversión. Adopta las pruebas A/B para comparar diferentes versiones y refinar para obtener resultados óptimos."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns."
-msgstr "Supongamos que tienes una Página de Aterrizaje para un nuevo producto de cuidado de la piel. La Versión A utiliza una imagen del producto, mientras que la Versión B muestra una reseña en video. Las pruebas A/B podrían revelar que la Versión B, con el video, tiene una tasa de conversión un 20% más alta. Estas perspectivas pueden ser invaluables para futuras campañas."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Landing Pages in Action"
-msgstr "Páginas de Aterrizaje en Acción"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them."
-msgstr "Las Páginas de Aterrizaje son herramientas versátiles en tu kit de marketing. Juegan un papel en varios escenarios: promocionar el lanzamiento de un producto, capturar correos electrónicos para un boletín o impulsar registros de eventos. No se trata solo de capturar leads, sino de nutrirlos y convertirlos."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide."
-msgstr "A continuación se presentan varios tipos de Páginas de Aterrizaje prevalentes. Cada enlace ofrece un ejemplo principal de su tipo respectivo. Además, elaboramos cuidadosamente cada enlace en forma de una guía completa."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type."
-msgstr "Este enfoque asegura que observes las mejores prácticas en acción. Además, te permite adquirir una comprensión paso a paso de cómo crear hábilmente cada tipo."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Lead Generation Landing Page"
-msgstr "Página de Aterrizaje para Generación de Leads"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details."
-msgstr "**Propósito**: Diseñada principalmente para capturar datos del usuario, como direcciones de correo electrónico o detalles de contacto."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial."
-msgstr "**Contenido**: Suele incluir un formulario donde los usuarios pueden introducir sus datos. También destaca lo que obtendrán a cambio, como un eBook, un seminario web o una prueba gratuita."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return."
-msgstr "**Enfoque**: Incitar a los visitantes a proporcionar sus datos personales ofreciendo algo valioso a cambio."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data."
-msgstr "**Diferenciador Clave**: A diferencia de las \"Páginas de Aterrizaje de Clic\", que guían a los usuarios a otro paso, estas recopilan directamente datos del usuario."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details."
-msgstr "**Ejemplo**: Una agencia de marketing digital que ofrece una auditoría SEO gratuita a cambio de los datos de contacto de la empresa."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Long-form Sales Landing Page"
-msgstr "Página de Aterrizaje de Ventas de Formato Largo"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers."
-msgstr "**Propósito**: Diseñada principalmente para vender, con el objetivo de persuadir y convertir a los visitantes en clientes."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses."
-msgstr "**Contenido**: Extenso, proporciona una gran cantidad de información, incluyendo detalles del producto, beneficios, historias de usuarios, casos de éxito, garantías y bonificaciones."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor."
-msgstr "**Enfoque**: Utiliza una narrativa para presentar un problema y ofrecer el producto o servicio como solución. El objetivo es conectar emocionalmente con el visitante."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page."
-msgstr "**Diferenciador clave**: Mientras que las 'Páginas de aterrizaje de clics' preparan al visitante para un compromiso mayor. Las 'Páginas de aterrizaje de ventas de formato largo' tienen como objetivo cerrar la venta directamente en la página."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others."
-msgstr "**Ejemplo**: Un programa de pérdida de peso que detalla el viaje de una persona y los desafíos que ha enfrentado. También destaca cómo el programa les ayudó y por qué es una solución ideal para otros."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Click-through Landing Page"
-msgstr "Página de Aterrizaje de Clics"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment."
-msgstr "**Propósito**: Actúa como un paso intermedio, preparando a los visitantes para un compromiso mayor."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page."
-msgstr "**Contenido**: Proporciona detalles esenciales y beneficios de una oferta, instando a los visitantes a hacer clic para ir a otra página."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form."
-msgstr "**Enfoque**: Dirigir a los visitantes al punto de conversión final, ya sea una página de pago o un formulario de registro."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action."
-msgstr "**Diferenciador clave**: A diferencia de las \"Páginas de Aterrizaje de Suscripción\" que buscan un compromiso recurrente, estas llevan a una acción única."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page."
-msgstr "**Ejemplo**: Una tienda en línea que muestra los beneficios de un nuevo producto, dirigiendo a los visitantes a la página de compra."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Product Details Landing Page"
-msgstr "Página de Aterrizaje de Detalles del Producto"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Designed to inform by providing specific details about a product or service."
-msgstr "**Propósito**: Diseñada para informar, proporcionando detalles específicos sobre un producto o servicio."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews."
-msgstr "**Contenido**: Se centra en características, especificaciones y beneficios. Puede incluir imágenes de alta calidad, descripciones detalladas, videos de demostración y reseñas de usuarios."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: Presents the product or service transparently and attractively."
-msgstr "**Enfoque**: Presenta el producto o servicio de manera transparente y atractiva."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner."
-msgstr "**Diferenciador clave**: Mientras que las 'Páginas de aterrizaje de ventas de formato largo' buscan persuadir a través de narrativas y superando objeciones. Las 'Páginas de aterrizaje de detalles del producto' se centran en presentar el producto o servicio de manera clara y detallada."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews."
-msgstr "**Ejemplo**: Un sitio web de tecnología que detalla las especificaciones de una nueva laptop, características únicas, comparaciones con modelos anteriores y reseñas de usuarios."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Coming Soon or Pre-Launch Landing Page"
-msgstr "Página de Aterrizaje de Próximamente o Prelanzamiento"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Creates excitement for an upcoming product, service, or event."
-msgstr "**Propósito**: Crea expectación por un próximo producto, servicio o evento."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications."
-msgstr "**Contenido**: A menudo incluye un temporizador de cuenta regresiva, contenido de adelanto y una opción para registrarse para recibir notificaciones."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: To generate buzz and capture early interest."
-msgstr "**Enfoque**: Generar expectación y captar interés temprano."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible."
-msgstr "**Diferenciador clave**: A diferencia de otras páginas de aterrizaje que presentan ofertas disponibles, estas promocionan algo que aún no es accesible."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access."
-msgstr "**Ejemplo**: Un desarrollador de juegos adelantando el lanzamiento de su próximo juego con avances y una opción de acceso anticipado."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Subscription Landing Page"
-msgstr "Página de Aterrizaje de Suscripción"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product."
-msgstr "**Propósito**: Anima a los visitantes a suscribirse a un servicio, boletín o producto recurrente."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers."
-msgstr "**Contenido**: Destaca los beneficios de la suscripción, a menudo ofreciendo ofertas especiales o contenido exclusivo para suscriptores."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Focus**: To secure a long-term commitment from the visitor."
-msgstr "**Enfoque**: Asegurar un compromiso a largo plazo del visitante."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment."
-msgstr "**Diferenciador clave**: A diferencia de las \"Páginas de Aterrizaje de Clics\" que llevan a una acción única, estas buscan un compromiso recurrente."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits."
-msgstr "**Ejemplo**: Una revista que promociona su suscripción mensual, detallando artículos exclusivos y beneficios especiales solo para suscriptores."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Conclusion"
-msgstr "Conclusión"
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success."
-msgstr "En la sinfonía del marketing digital, las Páginas de Aterrizaje se convierten en el crescendo. Captan la atención, provocan la acción e impulsan resultados. A medida que avanzamos, una tarea esencial es optimizar, mantener la relevancia y crear Páginas de Aterrizaje de alta conversión. Estos factores en conjunto son la clave para lograr el éxito digital."
-
-#: src/data/post/en/mastering-landing-pages.md
-msgid "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement."
-msgstr "Imagina un mundo donde cada interacción en línea se personaliza y dirige. Esto demuestra el potencial de las Páginas de Aterrizaje. Para las startups que buscan tracción o las marcas establecidas que introducen nuevos productos, las Páginas de Aterrizaje pueden servir como catalizador. Poseen el poder de impulsar el crecimiento digital y aumentar el engagement."

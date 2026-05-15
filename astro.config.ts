@@ -17,7 +17,8 @@ import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
-import { wuchale } from '@wuchale/vite-plugin';
+// Fork: import { wuchale } from '@wuchale/vite-plugin';
+import { wuchale } from 'wuchale/vite';
 import { markdownPlugin } from './src/utils/markdown-vite-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

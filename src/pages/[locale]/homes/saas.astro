@@ -15,22 +15,17 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
-// @wc-ignore
 export const navigation = {
   title: 'SaaS Homepage',
   showIn: 'header',
   group: 'Homes',
 };
 
-const metadata = {
-  title: navigation.title, // navigation title, can be replaced with a more meaningful static title
-};
-
 const currentLocale = Astro.currentLocale;
 const headerData = await getHeaderData(currentLocale);
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={navigation}>
   <div slot="header">
     <Header
       {...headerData}
