@@ -60,7 +60,7 @@ export default defineConfig({
         localesDir: 'src/locales',
         locales: i18nConfig.locales,
         sourceLocale: i18nConfig.defaultLocale,
-        translatableFrontmatterKeys: ['title', 'excerpt', 'category'],
+        translatableFrontmatterKeys: ['title', 'excerpt'],
       }),
       markdownPlugin({
         sourceDir: 'src/data/snippets',
