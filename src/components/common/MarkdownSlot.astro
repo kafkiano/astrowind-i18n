@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { render } from 'astro:content';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 export interface Props {
   /** Content entry from getEntry() */
@@ -11,7 +12,7 @@ export interface Props {
 
 const { content, inline } = Astro.props;
 
-let Content: any = null;
+let Content: AstroComponentFactory | null = null;
 
 if (content) {
   const rendered = await render(content);
