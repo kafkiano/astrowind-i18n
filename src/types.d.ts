@@ -1,6 +1,21 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
 
+// --- Markdown translation manifest types ---
+
+export interface LocaleEntry {
+  slug: string;
+  outputPath: string;
+}
+
+export interface ManifestEntry {
+  sourcePath: string;
+  title: string;
+  locales: Record<string, LocaleEntry>;
+}
+
+export type Manifest = Record<string, ManifestEntry>;
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
