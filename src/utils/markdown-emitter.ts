@@ -4,8 +4,7 @@ import { extract } from './markdown-extractor';
 import { render } from './markdown-renderer';
 import { loadPO, savePO, findUntranslated, mergeMessages } from './markdown-po';
 import { translateMessages } from './markdown-translator';
-import { saveManifest } from './markdown-manifest';
-import type { Manifest, ManifestEntry } from './markdown-manifest';
+import type { Manifest, ManifestEntry } from '~/types';
 
 export interface EmitterOptions {
   sourceDir: string; // e.g. 'src/data/pages'
@@ -29,7 +28,7 @@ async function globMarkdown(dir: string): Promise<string[]> {
       const fullPath = join(currentDir, entry.name);
       if (entry.isDirectory()) {
         await walk(fullPath);
-      } else if (entry.isFile() && extname(entry.name) === '.md') {
+      } else if (entry.isFile() && (extname(entry.name) === '.md' || extname(entry.name) === '.mdx')) {
         results.push(fullPath);
       }
     }
@@ -50,7 +49,7 @@ function getRelativeSlug(filePath: string, sourceDir: string, locales: string[])
   if (parts.length > 1 && locales.includes(parts[0])) {
     parts.shift();
   }
-  return parts.join('/').replace(/\.md$/, '');
+  return parts.join('/').replace(/\.(md|mdx)$/, '');
 }
 
 /**
@@ -237,4 +236,12 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
   }
 
   return manifestEntry;
+}
+
+/**
+ * Save manifest to disk.
+ */
+export async function saveManifest(manifestPath: string, manifest: Manifest): Promise<void> {
+  await mkdir(dirname(manifestPath), { recursive: true });
+  await writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
 }

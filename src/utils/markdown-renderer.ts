@@ -196,6 +196,8 @@ function resolveFrontmatter(
       } else {
         resolved[key] = value;
       }
+    } else if (value instanceof Date) {
+      resolved[key] = value;
     } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       resolved[key] = resolveFrontmatter(value as Skeleton['frontmatter'], resolveMessage);
     } else {

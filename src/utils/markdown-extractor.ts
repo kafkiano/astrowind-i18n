@@ -10,7 +10,7 @@ export interface Message {
 }
 
 export interface Skeleton {
-  frontmatter: Record<string, string | number | boolean | null | Record<string, unknown>>;
+  frontmatter: Record<string, string | number | boolean | Date | null | Record<string, unknown> | unknown[]>;
   body: Root;
 }
 
@@ -137,7 +137,7 @@ function serializeBlockText(node: RootContent): string | null {
  * Parse markdown source into frontmatter and MDAST body.
  */
 function parseMarkdown(source: string): {
-  frontmatter: Record<string, string | number | boolean | null | Record<string, unknown>>;
+  frontmatter: Record<string, string | number | boolean | Date | null | Record<string, unknown> | unknown[]>;
   body: Root;
 } {
   let frontmatter: Skeleton['frontmatter'] = {};
@@ -158,6 +158,24 @@ function parseMarkdown(source: string): {
   const tree = unified().use(remarkParse).parse(bodySource) as Root;
 
   return { frontmatter, body: tree };
+}
+
+/**
+ * Deep clone a frontmatter value, preserving Date objects.
+ * JSON.parse(JSON.stringify()) converts Dates to strings, breaking
+ * content collection schemas that expect z.date().
+ */
+function cloneFrontmatter(value: unknown): unknown {
+  if (value instanceof Date) return value;
+  if (Array.isArray(value)) return value.map(cloneFrontmatter);
+  if (value && typeof value === 'object' && !(value instanceof Date)) {
+    const cloned: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+      cloned[k] = cloneFrontmatter(v);
+    }
+    return cloned;
+  }
+  return value;
 }
 
 /**
@@ -190,7 +208,8 @@ export function extract(
   const { frontmatter, body } = parseMarkdown(source);
 
   // --- Extract from frontmatter ---
-  const skeletonFrontmatter: Record<string, unknown> = JSON.parse(JSON.stringify(frontmatter));
+  // Deep clone preserving Date objects (JSON round-trip destroys them)
+  const skeletonFrontmatter: Record<string, unknown> = cloneFrontmatter(frontmatter) as Record<string, unknown>;
 
   for (const key of translatableFrontmatterKeys) {
     const value = getNestedValue(frontmatter, key);

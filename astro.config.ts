@@ -55,6 +55,14 @@ export default defineConfig({
         translatableFrontmatterKeys: ['title', 'description', 'excerpt'],
       }),
       markdownPlugin({
+        sourceDir: 'src/data/post',
+        outputDir: '.wuchale-content/posts',
+        localesDir: 'src/locales',
+        locales: i18nConfig.locales,
+        sourceLocale: i18nConfig.defaultLocale,
+        translatableFrontmatterKeys: ['title', 'excerpt', 'category'],
+      }),
+      markdownPlugin({
         sourceDir: 'src/data/snippets',
         outputDir: '.wuchale-content/snippets',
         localesDir: 'src/locales',
