@@ -16,6 +16,11 @@ export interface TranslationEntry {
 
 export type TranslationMemory = Map<string, TranslationEntry>;
 
+/** Normalize msgid: trim and collapse whitespace to single spaces. */
+export function normalizeMsgid(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 const MEMORY_PATH = '.i18n-cache/content-translations.json';
 
 function memoryPath(locale: string): string {
@@ -24,16 +29,26 @@ function memoryPath(locale: string): string {
 
 /** Load the translation memory for a specific locale. */
 export async function loadMemory(locale: string): Promise<TranslationMemory> {
+  const normalizeEntries = (data: Record<string, TranslationEntry>) => {
+    const normalized = new Map<string, TranslationEntry>();
+    for (const [key, entry] of Object.entries(data)) {
+      const normKey = normalizeMsgid(key);
+      const existing = normalized.get(normKey);
+      // Prefer entry with translation; normalized key wins
+      if (!existing || (!existing.msgstr && entry.msgstr)) {
+        normalized.set(normKey, entry);
+      }
+    }
+    return normalized;
+  };
+
   try {
     const raw = await readFile(memoryPath(locale), 'utf-8');
-    const data = JSON.parse(raw) as Record<string, TranslationEntry>;
-    return new Map(Object.entries(data));
+    return normalizeEntries(JSON.parse(raw));
   } catch {
-    // Fall back to legacy shared file, then empty
     try {
       const raw = await readFile(MEMORY_PATH, 'utf-8');
-      const data = JSON.parse(raw) as Record<string, TranslationEntry>;
-      return new Map(Object.entries(data));
+      return normalizeEntries(JSON.parse(raw));
     } catch {
       return new Map();
     }
@@ -43,9 +58,10 @@ export async function loadMemory(locale: string): Promise<TranslationMemory> {
 /** Save the translation memory for a specific locale. */
 export async function saveMemory(locale: string, memory: TranslationMemory): Promise<void> {
   await mkdir(dirname(memoryPath(locale)), { recursive: true });
+  // Ensure keys are normalized
   const obj: Record<string, TranslationEntry> = {};
   for (const [key, entry] of memory) {
-    obj[key] = entry;
+    obj[normalizeMsgid(key)] = entry;
   }
   await writeFile(memoryPath(locale), JSON.stringify(obj, null, 2) + '\n', 'utf-8');
 }
@@ -74,17 +90,30 @@ export function mergeMessages(
   let hasNew = false;
 
   for (const msg of newMessages) {
-    if (!memory.has(msg.msgid)) {
-      memory.set(msg.msgid, {
+    const normalized = normalizeMsgid(msg.msgid);
+    
+    // Check if a non-normalized variant exists (backward compat)
+    const existingEntry = memory.get(normalized) || memory.get(msg.msgid);
+    
+    if (!existingEntry) {
+      memory.set(normalized, {
         msgstr: '',
         references: msg.references || [],
       });
       hasNew = true;
+      // Remove non-normalized key if it exists from a previous pass
+      if (normalized !== msg.msgid) {
+        memory.delete(msg.msgid);
+      }
     } else {
+      // Normalize the key if it was stored non-normalized
+      if (normalized !== msg.msgid) {
+        memory.delete(msg.msgid);
+        memory.set(normalized, existingEntry);
+      }
       // Update references
-      const existing = memory.get(msg.msgid)!;
       if (msg.references?.length) {
-        existing.references = msg.references;
+        existingEntry.references = msg.references;
       }
     }
   }

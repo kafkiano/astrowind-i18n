@@ -27,6 +27,11 @@ export function parseSentinel(text: string): number | null {
   return match ? Number(match[1]) : null;
 }
 
+/** Normalize extracted text: collapse whitespace to single spaces, trim. */
+function normalizeText(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 /**
  * Serialize phrasing content to a plain text string.
  * Preserves inline formatting as literal markdown.
@@ -217,7 +222,7 @@ export function extract(
       const index = messageIndex++;
       messages.push({
         index,
-        text: value,
+        text: normalizeText(value),
         context: `frontmatter:${key}`,
       });
       setNestedValue(skeletonFrontmatter, key, makeSentinel(index));
@@ -252,7 +257,7 @@ export function extract(
           const index = messageIndex++;
           messages.push({
             index,
-            text: imageNode.alt,
+            text: normalizeText(imageNode.alt),
             context: `body:image:${count}`,
           });
           (child as Image).alt = makeSentinel(index);
@@ -266,8 +271,8 @@ export function extract(
       }
 
       if (translatableBlocks.has(childType) && 'children' in child) {
-        const text = serializeBlockText(child as RootContent);
-        if (text && text.trim()) {
+        const text = normalizeText(serializeBlockText(child as RootContent) || '');
+        if (text) {
           const index = messageIndex++;
           const contextPath = [...path, `${childType}:${count}`].join(':');
           messages.push({
