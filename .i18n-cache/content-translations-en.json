@@ -1,0 +1,1298 @@
+{
+  "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities.": {
+    "msgstr": "",
+    "references": [
+      "src/data/snippets/personal/hero-subtitle.md"
+    ]
+  },
+  "About me": {
+    "msgstr": "",
+    "references": [
+      "src/data/snippets/personal/about-content.md"
+    ]
+  },
+  "Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each pixel becomes a brushstroke in the canvas of imagination.": {
+    "msgstr": "",
+    "references": [
+      "src/data/snippets/personal/about-content.md"
+    ]
+  },
+  "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades.": {
+    "msgstr": "",
+    "references": [
+      "src/data/snippets/personal/about-content.md"
+    ]
+  },
+  "If you're curious to dive deeper into my work, you can follow me:": {
+    "msgstr": "",
+    "references": [
+      "src/data/snippets/personal/about-content.md"
+    ]
+  },
+  "Mastering Landing Pages: Practical Guide for 2023": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Landing Pages Unveiled": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "The Power of Precision": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Target": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Why Landing Pages Matter": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Guide Traffic**: Directing visitors seamlessly through the sales funnel.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Boost ROI**: Maximizing returns on marketing investments.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Personalize User Experience**: Tailoring content to specific audience segments.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Crafting the Perfect Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Engaging Imagery**: Visuals that complement and enhance the content.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Homepage vs. Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "While both are pivotal, they serve distinct roles:": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\"": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "The Art of Optimization": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Landing Pages in Action": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Lead Generation Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Long-form Sales Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Click-through Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Product Details Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Designed to inform by providing specific details about a product or service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: Presents the product or service transparently and attractively.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Coming Soon or Pre-Launch Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Creates excitement for an upcoming product, service, or event.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: To generate buzz and capture early interest.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Subscription Landing Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: To secure a long-term commitment from the visitor.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Conclusion": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement.": {
+    "msgstr": "",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Markdown Page": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "What is Markdown?": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Markdown is a lightweight markup language that you can use to format plain text documents.  \nWrite docs for your GitHub projects, edit your GitHub profile *README* etc. You fill find it all here.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Let's dive into it. ⤵️": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Table of Contents": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Paragraph": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "By writing regular text you are basically writing a paragraph.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "This is a paragraph.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Headings": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "There are 6 heading variants. The number of \"#\" symbols, followed by text, indicates the importance of the heading.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Heading 1": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Heading 2": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Heading 3": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Heading 4": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Heading 5": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Heading 6": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Emphasis": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Modifying text is so neat and easy. You can make your text bold, italic and strikethrough.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Using two asterisks **this text is bold**.  \nTwo underscores **work as well**.  \nLet's make it *italic now*.  \nYou guessed it, *one underscore is also enough*.  \nCan we combine ***both of that*?** Absolutely.  \nWhat if I want to ~~strikethrough~~?": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Blockquote": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Want to emphasise importance of the text? Say no more.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "This is a blockquote.\nWant to write on a new line with space between?": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Images": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  \nHere is the syntax.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "text if the image fails to load": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Links": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Like it so far? Follow me on GitHub  \nMy Markdown Cheatsheet - star it if you like it  \nFind some great docs here": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Code": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "I created `.env` file at the root.\nBackticks inside backticks? ``No problem.``": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Lists": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "As you can do in HTML, Markdown allows creating of both ordered and unordered lists.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Ordered List": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "HTML": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "CSS": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Javascript": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "React": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "I'm Frontend Dev now 👨🏼‍🎨": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Unordered List": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Node.js": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Express": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Nest.js": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Learning Backend ⌛️": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Mixed List": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "You can also mix both of the lists and create sublists.  \n**PS.** Try not to create lists deeper than two levels. It is the best practice.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Learn Basics": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Learn One Framework": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Table": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Great way to display well-arranged data. Use \"|\" symbol to separate columns and \":\" symbol to align row content.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "| Left Align (default) | Center Align | Right Align |\n| :------------------- | :----------: | ----------: |\n| React.js             |   Node.js    |       MySQL |\n| Next.js              |   Express    |     MongoDB |\n| Vue.js               |   Nest.js    |       Redis |": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Task List": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Keeping track of the tasks that are done, and those that need to be done.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "[x] Learn Markdown": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "[ ] Learn Frontend Development": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "[ ] Learn Full Stack Development": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Footnote": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Want to describe something at the end of the file? Use footnote!": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "I am working on a new project. [^1]": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "[^1]: Stack is: React, Typescript, Tailwind CSS": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Project is about music & movies.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Hope you will like it. [^see]": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "[^see]: Loading... ⌛️": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Jump to section": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name=\"...\">` tags.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Horizontal Line": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "You can use asterisks, hyphens or underlines (*, -, _) to create horizontal line.  \nThe only rule is that you must include at least three chars of the symbol.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "First Horizontal Line": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Second One": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Third": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "→ Easy  \n→ And simple": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Mermaid Diagrams": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Mindmap": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Flowchart": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Section with some ID": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/markdown.md"
+    ]
+  },
+  "Terms and Conditions": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "*Last updated*: January 06, 2023": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Please read these terms and conditions carefully before using Our Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Interpretation and Definitions": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Interpretation": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Definitions": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "For the purposes of these Terms and Conditions:": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Country** refers to: California, United States": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Service** refers to the Website.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "**You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Acknowledgment": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Links to Other Websites": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Termination": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Upon termination, Your right to use the Service will cease immediately.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Limitation of Liability": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "\"AS IS\" and \"AS AVAILABLE\" Disclaimer": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Governing Law": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Disputes Resolution": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "For European Union (EU) Users": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "United States Legal Compliance": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a \"terrorist supporting\" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Severability and Waiver": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Severability": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Waiver": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Translation Interpretation": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Changes to These Terms and Conditions": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "Contact Us": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "If you have any questions about these Terms and Conditions, You can contact us:": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  },
+  "By email: somecoolemail@domain.com": {
+    "msgstr": "",
+    "references": [
+      "src/data/pages/en/terms.md"
+    ]
+  }
+}

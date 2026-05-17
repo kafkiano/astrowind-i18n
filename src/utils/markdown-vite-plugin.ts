@@ -6,7 +6,7 @@ import { extname } from 'node:path';
 /**
  * Vite plugin that:
  * - Runs emitAll() on build start to generate all locale files
- * - Watches .md and .po files for HMR during dev
+ * - Watches .md files for HMR during dev
  */
 export function markdownPlugin(options: EmitterOptions): Plugin {
   let hasEmitted = false;
@@ -29,28 +29,22 @@ export function markdownPlugin(options: EmitterOptions): Plugin {
     async handleHotUpdate({ file, server }) {
       const ext = extname(file);
 
-      // Only handle .md and .po file changes
-      if (ext !== '.md' && ext !== '.po') {
+      // Only handle .md file changes
+      if (ext !== '.md') {
         return;
       }
 
       // Check if the file is in our watched directories
-      const isMarkdown = file.endsWith('.md') && file.includes(options.sourceDir);
-      const isPo = file.endsWith('.po') && file.includes(options.localesDir);
+      const isMarkdown = file.includes(options.sourceDir);
 
-      if (!isMarkdown && !isPo) {
+      if (!isMarkdown) {
         return;
       }
 
       console.log(`[markdown] File changed: ${file}`);
 
-      if (isMarkdown) {
-        // Re-emit just this file
-        await emitFile(file, options);
-      } else {
-        // PO file changed: re-emit all files (translations may affect multiple pages)
-        await emitAll(options);
-      }
+      // Re-emit just this file
+      await emitFile(file, options);
 
       // Trigger full reload since content collections need refresh
       server.ws.send({ type: 'full-reload' });

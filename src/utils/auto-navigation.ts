@@ -1,7 +1,6 @@
 import { getCollection } from 'astro:content';
 import { getPermalink, getPagePermalink } from './permalinks';
 import { I18N, NAVIGATION } from 'astrowind:config';
-import { translateTitle } from './translate-nav';
 import type { AutoNavConfig, NavigationData, FooterData, NavigationLink, Links } from '~/types';
 
 /**
@@ -81,23 +80,12 @@ async function scanContentPages(locale: string): Promise<Page[]> {
 }
 
 /**
- * Scan all pages and translate titles for the given locale
+ * Scan all pages (translations handled by post-processing integration)
  */
 async function scanAllPages(locale: string): Promise<Page[]> {
   const filePages = scanFilePages(locale);
   const contentPages = await scanContentPages(locale);
-  const allPages = [...filePages, ...contentPages];
-
-  // Translate navigation titles using Wuchale compiled catalogs
-  if (locale !== 'en') {
-    await Promise.all(
-      allPages.map(async (page) => {
-        page.title = await translateTitle(page.title, locale);
-      })
-    );
-  }
-
-  return allPages;
+  return [...filePages, ...contentPages];
 }
 
 /**

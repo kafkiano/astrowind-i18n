@@ -1,27 +1,28 @@
+/**
+ * Emit translated markdown files for all locales.
+ * Uses JSON translation memory (.i18n-cache/content-translations.json).
+ */
+
 import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import { join, relative, extname, dirname } from 'node:path';
 import { extract } from './markdown-extractor';
 import { render } from './markdown-renderer';
-import { loadPO, savePO, findUntranslated, mergeMessages } from './markdown-po';
+import { loadMemory, saveMemory, findUntranslated, mergeMessages } from './markdown-memory';
 import { translateMessages } from './markdown-translator';
 import type { Manifest, ManifestEntry } from '~/types';
 
 export interface EmitterOptions {
-  sourceDir: string; // e.g. 'src/data/pages'
-  outputDir: string; // e.g. '.wuchale-content/pages'
-  localesDir: string; // e.g. 'src/locales'
-  locales: string[]; // e.g. ['en', 'es', 'fr', 'de']
-  sourceLocale: string; // e.g. 'en'
+  sourceDir: string;
+  outputDir: string;
+  localesDir: string;
+  locales: string[];
+  sourceLocale: string;
   translatableFrontmatterKeys: string[];
-  manifestPath?: string; // default: '.wuchale-content/manifest.json'
+  manifestPath?: string;
 }
 
-/**
- * Glob all .md files in a directory recursively.
- */
 async function globMarkdown(dir: string): Promise<string[]> {
   const results: string[] = [];
-
   async function walk(currentDir: string) {
     const entries = await readdir(currentDir, { withFileTypes: true });
     for (const entry of entries) {
@@ -33,41 +34,29 @@ async function globMarkdown(dir: string): Promise<string[]> {
       }
     }
   }
-
   await walk(dir);
   return results;
 }
 
-/**
- * Get the relative path from sourceDir to a file, without extension.
- * Strips locale prefix if present (e.g., 'en/about.md' → 'about').
- */
 function getRelativeSlug(filePath: string, sourceDir: string, locales: string[]): string {
   const rel = relative(sourceDir, filePath).replace(/\\/g, '/');
-  // Strip locale prefix if present
   const parts = rel.split('/');
-  if (parts.length > 1 && locales.includes(parts[0])) {
-    parts.shift();
-  }
+  if (parts.length > 1 && locales.includes(parts[0])) parts.shift();
   return parts.join('/').replace(/\.(md|mdx)$/, '');
 }
 
-/**
- * Get the relative path for output, stripping locale prefix from source.
- */
 function getOutputRelativePath(filePath: string, sourceDir: string, locales: string[]): string {
   const rel = relative(sourceDir, filePath).replace(/\\/g, '/');
-  // Strip locale prefix if present
   const parts = rel.split('/');
-  if (parts.length > 1 && locales.includes(parts[0])) {
-    parts.shift();
-  }
+  if (parts.length > 1 && locales.includes(parts[0])) parts.shift();
   return parts.join('/');
 }
 
-/**
- * Emit all locale files for all source markdown files.
- */
+async function saveManifest(manifestPath: string, manifest: Manifest): Promise<void> {
+  await mkdir(dirname(manifestPath), { recursive: true });
+  await writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
+}
+
 export async function emitAll(options: EmitterOptions): Promise<Manifest> {
   const { sourceDir, locales, sourceLocale } = options;
   const manifestPath = options.manifestPath || join('.wuchale-content', 'manifest.json');
@@ -75,16 +64,10 @@ export async function emitAll(options: EmitterOptions): Promise<Manifest> {
   const manifest: Manifest = {};
   let sourceFiles = await globMarkdown(sourceDir);
 
-  // Filter to only process files from the source locale directory
-  // If files are in locale subdirs (e.g., en/, es/), only process the source locale
   sourceFiles = sourceFiles.filter((f) => {
     const rel = relative(sourceDir, f).replace(/\\/g, '/');
     const firstPart = rel.split('/')[0];
-    // If the first directory is a locale, only include source locale files
-    if (locales.includes(firstPart)) {
-      return firstPart === sourceLocale;
-    }
-    // If no locale prefix, include the file
+    if (locales.includes(firstPart)) return firstPart === sourceLocale;
     return true;
   });
 
@@ -100,12 +83,8 @@ export async function emitAll(options: EmitterOptions): Promise<Manifest> {
   return manifest;
 }
 
-/**
- * Emit locale files for a single source markdown file.
- * Returns the manifest entry, or null if the file should be skipped.
- */
 export async function emitFile(sourcePath: string, options: EmitterOptions): Promise<ManifestEntry | null> {
-  const { sourceDir, outputDir, localesDir, locales, sourceLocale, translatableFrontmatterKeys } = options;
+  const { sourceDir, outputDir, locales, sourceLocale, translatableFrontmatterKeys } = options;
 
   const source = await readFile(sourcePath, 'utf-8');
   const relativePath = getOutputRelativePath(sourcePath, sourceDir, locales);
@@ -114,35 +93,24 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
   // 1. Extract messages and skeleton
   const { messages, skeleton } = extract(source, sourcePath, translatableFrontmatterKeys);
 
-  // 2. Load source locale PO file
-  const sourcePoPath = join(localesDir, `${sourceLocale}.po`);
-  const sourcePo = await loadPO(sourcePoPath);
+  // 2. Load translation memory for source locale
+  const memory = await loadMemory(sourceLocale);
 
-  // 3. Merge new messages into source PO (source msgstr = msgid)
-  const newMessages = messages.map((m) => ({
-    msgid: m.text,
-    references: [sourcePath],
-  }));
+  // 3. Merge new messages (only if actually new)
+  const newMessages = messages.map((m) => ({ msgid: m.text, references: [sourcePath] }));
+  const { memory: mergedMemory, hasNew } = mergeMessages(memory, newMessages);
 
-  const { merged: mergedSourcePo } = mergeMessages(sourcePo, newMessages);
-
-  // For source locale, msgstr = msgid (identity translation)
-  for (const msg of mergedSourcePo.values()) {
-    if (!msg.msgstr || msg.msgstr === '') {
-      msg.msgstr = msg.msgid;
-    }
+  if (hasNew) {
+    await saveMemory(sourceLocale, mergedMemory);
   }
 
-  await savePO(sourcePoPath, mergedSourcePo, sourceLocale, sourceLocale);
-
-  // 4. Build message index → text mapping for source
+  // 4. Build index → text mapping for source locale
   const sourceMessageMap = new Map<number, string>();
   for (const msg of messages) {
     sourceMessageMap.set(msg.index, msg.text);
   }
 
-  // 5. For each locale, generate the translated file
-  // Resolve the actual title (not sentinel) for the manifest
+  // Resolve title for manifest
   const titleSentinel = typeof skeleton.frontmatter.title === 'string' ? skeleton.frontmatter.title : '';
   const titleIndex = titleSentinel.startsWith('__W_MSG_') ? parseInt(titleSentinel.match(/\d+/)?.[0] || '0') : -1;
   const resolvedTitle = titleIndex >= 0 ? sourceMessageMap.get(titleIndex) || '' : titleSentinel;
@@ -157,7 +125,7 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
     const isSource = locale === sourceLocale;
 
     if (isSource) {
-      // Source locale: use original text directly
+      // Source locale: use original text
       const resolveMessage = (index: number) => sourceMessageMap.get(index) || `__W_MSG_${index}__`;
       const rendered = render(skeleton, resolveMessage);
 
@@ -166,55 +134,43 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
       await mkdir(dirname(outputPath), { recursive: true });
       await writeFile(outputPath, rendered, 'utf-8');
 
-      // Get slug from frontmatter or use file path
       const slug = skeleton.frontmatter.slug || fileSlug;
-      manifestEntry.locales[locale] = {
-        slug: typeof slug === 'string' ? slug : fileSlug,
-        outputPath,
-      };
+      manifestEntry.locales[locale] = { slug: typeof slug === 'string' ? slug : fileSlug, outputPath };
     } else {
-      // Target locale: load PO, find untranslated, translate
-      const targetPoPath = join(localesDir, `${locale}.po`);
-      const targetPo = await loadPO(targetPoPath);
-
-      // Merge source messages into target PO
-      const { merged: mergedTargetPo } = mergeMessages(
-        targetPo,
-        messages.map((m) => ({ msgid: m.text, references: [sourcePath] }))
-      );
-
-      // Find untranslated messages
-      const untranslated = findUntranslated(mergedTargetPo);
+      // Target locale: load target locale's own memory
+      const targetMemory = await loadMemory(locale);
+      
+      // Merge source messages into target memory
+      const { memory: mergedTarget, hasNew: targetHasNew } = mergeMessages(targetMemory, newMessages);
+      
+      // Find untranslated in target memory
+      const untranslated = findUntranslated(mergedTarget);
 
       if (untranslated.length > 0) {
-        // Translate untranslated messages
         const translations = await translateMessages({
           sourceLocale,
           targetLocale: locale,
           messages: untranslated.map((m) => ({ msgid: m.msgid, msgstr: m.msgstr })),
         });
 
-        // Update PO with translations
+        // Update target memory with translations
         for (const [msgid, msgstr] of translations) {
-          const existing = mergedTargetPo.get(msgid);
-          if (existing) {
-            existing.msgstr = msgstr;
-          }
+          const entry = mergedTarget.get(msgid);
+          if (entry) entry.msgstr = msgstr;
         }
-
-        // Save updated PO
-        await savePO(targetPoPath, mergedTargetPo, locale, sourceLocale);
+        await saveMemory(locale, mergedTarget);
+      } else if (targetHasNew) {
+        await saveMemory(locale, mergedTarget);
       }
 
-      // Build resolve function for this locale
-      const resolveMessage = (index: number): string => {
-        const sourceText = sourceMessageMap.get(index);
-        if (!sourceText) return `__W_MSG_${index}__`;
+      // Build locale-specific message map from target memory
+      const localeMessageMap = new Map<number, string>();
+      for (const msg of messages) {
+        const entry = mergedTarget.get(msg.text);
+        localeMessageMap.set(msg.index, entry?.msgstr || msg.text);
+      }
 
-        const translated = mergedTargetPo.get(sourceText);
-        return translated?.msgstr || sourceText;
-      };
-
+      const resolveMessage = (index: number) => localeMessageMap.get(index) || `__W_MSG_${index}__`;
       const rendered = render(skeleton, resolveMessage);
 
       const outputDirForLocale = join(outputDir, locale);
@@ -222,26 +178,10 @@ export async function emitFile(sourcePath: string, options: EmitterOptions): Pro
       await mkdir(dirname(outputPath), { recursive: true });
       await writeFile(outputPath, rendered, 'utf-8');
 
-      // Get translated slug or fall back to source slug
-      const slugValue = skeleton.frontmatter.slug || fileSlug;
-      const slugKey = typeof slugValue === 'string' ? slugValue : fileSlug;
-      const slugTranslation = mergedTargetPo.get(slugKey);
-      const translatedSlug = slugTranslation?.msgstr || fileSlug;
-
-      manifestEntry.locales[locale] = {
-        slug: translatedSlug || fileSlug,
-        outputPath,
-      };
+      const slug = skeleton.frontmatter.slug || fileSlug;
+      manifestEntry.locales[locale] = { slug: typeof slug === 'string' ? slug : fileSlug, outputPath };
     }
   }
 
   return manifestEntry;
-}
-
-/**
- * Save manifest to disk.
- */
-export async function saveManifest(manifestPath: string, manifest: Manifest): Promise<void> {
-  await mkdir(dirname(manifestPath), { recursive: true });
-  await writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf-8');
 }
