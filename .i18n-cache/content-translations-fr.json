@@ -1,26 +1,8 @@
 {
-  "AstroWind template in depth": {
-    "msgstr": "Modèle AstroWind en profondeur",
+  "I'm a Graphic Designer passionate about crafting visual stories. With 5 years of experience and a degree from New York University's School of Design, I infuse vitality into brands and designs, transforming concepts into captivating realities.": {
+    "msgstr": "Je suis graphiste, passionné(e) par la création d'histoires visuelles. Avec 5 ans d'expérience et un diplôme de la School of Design de l'Université de New York, j'insuffle de la vitalité aux marques et aux designs, transformant les concepts en réalités captivantes.",
     "references": [
-      "src/data/post/en/astrowind-template-in-depth.mdx"
-    ]
-  },
-  "While easy to get started, Astrowind is quite complex internally.  This page provides documentation on some of the more intricate parts.": {
-    "msgstr": "",
-    "references": [
-      "src/data/post/en/astrowind-template-in-depth.mdx"
-    ]
-  },
-  "Mauris velit laoreet vitae cursus augue": {
-    "msgstr": "Mauris velit laoreet vitae cursus augue",
-    "references": [
-      "src/data/post/en/astrowind-template-in-depth.mdx"
-    ]
-  },
-  "Some text here": {
-    "msgstr": "Du texte ici",
-    "references": [
-      "src/data/post/en/astrowind-template-in-depth.mdx"
+      "src/data/snippets/personal/hero-subtitle.md"
     ]
   },
   "About me": {
@@ -36,15 +18,471 @@
     ]
   },
   "I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate details of typography, or the vibrant hues of nature during my outdoor escapades.": {
-    "msgstr": "Je puise mon inspiration dans le monde qui m'entoure, que ce soit à travers les pages d'un roman captivant, les détails complexes de la typographie, ou les teintes vibrantes de la nature lors de mes escapades en plein air.",
+    "msgstr": "Je trouve l'inspiration dans le monde qui m'entoure, que ce soit à travers les pages d'un roman captivant, les détails complexes de la typographie, ou les teintes vibrantes de la nature lors de mes escapades en plein air.",
     "references": [
       "src/data/snippets/personal/about-content.md"
     ]
   },
   "If you're curious to dive deeper into my work, you can follow me:": {
-    "msgstr": "Si vous êtes curieux d'approfondir mon travail, vous pouvez me suivre :",
+    "msgstr": "Si vous êtes curieux d'en savoir plus sur mon travail, vous pouvez me suivre :",
     "references": [
       "src/data/snippets/personal/about-content.md"
+    ]
+  },
+  "Mastering Landing Pages: Practical Guide for 2023": {
+    "msgstr": "Maîtriser les Landing Pages : Guide Pratique pour 2023",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Ever clicked on an ad and found yourself on a page that seemed to really want you to do something? Congratulations, you've landed on a Landing Page!": {
+    "msgstr": "Avez-vous déjà cliqué sur une publicité et vous êtes retrouvé sur une page qui semblait vraiment vouloir vous faire faire quelque chose ? Félicitations, vous avez atterri sur une Landing Page !",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "In the vast digital landscape, standing out is more than a desire—it's a necessity. Enter the world of Landing Pages, the unsung heroes of digital marketing. With the power of the AstroWind template, developed using Astro and Tailwind CSS, crafting these pages becomes even more intuitive. Let's dive deep into understanding, creating, and optimizing them.": {
+    "msgstr": "Dans le vaste paysage numérique, se démarquer est plus qu'un désir, c'est une nécessité. Entrez dans le monde des Landing Pages, les héros méconnus du marketing numérique. Avec la puissance du template AstroWind, développé avec Astro et Tailwind CSS, la création de ces pages devient encore plus intuitive. Plongeons dans la compréhension, la création et l'optimisation de celles-ci.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Landing Pages Unveiled": {
+    "msgstr": "Les Landing Pages Dévoilées",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor \"lands\" post-clicking on a marketing link or ad.": {
+    "msgstr": "Une **Landing Page** est une page web autonome, distincte de votre site web principal. Conçue avec un objectif unique : convertir les visiteurs en prospects exploitables ou en ventes. C'est là qu'un visiteur « atterrit » après avoir cliqué sur un lien marketing ou une publicité.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear \"Buy Now\" button. That's a Landing Page in action, focusing your attention solely on the offer.": {
+    "msgstr": "Imaginez que vous cliquiez sur une publicité pour une réduction limitée dans le temps sur une marque de chaussures populaire. Cette action vous guide vers une page qui présente les chaussures à prix réduit, avec un bouton clair « Acheter maintenant ». C'est une Landing Page en action, concentrant votre attention uniquement sur l'offre.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "The Power of Precision": {
+    "msgstr": "La Puissance de la Précision",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Unlike a homepage brimming with diverse content, a Landing Page is laser-focused. It eliminates potential distractions like excessive navigation, ensuring the visitor's attention remains undivided. The result? Higher conversion rates and a more streamlined user experience.": {
+    "msgstr": "Contrairement à une page d'accueil débordante de contenus diversifiés, une Landing Page est ultra-ciblée. Elle élimine les distractions potentielles comme une navigation excessive, garantissant que l'attention du visiteur reste entière. Le résultat ? Des taux de conversion plus élevés et une expérience utilisateur plus fluide.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Target": {
+    "msgstr": "Cible",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Think of a Landing Page as a digital salesperson. Just as a salesperson would pitch a product without distractions, a Landing Page promotes an offer without unnecessary links or information. It's like walking into a store with a single product on display, making your choice straightforward.": {
+    "msgstr": "Considérez une Landing Page comme un vendeur numérique. Tout comme un vendeur présenterait un produit sans distractions, une Landing Page promeut une offre sans liens ou informations inutiles. C'est comme entrer dans un magasin avec un seul produit exposé, ce qui rend votre choix simple.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Why Landing Pages Matter": {
+    "msgstr": "L'importance des Landing Pages",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "In today's digital rush, hoping customers stumble upon you is a strategy of the past. Landing Pages are the future. They:": {
+    "msgstr": "Dans la course numérique actuelle, espérer que les clients vous trouvent par hasard est une stratégie du passé. Les Landing Pages sont l'avenir. Elles :",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Guide Traffic**: Directing visitors seamlessly through the sales funnel.": {
+    "msgstr": "**Guident le Trafic** : Dirigeant les visiteurs de manière fluide à travers l'entonnoir de vente.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Boost ROI**: Maximizing returns on marketing investments.": {
+    "msgstr": "**Augmentent le ROI** : Maximisant les retours sur les investissements marketing.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Personalize User Experience**: Tailoring content to specific audience segments.": {
+    "msgstr": "**Personnalisent l'Expérience Utilisateur** : Adaptant le contenu à des segments d'audience spécifiques.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "For instance, if you're launching a new fitness app. A well-crafted Landing Page can target individuals interested in health and wellness, offering them a free trial. This targeted approach ensures that those genuinely interested in fitness are the ones you're engaging with.": {
+    "msgstr": "Par exemple, si vous lancez une nouvelle application de fitness. Une Landing Page bien conçue peut cibler les personnes intéressées par la santé et le bien-être, en leur offrant un essai gratuit. Cette approche ciblée garantit que les personnes réellement intéressées par le fitness sont celles avec lesquelles vous interagissez.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Crafting the Perfect Landing Page": {
+    "msgstr": "Concevoir la Landing Page Parfaite",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Every element of your Landing Page should resonate with its core objective. Here's what a high-converting Landing Page entails:": {
+    "msgstr": "Chaque élément de votre Landing Page doit résonner avec son objectif principal. Voici ce qu'implique une Landing Page à fort taux de conversion :",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Benefit-Centric Headline**: Your headline should instantly convey the value proposition.": {
+    "msgstr": "**Titre Axé sur les Avantages** : Votre titre doit instantanément communiquer la proposition de valeur.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Engaging Imagery**: Visuals that complement and enhance the content.": {
+    "msgstr": "**Images Engageantes** : Des visuels qui complètent et améliorent le contenu.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Compelling Copy**: Clear, concise, and persuasive text that speaks directly to the visitor's needs.": {
+    "msgstr": "**Texte Persuasif** : Un texte clair, concis et persuasif qui parle directement aux besoins du visiteur.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Clear Call-to-Action (CTA)**: A standout button or link urging the visitor to take action.": {
+    "msgstr": "**Appel à l'Action (CTA) Clair** : Un bouton ou un lien qui se démarque et incite le visiteur à agir.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Minimalist Design**: A clutter-free layout that emphasizes the offer. For example, using a Tailwind CSS web template like AstroWind.": {
+    "msgstr": "**Design Minimaliste** : Une mise en page épurée qui met l'accent sur l'offre. Par exemple, l'utilisation d'un modèle web Tailwind CSS comme AstroWind.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Trust Indicators**: Endorsements, reviews, and badges that bolster credibility.": {
+    "msgstr": "**Indicateurs de Confiance** : Recommandations, avis et badges qui renforcent la crédibilité.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Imagine browsing online for a writing course. You land on a page with a captivating headline: \"Unlock the Writer Within.\" Below, there's an engaging image of a person writing, followed by persuasive text and a bright \"Enroll Now\" button. This Landing Page has effectively used its elements to entice you to sign up.": {
+    "msgstr": "Imaginez que vous naviguiez en ligne pour un cours d'écriture. Vous atterrissez sur une page avec un titre captivant : « Libérez l'écrivain qui est en vous. » En dessous, il y a une image attrayante d'une personne en train d'écrire, suivie d'un texte persuasif et d'un bouton lumineux « S'inscrire maintenant ». Cette Landing Page a utilisé efficacement ses éléments pour vous inciter à vous inscrire.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Homepage vs. Landing Page": {
+    "msgstr": "Page d'Accueil vs. Landing Page",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "While both are pivotal, they serve distinct roles:": {
+    "msgstr": "Bien que les deux soient essentiels, ils remplissent des rôles distincts :",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Homepage**: Offers a panoramic view of your brand, catering to diverse visitor intents.": {
+    "msgstr": "**Page d'Accueil** : Offre une vue panoramique de votre marque, répondant à diverses intentions de visiteurs.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Landing Page**: Zeros in on a single, specific action, be it signing up, purchasing, or downloading.": {
+    "msgstr": "**Landing Page** : Se concentre sur une seule action spécifique, qu'il s'agisse de s'inscrire, d'acheter ou de télécharger.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Consider a popular online store. Their homepage might display various product categories, from electronics to clothing. However, if they’re promoting a summer sale, the Landing Page would focus solely on summer products. This focused approach urges visitors to take action, encouraging them to \"Shop the Summer Sale Now!\"": {
+    "msgstr": "Considérez une boutique en ligne populaire. Leur page d'accueil pourrait afficher diverses catégories de produits, de l'électronique aux vêtements. Cependant, s'ils promeuvent une vente d'été, la Landing Page se concentrerait uniquement sur les produits d'été. Cette approche ciblée incite les visiteurs à passer à l'action, les encourageant à « Acheter la Vente d'Été Maintenant ! »",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "The Art of Optimization": {
+    "msgstr": "L'Art de l'Optimisation",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "The digital realm is ever-evolving. Regular tweaks based on analytics can ensure your Landing Page remains a conversion powerhouse. Embrace A/B testing to compare different versions and refine for optimal results.": {
+    "msgstr": "Le monde numérique est en constante évolution. Des ajustements réguliers basés sur l'analyse peuvent garantir que votre page de destination reste une machine à conversions. Adoptez les tests A/B pour comparer différentes versions et les affiner pour des résultats optimaux.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Let's say you have a Landing Page for a new skincare product. Version A uses an image of the product, while Version B showcases a video review. A/B testing might reveal that Version B, with the video, has a 20% higher conversion rate. Such insights can be invaluable for future campaigns.": {
+    "msgstr": "Supposons que vous ayez une page de destination pour un nouveau produit de soin. La version A utilise une image du produit, tandis que la version B présente une critique vidéo. Les tests A/B pourraient révéler que la version B, avec la vidéo, a un taux de conversion 20% plus élevé. De telles informations peuvent être inestimables pour les futures campagnes.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Landing Pages in Action": {
+    "msgstr": "Les Pages de Destination en Action",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Landing Pages are versatile tools in your marketing toolkit. They play a role in various scenarios: promoting a product launch, capturing emails for a newsletter, or driving event registrations. They’re not just about capturing leads but nurturing and converting them.": {
+    "msgstr": "Les pages de destination sont des outils polyvalents dans votre boîte à outils marketing. Elles jouent un rôle dans divers scénarios : promotion du lancement d'un produit, capture d'e-mails pour une newsletter, ou inscription à des événements. Il ne s'agit pas seulement de capter des prospects, mais de les nourrir et de les convertir.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Presented below are several prevalent types of Landing Pages. Each link offers a prime example of its respective type. Additionally, we carefully craft each link in the form of a comprehensive guide.": {
+    "msgstr": "Ci-dessous sont présentés plusieurs types courants de pages de destination. Chaque lien offre un excellent exemple de son type respectif. De plus, nous concevons chaque lien sous la forme d'un guide complet.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "This approach ensures that you observe the best practices in action. Also, it enables you to acquire a step-by-step understanding of how to skillfully create each type.": {
+    "msgstr": "Cette approche garantit que vous observez les meilleures pratiques en action. Elle vous permet également d'acquérir une compréhension étape par étape de la manière de créer habilement chaque type.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Lead Generation Landing Page": {
+    "msgstr": "Page de Destination de Génération de Prospects",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Designed primarily to capture user data, such as email addresses or contact details.": {
+    "msgstr": "**Objectif** : Conçue principalement pour capturer les données des utilisateurs, telles que les adresses e-mail ou les coordonnées.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Usually includes a form where users can input their details. It also highlights what they'll get in return, such as an eBook, a webinar, or a free trial.": {
+    "msgstr": "**Contenu** : Comprend généralement un formulaire où les utilisateurs peuvent saisir leurs coordonnées. Il met également en évidence ce qu'ils obtiendront en retour, comme un eBook, un webinaire ou un essai gratuit.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: Enticing visitors to provide their personal details by offering something valuable in return.": {
+    "msgstr": "**Mise au point** : Inciter les visiteurs à fournir leurs informations personnelles en leur offrant quelque chose de précieux en retour.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike “Click-through Landing Pages,” which guide users to another step, these directly gather user data.": {
+    "msgstr": "**Caractéristique clé** : Contrairement aux « Pages de destination de type \"Click-through\" » qui guident les utilisateurs vers une autre étape, celles-ci collectent directement les données des utilisateurs.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A digital marketing agency offering a free SEO audit in exchange for business contact details.": {
+    "msgstr": "**Exemple** : Une agence de marketing numérique offrant un audit SEO gratuit en échange des coordonnées professionnelles.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Long-form Sales Landing Page": {
+    "msgstr": "Page de Destination de Vente Longue",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Primarily designed to sell, aiming to persuade and convert visitors into customers.": {
+    "msgstr": "**Objectif** : Conçue principalement pour vendre, visant à persuader et à convertir les visiteurs en clients.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Extensive, providing a wealth of information including product details, benefits, user stories, success stories, guarantees, and bonuses.": {
+    "msgstr": "**Contenu** : Étendu, fournissant une mine d'informations incluant les détails du produit, les avantages, les témoignages d'utilisateurs, les histoires de réussite, les garanties et les bonus.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: Utilizes a narrative to present a problem and offer the product or service as the solution. The aim is to emotionally connect with the visitor.": {
+    "msgstr": "**Mise au point** : Utilise un récit pour présenter un problème et proposer le produit ou service comme solution. Le but est de créer un lien émotionnel avec le visiteur.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: While 'Click-through Landing Pages' warm up the visitor for a bigger commitment. 'Long-form Sales Landing Pages' aim to close the sale directly on the page.": {
+    "msgstr": "**Caractéristique clé** : Tandis que les « Pages de destination de type \"Click-through\" » préparent le visiteur à un engagement plus important, les « Pages de destination de vente longue » visent à conclure la vente directement sur la page.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A weight loss program detailing a person's journey and the challenges they've faced. It also highlights how the program assisted them and why it's an ideal solution for others.": {
+    "msgstr": "**Exemple** : Un programme de perte de poids détaillant le parcours d'une personne et les défis qu'elle a rencontrés. Il souligne également comment le programme l'a aidée et pourquoi il constitue une solution idéale pour d'autres.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Click-through Landing Page": {
+    "msgstr": "Page de Destination de Type \"Click-through\"",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Acts as a middle step, warming up visitors for a bigger commitment.": {
+    "msgstr": "**Objectif** : Sert d'étape intermédiaire, préparant les visiteurs à un engagement plus important.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Provides essential details and benefits of an offer, urging visitors to click through to another page.": {
+    "msgstr": "**Contenu** : Fournit les détails essentiels et les avantages d'une offre, incitant les visiteurs à cliquer pour accéder à une autre page.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: To lead visitors to the final conversion point, be it a checkout page or a sign-up form.": {
+    "msgstr": "**Mise au point** : Diriger les visiteurs vers le point de conversion final, qu'il s'agisse d'une page de paiement ou d'un formulaire d'inscription.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike \"Subscription Landing Pages\" that aim for a recurring commitment, these lead to a one-time action.": {
+    "msgstr": "**Caractéristique clé** : Contrairement aux « Pages de destination d'abonnement » qui visent un engagement récurrent, celles-ci mènent à une action unique.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: An online store showcasing a new product's benefits, leading visitors to the purchase page.": {
+    "msgstr": "**Exemple** : Une boutique en ligne présentant les avantages d'un nouveau produit, guidant les visiteurs vers la page d'achat.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Product Details Landing Page": {
+    "msgstr": "Page de Destination de Détails de Produit",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Designed to inform by providing specific details about a product or service.": {
+    "msgstr": "**Objectif** : Conçue pour informer en fournissant des détails spécifiques sur un produit ou un service.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Focuses on features, specifications, and benefits. May include high-quality images, detailed descriptions, demo videos, and user reviews.": {
+    "msgstr": "**Contenu** : Se concentre sur les caractéristiques, les spécifications et les avantages. Peut inclure des images de haute qualité, des descriptions détaillées, des vidéos de démonstration et des avis d'utilisateurs.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: Presents the product or service transparently and attractively.": {
+    "msgstr": "**Mise au point** : Présenter le produit ou service de manière transparente et attractive.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: While 'Long-form Sales Landing Pages' aim to persuade through narratives and overcoming objections. 'Product Details Landing Pages' focus on presenting the product or service in a clear and detailed manner.": {
+    "msgstr": "**Caractéristique clé** : Tandis que les « Pages de destination de vente longue » visent à persuader par le biais de récits et en surmontant les objections, les « Pages de destination de détails de produit » se concentrent sur la présentation du produit ou du service de manière claire et détaillée.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A tech website detailing a new laptop's specifications, unique features, comparisons with previous models, and user reviews.": {
+    "msgstr": "**Exemple** : Un site web technologique détaillant les spécifications d'un nouvel ordinateur portable, ses fonctionnalités uniques, des comparaisons avec les modèles précédents et des avis d'utilisateurs.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Coming Soon or Pre-Launch Landing Page": {
+    "msgstr": "Page d'atterrissage 'Prochainement' ou de pré-lancement",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Creates excitement for an upcoming product, service, or event.": {
+    "msgstr": "**Objectif** : Créer de l'enthousiasme pour un produit, un service ou un événement à venir.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Often includes a countdown timer, teaser content, and an option to sign up for notifications.": {
+    "msgstr": "**Contenu** : Inclut souvent un compte à rebours, du contenu d'accroche et une option pour s'inscrire aux notifications.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: To generate buzz and capture early interest.": {
+    "msgstr": "**Objectif principal** : Générer du buzz et capter l'intérêt précoce.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike other landing pages that present available offers, these promote something not yet accessible.": {
+    "msgstr": "**Différenciateur clé** : Contrairement aux autres pages d'atterrissage qui présentent des offres disponibles, celles-ci promeuvent quelque chose qui n'est pas encore accessible.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A game developer teasing their upcoming game release with sneak peeks and an option for early access.": {
+    "msgstr": "**Exemple** : Un développeur de jeux présentant en avant-première la sortie de son prochain jeu avec des aperçus et une option d'accès anticipé.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Subscription Landing Page": {
+    "msgstr": "Page d'atterrissage d'abonnement",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Purpose**: Encourages visitors to subscribe to a service, newsletter, or recurring product.": {
+    "msgstr": "**Objectif** : Encourager les visiteurs à s'abonner à un service, une newsletter ou un produit récurrent.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Content**: Highlights the benefits of subscribing, often offering special deals or exclusive content for subscribers.": {
+    "msgstr": "**Contenu** : Met en avant les avantages de l'abonnement, offrant souvent des offres spéciales ou du contenu exclusif aux abonnés.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Focus**: To secure a long-term commitment from the visitor.": {
+    "msgstr": "**Objectif principal** : Obtenir un engagement à long terme de la part du visiteur.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Key Differentiator**: Unlike \"Click-through Landing Pages\" that lead to a one-time action, these aim for a recurring commitment.": {
+    "msgstr": "**Différenciateur clé** : Contrairement aux « Pages d'atterrissage de clics » qui mènent à une action ponctuelle, celles-ci visent un engagement récurrent.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "**Example**: A magazine promoting its monthly subscription, detailing exclusive articles and special subscriber-only benefits.": {
+    "msgstr": "**Exemple** : Un magazine promouvant son abonnement mensuel, détaillant des articles exclusifs et des avantages spéciaux réservés aux abonnés.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Conclusion": {
+    "msgstr": "Conclusion",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "In the digital marketing symphony, Landing Pages become the crescendo. They capture attention, evoke action, and drive results. As we move forward, an essential task is to optimize, maintain relevance, and create high-converting Landing Pages. These factors collectively hold the key to achieving digital success.": {
+    "msgstr": "Dans la symphonie du marketing digital, les pages d'atterrissage deviennent le crescendo. Elles captent l'attention, provoquent l'action et génèrent des résultats. Alors que nous avançons, une tâche essentielle est d'optimiser, de maintenir la pertinence et de créer des pages d'atterrissage à fort taux de conversion. Ces facteurs détiennent collectivement la clé du succès digital.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
+    ]
+  },
+  "Imagine a world where every online interaction gets personalized and directed. This showcases the potential of Landing Pages. For startups seeking traction or established brands introducing new products, Landing Pages can serve as the catalyst. They possess the power to spur digital growth and boost engagement.": {
+    "msgstr": "Imaginez un monde où chaque interaction en ligne est personnalisée et dirigée. Cela démontre le potentiel des pages d'atterrissage. Pour les startups en quête de visibilité ou les marques établies lançant de nouveaux produits, les pages d'atterrissage peuvent servir de catalyseur. Elles possèdent le pouvoir de stimuler la croissance numérique et de renforcer l'engagement.",
+    "references": [
+      "src/data/post/en/mastering-landing-pages.md"
     ]
   },
   "Privacy Policy": {
@@ -54,19 +492,19 @@
     ]
   },
   "*Last updated*: January 06, 2023": {
-    "msgstr": "*Dernière mise à jour* : 6 janvier 2023",
+    "msgstr": "*Dernière mise à jour*: 6 janvier 2023",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.": {
-    "msgstr": "Cette politique de confidentialité décrit Nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de Vos informations lorsque Vous utilisez le Service et Vous informe sur Vos droits en matière de confidentialité et la manière dont la loi Vous protège.",
+    "msgstr": "Cette Politique de confidentialité décrit Nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de Vos informations lorsque Vous utilisez le Service et Vous informe sur Vos droits en matière de confidentialité et sur la manière dont la loi Vous protège.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy is just a Demo.": {
-    "msgstr": "Nous utilisons Vos données personnelles pour fournir et améliorer le Service. En utilisant le Service, Vous acceptez la collecte et l'utilisation des informations conformément à cette politique de confidentialité. Cette politique de confidentialité n'est qu'une démo.",
+    "msgstr": "Nous utilisons Vos données personnelles pour fournir et améliorer le Service. En utilisant le Service, Vous acceptez la collecte et l'utilisation d'informations conformément à cette Politique de confidentialité. Cette Politique de confidentialité est juste une démo.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -74,43 +512,43 @@
   "Interpretation and Definitions": {
     "msgstr": "Interprétation et définitions",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "Interpretation": {
     "msgstr": "Interprétation",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.": {
-    "msgstr": "Les mots dont la première lettre est capitalisée ont des significations définies dans les conditions suivantes. Les définitions suivantes auront la même signification qu'elles apparaissent au singulier ou au pluriel.",
+    "msgstr": "Les mots dont la lettre initiale est majuscule ont des significations définies dans les conditions suivantes. Les définitions suivantes auront la même signification qu'elles apparaissent au singulier ou au pluriel.",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "Definitions": {
     "msgstr": "Définitions",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "For the purposes of this Privacy Policy:": {
-    "msgstr": "Aux fins de cette politique de confidentialité :",
+    "msgstr": "Aux fins de cette Politique de confidentialité :",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Account** means a unique account created for You to access our Service or parts of our Service.": {
-    "msgstr": "**Compte** désigne un compte unique créé pour Vous afin d'accéder à notre Service ou à des parties de notre Service.",
+    "msgstr": "**Compte** désigne un compte unique créé pour Vous permettre d'accéder à notre Service ou à des parties de notre Service.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Company** (referred to as either \"the Company\", \"We\", \"Us\" or \"Our\" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.": {
-    "msgstr": "**Société** (désignée par \"la Société\", \"Nous\" ou \"Notre\" dans le présent accord) désigne AstroWind LLC, 1 Cupertino, CA 95014.",
+    "msgstr": "**Société** (désignée par \"la Société\", \"Nous\", \"Notre\" ou \"Nos\" dans le présent Contrat) désigne AstroWind LLC, 1 Cupertino, CA 95014.",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "**Cookies** are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.": {
@@ -122,53 +560,53 @@
   "**Country** refers to: California, United States": {
     "msgstr": "**Pays** désigne : Californie, États-Unis",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "**Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.": {
     "msgstr": "**Appareil** désigne tout appareil pouvant accéder au Service tel qu'un ordinateur, un téléphone portable ou une tablette numérique.",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "**Personal Data** is any information that relates to an identified or identifiable individual.": {
-    "msgstr": "**Données personnelles** sont toute information qui se rapporte à un individu identifié ou identifiable.",
+    "msgstr": "**Données Personnelles** désigne toute information qui se rapporte à une personne identifiée ou identifiable.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Service** refers to the Website.": {
-    "msgstr": "**Service** désigne le site web.",
+    "msgstr": "**Service** désigne le Site Web.",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "**Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.": {
-    "msgstr": "**Prestataire de services** désigne toute personne physique ou morale qui traite les données pour le compte de la Société. Il s'agit de sociétés ou d'individus tiers employés par la Société pour faciliter le Service, fournir le Service pour le compte de la Société, exécuter des services liés au Service ou aider la Société à analyser comment le Service est utilisé.",
+    "msgstr": "**Fournisseur de Services** désigne toute personne physique ou morale qui traite les données pour le compte de la Société. Il s'agit d'entreprises tierces ou d'individus employés par la Société pour faciliter le Service, pour fournir le Service au nom de la Société, pour exécuter des services liés au Service ou pour aider la Société à analyser la manière dont le Service est utilisé.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).": {
-    "msgstr": "**Données d'utilisation** désignent les données collectées automatiquement, soit générées par l'utilisation du Service, soit provenant de l'infrastructure même du Service (par exemple, la durée d'une visite de page).",
+    "msgstr": "**Données d'Utilisation** désignent les données collectées automatiquement, soit générées par l'utilisation du Service, soit à partir de l'infrastructure du Service elle-même (par exemple, la durée d'une visite de page).",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Website** refers to AstroWind, accessible from https://astrowind.vercel.app": {
-    "msgstr": "**Site web** désigne AstroWind, accessible depuis https://astrowind.vercel.app",
+    "msgstr": "**Site Web** désigne AstroWind, accessible depuis https://astrowind.vercel.app",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "**You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.": {
-    "msgstr": "**Vous** désigne l'individu accédant ou utilisant le Service, ou la société, ou toute autre entité juridique pour le compte de laquelle cet individu accède ou utilise le Service, selon le cas.",
+    "msgstr": "**Vous** désigne l'individu qui accède ou utilise le Service, ou la société, ou toute autre entité juridique au nom de laquelle cet individu accède ou utilise le Service, selon le cas.",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "Collecting and Using Your Personal Data": {
-    "msgstr": "Collecte et utilisation de Vos données personnelles",
+    "msgstr": "Collecte et utilisation de Vos Données Personnelles",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -180,13 +618,13 @@
     ]
   },
   "Personal Data": {
-    "msgstr": "Données personnelles",
+    "msgstr": "Données Personnelles",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:": {
-    "msgstr": "Lorsque Vous utilisez Notre Service, Nous pouvons Vous demander de Nous fournir certaines informations personnellement identifiables qui peuvent être utilisées pour Vous contacter ou Vous identifier. Les informations personnellement identifiables peuvent inclure, sans s'y limiter :",
+    "msgstr": "Lorsque Vous utilisez Notre Service, Nous pourrions Vous demander de Nous fournir certaines informations personnellement identifiables pouvant être utilisées pour Vous contacter ou Vous identifier. Les informations personnellement identifiables peuvent inclure, sans s'y limiter :",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -198,19 +636,19 @@
     ]
   },
   "Usage Data is collected automatically when using the Service.": {
-    "msgstr": "Les données d'utilisation sont collectées automatiquement lors de l'utilisation du Service.",
+    "msgstr": "Les Données d'utilisation sont collectées automatiquement lors de l'utilisation du Service.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.": {
-    "msgstr": "Les données d'utilisation peuvent inclure des informations telles que l'adresse de protocole Internet (par exemple, l'adresse IP) de Votre appareil, le type de navigateur, la version du navigateur, les pages de notre Service que Vous visitez, l'heure et la date de Votre visite, le temps passé sur ces pages, les identifiants uniques d'appareil et d'autres données de diagnostic.",
+    "msgstr": "Les Données d'utilisation peuvent inclure des informations telles que l'adresse de protocole Internet de Votre Appareil (par ex. adresse IP), le type de navigateur, la version du navigateur, les pages de notre Service que Vous visitez, l'heure et la date de Votre visite, le temps passé sur ces pages, les identifiants uniques d'appareil et d'autres données de diagnostic.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.": {
-    "msgstr": "Lorsque Vous accédez au Service par ou via un appareil mobile, Nous pouvons collecter automatiquement certaines informations, y compris, mais sans s'y limiter, le type d'appareil mobile que Vous utilisez, l'ID unique de Votre appareil mobile, l'adresse IP de Votre appareil mobile, Votre système d'exploitation mobile, le type de navigateur Internet mobile que Vous utilisez, les identifiants uniques d'appareil et d'autres données de diagnostic.",
+    "msgstr": "Lorsque Vous accédez au Service par ou via un appareil mobile, Nous pouvons collecter automatiquement certaines informations, y compris, mais sans s'y limiter, le type d'appareil mobile que Vous utilisez, l'identifiant unique de Votre appareil mobile, l'adresse IP de Votre appareil mobile, Votre système d'exploitation mobile, le type de navigateur Internet mobile que Vous utilisez, les identifiants uniques d'appareil et d'autres données de diagnostic.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -222,37 +660,37 @@
     ]
   },
   "Tracking Technologies and Cookies": {
-    "msgstr": "Technologies de Suivi et Cookies",
+    "msgstr": "Technologies de suivi et Cookies",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:": {
-    "msgstr": "Nous utilisons des Cookies et des technologies de suivi similaires pour suivre l'activité sur Notre Service et stocker certaines informations. Les technologies de suivi utilisées sont des balises, des tags et des scripts pour collecter et suivre des informations et pour améliorer et analyser Notre Service. Les technologies que Nous utilisons peuvent inclure :",
+    "msgstr": "Nous utilisons des cookies et des technologies de suivi similaires pour suivre l'activité sur Notre Service et stocker certaines informations. Les technologies de suivi utilisées sont les balises, les tags et les scripts pour collecter et suivre les informations et pour améliorer et analyser Notre Service. Les technologies que Nous utilisons peuvent inclure :",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Cookies or Browser Cookies.** A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.": {
-    "msgstr": "**Cookies ou Cookies de navigateur.** Un cookie est un petit fichier placé sur Votre Appareil. Vous pouvez demander à Votre navigateur de refuser tous les Cookies ou d'indiquer quand un Cookie est envoyé. Cependant, si Vous n'acceptez pas les Cookies, Vous pourriez ne pas être en mesure d'utiliser certaines parties de notre Service. À moins que vous n'ayez ajusté les paramètres de Votre navigateur pour qu'il refuse les Cookies, notre Service pourra utiliser des Cookies.",
+    "msgstr": "**Cookies ou Cookies de navigateur.** Un cookie est un petit fichier placé sur Votre Appareil. Vous pouvez demander à Votre navigateur de refuser tous les Cookies ou d'indiquer quand un Cookie est envoyé. Cependant, si Vous n'acceptez pas les Cookies, Vous pourriez ne pas être en mesure d'utiliser certaines parties de notre Service. À moins que vous n'ayez ajusté les paramètres de Votre navigateur pour qu'il refuse les Cookies, notre Service peut utiliser des Cookies.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**Web Beacons.** Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).": {
-    "msgstr": "**Balises Web.** Certaines sections de notre Service et nos e-mails peuvent contenir de petits fichiers électroniques connus sous le nom de balises web (également appelées gifs transparents, balises pixel et gifs à pixel unique) qui permettent à la Société, par exemple, de compter les utilisateurs qui ont visité ces pages ou ouvert un e-mail et pour d'autres statistiques de site web connexes (par exemple, enregistrer la popularité d'une certaine section et vérifier l'intégrité du système et du serveur).",
+    "msgstr": "**Balises Web.** Certaines sections de notre Service et nos e-mails peuvent contenir de petits fichiers électroniques appelés balises web (également appelés gifs transparents, pixels espions et gifs à pixel unique) qui permettent à la Société, par exemple, de compter les utilisateurs qui ont visité ces pages ou ouvert un e-mail et pour d'autres statistiques de site web connexes (par exemple, enregistrer la popularité d'une certaine section et vérifier l'intégrité du système et du serveur).",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Cookies can be \"Persistent\" or \"Session\" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser.": {
-    "msgstr": "Les Cookies peuvent être des Cookies \"Persistants\" ou de \"Session\". Les Cookies Persistants restent sur Votre ordinateur personnel ou appareil mobile lorsque Vous êtes hors ligne, tandis que les Cookies de Session sont supprimés dès que Vous fermez Votre navigateur web.",
+    "msgstr": "Les cookies peuvent être des cookies \"Persistants\" ou de \"Session\". Les cookies Persistants restent sur Votre ordinateur personnel ou appareil mobile lorsque Vous vous déconnectez, tandis que les cookies de Session sont supprimés dès que Vous fermez Votre navigateur web.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "We use both Session and Persistent Cookies for the purposes set out below:": {
-    "msgstr": "Nous utilisons des Cookies de Session et Persistants aux fins énoncées ci-dessous :",
+    "msgstr": "Nous utilisons des cookies de Session et Persistants aux fins décrites ci-dessous :",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -264,7 +702,7 @@
     ]
   },
   "**Cookies Policy / Notice Acceptance Cookies**": {
-    "msgstr": "**Cookies de Politique / Acceptation d'Avis de Cookies**",
+    "msgstr": "**Cookies de Politique / Acceptation des Avis de Cookies**",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -276,7 +714,7 @@
     ]
   },
   "For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.": {
-    "msgstr": "Pour plus d'informations sur les cookies que nous utilisons et vos choix concernant les cookies, veuillez consulter notre Politique en matière de Cookies ou la section Cookies de notre Politique de Confidentialité.",
+    "msgstr": "Pour plus d'informations sur les cookies que nous utilisons et vos choix concernant les cookies, veuillez consulter notre Politique de Cookies ou la section Cookies de notre Politique de Confidentialité.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -306,37 +744,37 @@
     ]
   },
   "**For the performance of a contract:** the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.": {
-    "msgstr": "**Pour l'exécution d'un contrat :** le développement, la conformité et la réalisation du contrat d'achat des produits, articles ou services que Vous avez achetés ou de tout autre contrat avec Nous via le Service.",
+    "msgstr": "**Pour l'exécution d'un contrat :** le développement, la conformité et l'exécution du contrat d'achat des produits, articles ou services que Vous avez achetés ou de tout autre contrat avec Nous via le Service.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**To contact You:** To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.": {
-    "msgstr": "**Pour Vous contacter :** Pour Vous contacter par e-mail, appels téléphoniques, SMS, ou d'autres formes équivalentes de communication électronique, telles que les notifications push d'une application mobile concernant les mises à jour ou les communications informatives liées aux fonctionnalités, produits ou services contractuels, y compris les mises à jour de sécurité, lorsque cela est nécessaire ou raisonnable pour leur mise en œuvre.",
+    "msgstr": "**Pour Vous contacter :** Pour Vous contacter par e-mail, appels téléphoniques, SMS, ou d'autres formes équivalentes de communication électronique, telles que les notifications push d'une application mobile concernant des mises à jour ou des communications informatives liées aux fonctionnalités, produits ou services contractés, y compris les mises à jour de sécurité, lorsque cela est nécessaire ou raisonnable pour leur mise en œuvre.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**To provide You** with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.": {
-    "msgstr": "**Pour Vous fournir** des nouvelles, des offres spéciales et des informations générales sur d'autres biens, services et événements que nous proposons qui sont similaires à ceux que vous avez déjà achetés ou pour lesquels vous vous êtes renseignés, à moins que Vous n'ayez choisi de ne pas recevoir de telles informations.",
+    "msgstr": "**Pour Vous fournir** des nouvelles, des offres spéciales et des informations générales sur d'autres biens, services et événements que nous proposons qui sont similaires à ceux que vous avez déjà achetés ou pour lesquels vous avez demandé des informations, sauf si Vous avez choisi de ne pas recevoir de telles informations.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**To manage Your requests:** To attend and manage Your requests to Us.": {
-    "msgstr": "**Pour gérer Vos demandes :** Pour traiter et gérer Vos demandes auprès de Nous.",
+    "msgstr": "**Pour gérer Vos demandes :** Pour prendre en charge et gérer Vos demandes auprès de Nous.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**For business transfers:** We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.": {
-    "msgstr": "**Pour les transferts d'entreprise :** Nous pouvons utiliser Vos informations pour évaluer ou réaliser une fusion, une cession, une restructuration, une réorganisation, une dissolution ou toute autre vente ou transfert de tout ou partie de Nos actifs, que ce soit dans le cadre d'une entreprise en activité ou dans le cadre d'une faillite, d'une liquidation ou d'une procédure similaire, dans laquelle les Données Personnelles détenues par Nous concernant les utilisateurs de notre Service font partie des actifs transférés.",
+    "msgstr": "**Pour les transferts d'entreprise :** Nous pouvons utiliser Vos informations pour évaluer ou réaliser une fusion, une cession, une restructuration, une réorganisation, une dissolution ou toute autre vente ou transfert de tout ou partie de Nos actifs, que ce soit dans le cadre d'une activité continue ou d'une faillite, d'une liquidation ou d'une procédure similaire, dans laquelle les Données Personnelles détenues par Nous concernant les utilisateurs de notre Service font partie des actifs transférés.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**For other purposes**: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.": {
-    "msgstr": "**À d'autres fins :** Nous pouvons utiliser Vos informations à d'autres fins, telles que l'analyse de données, l'identification des tendances d'utilisation, la détermination de l'efficacité de nos campagnes promotionnelles et l'évaluation et l'amélioration de notre Service, de nos produits, de nos services, de notre marketing et de votre expérience.",
+    "msgstr": "**À d'autres fins :** Nous pouvons utiliser Vos informations à d'autres fins, telles que l'analyse de données, l'identification des tendances d'utilisation, la détermination de l'efficacité de nos campagnes promotionnelles et l'évaluation et l'amélioration de notre Service, produits, services, marketing et de votre expérience.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -354,25 +792,25 @@
     ]
   },
   "**For business transfers:** We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.": {
-    "msgstr": "**Pour les transferts d'entreprise :** Nous pouvons partager ou transférer Vos informations personnelles dans le cadre de, ou pendant les négociations de, toute fusion, vente d'actifs de la Société, financement ou acquisition de tout ou partie de Notre activité par une autre entreprise.",
+    "msgstr": "**Pour les transferts d'entreprise :** Nous pouvons partager ou transférer Vos informations personnelles en relation avec, ou pendant les négociations de, toute fusion, vente d'actifs de la Société, financement ou acquisition de tout ou partie de Notre entreprise à une autre société.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**With Affiliates:** We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.": {
-    "msgstr": "**Avec les Affiliés :** Nous pouvons partager Vos informations avec Nos affiliés, auquel cas nous exigerons de ces affiliés qu'ils respectent cette Politique de Confidentialité. Les affiliés incluent Notre société mère et toute autre filiale, partenaire de coentreprise ou d'autres sociétés que Nous contrôlons ou qui sont sous un contrôle commun avec Nous.",
+    "msgstr": "**Avec les Sociétés Affiliées :** Nous pouvons partager Vos informations avec Nos sociétés affiliées, auquel cas nous exigerons de ces sociétés affiliées qu'elles respectent la présente Politique de Confidentialité. Les sociétés affiliées comprennent Notre société mère et toute autre filiale, partenaire de coentreprise ou d'autres sociétés que Nous contrôlons ou qui sont sous un contrôle commun avec Nous.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**With business partners:** We may share Your information with Our business partners to offer You certain products, services or promotions.": {
-    "msgstr": "**Avec les partenaires commerciaux :** Nous pouvons partager Vos informations avec Nos partenaires commerciaux pour Vous offrir certains produits, services ou promotions.",
+    "msgstr": "**Avec les partenaires commerciaux :** Nous pouvons partager Vos informations avec Nos partenaires commerciaux pour Vous proposer certains produits, services ou promotions.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "**With other users:** when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.": {
-    "msgstr": "**Avec d'autres utilisateurs :** lorsque Vous partagez des informations personnelles ou interagissez autrement dans les zones publiques avec d'autres utilisateurs, ces informations peuvent être consultées par tous les utilisateurs et peuvent être distribuées publiquement à l'extérieur.",
+    "msgstr": "**Avec d'autres utilisateurs :** lorsque Vous partagez des informations personnelles ou interagissez de toute autre manière dans les zones publiques avec d'autres utilisateurs, ces informations peuvent être vues par tous les utilisateurs et peuvent être distribuées publiquement à l'extérieur.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -390,13 +828,13 @@
     ]
   },
   "The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.": {
-    "msgstr": "La Société conservera Vos Données Personnelles uniquement aussi longtemps que nécessaire aux fins énoncées dans cette Politique de Confidentialité. Nous conserverons et utiliserons Vos Données Personnelles dans la mesure nécessaire pour nous conformer à nos obligations légales (par exemple, si nous sommes tenus de conserver vos données pour respecter les lois applicables), résoudre les litiges et faire respecter nos accords et politiques juridiques.",
+    "msgstr": "La Société ne conservera Vos Données Personnelles que pendant la durée nécessaire aux fins énoncées dans la présente Politique de Confidentialité. Nous conserverons et utiliserons Vos Données Personnelles dans la mesure nécessaire pour nous conformer à nos obligations légales (par exemple, si nous sommes tenus de conserver vos données pour nous conformer aux lois applicables), résoudre les litiges et faire respecter nos accords et politiques juridiques.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.": {
-    "msgstr": "La Société conservera également les Données d'Utilisation à des fins d'analyse interne. Les Données d'Utilisation sont généralement conservées pendant une période plus courte, sauf lorsque ces données sont utilisées pour renforcer la sécurité ou pour améliorer la fonctionnalité de Notre Service, ou si Nous sommes légalement obligés de conserver ces données pendant des périodes plus longues.",
+    "msgstr": "La Société conservera également les Données d'Utilisation à des fins d'analyse interne. Les Données d'Utilisation sont généralement conservées pendant une période plus courte, sauf lorsque ces données sont utilisées pour renforcer la sécurité ou améliorer la fonctionnalité de Notre Service, ou si Nous sommes légalement obligés de conserver ces données pendant des périodes plus longues.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -408,19 +846,19 @@
     ]
   },
   "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.": {
-    "msgstr": "Vos informations, y compris les Données Personnelles, sont traitées dans les bureaux d'exploitation de la Société et dans tout autre lieu où se trouvent les parties impliquées dans le traitement. Cela signifie que ces informations peuvent être transférées vers — et conservées sur — des ordinateurs situés en dehors de Votre État, province, pays ou autre juridiction gouvernementale où les lois sur la protection des données peuvent différer de celles de Votre juridiction.",
+    "msgstr": "Vos informations, y compris les Données Personnelles, sont traitées dans les bureaux d'exploitation de la Société et dans tout autre lieu où les parties impliquées dans le traitement sont situées. Cela signifie que ces informations peuvent être transférées vers — et conservées sur — des ordinateurs situés en dehors de Votre État, province, pays ou autre juridiction gouvernementale où les lois sur la protection des données peuvent différer de celles de Votre juridiction.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.": {
-    "msgstr": "Votre consentement à cette Politique de Confidentialité, suivi de Votre soumission de ces informations, représente Votre accord à ce transfert.",
+    "msgstr": "Votre consentement à cette Politique de Confidentialité, suivi de la soumission de ces informations, représente Votre accord à ce transfert.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.": {
-    "msgstr": "La Société prendra toutes les mesures raisonnablement nécessaires pour s'assurer que Vos données sont traitées en toute sécurité et conformément à cette Politique de Confidentialité, et aucun transfert de Vos Données Personnelles n'aura lieu vers une organisation ou un pays à moins que des contrôles adéquats ne soient en place, y compris la sécurité de Vos données et autres informations personnelles.",
+    "msgstr": "La Société prendra toutes les mesures raisonnablement nécessaires pour garantir que Vos données sont traitées en toute sécurité et conformément à cette Politique de Confidentialité, et aucun transfert de Vos Données Personnelles n'aura lieu vers une organisation ou un pays à moins que des contrôles adéquats ne soient en place, y compris la sécurité de Vos données et autres informations personnelles.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -432,25 +870,25 @@
     ]
   },
   "You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.": {
-    "msgstr": "Vous avez le droit de supprimer ou de demander que Nous Vous assistions dans la suppression des Données Personnelles que Nous avons collectées à Votre sujet.",
+    "msgstr": "Vous avez le droit de supprimer ou de demander que Nous vous aidions à supprimer les Données Personnelles que Nous avons collectées à Votre sujet.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Our Service may give You the ability to delete certain information about You from within the Service.": {
-    "msgstr": "Notre Service peut Vous offrir la possibilité de supprimer certaines informations Vous concernant depuis le Service.",
+    "msgstr": "Notre Service peut Vous donner la possibilité de supprimer certaines informations Vous concernant depuis le Service.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.": {
-    "msgstr": "Vous pouvez mettre à jour, modifier ou supprimer Vos informations à tout moment en Vous connectant à Votre Compte, si Vous en avez un, et en visitant la section des paramètres du compte qui Vous permet de gérer Vos informations personnelles. Vous pouvez également Nous contacter pour demander l'accès, la correction ou la suppression de toute information personnelle que Vous Nous avez fournie.",
+    "msgstr": "Vous pouvez mettre à jour, modifier ou supprimer Vos informations à tout moment en Vous connectant à Votre Compte, si Vous en avez un, et en visitant la section des paramètres de compte qui Vous permet de gérer Vos informations personnelles. Vous pouvez également Nous contacter pour demander l'accès, la correction ou la suppression de toute information personnelle que Vous Nous avez fournie.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.": {
-    "msgstr": "Veuillez noter, cependant, que Nous pourrions avoir besoin de conserver certaines informations lorsque Nous avons une obligation légale ou une base légale pour le faire.",
+    "msgstr": "Veuillez noter, cependant, que Nous pourrions avoir besoin de conserver certaines informations lorsque Nous avons une obligation légale ou une base légitime pour le faire.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -468,7 +906,7 @@
     ]
   },
   "If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.": {
-    "msgstr": "Si la Société est impliquée dans une fusion, une acquisition ou une vente d'actifs, Vos Données Personnelles peuvent être transférées. Nous Vous en informerons avant que Vos Données Personnelles ne soient transférées et ne soient soumises à une politique de confidentialité différente.",
+    "msgstr": "Si la Société est impliquée dans une fusion, une acquisition ou une vente d'actifs, Vos Données Personnelles peuvent être transférées. Nous Vous informerons avant que Vos Données Personnelles ne soient transférées et ne soient soumises à une Politique de Confidentialité différente.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -480,7 +918,7 @@
     ]
   },
   "Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).": {
-    "msgstr": "Dans certaines circonstances, la Société peut être tenue de divulguer Vos Données Personnelles si la loi l'exige ou en réponse à des demandes valides des autorités publiques (par exemple, un tribunal ou une agence gouvernementale).",
+    "msgstr": "Dans certaines circonstances, la Société peut être tenue de divulguer Vos Données Personnelles si la loi l'exige ou en réponse à des demandes valides d'autorités publiques (par exemple, un tribunal ou une agence gouvernementale).",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -492,7 +930,7 @@
     ]
   },
   "The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:": {
-    "msgstr": "La Société peut divulguer Vos Données Personnelles de bonne foi si elle estime qu'une telle action est nécessaire pour :",
+    "msgstr": "La Société peut divulguer Vos Données Personnelles en toute bonne foi si une telle action est nécessaire pour :",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -534,7 +972,7 @@
     ]
   },
   "The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.": {
-    "msgstr": "La sécurité de Vos Données Personnelles est importante pour Nous, mais rappelez-vous qu'aucune méthode de transmission sur Internet, ou méthode de stockage électronique, n'est sûre à 100 %. Bien que Nous Nous efforcions d'utiliser des moyens commercialement acceptables pour protéger Vos Données Personnelles, Nous ne pouvons garantir leur sécurité absolue.",
+    "msgstr": "La sécurité de Vos Données Personnelles est importante pour Nous, mais rappelez-vous qu'aucune méthode de transmission sur Internet, ni aucune méthode de stockage électronique n'est sécurisée à 100 %. Bien que Nous nous efforcions d'utiliser des moyens commercialement acceptables pour protéger Vos Données Personnelles, Nous ne pouvons garantir leur sécurité absolue.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -546,13 +984,13 @@
     ]
   },
   "Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.": {
-    "msgstr": "Notre Service ne s'adresse à personne de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnellement identifiables auprès de personnes de moins de 13 ans. Si Vous êtes un parent ou un tuteur et que Vous savez que Votre enfant Nous a fourni des Données Personnelles, veuillez Nous contacter. Si Nous prenons conscience que Nous avons collecté des Données Personnelles auprès de quiconque de moins de 13 ans sans vérification du consentement parental, Nous prenons des mesures pour supprimer ces informations de Nos serveurs.",
+    "msgstr": "Notre Service ne s'adresse à personne de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnellement identifiables auprès de personnes de moins de 13 ans. Si Vous êtes un parent ou un tuteur et que Vous savez que Votre enfant Nous a fourni des Données Personnelles, veuillez Nous contacter. Si Nous prenons conscience que Nous avons collecté des Données Personnelles auprès d'une personne de moins de 13 ans sans vérification du consentement parental, Nous prenons des mesures pour supprimer ces informations de Nos serveurs.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.": {
-    "msgstr": "Si Nous devons nous fier au consentement comme base légale pour le traitement de Vos informations et que Votre pays exige le consentement d'un parent, Nous pourrions exiger le consentement de Votre parent avant de collecter et d'utiliser ces informations.",
+    "msgstr": "Si Nous devons nous appuyer sur le consentement comme base légale pour le traitement de Vos informations et que Votre pays exige le consentement d'un parent, Nous pouvons exiger le consentement de Votre parent avant de collecter et d'utiliser ces informations.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -560,53 +998,53 @@
   "Links to Other Websites": {
     "msgstr": "Liens vers d'Autres Sites Web",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.": {
-    "msgstr": "Notre Service peut contenir des liens vers d'autres sites web qui ne sont pas exploités par Nous. Si Vous cliquez sur un lien tiers, Vous serez dirigé vers le site de ce tiers. Nous Vous conseillons vivement de consulter la Politique de Confidentialité de chaque site que Vous visitez.",
+    "msgstr": "Notre Service peut contenir des liens vers d'autres sites web qui ne sont pas exploités par Nous. Si Vous cliquez sur un lien tiers, Vous serez dirigé vers le site de ce tiers. Nous Vous conseillons fortement de consulter la Politique de Confidentialité de chaque site que Vous visitez.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.": {
-    "msgstr": "Nous n'avons aucun contrôle sur et n'assumons aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques des sites ou services tiers.",
+    "msgstr": "Nous n'avons aucun contrôle et n'assumons aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques des sites ou services de tiers.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Changes to this Privacy Policy": {
-    "msgstr": "Modifications à cette Politique de Confidentialité",
+    "msgstr": "Modifications de cette Politique de Confidentialité",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.": {
-    "msgstr": "Nous pouvons mettre à jour notre politique de confidentialité de temps à autre. Nous vous informerons de tout changement en publiant la nouvelle politique de confidentialité sur cette page.",
+    "msgstr": "Nous pouvons mettre à jour Notre Politique de Confidentialité de temps à autre. Nous Vous informerons de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the \"Last updated\" date at the top of this Privacy Policy.": {
-    "msgstr": "Nous vous informerons par e-mail et/ou par un avis bien visible sur notre Service, avant que le changement ne devienne effectif et mettrons à jour la date de \"Dernière mise à jour\" en haut de cette politique de confidentialité.",
+    "msgstr": "Nous vous informerons par e-mail et/ou par un avis bien visible sur Notre Service, avant que le changement ne prenne effet et mettrons à jour la date de \"Dernière mise à jour\" en haut de cette Politique de confidentialité.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.": {
-    "msgstr": "Il vous est conseillé de consulter régulièrement cette politique de confidentialité pour toute modification. Les modifications apportées à cette politique de confidentialité prennent effet lorsqu'elles sont publiées sur cette page.",
+    "msgstr": "Il vous est conseillé de consulter cette Politique de confidentialité périodiquement pour toute modification. Les modifications apportées à cette Politique de confidentialité prennent effet lorsqu'elles sont publiées sur cette page.",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
   },
   "Contact Us": {
-    "msgstr": "Nous contacter",
+    "msgstr": "Nous Contacter",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "If you have any questions about this Privacy Policy, You can contact us:": {
-    "msgstr": "Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter :",
+    "msgstr": "Si vous avez des questions concernant cette Politique de confidentialité, Vous pouvez nous contacter :",
     "references": [
       "src/data/pages/en/privacy.md"
     ]
@@ -614,7 +1052,7 @@
   "By email: somecoolemail@domain.com": {
     "msgstr": "Par e-mail : somecoolemail@domain.com",
     "references": [
-      "src/data/pages/en/terms.md"
+      "src/data/pages/en/privacy.md"
     ]
   },
   "Markdown Page": {
@@ -629,14 +1067,14 @@
       "src/data/pages/en/markdown.md"
     ]
   },
-  "Markdown is a lightweight markup language that you can use to format plain text documents.  \nWrite docs for your GitHub projects, edit your GitHub profile *README* etc. You fill find it all here.": {
-    "msgstr": "",
+  "Markdown is a lightweight markup language that you can use to format plain text documents. Write docs for your GitHub projects, edit your GitHub profile *README* etc. You fill find it all here.": {
+    "msgstr": "Markdown est un langage de balisage léger que vous pouvez utiliser pour formater des documents en texte brut. Rédigez des documents pour vos projets GitHub, modifiez votre profil GitHub *README*, etc. Vous trouverez tout ici.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Let's dive into it. ⤵️": {
-    "msgstr": "Plongeons-y. ⤵️",
+    "msgstr": "Plongeons-nous dedans. ⤵️",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -654,7 +1092,7 @@
     ]
   },
   "By writing regular text you are basically writing a paragraph.": {
-    "msgstr": "En écrivant du texte normal, vous écrivez en fait un paragraphe.",
+    "msgstr": "En écrivant du texte normal, vous rédigez essentiellement un paragraphe.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -720,13 +1158,13 @@
     ]
   },
   "Modifying text is so neat and easy. You can make your text bold, italic and strikethrough.": {
-    "msgstr": "Modifier le texte est si simple et facile. Vous pouvez mettre votre texte en gras, en italique et le barrer.",
+    "msgstr": "Modifier le texte est si simple et efficace. Vous pouvez rendre votre texte en gras, en italique et barré.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
-  "Using two asterisks **this text is bold**.  \nTwo underscores **work as well**.  \nLet's make it *italic now*.  \nYou guessed it, *one underscore is also enough*.  \nCan we combine ***both of that*?** Absolutely.  \nWhat if I want to ~~strikethrough~~?": {
-    "msgstr": "",
+  "Using two asterisks **this text is bold**. Two underscores **work as well**. Let's make it *italic now*. You guessed it, *one underscore is also enough*. Can we combine ***both of that*?** Absolutely. What if I want to ~~strikethrough~~?": {
+    "msgstr": "En utilisant deux astérisques **ce texte est en gras**. Deux underscores **fonctionnent aussi**. Mettons-le *en italique maintenant*. Vous l'avez deviné, *un seul underscore suffit aussi*. Pouvons-nous combiner ***les deux* ?** Absolument. Et si je veux ~~barrer~~ ?",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -743,8 +1181,8 @@
       "src/data/pages/en/markdown.md"
     ]
   },
-  "This is a blockquote.\nWant to write on a new line with space between?": {
-    "msgstr": "Ceci est un bloc de citation.\nVous voulez écrire sur une nouvelle ligne avec un espace entre les deux ?",
+  "This is a blockquote. Want to write on a new line with space between?": {
+    "msgstr": "Ceci est un bloc de citation. Vous voulez écrire sur une nouvelle ligne avec un espace entre les deux ?",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -755,8 +1193,8 @@
       "src/data/pages/en/markdown.md"
     ]
   },
-  "The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  \nHere is the syntax.": {
-    "msgstr": "",
+  "The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way. Here is the syntax.": {
+    "msgstr": "Le meilleur moyen est de simplement glisser-déposer une image directement depuis votre ordinateur. Vous pouvez également créer une référence à l'image et l'attribuer de cette manière. Voici la syntaxe.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -779,8 +1217,8 @@
       "src/data/pages/en/markdown.md"
     ]
   },
-  "Like it so far? Follow me on GitHub  \nMy Markdown Cheatsheet - star it if you like it  \nFind some great docs here": {
-    "msgstr": "",
+  "Like it so far? Follow me on GitHub My Markdown Cheatsheet - star it if you like it Find some great docs here": {
+    "msgstr": "Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub Ma Cheatsheet Markdown - mettez une étoile si ça vous plaît Trouvez d'excellents documents ici",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -792,13 +1230,13 @@
     ]
   },
   "You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks.": {
-    "msgstr": "Vous pouvez créer des extraits de code en ligne et des blocs de code complets. Vous pouvez également définir le langage de programmation que vous utilisiez dans votre extrait. Tout cela en utilisant des apostrophes inverses.",
+    "msgstr": "Vous pouvez créer des extraits de code en ligne et des blocs de code complets. Vous pouvez également définir le langage de programmation que vous avez utilisé dans votre extrait. Le tout en utilisant des apostrophes inversées (backticks).",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
-  "I created `.env` file at the root.\nBackticks inside backticks? ``No problem.``": {
-    "msgstr": "J'ai créé le fichier `.env` à la racine.\nDes apostrophes inverses à l'intérieur d'apostrophes inverses ? ``Pas de problème.``",
+  "I created `.env` file at the root. Backticks inside backticks? ``No problem.``": {
+    "msgstr": "J'ai créé le fichier `.env` à la racine. Des apostrophes inversées à l'intérieur d'apostrophes inversées ? ``Pas de problème.``",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -810,13 +1248,13 @@
     ]
   },
   "As you can do in HTML, Markdown allows creating of both ordered and unordered lists.": {
-    "msgstr": "Comme vous pouvez le faire en HTML, Markdown permet de créer des listes ordonnées et non ordonnées.",
+    "msgstr": "Comme en HTML, Markdown permet de créer des listes ordonnées et non ordonnées.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Ordered List": {
-    "msgstr": "Liste Ordonnée",
+    "msgstr": "Liste ordonnée",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -852,7 +1290,7 @@
     ]
   },
   "Unordered List": {
-    "msgstr": "Liste Non Ordonnée",
+    "msgstr": "Liste non ordonnée",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -882,25 +1320,25 @@
     ]
   },
   "Mixed List": {
-    "msgstr": "Liste Mixte",
+    "msgstr": "Liste mixte",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
-  "You can also mix both of the lists and create sublists.  \n**PS.** Try not to create lists deeper than two levels. It is the best practice.": {
-    "msgstr": "Vous pouvez également mélanger les deux types de listes et créer des sous-listes.  \n**PS.** Essayez de ne pas créer de listes de plus de deux niveaux de profondeur. C'est la meilleure pratique.",
+  "You can also mix both of the lists and create sublists. **PS.** Try not to create lists deeper than two levels. It is the best practice.": {
+    "msgstr": "Vous pouvez également mélanger les deux types de listes et créer des sous-listes. **PS.** Essayez de ne pas créer de listes plus profondes que deux niveaux. C'est la meilleure pratique.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Learn Basics": {
-    "msgstr": "Apprendre les Bases",
+    "msgstr": "Apprendre les bases",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Learn One Framework": {
-    "msgstr": "Apprendre Un Framework",
+    "msgstr": "Apprendre un Framework",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -912,25 +1350,25 @@
     ]
   },
   "Great way to display well-arranged data. Use \"|\" symbol to separate columns and \":\" symbol to align row content.": {
-    "msgstr": "Excellent moyen d'afficher des données bien arrangées. Utilisez le symbole \"|\" pour séparer les colonnes et le symbole \":\" pour aligner le contenu des lignes.",
+    "msgstr": "Excellent moyen d'afficher des données bien agencées. Utilisez le symbole \"|\" pour séparer les colonnes et le symbole \":\" pour aligner le contenu des lignes.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
-  "| Left Align (default) | Center Align | Right Align |\n| :------------------- | :----------: | ----------: |\n| React.js             |   Node.js    |       MySQL |\n| Next.js              |   Express    |     MongoDB |\n| Vue.js               |   Nest.js    |       Redis |": {
-    "msgstr": "| Alignement à Gauche (par défaut) | Alignement au Centre | Alignement à Droite |\n| :------------------- | :----------: | ----------: |\n| React.js             |   Node.js    |       MySQL |\n| Next.js              |   Express    |     MongoDB |\n| Vue.js               |   Nest.js    |       Redis |",
+  "| Left Align (default) | Center Align | Right Align | | :------------------- | :----------: | ----------: | | React.js | Node.js | MySQL | | Next.js | Express | MongoDB | | Vue.js | Nest.js | Redis |": {
+    "msgstr": "| Alignement à gauche (par défaut) | Alignement centré | Alignement à droite | | :------------------- | :----------: | ----------: | | React.js | Node.js | MySQL | | Next.js | Express | MongoDB | | Vue.js | Nest.js | Redis |",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Task List": {
-    "msgstr": "Liste de Tâches",
+    "msgstr": "Liste de tâches",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Keeping track of the tasks that are done, and those that need to be done.": {
-    "msgstr": "Garder une trace des tâches accomplies et de celles qui restent à faire.",
+    "msgstr": "Permet de suivre les tâches accomplies et celles qui restent à faire.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -942,19 +1380,19 @@
     ]
   },
   "[ ] Learn Frontend Development": {
-    "msgstr": "[ ] Apprendre le Développement Frontend",
+    "msgstr": "[ ] Apprendre le développement Frontend",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "[ ] Learn Full Stack Development": {
-    "msgstr": "[ ] Apprendre le Développement Full Stack",
+    "msgstr": "[ ] Apprendre le développement Full Stack",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Footnote": {
-    "msgstr": "Note de Bas de Page",
+    "msgstr": "Note de bas de page",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -972,25 +1410,25 @@
     ]
   },
   "[^1]: Stack is: React, Typescript, Tailwind CSS": {
-    "msgstr": "[^1]: La pile est : React, Typescript, Tailwind CSS",
+    "msgstr": "[^1]: La stack est : React, Typescript, Tailwind CSS",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Project is about music & movies.": {
-    "msgstr": "Le projet concerne la musique et les films.",
+    "msgstr": "Le projet porte sur la musique et les films.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Hope you will like it. [^see]": {
-    "msgstr": "J'espère que vous l'aimerez. [^voir]",
+    "msgstr": "J'espère que vous aimerez. [^see]",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "[^see]: Loading... ⌛️": {
-    "msgstr": "[^voir]: Chargement... ⌛️",
+    "msgstr": "[^see]: Chargement... ⌛️",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -1002,7 +1440,7 @@
     ]
   },
   "Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name=\"...\">` tags.": {
-    "msgstr": "Astro (et la plupart des analyseurs Markdown) génère automatiquement des identifiants pour vos titres. Vous n'avez généralement pas besoin de créer manuellement des balises `<a name=\"...\">`.",
+    "msgstr": "Astro (et la plupart des analyseurs Markdown) génère automatiquement des ID pour vos en-têtes. Vous n'avez généralement pas besoin de créer manuellement des balises `<a name=\"...\">`.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -1013,8 +1451,8 @@
       "src/data/pages/en/markdown.md"
     ]
   },
-  "You can use asterisks, hyphens or underlines (*, -, _) to create horizontal line.  \nThe only rule is that you must include at least three chars of the symbol.": {
-    "msgstr": "",
+  "You can use asterisks, hyphens or underlines (*, -, _) to create horizontal line. The only rule is that you must include at least three chars of the symbol.": {
+    "msgstr": "Vous pouvez utiliser des astérisques, des tirets ou des soulignements (*, -, _) pour créer une ligne horizontale. La seule règle est que vous devez inclure au moins trois caractères du symbole.",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -1043,8 +1481,8 @@
       "src/data/pages/en/markdown.md"
     ]
   },
-  "→ Easy  \n→ And simple": {
-    "msgstr": "",
+  "→ Easy → And simple": {
+    "msgstr": "→ Facile → Et simple",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -1056,7 +1494,7 @@
     ]
   },
   "Mindmap": {
-    "msgstr": "Carte mentale",
+    "msgstr": "Carte Mentale",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
@@ -1068,19 +1506,19 @@
     ]
   },
   "Section with some ID": {
-    "msgstr": "Section avec un ID",
+    "msgstr": "Section avec un certain ID",
     "references": [
       "src/data/pages/en/markdown.md"
     ]
   },
   "Terms and Conditions": {
-    "msgstr": "Termes et Conditions",
+    "msgstr": "Conditions Générales",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Please read these terms and conditions carefully before using Our Service.": {
-    "msgstr": "Veuillez lire attentivement ces termes et conditions avant d'utiliser Notre Service.",
+    "msgstr": "Veuillez lire attentivement ces conditions générales avant d'utiliser Notre Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1092,13 +1530,13 @@
     ]
   },
   "**Affiliate** means an entity that controls, is controlled by or is under common control with a party, where \"control\" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.": {
-    "msgstr": "**Affilié** désigne une entité qui contrôle, est contrôlée par ou est sous contrôle commun avec une partie, où « contrôle » signifie la possession de 50 % ou plus des actions, des parts sociales ou d'autres titres donnant droit de vote pour l'élection des administrateurs ou d'une autre autorité dirigeante.",
+    "msgstr": "**Affiliée** désigne une entité qui contrôle, est contrôlée par ou est sous contrôle commun avec une partie, où \"contrôle\" signifie la propriété de 50% ou plus des actions, des parts sociales ou d'autres titres donnant droit de vote pour l'élection des administrateurs ou d'une autre autorité dirigeante.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "**Terms and Conditions** (also referred as \"Terms\") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.": {
-    "msgstr": "**Termes et Conditions** (également désignées comme « Conditions ») désignent les présentes Conditions Générales qui constituent l'intégralité de l'accord entre Vous et la Société concernant l'utilisation du Service. Cet accord de Termes et Conditions est une Démo.",
+    "msgstr": "**Conditions Générales** (également appelées \"Conditions\") désignent les présentes Conditions Générales qui constituent l'intégralité de l'accord entre Vous et la Société concernant l'utilisation du Service. Cet accord de Conditions Générales est une Démo.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1116,49 +1554,49 @@
     ]
   },
   "These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.": {
-    "msgstr": "Les présentes sont les Termes et Conditions régissant l'utilisation de ce Service et l'accord qui opère entre Vous et la Société. Ces Termes et Conditions énoncent les droits et obligations de tous les utilisateurs concernant l'utilisation du Service.",
+    "msgstr": "Les présentes Conditions Générales régissent l'utilisation de ce Service et l'accord qui s'applique entre Vous et la Société. Ces Conditions Générales définissent les droits et obligations de tous les utilisateurs concernant l'utilisation du Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.": {
-    "msgstr": "Votre accès et Votre utilisation du Service sont conditionnés par Votre acceptation et Votre conformité aux présentes Termes et Conditions. Ces Termes et Conditions s'appliquent à tous les visiteurs, utilisateurs et autres qui accèdent ou utilisent le Service.",
+    "msgstr": "Votre accès et utilisation du Service sont conditionnés par Votre acceptation et Votre respect des présentes Conditions Générales. Ces Conditions Générales s'appliquent à tous les visiteurs, utilisateurs et autres personnes qui accèdent ou utilisent le Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.": {
-    "msgstr": "En accédant ou en utilisant le Service, Vous acceptez d'être lié par les présentes Termes et Conditions. Si Vous n'êtes pas d'accord avec une partie de ces Termes et Conditions, alors Vous ne pouvez pas accéder au Service.",
+    "msgstr": "En accédant ou en utilisant le Service, Vous acceptez d'être lié par les présentes Conditions Générales. Si Vous n'êtes pas d'accord avec une partie quelconque de ces Conditions Générales, alors Vous ne pouvez pas accéder au Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.": {
-    "msgstr": "Vous déclarez avoir plus de 18 ans. La Société n'autorise pas les personnes de moins de 18 ans à utiliser le Service.",
+    "msgstr": "Vous déclarez être âgé de plus de 18 ans. La Société n'autorise pas les personnes de moins de 18 ans à utiliser le Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.": {
-    "msgstr": "Votre accès et Votre utilisation du Service sont également conditionnés par Votre acceptation et Votre conformité à la Politique de Confidentialité de la Société. Notre Politique de Confidentialité décrit Nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de Vos informations personnelles lorsque Vous utilisez l'Application ou le Site Web et Vous informe de Vos droits en matière de confidentialité et de la manière dont la loi Vous protège. Veuillez lire attentivement Notre Politique de Confidentialité avant d'utiliser Notre Service.",
+    "msgstr": "Votre accès et utilisation du Service sont également conditionnés par Votre acceptation et Votre respect de la Politique de Confidentialité de la Société. Notre Politique de Confidentialité décrit Nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de Vos informations personnelles lorsque Vous utilisez l'Application ou le Site Web et Vous informe sur Vos droits en matière de confidentialité et sur la manière dont la loi Vous protège. Veuillez lire attentivement Notre Politique de Confidentialité avant d'utiliser Notre Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.": {
-    "msgstr": "Notre Service peut contenir des liens vers des sites Web ou services tiers qui ne sont pas détenus ou contrôlés par la Société.",
+    "msgstr": "Notre Service peut contenir des liens vers des sites web ou services tiers qui ne sont pas détenus ou contrôlés par la Société.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.": {
-    "msgstr": "La Société n'a aucun contrôle sur, et n'assume aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques des sites Web ou services tiers. Vous reconnaissez et acceptez en outre que la Société ne sera pas responsable ou redevable, directement ou indirectement, de tout dommage ou perte causé ou présumé être causé par ou en relation avec l'utilisation ou la confiance accordée à tout contenu, bien ou service disponible sur ou via de tels sites Web ou services.",
+    "msgstr": "La Société n'a aucun contrôle sur, et n'assume aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques des sites web ou services tiers. Vous reconnaissez et acceptez en outre que la Société ne sera pas responsable, directement ou indirectement, de tout dommage ou perte causé ou présumé être causé par ou en relation avec l'utilisation ou la confiance accordée à un tel contenu, biens ou services disponibles sur ou via de tels sites web ou services.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.": {
-    "msgstr": "Nous Vous conseillons vivement de lire les termes et conditions et les politiques de confidentialité de tous les sites Web ou services tiers que Vous visitez.",
+    "msgstr": "Nous Vous conseillons vivement de lire les conditions générales et les politiques de confidentialité de tout site web ou service tiers que Vous visitez.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1170,13 +1608,13 @@
     ]
   },
   "We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.": {
-    "msgstr": "Nous pouvons résilier ou suspendre Votre accès immédiatement, sans préavis ni responsabilité, pour quelque raison que ce soit, y compris, sans limitation, si Vous enfreignez les présentes Termes et Conditions.",
+    "msgstr": "Nous pouvons résilier ou suspendre Votre accès immédiatement, sans préavis ni responsabilité, pour quelque raison que ce soit, y compris, sans limitation, si Vous violez les présentes Conditions Générales.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Upon termination, Your right to use the Service will cease immediately.": {
-    "msgstr": "À la résiliation, Votre droit d'utiliser le Service cessera immédiatement.",
+    "msgstr": "Dès la résiliation, Votre droit d'utiliser le Service cessera immédiatement.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1188,79 +1626,79 @@
     ]
   },
   "Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.": {
-    "msgstr": "Nonobstant les dommages que Vous pourriez subir, l'entière responsabilité de la Société et de ses fournisseurs en vertu de toute disposition des présentes Conditions et Votre recours exclusif pour tout ce qui précède sera limitée au montant effectivement payé par Vous via le Service ou à 100 USD si Vous n'avez rien acheté via le Service.",
+    "msgstr": "Nonobstant les dommages que Vous pourriez subir, la responsabilité totale de la Société et de ses fournisseurs en vertu de toute disposition des présentes Conditions et Votre recours exclusif pour tout ce qui précède seront limités au montant réellement payé par Vous via le Service ou 100 USD si Vous n'avez rien acheté via le Service.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.": {
-    "msgstr": "Dans toute la mesure permise par la loi applicable, en aucun cas la Société ou ses fournisseurs ne seront responsables de dommages spéciaux, accessoires, indirects ou consécutifs quels qu'ils soient (y compris, mais sans s'y limiter, les dommages pour perte de profits, perte de données ou d'autres informations, pour interruption d'activité, pour préjudice corporel, perte de confidentialité découlant de ou liée de quelque manière que ce soit à l'utilisation ou à l'incapacité d'utiliser le Service, les logiciels tiers et/ou le matériel tiers utilisés avec le Service, ou autrement en relation avec toute disposition des présentes Conditions), même si la Société ou tout fournisseur a été informé de la possibilité de tels dommages et même si le recours échoue à son objectif essentiel.",
+    "msgstr": "Dans toute la mesure permise par la loi applicable, en aucun cas la Société ou ses fournisseurs ne seront responsables de dommages spéciaux, fortuits, indirects ou consécutifs de quelque nature que ce soit (y compris, mais sans s'y limiter, les dommages pour perte de profits, perte de données ou d'autres informations, pour interruption d'activité, pour blessures corporelles, perte de confidentialité découlant de ou liée de quelque manière que ce soit à l'utilisation ou à l'incapacité d'utiliser le Service, les logiciels tiers et/ou le matériel tiers utilisés avec le Service, ou autrement en relation avec toute disposition des présentes Conditions), même si la Société ou tout fournisseur a été informé de la possibilité de tels dommages et même si le recours échoue à son objectif essentiel.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.": {
-    "msgstr": "Certains États n'autorisent pas l'exclusion des garanties implicites ou la limitation de responsabilité pour les dommages accessoires ou consécutifs, ce qui signifie que certaines des limitations ci-dessus peuvent ne pas s'appliquer. Dans ces États, la responsabilité de chaque partie sera limitée dans la plus grande mesure permise par la loi.",
+    "msgstr": "Certains États n'autorisent pas l'exclusion de garanties implicites ou la limitation de responsabilité pour les dommages accessoires ou consécutifs, ce qui signifie que certaines des limitations ci-dessus peuvent ne pas s'appliquer. Dans ces États, la responsabilité de chaque partie sera limitée dans la plus grande mesure permise par la loi.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "\"AS IS\" and \"AS AVAILABLE\" Disclaimer": {
-    "msgstr": "Avertissement « TEL QUEL » et « TEL QUE DISPONIBLE »",
+    "msgstr": "Clause de Non-Responsabilité \"TEL QUEL\" et \"SELON LA DISPONIBILITÉ\"",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "The Service is provided to You \"AS IS\" and \"AS AVAILABLE\" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.": {
-    "msgstr": "Le Service vous est fourni « TEL QUEL » et « TEL QUE DISPONIBLE » et avec tous les défauts et vices sans garantie d'aucune sorte. Dans toute la mesure permise par la loi applicable, la Société, en son nom propre et au nom de ses Affiliés et de leurs concédants de licence et fournisseurs de services respectifs, décline expressément toutes les garanties, expresses, implicites, légales ou autres, concernant le Service, y compris toutes les garanties implicites de qualité marchande, d'adéquation à un usage particulier, de titre et de non-contrefaçon, et les garanties pouvant découler du cours des affaires, du cours des performances, de l'usage ou des pratiques commerciales. Sans limitation de ce qui précède, la Société ne fournit aucune garantie ou engagement, et ne fait aucune déclaration d'aucune sorte selon laquelle le Service répondra à Vos exigences, atteindra les résultats escomptés, sera compatible ou fonctionnera avec tout autre logiciel, application, système ou service, fonctionnera sans interruption, répondra à toute norme de performance ou de fiabilité ou sera exempt d'erreurs ou que toute erreur ou défaut pourra ou sera corrigé.",
+    "msgstr": "Le Service Vous est fourni \"TEL QUEL\" et \"SELON LA DISPONIBILITÉ\" avec tous ses défauts et imperfections, sans garantie d'aucune sorte. Dans toute la mesure permise par la loi applicable, la Société, en son propre nom et au nom de ses Affiliées et de leurs concédants et fournisseurs de services respectifs, décline expressément toutes les garanties, qu'elles soient expresses, implicites, légales ou autres, concernant le Service, y compris toutes les garanties implicites de qualité marchande, d'adéquation à un usage particulier, de titre et de non-contrefaçon, et les garanties qui pourraient découler des usages commerciaux, des performances, de l'utilisation ou des pratiques commerciales. Sans limiter ce qui précède, la Société ne fournit aucune garantie ou engagement, et ne fait aucune déclaration de quelque nature que ce soit selon laquelle le Service répondra à Vos exigences, atteindra les résultats escomptés, sera compatible ou fonctionnera avec tout autre logiciel, application, système ou service, fonctionnera sans interruption, respectera les normes de performance ou de fiabilité ou sera exempt d'erreurs, ou que les erreurs ou défauts pourront ou seront corrigés.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.": {
-    "msgstr": "Sans limiter ce qui précède, ni la Société ni aucun de ses fournisseurs ne fait de déclaration ou de garantie d'aucune sorte, expresse ou implicite : (i) quant au fonctionnement ou à la disponibilité du Service, ou des informations, contenus et matériaux ou produits qui y sont inclus ; (ii) que le Service sera ininterrompu ou exempt d'erreurs ; (iii) quant à l'exactitude, la fiabilité ou l'actualité de toute information ou contenu fourni via le Service ; ou (iv) que le Service, ses serveurs, le contenu ou les e-mails envoyés par ou au nom de la Société sont exempts de virus, scripts, chevaux de Troie, vers, logiciels malveillants, bombes à retardement ou autres composants nuisibles.",
+    "msgstr": "Sans limiter ce qui précède, ni la Société ni aucun de ses fournisseurs ne fait de déclaration ou de garantie de quelque nature que ce soit, expresse ou implicite : (i) quant au fonctionnement ou à la disponibilité du Service, ou aux informations, contenus et matériaux ou produits qui y sont inclus ; (ii) que le Service sera ininterrompu ou exempt d'erreurs ; (iii) quant à l'exactitude, la fiabilité ou l'actualité de toute information ou contenu fourni via le Service ; ou (iv) que le Service, ses serveurs, le contenu ou les e-mails envoyés par ou au nom de la Société sont exempts de virus, scripts, chevaux de Troie, vers, logiciels malveillants, bombes à retardement ou autres composants nuisibles.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.": {
-    "msgstr": "Certaines juridictions n'autorisent pas l'exclusion de certains types de garanties ou les limitations des droits statutaires applicables d'un consommateur, de sorte que tout ou partie des exclusions et limitations ci-dessus peuvent ne pas vous être applicables. Mais dans un tel cas, les exclusions et limitations énoncées dans cette section seront appliquées dans la plus grande mesure exécutoire en vertu de la loi applicable.",
+    "msgstr": "Certaines juridictions n'autorisent pas l'exclusion de certains types de garanties ou les limitations des droits statutaires applicables d'un consommateur, de sorte que tout ou partie des exclusions et limitations ci-dessus peuvent ne pas Vous être applicables. Mais dans un tel cas, les exclusions et limitations énoncées dans cette section seront appliquées dans la plus grande mesure permise par la loi applicable.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Governing Law": {
-    "msgstr": "Droit applicable",
+    "msgstr": "Loi Applicable",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.": {
-    "msgstr": "Les lois du Pays, à l'exclusion de ses règles de conflit de lois, régiront les présentes Conditions et votre utilisation du Service. Votre utilisation de l'Application peut également être soumise à d'autres lois locales, étatiques, nationales ou internationales.",
+    "msgstr": "Les lois du Pays, à l'exclusion de ses règles de conflit de lois, régiront les présentes Conditions et Votre utilisation du Service. Votre utilisation de l'Application peut également être soumise à d'autres lois locales, étatiques, nationales ou internationales.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Disputes Resolution": {
-    "msgstr": "Règlement des litiges",
+    "msgstr": "Résolution des Litiges",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.": {
-    "msgstr": "Si vous avez une préoccupation ou un litige concernant le Service, vous acceptez d'essayer de résoudre le litige à l'amiable en contactant la Société.",
+    "msgstr": "Si Vous avez une préoccupation ou un litige concernant le Service, Vous acceptez d'essayer d'abord de résoudre le litige de manière informelle en contactant la Société.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "For European Union (EU) Users": {
-    "msgstr": "Pour les utilisateurs de l'Union européenne (UE)",
+    "msgstr": "Pour les utilisateurs de l'Union Européenne (UE)",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.": {
-    "msgstr": "Si vous êtes un consommateur de l'Union européenne, vous bénéficierez des dispositions impératives de la loi du pays dans lequel vous résidez.",
+    "msgstr": "Si vous êtes un consommateur de l'Union Européenne, vous bénéficierez de toutes les dispositions impératives de la loi du pays dans lequel vous résidez.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1272,13 +1710,13 @@
     ]
   },
   "You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a \"terrorist supporting\" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.": {
-    "msgstr": "Vous déclarez et garantissez (i) que vous n'êtes pas situé dans un pays soumis à un embargo du gouvernement des États-Unis, ou qui a été désigné par le gouvernement des États-Unis comme un pays « soutenant le terrorisme », et (ii) que vous ne figurez sur aucune liste du gouvernement des États-Unis de parties interdites ou restreintes.",
+    "msgstr": "Vous déclarez et garantissez que (i) vous n'êtes pas situé dans un pays soumis à un embargo du gouvernement des États-Unis, ou désigné par le gouvernement des États-Unis comme un pays \"soutenant le terrorisme\", et (ii) vous ne figurez sur aucune liste du gouvernement des États-Unis de parties interdites ou restreintes.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "Severability and Waiver": {
-    "msgstr": "Divisibilité et renonciation",
+    "msgstr": "Divisibilité et Renonciation",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1290,7 +1728,7 @@
     ]
   },
   "If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.": {
-    "msgstr": "Si une disposition des présentes Conditions est jugée inapplicable ou invalide, cette disposition sera modifiée et interprétée de manière à atteindre les objectifs de cette disposition dans la plus grande mesure possible en vertu de la loi applicable et les dispositions restantes resteront pleinement en vigueur.",
+    "msgstr": "Si une disposition de ces Conditions est jugée inapplicable ou invalide, cette disposition sera modifiée et interprétée de manière à atteindre les objectifs de cette disposition dans la plus grande mesure possible en vertu de la loi applicable et les dispositions restantes resteront pleinement en vigueur.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1302,7 +1740,7 @@
     ]
   },
   "Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.": {
-    "msgstr": "Sauf disposition contraire des présentes, le fait de ne pas exercer un droit ou d'exiger l'exécution d'une obligation en vertu des présentes Conditions n'affectera pas la capacité d'une partie à exercer ce droit ou à exiger cette exécution à tout moment par la suite, et la renonciation à une violation ne constituera pas une renonciation à toute violation ultérieure.",
+    "msgstr": "Sauf disposition contraire des présentes, le fait de ne pas exercer un droit ou d'exiger l'exécution d'une obligation en vertu des présentes Conditions n'affectera pas la capacité d'une partie à exercer ce droit ou à exiger une telle exécution à tout moment par la suite, et la renonciation à une violation ne constituera pas une renonciation à toute violation ultérieure.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1320,13 +1758,13 @@
     ]
   },
   "Changes to These Terms and Conditions": {
-    "msgstr": "Modifications des présentes Conditions Générales",
+    "msgstr": "Modifications de ces Conditions Générales",
     "references": [
       "src/data/pages/en/terms.md"
     ]
   },
   "We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.": {
-    "msgstr": "Nous nous réservons le droit, à notre seule discrétion, de modifier ou de remplacer ces Conditions à tout moment. Si une révision est substantielle, Nous ferons des efforts raisonnables pour fournir un préavis d'au moins 30 jours avant l'entrée en vigueur de toute nouvelle condition. Ce qui constitue un changement substantiel sera déterminé à Notre seule discrétion.",
+    "msgstr": "Nous nous réservons le droit, à Notre seule discrétion, de modifier ou de remplacer ces Conditions à tout moment. Si une révision est substantielle, Nous ferons des efforts raisonnables pour fournir un préavis d'au moins 30 jours avant l'entrée en vigueur de nouvelles conditions. Ce qui constitue un changement substantiel sera déterminé à Notre seule discrétion.",
     "references": [
       "src/data/pages/en/terms.md"
     ]
@@ -1341,6 +1779,30 @@
     "msgstr": "Si vous avez des questions concernant ces Conditions Générales, Vous pouvez nous contacter :",
     "references": [
       "src/data/pages/en/terms.md"
+    ]
+  },
+  "AstroWind template in depth": {
+    "msgstr": "Modèle AstroWind en profondeur",
+    "references": [
+      "src/data/post/en/astrowind-template-in-depth.mdx"
+    ]
+  },
+  "While easy to get started, Astrowind is quite complex internally. This page provides documentation on some of the more intricate parts.": {
+    "msgstr": "Bien que facile à prendre en main, Astrowind est assez complexe en interne. Cette page fournit une documentation sur certaines des parties les plus complexes.",
+    "references": [
+      "src/data/post/en/astrowind-template-in-depth.mdx"
+    ]
+  },
+  "Mauris velit laoreet vitae cursus augue": {
+    "msgstr": "Mauris velit laoreet vitae cursus augue",
+    "references": [
+      "src/data/post/en/astrowind-template-in-depth.mdx"
+    ]
+  },
+  "Some text here": {
+    "msgstr": "Du texte ici",
+    "references": [
+      "src/data/post/en/astrowind-template-in-depth.mdx"
     ]
   }
 }
