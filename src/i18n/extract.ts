@@ -131,7 +131,7 @@ function extractTemplateStrings(ast: any, content: string, file: string): Extrac
 
     // Text nodes
     if (type === 'text') {
-      const text = (node.value as string)?.trim();
+      const text = (node.value as string)?.replace(/\s+/g, ' ').trim();
       if (text && text.length > 0) {
         const ctx: StringContext = { scope: 'markup', element: parentEl };
         if (classifyString(text, ctx) === 'message') {
@@ -153,7 +153,7 @@ function extractTemplateStrings(ast: any, content: string, file: string): Extrac
       if (attrs) {
         for (const attr of attrs) {
           if (attr.kind === 'quoted' && typeof attr.value === 'string') {
-            const val = attr.value as string;
+            const val = (attr.value as string).replace(/\s+/g, ' ').trim();
             if (val.trim()) {
               const ctx: StringContext = {
                 scope: 'attribute',

@@ -59,10 +59,11 @@ export function mergeExtracted(
 ): { catalog: Catalog; newCount: number } {
   let newCount = 0;
   for (const item of extracted) {
-    if (!(item.msgid in catalog)) {
-      catalog[item.msgid] = item.msgid; // placeholder: English
-      newCount++;
-    }
+    // Normalize whitespace: collapse \s+ to single space, trim
+    const msgid = item.msgid.replace(/\s+/g, ' ').trim();
+    if (!msgid || msgid in catalog) continue;
+    catalog[msgid] = msgid; // placeholder: English
+    newCount++;
   }
   return { catalog, newCount };
 }
