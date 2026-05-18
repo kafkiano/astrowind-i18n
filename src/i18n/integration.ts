@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 import type { AstroIntegration } from 'astro';
 import { loadAllCatalogs, loadCatalog, mergeExtracted, saveCatalog, type CatalogSet } from './catalog';
 import { extractFromAstro } from './extract';
-import { translateWithGemini } from './ai';
+import { getProvider, type TranslationProvider } from './provider';
 import { glob } from 'tinyglobby';
 import { locales } from '../locales/data';
 
@@ -162,24 +162,37 @@ export function i18nIntegration(): AstroIntegration {
           }
         }
 
-        // Auto-translate untranslated strings via Gemini if API key is available
-        const geminiKey = process.env.GEMINI_API_KEY;
-        if (geminiKey) {
+        // Auto-translate untranslated strings via configured provider
+        const provider = await getProvider();
+
+        if (provider) {
           let totalTranslated = 0;
           for (const locale of locales) {
             if (locale === 'en') continue;
             try {
-              const translated = await translateWithGemini('src/locales', locale, geminiKey);
-              if (translated > 0) {
-                totalTranslated += translated;
-                console.log(`[i18n] Gemini translated ${translated} strings to ${locale}`);
+              const catalog = loadCatalog('src/locales', locale);
+              const untranslated = Object.keys(catalog).filter((k) => catalog[k] === k);
+              if (untranslated.length === 0) continue;
+
+              const translations = await provider.translateBatch(untranslated, locale, 'en');
+              let localeTranslated = 0;
+              for (let i = 0; i < untranslated.length; i++) {
+                if (translations[i] && translations[i] !== untranslated[i]) {
+                  catalog[untranslated[i]] = translations[i];
+                  localeTranslated++;
+                }
+              }
+              if (localeTranslated > 0) {
+                saveCatalog('src/locales', locale, catalog);
+                totalTranslated += localeTranslated;
+                console.log(`[i18n] ${provider.name} translated ${localeTranslated} strings to ${locale}`);
               }
             } catch {
               // Translation failure shouldn't block the build
             }
           }
           if (totalTranslated > 0) {
-            console.log(`[i18n] Gemini: ${totalTranslated} total translations across all locales`);
+            console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
           }
         }
 

@@ -40,7 +40,7 @@ i18n:
     # Add more as needed
   ai:
     geminiApiKey: null
-    provider: 'gemini' # optional
+    provider: 'deepl' # optional
 
 apps:
   blog:
