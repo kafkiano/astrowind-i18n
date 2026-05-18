@@ -42,12 +42,16 @@ class GeminiProvider implements TranslationProvider {
       try {
         const response = await this.ai.models.generateContent({
           model: 'gemini-2.5-flash',
-          contents: [{
-            role: 'user',
-            parts: [{
-              text: `Translate these ${getLanguageName(sourceLang)} strings to ${getLanguageName(targetLang)} (${targetLang}).\nReturn ONLY the translations, one per line, in the same order.\nDo not add quotes, numbering, or explanations.\n\n${batch.join('\n')}`,
-            }],
-          }],
+          contents: [
+            {
+              role: 'user',
+              parts: [
+                {
+                  text: `Translate these ${getLanguageName(sourceLang)} strings to ${getLanguageName(targetLang)} (${targetLang}).\nReturn ONLY the translations, one per line, in the same order.\nDo not add quotes, numbering, or explanations.\n\n${batch.join('\n')}`,
+                },
+              ],
+            },
+          ],
         });
 
         const raw = response.text?.trim() ?? '';
@@ -120,7 +124,7 @@ function readYamlConfig(): ProviderConfig {
   const config = yaml.load(raw) as {
     i18n?: {
       translation?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string };
-      ai?: { provider?: string; geminiApiKey?: string };
+      ai?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string };
     };
   };
   const t = config?.i18n?.translation || config?.i18n?.ai || {};
@@ -164,9 +168,18 @@ export async function getProvider(): Promise<TranslationProvider | null> {
 
 export function getLanguageName(locale: string): string {
   const names: Record<string, string> = {
-    en: 'English', es: 'Spanish', fr: 'French', de: 'German',
-    it: 'Italian', pt: 'Portuguese', nl: 'Dutch', pl: 'Polish',
-    ru: 'Russian', ja: 'Japanese', zh: 'Chinese', ko: 'Korean',
+    en: 'English',
+    es: 'Spanish',
+    fr: 'French',
+    de: 'German',
+    it: 'Italian',
+    pt: 'Portuguese',
+    nl: 'Dutch',
+    pl: 'Polish',
+    ru: 'Russian',
+    ja: 'Japanese',
+    zh: 'Chinese',
+    ko: 'Korean',
   };
   return names[locale] || locale;
 }

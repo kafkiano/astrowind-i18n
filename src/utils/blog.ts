@@ -1,7 +1,7 @@
 import type { PaginateFunction, GetStaticPathsResult } from 'astro';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Post } from '~/types';
+import type { Post, Taxonomy } from '~/types';
 import { I18N } from 'astrowind:config';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
@@ -238,10 +238,10 @@ export const getStaticPathsBlogCategory = async ({
   const paths: GetStaticPathsResult = [];
   for (const locale of I18N.locales) {
     const posts = await load(locale);
-    const categories = {};
+    const categories: Record<string, Taxonomy> = {};
     posts.forEach((post) => {
       if (post.category?.slug) {
-        categories[post.category?.slug] = post.category;
+        categories[post.category.slug] = post.category;
       }
     });
 
@@ -271,11 +271,11 @@ export const getStaticPathsBlogTag = async ({
   const paths: GetStaticPathsResult = [];
   for (const locale of I18N.locales) {
     const posts = await load(locale);
-    const tags = {};
+    const tags: Record<string, Taxonomy> = {};
     posts.forEach((post) => {
       if (Array.isArray(post.tags)) {
         post.tags.forEach((tag) => {
-          tags[tag?.slug] = tag;
+          if (tag.slug) tags[tag.slug] = tag;
         });
       }
     });

@@ -24,9 +24,9 @@ collections:
       - label: Publish Date
         name: publishDate
         widget: datetime
-        date_format: "DD.MM.YYYY"
-        time_format: "HH:mm"
-        format: "YYYY-MM-DDTHH:mm:ss[Z]"
+        date_format: 'DD.MM.YYYY'
+        time_format: 'HH:mm'
+        format: 'YYYY-MM-DDTHH:mm:ss[Z]'
         picker_utc: true
 
       - label: Excerpt

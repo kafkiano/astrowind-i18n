@@ -53,10 +53,7 @@ export function saveCatalog(localesDir: string, locale: string, catalog: Catalog
  * Merge newly extracted strings into the source locale catalog.
  * Existing translations are preserved; new entries get the msgid as placeholder.
  */
-export function mergeExtracted(
-  catalog: Catalog,
-  extracted: ExtractedString[]
-): { catalog: Catalog; newCount: number } {
+export function mergeExtracted(catalog: Catalog, extracted: ExtractedString[]): { catalog: Catalog; newCount: number } {
   let newCount = 0;
   for (const item of extracted) {
     // Normalize whitespace: collapse \s+ to single space, trim

@@ -15,7 +15,6 @@
 
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
-import yaml from 'js-yaml';
 import { getProvider, type TranslationProvider } from '../i18n/provider';
 import { glob } from 'tinyglobby';
 

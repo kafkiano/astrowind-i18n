@@ -97,8 +97,7 @@ function extractScriptStrings(code: string, file: string): ExtractedString[] {
 
     // Recurse
     for (const key of Object.keys(node)) {
-      if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key))
-        continue;
+      if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key)) continue;
       const val = node[key];
       if (Array.isArray(val)) {
         for (const item of val) walk(item, childDeclaring);
@@ -119,7 +118,7 @@ function extractScriptStrings(code: string, file: string): ExtractedString[] {
 const TAG_NODES = new Set(['element', 'component', 'custom-element']);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function extractTemplateStrings(ast: any, content: string, file: string): ExtractedString[] {
+function extractTemplateStrings(ast: any, _content: string, file: string): ExtractedString[] {
   const results: ExtractedString[] = [];
   const seen = new Set<string>();
 
