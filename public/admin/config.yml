@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: kafkiano/astrowind-i18n
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Blog Posts
+    label_singular: Post
+    folder: src/data/post/en
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Publish Date
+        name: publishDate
+        widget: datetime
+        date_format: "DD.MM.YYYY"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DDTHH:mm:ss[Z]"
+        picker_utc: true
+
+      - label: Excerpt
+        name: excerpt
+        widget: text
+
+      - label: Image URL
+        name: image
+        widget: string
+
+      - label: Category
+        name: category
+        widget: string
+        required: false
+
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field: { label: Tag, name: tag, widget: string }
+
+      - label: Metadata
+        name: metadata
+        widget: object
+        required: false
+        fields:
+          - label: Canonical URL
+            name: canonical
+            widget: string
+            required: false
+
+      - label: Body
+        name: body
+        widget: markdown
+
+  - name: snippets
+    label: Snippets
+    label_singular: Snippet
+    folder: src/data/snippets
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: false
+
+      - label: Content
+        name: body
+        widget: markdown
