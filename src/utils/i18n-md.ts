@@ -3,8 +3,8 @@
  * Translate markdown content from source locale to all target locales.
  *
  * Usage:
- *   I18N_PROVIDER=deepl DEEPL_API_KEY=... bun run scripts/translate-content.ts
- *   GEMINI_API_KEY=... bun run scripts/translate-content.ts
+ *   I18N_PROVIDER=deepl DEEPL_API_KEY=... bun run src/utils/i18n-md.ts
+ *   GEMINI_API_KEY=... bun run src/utils/i18n-md.ts
  *
  * Reads:  src/data/{type}/{sourceLocale}/*.{md,mdx}
  * Writes: src/data/{type}/{targetLocale}/*.{md,mdx}
@@ -16,12 +16,12 @@
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import yaml from 'js-yaml';
-import { getProvider } from '../src/i18n/provider';
+import { getProvider, type TranslationProvider } from '../i18n/provider';
 import { glob } from 'tinyglobby';
 
 const SOURCE_LOCALE = 'en';
 const TARGET_LOCALES = ['es', 'fr', 'de'];
-const FRONTMATTER_KEYS = ['title', 'excerpt', 'description'];
+const FRONTMATTER_KEYS = ['title', 'excerpt', 'description', 'group'];
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
@@ -33,8 +33,17 @@ async function main() {
     console.error('No translation provider configured.');
     process.exit(1);
   }
+  await translateContent(provider);
+  console.log('Done.');
+}
 
-  console.log(`Translating content via ${provider.name}...\n`);
+/**
+ * Translate all markdown content. Called by the i18n integration during build,
+ * or directly via CLI (`bun run src/utils/translate-content.ts`).
+ * Incremental — only re-translates files whose source has changed.
+ */
+export async function translateContent(provider: TranslationProvider): Promise<void> {
+  console.log(`[content] Translating via ${provider.name}...`);
 
   for (const { dir, pattern } of CONTENT_TYPES) {
     const srcDir = join(dir, SOURCE_LOCALE);
@@ -149,7 +158,10 @@ async function isUpToDate(outPath: string, srcPath: string): Promise<boolean> {
   }
 }
 
-main().catch((err) => {
-  console.error('Fatal:', err);
-  process.exit(1);
-});
+// Only run main() when executed directly (not when imported)
+if (process.argv[1]?.includes('translate-content')) {
+  main().catch((err) => {
+    console.error('Fatal:', err);
+    process.exit(1);
+  });
+}

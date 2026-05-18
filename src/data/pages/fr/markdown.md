@@ -2,7 +2,7 @@
 title: Page Markdown
 showIn: 'header'
 order: 1
-group: 'Resources'
+group: Ressources
 ---
 
 ### Qu&#x27;est-ce que Markdown ?
@@ -16,7 +16,7 @@ Plongeons-nous dans le vif du sujet. ⤵️
 
 1. [Paragraphe](#paragraphe)
 2. [Titres](#titres)
-3. [Mise en évidence](#miseenevidence)
+3. [Mise en évidence](#miseenevidance)
 4. [Citation](#citation)
 5. [Images](#images)
 6. [Liens](#liens)
@@ -83,12 +83,12 @@ Deux traits de soulignement __fonctionnent aussi__.
 Mettons-le *en italique maintenant*.
 Vous l&#x27;avez deviné, _un seul trait de soulignement suffit également_.
 Peut-on combiner **_les deux_ ?** Absolument.
-Et si je veux ~~le barrer~~ ?
+Et si je veux ~~barrer~~ ?
 ```
 
 En utilisant deux astérisques **ce texte est en gras**.  
 Deux traits de soulignement **fonctionnent aussi**.  
-Mettons-le _en italique maintenant_.  
+Passons maintenant à l&#x27;_italique_.  
 Vous l&#x27;avez deviné, _un seul trait de soulignement suffit également_.  
 Peut-on combiner **_les deux_ ?** Absolument.  
 Et si je veux ~~barrer~~ ?
@@ -111,7 +111,7 @@ Vous voulez souligner l&#x27;importance du texte ? N&#x27;en dites pas plus.
 &gt; Ceci est une citation.
 &gt; Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 &gt;
-&gt; &gt; Et imbriquer ? Aucun problème.
+&gt; &gt; Et imbriqué ? Aucun problème.
 &gt; &gt;
 &gt; &gt; &gt; PS. Vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_. :
 
@@ -119,7 +119,7 @@ Vous voulez souligner l&#x27;importance du texte ? N&#x27;en dites pas plus.
 
 ## Images
 
-Le mieux est de simplement glisser-déposer l&#x27;image directement depuis votre ordinateur. Vous pouvez également créer une référence à l&#x27;image et l&#x27;assigner de cette manière.  
+La meilleure façon de procéder est simplement de glisser-déposer l&#x27;image directement depuis votre ordinateur. Vous pouvez également créer une référence à l&#x27;image et l&#x27;assigner de cette manière.  
 Voici la syntaxe.
 
 ```
@@ -181,7 +181,7 @@ Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets
 ````
 
 J&#x27;ai créé un fichier `.env` à la racine.
-Des backticks à l&#x27;intérieur de backticks ? `` `Pas de problème.` ``
+Des backticks à l&#x27;intérieur d&#x27;autres backticks ? `` `Pas de problème.` ``
 
 ```
 {
@@ -199,7 +199,7 @@ console.log(x);
 
 ## Listes
 
-Comme en HTML, Markdown permet de créer des listes ordonnées et non ordonnées.
+Tout comme en HTML, Markdown permet de créer des listes ordonnées et non ordonnées.
 
 ### Liste ordonnée
 
@@ -303,16 +303,16 @@ Suivi des tâches terminées et de celles qui restent à faire.
 
 ## Note de bas de page
 
-Vous souhaitez ajouter une note à la fin du fichier ? Utilisez les notes de bas de page !
+Vous souhaitez ajouter une note à la fin du fichier ? Utilisez la note de bas de page !
 
 ```
 #### Je travaille sur un nouveau projet. [^1]
-[^1] : La pile technologique est : React, Typescript, Tailwind CSS
+[^1]: La pile technologique est : React, Typescript, Tailwind CSS
 
 Le projet porte sur la musique et les films.
 
 ##### J&#x27;espère qu&#x27;il vous plaira. [^voir]
-[^voir] : Chargement... ⌛️
+[^voir]: Chargement... ⌛️
 ```
 
 #### Je travaille sur un nouveau projet. [^1]
@@ -323,7 +323,7 @@ Le projet porte sur la musique et les films.
 
 ##### J&#x27;espère qu&#x27;il vous plaira. [^voir]
 
-[^voir] : Chargement... ⌛️
+[^voir] : Chargement en cours... ⌛️
 
 ---
 
@@ -349,7 +349,7 @@ Deuxième ligne
 
 -----
 
-Troisième ligne
+Troisième
 
 _________
 ```
@@ -358,11 +358,11 @@ Première ligne horizontale
 
 ---
 
-Deuxième ligne
+Deuxième
 
 ---
 
-Troisième ligne
+Troisième
 
 ---
 
@@ -370,7 +370,7 @@ Troisième ligne
 
 ## HTML
 
-Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera bien, mais vous pouvez parfois rencontrer des différences auxquelles vous n&#x27;êtes pas habitué lorsque vous travaillez avec du HTML standard. L&#x27;utilisation de CSS ne fonctionnera pas.
+Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera bien, mais vous pouvez parfois rencontrer des différences auxquelles vous n’êtes pas habitué lorsque vous travaillez avec du HTML standard. L’utilisation de CSS ne fonctionnera pas.
 
 ```
 <h1>Ceci est un titre</h1>

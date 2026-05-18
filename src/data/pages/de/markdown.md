@@ -2,7 +2,7 @@
 title: Markdown-Seite
 showIn: 'header'
 order: 1
-group: 'Resources'
+group: Ressourcen
 ---
 
 ### Was ist Markdown?
@@ -28,7 +28,7 @@ Lass uns loslegen. ⤵️
 9. [Tabelle](#table)
 10. [Aufgabenliste](#tasklist)
 11. [Fußnote](#footnote)
-12. [Springe zu Abschnitt](#sectionjump)
+12. [Zum Abschnitt springen](#sectionjump)
 13. [Horizontale Linie](#horizontalline)
 14. [HTML](#html)
 
@@ -36,7 +36,7 @@ Lass uns loslegen. ⤵️
 
 ## Absatz
 
-Wenn du normalen Text schreibst, schreibst du im Grunde einen Absatz.
+Wenn du normalen Text schreibst, verfasst du im Grunde einen Absatz.
 
 ```
 Dies ist ein Absatz.
@@ -79,7 +79,7 @@ Das Bearbeiten von Text ist ganz einfach. Du kannst deinen Text fett, kursiv und
 
 ```
 Mit zwei Sternchen **wird dieser Text fett**.
-Zwei Unterstriche __funktionieren auch__.
+Zwei Unterstriche __funktionieren ebenfalls__.
 Machen wir ihn jetzt *kursiv*.
 Du hast es erraten, _ein Unterstrich reicht auch_.
 Können wir **_beides_** kombinieren? Auf jeden Fall.
@@ -87,7 +87,7 @@ Was ist, wenn ich ~~durchstreichen~~ möchte?
 ```
 
 Mit zwei Sternchen **ist dieser Text fett**.  
-Zwei Unterstriche **funktionieren auch**.  
+Zwei Unterstriche **funktionieren ebenfalls**.  
 Machen wir ihn jetzt _kursiv_.  
 Du hast es erraten, _ein Unterstrich reicht auch_.  
 Können wir **_beides_ kombinieren?** Auf jeden Fall.  
@@ -97,11 +97,11 @@ Was ist, wenn ich ~~durchstreichen~~ möchte?
 
 ## Blockzitat
 
-Möchtest du die Wichtigkeit des Textes hervorheben? Mehr muss man dazu nicht sagen.
+Möchtest du die Wichtigkeit des Textes hervorheben? Mehr musst du nicht sagen.
 
 ```
 &gt; Dies ist ein Blockzitat.
-&gt; Möchtest du auf einer neuen Zeile mit Abstand dazwischen schreiben?
+&gt; Möchtest du in einer neuen Zeile mit Abstand dazwischen schreiben?
 &gt;
 &gt; &gt; Und verschachtelt? Kein Problem.
 &gt; &gt;
@@ -109,29 +109,29 @@ Möchtest du die Wichtigkeit des Textes hervorheben? Mehr muss man dazu nicht sa
 ```
 
 &gt; Dies ist ein Blockzitat.
-&gt; Möchtest du auf einer neuen Zeile mit Abstand dazwischen schreiben?
+&gt; Möchten Sie in einer neuen Zeile mit Abstand dazwischen schreiben?
 &gt;
 &gt; &gt; Und verschachtelt? Kein Problem.
 &gt; &gt;
-&gt; &gt; &gt; PS: Du kannst deinen Text **gestalten**, _wie du willst_. :
+&gt; &gt; &gt; PS. Sie können Ihren Text **gestalten**, _wie Sie wollen_. :
 
 ---
 
 ## Bilder
 
-Am besten ziehst du das Bild einfach direkt von deinem Computer per Drag &amp; Drop hinein. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
+Am besten ziehen Sie das Bild einfach direkt von Ihrem Computer per Drag &amp; Drop hinein. Sie können auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
 Hier ist die Syntax.
 
 ```
 ![Text, falls das Bild nicht geladen werden kann](automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes &quot;Text, der beim Darüberfahren mit der Maus angezeigt wird&quot;)
 
 [Logo]: automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes &quot;Fahre mit der Maus darüber&quot;
-![Fehlertext][Logo]
+![Fehlertext][logo]
 ```
 
 ![Text, falls das Bild nicht geladen werden kann](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png &#x27;Text, der beim Überfahren mit der Maus angezeigt wird&#x27;)
 
-[Logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png &#x27;Mit der Maus darüberfahren&#x27;
+[Logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png &#x27;Hover me&#x27;
 
 ![Fehlertext][Logo]
 
@@ -154,7 +154,7 @@ Hier findest du tolle Dokumentationen [hier][docs]
 [docs]: https://github.com/adam-p/markdown-here
 
 [Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)  
-[Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]  
+[Mein Markdown-Spickzettel – mit einem Stern markieren, wenn es dir gefällt][markdown-cheatsheet]  
 Hier findest du tolle Dokumentationen [hier][docs]
 
 ---
@@ -186,7 +186,7 @@ Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 ```
 {
   learning: &quot;Markdown&quot;,
-  showing: &quot;block code snippet&quot;
+  showing: &quot;Block code snippet&quot;
 }
 ```
 
@@ -199,9 +199,9 @@ console.log(x);
 
 ## Listen
 
-Genau wie in HTML ermöglicht Markdown das Erstellen von geordneten und ungeordneten Listen.
+Genau wie in HTML ermöglicht Markdown das Erstellen von nummerierten und unnummerierten Listen.
 
-### Geordnete Liste
+### Nummerierte Liste
 
 ```
 1. HTML
@@ -213,7 +213,7 @@ Genau wie in HTML ermöglicht Markdown das Erstellen von geordneten und ungeordn
 
 1. HTML
 2. CSS
-3. JavaScript
+3. Javascript
 4. React
 5. Ich bin jetzt Frontend-Entwickler 👨🏼‍🎨
 
@@ -243,7 +243,7 @@ Du kannst auch beide Listen mischen und Unterlisten erstellen.
 1. Grundlagen lernen
    1. HTML
    2. CSS
-   7. Javascript
+   7. JavaScript
 2. Ein Framework lernen
    - React
      - Router
@@ -267,7 +267,7 @@ Du kannst auch beide Listen mischen und Unterlisten erstellen.
 
 ## Tabelle
 
-Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das Symbol „|“ zur Trennung der Spalten und das Symbol „:“ zur Ausrichtung des Zeileninhalts.
+Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das Symbol „|“ zum Trennen von Spalten und das Symbol „:“ zum Ausrichten von Zeileninhalten.
 
 ```
 | Linksbündig (Standard) | Zentriert | Rechtsbündig |
@@ -287,7 +287,7 @@ Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das
 
 ## Aufgabenliste
 
-Den Überblick über erledigte und noch zu erledigende Aufgaben behalten.
+Behalte den Überblick über erledigte und noch zu erledigende Aufgaben.
 
 ```
 - [x] Markdown lernen
@@ -307,21 +307,21 @@ Möchtest du am Ende der Datei etwas beschreiben? Verwende eine Fußnote!
 
 ```
 #### Ich arbeite an einem neuen Projekt. [^1]
-[^1]: Stack ist: React, Typescript, Tailwind CSS
+[^1]: Der Stack besteht aus: React, Typescript, Tailwind CSS
 
-Das Projekt dreht sich um Musik &amp; Filme.
+Das Projekt dreht sich um Musik und Filme.
 
-##### Ich hoffe, es gefällt dir. [^siehe]
-[^siehe]: Wird geladen... ⌛️
+##### Ich hoffe, es gefällt dir. [^see]
+[^see]: Wird geladen... ⌛️
 ```
 
 #### Ich arbeite an einem neuen Projekt. [^1]
 
-[^1]: Stack ist: React, Typescript, Tailwind CSS
+[^1]: Der Stack besteht aus: React, Typescript, Tailwind CSS
 
 Das Projekt dreht sich um Musik und Filme.
 
-##### Ich hoffe, es gefällt euch. [^siehe]
+##### Ich hoffe, es gefällt dir. [^see]
 
 [^siehe]: Wird geladen... ⌛️
 
@@ -329,7 +329,7 @@ Das Projekt dreht sich um Musik und Filme.
 
 ## Zum Abschnitt springen
 
-Astro (und die meisten Markdown-Parser) generieren automatisch IDs für eure Überschriften. Normalerweise musst du keine manuellen `<a name="...">
+Astro (und die meisten Markdown-Parser) generieren automatisch IDs für deine Überschriften. Du musst normalerweise keine manuellen `<a name="...">
 `-Tags</a> erstellen<a name="...">
 .
 
@@ -380,7 +380,7 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 
 <img src="auto-generated-path-to-file-when-you-upload-image" width="200">
 
-<a href="https://github.com/im-luka">Folge mir auf GitHub</a>
+<a href="https://github.com/im-luka">Folgen Sie mir auf GitHub</a>
 
 <br />
 <br />
@@ -392,7 +392,7 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
   <summary>Noch ein schneller Trick? 🎭</summary>
 
   → Einfach
-  → Und simpel
+  → Und unkompliziert
 </details>
 ```
 
@@ -403,7 +403,7 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 
 <img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200">
 
-<a href="https://github.com/im-luka">Folge mir auf GitHub</a>
+<a href="https://github.com/im-luka">Folgen Sie mir auf GitHub</a>
 ---
 
 <br />
@@ -433,10 +433,10 @@ mindmap
       RSS-Feeds
       Planung &amp; Orchestrierung
     Datenverarbeitung
-      Speicherung strukturierter Daten
-      Verarbeitung unstrukturierter Daten
+      Strukturierte Datenspeicherung
+      Unstrukturierte Datenverarbeitung
       LLM-Integration
-      Abgleich &amp; Bewertung
+      Matching &amp; Scoring
     Benutzeroberfläche
       Dashboard &amp; Visualisierung
       Alarmmanagement

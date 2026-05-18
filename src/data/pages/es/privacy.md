@@ -49,7 +49,7 @@ Los datos de uso pueden incluir información como la dirección del Protocolo de
 
 Cuando accede al Servicio mediante un dispositivo móvil, podemos recopilar cierta información de forma automática, incluyendo, entre otros, el tipo de dispositivo móvil que utiliza, el identificador único de su dispositivo móvil, la dirección IP de su dispositivo móvil, su sistema operativo móvil, el tipo de navegador de Internet móvil que utiliza, identificadores únicos del dispositivo y otros datos de diagnóstico.
 
-También podemos recopilar información que su navegador envía cada vez que visita nuestro Servicio o cuando accede al Servicio mediante o a través de un dispositivo móvil.
+También podemos recopilar información que su navegador envía cada vez que visita nuestro Servicio o cuando accede al Servicio mediante un dispositivo móvil.
 
 #### Tecnologías de seguimiento y cookies
 
@@ -84,22 +84,22 @@ Utilizamos tanto cookies de sesión como persistentes para los fines que se indi
 
   Administradas por: Nosotros
 
-  Finalidad: Estas cookies nos permiten recordar las elecciones que usted realiza al utilizar el sitio web, como recordar sus datos de inicio de sesión o su preferencia de idioma. El objetivo de estas cookies es ofrecerle una experiencia más personalizada y evitar que tenga que volver a introducir sus preferencias cada vez que utilice el sitio web.
+  Finalidad: Estas cookies nos permiten recordar las elecciones que usted realiza al utilizar el sitio web, como sus datos de inicio de sesión o su preferencia de idioma. El objetivo de estas cookies es ofrecerle una experiencia más personalizada y evitar que tenga que volver a introducir sus preferencias cada vez que utilice el sitio web.
 
 Para obtener más información sobre las cookies que utilizamos y sus opciones con respecto a las mismas, visite nuestra Política de cookies o la sección de Cookies de nuestra Política de privacidad.
 
 ## Uso de sus datos personales
 
-La Empresa puede utilizar los datos personales para los siguientes fines:
+La empresa puede utilizar los datos personales para los siguientes fines:
 
-- **Para prestar y mantener nuestro Servicio**, lo que incluye supervisar el uso de nuestro Servicio.
+- **Para prestar y mantener nuestro servicio**, lo que incluye supervisar el uso de nuestro servicio.
 - **Para gestionar su cuenta:** gestionar su registro como usuario del Servicio. Los datos personales que nos facilite le permitirán acceder a las diferentes funcionalidades del Servicio que están a su disposición como usuario registrado.
 - **Para la ejecución de un contrato:** el desarrollo, cumplimiento y ejecución del contrato de compra de los productos, artículos o servicios que haya adquirido, o de cualquier otro contrato con nosotros a través del Servicio.
 - **Para ponernos en contacto con usted:** para comunicarnos con usted por correo electrónico, llamadas telefónicas, SMS u otras formas equivalentes de comunicación electrónica, como notificaciones push de una aplicación móvil sobre actualizaciones o comunicaciones informativas relacionadas con las funcionalidades, productos o servicios contratados, incluidas las actualizaciones de seguridad, cuando sea necesario o razonable para su implementación.
 - **Para proporcionarle** noticias, ofertas especiales e información general sobre otros bienes, servicios y eventos que ofrecemos y que son similares a los que ya ha adquirido o sobre los que ha solicitado información, a menos que haya optado por no recibir dicha información.
 - **Para gestionar sus solicitudes:** Atender y gestionar las solicitudes que nos envíe.
-- **Para traspasos de negocio:** Podemos utilizar su información para evaluar o llevar a cabo una fusión, desinversión, reestructuración, reorganización, disolución u otra venta o transferencia de algunos o todos nuestros activos, ya sea como empresa en funcionamiento o como parte de un procedimiento de quiebra, liquidación o similar, en el que los datos personales que poseemos sobre los usuarios de nuestro Servicio se encuentren entre los activos transferidos.
-- **Para otros fines**: Podemos utilizar su información para otros fines, como el análisis de datos, la identificación de tendencias de uso, la determinación de la eficacia de nuestras campañas promocionales y para evaluar y mejorar nuestro Servicio, productos, servicios, marketing y su experiencia.
+- **Para traspasos empresariales:** Podemos utilizar su información para evaluar o llevar a cabo una fusión, desinversión, reestructuración, reorganización, disolución u otra venta o transferencia de algunos o todos nuestros activos, ya sea como empresa en funcionamiento o como parte de un procedimiento de quiebra, liquidación o similar, en el que los datos personales que poseemos sobre los usuarios de nuestro Servicio se encuentren entre los activos transferidos.
+- **Para otros fines**: Podemos utilizar su información para otros fines, como el análisis de datos, la identificación de tendencias de uso, la determinación de la eficacia de nuestras campañas promocionales y la evaluación y mejora de nuestro Servicio, productos, servicios, marketing y su experiencia.
 
 Podemos compartir su información personal en las siguientes situaciones:
 
@@ -112,13 +112,13 @@ Podemos compartir su información personal en las siguientes situaciones:
 
 ## Conservación de sus datos personales
 
-La Empresa conservará sus datos personales solo durante el tiempo que sea necesario para los fines establecidos en la presente Política de privacidad. Conservaremos y utilizaremos sus datos personales en la medida necesaria para cumplir con nuestras obligaciones legales (por ejemplo, si se nos exige conservar sus datos para cumplir con la legislación aplicable), resolver disputas y hacer cumplir nuestros acuerdos y políticas legales.
+La Empresa conservará sus datos personales solo durante el tiempo que sea necesario para los fines establecidos en esta Política de privacidad. Conservaremos y utilizaremos sus datos personales en la medida necesaria para cumplir con nuestras obligaciones legales (por ejemplo, si se nos exige conservar sus datos para cumplir con la legislación aplicable), resolver disputas y hacer cumplir nuestros acuerdos y políticas legales.
 
 La Empresa también conservará los Datos de uso con fines de análisis interno. Los Datos de uso se conservan generalmente durante un periodo de tiempo más breve, salvo cuando estos datos se utilicen para reforzar la seguridad o mejorar la funcionalidad de Nuestro Servicio, o cuando tengamos la obligación legal de conservar estos datos durante periodos de tiempo más largos.
 
 ## Transferencia de sus datos personales
 
-Su información, incluidos los datos personales, se trata en las oficinas operativas de la empresa y en cualquier otro lugar donde se encuentren las partes implicadas en el tratamiento. Esto significa que esta información puede transferirse a —y conservarse en— ordenadores ubicados fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos puedan diferir de las de su jurisdicción.
+Su información, incluidos los datos personales, se trata en las oficinas operativas de la Empresa y en cualquier otro lugar donde se encuentren las partes implicadas en el tratamiento. Esto significa que esta información puede transferirse a —y conservarse en— ordenadores ubicados fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos puedan diferir de las de su jurisdicción.
 
 Su consentimiento a esta Política de privacidad, seguido del envío de dicha información, representa su aceptación de dicha transferencia.
 
@@ -130,7 +130,7 @@ Tiene derecho a eliminar o solicitar que le ayudemos a eliminar los datos person
 
 Nuestro Servicio puede ofrecerle la posibilidad de eliminar cierta información sobre usted desde el propio Servicio.
 
-Puede actualizar, modificar o eliminar su información en cualquier momento iniciando sesión en su cuenta, si dispone de una, y accediendo a la sección de configuración de la cuenta que le permite gestionar su información personal. También puede ponerse en contacto con nosotros para solicitar el acceso, la corrección o la eliminación de cualquier información personal que nos haya facilitado.
+Puede actualizar, modificar o eliminar su información en cualquier momento iniciando sesión en su cuenta, si dispone de ella, y accediendo a la sección de configuración de la cuenta que le permite gestionar su información personal. También puede ponerse en contacto con nosotros para solicitar el acceso, la corrección o la eliminación de cualquier información personal que nos haya facilitado.
 
 Tenga en cuenta, sin embargo, que es posible que debamos conservar cierta información cuando tengamos una obligación legal o una base legal para hacerlo.
 
@@ -142,7 +142,7 @@ Si la empresa se ve involucrada en una fusión, adquisición o venta de activos,
 
 #### Cumplimiento de la ley
 
-En determinadas circunstancias, la Empresa podría verse obligada a divulgar sus datos personales si así lo exige la ley o en respuesta a solicitudes válidas de autoridades públicas (por ejemplo, un tribunal o una agencia gubernamental).
+En determinadas circunstancias, es posible que la Empresa se vea obligada a divulgar sus datos personales si así lo exige la ley o en respuesta a solicitudes válidas de autoridades públicas (por ejemplo, un tribunal o una agencia gubernamental).
 
 #### Otros requisitos legales
 
@@ -151,7 +151,7 @@ La Empresa podrá divulgar sus datos personales si cree de buena fe que dicha ac
 - Cumplir con una obligación legal
 - Proteger y defender los derechos o la propiedad de la Empresa
 - Prevenir o investigar posibles irregularidades relacionadas con el Servicio
-- Proteger la seguridad personal de los usuarios del Servicio o del público
+- Proteger la seguridad personal de los Usuarios del Servicio o del público
 - Proteger contra la responsabilidad legal
 
 ## Seguridad de sus datos personales
@@ -160,7 +160,7 @@ La seguridad de sus datos personales es importante para nosotros, pero recuerde 
 
 ## Privacidad de los menores
 
-Nuestro Servicio no está dirigido a menores de 13 años. No recopilamos deliberadamente información de identificación personal de menores de 13 años. Si es usted padre, madre o tutor y tiene conocimiento de que su hijo nos ha facilitado Datos personales, póngase en contacto con nosotros. Si tenemos conocimiento de que hemos recopilado datos personales de cualquier persona menor de 13 años sin verificar el consentimiento de los padres, tomaremos medidas para eliminar dicha información de nuestros servidores.
+Nuestro Servicio no está dirigido a personas menores de 13 años. No recopilamos deliberadamente información de identificación personal de personas menores de 13 años. Si es usted padre, madre o tutor y tiene conocimiento de que su hijo o hija nos ha facilitado Datos personales, póngase en contacto con nosotros. Si tenemos conocimiento de que hemos recopilado datos personales de cualquier persona menor de 13 años sin verificar el consentimiento de los padres, tomaremos medidas para eliminar dicha información de nuestros servidores.
 
 Si necesitamos basarnos en el consentimiento como fundamento jurídico para el tratamiento de su información y su país exige el consentimiento de un padre, es posible que solicitemos el consentimiento de su padre antes de recopilar y utilizar dicha información.
 
@@ -168,13 +168,13 @@ Si necesitamos basarnos en el consentimiento como fundamento jurídico para el t
 
 Nuestro Servicio puede contener enlaces a otros sitios web que no son operados por nosotros. Si hace clic en un enlace de un tercero, será redirigido al sitio de dicho tercero. Le recomendamos encarecidamente que revise la Política de privacidad de cada sitio que visite.
 
-No tenemos control alguno ni asumimos responsabilidad alguna por el contenido, las políticas de privacidad o las prácticas de los sitios o servicios de terceros.
+No tenemos control ni asumimos responsabilidad alguna por el contenido, las políticas de privacidad o las prácticas de los sitios o servicios de terceros.
 
 ## Cambios en esta Política de privacidad
 
 Podemos actualizar nuestra Política de privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva Política de privacidad en esta página.
 
-Se lo comunicaremos por correo electrónico y/o mediante un aviso destacado en nuestro Servicio, antes de que el cambio entre en vigor, y actualizaremos la fecha de «Última actualización» que aparece en la parte superior de esta Política de privacidad.
+Se lo comunicaremos por correo electrónico y/o mediante un aviso destacado en nuestro Servicio, antes de que el cambio entre en vigor, y actualizaremos la fecha de «Última actualización» que figura en la parte superior de esta Política de privacidad.
 
 Le recomendamos que revise esta Política de privacidad periódicamente para estar al tanto de cualquier cambio. Los cambios en esta Política de privacidad entran en vigor en el momento en que se publican en esta página.
 

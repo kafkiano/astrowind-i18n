@@ -49,14 +49,14 @@ Les données d&#x27;utilisation peuvent inclure des informations telles que l&#x
 
 Lorsque vous accédez au Service via un appareil mobile, nous pouvons collecter automatiquement certaines informations, notamment, mais sans s’y limiter, le type d’appareil mobile que vous utilisez, l’identifiant unique de votre appareil mobile, l’adresse IP de votre appareil mobile, votre système d’exploitation mobile, le type de navigateur Internet mobile que vous utilisez, les identifiants uniques de l’appareil et d’autres données de diagnostic.
 
-Nous pouvons également collecter des informations que votre navigateur envoie chaque fois que vous visitez notre Service ou lorsque vous accédez au Service via un appareil mobile.
+Nous pouvons également collecter les informations que votre navigateur envoie chaque fois que vous visitez notre Service ou lorsque vous accédez au Service via un appareil mobile.
 
 #### Technologies de suivi et cookies
 
 Nous utilisons des cookies et des technologies de suivi similaires pour suivre l&#x27;activité sur notre Service et stocker certaines informations. Les technologies de suivi utilisées sont des balises, des tags et des scripts destinés à collecter et suivre des informations, ainsi qu&#x27;à améliorer et analyser notre Service. Les technologies que nous utilisons peuvent inclure :
 
 - **Cookies ou cookies de navigateur.** Un cookie est un petit fichier placé sur votre appareil. Vous pouvez configurer votre navigateur pour qu&#x27;il refuse tous les cookies ou pour qu&#x27;il vous avertisse lorsqu&#x27;un cookie est envoyé. Toutefois, si vous n&#x27;acceptez pas les cookies, vous ne pourrez peut-être pas utiliser certaines parties de notre Service. À moins que vous n&#x27;ayez configuré votre navigateur pour qu&#x27;il refuse les cookies, notre Service peut utiliser des cookies.
-- **Balises Web.** Certaines sections de notre Service et de nos e-mails peuvent contenir de petits fichiers électroniques appelés balises Web (également appelées gifs invisibles, pixels espions et gifs à pixel unique) qui permettent à la Société, par exemple, de compter les utilisateurs ayant visité ces pages ou ouvert un e-mail, ainsi que d&#x27;obtenir d&#x27;autres statistiques liées au site Web (par exemple, enregistrer la popularité d&#x27;une certaine section et vérifier l&#x27;intégrité du système et du serveur).
+- **Balises Web.** Certaines sections de notre Service et nos e-mails peuvent contenir de petits fichiers électroniques appelés balises Web (également appelées gifs invisibles, pixels espions et gifs à pixel unique) qui permettent à la Société, par exemple, de compter les utilisateurs ayant visité ces pages ou ouvert un e-mail, ainsi que d&#x27;obtenir d&#x27;autres statistiques liées au site Web (par exemple, enregistrer la popularité d&#x27;une certaine section et vérifier l&#x27;intégrité du système et du serveur).
 
 Les cookies peuvent être des cookies « persistants » ou des cookies « de session ». Les cookies persistants restent sur votre ordinateur personnel ou votre appareil mobile lorsque vous vous déconnectez, tandis que les cookies de session sont supprimés dès que vous fermez votre navigateur web.
 
@@ -93,19 +93,19 @@ Pour plus d&#x27;informations sur les cookies que nous utilisons et vos choix en
 La Société peut utiliser les données personnelles aux fins suivantes :
 
 - **Pour fournir et maintenir notre Service**, y compris pour surveiller l&#x27;utilisation de notre Service.
-- **Pour gérer votre compte :** pour gérer votre inscription en tant qu&#x27;utilisateur du Service. Les données personnelles que vous fournissez peuvent vous donner accès à différentes fonctionnalités du Service qui vous sont proposées en tant qu&#x27;utilisateur inscrit.
+- **Pour gérer votre compte :** pour gérer votre inscription en tant qu&#x27;utilisateur du Service. Les données personnelles que vous fournissez peuvent vous donner accès à différentes fonctionnalités du Service qui vous sont proposées en tant qu&#x27;utilisateur enregistré.
 - **Pour l&#x27;exécution d&#x27;un contrat :** l&#x27;élaboration, le respect et l&#x27;exécution du contrat d&#x27;achat des produits, articles ou services que vous avez achetés ou de tout autre contrat conclu avec nous par le biais du Service.
-- **Pour vous contacter :** pour vous contacter par e-mail, appels téléphoniques, SMS ou d&#x27;autres formes équivalentes de communication électronique, telles que les notifications push d&#x27;une application mobile concernant des mises à jour ou des communications informatives relatives aux fonctionnalités, produits ou services souscrits, y compris les mises à jour de sécurité, lorsque cela est nécessaire ou raisonnable pour leur mise en œuvre.
+- **Pour vous contacter :** pour vous contacter par e-mail, appels téléphoniques, SMS ou d&#x27;autres formes équivalentes de communication électronique, telles que les notifications push d&#x27;une application mobile concernant des mises à jour ou des communications informatives liées aux fonctionnalités, aux produits ou aux services souscrits, y compris les mises à jour de sécurité, lorsque cela est nécessaire ou raisonnable pour leur mise en œuvre.
 - **Pour vous fournir** des actualités, des offres spéciales et des informations générales sur d&#x27;autres biens, services et événements que nous proposons et qui sont similaires à ceux que vous avez déjà achetés ou sur lesquels vous vous êtes renseigné, sauf si vous avez choisi de ne pas recevoir ces informations.
 - **Pour gérer vos demandes :** Pour traiter et gérer les demandes que vous nous adressez.
-- **Pour les transferts d&#x27;activité :** Nous pouvons utiliser vos informations pour évaluer ou mener à bien une fusion, une cession, une restructuration, une réorganisation, une dissolution ou toute autre vente ou transfert de tout ou partie de nos actifs, que ce soit dans le cadre d&#x27;une poursuite d&#x27;activité ou d&#x27;une procédure de faillite, de liquidation ou de procédure similaire, dans laquelle les données à caractère personnel que nous détenons concernant les utilisateurs de notre Service font partie des actifs transférés.
+- **Pour les transferts d&#x27;activité :** Nous pouvons utiliser vos informations pour évaluer ou mener à bien une fusion, une cession, une restructuration, une réorganisation, une dissolution ou toute autre vente ou transfert de tout ou partie de nos actifs, que ce soit dans le cadre d&#x27;une poursuite d&#x27;activité ou d&#x27;une procédure de faillite, de liquidation ou d&#x27;une procédure similaire, dans laquelle les données à caractère personnel que nous détenons concernant les utilisateurs de notre Service font partie des actifs transférés.
 - **À d&#x27;autres fins** : Nous pouvons utiliser vos informations à d&#x27;autres fins, telles que l&#x27;analyse de données, l&#x27;identification des tendances d&#x27;utilisation, la détermination de l&#x27;efficacité de nos campagnes promotionnelles, ainsi que pour évaluer et améliorer notre Service, nos produits, nos services, notre marketing et votre expérience.
 
 Nous pouvons partager vos informations personnelles dans les situations suivantes :
 
 - **Avec des prestataires de services :** Nous pouvons partager vos informations personnelles avec des prestataires de services afin de surveiller et d&#x27;analyser l&#x27;utilisation de notre Service, ou pour vous contacter.
 - **Dans le cadre de transferts d&#x27;activité :** Nous pouvons partager ou transférer vos informations personnelles dans le cadre de, ou au cours des négociations relatives à, toute fusion, vente d&#x27;actifs de la Société, financement ou acquisition de tout ou partie de notre activité par une autre société.
-- **Avec des sociétés affiliées :** Nous pouvons partager vos informations avec nos sociétés affiliées, auquel cas nous exigerons de ces dernières qu&#x27;elles respectent la présente Politique de confidentialité. Les sociétés affiliées comprennent notre société mère et toute autre filiale, tout partenaire de coentreprise ou toute autre société que nous contrôlons ou qui est sous contrôle commun avec nous.
+- **Avec des sociétés affiliées :** Nous pouvons partager vos informations avec nos sociétés affiliées, auquel cas nous exigerons de ces sociétés qu&#x27;elles respectent la présente Politique de confidentialité. Les sociétés affiliées comprennent notre société mère et toute autre filiale, tout partenaire de coentreprise ou toute autre société que nous contrôlons ou qui est sous contrôle commun avec nous.
 - **Avec des partenaires commerciaux :** Nous pouvons partager vos informations avec nos partenaires commerciaux afin de vous proposer certains produits, services ou promotions.
 - **Avec d&#x27;autres utilisateurs :** lorsque vous partagez des informations personnelles ou interagissez d&#x27;une autre manière dans les espaces publics avec d&#x27;autres utilisateurs, ces informations peuvent être consultées par tous les utilisateurs et diffusées publiquement à l&#x27;extérieur.
 - **Avec votre consentement** : nous pouvons divulguer vos informations personnelles à toute autre fin avec votre consentement.
@@ -149,7 +149,7 @@ Dans certaines circonstances, la Société peut être tenue de divulguer vos don
 La Société peut divulguer vos données personnelles si elle estime de bonne foi qu&#x27;une telle action est nécessaire pour :
 
 - Se conformer à une obligation légale
-- Protéger et défendre les droits ou les biens de la Société
+- Protéger et défendre les droits ou la propriété de la Société
 - Prévenir ou enquêter sur d&#x27;éventuels actes répréhensibles liés au Service
 - Protéger la sécurité personnelle des Utilisateurs du Service ou du public
 - Se prémunir contre toute responsabilité légale

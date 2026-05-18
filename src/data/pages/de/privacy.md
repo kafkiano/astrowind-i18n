@@ -56,7 +56,7 @@ Wir erfassen möglicherweise auch Informationen, die Ihr Browser sendet, wenn Si
 Wir verwenden Cookies und ähnliche Tracking-Technologien, um die Aktivitäten auf unserem Dienst zu verfolgen und bestimmte Informationen zu speichern. Zu den verwendeten Tracking-Technologien gehören Beacons, Tags und Skripte, um Informationen zu erfassen und zu verfolgen sowie unseren Dienst zu verbessern und zu analysieren. Zu den von uns verwendeten Technologien können gehören:
 
 - **Cookies oder Browser-Cookies.** Ein Cookie ist eine kleine Datei, die auf Ihrem Gerät abgelegt wird. Sie können Ihren Browser so einstellen, dass er alle Cookies ablehnt oder anzeigt, wenn ein Cookie gesendet wird. Wenn Sie jedoch keine Cookies akzeptieren, können Sie möglicherweise einige Teile unseres Dienstes nicht nutzen. Sofern Sie Ihre Browsereinstellungen nicht so angepasst haben, dass Cookies abgelehnt werden, kann unser Dienst Cookies verwenden.
-- **Web-Beacons.** Bestimmte Bereiche unseres Dienstes und unserer E-Mails können kleine elektronische Dateien enthalten, die als Web-Beacons (auch als Clear Gifs, Pixel-Tags und Single-Pixel-Gifs bezeichnet) bekannt sind und es dem Unternehmen beispielsweise ermöglichen, Nutzer zu zählen, die diese Seiten besucht oder eine E-Mail geöffnet haben, sowie andere damit verbundene Website-Statistiken zu erstellen (z. B. die Beliebtheit eines bestimmten Bereichs zu erfassen und die System- und Serverintegrität zu überprüfen).
+- **Web-Beacons.** Bestimmte Bereiche unseres Dienstes und unsere E-Mails können kleine elektronische Dateien enthalten, die als Web-Beacons (auch als Clear Gifs, Pixel-Tags und Single-Pixel-Gifs bezeichnet) bekannt sind und es dem Unternehmen beispielsweise ermöglichen, Nutzer zu zählen, die diese Seiten besucht oder eine E-Mail geöffnet haben, sowie andere damit verbundene Website-Statistiken zu erstellen (z. B. die Beliebtheit eines bestimmten Bereichs zu erfassen und die System- und Serverintegrität zu überprüfen).
 
 Cookies können „dauerhafte“ oder „Sitzungs-Cookies“ sein. Dauerhafte Cookies verbleiben auf Ihrem PC oder Mobilgerät, wenn Sie offline gehen, während Sitzungs-Cookies gelöscht werden, sobald Sie Ihren Webbrowser schließen.
 
@@ -68,9 +68,9 @@ Wir verwenden sowohl Sitzungs- als auch dauerhafte Cookies für die unten aufgef
 
   Verwaltet von: Uns
 
-  Zweck: Diese Cookies sind unverzichtbar, um Ihnen die über die Website verfügbaren Dienste bereitzustellen und Ihnen die Nutzung einiger ihrer Funktionen zu ermöglichen. Sie helfen bei der Authentifizierung von Nutzern und verhindern die betrügerische Nutzung von Benutzerkonten. Ohne diese Cookies können die von Ihnen angeforderten Dienste nicht bereitgestellt werden, und wir verwenden diese Cookies ausschließlich, um Ihnen diese Dienste bereitzustellen.
+  Zweck: Diese Cookies sind unerlässlich, um Ihnen die über die Website verfügbaren Dienste bereitzustellen und Ihnen die Nutzung einiger ihrer Funktionen zu ermöglichen. Sie helfen bei der Authentifizierung von Nutzern und verhindern die betrügerische Nutzung von Benutzerkonten. Ohne diese Cookies können die von Ihnen angeforderten Dienste nicht bereitgestellt werden, und wir verwenden diese Cookies ausschließlich, um Ihnen diese Dienste bereitzustellen.
 
-- **Cookies-Richtlinie / Cookies zur Zustimmung zur Datenschutzerklärung**
+- **Cookies zur Cookie-Richtlinie / zur Zustimmung zur Cookie-Erklärung**
 
   Typ: Permanente Cookies
 
@@ -84,7 +84,7 @@ Wir verwenden sowohl Sitzungs- als auch dauerhafte Cookies für die unten aufgef
 
   Verwaltet von: Uns
 
-  Zweck: Diese Cookies ermöglichen es uns, uns an Ihre Auswahl zu erinnern, die Sie bei der Nutzung der Website treffen, wie z. B. Ihre Anmeldedaten oder Ihre Sprachpräferenz. Der Zweck dieser Cookies besteht darin, Ihnen ein persönlicheres Erlebnis zu bieten und zu vermeiden, dass Sie Ihre Präferenzen bei jeder Nutzung der Website erneut eingeben müssen.
+  Zweck: Diese Cookies ermöglichen es uns, uns an Ihre Auswahl zu erinnern, die Sie bei der Nutzung der Website treffen, wie z. B. Ihre Anmeldedaten oder Ihre Spracheinstellung. Der Zweck dieser Cookies besteht darin, Ihnen ein persönlicheres Erlebnis zu bieten und zu vermeiden, dass Sie Ihre Einstellungen bei jeder Nutzung der Website erneut eingeben müssen.
 
 Weitere Informationen zu den von uns verwendeten Cookies und Ihren Wahlmöglichkeiten in Bezug auf Cookies finden Sie in unserer Cookie-Richtlinie oder im Abschnitt „Cookies“ unserer Datenschutzerklärung.
 
@@ -93,9 +93,9 @@ Weitere Informationen zu den von uns verwendeten Cookies und Ihren Wahlmöglichk
 Das Unternehmen kann personenbezogene Daten für folgende Zwecke verwenden:
 
 - **Zur Bereitstellung und Aufrechterhaltung unseres Dienstes**, einschließlich der Überwachung der Nutzung unseres Dienstes.
-- **Zur Verwaltung Ihres Kontos:** zur Verwaltung Ihrer Registrierung als Nutzer des Dienstes. Die von Ihnen bereitgestellten personenbezogenen Daten ermöglichen Ihnen den Zugriff auf verschiedene Funktionen des Dienstes, die Ihnen als registrierter Nutzer zur Verfügung stehen.
+- **Zur Verwaltung Ihres Kontos:** zur Verwaltung Ihrer Registrierung als Nutzer des Dienstes. Die von Ihnen bereitgestellten personenbezogenen Daten ermöglichen Ihnen den Zugriff auf verschiedene Funktionen des Dienstes, die Ihnen als registriertem Nutzer zur Verfügung stehen.
 - **Zur Vertragserfüllung:** die Ausarbeitung, Einhaltung und Durchführung des Kaufvertrags für die von Ihnen erworbenen Produkte, Artikel oder Dienstleistungen oder eines sonstigen Vertrags mit uns über den Dienst.
-- **Um Sie zu kontaktieren:** Um Sie per E-Mail, Telefonanruf, SMS oder anderen gleichwertigen Formen der elektronischen Kommunikation zu kontaktieren, wie z. B. Push-Benachrichtigungen einer mobilen Anwendung bezüglich Updates oder informativer Mitteilungen im Zusammenhang mit den Funktionen, Produkten oder vertraglich vereinbarten Dienstleistungen, einschließlich Sicherheitsupdates, sofern dies für deren Umsetzung notwendig oder angemessen ist.
+- **Um Sie zu kontaktieren:** Um Sie per E-Mail, Telefonanruf, SMS oder anderen gleichwertigen Formen der elektronischen Kommunikation zu kontaktieren, wie z. B. Push-Benachrichtigungen einer mobilen Anwendung bezüglich Aktualisierungen oder informativer Mitteilungen im Zusammenhang mit den Funktionen, Produkten oder vertraglich vereinbarten Dienstleistungen, einschließlich Sicherheitsupdates, sofern dies für deren Umsetzung notwendig oder angemessen ist.
 - **Um Ihnen** Neuigkeiten, Sonderangebote und allgemeine Informationen über andere Waren, Dienstleistungen und Veranstaltungen zukommen zu lassen, die wir anbieten und die denen ähneln, die Sie bereits gekauft oder angefragt haben, es sei denn, Sie haben sich gegen den Erhalt solcher Informationen entschieden.
 - **Zur Bearbeitung Ihrer Anfragen:** Zur Bearbeitung und Verwaltung Ihrer Anfragen an uns.
 - **Für Unternehmensübertragungen:** Wir können Ihre Daten verwenden, um eine Fusion, Veräußerung, Umstrukturierung, Reorganisation, Auflösung oder einen sonstigen Verkauf oder eine Übertragung eines Teils oder aller unserer Vermögenswerte zu bewerten oder durchzuführen, sei es im Rahmen der laufenden Geschäftstätigkeit oder im Rahmen eines Konkurs-, Liquidations- oder ähnlichen Verfahrens, bei dem die von uns über die Nutzer unseres Dienstes gespeicherten personenbezogenen Daten zu den übertragenen Vermögenswerten gehören.
@@ -104,7 +104,7 @@ Das Unternehmen kann personenbezogene Daten für folgende Zwecke verwenden:
 Wir können Ihre personenbezogenen Daten in den folgenden Situationen weitergeben:
 
 - **An Dienstleister:** Wir können Ihre personenbezogenen Daten an Dienstleister weitergeben, um die Nutzung unseres Dienstes zu überwachen und zu analysieren sowie um mit Ihnen in Kontakt zu treten.
-- **Im Rahmen von Unternehmensübertragungen:** Wir können Ihre personenbezogenen Daten im Zusammenhang mit oder während Verhandlungen über eine Fusion, den Verkauf von Unternehmensvermögen, eine Finanzierung oder den Erwerb unseres gesamten oder eines Teils unseres Geschäfts durch ein anderes Unternehmen weitergeben oder übertragen.
+- **Im Rahmen von Unternehmensübertragungen:** Wir können Ihre personenbezogenen Daten im Zusammenhang mit oder während der Verhandlungen über eine Fusion, den Verkauf von Unternehmensvermögen, eine Finanzierung oder den Erwerb unseres gesamten oder eines Teils unseres Geschäfts durch ein anderes Unternehmen weitergeben oder übertragen.
 - **An verbundene Unternehmen:** Wir können Ihre Daten an unsere verbundenen Unternehmen weitergeben; in diesem Fall verpflichten wir diese verbundenen Unternehmen, diese Datenschutzerklärung einzuhalten. Zu den verbundenen Unternehmen gehören unsere Muttergesellschaft sowie alle anderen Tochtergesellschaften, Joint-Venture-Partner oder andere Unternehmen, die wir kontrollieren oder die unter gemeinsamer Kontrolle mit uns stehen.
 - **An Geschäftspartner:** Wir können Ihre Daten an unsere Geschäftspartner weitergeben, um Ihnen bestimmte Produkte, Dienstleistungen oder Werbeaktionen anzubieten.
 - **An andere Nutzer:** Wenn Sie personenbezogene Daten weitergeben oder anderweitig in öffentlichen Bereichen mit anderen Nutzern interagieren, können diese Informationen von allen Nutzern eingesehen und öffentlich verbreitet werden.
@@ -122,7 +122,7 @@ Ihre Daten, einschließlich personenbezogener Daten, werden in den Betriebsstät
 
 Ihre Zustimmung zu dieser Datenschutzerklärung, gefolgt von der Übermittlung solcher Daten, stellt Ihre Einwilligung zu dieser Übertragung dar.
 
-Das Unternehmen wird alle angemessenen Maßnahmen ergreifen, um sicherzustellen, dass Ihre Daten sicher und in Übereinstimmung mit dieser Datenschutzerklärung behandelt werden, und es findet keine Übermittlung Ihrer personenbezogenen Daten an eine Organisation oder in ein Land statt, es sei denn, es bestehen angemessene Kontrollmechanismen, einschließlich der Sicherheit Ihrer Daten und anderer personenbezogener Informationen.
+Das Unternehmen wird alle angemessenen Maßnahmen ergreifen, um sicherzustellen, dass Ihre Daten sicher und in Übereinstimmung mit dieser Datenschutzerklärung behandelt werden, und es wird keine Übermittlung Ihrer personenbezogenen Daten an eine Organisation oder in ein Land erfolgen, es sei denn, es bestehen angemessene Kontrollmechanismen, einschließlich der Sicherheit Ihrer Daten und anderer personenbezogener Informationen.
 
 ## Löschen Ihrer personenbezogenen Daten
 
@@ -130,7 +130,7 @@ Sie haben das Recht, die von uns über Sie erhobenen personenbezogenen Daten zu 
 
 Unser Dienst bietet Ihnen möglicherweise die Möglichkeit, bestimmte Informationen über Sie innerhalb des Dienstes zu löschen.
 
-Sie können Ihre Informationen jederzeit aktualisieren, ändern oder löschen, indem Sie sich bei Ihrem Konto anmelden (sofern Sie eines haben) und den Bereich „Kontoeinstellungen“ aufrufen, in dem Sie Ihre personenbezogenen Daten verwalten können. Sie können sich auch an uns wenden, um Zugriff auf die von Ihnen an uns übermittelten personenbezogenen Daten zu beantragen oder deren Berichtigung oder Löschung zu verlangen.
+Sie können Ihre Daten jederzeit aktualisieren, ändern oder löschen, indem Sie sich bei Ihrem Konto anmelden (sofern Sie eines haben) und den Bereich „Kontoeinstellungen“ aufrufen, in dem Sie Ihre personenbezogenen Daten verwalten können. Sie können sich auch an uns wenden, um Zugriff auf die von Ihnen an uns übermittelten personenbezogenen Daten zu beantragen oder diese zu korrigieren oder zu löschen.
 
 Bitte beachten Sie jedoch, dass wir bestimmte Informationen möglicherweise aufbewahren müssen, wenn wir dazu gesetzlich verpflichtet sind oder eine rechtmäßige Grundlage dafür besteht.
 
@@ -142,7 +142,7 @@ Sollte das Unternehmen an einer Fusion, einer Übernahme oder einem Verkauf von 
 
 #### Strafverfolgung
 
-Unter bestimmten Umständen kann das Unternehmen verpflichtet sein, Ihre personenbezogenen Daten offenzulegen, wenn dies gesetzlich vorgeschrieben ist oder als Reaktion auf berechtigte Anfragen von Behörden (z. B. eines Gerichts oder einer Regierungsbehörde).
+Unter bestimmten Umständen kann das Unternehmen verpflichtet sein, Ihre personenbezogenen Daten offenzulegen, wenn dies gesetzlich vorgeschrieben ist oder als Reaktion auf berechtigte Anfragen von Behörden (z. B. einem Gericht oder einer Regierungsbehörde).
 
 #### Sonstige gesetzliche Anforderungen
 
@@ -150,13 +150,13 @@ Das Unternehmen kann Ihre personenbezogenen Daten in gutem Glauben offenlegen, w
 
 - einer gesetzlichen Verpflichtung nachzukommen
 - die Rechte oder das Eigentum des Unternehmens zu schützen und zu verteidigen
-- mögliche Verfehlungen im Zusammenhang mit dem Dienst zu verhindern oder zu untersuchen
+- mögliche Rechtsverstöße im Zusammenhang mit dem Dienst zu verhindern oder zu untersuchen
 - die persönliche Sicherheit der Nutzer des Dienstes oder der Öffentlichkeit zu schützen
 - uns vor rechtlicher Haftung zu schützen
 
 ## Sicherheit Ihrer personenbezogenen Daten
 
-Die Sicherheit Ihrer personenbezogenen Daten ist uns wichtig, aber bitte beachten Sie, dass keine Methode der Übertragung über das Internet oder der elektronischen Speicherung zu 100 % sicher ist. Obwohl wir uns bemühen, wirtschaftlich vertretbare Mittel zum Schutz Ihrer personenbezogenen Daten einzusetzen, können wir deren absolute Sicherheit nicht garantieren.
+Die Sicherheit Ihrer personenbezogenen Daten ist uns wichtig, aber bitte beachten Sie, dass keine Methode der Übertragung über das Internet oder der elektronischen Speicherung zu 100 % sicher ist. Obwohl wir uns bemühen, kommerziell akzeptable Mittel zum Schutz Ihrer personenbezogenen Daten einzusetzen, können wir deren absolute Sicherheit nicht garantieren.
 
 ## Datenschutz für Kinder
 
@@ -166,7 +166,7 @@ Falls wir uns auf die Einwilligung als Rechtsgrundlage für die Verarbeitung Ihr
 
 ## Links zu anderen Websites
 
-Unser Dienst kann Links zu anderen Websites enthalten, die nicht von uns betrieben werden. Wenn Sie auf einen Link eines Dritten klicken, werden Sie auf die Website dieses Dritten weitergeleitet. Wir empfehlen Ihnen dringend, die Datenschutzerklärung jeder Website, die Sie besuchen, zu lesen.
+Unser Dienst kann Links zu anderen Websites enthalten, die nicht von uns betrieben werden. Wenn Sie auf einen Link eines Drittanbieters klicken, werden Sie auf die Website dieses Drittanbieters weitergeleitet. Wir empfehlen Ihnen dringend, die Datenschutzerklärung jeder Website, die Sie besuchen, zu lesen.
 
 Wir haben keine Kontrolle über die Inhalte, Datenschutzerklärungen oder Praktiken von Websites oder Diensten Dritter und übernehmen keine Verantwortung dafür.
 

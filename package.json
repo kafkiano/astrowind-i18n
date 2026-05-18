@@ -10,6 +10,7 @@
     "dev": "bunx pm2 start dev/dev.config.json",
     "start": "bunx --bun astro dev",
     "build": "bunx --bun astro build",
+    "translate": "bun run src/utils/i18n-md.ts",
     "preview": "bunx --bun astro preview",
     "astro": "astro",
     "check": "bun run check:astro && bun run check:eslint && bun run check:prettier",

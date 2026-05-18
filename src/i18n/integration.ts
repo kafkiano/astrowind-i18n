@@ -13,6 +13,7 @@ import type { AstroIntegration } from 'astro';
 import { loadAllCatalogs, loadCatalog, mergeExtracted, saveCatalog, type CatalogSet } from './catalog';
 import { extractFromAstro } from './extract';
 import { getProvider, type TranslationProvider } from './provider';
+import { translateContent } from '../utils/i18n-md';
 import { glob } from 'tinyglobby';
 import yaml from 'js-yaml';
 
@@ -175,6 +176,10 @@ export function i18nIntegration(): AstroIntegration {
         const provider = await getProvider();
 
         if (provider) {
+          // 1. Translate markdown content (incremental — only changed files)
+          await translateContent(provider);
+
+          // 2. Translate UI catalog strings
           let totalTranslated = 0;
           for (const locale of locales) {
             if (locale === 'en') continue;

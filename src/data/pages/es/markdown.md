@@ -2,7 +2,7 @@
 title: Página de Markdown
 showIn: 'header'
 order: 1
-group: 'Resources'
+group: Recursos
 ---
 
 ### ¿Qué es Markdown?
@@ -19,8 +19,8 @@ Vamos a profundizar en ello. ⤵️
 3. [Énfasis](#énfasis)
 4. [Cita destacada](#cita_destacada)
 5. [Imágenes](#imágenes)
-6. [Enlaces](#enlaces)
-7. [Código](#código)
+6. [Enlaces](#links)
+7. [Código](#code)
 8. [Listas](#lists)
    - [Lista ordenada](#orderedlist)
    - [Lista desordenada](#unorderedlist)
@@ -131,7 +131,7 @@ Aquí tienes la sintaxis.
 
 ![texto si la imagen no se carga](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png &#x27;Texto que se muestra al pasar el cursor&#x27;)
 
-[logotipo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png &#x27;Pasa el cursor por encima&#x27;
+[logotipo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png &#x27;Pasa el cursor por aquí&#x27;
 
 ![texto de error][logotipo]
 
@@ -147,21 +147,21 @@ Al igual que las imágenes, los enlaces también se pueden insertar directamente
 
 [¿Te gusta lo que has visto hasta ahora? Sígueme en GitHub](https://github.com/im-luka)
 [Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][markdown-cheatsheet]
-Encuentra documentación muy útil [aquí][docs]
+Encuentra documentación excelente [aquí][docs]
 ```
 
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
 [docs]: https://github.com/adam-p/markdown-here
 
 [¿Te gusta lo que has visto hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
-[Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][markdown-cheatsheet]  
+[Mi hoja de referencia de Markdown: añádela a tus favoritos si te gusta][markdown-cheatsheet]  
 Encuentra excelentes documentos [aquí][docs]
 
 ---
 
 ## Código
 
-Puedes crear fragmentos de código tanto en línea como en bloques completos. También puedes definir el lenguaje de programación que has utilizado en tu fragmento. Todo ello utilizando comillas invertidas.
+Puedes crear fragmentos de código tanto en línea como en bloques completos. También puedes definir el lenguaje de programación que estás utilizando en tu fragmento. Todo ello utilizando comillas invertidas.
 
 ````
     He creado un archivo `.env` en la raíz.
@@ -180,7 +180,7 @@ Puedes crear fragmentos de código tanto en línea como en bloques completos. Ta
     ```
 ````
 
-He creado el archivo `.env` en la raíz.
+He creado un archivo `.env` en la raíz.
 ¿Comillas invertidas dentro de comillas invertidas? `` `No hay problema.` ``
 
 ```
@@ -206,16 +206,16 @@ Al igual que en HTML, Markdown permite crear listas tanto ordenadas como desorde
 ```
 1. HTML
 2. CSS
-3. JavaScript
+3. Javascript
 4. React
 7. Ahora soy desarrollador frontend 👨🏼‍🎨
 ```
 
 1. HTML
 2. CSS
-3. JavaScript
+3. Javascript
 4. React
-5. Ahora soy desarrollador frontend 👨🏼‍🎨
+5. Ahora soy desarrollador front-end 👨🏼‍🎨
 
 ### Lista sin ordenar
 
@@ -237,10 +237,10 @@ Al igual que en HTML, Markdown permite crear listas tanto ordenadas como desorde
 ### Lista mixta
 
 También puedes mezclar ambas listas y crear sublistas.  
-**PD:** Intenta no crear listas con más de dos niveles de profundidad. Es una buena práctica.
+**PD.** Intenta no crear listas con más de dos niveles de profundidad. Es la mejor práctica.
 
 ```
-1. Aprender conceptos básicos
+1. Aprender lo básico
    1. HTML
    2. CSS
    7. JavaScript
@@ -277,7 +277,7 @@ Una forma estupenda de mostrar datos bien organizados. Usa el símbolo «|» par
 | Vue.js               | Nest.js      | Redis       |
 ```
 
-| Alineación a la izquierda (predeterminada) | Alineación al centro | Alineación a la derecha |
+| Alineación a la izquierda (predeterminada) | Alineación centrada | Alineación a la derecha |
 | :------------------- | :----------: | ----------: |
 | React.js             |   Node.js    |       MySQL |
 | Next.js              |   Express    |     MongoDB |
