@@ -15,8 +15,8 @@ import { getEntry } from 'astro:content';
 import MarkdownSlot from '~/components/common/MarkdownSlot.astro';
 
 const locale = Astro.currentLocale;
-const heroSubtitle = await getEntry('snippets', 'personal/hero-subtitle');
-const aboutContent = await getEntry('snippets', 'personal/about-content');
+const heroSubtitle = await getEntry('snippets', 'hero-subtitle');
+const aboutContent = await getEntry('snippets', 'about-content');
 
 export const getStaticPaths = getStaticPathsForLocale;
 
