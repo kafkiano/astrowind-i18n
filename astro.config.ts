@@ -18,7 +18,6 @@ import astrowind from './vendor/integration';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 import { i18nIntegration } from './src/i18n/integration';
-import { markdownPlugin } from './src/utils/markdown-vite-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -46,34 +45,6 @@ export default defineConfig({
   vite: {
     plugins: [
       // i18nTransformPlugin(),  // post-processing via integration instead
-      markdownPlugin({
-        configs: [
-          {
-            sourceDir: 'src/data/pages',
-            outputDir: '.wuchale-content/pages',
-            localesDir: 'src/locales',
-            locales: i18nConfig.locales,
-            sourceLocale: i18nConfig.defaultLocale,
-            translatableFrontmatterKeys: ['title', 'description', 'excerpt'],
-          },
-          {
-            sourceDir: 'src/data/post',
-            outputDir: '.wuchale-content/posts',
-            localesDir: 'src/locales',
-            locales: i18nConfig.locales,
-            sourceLocale: i18nConfig.defaultLocale,
-            translatableFrontmatterKeys: ['title', 'excerpt'],
-          },
-          {
-            sourceDir: 'src/data/snippets',
-            outputDir: '.wuchale-content/snippets',
-            localesDir: 'src/locales',
-            locales: i18nConfig.locales,
-            sourceLocale: i18nConfig.defaultLocale,
-            translatableFrontmatterKeys: ['title'],
-          },
-        ],
-      }),
     ],
   },
 

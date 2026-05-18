@@ -47,7 +47,7 @@ const metadataDefinition = () =>
     .optional();
 
 const postCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: '.wuchale-content/posts' }),
+  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: 'src/data/post' }),
   schema: z.object({
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),
@@ -66,7 +66,7 @@ const postCollection = defineCollection({
 });
 
 const pagesCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md'], base: '.wuchale-content/pages' }),
+  loader: glob({ pattern: ['**/*.md'], base: 'src/data/pages' }),
   schema: z.object({
     title: z.string(),
     showIn: z.enum(['header', 'footer', 'none']).optional().default('footer'),
@@ -76,7 +76,7 @@ const pagesCollection = defineCollection({
 });
 
 const snippetsCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md'], base: '.wuchale-content/snippets' }),
+  loader: glob({ pattern: ['**/*.md'], base: 'src/data/snippets' }),
   schema: z.object({
     title: z.string().optional(),
   }),

@@ -31,10 +31,5 @@ digest.txt
 .roo/
 *crush*
 
-# wuchale
-src/locales/.wuchale
-src/locales/data.js
-src/locales/main.loader.js
-
-# generated content
-.wuchale-content/
+# i18n content
+.i18n-cache/
