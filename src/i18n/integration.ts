@@ -14,7 +14,14 @@ import { loadAllCatalogs, loadCatalog, mergeExtracted, saveCatalog, type Catalog
 import { extractFromAstro } from './extract';
 import { getProvider, type TranslationProvider } from './provider';
 import { glob } from 'tinyglobby';
-import { locales } from '../locales/data';
+import yaml from 'js-yaml';
+
+function getLocales(): string[] {
+  const configPath = path.resolve('src/config.yaml');
+  const raw = fs.readFileSync(configPath, 'utf-8');
+  const config = yaml.load(raw) as { i18n?: { locales?: string[]; defaultLocale?: string } };
+  return config?.i18n?.locales || ['en'];
+}
 
 // ---------------------------------------------------------------------------
 // HTML post-processing
@@ -102,6 +109,8 @@ export function i18nIntegration(): AstroIntegration {
     name: 'astrowind-i18n',
     hooks: {
       'astro:config:setup': async () => {
+        const locales = getLocales();
+
         // Normalize all catalog keys: strip Wuchale XML tags, decode entities.
         let catalogChanged = false;
         for (const locale of locales) {
