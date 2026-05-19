@@ -1,0 +1,98 @@
+---
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import Slider from '~/components/widgets/Slider.astro';
+import type { CallToAction, Image as ImageType } from '~/types';
+
+interface HeroSlide {
+  image: ImageType;
+  title?: string;
+  subtitle?: string;
+  actions?: (string | CallToAction)[];
+}
+
+interface Props {
+  slides: HeroSlide[];
+  tagline?: string;
+  autoplay?: number | false;
+  effect?: 'slide' | 'fade' | 'cube' | 'coverflow';
+  id?: string;
+  class?: string;
+}
+
+const { slides = [], tagline, autoplay = 5000, effect = 'fade', id, class: className } = Astro.props;
+
+const hasPagination = slides.length > 1;
+const hasNavigation = slides.length > 1;
+---
+
+{
+  slides.length > 0 && (
+    <section class:list={['relative not-prose', className]} {...(id ? { id } : {})}>
+      <Slider
+        config={{
+          autoplay,
+          loop: true,
+          effect,
+          slidesPerView: 1,
+          spaceBetween: 0,
+          pagination: hasPagination ? { clickable: true } : false,
+          navigation: hasNavigation,
+        }}
+        class="h-[600px] md:h-[700px] lg:h-screen"
+      >
+        {slides.map((slide) => (
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-gray-950">
+            <div class="absolute inset-0">
+              {
+                <Image
+                  src={slide.image.src}
+                  alt={slide.image.alt || ''}
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="100vw"
+                  loading="eager"
+                  class="w-full h-full object-cover"
+                  width={2040}
+                  height={1200}
+                  {...(typeof slide.image === 'object' ? slide.image : {})}
+                />
+              }
+            </div>
+            <div class="absolute inset-0 bg-black/50 dark:bg-black/70" />
+
+            <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+              {tagline && (
+                <p class="text-sm sm:text-base text-blue-200 dark:text-blue-300 font-bold tracking-wide uppercase mb-3 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                  {tagline}
+                </p>
+              )}
+              {slide.title && (
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter text-white mb-4 font-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                  {slide.title}
+                </h1>
+              )}
+              {slide.subtitle && (
+                <p class="text-lg md:text-xl text-gray-200 dark:text-gray-300 mb-8 max-w-3xl mx-auto intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                  {slide.subtitle}
+                </p>
+              )}
+              {slide.actions && slide.actions.length > 0 && (
+                <div class="max-w-xs sm:max-w-md mx-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                  {slide.actions.map((action) => (
+                    <div class="flex w-full sm:w-auto">
+                      {typeof action === 'string' ? (
+                        <Fragment set:html={action} />
+                      ) : (
+                        <Button {...action} class="w-full sm:mb-0" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </section>
+  )
+}

@@ -1,0 +1,74 @@
+---
+import { getStaticPathsForLocale } from '~/utils/i18n';
+
+import Layout from '~/layouts/LandingLayout.astro';
+
+import HeroSlider from '~/components/widgets/HeroSlider.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+export const getStaticPaths = getStaticPathsForLocale;
+
+export const navigation = {
+  title: 'Hero Slider',
+  group: 'Landing',
+  showIn: 'all',
+};
+---
+
+<Layout metadata={navigation}>
+  <HeroSlider
+    tagline="Hero Slider Demo"
+    autoplay={4000}
+    slides={[
+      {
+        title: 'Build faster with AstroWind',
+        subtitle:
+          'A free, production-ready template combining Astro 5.0 with Tailwind CSS. Launch your site in minutes, not weeks.',
+        image: {
+          src: 'https://images.unsplash.com/photo-1473188588951-666fce8e7c68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2174&q=80',
+          alt: 'Product showcase background',
+        },
+        actions: [
+          { variant: 'primary', text: 'Get Started', href: '#', icon: 'tabler:rocket' },
+          { text: 'Learn more', href: '#' },
+        ],
+      },
+      {
+        title: 'Responsive by design',
+        subtitle:
+          'Every component adapts seamlessly from mobile to desktop. Your site looks perfect on every screen size.',
+        image: {
+          src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+          alt: 'Responsive design background',
+        },
+        actions: [
+          { variant: 'primary', text: 'View Demos', href: '#', icon: 'tabler:eye' },
+          { text: 'Documentation', href: '#' },
+        ],
+      },
+      {
+        title: 'Ready for production',
+        subtitle:
+          'Built with Astro 5.0, TypeScript, and Tailwind CSS. Optimized for performance with static generation out of the box.',
+        image: {
+          src: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+          alt: 'Production ready background',
+        },
+        actions: [{ variant: 'primary', text: 'Download', href: '#', icon: 'tabler:download' }],
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Coming soon"
+    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Template',
+        href: 'https://github.com/arthelokyo/astrowind',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>
