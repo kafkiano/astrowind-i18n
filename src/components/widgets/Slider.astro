@@ -1,0 +1,150 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
+  config?: {
+    /** Autoplay delay in ms, or false to disable */
+    autoplay?: number | false;
+    /** Loop slides */
+    loop?: boolean;
+    /** Transition effect */
+    effect?: 'slide' | 'fade' | 'cube' | 'coverflow' | 'cards' | 'creative';
+    /** Slides visible at once */
+    slidesPerView?: number | 'auto';
+    /** Gap between slides in px */
+    spaceBetween?: number;
+    /** Responsive breakpoints */
+    responsive?: Record<
+      number,
+      {
+        slidesPerView?: number;
+        spaceBetween?: number;
+      }
+    >;
+    /** Show pagination dots */
+    pagination?: boolean | { clickable?: boolean; dynamicBullets?: boolean };
+    /** Show prev/next arrows */
+    navigation?: boolean;
+  };
+}
+
+const { config = {}, class: className, ...attrs } = Astro.props;
+
+const containerId = `slider-${Math.random().toString(36).slice(2, 9)}`;
+
+const {
+  autoplay = false,
+  loop = false,
+  effect = 'slide',
+  slidesPerView = 1,
+  spaceBetween = 0,
+  responsive,
+  pagination = false,
+  navigation = false,
+} = config;
+
+const hasAutoplay = autoplay !== false;
+const hasPagination = pagination !== false;
+const hasNavigation = navigation !== false;
+
+const effectModuleMap: Record<string, string> = {
+  fade: 'EffectFade',
+  cube: 'EffectCube',
+  coverflow: 'EffectCoverflow',
+  cards: 'EffectCards',
+  creative: 'EffectCreative',
+};
+
+const requiredModules: string[] = [];
+if (hasAutoplay) requiredModules.push('Autoplay');
+if (hasPagination) requiredModules.push('Pagination');
+if (hasNavigation) requiredModules.push('Navigation');
+if (effect !== 'slide' && effectModuleMap[effect]) {
+  requiredModules.push(effectModuleMap[effect]);
+}
+
+const swiperConfig = {
+  autoplay: hasAutoplay ? { delay: autoplay as number } : false,
+  loop,
+  effect,
+  slidesPerView,
+  spaceBetween,
+  breakpoints: responsive ?? null,
+  pagination: hasPagination
+    ? { el: '.swiper-pagination', ...(typeof pagination === 'object' ? pagination : { clickable: true }) }
+    : false,
+  navigation: hasNavigation ? { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } : false,
+};
+---
+
+<div
+  class:list={['swiper', className]}
+  id={containerId}
+  data-swiper-modules={JSON.stringify(requiredModules)}
+  data-swiper-config={JSON.stringify(swiperConfig)}
+  {...attrs}
+>
+  <div class="swiper-wrapper">
+    <slot />
+  </div>
+
+  {hasPagination && <div class="swiper-pagination" />}
+
+  {
+    hasNavigation && (
+      <>
+        <div class="swiper-button-prev" />
+        <div class="swiper-button-next" />
+      </>
+    )
+  }
+</div>
+
+<script>
+  import Swiper from 'swiper';
+  import {
+    Autoplay,
+    EffectCards,
+    EffectCoverflow,
+    EffectCreative,
+    EffectCube,
+    EffectFade,
+    Navigation,
+    Pagination,
+  } from 'swiper/modules';
+  import 'swiper/css/bundle';
+
+  const moduleRegistry: Record<string, object> = {
+    Autoplay,
+    EffectCards,
+    EffectCoverflow,
+    EffectCreative,
+    EffectCube,
+    EffectFade,
+    Navigation,
+    Pagination,
+  };
+
+  function initSwipers(): void {
+    document.querySelectorAll<HTMLElement>('.swiper:not(.swiper-initialized)[data-swiper-config]').forEach((el) => {
+      const moduleNames: string[] = JSON.parse(el.dataset.swiperModules || '[]');
+      const config = JSON.parse(el.dataset.swiperConfig || '{}');
+
+      if (!config) return;
+
+      const modules = moduleNames.map((name) => moduleRegistry[name]).filter((m): m is object => !!m);
+
+      new Swiper(el, {
+        modules,
+        ...config,
+        speed: 400,
+        grabCursor: true,
+      });
+    });
+  }
+
+  initSwipers();
+
+  // Re-init after Astro view transitions
+  document.addEventListener('astro:page-load', initSwipers);
+</script>
