@@ -1,4 +1,5 @@
-import { z, defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const metadataDefinition = () =>
@@ -7,7 +8,7 @@ const metadataDefinition = () =>
       title: z.string().optional(),
       ignoreTitleTemplate: z.boolean().optional(),
 
-      canonical: z.string().url().optional(),
+      canonical: z.url().optional(),
 
       robots: z
         .object({
