@@ -10,13 +10,15 @@
  * Writes: src/data/{type}/{targetLocale}/*.{md,mdx}
  *
  * Translates both body content and specified frontmatter fields.
- * Skips files whose output already exists and is up-to-date (mtime check).
+ * Uses a content-addressable manifest (.i18n-manifest.json) so that
+ * re-builds skip unchanged source files (git-safe — not mtime-based).
  */
 
-import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getProvider, type TranslationProvider } from '../i18n/provider';
 import { glob } from 'tinyglobby';
+import { loadManifest, saveManifest, needsTranslation, markTranslated } from './i18n-manifest';
 
 const SOURCE_LOCALE = 'en';
 const TARGET_LOCALES = ['es', 'fr', 'de'];
@@ -39,17 +41,23 @@ async function main() {
 /**
  * Translate all markdown content. Called by the i18n integration during build,
  * or directly via CLI (`bun run src/utils/translate-content.ts`).
- * Incremental — only re-translates files whose source has changed.
+ *
+ * Incremental — skips files whose source hash matches the manifest
+ * (no change since last translation). Content-addressable: survives
+ * git clone, branch switches, and mtime resets.
  */
 export async function translateContent(provider: TranslationProvider): Promise<void> {
-  console.log(`[content] Translating via ${provider.name}...`);
+  let manifest = await loadManifest();
+  let manifestChanged = false;
+  let anyWork = false;
 
   for (const { dir, pattern } of CONTENT_TYPES) {
     const srcDir = join(dir, SOURCE_LOCALE);
     const files = await glob(pattern, { cwd: srcDir });
     if (files.length === 0) continue;
 
-    console.log(`─ ${dir}/${SOURCE_LOCALE}/ → ${files.length} files`);
+    let translated = 0;
+    let skipped = 0;
 
     for (const relPath of files) {
       const srcPath = join(srcDir, relPath);
@@ -57,9 +65,15 @@ export async function translateContent(provider: TranslationProvider): Promise<v
       const { frontmatter, body } = splitFrontmatter(srcContent);
       if (!body.trim() && !hasTranslatableFm(frontmatter)) continue;
 
+      // Check manifest — skip if source content hasn't changed
+      const manifestKey = `${dir}/${SOURCE_LOCALE}/${relPath}`;
+      if (!(await needsTranslation(manifest, manifestKey, srcContent))) {
+        skipped++;
+        continue;
+      }
+
       for (const locale of TARGET_LOCALES) {
         const outPath = join(dir, locale, relPath);
-        if (await isUpToDate(outPath, srcPath)) continue;
 
         let translatedFm = frontmatter;
         let translatedBody = body;
@@ -101,13 +115,34 @@ export async function translateContent(provider: TranslationProvider): Promise<v
         const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
         await mkdir(join(outPath, '..'), { recursive: true });
         await writeFile(outPath, output, 'utf-8');
+
+        if (!anyWork) {
+          anyWork = true;
+          console.log(`[content] Translating via ${provider.name}...`);
+        }
+        translated++;
         console.log(`  ✓ ${outPath}`);
       }
+
+      // Mark source as translated in manifest (store content hash)
+      manifest = await markTranslated(manifest, manifestKey, srcContent);
+      manifestChanged = true;
     }
-    console.log();
+
+    if (translated > 0 || skipped > 0) {
+      console.log(
+        `─ ${dir}/${SOURCE_LOCALE}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
+      );
+    }
   }
 
-  console.log('Done.');
+  if (manifestChanged) {
+    await saveManifest(manifest);
+  }
+
+  if (anyWork) {
+    console.log('Done.');
+  }
 }
 
 // --- Helpers ---
@@ -146,15 +181,6 @@ function hasTranslatableFm(fm: string): boolean {
     const re = new RegExp(`^${k}:\\s*.+$`, 'm');
     return re.test(fm);
   });
-}
-
-async function isUpToDate(outPath: string, srcPath: string): Promise<boolean> {
-  try {
-    const [outStat, srcStat] = await Promise.all([stat(outPath), stat(srcPath)]);
-    return outStat.mtimeMs >= srcStat.mtimeMs;
-  } catch {
-    return false;
-  }
 }
 
 // Only run main() when executed directly (not when imported)

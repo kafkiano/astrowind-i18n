@@ -4,6 +4,9 @@
  *
  * Runs after all pages are built. Walks dist/ output, translates
  * HTML content for non-English locales using simple string replacement.
+ *
+ * Translation is manifest-protected: no API calls when nothing has changed
+ * (content-addressable via SHA-256, survives git operations).
  */
 
 import fs from 'node:fs';
@@ -16,6 +19,7 @@ import { getProvider } from './provider';
 import { translateContent } from '../utils/i18n-md';
 import { glob } from 'tinyglobby';
 import yaml from 'js-yaml';
+import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from '../utils/i18n-manifest';
 
 function getLocales(): string[] {
   const configPath = path.resolve('src/config.yaml');
@@ -112,6 +116,8 @@ export function i18nIntegration(): AstroIntegration {
       'astro:config:setup': async () => {
         const locales = getLocales();
 
+        // ---- Catalog maintenance (runs on all commands) ----
+
         // Normalize all catalog keys: strip Wuchale XML tags, decode entities.
         let catalogChanged = false;
         for (const locale of locales) {
@@ -172,44 +178,53 @@ export function i18nIntegration(): AstroIntegration {
           }
         }
 
-        // Auto-translate untranslated strings via configured provider
-        const provider = await getProvider();
+        // ---- Translation (manifest-protected — no API calls when nothing changed) ----
 
+        const provider = await getProvider();
         if (provider) {
-          // 1. Translate markdown content (incremental — only changed files)
+          // 1. Translate markdown content (manifest-based incremental)
           await translateContent(provider);
 
-          // 2. Translate UI catalog strings
-          let totalTranslated = 0;
-          for (const locale of locales) {
-            if (locale === 'en') continue;
-            try {
-              const catalog = loadCatalog('src/locales', locale);
-              const untranslated = Object.keys(catalog).filter((k) => catalog[k] === k);
-              if (untranslated.length === 0) continue;
+          // 2. Translate UI catalog strings (manifest-based incremental)
+          const enJson = JSON.stringify(loadCatalog('src/locales', 'en'), null, 2);
+          let manifest = await loadManifest();
 
-              const translations = await provider.translateBatch(untranslated, locale, 'en');
-              let localeTranslated = 0;
-              for (let i = 0; i < untranslated.length; i++) {
-                if (translations[i] && translations[i] !== untranslated[i]) {
-                  catalog[untranslated[i]] = translations[i];
-                  localeTranslated++;
+          if (catalogNeedsTranslation(manifest, enJson)) {
+            let totalTranslated = 0;
+            for (const locale of locales) {
+              if (locale === 'en') continue;
+              try {
+                const catalog = loadCatalog('src/locales', locale);
+                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === k);
+                if (untranslated.length === 0) continue;
+
+                const translations = await provider.translateBatch(untranslated, locale, 'en');
+                let localeTranslated = 0;
+                for (let i = 0; i < untranslated.length; i++) {
+                  if (translations[i] && translations[i] !== untranslated[i]) {
+                    catalog[untranslated[i]] = translations[i];
+                    localeTranslated++;
+                  }
                 }
+                if (localeTranslated > 0) {
+                  saveCatalog('src/locales', locale, catalog);
+                  totalTranslated += localeTranslated;
+                  console.log(`[i18n] ${provider.name} translated ${localeTranslated} strings to ${locale}`);
+                }
+              } catch {
+                // Translation failure shouldn't block the build
               }
-              if (localeTranslated > 0) {
-                saveCatalog('src/locales', locale, catalog);
-                totalTranslated += localeTranslated;
-                console.log(`[i18n] ${provider.name} translated ${localeTranslated} strings to ${locale}`);
-              }
-            } catch {
-              // Translation failure shouldn't block the build
             }
-          }
-          if (totalTranslated > 0) {
-            console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
+            if (totalTranslated > 0) {
+              console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
+            }
+
+            manifest = markCatalogTranslated(manifest, enJson);
+            await saveManifest(manifest);
           }
         }
 
+        // Load catalogs for HTML post-processing
         catalogs = loadAllCatalogs('src/locales', locales);
         console.log(`[i18n] Loaded catalogs for: ${Object.keys(catalogs).join(', ')}`);
       },
