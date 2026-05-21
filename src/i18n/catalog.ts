@@ -59,7 +59,7 @@ export function mergeExtracted(catalog: Catalog, extracted: ExtractedString[]): 
     // Normalize whitespace: collapse \s+ to single space, trim
     const msgid = item.msgid.replace(/\s+/g, ' ').trim();
     if (!msgid || msgid in catalog) continue;
-    catalog[msgid] = msgid; // placeholder: English
+    catalog[msgid] = ''; // placeholder: untranslated
     newCount++;
   }
   return { catalog, newCount };
@@ -70,7 +70,7 @@ export function mergeExtracted(catalog: Catalog, extracted: ExtractedString[]): 
  */
 export function getUntranslated(catalog: Catalog): string[] {
   return Object.entries(catalog)
-    .filter(([key, value]) => key === value)
+    .filter(([key, value]) => value === '' || key === value)
     .map(([key]) => key);
 }
 

@@ -119,6 +119,8 @@ export function i18nIntegration(): AstroIntegration {
         // ---- Catalog maintenance (runs on all commands) ----
 
         // Normalize all catalog keys: strip Wuchale XML tags, decode entities.
+        // Also migrate untranslated placeholders (key===value) to empty strings
+        // in non-English locales so the translation pipeline can retry them.
         let catalogChanged = false;
         for (const locale of locales) {
           const raw = loadCatalog('src/locales', locale);
@@ -126,9 +128,13 @@ export function i18nIntegration(): AstroIntegration {
           let localeChanged = false;
           for (const [key, val] of Object.entries(raw)) {
             const cleanKey = normalizeKey(key);
-            const cleanVal = normalizeKey(val);
+            let cleanVal = normalizeKey(val);
+            // Migration: key===value in non-English locale = untranslated placeholder
+            if (locale !== 'en' && cleanVal === cleanKey) {
+              cleanVal = '';
+            }
             if (cleanKey !== key || cleanVal !== val) localeChanged = true;
-            if (cleanKey) normalized[cleanKey] = cleanVal || cleanKey;
+            if (cleanKey) normalized[cleanKey] = cleanVal;
           }
           if (localeChanged) {
             saveCatalog('src/locales', locale, normalized);
@@ -136,7 +142,7 @@ export function i18nIntegration(): AstroIntegration {
           }
         }
         if (catalogChanged) {
-          console.log('[i18n] Normalized catalogs: stripped XML tags, decoded entities');
+          console.log('[i18n] Normalized catalogs: stripped XML tags, decoded entities, migrated placeholders');
         }
 
         let enCatalog = loadCatalog('src/locales', 'en');
@@ -161,14 +167,14 @@ export function i18nIntegration(): AstroIntegration {
           saveCatalog('src/locales', 'en', enCatalog);
           console.log(`[i18n] ${newStrings} new strings extracted to en.json`);
 
-          // Sync new keys to target locale catalogs (with placeholder values)
+          // Sync new keys to target locale catalogs (empty placeholder = untranslated)
           for (const locale of locales) {
             if (locale === 'en') continue;
             const targetCatalog = loadCatalog('src/locales', locale);
             let synced = 0;
             for (const [key] of Object.entries(enCatalog)) {
               if (!(key in targetCatalog)) {
-                targetCatalog[key] = key; // placeholder: English
+                targetCatalog[key] = ''; // empty = needs translation
                 synced++;
               }
             }
@@ -195,7 +201,7 @@ export function i18nIntegration(): AstroIntegration {
               if (locale === 'en') continue;
               try {
                 const catalog = loadCatalog('src/locales', locale);
-                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === k);
+                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '' || catalog[k] === k);
                 if (untranslated.length === 0) continue;
 
                 const translations = await provider.translateBatch(untranslated, locale, 'en');
@@ -219,8 +225,23 @@ export function i18nIntegration(): AstroIntegration {
               console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
             }
 
-            manifest = markCatalogTranslated(manifest, enJson);
-            await saveManifest(manifest);
+            // Only update manifest if no untranslated strings remain in any locale.
+            // Otherwise retry on next build (e.g. API quota exhausted, network error).
+            let stillUntranslated = false;
+            for (const locale of locales) {
+              if (locale === 'en') continue;
+              const cat = loadCatalog('src/locales', locale);
+              if (Object.keys(cat).some((k) => cat[k] === '' || cat[k] === k)) {
+                stillUntranslated = true;
+                break;
+              }
+            }
+            if (!stillUntranslated) {
+              manifest = markCatalogTranslated(manifest, enJson);
+              await saveManifest(manifest);
+            } else if (totalTranslated > 0) {
+              console.log('[i18n] Some strings still untranslated — will retry on next build');
+            }
           }
         }
 

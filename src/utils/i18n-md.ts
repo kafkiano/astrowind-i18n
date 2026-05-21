@@ -72,11 +72,15 @@ export async function translateContent(provider: TranslationProvider): Promise<v
         continue;
       }
 
+      let allLocalesSucceeded = true;
+
       for (const locale of TARGET_LOCALES) {
         const outPath = join(dir, locale, relPath);
 
         let translatedFm = frontmatter;
         let translatedBody = body;
+        let bodyTranslated = !body.trim(); // true if no body to translate
+        let allFmTranslated = true;
 
         // Translate frontmatter fields
         const fmTexts: string[] = [];
@@ -95,10 +99,13 @@ export async function translateContent(provider: TranslationProvider): Promise<v
             for (let i = 0; i < fmKeys.length; i++) {
               if (fmResults[i] && fmResults[i] !== fmTexts[i]) {
                 translatedFm = replaceFmValue(translatedFm, fmKeys[i], fmResults[i]);
+              } else {
+                allFmTranslated = false;
               }
             }
           } catch (err) {
             console.warn(`  ⚠ fm translation failed for ${locale}:`, (err as Error).message);
+            allFmTranslated = false;
           }
         }
 
@@ -106,27 +113,42 @@ export async function translateContent(provider: TranslationProvider): Promise<v
         if (body.trim()) {
           try {
             const [result] = await provider.translateBatch([body], locale, SOURCE_LOCALE);
-            if (result && result !== body) translatedBody = result;
+            if (result && result !== body) {
+              translatedBody = result;
+              bodyTranslated = true;
+            }
           } catch (err) {
             console.warn(`  ⚠ body translation failed for ${locale}:`, (err as Error).message);
           }
         }
 
-        const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
-        await mkdir(join(outPath, '..'), { recursive: true });
-        await writeFile(outPath, output, 'utf-8');
+        // Only write the output file if translation actually produced results.
+        // If body or FM translation failed, skip this locale — otherwise we'd
+        // write English content into the target locale directory.
+        const shouldWrite = body.trim() ? bodyTranslated : allFmTranslated;
+        if (shouldWrite) {
+          const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
+          await mkdir(join(outPath, '..'), { recursive: true });
+          await writeFile(outPath, output, 'utf-8');
 
-        if (!anyWork) {
-          anyWork = true;
-          console.log(`[content] Translating via ${provider.name}...`);
+          if (!anyWork) {
+            anyWork = true;
+            console.log(`[content] Translating via ${provider.name}...`);
+          }
+          translated++;
+          console.log(`  ✓ ${outPath}`);
+        } else {
+          allLocalesSucceeded = false;
+          console.warn(`  ⚠ Skipping ${outPath}: translation failed (will retry on next build)`);
         }
-        translated++;
-        console.log(`  ✓ ${outPath}`);
       }
 
-      // Mark source as translated in manifest (store content hash)
-      manifest = await markTranslated(manifest, manifestKey, srcContent);
-      manifestChanged = true;
+      // Only mark source as translated in manifest if ALL locales succeeded.
+      // If any locale failed, retry on next build (e.g. API quota exhausted).
+      if (allLocalesSucceeded) {
+        manifest = await markTranslated(manifest, manifestKey, srcContent);
+        manifestChanged = true;
+      }
     }
 
     if (translated > 0 || skipped > 0) {
