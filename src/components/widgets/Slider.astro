@@ -100,6 +100,32 @@ const swiperConfig = {
   }
 </div>
 
+<style is:global>
+  /* Fix: Vite CSS processor strips nested ::slotted rules from swiper/css/bundle.
+     Manually ensure prev/next arrow rotation. */
+  .swiper-button-prev svg {
+    transform: rotate(180deg);
+  }
+
+  /* Ensure nav/pagination sit above slide transforms */
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-pagination {
+    z-index: 20;
+  }
+
+  /* Fix: Vite strips nested swiper-fade rules (pointer-events + transition-property).
+     Without transition-property: opacity, the fade effect never animates
+     and animating stays true forever (transitionend never fires). */
+  .swiper-fade .swiper-slide {
+    pointer-events: none;
+    transition-property: opacity;
+  }
+  .swiper-fade .swiper-slide-active {
+    pointer-events: auto;
+  }
+</style>
+
 <script>
   import Swiper from 'swiper';
   import {
