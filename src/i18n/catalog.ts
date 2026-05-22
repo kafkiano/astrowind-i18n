@@ -70,7 +70,7 @@ export function mergeExtracted(catalog: Catalog, extracted: ExtractedString[]): 
  */
 export function getUntranslated(catalog: Catalog): string[] {
   return Object.entries(catalog)
-    .filter(([key, value]) => value === '' || key === value)
+    .filter(([, value]) => value === '')
     .map(([key]) => key);
 }
 
