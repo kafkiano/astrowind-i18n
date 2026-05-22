@@ -109,10 +109,10 @@ export async function translateContent(provider: TranslationProvider): Promise<v
           }
         }
 
-        // Translate body
+        // Translate body (full multi-line text, not line-by-line batch)
         if (body.trim()) {
           try {
-            const [result] = await provider.translateBatch([body], locale, SOURCE_LOCALE);
+            const result = await provider.translateText(body, locale, SOURCE_LOCALE);
             if (result && result !== body) {
               translatedBody = result;
               bodyTranslated = true;
