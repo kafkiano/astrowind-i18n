@@ -97,7 +97,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
           try {
             const fmResults = await provider.translateBatch(fmTexts, locale, SOURCE_LOCALE);
             for (let i = 0; i < fmKeys.length; i++) {
-              if (fmResults[i] && fmResults[i] !== fmTexts[i]) {
+              if (fmResults[i]) {
                 translatedFm = replaceFmValue(translatedFm, fmKeys[i], fmResults[i]);
               } else {
                 allFmTranslated = false;
@@ -113,7 +113,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
         if (body.trim()) {
           try {
             const result = await provider.translateText(body, locale, SOURCE_LOCALE);
-            if (result && result !== body) {
+            if (result) {
               translatedBody = result;
               bodyTranslated = true;
             }
