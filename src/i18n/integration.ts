@@ -201,7 +201,7 @@ export function i18nIntegration(): AstroIntegration {
               if (locale === 'en') continue;
               try {
                 const catalog = loadCatalog('src/locales', locale);
-                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '' || catalog[k] === k);
+                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '');
                 if (untranslated.length === 0) continue;
 
                 const translations = await provider.translateBatch(untranslated, locale, 'en');
@@ -231,7 +231,7 @@ export function i18nIntegration(): AstroIntegration {
             for (const locale of locales) {
               if (locale === 'en') continue;
               const cat = loadCatalog('src/locales', locale);
-              if (Object.keys(cat).some((k) => cat[k] === '' || cat[k] === k)) {
+              if (Object.keys(cat).some((k) => cat[k] === '')) {
                 stillUntranslated = true;
                 break;
               }
