@@ -40,7 +40,8 @@ i18n:
     # Add more as needed
   ai:
     geminiApiKey: null
-    provider: 'deepl' # optional
+    provider: 'gemini' # optional
+    model: 'gemini-2.5-flash' # gemini-2.5-flash, gemini-2.5-pro, etc.
 
 apps:
   blog:
