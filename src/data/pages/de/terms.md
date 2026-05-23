@@ -1,120 +1,120 @@
 ---
-title: 'Terms and Conditions'
+title: Allgemeine Geschäftsbedingungen
 showIn: 'none'
 ---
 
-_Last updated_: January 06, 2023
+_Zuletzt aktualisiert_: 06. Januar 2023
 
-Please read these terms and conditions carefully before using Our Service.
+Bitte lesen Sie diese Allgemeinen Geschäftsbedingungen sorgfältig durch, bevor Sie unseren Service nutzen.
 
-## Interpretation and Definitions
+## Auslegung und Definitionen
 
-### Interpretation
+### Auslegung
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+Wörter, deren Anfangsbuchstabe großgeschrieben ist, haben unter den folgenden Bedingungen definierte Bedeutungen. Die folgenden Definitionen haben die gleiche Bedeutung, unabhängig davon, ob sie im Singular oder im Plural erscheinen.
 
-### Definitions
+### Definitionen
 
-For the purposes of these Terms and Conditions:
+Für die Zwecke dieser Allgemeinen Geschäftsbedingungen:
 
-- **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+- **Affiliate** bedeutet eine Einheit, die eine Partei kontrolliert, von einer Partei kontrolliert wird oder unter gemeinsamer Kontrolle mit einer Partei steht, wobei „Kontrolle“ das Eigentum an 50 % oder mehr der Anteile, Kapitalanteile oder anderen Wertpapieren bedeutet, die zur Wahl von Direktoren oder anderen leitenden Behörden berechtigt sind.
 
-- **Country** refers to: California, United States
+- **Land** bezieht sich auf: Kalifornien, Vereinigte Staaten
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
+- **Unternehmen** (in dieser Vereinbarung entweder als „das Unternehmen“, „Wir“, „Uns“ oder „Unser“ bezeichnet) bezieht sich auf AstroWind LLC, 1 Cupertino, CA 95014.
 
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+- **Gerät** bezeichnet jedes Gerät, das auf den Service zugreifen kann, wie z. B. einen Computer, ein Mobiltelefon oder ein digitales Tablet.
 
-- **Service** refers to the Website.
+- **Service** bezieht sich auf die Website.
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
+- **Allgemeine Geschäftsbedingungen** (auch als „Bedingungen“ bezeichnet) bedeuten diese Allgemeinen Geschäftsbedingungen, die die gesamte Vereinbarung zwischen Ihnen und dem Unternehmen hinsichtlich der Nutzung des Service bilden. Diese Vereinbarung über die Allgemeinen Geschäftsbedingungen ist eine Demo.
 
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+- **Social-Media-Dienst von Drittanbietern** bezeichnet Dienste oder Inhalte (einschließlich Daten, Informationen, Produkte oder Dienstleistungen), die von einem Dritten bereitgestellt werden und durch den Service angezeigt, enthalten oder verfügbar gemacht werden können.
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **Website** bezieht sich auf AstroWind, erreichbar unter [https://astrowind.vercel.app](https://astrowind.vercel.app)
 
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+- **Sie** bezeichnet die Person, die auf den Service zugreift oder ihn nutzt, oder das Unternehmen oder eine andere juristische Person, in deren Namen diese Person auf den Service zugreift oder ihn nutzt, je nach Fall.
 
-## Acknowledgment
+## Anerkennung
 
-These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+Dies sind die Allgemeinen Geschäftsbedingungen, die die Nutzung dieses Service regeln und die Vereinbarung darstellen, die zwischen Ihnen und dem Unternehmen besteht. Diese Allgemeinen Geschäftsbedingungen legen die Rechte und Pflichten aller Nutzer in Bezug auf die Nutzung des Service fest.
 
-Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+Ihr Zugriff auf den Service und dessen Nutzung sind an Ihre Annahme und Einhaltung dieser Allgemeinen Geschäftsbedingungen gebunden. Diese Allgemeinen Geschäftsbedingungen gelten für alle Besucher, Nutzer und andere Personen, die auf den Service zugreifen oder ihn nutzen.
 
-By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+Durch den Zugriff auf den Service oder dessen Nutzung erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie mit einem Teil dieser Allgemeinen Geschäftsbedingungen nicht einverstanden sind, dürfen Sie nicht auf den Service zugreifen.
 
-You represent that you are over the age of 18\. The Company does not permit those under 18 to use the Service.
+Sie erklären, dass Sie über 18 Jahre alt sind. Das Unternehmen gestattet es Personen unter 18 Jahren nicht, den Service zu nutzen.
 
-Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+Ihr Zugriff auf den Service und dessen Nutzung sind auch an Ihre Annahme und Einhaltung der Datenschutzrichtlinie des Unternehmens gebunden. Unsere Datenschutzrichtlinie beschreibt unsere Richtlinien und Verfahren zur Erhebung, Nutzung und Offenlegung Ihrer personenbezogenen Daten, wenn Sie die Anwendung oder die Website nutzen, und informiert Sie über Ihre Datenschutzrechte und darüber, wie das Gesetz Sie schützt. Bitte lesen Sie unsere Datenschutzrichtlinie sorgfältig durch, bevor Sie unseren Service nutzen.
 
-## Links to Other Websites
+## Links zu anderen Websites
 
-Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
+Unser Service kann Links zu Websites oder Diensten von Drittanbietern enthalten, die nicht dem Unternehmen gehören oder von diesem nicht kontrolliert werden.
 
-The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+Das Unternehmen hat keine Kontrolle über die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter und übernimmt dafür keine Verantwortung. Sie erkennen ferner an und erklären sich damit einverstanden, dass das Unternehmen nicht direkt oder indirekt für Schäden oder Verluste haftet, die durch oder im Zusammenhang mit der Nutzung oder dem Vertrauen auf solche Inhalte, Waren oder Dienstleistungen verursacht wurden oder angeblich verursacht wurden, die auf oder über solche Websites oder Dienste verfügbar sind.
 
-We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+Wir raten Ihnen dringend, die Allgemeinen Geschäftsbedingungen und Datenschutzrichtlinien der Websites oder Dienste von Drittanbietern zu lesen, die Sie besuchen.
 
-## Termination
+## Kündigung
 
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+Wir können Ihren Zugriff ohne vorherige Ankündigung oder Haftung aus jeglichem Grund sofort beenden oder aussetzen, einschließlich, aber nicht beschränkt auf den Fall, dass Sie gegen diese Allgemeinen Geschäftsbedingungen verstoßen.
 
-Upon termination, Your right to use the Service will cease immediately.
+Mit der Beendigung erlischt Ihr Recht zur Nutzung des Service unverzüglich.
 
-## Limitation of Liability
+## Haftungsbeschränkung
 
-Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+Ungeachtet der Schäden, die Ihnen entstehen könnten, ist die gesamte Haftung des Unternehmens und seiner Lieferanten unter jeder Bestimmung dieser Bedingungen und Ihr ausschließlicher Rechtsbehelf für das Vorstehende auf den Betrag beschränkt, den Sie tatsächlich über den Service bezahlt haben, oder auf 100 USD, falls Sie nichts über den Service gekauft haben.
 
-To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+Soweit nach geltendem Recht zulässig, haftet das Unternehmen oder seine Lieferanten in keinem Fall für besondere, zufällige, indirekte oder Folgeschäden jeglicher Art (einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Datenverlust oder anderen Informationen, Betriebsunterbrechung, Personenschäden, Verletzung der Privatsphäre, die sich aus der Nutzung oder der Unfähigkeit zur Nutzung des Service ergibt, Software von Drittanbietern und/oder Hardware von Drittanbietern, die mit dem Service verwendet wird, oder anderweitig im Zusammenhang mit einer Bestimmung dieser Bedingungen), selbst wenn das Unternehmen oder ein Lieferant auf die Möglichkeit solcher Schäden hingewiesen wurde und selbst wenn der Rechtsbehelf seinen wesentlichen Zweck verfehlt.
 
-Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+In einigen Bundesstaaten ist der Ausschluss von stillschweigenden Gewährleistungen oder die Beschränkung der Haftung für zufällige oder Folgeschäden nicht zulässig, was bedeutet, dass einige der oben genannten Beschränkungen möglicherweise nicht gelten. In diesen Bundesstaaten wird die Haftung jeder Partei auf das gesetzlich zulässige Höchstmaß beschränkt.
 
-## "AS IS" and "AS AVAILABLE" Disclaimer
+## „WIE BESEHEN“ und „VERFÜGBAR“ Haftungsausschluss
 
-The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
+Der Service wird Ihnen „WIE BESEHEN“ und „VERFÜGBAR“ und mit allen Fehlern und Mängeln ohne Gewährleistung jeglicher Art zur Verfügung gestellt. Soweit nach geltendem Recht zulässig, schließt das Unternehmen in eigenem Namen und im Namen seiner verbundenen Unternehmen sowie deren jeweiliger Lizenzgeber und Dienstleister ausdrücklich alle Gewährleistungen aus, ob ausdrücklich, stillschweigend, gesetzlich oder anderweitig, in Bezug auf den Service, einschließlich aller stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck, der Rechtsmäßigkeit und der Nichtverletzung von Rechten sowie Gewährleistungen, die sich aus dem Geschäftsverlauf, der Leistungserbringung, der Verwendung oder der Handelspraxis ergeben können. Ohne Einschränkung des Vorstehenden übernimmt das Unternehmen keine Gewährleistung oder Verpflichtung und gibt keine Zusicherung jeglicher Art ab, dass der Service Ihre Anforderungen erfüllen, beabsichtigte Ergebnisse erzielen, kompatibel sein oder mit anderer Software, Anwendungen, Systemen oder Diensten funktionieren, unterbrechungsfrei arbeiten, Leistungs- oder Zuverlässigkeitsstandards erfüllen oder fehlerfrei sein wird oder dass Fehler oder Mängel korrigiert werden können oder werden.
 
-Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+Ohne das Vorstehende einzuschränken, gibt weder das Unternehmen noch ein Anbieter des Unternehmens eine ausdrückliche oder stillschweigende Zusicherung oder Gewährleistung ab: (i) hinsichtlich des Betriebs oder der Verfügbarkeit des Service oder der darauf enthaltenen Informationen, Inhalte, Materialien oder Produkte; (ii) dass der Service ununterbrochen oder fehlerfrei sein wird; (iii) hinsichtlich der Richtigkeit, Zuverlässigkeit oder Aktualität von Informationen oder Inhalten, die über den Service bereitgestellt werden; oder (iv) dass der Service, seine Server, die Inhalte oder E-Mails, die vom Unternehmen oder in dessen Namen versendet werden, frei von Viren, Skripten, Trojanern, Würmern, Malware, Zeitbomben oder anderen schädlichen Komponenten sind.
 
-Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+In einigen Rechtsordnungen ist der Ausschluss bestimmter Gewährleistungsarten oder Beschränkungen der geltenden gesetzlichen Rechte eines Verbrauchers nicht zulässig, sodass einige oder alle der oben genannten Ausschlüsse und Beschränkungen möglicherweise nicht für Sie gelten. In einem solchen Fall werden die in diesem Abschnitt dargelegten Ausschlüsse und Beschränkungen jedoch im größtmöglichen nach geltendem Recht durchsetzbaren Umfang angewendet.
 
-## Governing Law
+## Anwendbares Recht
 
-The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+Die Gesetze des Landes, unter Ausschluss seiner Kollisionsnormen, regeln diese Bedingungen und Ihre Nutzung des Service. Ihre Nutzung der Anwendung kann auch anderen lokalen, staatlichen, nationalen oder internationalen Gesetzen unterliegen.
 
-## Disputes Resolution
+## Streitbeilegung
 
-If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+Wenn Sie Bedenken oder Streitigkeiten bezüglich des Service haben, erklären Sie sich damit einverstanden, zunächst zu versuchen, den Streitfall informell durch Kontaktaufnahme mit dem Unternehmen zu lösen.
 
-## For European Union (EU) Users
+## Für Nutzer in der Europäischen Union (EU)
 
-If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+Wenn Sie ein Verbraucher in der Europäischen Union sind, profitieren Sie von den zwingenden Bestimmungen des Rechts des Landes, in dem Sie Ihren Wohnsitz haben.
 
-## United States Legal Compliance
+## Einhaltung der US-Rechtsvorschriften
 
-You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+Sie erklären und garantieren, dass (i) Sie sich nicht in einem Land befinden, das einem Embargo der US-Regierung unterliegt oder von der US-Regierung als „Terroristen unterstützendes“ Land eingestuft wurde, und (ii) Sie nicht auf einer Liste der US-Regierung für verbotene oder eingeschränkte Parteien stehen.
 
-## Severability and Waiver
+## Salvatorische Klausel und Verzicht
 
-### Severability
+### Salvatorische Klausel
 
-If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+Sollte eine Bestimmung dieser Bedingungen für nicht durchsetzbar oder ungültig erklärt werden, wird diese Bestimmung so geändert und ausgelegt, dass die Ziele dieser Bestimmung im größtmöglichen nach geltendem Recht zulässigen Umfang erreicht werden, und die übrigen Bestimmungen bleiben in vollem Umfang in Kraft.
 
-### Waiver
+### Verzicht
 
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+Sofern hierin nicht anders vorgesehen, hat das Versäumnis, ein Recht auszuüben oder die Erfüllung einer Verpflichtung gemäß diesen Bedingungen zu verlangen, keinen Einfluss auf die Fähigkeit einer Partei, ein solches Recht zu einem späteren Zeitpunkt auszuüben oder eine solche Erfüllung zu verlangen; ebenso gilt, dass der Verzicht auf einen Verstoß keinen Verzicht auf einen nachfolgenden Verstoß darstellt.
 
-## Translation Interpretation
+## Auslegung der Übersetzung
 
-These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
+Diese Allgemeinen Geschäftsbedingungen können übersetzt worden sein, wenn wir sie Ihnen auf unserem Service zur Verfügung gestellt haben. Sie erklären sich damit einverstanden, dass im Falle eines Rechtsstreits der englische Originaltext maßgebend ist.
 
-## Changes to These Terms and Conditions
+## Änderungen dieser Allgemeinen Geschäftsbedingungen
 
-We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
+Wir behalten uns das Recht vor, diese Bedingungen nach eigenem Ermessen jederzeit zu ändern oder zu ersetzen. Wenn es sich um eine wesentliche Änderung handelt, werden wir uns bemühen, mindestens 30 Tage im Voraus Bescheid zu geben, bevor neue Bedingungen in Kraft treten. Was eine wesentliche Änderung darstellt, wird nach unserem alleinigen Ermessen bestimmt.
 
-By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
+Durch den fortgesetzten Zugriff auf unseren Service oder dessen Nutzung nach Inkrafttreten dieser Änderungen erklären Sie sich mit den überarbeiteten Bedingungen einverstanden. Wenn Sie den neuen Bedingungen nicht ganz oder teilweise zustimmen, stellen Sie bitte die Nutzung der Website und des Service ein.
 
-## Contact Us
+## Kontaktieren Sie uns
 
-If you have any questions about these Terms and Conditions, You can contact us:
+Wenn Sie Fragen zu diesen Allgemeinen Geschäftsbedingungen haben, können Sie uns kontaktieren:
 
-- By email: somecoolemail@domain.com
+- Per E-Mail: somecoelemail@domain.com
