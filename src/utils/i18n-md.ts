@@ -1,22 +1,19 @@
-#!/usr/bin/env bun
 /**
  * Translate markdown content from source locale to all target locales.
- *
- * Usage:
- *   I18N_PROVIDER=deepl DEEPL_API_KEY=... bun run src/utils/i18n-md.ts
- *   GEMINI_API_KEY=... bun run src/utils/i18n-md.ts
  *
  * Reads:  src/data/{type}/{sourceLocale}/*.{md,mdx}
  * Writes: src/data/{type}/{targetLocale}/*.{md,mdx}
  *
  * Translates both body content and specified frontmatter fields.
- * Uses a content-addressable manifest (.i18n-manifest.json) so that
+ * Uses a content-addressable manifest (.i18n-manifest.json) so
  * re-builds skip unchanged source files (git-safe — not mtime-based).
+ *
+ * Called by the i18n Astro integration during build.
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { getProvider, type TranslationProvider } from '../i18n/provider';
+import { type TranslationProvider } from '../i18n/provider';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, needsTranslation, markTranslated } from './i18n-manifest';
 
@@ -28,19 +25,8 @@ const CONTENT_TYPES = [
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
 ];
 
-async function main() {
-  const provider = await getProvider();
-  if (!provider) {
-    console.error('No translation provider configured.');
-    process.exit(1);
-  }
-  await translateContent(provider);
-  console.log('Done.');
-}
-
 /**
- * Translate all markdown content. Called by the i18n integration during build,
- * or directly via CLI (`bun run src/utils/translate-content.ts`).
+ * Translate all markdown content. Called by the i18n integration during build.
  *
  * Incremental — skips files whose source hash matches the manifest
  * (no change since last translation). Content-addressable: survives
@@ -202,13 +188,5 @@ function hasTranslatableFm(fm: string): boolean {
   return FRONTMATTER_KEYS.some((k) => {
     const re = new RegExp(`^${k}:\\s*.+$`, 'm');
     return re.test(fm);
-  });
-}
-
-// Only run main() when executed directly (not when imported)
-if (process.argv[1]?.includes('translate-content')) {
-  main().catch((err) => {
-    console.error('Fatal:', err);
-    process.exit(1);
   });
 }

@@ -2,11 +2,9 @@
  * Translation provider interface, factory, and implementations.
  *
  * Supports: Gemini (via @google/genai) and DeepL (via deepl-node).
- * Configured via src/config.yaml: i18n.translation.provider
+ * Configured via src/i18n/config.ts → src/config.yaml
  */
-import fs from 'node:fs';
-import path from 'node:path';
-import yaml from 'js-yaml';
+import { readConfig } from './config';
 import { GoogleGenAI } from '@google/genai';
 import * as deepl from 'deepl-node';
 import type { SourceLanguageCode, TargetLanguageCode } from 'deepl-node';
@@ -147,46 +145,19 @@ class DeepLProvider implements TranslationProvider {
 }
 
 // ---------------------------------------------------------------------------
-// Config & factory
+// Factory
 // ---------------------------------------------------------------------------
 
-interface ProviderConfig {
-  provider: 'gemini' | 'deepl';
-  geminiApiKey?: string;
-  deeplApiKey?: string;
-  model?: string;
-}
-
-function readYamlConfig(): ProviderConfig {
-  const configPath = path.resolve('src/config.yaml');
-  const raw = fs.readFileSync(configPath, 'utf-8');
-  const config = yaml.load(raw) as {
-    i18n?: {
-      translation?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string; model?: string };
-      ai?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string; model?: string };
-    };
-  };
-  const t = config?.i18n?.translation || config?.i18n?.ai || {};
-  return {
-    provider: (process.env.I18N_PROVIDER as 'gemini' | 'deepl') || (t.provider as 'gemini' | 'deepl') || 'gemini',
-    geminiApiKey: (process.env.GEMINI_API_KEY || t.geminiApiKey || undefined) as string | undefined,
-    deeplApiKey: (process.env.DEEPL_API_KEY || t.deeplApiKey || undefined) as string | undefined,
-    model: (process.env.I18N_MODEL || t.model || undefined) as string | undefined,
-  };
-}
-
 function createProvider(): TranslationProvider {
-  const config = readYamlConfig();
+  const config = readConfig();
 
   if (config.provider === 'deepl') {
-    const key = config.deeplApiKey;
-    if (!key) throw new Error('[i18n] DeepL API key not set.');
-    return new DeepLProvider(key);
+    if (!config.deeplApiKey) throw new Error('[i18n] DeepL API key not set.');
+    return new DeepLProvider(config.deeplApiKey);
   }
 
-  const key = config.geminiApiKey;
-  if (!key) throw new Error('[i18n] Gemini API key not set.');
-  return new GeminiProvider(key, config.model);
+  if (!config.geminiApiKey) throw new Error('[i18n] Gemini API key not set.');
+  return new GeminiProvider(config.geminiApiKey, config.model);
 }
 
 let _provider: TranslationProvider | null = null;
