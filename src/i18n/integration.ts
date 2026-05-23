@@ -207,7 +207,7 @@ export function i18nIntegration(): AstroIntegration {
                 const translations = await provider.translateBatch(untranslated, locale, 'en');
                 let localeTranslated = 0;
                 for (let i = 0; i < untranslated.length; i++) {
-                  if (translations[i] && translations[i] !== untranslated[i]) {
+                  if (translations[i]) {
                     catalog[untranslated[i]] = translations[i];
                     localeTranslated++;
                   }
