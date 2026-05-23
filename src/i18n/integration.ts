@@ -8,10 +8,12 @@
  *   4. Translate markdown content (manifest-protected)
  *   5. Translate catalog strings (manifest-protected)
  *   6. Post-process HTML output (replace English with translations)
+ *
+ * All I/O is async (fs/promises) — consistent with the rest of the pipeline.
  */
 
-import fs from 'node:fs';
 import type { AstroIntegration } from 'astro';
+import { readFile } from 'node:fs/promises';
 import { readConfig } from './config';
 import { loadAllCatalogs, loadCatalog, mergeExtracted, saveCatalog, type CatalogSet } from './catalog';
 import { extractFromAstro } from './extract';
@@ -34,17 +36,17 @@ export function i18nIntegration(): AstroIntegration {
 
         // ── Catalog maintenance ──────────────────────────────────────
 
-        normalizeCatalogs(locales);
+        await normalizeCatalogs(locales);
 
         // ── Extract + sync strings ───────────────────────────────────
 
-        let enCatalog = loadCatalog('src/locales', 'en');
+        let enCatalog = await loadCatalog('src/locales', 'en');
         const astroFiles = await glob('src/**/*.astro', { ignore: ['src/locales/**', 'node_modules/**'] });
         let newStrings = 0;
 
         for (const file of astroFiles) {
           try {
-            const content = fs.readFileSync(file, 'utf-8');
+            const content = await readFile(file, 'utf-8');
             const extracted = await extractFromAstro(content, file);
             const result = mergeExtracted(enCatalog, extracted);
             enCatalog = result.catalog;
@@ -55,13 +57,13 @@ export function i18nIntegration(): AstroIntegration {
         }
 
         if (newStrings > 0) {
-          saveCatalog('src/locales', 'en', enCatalog);
+          await saveCatalog('src/locales', 'en', enCatalog);
           console.log(`[i18n] ${newStrings} new strings extracted to en.json`);
 
           // Sync new keys to target locale catalogs (empty placeholder = untranslated)
           for (const locale of locales) {
             if (locale === 'en') continue;
-            const targetCatalog = loadCatalog('src/locales', locale);
+            const targetCatalog = await loadCatalog('src/locales', locale);
             let synced = 0;
             for (const [key] of Object.entries(enCatalog)) {
               if (!(key in targetCatalog)) {
@@ -70,7 +72,7 @@ export function i18nIntegration(): AstroIntegration {
               }
             }
             if (synced > 0) {
-              saveCatalog('src/locales', locale, targetCatalog);
+              await saveCatalog('src/locales', locale, targetCatalog);
             }
           }
         }
@@ -83,7 +85,7 @@ export function i18nIntegration(): AstroIntegration {
           await translateContent(provider);
 
           // 2. Translate UI catalog strings
-          const enJson = JSON.stringify(loadCatalog('src/locales', 'en'), null, 2);
+          const enJson = JSON.stringify(await loadCatalog('src/locales', 'en'), null, 2);
           let manifest = await loadManifest();
 
           if (catalogNeedsTranslation(manifest, enJson)) {
@@ -91,7 +93,7 @@ export function i18nIntegration(): AstroIntegration {
             for (const locale of locales) {
               if (locale === 'en') continue;
               try {
-                const catalog = loadCatalog('src/locales', locale);
+                const catalog = await loadCatalog('src/locales', locale);
                 const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '');
                 if (untranslated.length === 0) continue;
 
@@ -104,7 +106,7 @@ export function i18nIntegration(): AstroIntegration {
                   }
                 }
                 if (localeTranslated > 0) {
-                  saveCatalog('src/locales', locale, catalog);
+                  await saveCatalog('src/locales', locale, catalog);
                   totalTranslated += localeTranslated;
                   console.log(`[i18n] ${provider.name} translated ${localeTranslated} strings to ${locale}`);
                 }
@@ -120,7 +122,7 @@ export function i18nIntegration(): AstroIntegration {
             let stillUntranslated = false;
             for (const locale of locales) {
               if (locale === 'en') continue;
-              const cat = loadCatalog('src/locales', locale);
+              const cat = await loadCatalog('src/locales', locale);
               if (Object.keys(cat).some((k) => cat[k] === '')) {
                 stillUntranslated = true;
                 break;
@@ -137,12 +139,12 @@ export function i18nIntegration(): AstroIntegration {
 
         // ── Load catalogs for post-processing ────────────────────────
 
-        catalogs = loadAllCatalogs('src/locales', locales);
+        catalogs = await loadAllCatalogs('src/locales', locales);
         console.log(`[i18n] Loaded catalogs for: ${Object.keys(catalogs).join(', ')}`);
       },
 
-      'astro:build:done': ({ dir }) => {
-        postProcessBuild(dir, catalogs);
+      'astro:build:done': async ({ dir }) => {
+        await postProcessBuild(dir, catalogs);
       },
     },
   };

@@ -1,9 +1,10 @@
 /**
  * HTML post-processing: walks dist/ output, replaces English strings
  * with translations from JSON catalogs for non-English locale pages.
+ * All I/O is async (fs/promises).
  */
 
-import fs from 'node:fs';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { CatalogSet } from './catalog';
@@ -53,15 +54,15 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
   });
 }
 
-/** Walk a directory recursively, visiting .html files. */
-export function walkHtmlFiles(dir: string, visitor: (filePath: string) => void): void {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
+/** Walk a directory recursively, visiting .html files (async). */
+export async function walkHtmlFiles(dir: string, visitor: (filePath: string) => Promise<void>): Promise<void> {
+  const entries = await readdir(dir, { withFileTypes: true });
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      walkHtmlFiles(fullPath, visitor);
+      await walkHtmlFiles(fullPath, visitor);
     } else if (entry.isFile() && entry.name.endsWith('.html')) {
-      visitor(fullPath);
+      await visitor(fullPath);
     }
   }
 }
@@ -70,14 +71,14 @@ export function walkHtmlFiles(dir: string, visitor: (filePath: string) => void):
  * Post-process the entire build output directory: translate HTML for
  * all non-English locale pages. Called from astro:build:done hook.
  */
-export function postProcessBuild(dir: URL, catalogs: CatalogSet): void {
+export async function postProcessBuild(dir: URL, catalogs: CatalogSet): Promise<void> {
   const distDir = fileURLToPath(dir);
   console.log(`[i18n] Post-processing HTML in ${distDir}...`);
 
   let processed = 0;
   let translated = 0;
 
-  walkHtmlFiles(distDir, (filePath: string) => {
+  await walkHtmlFiles(distDir, async (filePath: string) => {
     // Determine locale from path: /dist/de/pricing/index.html → de
     const relPath = path.relative(distDir, filePath);
     const localeMatch = relPath.match(/^([a-z]{2})\//);
@@ -88,10 +89,10 @@ export function postProcessBuild(dir: URL, catalogs: CatalogSet): void {
 
     processed++;
     try {
-      const html = fs.readFileSync(filePath, 'utf-8');
+      const html = await readFile(filePath, 'utf-8');
       const translatedHtml = translateHtml(html, locale, catalogs);
       if (translatedHtml !== html) {
-        fs.writeFileSync(filePath, translatedHtml, 'utf-8');
+        await writeFile(filePath, translatedHtml, 'utf-8');
         translated++;
       }
     } catch (err) {

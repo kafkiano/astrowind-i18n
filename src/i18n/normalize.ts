@@ -3,6 +3,7 @@
  *
  * Strips Wuchale XML tags, decodes HTML entities, and migrates
  * untranslated placeholders (key===value → '') in non-English locales.
+ * All I/O is async (fs/promises).
  */
 
 import { loadCatalog, saveCatalog } from './catalog';
@@ -25,14 +26,12 @@ function normalizeText(text: string): string {
  * - Strip Wuchale XML tags from keys and values
  * - Decode HTML entities
  * - Migrate key===value placeholders → empty string (non-EN)
- *
- * Returns true if any catalog was modified.
  */
-export function normalizeCatalogs(locales: string[]): boolean {
+export async function normalizeCatalogs(locales: string[]): Promise<void> {
   let changed = false;
 
   for (const locale of locales) {
-    const raw = loadCatalog('src/locales', locale);
+    const raw = await loadCatalog('src/locales', locale);
     const normalized: Record<string, string> = {};
     let localeChanged = false;
 
@@ -50,7 +49,7 @@ export function normalizeCatalogs(locales: string[]): boolean {
     }
 
     if (localeChanged) {
-      saveCatalog('src/locales', locale, normalized);
+      await saveCatalog('src/locales', locale, normalized);
       changed = true;
     }
   }
@@ -58,6 +57,4 @@ export function normalizeCatalogs(locales: string[]): boolean {
   if (changed) {
     console.log('[i18n] Normalized catalogs: stripped XML tags, decoded entities, migrated placeholders');
   }
-
-  return changed;
 }
