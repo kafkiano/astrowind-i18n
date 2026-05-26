@@ -17,8 +17,6 @@ import { type TranslationProvider } from '../i18n/provider';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, needsTranslation, markTranslated } from './i18n-manifest';
 
-const SOURCE_LOCALE = 'en';
-const TARGET_LOCALES = ['es', 'fr', 'de'];
 const FRONTMATTER_KEYS = ['title', 'excerpt', 'description', 'group'];
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
@@ -31,14 +29,24 @@ const CONTENT_TYPES = [
  * Incremental — skips files whose source hash matches the manifest
  * (no change since last translation). Content-addressable: survives
  * git clone, branch switches, and mtime resets.
+ *
+ * @param provider - Translation provider (Gemini, DeepL, etc.)
+ * @param locales - All configured locales (from config.yaml).
+ * @param defaultLocale - Source locale (from config.yaml i18n.defaultLocale).
  */
-export async function translateContent(provider: TranslationProvider): Promise<void> {
+export async function translateContent(
+  provider: TranslationProvider,
+  locales: string[],
+  defaultLocale: string
+): Promise<void> {
+  const targetLocales = locales.filter((l) => l !== defaultLocale);
+  if (targetLocales.length === 0) return;
   let manifest = await loadManifest();
   let manifestChanged = false;
   let anyWork = false;
 
   for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = join(dir, SOURCE_LOCALE);
+    const srcDir = join(dir, defaultLocale);
     const files = await glob(pattern, { cwd: srcDir });
     if (files.length === 0) continue;
 
@@ -52,7 +60,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
       if (!body.trim() && !hasTranslatableFm(frontmatter)) continue;
 
       // Check manifest — skip if source content hasn't changed
-      const manifestKey = `${dir}/${SOURCE_LOCALE}/${relPath}`;
+      const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
       if (!(await needsTranslation(manifest, manifestKey, srcContent))) {
         skipped++;
         continue;
@@ -60,7 +68,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
 
       let allLocalesSucceeded = true;
 
-      for (const locale of TARGET_LOCALES) {
+      for (const locale of targetLocales) {
         const outPath = join(dir, locale, relPath);
 
         let translatedFm = frontmatter;
@@ -81,7 +89,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
 
         if (fmTexts.length > 0) {
           try {
-            const fmResults = await provider.translateBatch(fmTexts, locale, SOURCE_LOCALE);
+            const fmResults = await provider.translateBatch(fmTexts, locale, defaultLocale);
             for (let i = 0; i < fmKeys.length; i++) {
               if (fmResults[i]) {
                 translatedFm = replaceFmValue(translatedFm, fmKeys[i], fmResults[i]);
@@ -98,7 +106,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
         // Translate body (full multi-line text, not line-by-line batch)
         if (body.trim()) {
           try {
-            const result = await provider.translateText(body, locale, SOURCE_LOCALE);
+            const result = await provider.translateText(body, locale, defaultLocale);
             if (result) {
               translatedBody = result;
               bodyTranslated = true;
@@ -139,7 +147,7 @@ export async function translateContent(provider: TranslationProvider): Promise<v
 
     if (translated > 0 || skipped > 0) {
       console.log(
-        `─ ${dir}/${SOURCE_LOCALE}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
+        `─ ${dir}/${defaultLocale}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
       );
     }
   }
