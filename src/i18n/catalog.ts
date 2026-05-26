@@ -64,20 +64,3 @@ export function mergeExtracted(catalog: Catalog, extracted: ExtractedString[]): 
   }
   return { catalog, newCount };
 }
-
-/**
- * Get untranslated strings for a target locale (where msgid === msgstr).
- */
-export function getUntranslated(catalog: Catalog): string[] {
-  return Object.entries(catalog)
-    .filter(([, value]) => value === '')
-    .map(([key]) => key);
-}
-
-/**
- * Look up a translation. Falls back to the msgid.
- */
-export function translate(catalogs: CatalogSet, locale: string, msgid: string): string {
-  if (locale === 'en') return msgid; // source locale
-  return catalogs[locale]?.[msgid] || catalogs['en']?.[msgid] || msgid;
-}
