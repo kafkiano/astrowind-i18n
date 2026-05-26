@@ -51,8 +51,8 @@ export function i18nIntegration(): AstroIntegration {
             const result = mergeExtracted(enCatalog, extracted);
             enCatalog = result.catalog;
             newStrings += result.newCount;
-          } catch {
-            // Skip files that can't be parsed
+          } catch (err) {
+            console.warn(`[i18n] Skipped ${file}: ${(err as Error).message}`);
           }
         }
 
@@ -82,7 +82,7 @@ export function i18nIntegration(): AstroIntegration {
         const provider = await getProvider();
         if (provider) {
           // 1. Translate markdown content
-          await translateContent(provider);
+          await translateContent(provider, locales, config.defaultLocale);
 
           // 2. Translate UI catalog strings
           const enJson = JSON.stringify(await loadCatalog('src/locales', 'en'), null, 2);
