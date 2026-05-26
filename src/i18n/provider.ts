@@ -1,11 +1,10 @@
 /**
  * Translation provider interface, factory, and implementations.
  *
- * Supports: Gemini (via @google/genai) and DeepL (via deepl-node).
+ * Supports: Gemini (via REST API) and DeepL (via deepl-node).
  * Configured via src/i18n/config.ts → src/config.yaml
  */
 import { readConfig } from './config';
-import { GoogleGenAI } from '@google/genai';
 import * as deepl from 'deepl-node';
 import type { SourceLanguageCode, TargetLanguageCode } from 'deepl-node';
 
@@ -26,15 +25,47 @@ export interface TranslationProvider {
 // Gemini provider
 // ---------------------------------------------------------------------------
 
+interface GeminiPart {
+  text: string;
+}
+
+interface GeminiCandidate {
+  content: { parts: GeminiPart[] };
+}
+
+interface GeminiResponse {
+  candidates?: GeminiCandidate[];
+  error?: { message: string };
+}
+
 class GeminiProvider implements TranslationProvider {
   readonly name = 'gemini';
   readonly maxBatchSize = 30;
-  private ai: GoogleGenAI;
+  private apiKey: string;
   private model: string;
 
   constructor(apiKey: string, model: string = 'gemini-2.5-flash') {
-    this.ai = new GoogleGenAI({ apiKey });
+    this.apiKey = apiKey;
     this.model = model;
+  }
+
+  private async generateContent(prompt: string): Promise<string> {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent?key=${this.apiKey}`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error(`Gemini API ${res.status}: ${await res.text()}`);
+    }
+
+    const data: GeminiResponse = await res.json();
+    if (data.error) throw new Error(data.error.message);
+    return data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
   }
 
   async translateBatch(texts: string[], targetLang: string, sourceLang: string = 'en'): Promise<string[]> {
@@ -43,21 +74,8 @@ class GeminiProvider implements TranslationProvider {
     for (let i = 0; i < texts.length; i += this.maxBatchSize) {
       const batch = texts.slice(i, i + this.maxBatchSize);
       try {
-        const response = await this.ai.models.generateContent({
-          model: this.model,
-          contents: [
-            {
-              role: 'user',
-              parts: [
-                {
-                  text: `Translate these ${getLanguageName(sourceLang)} strings to ${getLanguageName(targetLang)} (${targetLang}).\nReturn ONLY the translations, one per line, in the same order.\nDo not add quotes, numbering, or explanations.\n\n${batch.join('\n')}`,
-                },
-              ],
-            },
-          ],
-        });
-
-        const raw = response.text?.trim() ?? '';
+        const prompt = `Translate these ${getLanguageName(sourceLang)} strings to ${getLanguageName(targetLang)} (${targetLang}).\nReturn ONLY the translations, one per line, in the same order.\nDo not add quotes, numbering, or explanations.\n\n${batch.join('\n')}`;
+        const raw = (await this.generateContent(prompt)).trim();
         const lines = raw.split('\n').map((l) => l.trim());
         for (let j = 0; j < batch.length && j < lines.length; j++) {
           if (lines[j]) results[i + j] = lines[j];
@@ -74,21 +92,8 @@ class GeminiProvider implements TranslationProvider {
 
   async translateText(text: string, targetLang: string, sourceLang: string = 'en'): Promise<string> {
     try {
-      const response = await this.ai.models.generateContent({
-        model: this.model,
-        contents: [
-          {
-            role: 'user',
-            parts: [
-              {
-                text: `Translate the following ${getLanguageName(sourceLang)} text to ${getLanguageName(targetLang)} (${targetLang}).\nPreserve all formatting, markdown syntax, code blocks, and structure exactly.\nReturn ONLY the translation, nothing else.\n\n${text}`,
-              },
-            ],
-          },
-        ],
-      });
-
-      return response.text?.trim() ?? '';
+      const prompt = `Translate the following ${getLanguageName(sourceLang)} text to ${getLanguageName(targetLang)} (${targetLang}).\nPreserve all formatting, markdown syntax, code blocks, and structure exactly.\nReturn ONLY the translation, nothing else.\n\n${text}`;
+      return (await this.generateContent(prompt)).trim();
     } catch (err) {
       console.warn(`[provider:gemini] Text translation failed:`, (err as Error).message);
       return '';
