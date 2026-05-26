@@ -134,13 +134,8 @@ class DeepLProvider implements TranslationProvider {
   }
 
   async translateText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
-    try {
-      const [result] = await this.translateBatch([text], targetLang, sourceLang);
-      return result;
-    } catch (err) {
-      console.warn(`[provider:deepl] Text translation failed:`, (err as Error).message);
-      return '';
-    }
+    const [result] = await this.translateBatch([text], targetLang, sourceLang);
+    return result || '';
   }
 }
 
