@@ -17,8 +17,11 @@ const createPath = (...params: string[]) => {
 const BASE_PATHNAME = SITE.base || '/';
 const BASE_TRIMMED = trimSlash(BASE_PATHNAME);
 const stripBase = (s: string) =>
-  BASE_TRIMMED && s.startsWith(`/${BASE_TRIMMED}/`) ? s.slice(BASE_TRIMMED.length + 1) || '/' :
-  BASE_TRIMMED && s === `/${BASE_TRIMMED}` ? '/' : s;
+  BASE_TRIMMED && s.startsWith(`/${BASE_TRIMMED}/`)
+    ? s.slice(BASE_TRIMMED.length + 1) || '/'
+    : BASE_TRIMMED && s === `/${BASE_TRIMMED}`
+      ? '/'
+      : s;
 
 export const cleanSlug = (text = '') =>
   trimSlash(text)
