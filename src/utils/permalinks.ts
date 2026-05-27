@@ -109,7 +109,10 @@ export const getBlogPermalink = (locale?: string): string => getPermalink(BLOG_B
 export const getPagePermalink = (slug: string, locale?: string): string => getPermalink(slug, 'page', locale);
 
 /** */
-export const getAsset = (path: string): string => '/' + [BASE_PATHNAME, path].filter((el) => !!el).join('/');
+export const getAsset = (path: string): string => {
+  const parts = [trimSlash(BASE_PATHNAME), trimSlash(path)].filter(Boolean);
+  return '/' + parts.join('/');
+};
 
 /** */
 const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);

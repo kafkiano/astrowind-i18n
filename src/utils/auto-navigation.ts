@@ -65,18 +65,18 @@ function scanFilePages(locale: string): Page[] {
 async function scanContentPages(locale: string): Promise<Page[]> {
   const pages = await getCollection('pages', ({ id }) => id.startsWith(`${locale}/`));
 
-  return pages.map((page) => ({
-    title: page.data.title,
-    href: `/${locale}/${page.id
-      .split('/')
-      .pop()
-      ?.replace(/\.(md|mdx)$/, '')}`,
-    showIn: page.data.showIn ?? 'footer',
-    order: page.data.order ?? 999,
-    group: page.data.group,
-    type: 'page',
-    path: '',
-  }));
+  return pages.map((page) => {
+    const slug = page.id.split('/').pop()?.replace(/\.(md|mdx)$/, '') ?? '';
+    return {
+      title: page.data.title,
+      href: getPermalink(slug, 'page', locale),
+      showIn: page.data.showIn ?? 'footer',
+      order: page.data.order ?? 999,
+      group: page.data.group,
+      type: 'page',
+      path: '',
+    };
+  });
 }
 
 /**
