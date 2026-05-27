@@ -90,14 +90,14 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   ├── rss.xml.ts
 │   │   └── ...
 │   ├── utils/
+│   │   ├── auto-navigation.ts
 │   │   ├── blog.ts
 │   │   ├── i18n-md.ts           # Markdown content translation
 │   │   ├── images.ts
 │   │   ├── permalinks.ts
 │   │   └── ...
 │   ├── config.yaml
-│   ├── content.config.ts
-│   └── navigation.ts
+│   └── content.config.ts
 ├── .github/workflows/
 │   └── actions.yaml             # CI/CD: build + deploy to Pages
 ├── package.json
@@ -105,7 +105,7 @@ Inside **AstroWind** template, you'll see the following folders and files:
 └── ...
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.astro` files in the `src/pages/` directory. Each page is exposed as a route based on its file name. Markdown content (`.md`, `.mdx`) lives in `src/data/` and is consumed by content collections.
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
