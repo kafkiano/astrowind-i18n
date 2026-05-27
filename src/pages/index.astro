@@ -1,13 +1,14 @@
 ---
-import { I18N } from 'astrowind:config';
+import { I18N, SITE } from 'astrowind:config';
 import Layout from '~/layouts/Layout.astro';
 
 const supportedLocales = I18N.locales;
 const defaultLocale = I18N.defaultLocale;
+const basePath = (SITE.base || '/').replace(/\/+$/, '') || '';
 ---
 
 <Layout>
-  <script is:inline define:vars={{ supportedLocales, defaultLocale }}>
+  <script is:inline define:vars={{ supportedLocales, defaultLocale, basePath }}>
     // Detect browser language preference
     const preferred = navigator.languages.find((lang) => {
       const base = lang.split('-')[0];
@@ -16,13 +17,19 @@ const defaultLocale = I18N.defaultLocale;
 
     const currentLocale = preferred ? preferred.split('-')[0] : defaultLocale;
 
+    // Strip base path prefix before checking for locale
+    let pathname = window.location.pathname;
+    if (basePath && pathname.startsWith(basePath)) {
+      pathname = pathname.slice(basePath.length) || '/';
+    }
+
     // Check if we're already on a locale-prefixed path
     const localeRegex = new RegExp(`^/(${supportedLocales.join('|')})(/|$)`);
-    if (!localeRegex.test(window.location.pathname)) {
-      // Create meta refresh with detected locale
+    if (!localeRegex.test(pathname)) {
+      // Create meta refresh with detected locale, respecting base path
       const meta = document.createElement('meta');
       meta.httpEquiv = 'refresh';
-      meta.content = `0;url=/${currentLocale}`;
+      meta.content = `0;url=${basePath}/${currentLocale}`;
       document.head.appendChild(meta);
     }
   </script>
