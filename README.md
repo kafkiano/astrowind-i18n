@@ -1,4 +1,4 @@
-# 🚀 AstroWind
+# 🌍 AstroWind Internationalized
 
 ![GitHub License](https://img.shields.io/github/license/kafkiano/astrowind-i18n)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kafkiano/astrowind-i18n/actions.yaml)
@@ -7,7 +7,7 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kafkiano/astrowind-i18n/github-code-scanning%2Fcodeql?logo=github&label=CodeQL)
 [![Built with Bun](https://img.shields.io/badge/Built%20with-Bun-F472B6?style=flat&logo=bun&logoColor=white)](https://bun.sh)
 
-**AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
+**AstroWind Internationalized** is a free and open-source template to make your website using **[Astro 6](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)** with fully automated i18n integration via DeepL or Gemini auto translation. Ready to start a new project and designed taking into account web best practices.
 
 - ✅ **Production-ready** scores in **PageSpeed Insights** reports.
 - ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
@@ -19,7 +19,7 @@
 - ✅ **Internationalization (i18n)** with custom system: JSON catalogs, HTML post-processing, AI-powered translation (Gemini/DeepL).
 - ✅ **Git-based CMS** via Sveltia CMS — edit content online, commits trigger automatic redeploy.
 
-**AstroWind** tries to give you quick access to creating a website using [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
+**AstroWind** tries to give you quick access to creating a website using [Astro 6](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
 
 Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
 

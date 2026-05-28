@@ -4,10 +4,9 @@ This file provides guidance to agents when working with code in this repository.
 
 ## Stack
 
-- **Framework**: Astro 5.0 with static output
+- **Framework**: Astro 6 with static output
 - **Styling**: Tailwind CSS (base styles NOT applied automatically - see astro.config.ts)
 - **Language**: TypeScript with strict null checks
-- **Package Manager**: Bun v1.3.9
 
 ## Critical Non-Obvious Patterns
 
