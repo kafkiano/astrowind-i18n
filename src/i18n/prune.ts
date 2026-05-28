@@ -43,22 +43,22 @@ async function main() {
 
   // 2. Load all catalogs
   const catalogs = await loadAllCatalogs('src/locales', locales);
-  const enCatalog = catalogs['en'];
-  if (!enCatalog) {
-    console.error('[prune] en.json not found');
+  const sourceCatalog = catalogs[config.defaultLocale];
+  if (!sourceCatalog) {
+    console.error(`[prune] ${config.defaultLocale}.json not found`);
     process.exit(1);
   }
 
   // 3. Find dead strings
   const deadStrings: string[] = [];
-  for (const key of Object.keys(enCatalog)) {
+  for (const key of Object.keys(sourceCatalog)) {
     if (!activeStrings.has(key)) {
       deadStrings.push(key);
     }
   }
 
   // 4. Report
-  const total = Object.keys(enCatalog).length;
+  const total = Object.keys(sourceCatalog).length;
   const alive = total - deadStrings.length;
 
   console.log(`\n[prune] Catalog: ${total} entries`);

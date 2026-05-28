@@ -68,7 +68,7 @@ class GeminiProvider implements TranslationProvider {
     return data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
   }
 
-  async translateBatch(texts: string[], targetLang: string, sourceLang: string = 'en'): Promise<string[]> {
+  async translateBatch(texts: string[], targetLang: string, sourceLang: string): Promise<string[]> {
     const results: string[] = new Array(texts.length).fill('');
 
     for (let i = 0; i < texts.length; i += this.maxBatchSize) {
@@ -90,7 +90,7 @@ class GeminiProvider implements TranslationProvider {
     return results;
   }
 
-  async translateText(text: string, targetLang: string, sourceLang: string = 'en'): Promise<string> {
+  async translateText(text: string, targetLang: string, sourceLang: string): Promise<string> {
     try {
       const prompt = `Translate the following ${getLanguageName(sourceLang)} text to ${getLanguageName(targetLang)} (${targetLang}).\nPreserve all formatting, markdown syntax, code blocks, and structure exactly.\nReturn ONLY the translation, nothing else.\n\n${text}`;
       return (await this.generateContent(prompt)).trim();

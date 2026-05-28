@@ -25,8 +25,8 @@ export function decodeEntities(text: string): string {
  * Only translates COMPLETE text segments between HTML tags — no
  * substring tokenization. Handles HTML entity encoding mismatches.
  */
-export function translateHtml(html: string, locale: string, catalogs: CatalogSet): string {
-  if (locale === 'en') return html;
+export function translateHtml(html: string, locale: string, catalogs: CatalogSet, sourceLocale: string): string {
+  if (locale === sourceLocale) return html;
 
   const targetCatalog = catalogs[locale];
   if (!targetCatalog) return html;
@@ -71,7 +71,7 @@ export async function walkHtmlFiles(dir: string, visitor: (filePath: string) => 
  * Post-process the entire build output directory: translate HTML for
  * all non-English locale pages. Called from astro:build:done hook.
  */
-export async function postProcessBuild(dir: URL, catalogs: CatalogSet): Promise<void> {
+export async function postProcessBuild(dir: URL, catalogs: CatalogSet, sourceLocale: string): Promise<void> {
   const distDir = fileURLToPath(dir);
   console.log(`[i18n] Post-processing HTML in ${distDir}...`);
 
@@ -85,12 +85,12 @@ export async function postProcessBuild(dir: URL, catalogs: CatalogSet): Promise<
     if (!localeMatch) return;
 
     const locale = localeMatch[1];
-    if (locale === 'en') return;
+    if (locale === sourceLocale) return;
 
     processed++;
     try {
       const html = await readFile(filePath, 'utf-8');
-      const translatedHtml = translateHtml(html, locale, catalogs);
+      const translatedHtml = translateHtml(html, locale, catalogs, sourceLocale);
       if (translatedHtml !== html) {
         await writeFile(filePath, translatedHtml, 'utf-8');
         translated++;
