@@ -37,12 +37,7 @@ export async function normalizeCatalogs(locales: string[]): Promise<void> {
 
     for (const [key, val] of Object.entries(raw)) {
       const cleanKey = normalizeText(key);
-      let cleanVal = normalizeText(val);
-
-      // Migration: key===value in non-English locale = untranslated placeholder
-      if (locale !== 'en' && cleanVal === cleanKey) {
-        cleanVal = '';
-      }
+      const cleanVal = normalizeText(val);
 
       if (cleanKey !== key || cleanVal !== val) localeChanged = true;
       if (cleanKey) normalized[cleanKey] = cleanVal;
