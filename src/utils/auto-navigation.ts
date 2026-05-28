@@ -66,7 +66,11 @@ async function scanContentPages(locale: string): Promise<Page[]> {
   const pages = await getCollection('pages', ({ id }) => id.startsWith(`${locale}/`));
 
   return pages.map((page) => {
-    const slug = page.id.split('/').pop()?.replace(/\.(md|mdx)$/, '') ?? '';
+    const slug =
+      page.id
+        .split('/')
+        .pop()
+        ?.replace(/\.(md|mdx)$/, '') ?? '';
     return {
       title: page.data.title,
       href: getPermalink(slug, 'page', locale),
