@@ -41,7 +41,9 @@ i18n:
   ai:
     geminiApiKey: null
     provider: 'deepl' # optional
-    # model: 'gemma-4-26b-a4b-it' # gemma-4-26b-a4b-it, gemini-2.0-flash-lite, etc.
+    # Select model for gemini provider,
+    # gemma-4-26b-a4b-it, gemini-2.0-flash-lite, etc.
+    # model: 'gemma-4-26b-a4b-it'
 
 apps:
   blog:
