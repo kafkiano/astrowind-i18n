@@ -1,5 +1,5 @@
 site:
-  name: AstroWind Internationalized
+  name: AstroWind I18n
   site: 'https://kafkiano.github.io'
   base: '/astrowind-i18n'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind Internationalized
+    default: AstroWind I18n
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind Internationalized
+    site_name: AstroWind I18n
     images:
       - url: '~/assets/images/default.png'
         width: 1200
