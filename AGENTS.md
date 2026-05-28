@@ -74,16 +74,60 @@ In the most cases a `bun run build` or `bun run check` might be enough to check 
 
 ### Internationalization (i18n)
 
-- **Custom system** (`src/i18n/`): ~600 lines replacing Wuchale. No external i18n framework dependencies.
-- **Architecture**: (1) JSON catalogs per locale in `src/locales/{locale}.json` — simple `{ "English": "Translated" }` maps. (2) HTML post-processing Astro integration — after build, walks `dist/` and replaces English strings in non-English pages. (3) AI auto-translation via Gemini or DeepL at build time for untranslated strings.
-- **Translation pipeline**: Extract → merge into EN catalog → sync new keys to target locales → AI translates untranslated entries → save. Only untranslated strings (where msgid === msgstr) trigger AI calls.
-- **Markdown content translation** (`src/utils/i18n-md.ts`): Translates `src/data/{post,pages}/en/` → `{es,fr,de}/` using the configured AI provider. Incremental: skips files where output mtime ≥ source mtime (manual edits in target locales survive until source changes).
-- **Provider config**: `src/config.yaml` → `i18n.ai.provider` (`'gemini'` or `'deepl'`) and `i18n.ai.geminiApiKey`. Also reads `GEMINI_API_KEY` or `DEEPL_API_KEY` from environment.
-- **Locales**: Defined in `src/config.yaml` `i18n.locales`; default locale `i18n.defaultLocale` (English).
-- **Routing**: All routes are locale‑prefixed (`/[locale]/...`). `prefixDefaultLocale: true`, `redirectToDefaultLocale: false`.
-- **Explicit locale propagation**: `Astro.currentLocale` is only available in `.astro` files. Pass it explicitly to components and utility functions.
-- **hreflang tags**: Auto-generated in `src/layouts/Layout.astro`.
-- **Key utilities**: `getPermalink(slug, type, locale)` for all internal links; `getStaticPathsForLocale()` for `getStaticPaths` in `[locale]` pages.
+Custom system (`src/i18n/`, ~600 lines) replacing Wuchale. No external i18n framework dependencies. All hardcoded `'en'` references eliminated in v1.2.6 — source locale comes from `config.yaml` `i18n.defaultLocale`.
+
+**Architecture layers:**
+1. **JSON catalogs** (`src/locales/{locale}.json`) — `{ "source string": "translated" }` maps. Keys are the source-locale text (e.g. English). Untranslated entries have value `""` (empty string).
+2. **AST-based extraction** (`src/i18n/extract.ts`) — walks `.astro` files via `@astrojs/compiler`, finds translatable text nodes. Heuristic classifier excludes code, attributes, URLs, script contents.
+3. **Catalog sync** — New keys from extraction get `""` in target catalogs. Dead keys (removed from all `.astro` files) are pruned from all catalogs automatically during build.
+4. **AI translation** — Strings with `""` values are sent to the configured provider (Gemini REST API or DeepL) in batches of 30-50. Retries with exponential backoff.
+5. **HTML post-processing** (`src/i18n/postprocess.ts`) — after `astro:build:done`, walks `dist/` HTML, replaces source-locale text with catalog translations via full-string matching (no substring tokenization). Script tags excluded.
+6. **Markdown content translation** (`src/utils/i18n-md.ts`) — translates `src/data/{post,pages}/{sourceLocale}/` → all target locales. Content-addressable manifest (`src/locales/.i18n-manifest.json`) tracks SHA-256 hashes — skips unchanged files even across git clones.
+
+**User story behaviors (verified in v1.2.6):**
+
+| User action | What happens |
+|---|---|
+| **New `.astro` string** | Extracted → added to source catalog with `""` → synced to target catalogs → AI translates → saved to JSON catalogs |
+| **New `.md` file** | Detected by manifest hash mismatch → frontmatter translated line-by-line, body as single block → written to target locale dirs |
+| **Modify `.astro` string** | Old key pruned, new key extracted and translated (same flow as new string) |
+| **Modify `.md` file** | Manifest hash change triggers re-translation. Manual edits in target files are overwritten when source changes. |
+| **Delete `.astro` string** | Pruned from source catalog and all target catalogs automatically during build. |
+| **Delete `.md` source file** | Orphan translations in all target locale dirs are cleaned up automatically. Manifest entries removed. |
+| **Manual translation edit (catalog)** | Non-empty values in target catalogs are **never overwritten** by AI. Survives all rebuilds. |
+| **Manual translation edit (markdown)** | Target files survive until the source `.md` changes. When source changes, the manual edit is lost (re-translated). |
+| **Add locale** (add to `config.yaml` `locales`) | New locale gets empty catalog, AI translates all strings + all markdown content. |
+| **Remove locale** (remove from `config.yaml`) | Build warns about stale catalog file + content dirs in `src/data/`. Does NOT auto-delete (manual cleanup is safer). |
+| **No API key** | Graceful degradation — provider is `null`, translations skipped, source text shown for all locales. Build succeeds. |
+| **Provider switch** (change `provider:` in config) | Takes effect on next build. Previously translated strings (non-empty values) are preserved. Untranslated `""` entries are sent to the new provider. |
+| **Change source/default locale** (cold start only) | Set `i18n.defaultLocale` in `config.yaml` before first build. All extraction, sync, and post-processing uses this locale as the source. |
+
+**Manifest (`src/locales/.i18n-manifest.json`):**
+- `catalogs` section: stores SHA-256 of source catalog JSON. Translation skipped if hash matches + no `""` gaps.
+- `markdown` section: stores SHA-256 per source file. Translation skipped if hash matches.
+- Manifest is git-safe (content-addressed, not mtime-based).
+
+**Provider config** (`src/config.yaml` → `i18n.ai`):
+```yaml
+i18n:
+  ai:
+    provider: 'deepl'        # 'gemini' or 'deepl'
+    geminiApiKey: null       # or your key string
+    # deeplApiKey: null      # or via DEEPL_API_KEY env var
+    # model: 'gemini-2.5-flash'  # only for gemini, only affects markdown body
+```
+Environment overrides: `GEMINI_API_KEY`, `DEEPL_API_KEY`, `I18N_PROVIDER`, `I18N_MODEL`.
+
+**Key files:**
+- `src/i18n/integration.ts` — main orchestration (extract → prune → sync → translate → cleanup)
+- `src/i18n/catalog.ts` — load/save/merge JSON catalogs
+- `src/i18n/provider.ts` — Gemini (raw `fetch()`) + DeepL (deepl-node SDK) implementations
+- `src/i18n/postprocess.ts` — HTML string replacement (full-string matching)
+- `src/i18n/prune.ts` — standalone CLI for manual catalog pruning (`bun run src/i18n/prune.ts --apply`)
+- `src/utils/i18n-md.ts` — markdown translation + orphan cleanup
+- `src/utils/i18n-manifest.ts` — content-addressed manifest management
+
+**Routing:** All routes locale-prefixed (`/[locale]/...`). `prefixDefaultLocale: true`, `redirectToDefaultLocale: false`. Pass `Astro.currentLocale` explicitly from `.astro` files to components. hreflang tags auto-generated in `Layout.astro`.
 
 ### CMS (Content Management)
 
