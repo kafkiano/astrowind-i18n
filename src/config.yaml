@@ -11,7 +11,7 @@ metadata:
   title:
     default: AstroWind I18n
     template: '%s — AstroWind'
-  description: "Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: 'Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.'
   robots:
     index: true
     follow: true
