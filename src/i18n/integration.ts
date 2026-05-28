@@ -88,7 +88,18 @@ export function i18nIntegration(): AstroIntegration {
           const enJson = JSON.stringify(await loadCatalog('src/locales', 'en'), null, 2);
           let manifest = await loadManifest();
 
-          if (catalogNeedsTranslation(manifest, enJson)) {
+          // Check if en.json changed OR any target locale has untranslated gaps
+          let hasGaps = false;
+          for (const locale of locales) {
+            if (locale === 'en') continue;
+            const cat = await loadCatalog('src/locales', locale);
+            if (Object.keys(cat).some((k) => cat[k] === '')) {
+              hasGaps = true;
+              break;
+            }
+          }
+
+          if (hasGaps || catalogNeedsTranslation(manifest, enJson)) {
             let totalTranslated = 0;
             for (const locale of locales) {
               if (locale === 'en') continue;
