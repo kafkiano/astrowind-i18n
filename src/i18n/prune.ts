@@ -12,7 +12,7 @@
 import { readFile } from 'node:fs/promises';
 import { glob } from 'tinyglobby';
 import { extractFromAstro } from './extract';
-import { loadAllCatalogs, saveCatalog, type Catalog } from './catalog';
+import { loadAllCatalogs, saveCatalog } from './catalog';
 import { readConfig } from './config';
 
 // ---------------------------------------------------------------------------
