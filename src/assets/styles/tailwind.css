@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @plugin "../../styles/intersect-plugin.js";
 @plugin "@tailwindcss/typography";
 
