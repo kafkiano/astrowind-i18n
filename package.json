@@ -11,6 +11,8 @@
     "start": "bunx --bun astro dev",
     "build": "bunx --bun astro build",
     "translate": "bun run src/utils/i18n-md.ts",
+    "i18n:prune": "bun run src/i18n/prune.ts",
+    "i18n:prune:apply": "bun run src/i18n/prune.ts --apply",
     "preview": "bunx --bun astro preview",
     "astro": "astro",
     "check": "bun run check:astro && bun run check:eslint && bun run check:prettier",
