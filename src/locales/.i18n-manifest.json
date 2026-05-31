@@ -1,12 +1,12 @@
 {
   "markdown": {
     "src/data/pages/en/markdown.md": "2301e7a649667b1c3aadb309dc2b371e0a82b686eea959afaffe98fb63f0a8bc",
-    "src/data/pages/en/privacy.md": "b56249c0efb5ed739cf39b24ce6ffcb7cf5fecd109144c68f982521d5b491bd1",
-    "src/data/pages/en/terms.md": "3cbd0c641f84042fd6105024401af86478081ff0dfa630f811afc7ce4f6f2f1d",
     "src/data/post/en/astrowind-template-in-depth.mdx": "2486bd1c0b51f2bee4269c8d06ad4e99de5855395724930fc9e98567946712dc",
-    "src/data/post/en/mastering-landing-pages.md": "8245d7dfac7ce0ce46ed0eeae0fd12dd22d73a0243672f325848eafd537ebdb1"
+    "src/data/post/en/mastering-landing-pages.md": "8245d7dfac7ce0ce46ed0eeae0fd12dd22d73a0243672f325848eafd537ebdb1",
+    "src/data/pages/en/privacy.md": "b56249c0efb5ed739cf39b24ce6ffcb7cf5fecd109144c68f982521d5b491bd1",
+    "src/data/pages/en/terms.md": "3cbd0c641f84042fd6105024401af86478081ff0dfa630f811afc7ce4f6f2f1d"
   },
   "catalogs": {
-    "en": "e0fc2cf50690435f2c21bd182f80f08f8d8a65fe5204a790ccc13e45e97487b2"
+    "en": "aeaf6a96b946912bb1603e374e2982022e659dd791e133d7f88e4e01a285c082"
   }
 }

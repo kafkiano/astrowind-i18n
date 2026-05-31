@@ -1,22 +1,22 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
-  base: '/'
+  name: AstroWind I18n
+  site: 'https://kafkiano.github.io'
+  base: '/astrowind-i18n'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: null
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: AstroWind I18n
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: 'Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: AstroWind I18n
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -41,6 +41,9 @@ i18n:
   ai:
     geminiApiKey: null
     provider: 'deepl' # optional
+    # Select model for gemini provider,
+    # gemma-4-26b-a4b-it, gemini-2.0-flash-lite, etc.
+    # model: 'gemma-4-26b-a4b-it'
 
 apps:
   blog:

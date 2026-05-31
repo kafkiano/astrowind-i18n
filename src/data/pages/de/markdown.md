@@ -1,42 +1,42 @@
 ---
-title: 'Markdown Page'
+title: Markdown-Seite
 showIn: 'header'
 order: 1
-group: 'Resources'
+group: Ressourcen
 ---
 
-### What is Markdown?
+### Was ist Markdown?
 
-Markdown is a lightweight markup language that you can use to format plain text documents.  
-Write docs for your GitHub projects, edit your GitHub profile _README_ etc. You fill find it all here.
+Markdown ist eine leichtgewichtige Auszeichnungssprache, die Sie verwenden können, um einfache Textdokumente zu formatieren.
+Schreiben Sie Dokumente für Ihre GitHub-Projekte, bearbeiten Sie Ihr GitHub-Profil _README_ usw. All das finden Sie hier.
 
-Let's dive into it. ⤵️
+Tauchen wir ein. ⤵️
 
-#### Table of Contents
+#### Inhaltsverzeichnis
 
-1. [Paragraph](#paragraph)
-2. [Headings](#headings)
-3. [Emphasis](#emphasis)
-4. [Blockquote](#blockquote)
-5. [Images](#images)
+1. [Absatz](#absatz)
+2. [Überschriften](#überschriften)
+3. [Hervorhebung](#hervorhebung)
+4. [Zitatblock](#zitatblock)
+5. [Bilder](#bilder)
 6. [Links](#links)
 7. [Code](#code)
-8. [Lists](#lists)
-   - [Ordered List](#orderedlist)
-   - [Unordered List](#unorderedlist)
-   - [Mixed List](#mixedlist)
-9. [Table](#table)
-10. [Task List](#tasklist)
-11. [Footnote](#footnote)
-12. [Jump to section](#sectionjump)
-13. [Horizontal Line](#horizontalline)
+8. [Listen](#listen)
+   - [Geordnete Liste](#geordnete-liste)
+   - [Ungeordnete Liste](#ungeordnete-liste)
+   - [Gemischte Liste](#gemischte-liste)
+9. [Tabelle](#tabelle)
+10. [Aufgabenliste](#aufgabenliste)
+11. [Fußnote](#fußnote)
+12. [Zum Abschnitt springen](#zum-abschnitt-springen)
+13. [Horizontale Linie](#horizontale-linie)
 14. [HTML](#html)
 
 ---
 
-## Paragraph
+## Absatz
 
-By writing regular text you are basically writing a paragraph.
+Indem Sie normalen Text schreiben, schreiben Sie im Grunde einen Absatz.
 
 ```
 This is a paragraph.
@@ -46,9 +46,9 @@ This is a paragraph.
 
 ---
 
-## Headings
+## Überschriften
 
-There are 6 heading variants. The number of "#" symbols, followed by text, indicates the importance of the heading.
+Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von Text, zeigt die Wichtigkeit der Überschrift an.
 
 ```
 # Heading 1
@@ -73,9 +73,9 @@ There are 6 heading variants. The number of "#" symbols, followed by text, indic
 
 ---
 
-## Emphasis
+## Hervorhebung
 
-Modifying text is so neat and easy. You can make your text bold, italic and strikethrough.
+Text zu bearbeiten ist so einfach und praktisch. Sie können Ihren Text fett, kursiv und durchgestrichen formatieren.
 
 ```
 Using two asterisks **this text is bold**.
@@ -86,18 +86,18 @@ Can we combine **_both of that_?** Absolutely.
 What if I want to ~~strikethrough~~?
 ```
 
-Using two asterisks **this text is bold**.  
-Two underscores **work as well**.  
-Let's make it _italic now_.  
-You guessed it, _one underscore is also enough_.  
-Can we combine **_both of that_?** Absolutely.  
-What if I want to ~~strikethrough~~?
+Mit zwei Sternchen ist **dieser Text fett**.
+Zwei Unterstriche **funktionieren auch**.
+Machen wir es _jetzt kursiv_.
+Sie haben es erraten, _ein Unterstrich ist auch genug_.
+Können wir **_beides kombinieren_?** Absolut.
+Was, wenn ich etwas ~~durchstreichen~~ möchte?
 
 ---
 
-## Blockquote
+## Zitatblock
 
-Want to emphasise importance of the text? Say no more.
+Möchten Sie die Wichtigkeit des Textes betonen? Sagen Sie nichts mehr.
 
 ```
 > This is a blockquote.
@@ -113,14 +113,13 @@ Want to emphasise importance of the text? Say no more.
 >
 > > And nested? No problem at all.
 > >
-> > > PS. you can **style** your text _as you want_. :
+> > > PS. Sie können Ihren Text **formatieren**, _wie Sie möchten_. :
 
 ---
 
-## Images
+## Bilder
 
-The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  
-Here is the syntax.
+Der beste Weg ist, Bilder direkt per Drag & Drop von Ihrem Computer zu ziehen. Sie können auch einen Verweis auf ein Bild erstellen und es auf diese Weise zuweisen. Hier ist die Syntax.
 
 ```
 ![text if the image fails to load](auto-generated-path-to-file-when-you-upload-image "Text displayed on hover")
@@ -139,7 +138,7 @@ Here is the syntax.
 
 ## Links
 
-Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links.
+Ähnlich wie bei Bildern können Links direkt oder durch Erstellen einer Referenz eingefügt werden. Sie können sowohl Inline- als auch Block-Links erstellen.
 
 ```
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
@@ -153,19 +152,19 @@ Find some great docs [here][docs]
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
 [docs]: https://github.com/adam-p/markdown-here
 
-[Like it so far? Follow me on GitHub](https://github.com/im-luka)  
-[My Markdown Cheatsheet - star it if you like it][markdown-cheatsheet]  
-Find some great docs [here][docs]
+[Gefällt es Ihnen bisher? Folgen Sie mir auf GitHub](https://github.com/im-luka)
+[Mein Markdown-Spickzettel – markieren Sie ihn mit einem Stern, wenn er Ihnen gefällt][markdown-cheatsheet]
+Tolle Dokumente finden Sie [hier][docs]
 
 ---
 
 ## Code
 
-You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks.
+Sie können sowohl Inline- als auch vollständige Block-Code-Snippets erstellen. Sie können auch die Programmiersprache definieren, die Sie in Ihrem Snippet verwendet haben. Alles durch die Verwendung von Backticks.
 
 ````
-    I created `.env` file at the root.
-    Backticks inside backticks? `` `No problem.` ``
+    Ich habe die Datei `.env` im Stammverzeichnis erstellt.
+    Backticks in Backticks? `` `Kein Problem.` ``
 
     ```
     {
@@ -180,8 +179,8 @@ You can cerate both inline and full block code snippets. You can also define pro
     ```
 ````
 
-I created `.env` file at the root.
-Backticks inside backticks? `` `No problem.` ``
+Ich habe die Datei `.env` im Stammverzeichnis erstellt.
+Backticks in Backticks? `` `Kein Problem.` ``
 
 ```
 {
@@ -197,11 +196,11 @@ console.log(x);
 
 ---
 
-## Lists
+## Listen
 
-As you can do in HTML, Markdown allows creating of both ordered and unordered lists.
+Wie in HTML können Sie in Markdown sowohl geordnete als auch ungeordnete Listen erstellen.
 
-### Ordered List
+### Geordnete Liste
 
 ```
 1. HTML
@@ -215,9 +214,9 @@ As you can do in HTML, Markdown allows creating of both ordered and unordered li
 2. CSS
 3. Javascript
 4. React
-5. I'm Frontend Dev now 👨🏼‍🎨
+5. Ich bin jetzt Frontend-Entwickler 👨🏼‍🎨
 
-### Unordered List
+### Ungeordnete Liste
 
 ```
 - Node.js
@@ -232,12 +231,12 @@ As you can do in HTML, Markdown allows creating of both ordered and unordered li
 
 - Nest.js
 
-* Learning Backend ⌛️
+* Backend lernen ⌛️
 
-### Mixed List
+### Gemischte Liste
 
-You can also mix both of the lists and create sublists.  
-**PS.** Try not to create lists deeper than two levels. It is the best practice.
+Sie können auch beide Listen mischen und Unterlisten erstellen.
+**PS.** Versuchen Sie, Listen nicht tiefer als zwei Ebenen zu erstellen. Das ist die beste Vorgehensweise.
 
 ```
 1. Learn Basics
@@ -265,9 +264,9 @@ You can also mix both of the lists and create sublists.
 
 ---
 
-## Table
+## Tabelle
 
-Great way to display well-arranged data. Use "|" symbol to separate columns and ":" symbol to align row content.
+Eine großartige Möglichkeit, gut geordnete Daten anzuzeigen. Verwenden Sie das „|“-Symbol, um Spalten zu trennen, und das „:“-Symbol, um den Zeileninhalt auszurichten.
 
 ```
 | Left Align (default) | Center Align | Right Align |
@@ -277,7 +276,7 @@ Great way to display well-arranged data. Use "|" symbol to separate columns and 
 | Vue.js               | Nest.js      | Redis       |
 ```
 
-| Left Align (default) | Center Align | Right Align |
+| Linksbündig (Standard) | Zentriert | Rechtsbündig |
 | :------------------- | :----------: | ----------: |
 | React.js             |   Node.js    |       MySQL |
 | Next.js              |   Express    |     MongoDB |
@@ -285,9 +284,9 @@ Great way to display well-arranged data. Use "|" symbol to separate columns and 
 
 ---
 
-## Task List
+## Aufgabenliste
 
-Keeping track of the tasks that are done, and those that need to be done.
+Den Überblick über erledigte und noch zu erledigende Aufgaben behalten.
 
 ```
 - [x] Learn Markdown
@@ -295,15 +294,15 @@ Keeping track of the tasks that are done, and those that need to be done.
 - [ ] Learn Full Stack Development
 ```
 
-- [x] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
+- [x] Markdown lernen
+- [ ] Frontend-Entwicklung lernen
+- [ ] Full-Stack-Entwicklung lernen
 
 ---
 
-## Footnote
+## Fußnote
 
-Want to describe something at the end of the file? Use footnote!
+Möchten Sie etwas am Ende der Datei beschreiben? Verwenden Sie eine Fußnote!
 
 ```
 #### I am working on a new project. [^1]
@@ -315,28 +314,27 @@ Project is about music & movies.
 [^see]: Loading... ⌛️
 ```
 
-#### I am working on a new project. [^1]
+#### Ich arbeite an einem neuen Projekt. [^1]
 
-[^1]: Stack is: React, Typescript, Tailwind CSS
+[^1]: Der Stack ist: React, Typescript, Tailwind CSS
 
-Project is about music & movies.
+Das Projekt handelt von Musik & Filmen.
 
-##### Hope you will like it. [^see]
+##### Ich hoffe, es wird Ihnen gefallen. [^see]
 
-[^see]: Loading... ⌛️
-
----
-
-## Jump to section
-
-Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name="...">` tags.
+[^see]: Wird geladen... ⌛️
 
 ---
 
-## Horizontal Line
+## Zum Abschnitt springen
 
-You can use asterisks, hyphens or underlines (\*, -, \_) to create horizontal line.  
-The only rule is that you must include at least three chars of the symbol.
+Astro (und die meisten Markdown-Parser) generieren automatisch IDs für Ihre Überschriften. Sie müssen normalerweise keine manuellen `<a name="...">`-Tags erstellen.
+
+---
+
+## Horizontale Linie
+
+Sie können Sternchen, Bindestriche oder Unterstriche (\*, -, \_) verwenden, um eine horizontale Linie zu erstellen. Die einzige Regel ist, dass Sie mindestens drei Zeichen des Symbols verwenden müssen.
 
 ```
 First Horizontal Line
@@ -352,15 +350,15 @@ Third
 _________
 ```
 
-First Horizontal Line
+Erste horizontale Linie
 
 ---
 
-Second One
+Zweite
 
 ---
 
-Third
+Dritte
 
 ---
 
@@ -368,7 +366,7 @@ Third
 
 ## HTML
 
-You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work.
+Sie können auch reines HTML in Ihrer Markdown-Datei verwenden. Meistens funktioniert das gut, aber manchmal kann es zu Unterschieden kommen, die Sie bei der Arbeit mit Standard-HTML nicht gewohnt sind. Die Verwendung von CSS funktioniert nicht.
 
 ```
 <h1>This is a heading</h1>
@@ -393,30 +391,30 @@ You can also use raw HTML in your Markdown file. Most of the times that will wor
 </details>
 ```
 
-<h1>This is a heading</h1>
-<p>Paragraph...</p>
+<h1>Dies ist eine Überschrift</h1>
+<p>Absatz...</p>
 
 <hr />
 
 <img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200">
-<a href="https://github.com/im-luka">Follow me on GitHub</a>
+<a href="https://github.com/im-luka">Folgen Sie mir auf GitHub</a>
 
 <br />
 <br />
 
-<p>Quick hack for <strong><em>centering image</em></strong>?</p>
+<p>Schneller Trick zum **_Zentrieren von Bildern_**?</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
-  <summary>One more quick hack? 🎭</summary>
+  <summary>Noch ein schneller Trick? 🎭</summary>
   
-  → Easy  
-  → And simple
+  → Einfach  
+  → Und simpel
 </details>
 
 ---
 
-## Mermaid Diagrams
+## Mermaid-Diagramme
 
 ### Mindmap
 
@@ -444,7 +442,7 @@ mindmap
       Cost Efficiency
 ```
 
-### Flowchart
+### Flussdiagramm
 
 ```mermaid
 flowchart LR
@@ -460,4 +458,4 @@ flowchart LR
 
 ---
 
-##### Section with some ID
+##### Abschnitt mit einer ID

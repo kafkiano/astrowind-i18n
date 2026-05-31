@@ -1,120 +1,120 @@
 ---
-title: 'Terms and Conditions'
+title: Conditions générales
 showIn: 'none'
 ---
 
-_Last updated_: January 06, 2023
+_Dernière mise à jour_ : 6 janvier 2023
 
-Please read these terms and conditions carefully before using Our Service.
+Veuillez lire attentivement ces conditions générales avant d'utiliser Notre Service.
 
-## Interpretation and Definitions
+## Interprétation et Définitions
 
-### Interpretation
+### Interprétation
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+Les mots dont la lettre initiale est en majuscule ont les significations définies selon les conditions suivantes. Les définitions suivantes ont le même sens, qu'elles apparaissent au singulier ou au pluriel.
 
-### Definitions
+### Définitions
 
-For the purposes of these Terms and Conditions:
+Aux fins des présentes Conditions Générales :
 
-- **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+- **Affilié** désigne une entité qui contrôle, est contrôlée par ou est sous le contrôle commun d'une partie, le « contrôle » signifiant la propriété de 50 % ou plus des actions, des intérêts dans le capital ou d'autres titres permettant de voter pour l'élection des administrateurs ou d'une autre autorité de direction.
 
-- **Country** refers to: California, United States
+- **Pays** se réfère à : Californie, États-Unis
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
+- **Société** (désignée par « la Société », « Nous », « Nous » ou « Notre » dans le présent Contrat) désigne AstroWind LLC, 1 Cupertino, CA 95014.
 
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+- **Appareil** désigne tout appareil pouvant accéder au Service, tel qu'un ordinateur, un téléphone portable ou une tablette numérique.
 
-- **Service** refers to the Website.
+- **Service** se réfère au Site Web.
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
+- **Conditions Générales** (également appelées « Conditions ») désignent les présentes Conditions Générales qui constituent l'intégralité de l'accord entre Vous et la Société concernant l'utilisation du Service. Cet accord de Conditions Générales est une Démo.
 
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+- **Service de médias sociaux tiers** désigne tout service ou contenu (y compris les données, informations, produits ou services) fourni par un tiers qui peut être affiché, inclus ou mis à disposition par le Service.
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **Site Web** se réfère à AstroWind, accessible à l'adresse [https://astrowind.vercel.app](https://astrowind.vercel.app)
 
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+- **Vous** désigne l'individu accédant au Service ou l'utilisant, ou la société, ou toute autre entité juridique au nom de laquelle cet individu accède au Service ou l'utilise, selon le cas.
 
-## Acknowledgment
+## Reconnaissance
 
-These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+Les présentes sont les Conditions Générales régissant l'utilisation de ce Service et l'accord qui opère entre Vous et la Société. Ces Conditions Générales énoncent les droits et obligations de tous les utilisateurs concernant l'utilisation du Service.
 
-Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+Votre accès au Service et son utilisation sont conditionnés par Votre acceptation et Votre respect des présentes Conditions Générales. Ces Conditions Générales s'appliquent à tous les visiteurs, utilisateurs et autres personnes qui accèdent au Service ou l'utilisent.
 
-By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+En accédant au Service ou en l'utilisant, Vous acceptez d'être lié par ces Conditions Générales. Si Vous n'êtes pas d'accord avec une partie de ces Conditions Générales, Vous ne pouvez pas accéder au Service.
 
-You represent that you are over the age of 18\. The Company does not permit those under 18 to use the Service.
+Vous déclarez que vous avez plus de 18 ans. La Société n'autorise pas les personnes de moins de 18 ans à utiliser le Service.
 
-Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+Votre accès au Service et son utilisation sont également conditionnés par Votre acceptation et Votre respect de la Politique de confidentialité de la Société. Notre Politique de confidentialité décrit Nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de Vos informations personnelles lorsque Vous utilisez l'Application ou le Site Web et Vous informe de Vos droits à la vie privée et de la manière dont la loi Vous protège. Veuillez lire attentivement Notre Politique de confidentialité avant d'utiliser Notre Service.
 
-## Links to Other Websites
+## Liens vers d'autres sites Web
 
-Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
+Notre Service peut contenir des liens vers des sites Web ou des services tiers qui ne sont pas détenus ou contrôlés par la Société.
 
-The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+La Société n'a aucun contrôle sur les contenus, les politiques de confidentialité ou les pratiques de sites Web ou de services tiers, et n'assume aucune responsabilité à cet égard. Vous reconnaissez et acceptez en outre que la Société ne sera pas responsable, directement ou indirectement, de tout dommage ou perte causé ou présumé être causé par ou en relation avec l'utilisation de ou la confiance accordée à de tels contenus, biens ou services disponibles sur ou via ces sites Web ou services.
 
-We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+Nous Vous conseillons vivement de lire les conditions générales et les politiques de confidentialité de tout site Web ou service tiers que Vous visitez.
 
-## Termination
+## Résiliation
 
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+Nous pouvons suspendre ou résilier Votre accès immédiatement, sans préavis ni responsabilité, pour quelque raison que ce soit, y compris, sans limitation, si Vous enfreignez ces Conditions Générales.
 
-Upon termination, Your right to use the Service will cease immediately.
+Dès la résiliation, Votre droit d'utiliser le Service cessera immédiatement.
 
-## Limitation of Liability
+## Limitation de responsabilité
 
-Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+Nonobstant tout dommage que Vous pourriez subir, la responsabilité entière de la Société et de l'un de ses fournisseurs en vertu de toute disposition des présentes Conditions et Votre recours exclusif pour tout ce qui précède seront limités au montant réellement payé par Vous via le Service ou à 100 USD si Vous n'avez rien acheté via le Service.
 
-To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+Dans la mesure maximale autorisée par la loi applicable, en aucun cas la Société ou ses fournisseurs ne seront responsables de tout dommage spécial, accessoire, indirect ou consécutif quel qu'il soit (y compris, mais sans s'y limiter, les dommages pour perte de profits, perte de données ou d'autres informations, pour interruption d'activité, pour préjudice corporel, perte de vie privée découlant de ou lié de quelque manière que ce soit à l'utilisation ou à l'impossibilité d'utiliser le Service, les logiciels tiers et/ou le matériel tiers utilisés avec le Service, ou autrement en relation avec toute disposition des présentes Conditions), même si la Société ou tout fournisseur a été informé de la possibilité de tels dommages et même si le recours échoue dans son objectif essentiel.
 
-Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+Certains États ne permettent pas l'exclusion des garanties implicites ou la limitation de responsabilité pour les dommages accessoires ou consécutifs, ce qui signifie que certaines des limitations ci-dessus peuvent ne pas s'appliquer. Dans ces États, la responsabilité de chaque partie sera limitée dans la mesure maximale autorisée par la loi.
 
-## "AS IS" and "AS AVAILABLE" Disclaimer
+## Clause de non-responsabilité « EN L'ÉTAT » et « SELON LA DISPONIBILITÉ »
 
-The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
+Le Service est fourni à Vous « EN L'ÉTAT » et « SELON LA DISPONIBILITÉ » et avec tous ses défauts et vices, sans garantie d'aucune sorte. Dans la mesure maximale autorisée par la loi applicable, la Société, en son nom propre et au nom de ses Affiliés et de ses et leurs concédants de licence et fournisseurs de services respectifs, décline expressément toute garantie, qu'elle soit expresse, implicite, légale ou autre, concernant le Service, y compris toutes les garanties implicites de qualité marchande, d'adéquation à un usage particulier, de titre et de non-contrefaçon, ainsi que les garanties pouvant découler de la pratique commerciale, de l'exécution, de l'usage ou des pratiques commerciales. Sans limitation de ce qui précède, la Société ne fournit aucune garantie ni engagement, et ne fait aucune déclaration de quelque nature que ce soit que le Service répondra à Vos exigences, atteindra les résultats escomptés, sera compatible ou fonctionnera avec d'autres logiciels, applications, systèmes ou services, fonctionnera sans interruption, répondra à des normes de performance ou de fiabilité ou sera exempt d'erreurs, ou que toute erreur ou tout défaut pourra être ou sera corrigé.
 
-Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+Sans limiter ce qui précède, ni la Société ni aucun des fournisseurs de la société ne fait de déclaration ou de garantie de quelque nature que ce soit, expresse ou implicite : (i) quant au fonctionnement ou à la disponibilité du Service, ou aux informations, contenus et matériels ou produits qui y sont inclus ; (ii) que le Service sera ininterrompu ou sans erreur ; (iii) quant à l'exactitude, la fiabilité ou l'actualité de toute information ou tout contenu fourni via le Service ; ou (iv) que le Service, ses serveurs, le contenu ou les e-mails envoyés par ou au nom de la Société sont exempts de virus, scripts, chevaux de Troie, vers, logiciels malveillants, bombes à retardement ou autres composants nuisibles.
 
-Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+Certaines juridictions ne permettent pas l'exclusion de certains types de garanties ou de limitations des droits statutaires applicables d'un consommateur, de sorte que certaines ou toutes les exclusions et limitations ci-dessus peuvent ne pas s'appliquer à Vous. Mais dans un tel cas, les exclusions et limitations énoncées dans cette section seront appliquées dans la mesure maximale autorisée par la loi applicable.
 
-## Governing Law
+## Loi applicable
 
-The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+Les lois du Pays, à l'exclusion de ses règles de conflit de lois, régiront les présentes Conditions et Votre utilisation du Service. Votre utilisation de l'Application peut également être soumise à d'autres lois locales, étatiques, nationales ou internationales.
 
-## Disputes Resolution
+## Résolution des litiges
 
-If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+Si Vous avez une préoccupation ou un litige concernant le Service, Vous acceptez de tenter d'abord de résoudre le litige de manière informelle en contactant la Société.
 
-## For European Union (EU) Users
+## Pour les utilisateurs de l'Union européenne (UE)
 
-If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+Si Vous êtes un consommateur de l'Union européenne, vous bénéficierez de toutes les dispositions impératives de la loi du pays dans lequel vous résidez.
 
-## United States Legal Compliance
+## Conformité légale des États-Unis
 
-You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+Vous déclarez et garantissez que (i) Vous ne résidez pas dans un pays faisant l'objet d'un embargo du gouvernement des États-Unis, ou qui a été désigné par le gouvernement des États-Unis comme pays « soutenant le terrorisme », et (ii) Vous ne figurez sur aucune liste du gouvernement des États-Unis de parties interdites ou restreintes.
 
-## Severability and Waiver
+## Divisibilité et renonciation
 
-### Severability
+### Divisibilité
 
-If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+Si une disposition des présentes Conditions est jugée inapplicable ou invalide, ladite disposition sera modifiée et interprétée pour atteindre les objectifs de ladite disposition dans la mesure maximale autorisée par la loi applicable et les dispositions restantes resteront pleinement en vigueur.
 
-### Waiver
+### Renonciation
 
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+Sauf disposition contraire des présentes, le défaut d'exercer un droit ou d'exiger l'exécution d'une obligation en vertu des présentes Conditions n'affectera pas la capacité d'une partie à exercer ce droit ou à exiger cette exécution ultérieurement, et la renonciation à une violation ne constituera pas une renonciation à toute violation ultérieure.
 
-## Translation Interpretation
+## Interprétation de la traduction
 
-These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
+Les présentes Conditions Générales ont pu être traduites si Nous les avons mises à Votre disposition sur Notre Service. Vous acceptez que le texte anglais original prévale en cas de litige.
 
-## Changes to These Terms and Conditions
+## Modifications des présentes conditions générales
 
-We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
+Nous nous réservons le droit, à notre seule discrétion, de modifier ou de remplacer ces Conditions à tout moment. Si une révision est substantielle, Nous ferons des efforts raisonnables pour fournir un préavis d'au moins 30 jours avant l'entrée en vigueur de nouvelles conditions. Ce qui constitue une modification substantielle sera déterminé à Notre seule discrétion.
 
-By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
+En continuant à accéder à Notre Service ou à l'utiliser après que ces révisions sont entrées en vigueur, Vous acceptez d'être lié par les conditions révisées. Si Vous n'acceptez pas les nouvelles conditions, en tout ou en partie, veuillez cesser d'utiliser le site Web et le Service.
 
-## Contact Us
+## Contactez-nous
 
-If you have any questions about these Terms and Conditions, You can contact us:
+Si Vous avez des questions concernant ces Conditions Générales, Vous pouvez nous contacter :
 
-- By email: somecoolemail@domain.com
+- Par e-mail : somecoolemail@domain.com

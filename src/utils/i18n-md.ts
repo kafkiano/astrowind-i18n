@@ -1,58 +1,52 @@
-#!/usr/bin/env bun
 /**
  * Translate markdown content from source locale to all target locales.
- *
- * Usage:
- *   I18N_PROVIDER=deepl DEEPL_API_KEY=... bun run src/utils/i18n-md.ts
- *   GEMINI_API_KEY=... bun run src/utils/i18n-md.ts
  *
  * Reads:  src/data/{type}/{sourceLocale}/*.{md,mdx}
  * Writes: src/data/{type}/{targetLocale}/*.{md,mdx}
  *
  * Translates both body content and specified frontmatter fields.
- * Uses a content-addressable manifest (.i18n-manifest.json) so that
+ * Uses a content-addressable manifest (.i18n-manifest.json) so
  * re-builds skip unchanged source files (git-safe — not mtime-based).
+ *
+ * Called by the i18n Astro integration during build.
  */
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, access, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { getProvider, type TranslationProvider } from '../i18n/provider';
+import { type TranslationProvider } from '../i18n/provider';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, needsTranslation, markTranslated } from './i18n-manifest';
 
-const SOURCE_LOCALE = 'en';
-const TARGET_LOCALES = ['es', 'fr', 'de'];
 const FRONTMATTER_KEYS = ['title', 'excerpt', 'description', 'group'];
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
 ];
 
-async function main() {
-  const provider = await getProvider();
-  if (!provider) {
-    console.error('No translation provider configured.');
-    process.exit(1);
-  }
-  await translateContent(provider);
-  console.log('Done.');
-}
-
 /**
- * Translate all markdown content. Called by the i18n integration during build,
- * or directly via CLI (`bun run src/utils/translate-content.ts`).
+ * Translate all markdown content. Called by the i18n integration during build.
  *
  * Incremental — skips files whose source hash matches the manifest
  * (no change since last translation). Content-addressable: survives
  * git clone, branch switches, and mtime resets.
+ *
+ * @param provider - Translation provider (Gemini, DeepL, etc.)
+ * @param locales - All configured locales (from config.yaml).
+ * @param defaultLocale - Source locale (from config.yaml i18n.defaultLocale).
  */
-export async function translateContent(provider: TranslationProvider): Promise<void> {
+export async function translateContent(
+  provider: TranslationProvider,
+  locales: string[],
+  defaultLocale: string
+): Promise<void> {
+  const targetLocales = locales.filter((l) => l !== defaultLocale);
+  if (targetLocales.length === 0) return;
   let manifest = await loadManifest();
   let manifestChanged = false;
   let anyWork = false;
 
   for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = join(dir, SOURCE_LOCALE);
+    const srcDir = join(dir, defaultLocale);
     const files = await glob(pattern, { cwd: srcDir });
     if (files.length === 0) continue;
 
@@ -66,17 +60,21 @@ export async function translateContent(provider: TranslationProvider): Promise<v
       if (!body.trim() && !hasTranslatableFm(frontmatter)) continue;
 
       // Check manifest — skip if source content hasn't changed
-      const manifestKey = `${dir}/${SOURCE_LOCALE}/${relPath}`;
+      const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
       if (!(await needsTranslation(manifest, manifestKey, srcContent))) {
         skipped++;
         continue;
       }
 
-      for (const locale of TARGET_LOCALES) {
+      let allLocalesSucceeded = true;
+
+      for (const locale of targetLocales) {
         const outPath = join(dir, locale, relPath);
 
         let translatedFm = frontmatter;
         let translatedBody = body;
+        let bodyTranslated = !body.trim(); // true if no body to translate
+        let allFmTranslated = true;
 
         // Translate frontmatter fields
         const fmTexts: string[] = [];
@@ -91,47 +89,65 @@ export async function translateContent(provider: TranslationProvider): Promise<v
 
         if (fmTexts.length > 0) {
           try {
-            const fmResults = await provider.translateBatch(fmTexts, locale, SOURCE_LOCALE);
+            const fmResults = await provider.translateBatch(fmTexts, locale, defaultLocale);
             for (let i = 0; i < fmKeys.length; i++) {
-              if (fmResults[i] && fmResults[i] !== fmTexts[i]) {
+              if (fmResults[i]) {
                 translatedFm = replaceFmValue(translatedFm, fmKeys[i], fmResults[i]);
+              } else {
+                allFmTranslated = false;
               }
             }
           } catch (err) {
             console.warn(`  ⚠ fm translation failed for ${locale}:`, (err as Error).message);
+            allFmTranslated = false;
           }
         }
 
-        // Translate body
+        // Translate body (full multi-line text, not line-by-line batch)
         if (body.trim()) {
           try {
-            const [result] = await provider.translateBatch([body], locale, SOURCE_LOCALE);
-            if (result && result !== body) translatedBody = result;
+            const result = await provider.translateText(body, locale, defaultLocale);
+            if (result) {
+              translatedBody = result;
+              bodyTranslated = true;
+            }
           } catch (err) {
             console.warn(`  ⚠ body translation failed for ${locale}:`, (err as Error).message);
           }
         }
 
-        const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
-        await mkdir(join(outPath, '..'), { recursive: true });
-        await writeFile(outPath, output, 'utf-8');
+        // Only write the output file if translation actually produced results.
+        // If body or FM translation failed, skip this locale — otherwise we'd
+        // write English content into the target locale directory.
+        const shouldWrite = body.trim() ? bodyTranslated : allFmTranslated;
+        if (shouldWrite) {
+          const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
+          await mkdir(join(outPath, '..'), { recursive: true });
+          await writeFile(outPath, output, 'utf-8');
 
-        if (!anyWork) {
-          anyWork = true;
-          console.log(`[content] Translating via ${provider.name}...`);
+          if (!anyWork) {
+            anyWork = true;
+            console.log(`[content] Translating via ${provider.name}...`);
+          }
+          translated++;
+          console.log(`  ✓ ${outPath}`);
+        } else {
+          allLocalesSucceeded = false;
+          console.warn(`  ⚠ Skipping ${outPath}: translation failed (will retry on next build)`);
         }
-        translated++;
-        console.log(`  ✓ ${outPath}`);
       }
 
-      // Mark source as translated in manifest (store content hash)
-      manifest = await markTranslated(manifest, manifestKey, srcContent);
-      manifestChanged = true;
+      // Only mark source as translated in manifest if ALL locales succeeded.
+      // If any locale failed, retry on next build (e.g. API quota exhausted).
+      if (allLocalesSucceeded) {
+        manifest = await markTranslated(manifest, manifestKey, srcContent);
+        manifestChanged = true;
+      }
     }
 
     if (translated > 0 || skipped > 0) {
       console.log(
-        `─ ${dir}/${SOURCE_LOCALE}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
+        `─ ${dir}/${defaultLocale}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
       );
     }
   }
@@ -183,10 +199,111 @@ function hasTranslatableFm(fm: string): boolean {
   });
 }
 
-// Only run main() when executed directly (not when imported)
-if (process.argv[1]?.includes('translate-content')) {
-  main().catch((err) => {
-    console.error('Fatal:', err);
-    process.exit(1);
-  });
+// --- Cleanup helpers (called by integration) ---
+
+async function fileExists(path: string): Promise<boolean> {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Remove translated markdown files whose source (in the default locale)
+ * no longer exists. Prevents stale content from being published after
+ * a source file is deleted.
+ */
+export async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Promise<void> {
+  const targetLocales = locales.filter((l) => l !== sourceLocale);
+  if (targetLocales.length === 0) return;
+
+  let manifest = await loadManifest();
+  let manifestChanged = false;
+
+  for (const { dir } of CONTENT_TYPES) {
+    const srcDir = join(dir, sourceLocale);
+    if (!(await fileExists(srcDir))) continue; // no source dir = nothing to compare against
+
+    for (const locale of targetLocales) {
+      const targetDir = join(dir, locale);
+      if (!(await fileExists(targetDir))) continue;
+
+      let files: string[];
+      try {
+        files = await glob('**/*.{md,mdx}', { cwd: targetDir });
+      } catch {
+        continue;
+      }
+
+      for (const relPath of files) {
+        const srcPath = join(srcDir, relPath);
+        if (await fileExists(srcPath)) continue; // source still exists, keep
+
+        // Source deleted — clean up translation
+        const targetPath = join(targetDir, relPath);
+        const manifestKey = `${dir}/${sourceLocale}/${relPath}`;
+
+        try {
+          await rm(targetPath);
+          console.log(`[clean] Removed orphan: ${targetPath}`);
+        } catch (err) {
+          console.warn(`[clean] Failed to remove ${targetPath}:`, (err as Error).message);
+        }
+
+        // Remove from manifest so it doesn't linger
+        if (manifest.markdown[manifestKey]) {
+          const rest = { ...manifest.markdown };
+          delete rest[manifestKey];
+          manifest = { ...manifest, markdown: rest };
+          manifestChanged = true;
+        }
+      }
+    }
+  }
+
+  if (manifestChanged) {
+    await saveManifest(manifest);
+  }
+}
+
+/**
+ * Warn about stale locale directories (from locales that were removed
+ * from config.yaml). Does NOT auto-delete — manual cleanup is safer.
+ */
+export async function cleanRemovedLocaleDirs(locales: string[], sourceLocale: string): Promise<void> {
+  const activeLocales = new Set(locales);
+  activeLocales.add(sourceLocale); // source locale dirs are needed too
+
+  // Check content directories for removed locales
+  for (const { dir } of CONTENT_TYPES) {
+    let entries;
+    try {
+      entries = await readdir(dir, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      if (!/^[a-z]{2}$/.test(entry.name)) continue;
+      if (activeLocales.has(entry.name)) continue;
+      console.warn(`[i18n] Stale locale dir (not in config.yaml locales): ${join(dir, entry.name)}/`);
+    }
+  }
+
+  // Check catalog files for removed locales
+  try {
+    const catalogEntries = await readdir('src/locales', { withFileTypes: true });
+    for (const entry of catalogEntries) {
+      if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
+      const locale = entry.name.replace(/\.json$/, '');
+      if (!/^[a-z]{2}$/.test(locale)) continue;
+      if (activeLocales.has(locale)) continue;
+      console.warn(`[i18n] Stale catalog file (not in config.yaml locales): src/locales/${entry.name}`);
+    }
+  } catch {
+    // src/locales might not exist yet — ignore
+  }
 }

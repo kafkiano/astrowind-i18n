@@ -6,7 +6,7 @@ import yaml from 'js-yaml';
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
@@ -43,9 +43,7 @@ export default defineConfig({
   output: 'static',
 
   vite: {
-    plugins: [
-      // i18nTransformPlugin(),  // post-processing via integration instead
-    ],
+    plugins: [tailwindcss()],
   },
 
   i18n: {
@@ -58,9 +56,6 @@ export default defineConfig({
   },
 
   integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
     sitemap(),
     mdx(),
     icon({

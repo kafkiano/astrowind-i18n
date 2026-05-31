@@ -1,54 +1,54 @@
 ---
-title: 'Markdown Page'
+title: Página de Markdown
 showIn: 'header'
 order: 1
-group: 'Resources'
+group: Recursos
 ---
 
-### What is Markdown?
+### ¿Qué es Markdown?
 
-Markdown is a lightweight markup language that you can use to format plain text documents.  
-Write docs for your GitHub projects, edit your GitHub profile _README_ etc. You fill find it all here.
+Markdown es un lenguaje de marcado ligero que puedes usar para formatear documentos de texto sin formato.
+Escribe documentos para tus proyectos de GitHub, edita el archivo _README_ de tu perfil de GitHub, etc. Lo encontrarás todo aquí.
 
-Let's dive into it. ⤵️
+Vamos a profundizar. ⤵️
 
-#### Table of Contents
+#### Tabla de Contenidos
 
-1. [Paragraph](#paragraph)
-2. [Headings](#headings)
-3. [Emphasis](#emphasis)
-4. [Blockquote](#blockquote)
-5. [Images](#images)
-6. [Links](#links)
-7. [Code](#code)
-8. [Lists](#lists)
-   - [Ordered List](#orderedlist)
-   - [Unordered List](#unorderedlist)
-   - [Mixed List](#mixedlist)
-9. [Table](#table)
-10. [Task List](#tasklist)
-11. [Footnote](#footnote)
-12. [Jump to section](#sectionjump)
-13. [Horizontal Line](#horizontalline)
+1. [Párrafo](#paragraph)
+2. [Encabezados](#headings)
+3. [Énfasis](#emphasis)
+4. [Cita en bloque](#blockquote)
+5. [Imágenes](#images)
+6. [Enlaces](#links)
+7. [Código](#code)
+8. [Listas](#lists)
+   - [Lista Ordenada](#orderedlist)
+   - [Lista No Ordenada](#unorderedlist)
+   - [Lista Mixta](#mixedlist)
+9. [Tabla](#table)
+10. [Lista de Tareas](#tasklist)
+11. [Nota al Pie](#footnote)
+12. [Saltar a sección](#sectionjump)
+13. [Línea Horizontal](#horizontalline)
 14. [HTML](#html)
 
 ---
 
-## Paragraph
+## Párrafo
 
-By writing regular text you are basically writing a paragraph.
+Al escribir texto normal, básicamente estás escribiendo un párrafo.
 
 ```
 This is a paragraph.
 ```
 
-This is a paragraph.
+Esto es un párrafo.
 
 ---
 
-## Headings
+## Encabezados
 
-There are 6 heading variants. The number of "#" symbols, followed by text, indicates the importance of the heading.
+Hay 6 variantes de encabezado. El número de símbolos "#", seguido de texto, indica la importancia del encabezado.
 
 ```
 # Heading 1
@@ -73,9 +73,9 @@ There are 6 heading variants. The number of "#" symbols, followed by text, indic
 
 ---
 
-## Emphasis
+## Énfasis
 
-Modifying text is so neat and easy. You can make your text bold, italic and strikethrough.
+Modificar texto es muy ordenado y fácil. Puedes poner tu texto en negrita, cursiva y tachado.
 
 ```
 Using two asterisks **this text is bold**.
@@ -86,18 +86,18 @@ Can we combine **_both of that_?** Absolutely.
 What if I want to ~~strikethrough~~?
 ```
 
-Using two asterisks **this text is bold**.  
-Two underscores **work as well**.  
-Let's make it _italic now_.  
-You guessed it, _one underscore is also enough_.  
-Can we combine **_both of that_?** Absolutely.  
-What if I want to ~~strikethrough~~?
+Usando dos asteriscos **este texto está en negrita**.
+Dos guiones bajos **también funcionan**.
+Pongámoslo _en cursiva ahora_.
+Lo has adivinado, _un guion bajo también es suficiente_.
+¿Podemos combinar **_ambos_?** Absolutamente.
+¿Y si quiero ~~tachar~~?
 
 ---
 
-## Blockquote
+## Cita en bloque
 
-Want to emphasise importance of the text? Say no more.
+¿Quieres enfatizar la importancia del texto? No digas más.
 
 ```
 > This is a blockquote.
@@ -108,19 +108,19 @@ Want to emphasise importance of the text? Say no more.
 > > > PS. you can **style** your text _as you want_.
 ```
 
-> This is a blockquote.
-> Want to write on a new line with space between?
+> Esto es una cita en bloque.
+> ¿Quieres escribir en una nueva línea con espacio?
 >
-> > And nested? No problem at all.
+> > ¿Y anidado? No hay problema.
 > >
-> > > PS. you can **style** your text _as you want_. :
+> > > PD. puedes **estilizar** tu texto _como quieras_. :
 
 ---
 
-## Images
+## Imágenes
 
-The best way is to simply drag & drop image from your computer directly. You can also create reference to image and assign it that way.  
-Here is the syntax.
+La mejor manera es simplemente arrastrar y soltar la imagen directamente desde tu ordenador. También puedes crear una referencia a la imagen y asignarla de esa manera.
+Aquí está la sintaxis.
 
 ```
 ![text if the image fails to load](auto-generated-path-to-file-when-you-upload-image "Text displayed on hover")
@@ -129,17 +129,17 @@ Here is the syntax.
 ![error text][logo]
 ```
 
-![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Text displayed on hover')
+![texto si la imagen no carga](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Texto mostrado al pasar el ratón')
 
-[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Hover me'
+[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Pasa el ratón'
 
-![error text][logo]
+![texto de error][logo]
 
 ---
 
-## Links
+## Enlaces
 
-Similar to images, links can also be inserted directly or by creating a reference. You can create both inline and block links.
+Similar a las imágenes, los enlaces también pueden insertarse directamente o creando una referencia. Puedes crear enlaces tanto en línea como en bloque.
 
 ```
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
@@ -153,15 +153,15 @@ Find some great docs [here][docs]
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
 [docs]: https://github.com/adam-p/markdown-here
 
-[Like it so far? Follow me on GitHub](https://github.com/im-luka)  
-[My Markdown Cheatsheet - star it if you like it][markdown-cheatsheet]  
-Find some great docs [here][docs]
+[¿Te gusta hasta ahora? Sígueme en GitHub](https://github.com/im-luka)
+[Mi Hoja de Trucos de Markdown - dale una estrella si te gusta][markdown-cheatsheet]
+Encuentra buena documentación [aquí][docs]
 
 ---
 
-## Code
+## Código
 
-You can cerate both inline and full block code snippets. You can also define programming language you were using in your snippet. All by using backticks.
+Puedes crear tanto fragmentos de código en línea como bloques de código completos. También puedes definir el lenguaje de programación que utilizaste en tu fragmento. Todo usando tildes inversas.
 
 ````
     I created `.env` file at the root.
@@ -180,8 +180,8 @@ You can cerate both inline and full block code snippets. You can also define pro
     ```
 ````
 
-I created `.env` file at the root.
-Backticks inside backticks? `` `No problem.` ``
+Creé el archivo `.env` en la raíz.
+¿Tildes inversas dentro de tildes inversas? `` `No problem.` ``
 
 ```
 {
@@ -197,11 +197,11 @@ console.log(x);
 
 ---
 
-## Lists
+## Listas
 
-As you can do in HTML, Markdown allows creating of both ordered and unordered lists.
+Como puedes hacer en HTML, Markdown permite la creación de listas ordenadas y no ordenadas.
 
-### Ordered List
+### Lista Ordenada
 
 ```
 1. HTML
@@ -215,9 +215,9 @@ As you can do in HTML, Markdown allows creating of both ordered and unordered li
 2. CSS
 3. Javascript
 4. React
-5. I'm Frontend Dev now 👨🏼‍🎨
+5. Ahora soy Desarrollador Frontend 👨🏼‍🎨
 
-### Unordered List
+### Lista No Ordenada
 
 ```
 - Node.js
@@ -232,12 +232,12 @@ As you can do in HTML, Markdown allows creating of both ordered and unordered li
 
 - Nest.js
 
-* Learning Backend ⌛️
+* Aprendiendo Backend ⌛️
 
-### Mixed List
+### Lista Mixta
 
-You can also mix both of the lists and create sublists.  
-**PS.** Try not to create lists deeper than two levels. It is the best practice.
+También puedes mezclar ambos tipos de listas y crear sublistas.
+**PD.** Intenta no crear listas con más de dos niveles de profundidad. Es la mejor práctica.
 
 ```
 1. Learn Basics
@@ -252,11 +252,11 @@ You can also mix both of the lists and create sublists.
    + Svelte
 ```
 
-1. Learn Basics
+1. Aprender lo Básico
    1. HTML
    2. CSS
    3. Javascript
-2. Learn One Framework
+2. Aprender un Framework
    - React
      - Router
      - Redux
@@ -265,9 +265,9 @@ You can also mix both of the lists and create sublists.
 
 ---
 
-## Table
+## Tabla
 
-Great way to display well-arranged data. Use "|" symbol to separate columns and ":" symbol to align row content.
+Excelente manera de mostrar datos bien organizados. Usa el símbolo "|" para separar columnas y el símbolo ":" para alinear el contenido de las filas.
 
 ```
 | Left Align (default) | Center Align | Right Align |
@@ -277,17 +277,17 @@ Great way to display well-arranged data. Use "|" symbol to separate columns and 
 | Vue.js               | Nest.js      | Redis       |
 ```
 
-| Left Align (default) | Center Align | Right Align |
-| :------------------- | :----------: | ----------: |
-| React.js             |   Node.js    |       MySQL |
-| Next.js              |   Express    |     MongoDB |
-| Vue.js               |   Nest.js    |       Redis |
+| Alineación Izquierda (predeterminado) | Alineación Central | Alineación Derecha |
+| :----------------------------------- | :----------------: | -----------------: |
+| React.js                             |      Node.js       |              MySQL |
+| Next.js                              |      Express       |            MongoDB |
+| Vue.js                               |      Nest.js       |              Redis |
 
 ---
 
-## Task List
+## Lista de Tareas
 
-Keeping track of the tasks that are done, and those that need to be done.
+Llevando un registro de las tareas que están hechas y las que quedan por hacer.
 
 ```
 - [x] Learn Markdown
@@ -295,15 +295,15 @@ Keeping track of the tasks that are done, and those that need to be done.
 - [ ] Learn Full Stack Development
 ```
 
-- [x] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
+- [x] Aprender Markdown
+- [ ] Aprender Desarrollo Frontend
+- [ ] Aprender Desarrollo Full Stack
 
 ---
 
-## Footnote
+## Nota al Pie
 
-Want to describe something at the end of the file? Use footnote!
+¿Quieres describir algo al final del archivo? ¡Usa una nota al pie!
 
 ```
 #### I am working on a new project. [^1]
@@ -315,28 +315,28 @@ Project is about music & movies.
 [^see]: Loading... ⌛️
 ```
 
-#### I am working on a new project. [^1]
+#### Estoy trabajando en un nuevo proyecto. [^1]
 
-[^1]: Stack is: React, Typescript, Tailwind CSS
+[^1]: La pila es: React, Typescript, Tailwind CSS
 
-Project is about music & movies.
+El proyecto trata sobre música y películas.
 
-##### Hope you will like it. [^see]
+##### Espero que te guste. [^see]
 
-[^see]: Loading... ⌛️
-
----
-
-## Jump to section
-
-Astro (and most Markdown parsers) automatically generates IDs for your headers. You usually don't need to create manual `<a name="...">` tags.
+[^see]: Cargando... ⌛️
 
 ---
 
-## Horizontal Line
+## Saltar a sección
 
-You can use asterisks, hyphens or underlines (\*, -, \_) to create horizontal line.  
-The only rule is that you must include at least three chars of the symbol.
+Astro (y la mayoría de los analizadores Markdown) genera automáticamente IDs para tus encabezados. Normalmente no necesitas crear etiquetas `<a name="...">` manuales.
+
+---
+
+## Línea Horizontal
+
+Puedes usar asteriscos, guiones o guiones bajos (\*, -, \_) para crear una línea horizontal.
+La única regla es que debes incluir al menos tres caracteres del símbolo.
 
 ```
 First Horizontal Line
@@ -352,15 +352,15 @@ Third
 _________
 ```
 
-First Horizontal Line
+Primera Línea Horizontal
 
 ---
 
-Second One
+Segunda
 
 ---
 
-Third
+Tercera
 
 ---
 
@@ -368,7 +368,7 @@ Third
 
 ## HTML
 
-You can also use raw HTML in your Markdown file. Most of the times that will work well, but sometimes you can experience some differences that you are not used to when working with standard HTML. Using CSS will not work.
+También puedes usar HTML puro en tu archivo Markdown. La mayoría de las veces funcionará bien, pero a veces puedes experimentar algunas diferencias a las que no estás acostumbrado cuando trabajas con HTML estándar. Usar CSS no funcionará.
 
 ```
 <h1>This is a heading</h1>
@@ -416,9 +416,9 @@ You can also use raw HTML in your Markdown file. Most of the times that will wor
 
 ---
 
-## Mermaid Diagrams
+## Diagramas Mermaid
 
-### Mindmap
+### Mapa Mental
 
 ```mermaid
 mindmap
@@ -444,7 +444,7 @@ mindmap
       Cost Efficiency
 ```
 
-### Flowchart
+### Diagrama de Flujo
 
 ```mermaid
 flowchart LR
@@ -460,4 +460,4 @@ flowchart LR
 
 ---
 
-##### Section with some ID
+##### Sección con alguna ID

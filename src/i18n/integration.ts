@@ -1,213 +1,178 @@
 /**
- * Astro integration for i18n: post-processes HTML output, replacing
- * English strings with translations from JSON catalogs.
+ * Astro integration for i18n.
  *
- * Runs after all pages are built. Walks dist/ output, translates
- * HTML content for non-English locales using simple string replacement.
+ * Orchestrates the i18n pipeline:
+ *   1. Normalize catalogs (strip XML, migrate placeholders)
+ *   2. Extract new strings from .astro → source catalog
+ *   3. Prune dead strings (removed from all .astro files)
+ *   4. Sync new keys to target locale catalogs
+ *   5. Clean up stale locale artifacts (removed locales, orphaned markdown)
+ *   6. Translate markdown content (manifest-protected)
+ *   7. Translate catalog strings (manifest-protected)
+ *   8. Post-process HTML output (replace source-locale text with translations)
  *
- * Translation is manifest-protected: no API calls when nothing has changed
- * (content-addressable via SHA-256, survives git operations).
+ * All I/O is async (fs/promises) — consistent with the rest of the pipeline.
  */
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import type { AstroIntegration } from 'astro';
-import { loadAllCatalogs, loadCatalog, mergeExtracted, saveCatalog, type CatalogSet } from './catalog';
+import { readFile } from 'node:fs/promises';
+import { readConfig } from './config';
+import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './catalog';
 import { extractFromAstro } from './extract';
+import { normalizeCatalogs } from './normalize';
 import { getProvider } from './provider';
-import { translateContent } from '../utils/i18n-md';
+import { postProcessBuild } from './postprocess';
+import { translateContent, cleanMarkdownOrphans, cleanRemovedLocaleDirs } from '../utils/i18n-md';
 import { glob } from 'tinyglobby';
-import yaml from 'js-yaml';
 import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from '../utils/i18n-manifest';
-
-function getLocales(): string[] {
-  const configPath = path.resolve('src/config.yaml');
-  const raw = fs.readFileSync(configPath, 'utf-8');
-  const config = yaml.load(raw) as { i18n?: { locales?: string[]; defaultLocale?: string } };
-  return config?.i18n?.locales || ['en'];
-}
-
-// ---------------------------------------------------------------------------
-// HTML post-processing
-// ---------------------------------------------------------------------------
-
-function translateHtml(html: string, locale: string, catalogs: CatalogSet): string {
-  if (locale === 'en') return html;
-
-  const targetCatalog = catalogs[locale];
-  if (!targetCatalog) return html;
-
-  // Only translate COMPLETE text segments — no substring tokenization.
-  // Normalize HTML entities before lookup to handle &amp; vs & mismatches.
-  return html.replace(/>([^<]*)</g, (match, textBetween: string) => {
-    const trimmed = textBetween.trim();
-    if (!trimmed) return match;
-
-    // Try exact match first, then entity-decoded match
-    let translation = targetCatalog[trimmed];
-    if (!translation || translation === trimmed) {
-      const decoded = decodeEntities(trimmed);
-      if (decoded !== trimmed) {
-        translation = targetCatalog[decoded];
-      }
-    }
-
-    if (translation && translation !== trimmed) {
-      const leading = textBetween.match(/^\s*/)?.[0] ?? '';
-      const trailing = textBetween.match(/\s*$/)?.[0] ?? '';
-      return `>${leading}${translation}${trailing}<`;
-    }
-
-    return match;
-  });
-}
-
-/** Decode common HTML entities to their character equivalents. */
-function decodeEntities(text: string): string {
-  return text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'");
-}
-
-/** Strip Wuchale XML tags and normalize text for catalog matching. */
-function normalizeKey(key: string): string {
-  return key
-    .replace(/<\d+>/g, '')
-    .replace(/<\/\d+>/g, '')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-// ---------------------------------------------------------------------------
-// Recursive walk dist/
-// ---------------------------------------------------------------------------
-
-function walkDir(dir: string, visitor: (filePath: string) => void): void {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      walkDir(fullPath, visitor);
-    } else if (entry.isFile() && entry.name.endsWith('.html')) {
-      visitor(fullPath);
-    }
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Astro integration
-// ---------------------------------------------------------------------------
 
 export function i18nIntegration(): AstroIntegration {
   let catalogs: CatalogSet;
+  let defaultLocale: string;
 
   return {
     name: 'astrowind-i18n',
     hooks: {
       'astro:config:setup': async () => {
-        const locales = getLocales();
+        const config = readConfig();
+        const { locales } = config;
+        const srcLocale = config.defaultLocale;
+        defaultLocale = srcLocale;
 
-        // ---- Catalog maintenance (runs on all commands) ----
+        // ── Catalog maintenance ──────────────────────────────────────
 
-        // Normalize all catalog keys: strip Wuchale XML tags, decode entities.
-        let catalogChanged = false;
-        for (const locale of locales) {
-          const raw = loadCatalog('src/locales', locale);
-          const normalized: Record<string, string> = {};
-          let localeChanged = false;
-          for (const [key, val] of Object.entries(raw)) {
-            const cleanKey = normalizeKey(key);
-            const cleanVal = normalizeKey(val);
-            if (cleanKey !== key || cleanVal !== val) localeChanged = true;
-            if (cleanKey) normalized[cleanKey] = cleanVal || cleanKey;
-          }
-          if (localeChanged) {
-            saveCatalog('src/locales', locale, normalized);
-            catalogChanged = true;
-          }
-        }
-        if (catalogChanged) {
-          console.log('[i18n] Normalized catalogs: stripped XML tags, decoded entities');
-        }
+        await normalizeCatalogs(locales);
 
-        let enCatalog = loadCatalog('src/locales', 'en');
+        // ── Extract strings from .astro files ────────────────────────
 
-        // Extract new strings from .astro files
         const astroFiles = await glob('src/**/*.astro', { ignore: ['src/locales/**', 'node_modules/**'] });
-        let newStrings = 0;
+        const activeStrings = new Set<string>();
 
         for (const file of astroFiles) {
           try {
-            const content = fs.readFileSync(file, 'utf-8');
+            const content = await readFile(file, 'utf-8');
             const extracted = await extractFromAstro(content, file);
-            const result = mergeExtracted(enCatalog, extracted);
-            enCatalog = result.catalog;
-            newStrings += result.newCount;
-          } catch {
-            // Skip files that can't be parsed
+            for (const item of extracted) {
+              const msgid = item.msgid.replace(/\s+/g, ' ').trim();
+              if (msgid) activeStrings.add(msgid);
+            }
+          } catch (err) {
+            console.warn(`[i18n] Skipped ${file}: ${(err as Error).message}`);
           }
         }
 
-        if (newStrings > 0) {
-          saveCatalog('src/locales', 'en', enCatalog);
-          console.log(`[i18n] ${newStrings} new strings extracted to en.json`);
+        // ── Prune dead strings + merge new into source catalog ──────
 
-          // Sync new keys to target locale catalogs (with placeholder values)
-          for (const locale of locales) {
-            if (locale === 'en') continue;
-            const targetCatalog = loadCatalog('src/locales', locale);
-            let synced = 0;
-            for (const [key] of Object.entries(enCatalog)) {
-              if (!(key in targetCatalog)) {
-                targetCatalog[key] = key; // placeholder: English
-                synced++;
-              }
-            }
-            if (synced > 0) {
-              saveCatalog('src/locales', locale, targetCatalog);
-            }
+        const srcCatalog = await loadCatalog('src/locales', srcLocale);
+        let newStrings = 0;
+        let removedStrings = 0;
+
+        // Find dead strings (in catalog but no longer in any .astro file)
+        const deadStrings: string[] = [];
+        for (const key of Object.keys(srcCatalog)) {
+          if (!activeStrings.has(key)) {
+            deadStrings.push(key);
+          }
+        }
+        if (deadStrings.length > 0) {
+          for (const key of deadStrings) {
+            delete srcCatalog[key];
+          }
+          removedStrings = deadStrings.length;
+        }
+
+        // Merge in new strings
+        for (const text of activeStrings) {
+          if (!(text in srcCatalog)) {
+            srcCatalog[text] = ''; // placeholder: untranslated
+            newStrings++;
           }
         }
 
-        // ---- Translation (manifest-protected — no API calls when nothing changed) ----
+        if (newStrings > 0 || removedStrings > 0) {
+          await saveCatalog('src/locales', srcLocale, srcCatalog);
+          const parts: string[] = [];
+          if (newStrings > 0) parts.push(`${newStrings} new`);
+          if (removedStrings > 0) parts.push(`${removedStrings} removed`);
+          console.log(`[i18n] ${parts.join(', ')} strings in ${srcLocale}.json`);
+        }
+
+        // ── Sync changes to target locale catalogs ───────────────────
+
+        for (const locale of locales) {
+          if (locale === srcLocale) continue;
+          const targetCatalog = await loadCatalog('src/locales', locale);
+          let synced = 0;
+
+          // Add new keys (from source catalog) with empty placeholder
+          for (const [key] of Object.entries(srcCatalog)) {
+            if (!(key in targetCatalog)) {
+              targetCatalog[key] = '';
+              synced++;
+            }
+          }
+
+          // Remove dead keys no longer in source catalog
+          for (const key of Object.keys(targetCatalog)) {
+            if (!(key in srcCatalog)) {
+              delete targetCatalog[key];
+              synced++;
+            }
+          }
+
+          if (synced > 0) {
+            await saveCatalog('src/locales', locale, targetCatalog);
+          }
+        }
+
+        // ── Clean up removed locales ─────────────────────────────────
+
+        await cleanRemovedLocaleDirs(locales, srcLocale);
+
+        // ── Translation (manifest-protected) ─────────────────────────
 
         const provider = await getProvider();
         if (provider) {
-          // 1. Translate markdown content (manifest-based incremental)
-          await translateContent(provider);
+          // 1. Translate markdown content
+          await translateContent(provider, locales, srcLocale);
 
-          // 2. Translate UI catalog strings (manifest-based incremental)
-          const enJson = JSON.stringify(loadCatalog('src/locales', 'en'), null, 2);
+          // 2. Clean up orphaned markdown (source deleted, translation remains)
+          await cleanMarkdownOrphans(locales, srcLocale);
+
+          // 3. Translate UI catalog strings
+          const srcJson = JSON.stringify(await loadCatalog('src/locales', srcLocale), null, 2);
           let manifest = await loadManifest();
 
-          if (catalogNeedsTranslation(manifest, enJson)) {
+          // Check if source catalog changed OR any target locale has untranslated gaps
+          let hasGaps = false;
+          for (const locale of locales) {
+            if (locale === srcLocale) continue;
+            const cat = await loadCatalog('src/locales', locale);
+            if (Object.keys(cat).some((k) => cat[k] === '')) {
+              hasGaps = true;
+              break;
+            }
+          }
+
+          if (hasGaps || catalogNeedsTranslation(manifest, srcJson, srcLocale)) {
             let totalTranslated = 0;
             for (const locale of locales) {
-              if (locale === 'en') continue;
+              if (locale === srcLocale) continue;
               try {
-                const catalog = loadCatalog('src/locales', locale);
-                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === k);
+                const catalog = await loadCatalog('src/locales', locale);
+                const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '');
                 if (untranslated.length === 0) continue;
 
-                const translations = await provider.translateBatch(untranslated, locale, 'en');
+                const translations = await provider.translateBatch(untranslated, locale, srcLocale);
                 let localeTranslated = 0;
                 for (let i = 0; i < untranslated.length; i++) {
-                  if (translations[i] && translations[i] !== untranslated[i]) {
+                  if (translations[i]) {
                     catalog[untranslated[i]] = translations[i];
                     localeTranslated++;
                   }
                 }
                 if (localeTranslated > 0) {
-                  saveCatalog('src/locales', locale, catalog);
+                  await saveCatalog('src/locales', locale, catalog);
                   totalTranslated += localeTranslated;
                   console.log(`[i18n] ${provider.name} translated ${localeTranslated} strings to ${locale}`);
                 }
@@ -219,46 +184,33 @@ export function i18nIntegration(): AstroIntegration {
               console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
             }
 
-            manifest = markCatalogTranslated(manifest, enJson);
-            await saveManifest(manifest);
+            // Only update manifest if every locale is fully translated
+            let stillUntranslated = false;
+            for (const locale of locales) {
+              if (locale === srcLocale) continue;
+              const cat = await loadCatalog('src/locales', locale);
+              if (Object.keys(cat).some((k) => cat[k] === '')) {
+                stillUntranslated = true;
+                break;
+              }
+            }
+            if (!stillUntranslated) {
+              manifest = markCatalogTranslated(manifest, srcJson, srcLocale);
+              await saveManifest(manifest);
+            } else if (totalTranslated > 0) {
+              console.log('[i18n] Some strings still untranslated — will retry on next build');
+            }
           }
         }
 
-        // Load catalogs for HTML post-processing
-        catalogs = loadAllCatalogs('src/locales', locales);
+        // ── Load catalogs for post-processing ────────────────────────
+
+        catalogs = await loadAllCatalogs('src/locales', locales);
         console.log(`[i18n] Loaded catalogs for: ${Object.keys(catalogs).join(', ')}`);
       },
 
-      'astro:build:done': ({ dir }) => {
-        const distDir = fileURLToPath(dir);
-        console.log(`[i18n] Post-processing HTML in ${distDir}...`);
-
-        let processed = 0;
-        let translated = 0;
-
-        walkDir(distDir, (filePath: string) => {
-          // Determine locale from path: /dist/de/pricing/index.html → de
-          const relPath = path.relative(distDir, filePath);
-          const localeMatch = relPath.match(/^([a-z]{2})\//);
-          if (!localeMatch) return;
-
-          const locale = localeMatch[1];
-          if (locale === 'en') return;
-
-          processed++;
-          try {
-            const html = fs.readFileSync(filePath, 'utf-8');
-            const translatedHtml = translateHtml(html, locale, catalogs);
-            if (translatedHtml !== html) {
-              fs.writeFileSync(filePath, translatedHtml, 'utf-8');
-              translated++;
-            }
-          } catch (err) {
-            console.warn(`[i18n] Failed: ${relPath} — ${(err as Error).message}`);
-          }
-        });
-
-        console.log(`[i18n] Done: ${translated}/${processed} pages translated`);
+      'astro:build:done': async ({ dir }) => {
+        await postProcessBuild(dir, catalogs, defaultLocale);
       },
     },
   };

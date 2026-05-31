@@ -15,6 +15,13 @@ const createPath = (...params: string[]) => {
 };
 
 const BASE_PATHNAME = SITE.base || '/';
+const BASE_TRIMMED = trimSlash(BASE_PATHNAME);
+const stripBase = (s: string) =>
+  BASE_TRIMMED && s.startsWith(`/${BASE_TRIMMED}/`)
+    ? s.slice(BASE_TRIMMED.length + 1) || '/'
+    : BASE_TRIMMED && s === `/${BASE_TRIMMED}`
+      ? '/'
+      : s;
 
 export const cleanSlug = (text = '') =>
   trimSlash(text)
@@ -40,18 +47,21 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page', locale?: string): string => {
+export const getPermalink = (rawSlug = '', type = 'page', locale?: string): string => {
   let permalink: string;
 
   if (
-    slug.startsWith('https://') ||
-    slug.startsWith('http://') ||
-    slug.startsWith('://') ||
-    slug.startsWith('#') ||
-    slug.startsWith('javascript:')
+    rawSlug.startsWith('https://') ||
+    rawSlug.startsWith('http://') ||
+    rawSlug.startsWith('://') ||
+    rawSlug.startsWith('#') ||
+    rawSlug.startsWith('javascript:')
   ) {
-    return slug;
+    return rawSlug;
   }
+
+  // Strip base path prefix (prevents double-base when slug comes from Astro.url.pathname)
+  const slug = stripBase(rawSlug);
 
   // Strip any existing locale prefix (allows '/en/about' → '/es/about')
   const slugWithoutLocale = getPathWithoutLocale(slug);
@@ -99,7 +109,10 @@ export const getBlogPermalink = (locale?: string): string => getPermalink(BLOG_B
 export const getPagePermalink = (slug: string, locale?: string): string => getPermalink(slug, 'page', locale);
 
 /** */
-export const getAsset = (path: string): string => '/' + [BASE_PATHNAME, path].filter((el) => !!el).join('/');
+export const getAsset = (path: string): string => {
+  const parts = [trimSlash(BASE_PATHNAME), trimSlash(path)].filter(Boolean);
+  return '/' + parts.join('/');
+};
 
 /** */
 const definitivePermalink = (permalink: string): string => createPath(BASE_PATHNAME, permalink);

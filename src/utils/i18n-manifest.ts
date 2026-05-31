@@ -61,18 +61,29 @@ export async function markTranslated(manifest: Manifest, key: string, content: s
 }
 
 /**
- * Check whether the en catalog has changed since last catalog translation pass.
- * `enJson` is the raw string content of en.json.
+ * Check whether the source catalog has changed since last catalog translation pass.
+ * `catalogJson` is the raw string content of the source locale catalog.
+ * `sourceLocale` is the key used in the manifest (e.g. 'en', 'de').
  */
-export function catalogNeedsTranslation(manifest: Manifest, enJson: string): boolean {
-  const h = hashContent(enJson);
-  return manifest.catalogs['en'] !== h;
+export function catalogNeedsTranslation(manifest: Manifest, catalogJson: string, sourceLocale: string): boolean {
+  const h = hashContent(catalogJson);
+  return manifest.catalogs[sourceLocale] !== h;
 }
 
 /**
- * Mark catalog translation as done for the current en.json state.
+ * Mark catalog translation as done for the current source catalog state.
  */
-export function markCatalogTranslated(manifest: Manifest, enJson: string): Manifest {
-  const h = hashContent(enJson);
-  return { ...manifest, catalogs: { ...manifest.catalogs, en: h } };
+export function markCatalogTranslated(manifest: Manifest, catalogJson: string, sourceLocale: string): Manifest {
+  const h = hashContent(catalogJson);
+  return { ...manifest, catalogs: { ...manifest.catalogs, [sourceLocale]: h } };
+}
+
+/**
+ * Remove a markdown entry from the manifest (when source file is deleted).
+ */
+export function removeMarkdownEntry(manifest: Manifest, key: string): Manifest {
+  if (!(key in manifest.markdown)) return manifest;
+  const rest = { ...manifest.markdown };
+  delete rest[key];
+  return { ...manifest, markdown: rest };
 }
