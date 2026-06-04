@@ -4,7 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
@@ -117,7 +117,8 @@ export const navigation = {
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
+  <Features
+    variant="cards-image"
     title="Price-related features"
     subtitle="Discover the advantages of choosing our plans"
     columns={2}

@@ -6,10 +6,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
@@ -64,14 +63,15 @@ export const navigation = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <Features
+    variant="cards-vertical"
     title="About us"
     subtitle="We believe in the magic of turning dreams into stunning realities. Founded by passionate developers with a shared vision, we set out to simplify the website creation process. Our templates bring together the innovation of Astro 6 and the versatility of Tailwind CSS, enabling you to express your unique brand identity like never before."
   >
     <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </div>
-  </Features2>
+  </Features>
 
   <!-- Stats Widget ****************** -->
 
@@ -135,7 +135,8 @@ export const navigation = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <Features
+    variant="cards-vertical"
     title="What services do we provide?"
     subtitle="We offer a wide range of website templates that suit various industries and purposes such as business, portfolio, e-commerce, blog, etc."
     items={[
@@ -162,7 +163,7 @@ export const navigation = {
     <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </div>
-  </Features2>
+  </Features>
 
   <!-- Features Widget *************** -->
 
@@ -252,7 +253,8 @@ export const navigation = {
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
+  <Features
+    variant="cards-image"
     title="Let us know how we can help"
     subtitle="We’re here to help and answer any question you might have."
     columns={4}

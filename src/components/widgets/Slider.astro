@@ -3,8 +3,8 @@ import type { HTMLAttributes } from 'astro/types';
 
 interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
   config?: {
-    /** Autoplay delay in ms, or false to disable */
-    autoplay?: number | false;
+    /** Autoplay delay in ms, object with options, or false to disable */
+    autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
     /** Loop slides */
     loop?: boolean;
     /** Transition effect */
@@ -30,7 +30,7 @@ interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
 
 const { config = {}, class: className, ...attrs } = Astro.props;
 
-const containerId = `slider-${Math.random().toString(36).slice(2, 9)}`;
+const containerId = `slider-${crypto.randomUUID()}`;
 
 const {
   autoplay = false,
@@ -64,7 +64,7 @@ if (effect !== 'slide' && effectModuleMap[effect]) {
 }
 
 const swiperConfig = {
-  autoplay: hasAutoplay ? { delay: autoplay as number } : false,
+  autoplay: hasAutoplay ? (typeof autoplay === 'object' ? autoplay : { delay: autoplay as number }) : false,
   loop,
   effect,
   slidesPerView,

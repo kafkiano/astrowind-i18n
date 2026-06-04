@@ -3,7 +3,7 @@ import { getStaticPathsForLocale } from '~/utils/i18n';
 
 import Layout from '~/layouts/LandingLayout.astro';
 
-import FeaturesSlider from '~/components/widgets/FeaturesSlider.astro';
+import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
@@ -16,7 +16,8 @@ export const navigation = {
 ---
 
 <Layout metadata={navigation}>
-  <FeaturesSlider
+  <Features
+    variant="slider"
     tagline="Features Slider Demo"
     title="What you get with AstroWind"
     subtitle="Swipe through the features — multiple cards visible at once with responsive breakpoints."

@@ -3,7 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -251,7 +250,12 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <Features
+    variant="slider"
+    autoplay={{ delay: 4000, disableOnInteraction: true }}
+    sliderPagination={true}
+    sliderNavigation={true}
+    sliderLoop={false}
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     tagline="Components"
@@ -311,7 +315,7 @@ const metadata = {
     <div slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </div>
-  </Features2>
+  </Features>
 
   <!-- HighlightedPosts Widget ******* -->
 

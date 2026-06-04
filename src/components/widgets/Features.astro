@@ -1,36 +1,175 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
+import FeatureCard from '~/components/ui/FeatureCard.astro';
 import Headline from '~/components/ui/Headline.astro';
-import type { Features as Props } from '~/types';
+import Slider from '~/components/widgets/Slider.astro';
+import Image from '~/components/common/Image.astro';
+import type { Features as BaseProps } from '~/types';
+
+interface Props extends Omit<BaseProps, 'classes'> {
+  variant?: 'cards' | 'cards-vertical' | 'cards-image' | 'slider';
+  autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
+  sliderPagination?: boolean;
+  sliderNavigation?: boolean;
+  sliderLoop?: boolean;
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string | Record<string, string>>;
+}
 
 const {
+  variant = 'cards',
+  autoplay,
+  sliderPagination,
+  sliderNavigation,
+  sliderLoop,
+
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
+  image,
   items = [],
-  columns = 2,
-
+  columns,
   defaultIcon,
+
+  isBeforeContent,
+  isAfterContent,
 
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
----
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
-  <ItemGrid
-    items={items}
-    columns={columns}
-    defaultIcon={defaultIcon}
-    classes={{
+// --- Variant presets ---
+
+let containerClass: string;
+let gridLayout: 'horizontal' | 'vertical' = 'horizontal';
+let presetItemClasses: Record<string, string> = {};
+
+const containerClassFromProps = (classes?.container as string) ?? '';
+
+switch (variant) {
+  case 'cards':
+    containerClass = `max-w-5xl ${containerClassFromProps}`;
+    gridLayout = 'horizontal';
+    presetItemClasses = {
       container: '',
       title: 'md:text-[1.3rem]',
       icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
-      ...((classes?.items as Record<string, never>) ?? {}),
-    }}
-  />
+    };
+    break;
+
+  case 'cards-vertical':
+    containerClass = `max-w-7xl mx-auto ${containerClassFromProps}`;
+    gridLayout = 'vertical';
+    presetItemClasses = {
+      container: 'gap-4 md:gap-6',
+      panel:
+        'rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6',
+      icon: 'w-12 h-12 mb-6 text-primary',
+    };
+    break;
+
+  case 'cards-image':
+    containerClass = `${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${containerClassFromProps}`;
+    gridLayout = 'horizontal';
+    presetItemClasses = {
+      container: 'mt-12',
+      panel: 'max-w-full sm:max-w-md',
+      title: 'text-lg font-semibold',
+      description: 'mt-0.5',
+      icon: 'flex-shrink-0 mt-1 text-primary w-6 h-6',
+    };
+    break;
+
+  case 'slider':
+    containerClass = `max-w-6xl ${containerClassFromProps}`;
+    gridLayout = 'horizontal';
+    break;
+
+  default:
+    containerClass = containerClassFromProps;
+}
+
+const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<string, string>) ?? {}) };
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={containerClass} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+
+  {
+    variant === 'cards-image' && image && (
+      <div aria-hidden="true" class="aspect-w-16 aspect-h-7">
+        <div class="w-full h-80 object-cover rounded-xl mx-auto bg-gray-500 shadow-lg">
+          {typeof image === 'string' ? (
+            <Fragment set:html={image} />
+          ) : (
+            <Image
+              class="w-full h-80 object-cover rounded-xl mx-auto bg-gray-500 shadow-lg"
+              width="auto"
+              height={320}
+              widths={[400, 768]}
+              layout="fullWidth"
+              {...image}
+            />
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  {
+    variant === 'slider' ? (
+      items.length > 0 && (
+        <Slider
+          config={{
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: sliderLoop ?? true,
+            pagination: sliderPagination ? { clickable: true } : false,
+            navigation: sliderNavigation ?? false,
+            ...(autoplay !== undefined ? { autoplay } : {}),
+            responsive: {
+              640: {
+                slidesPerView: Math.min(columns ?? 3, 2),
+                spaceBetween: 16,
+              },
+              1024: {
+                slidesPerView: columns ?? 3,
+                spaceBetween: 24,
+              },
+            },
+          }}
+        >
+          {items.map(({ title: itemTitle, description, icon, callToAction }) => (
+            <div class="swiper-slide">
+              <FeatureCard
+                layout="horizontal"
+                title={itemTitle}
+                description={description}
+                icon={icon}
+                defaultIcon={defaultIcon}
+                callToAction={callToAction}
+                classes={{
+                  panel: 'mx-4 p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-xl dark:shadow-none',
+                  icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
+                  ...(mergedItemClasses as Record<string, string>),
+                }}
+              />
+            </div>
+          ))}
+        </Slider>
+      )
+    ) : (
+      <ItemGrid
+        items={items}
+        columns={columns ?? (variant === 'cards-vertical' ? 3 : 2)}
+        layout={gridLayout}
+        defaultIcon={defaultIcon}
+        classes={mergedItemClasses}
+      />
+    )
+  }
 </WidgetWrapper>
