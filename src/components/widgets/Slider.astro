@@ -114,6 +114,13 @@ const swiperConfig = {
     z-index: 20;
   }
 
+  /* Fix: Swiper sets display:block on .swiper-slide as unlayered CSS.
+     Tailwind v4 utilities are layered, so .flex gets overridden.
+     Ensure flex slides actually flex. */
+  .swiper-slide.flex {
+    display: flex;
+  }
+
   /* Fix: Vite strips nested swiper-fade rules (pointer-events + transition-property).
      Without transition-property: opacity, the fade effect never animates
      and animating stays true forever (transitionend never fires). */

@@ -3,7 +3,7 @@ import { getStaticPathsForLocale } from '~/utils/i18n';
 
 import Layout from '~/layouts/LandingLayout.astro';
 
-import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
@@ -18,7 +18,8 @@ export const navigation = {
 <Layout metadata={navigation}>
   <!-- Hero2 Widget ******************* -->
 
-  <Hero2
+  <Hero
+    variant="side-by-side"
     tagline="Pre-launch Demo"
     title="Pre-launch Landing Page: Build the Hype Before the Big Reveal!"
     subtitle="Craft a tantalizing Coming Soon or Pre-Launch Landing Page that leaves visitors eagerly awaiting your launch."

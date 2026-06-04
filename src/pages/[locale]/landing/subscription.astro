@@ -3,7 +3,7 @@ import { getStaticPathsForLocale } from '~/utils/i18n';
 
 import Layout from '~/layouts/LandingLayout.astro';
 
-import Hero2 from '~/components/widgets/Hero2.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
@@ -18,7 +18,8 @@ export const navigation = {
 <Layout metadata={navigation}>
   <!-- Hero2 Widget ******************* -->
 
-  <Hero2
+  <Hero
+    variant="side-by-side"
     tagline="Subscription Landing Demo"
     title="Subscription Landing Page: Turn Casual Browsers into Loyal Subscribers!"
     subtitle="Unlock the formula for a Subscription Landing Page that keeps your audience coming back for more."

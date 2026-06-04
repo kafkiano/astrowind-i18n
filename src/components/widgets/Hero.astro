@@ -1,18 +1,34 @@
 ---
 import Image from '~/components/common/Image.astro';
-import Button from '~/components/ui/Button.astro';
+import HeroTextBlock from '~/components/ui/HeroTextBlock.astro';
+import type { CallToAction } from '~/types';
 
-import type { Hero as Props } from '~/types';
+interface Props {
+  variant?: 'centered' | 'side-by-side' | 'text-only';
+
+  // Shared
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  content?: string;
+  id?: string;
+  bg?: string;
+
+  // Variants with image
+  image?: string | unknown;
+
+  // Variants with actions
+  actions?: string | CallToAction[];
+}
 
 const {
+  variant = 'centered',
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
-
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
-
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
@@ -26,74 +42,76 @@ const {
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
-            <h1
-              class="text-5xl md:text-6xl font-bold leading-tight tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl mx-auto">
-          {
-            subtitle && (
-              <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-                set:html={subtitle}
-              />
-            )
-          }
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
+
+    {
+      variant === 'centered' && (
+        <div class="py-12 md:py-20">
+          <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
+            <HeroTextBlock title={title} subtitle={subtitle} tagline={tagline} actions={actions} align="center" />
+            {content && <Fragment set:html={content} />}
+          </div>
+          {image && (
+            <div class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+              <div class="relative m-auto max-w-5xl">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
                 ) : (
-                  <Fragment set:html={actions} />
+                  <Image
+                    class="mx-auto rounded-xl w-full"
+                    widths={[400, 768, 1024, 2040]}
+                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                    loading="eager"
+                    width={1024}
+                    height={576}
+                    {...image}
+                  />
                 )}
               </div>
-            )
-          }
-        </div>
-        {content && <Fragment set:html={content} />}
-      </div>
-      <div
-        class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
-        {
-          image && (
-            <div class="relative m-auto max-w-5xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto rounded-xl w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={1024}
-                  height={576}
-                  {...image}
-                />
-              )}
             </div>
-          )
-        }
-      </div>
-    </div>
+          )}
+        </div>
+      )
+    }
+
+    {
+      variant === 'side-by-side' && (
+        <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
+          <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
+            <HeroTextBlock title={title} subtitle={subtitle} tagline={tagline} actions={actions} align="left" />
+            {content && <Fragment set:html={content} />}
+          </div>
+          <div class="basis-1/2">
+            {image && (
+              <div class="relative m-auto max-w-5xl intersect-once intersect-no-queue motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
+                ) : (
+                  <Image
+                    class="mx-auto rounded-xl w-full"
+                    widths={[400, 768, 1024, 2040]}
+                    sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                    loading="eager"
+                    width={600}
+                    height={600}
+                    {...image}
+                  />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      variant === 'text-only' && (
+        <div class="py-12 md:py-20 pb-8 md:pb-8">
+          <div class="text-center max-w-5xl mx-auto">
+            <HeroTextBlock title={title} subtitle={subtitle} tagline={tagline} actions={actions} align="center" />
+            {content && <Fragment set:html={content} />}
+          </div>
+        </div>
+      )
+    }
   </div>
 </section>
