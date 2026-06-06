@@ -42,7 +42,7 @@ const hasNavigation = sliderNavigation ?? slides.length > 1;
         class="h-[600px] md:h-[700px] lg:h-screen"
       >
         {slides.map((slide) => (
-          <div class="swiper-slide relative flex items-center justify-center overflow-hidden bg-gray-900 dark:bg-gray-950">
+          <div class="swiper-slide relative flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0">
               <Image
                 src={slide.image.src}
@@ -56,7 +56,6 @@ const hasNavigation = sliderNavigation ?? slides.length > 1;
                 {...(typeof slide.image === 'object' ? slide.image : {})}
               />
             </div>
-            <div class="absolute inset-0 bg-black/50 dark:bg-black/70 pointer-events-none" />
             <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
               <HeroTextBlock
                 title={slide.title}
