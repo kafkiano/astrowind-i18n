@@ -8,7 +8,7 @@ interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
     /** Loop slides */
     loop?: boolean;
     /** Transition effect */
-    effect?: 'slide' | 'fade' | 'cube' | 'coverflow' | 'cards' | 'creative';
+    effect?: 'slide' | 'fade';
     /** Slides visible at once */
     slidesPerView?: number | 'auto';
     /** Gap between slides in px */
@@ -47,137 +47,343 @@ const hasAutoplay = autoplay !== false;
 const hasPagination = pagination !== false;
 const hasNavigation = navigation !== false;
 
-const effectModuleMap: Record<string, string> = {
-  fade: 'EffectFade',
-  cube: 'EffectCube',
-  coverflow: 'EffectCoverflow',
-  cards: 'EffectCards',
-  creative: 'EffectCreative',
-};
+const autoplayDelay = hasAutoplay
+  ? typeof autoplay === 'object'
+    ? autoplay.delay
+    : typeof autoplay === 'number'
+      ? autoplay
+      : 5000
+  : 5000;
 
-const requiredModules: string[] = [];
-if (hasAutoplay) requiredModules.push('Autoplay');
-if (hasPagination) requiredModules.push('Pagination');
-if (hasNavigation) requiredModules.push('Navigation');
-if (effect !== 'slide' && effectModuleMap[effect]) {
-  requiredModules.push(effectModuleMap[effect]);
-}
+const autoplayDisableOnInteraction =
+  hasAutoplay && typeof autoplay === 'object' && autoplay.disableOnInteraction !== false;
 
-const swiperConfig = {
-  autoplay: hasAutoplay ? (typeof autoplay === 'object' ? autoplay : { delay: autoplay as number }) : false,
+const emblaConfig = {
+  hasAutoplay,
+  autoplayDelay,
+  autoplayDisableOnInteraction,
   loop,
   effect,
   slidesPerView,
   spaceBetween,
+  hasPagination,
+  hasNavigation,
   breakpoints: responsive ?? null,
-  pagination: hasPagination
-    ? { el: '.swiper-pagination', ...(typeof pagination === 'object' ? pagination : { clickable: true }) }
-    : false,
-  navigation: hasNavigation ? { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } : false,
 };
 ---
 
 <div
-  class:list={['swiper', className]}
+  class:list={['embla', className]}
   id={containerId}
-  data-swiper-modules={JSON.stringify(requiredModules)}
-  data-swiper-config={JSON.stringify(swiperConfig)}
+  data-embla-id={containerId}
+  data-embla-config={JSON.stringify(emblaConfig)}
   {...attrs}
 >
-  <div class="swiper-wrapper">
-    <slot />
-  </div>
+  <div class="embla__viewport">
+    <div class="embla__container">
+      <slot />
+    </div>
 
-  {hasPagination && <div class="swiper-pagination" />}
+    {hasPagination && <div class="embla__pagination" />}
+  </div>
 
   {
     hasNavigation && (
       <>
-        <div class="swiper-button-prev" />
-        <div class="swiper-button-next" />
+        <button class="embla__prev" aria-label="Previous slide" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button class="embla__next" aria-label="Next slide" type="button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-6 h-6"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </>
     )
   }
 </div>
 
 <style is:global>
-  /* Fix: Vite CSS processor strips nested ::slotted rules from swiper/css/bundle.
-     Manually ensure prev/next arrow rotation. */
-  .swiper-button-prev svg {
-    transform: rotate(180deg);
+  .embla {
+    position: relative;
   }
 
-  /* Ensure nav/pagination sit above slide transforms */
-  .swiper-button-prev,
-  .swiper-button-next,
-  .swiper-pagination {
-    z-index: 20;
+  .embla__viewport {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
   }
 
-  /* Fix: Swiper sets display:block on .swiper-slide as unlayered CSS.
-     Tailwind v4 utilities are layered, so .flex gets overridden.
-     Ensure flex slides actually flex. */
-  .swiper-slide.flex {
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    height: 100%;
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  /* Fade effect via plugin: slides start hidden, selected slide fades in */
+  .embla--fade .embla__slide {
+    transition: opacity 0.4s ease;
+    opacity: 0;
+  }
+  .embla--fade .embla__slide.is-selected {
+    opacity: 1;
+  }
+
+  /* Ensure flex slides actually flex (Tailwind v4 layer override) */
+  .embla__slide.flex {
     display: flex;
   }
 
-  /* Fix: Vite strips nested swiper-fade rules (pointer-events + transition-property).
-     Without transition-property: opacity, the fade effect never animates
-     and animating stays true forever (transitionend never fires). */
-  .swiper-fade .swiper-slide {
-    pointer-events: none;
-    transition-property: opacity;
+  /* Navigation buttons */
+  .embla__prev,
+  .embla__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
   }
-  .swiper-fade .swiper-slide-active {
-    pointer-events: auto;
+  .embla__prev:hover,
+  .embla__next:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .embla__prev {
+    left: 0.5rem;
+  }
+  .embla__next {
+    right: 0.5rem;
+  }
+
+  /* Pagination dots — positioned inside the viewport */
+  .embla__pagination {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 10;
+  }
+
+  .embla__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s;
+  }
+
+  .embla__dot.is-active {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Dark mode dots */
+  .dark .embla__dot {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .dark .embla__dot.is-active {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Dark mode nav buttons */
+  .dark .embla__prev,
+  .dark .embla__next {
+    background-color: rgba(30, 41, 59, 0.8);
+    color: #e2e8f0;
+  }
+  .dark .embla__prev:hover,
+  .dark .embla__next:hover {
+    background-color: rgba(30, 41, 59, 1);
   }
 </style>
 
 <script>
-  import Swiper from 'swiper';
-  import {
-    Autoplay,
-    EffectCards,
-    EffectCoverflow,
-    EffectCreative,
-    EffectCube,
-    EffectFade,
-    Navigation,
-    Pagination,
-  } from 'swiper/modules';
-  import 'swiper/css/bundle';
+  import EmblaCarousel from 'embla-carousel';
+  import Autoplay from 'embla-carousel-autoplay';
+  import Fade from 'embla-carousel-fade';
+  import type { EmblaCarouselType, EmblaPluginType } from 'embla-carousel';
+  import type { AutoplayType } from 'embla-carousel-autoplay';
 
-  const moduleRegistry: Record<string, object> = {
-    Autoplay,
-    EffectCards,
-    EffectCoverflow,
-    EffectCreative,
-    EffectCube,
-    EffectFade,
-    Navigation,
-    Pagination,
-  };
+  function buildPagination(emblaApi: EmblaCarouselType, rootEl: HTMLElement): void {
+    const dotsContainer = rootEl.querySelector('.embla__pagination');
+    if (!dotsContainer) return;
 
-  function initSwipers(): void {
-    document.querySelectorAll<HTMLElement>('.swiper:not(.swiper-initialized)[data-swiper-config]').forEach((el) => {
-      const moduleNames: string[] = JSON.parse(el.dataset.swiperModules || '[]');
-      const config = JSON.parse(el.dataset.swiperConfig || '{}');
+    const slideCount = emblaApi.slideNodes().length;
+    dotsContainer.innerHTML = '';
 
-      if (!config) return;
+    for (let i = 0; i < slideCount; i++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'embla__dot';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => emblaApi.scrollTo(i));
+      dotsContainer.appendChild(dot);
+    }
 
-      const modules = moduleNames.map((name) => moduleRegistry[name]).filter((m): m is object => !!m);
+    const dots = dotsContainer.querySelectorAll('.embla__dot');
 
-      new Swiper(el, {
-        modules,
-        ...config,
-        speed: 400,
-        grabCursor: true,
+    const updateDots = (): void => {
+      const selected = emblaApi.selectedScrollSnap();
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === selected);
       });
+    };
+
+    emblaApi.on('select', updateDots);
+    emblaApi.on('reInit', updateDots);
+    updateDots();
+  }
+
+  function setupPauseOnInteraction(autoplayPlugin: AutoplayType, rootEl: HTMLElement): void {
+    let resumeTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const scheduleResume = (): void => {
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        if (!autoplayPlugin.isPlaying()) {
+          autoplayPlugin.play();
+        }
+      }, 3000);
+    };
+
+    const stopAndClear = (): void => {
+      autoplayPlugin.stop();
+      if (resumeTimer) clearTimeout(resumeTimer);
+    };
+
+    rootEl.addEventListener('pointerdown', stopAndClear);
+    rootEl.addEventListener('touchstart', stopAndClear, { passive: true });
+    rootEl.addEventListener('pointerup', scheduleResume);
+    rootEl.addEventListener('mouseleave', scheduleResume);
+  }
+
+  function applySlidesPerView(
+    rootEl: HTMLElement,
+    slidesPerView: number,
+    breakpoints: Record<string, { slidesPerView?: number }> | null
+  ): void {
+    let css = `.embla[data-embla-id="${rootEl.dataset.emblaId}"] .embla__slide { flex: 0 0 ${(100 / slidesPerView).toFixed(4)}%; }`;
+
+    if (breakpoints) {
+      for (const [width, bp] of Object.entries(breakpoints)) {
+        if (bp.slidesPerView) {
+          css += `@media (min-width: ${width}px) { .embla[data-embla-id="${rootEl.dataset.emblaId}"] .embla__slide { flex: 0 0 ${(100 / bp.slidesPerView).toFixed(4)}%; } }`;
+        }
+      }
+    }
+
+    const style = document.createElement('style');
+    style.textContent = css;
+    rootEl.appendChild(style);
+  }
+
+  function initEmblaCarousels(): void {
+    document.querySelectorAll<HTMLElement>('.embla:not(.embla-initialized)[data-embla-config]').forEach((el) => {
+      const config = JSON.parse(el.dataset.emblaConfig || '{}');
+      const viewport = el.querySelector('.embla__viewport') as HTMLElement | null;
+      if (!viewport || !config) return;
+
+      const plugins: EmblaPluginType[] = [];
+      let autoplayPlugin: AutoplayType | null = null;
+
+      if (config.hasAutoplay) {
+        autoplayPlugin = Autoplay({
+          delay: config.autoplayDelay,
+          stopOnLastSnap: !config.loop,
+          stopOnInteraction: false,
+          playOnInit: false,
+        });
+        plugins.push(autoplayPlugin);
+      }
+
+      if (config.effect === 'fade') {
+        plugins.push(Fade());
+        el.classList.add('embla--fade');
+      }
+
+      const emblaApi = EmblaCarousel(
+        viewport,
+        {
+          loop: config.loop,
+          align: 'start',
+          slidesToScroll: 1,
+          ...(config.breakpoints ? { breakpoints: config.breakpoints } : {}),
+        },
+        plugins
+      );
+
+      // Apply responsive slidesPerView via CSS
+      if (typeof config.slidesPerView === 'number' && config.slidesPerView !== 1) {
+        applySlidesPerView(el, config.slidesPerView, config.breakpoints);
+      } else if (config.breakpoints) {
+        applySlidesPerView(el, config.slidesPerView === 'auto' ? 1 : config.slidesPerView || 1, config.breakpoints);
+      }
+
+      // Start autoplay (only if more than 1 slide — single slide has nothing to advance to)
+      if (autoplayPlugin && emblaApi.slideNodes().length > 1) {
+        autoplayPlugin.play();
+      }
+
+      // Pause-on-interaction with auto-resume after 3s (only with autoplay + multiple slides)
+      if (autoplayPlugin && config.autoplayDisableOnInteraction && emblaApi.slideNodes().length > 1) {
+        setupPauseOnInteraction(autoplayPlugin, el);
+      }
+
+      // Wire navigation buttons
+      el.querySelector('.embla__prev')?.addEventListener('click', () => emblaApi.scrollPrev());
+      el.querySelector('.embla__next')?.addEventListener('click', () => emblaApi.scrollNext());
+
+      // Build pagination dots
+      if (config.hasPagination) {
+        buildPagination(emblaApi, el);
+      }
+
+      el.classList.add('embla-initialized');
     });
   }
 
-  initSwipers();
+  initEmblaCarousels();
 
   // Re-init after Astro view transitions
-  document.addEventListener('astro:page-load', initSwipers);
+  document.addEventListener('astro:page-load', initEmblaCarousels);
 </script>

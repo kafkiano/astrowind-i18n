@@ -1,0 +1,120 @@
+---
+import { getStaticPathsForLocale } from '~/utils/i18n';
+
+import Layout from '~/layouts/LandingLayout.astro';
+import HeroSlider from '~/components/widgets/HeroSlider.astro';
+
+export const getStaticPaths = getStaticPathsForLocale;
+
+export const navigation = {
+  title: 'Hero Slider',
+  group: 'Landing',
+  showIn: 'all',
+};
+
+const metadata = {
+  title: 'Hero Slider — AstroWind I18n',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroSlider
+    autoplay={{ delay: 4000, disableOnInteraction: true }}
+    sliderPagination
+    sliderNavigation
+    slides={[
+      {
+        image: { src: '~/assets/images/hero-image.png', alt: 'Astro + Tailwind CSS' },
+        title: '<span class="text-accent dark:text-white">Astro 6</span> + Tailwind CSS',
+        subtitle:
+          '<span class="font-semibold">AstroWind I18n</span> is a free, customizable and production-ready template. Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Get template',
+            href: 'https://github.com/arthelokyo/astrowind',
+            target: '_blank',
+            icon: 'tabler:download',
+          },
+          { text: 'Learn more', href: '#features' },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Team collaboration',
+        },
+        title: 'Auto-translated <span class="text-accent dark:text-white">i18n</span> pipeline',
+        subtitle:
+          'Full internationalization with DeepL and Gemini AI translation. Extract, sync, translate — all automated at build time. Supports 4+ locales out of the box.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'View docs',
+            href: 'https://github.com/arthelokyo/astrowind',
+            target: '_blank',
+            icon: 'tabler:book',
+          },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+          alt: 'Blueprint design',
+        },
+        title: '<span class="text-accent dark:text-white">Sveltia CMS</span> ready',
+        subtitle:
+          'Lightweight Git-based content management. Edit content directly in the admin panel — commits go straight to your repo. Zero infrastructure, zero npm dependencies.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Go to admin',
+            href: '/admin/',
+            icon: 'tabler:settings',
+          },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Space exploration',
+        },
+        title: 'Blazing <span class="text-accent dark:text-white">performance</span>',
+        subtitle:
+          'Static output, optimized images, zero JavaScript by default. Lighthouse scores in the high 90s. Your users will never wait for a page to load.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Run lighthouse',
+            href: '#',
+            icon: 'tabler:bolt',
+          },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+          alt: 'Development workflow',
+        },
+        title: 'Open source & <span class="text-accent dark:text-white">community driven</span>',
+        subtitle:
+          'MIT licensed. Most starred Astro theme in 2022–2024. Contributions welcome — join the community and help shape the future of Astro templates.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Star on GitHub',
+            href: 'https://github.com/arthelokyo/astrowind',
+            target: '_blank',
+            icon: 'tabler:star',
+          },
+          { text: 'Contribute', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' },
+        ],
+      },
+    ]}
+  />
+
+  <p class="text-center text-muted dark:text-slate-400 mt-12 mb-4">
+    This page demonstrates the <strong>HeroSlider</strong> widget powered by <strong>Embla Carousel</strong>. Swipe or
+    use the arrows and dots to navigate between slides. Autoplay pauses on interaction and resumes after 3 seconds.
+  </p>
+</Layout>
