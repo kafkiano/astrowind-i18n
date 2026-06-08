@@ -2,29 +2,40 @@
  * Astro integration for i18n.
  *
  * Orchestrates the i18n pipeline:
- *   1. Normalize catalogs (strip XML, migrate placeholders)
- *   2. Extract new strings from .astro → source catalog
- *   3. Prune dead strings (removed from all .astro files)
- *   4. Sync new keys to target locale catalogs
- *   5. Clean up stale locale artifacts (removed locales, orphaned markdown)
- *   6. Translate markdown content (manifest-protected)
- *   7. Translate catalog strings (manifest-protected)
- *   8. Post-process HTML output (replace source-locale text with translations)
+ *   1. Extract new strings from .astro → source catalog
+ *   2. Prune dead strings (removed from all .astro files)
+ *   3. Sync new keys to target locale catalogs
+ *   4. Clean up stale locale artifacts (removed locales, orphaned markdown)
+ *   5. Translate markdown content (manifest-protected)
+ *   6. Translate catalog strings (manifest-protected)
+ *   7. Post-process HTML output (replace source-locale text with translations)
  *
  * All I/O is async (fs/promises) — consistent with the rest of the pipeline.
  */
 
 import type { AstroIntegration } from 'astro';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { readConfig } from './config';
 import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './catalog';
 import { extractFromAstro } from './extract';
-import { normalizeCatalogs } from './normalize';
 import { getProvider } from './provider';
-import { postProcessBuild } from './postprocess';
+import { translateHtml } from './postprocess';
 import { translateContent, cleanMarkdownOrphans, cleanRemovedLocaleDirs } from '../utils/i18n-md';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from '../utils/i18n-manifest';
+
+/** Decode common HTML entities to their character equivalents. */
+function decodeEntities(text: string): string {
+  return text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'");
+}
 
 export function i18nIntegration(): AstroIntegration {
   let catalogs: CatalogSet;
@@ -39,10 +50,6 @@ export function i18nIntegration(): AstroIntegration {
         const srcLocale = config.defaultLocale;
         defaultLocale = srcLocale;
 
-        // ── Catalog maintenance ──────────────────────────────────────
-
-        await normalizeCatalogs(locales);
-
         // ── Extract strings from .astro files ────────────────────────
 
         const astroFiles = await glob('src/**/*.astro', { ignore: ['src/locales/**', 'node_modules/**'] });
@@ -53,7 +60,7 @@ export function i18nIntegration(): AstroIntegration {
             const content = await readFile(file, 'utf-8');
             const extracted = await extractFromAstro(content, file);
             for (const item of extracted) {
-              const msgid = item.msgid.replace(/\s+/g, ' ').trim();
+              const msgid = decodeEntities(item.msgid.replace(/\s+/g, ' ').trim());
               if (msgid) activeStrings.add(msgid);
             }
           } catch (err) {
@@ -82,11 +89,11 @@ export function i18nIntegration(): AstroIntegration {
         }
 
         // Merge in new strings
-        for (const text of activeStrings) {
-          if (!(text in srcCatalog)) {
-            srcCatalog[text] = ''; // placeholder: untranslated
-            newStrings++;
-          }
+        for (const t of activeStrings) {
+          const text = decodeEntities(t);
+          if (!text || text in srcCatalog) continue;
+          srcCatalog[text] = ''; // placeholder: untranslated
+          newStrings++;
         }
 
         if (newStrings > 0 || removedStrings > 0) {
@@ -210,8 +217,48 @@ export function i18nIntegration(): AstroIntegration {
       },
 
       'astro:build:done': async ({ dir }) => {
-        await postProcessBuild(dir, catalogs, defaultLocale);
+        const distDir = fileURLToPath(dir);
+        console.log(`[i18n] Post-processing HTML in ${distDir}...`);
+
+        let processed = 0;
+        let translated = 0;
+
+        await walkHtmlFiles(distDir, async (filePath: string) => {
+          const relPath = path.relative(distDir, filePath);
+          const localeMatch = relPath.match(/^([a-z]{2})\//);
+          if (!localeMatch) return;
+
+          const locale = localeMatch[1];
+          if (locale === defaultLocale) return;
+
+          processed++;
+          try {
+            const html = await readFile(filePath, 'utf-8');
+            const translatedHtml = translateHtml(html, locale, catalogs, defaultLocale);
+            if (translatedHtml !== html) {
+              await writeFile(filePath, translatedHtml, 'utf-8');
+              translated++;
+            }
+          } catch (err) {
+            console.warn(`[i18n] Failed: ${relPath} — ${(err as Error).message}`);
+          }
+        });
+
+        console.log(`[i18n] Done: ${translated}/${processed} pages translated`);
       },
     },
   };
+}
+
+/** Walk a directory recursively, visiting .html files (async). */
+async function walkHtmlFiles(dir: string, visitor: (filePath: string) => Promise<void>): Promise<void> {
+  const entries = await readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await walkHtmlFiles(fullPath, visitor);
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      await visitor(fullPath);
+    }
+  }
 }
