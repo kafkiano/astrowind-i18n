@@ -22,9 +22,9 @@ import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './ca
 import { extractFromAstro } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
-import { translateContent } from '../utils/i18n-md';
+import { translateContent } from './markdown';
 import { glob } from 'tinyglobby';
-import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from '../utils/i18n-manifest';
+import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from './manifest';
 
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },

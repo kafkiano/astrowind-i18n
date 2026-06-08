@@ -13,9 +13,9 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { type TranslationProvider } from '../i18n/provider';
+import { type TranslationProvider } from './provider';
 import { glob } from 'tinyglobby';
-import { loadManifest, saveManifest, needsTranslation, markTranslated } from './i18n-manifest';
+import { loadManifest, saveManifest, needsTranslation, markTranslated } from './manifest';
 
 const FRONTMATTER_KEYS = ['title', 'excerpt', 'description', 'group'];
 const CONTENT_TYPES = [
