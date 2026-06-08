@@ -11,6 +11,7 @@ interface Props extends Omit<BaseProps, 'classes'> {
   variant?: 'cards' | 'cards-vertical' | 'cards-image' | 'slider';
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
   sliderPagination?: boolean;
+  sliderNavigation?: boolean;
   sliderLoop?: boolean;
   id?: string;
   isDark?: boolean;
@@ -21,6 +22,7 @@ const {
   variant = 'cards',
   autoplay,
   sliderPagination,
+  sliderNavigation,
   sliderLoop,
 
   title = await Astro.slots.render('title'),
@@ -127,6 +129,8 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
             gap: 24,
             loop: sliderLoop ?? true,
             pagination: sliderPagination ? true : false,
+            navigation: sliderNavigation ? true : false,
+            navOutside: true,
             ...(autoplay !== undefined ? { autoplay } : {}),
             responsive: {
               640: {
