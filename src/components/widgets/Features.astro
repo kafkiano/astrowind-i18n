@@ -124,24 +124,24 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
         <Slider
           config={{
             slidesPerView: 1,
-            spaceBetween: 24,
+            gap: 24,
             loop: sliderLoop ?? true,
-            pagination: sliderPagination ? { clickable: true } : false,
+            pagination: sliderPagination ? true : false,
             ...(autoplay !== undefined ? { autoplay } : {}),
             responsive: {
               640: {
                 slidesPerView: Math.min(columns ?? 3, 2),
-                spaceBetween: 16,
+                gap: 16,
               },
               1024: {
                 slidesPerView: columns ?? 3,
-                spaceBetween: 24,
+                gap: 24,
               },
             },
           }}
         >
           {items.map(({ title: itemTitle, description, icon, callToAction }) => (
-            <div class="embla__slide">
+            <div class="embla-slide">
               <FeatureCard
                 layout="horizontal"
                 title={itemTitle}

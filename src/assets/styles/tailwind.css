@@ -116,6 +116,12 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
+@utility embla-slide {
+  flex: 0 0 calc((100% - var(--gap, 0px) * max(0, var(--spv, 1) - 1)) / max(1, var(--spv, 1)));
+  --spv: 1;
+  min-width: 0;
+}
+
 /* To deprecated */
 
 .dd *:first-child {

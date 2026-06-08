@@ -35,14 +35,14 @@ const hasNavigation = sliderNavigation ?? slides.length > 1;
           loop: true,
           effect: 'fade',
           slidesPerView: 1,
-          spaceBetween: 0,
-          pagination: hasPagination ? { clickable: true } : false,
+          gap: 0,
+          pagination: hasPagination,
           navigation: hasNavigation,
         }}
         class="h-[600px] md:h-[700px] lg:h-screen"
       >
         {slides.map((slide) => (
-          <div class="embla__slide relative flex items-center justify-center overflow-hidden">
+          <div class="embla-slide relative flex items-center justify-center overflow-hidden">
             <div class="absolute inset-0">
               <Image
                 src={slide.image.src}
