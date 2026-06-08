@@ -18,7 +18,7 @@ import { classifyString } from './heuristic';
 export interface ExtractedString {
   msgid: string;
   file: string;
-  scope: 'markup' | 'attribute' | 'script';
+  scope: 'markup' | 'attribute' | 'script' | 'expression';
   element?: string;
   attribute?: string;
 }
@@ -172,6 +172,85 @@ function extractTemplateStrings(ast: any, _content: string, file: string): Extra
                   });
                 }
               }
+            }
+          }
+
+          // Expression props: parse JS value with acorn, extract string literals
+          if (attr.kind === 'expression' && typeof attr.value === 'string') {
+            const exprCode = `const __x = ${attr.value}`;
+            try {
+              const jsAst = scriptParser.parse(exprCode, SCRIPT_OPTIONS) as ReturnType<typeof scriptParser.parse>;
+              const exprSeen = new Set<string>();
+
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              function walkJs(node: any): void {
+                if (!node || typeof node !== 'object') return;
+
+                // String literals
+                if (node.type === 'Literal' && typeof node.value === 'string' && node.value.length > 0) {
+                  const str = node.value;
+                  const ctx: StringContext = {
+                    scope: 'expression',
+                    element: currentEl,
+                    attribute: attr.name as string,
+                  };
+                  if (classifyString(str, ctx) === 'message') {
+                    const key = `${str}::${file}`;
+                    if (!seen.has(key) && !exprSeen.has(key)) {
+                      exprSeen.add(key);
+                      results.push({
+                        msgid: str,
+                        file,
+                        scope: 'expression',
+                        element: ctx.element,
+                        attribute: ctx.attribute,
+                      });
+                    }
+                  }
+                }
+
+                // Template literal static parts (quasis)
+                if (node.type === 'TemplateLiteral' && Array.isArray(node.quasis)) {
+                  for (const q of node.quasis) {
+                    const str: string = q.value?.cooked?.trim() ?? '';
+                    if (str.length > 0) {
+                      const ctx: StringContext = {
+                        scope: 'expression',
+                        element: currentEl,
+                        attribute: attr.name as string,
+                      };
+                      if (classifyString(str, ctx) === 'message') {
+                        const key = `${str}::${file}`;
+                        if (!seen.has(key) && !exprSeen.has(key)) {
+                          exprSeen.add(key);
+                          results.push({
+                            msgid: str,
+                            file,
+                            scope: 'expression',
+                            element: ctx.element,
+                            attribute: ctx.attribute,
+                          });
+                        }
+                      }
+                    }
+                  }
+                }
+
+                // Recurse
+                for (const key of Object.keys(node)) {
+                  if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key)) continue;
+                  const val = node[key];
+                  if (Array.isArray(val)) {
+                    for (const item of val) walkJs(item);
+                  } else if (typeof val === 'object' && val !== null) {
+                    walkJs(val);
+                  }
+                }
+              }
+
+              walkJs(jsAst);
+            } catch {
+              // Malformed expression — skip silently
             }
           }
         }

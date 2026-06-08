@@ -12,7 +12,7 @@
 export type HeuristicResult = 'message' | 'url' | false;
 
 export interface StringContext {
-  scope: 'markup' | 'attribute' | 'script';
+  scope: 'markup' | 'attribute' | 'script' | 'expression';
   element?: string;
   attribute?: string;
   call?: string;
@@ -57,7 +57,7 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
   // URL detection: starts with / and no spaces
   const looksLikeUrl = str.startsWith('/') && !str.includes(' ');
 
-  if (looksLikeUrl && (ctx.scope === 'script' || ctx.scope === 'attribute')) {
+  if (looksLikeUrl && (ctx.scope === 'script' || ctx.scope === 'attribute' || ctx.scope === 'expression')) {
     if (ctx.call && URL_CALLS.includes(ctx.call)) return 'url';
     if (ctx.attribute) {
       for (const [el, attr] of URL_ATTRIBUTES) {
@@ -69,10 +69,11 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
   // Markup text: always translatable
   if (ctx.scope === 'markup') return 'message';
 
-  // ── Script and attribute scope ──
+  // ── Script, attribute, and expression scope ──
 
-  // Skip: non-letter first character
-  if (!/\p{L}/u.test(str[0])) return false;
+  // Skip: first character must be a Unicode letter or < (HTML-starting strings).
+  // Rejects URLs (/...), CSS classes (2xl:...), link targets (_blank), etc.
+  if (!/[\p{L}<]/u.test(str[0])) return false;
 
   // Skip: starts with lowercase ASCII letter (likely variable/method names)
   if (/[a-z]/.test(str[0])) return false;
@@ -82,6 +83,9 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
 
   // Attribute: acceptable after filtering
   if (ctx.scope === 'attribute') return 'message';
+
+  // Expression: acceptable after filtering (same as attribute — UI text in expression props)
+  if (ctx.scope === 'expression') return 'message';
 
   // Script scope: expression without function context → skip
   if (ctx.declaring === 'expression') return false;
