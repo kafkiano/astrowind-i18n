@@ -90,14 +90,14 @@ const responsiveCss = responsive
       <slot />
     </div>
 
-    {pagination && !navOutside && (
-      <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
-    )}
+    {
+      pagination && !navOutside && (
+        <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
+      )
+    }
   </div>
 
-  {pagination && navOutside && (
-    <div data-embla-dots class="flex justify-center gap-2 mt-3" />
-  )}
+  {pagination && navOutside && <div data-embla-dots class="flex justify-center gap-2 mt-3" />}
 
   {
     navigation && !navOutside && (
