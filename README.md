@@ -62,9 +62,13 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   └── snippets/            # Flat markdown snippets (no locale dirs)
 │   ├── i18n/                    # Custom i18n system
 │   │   ├── catalog.ts           # JSON catalog management
+│   │   ├── config.ts            # Configuration (reads config.yaml + env vars)
 │   │   ├── extract.ts           # AST-based string extraction
 │   │   ├── heuristic.ts         # String classification
-│   │   ├── integration.ts       # Astro post-processing hook
+│   │   ├── integration.ts       # Astro integration orchestrator
+│   │   ├── manifest.ts          # Content-addressed translation manifest
+│   │   ├── markdown.ts          # Markdown content translation
+│   │   ├── postprocess.ts       # DOM-based HTML post-processing
 │   │   └── provider.ts          # Gemini/DeepL AI translation
 │   ├── locales/                 # JSON translation catalogs
 │   │   ├── en.json
@@ -92,7 +96,6 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   ├── utils/
 │   │   ├── auto-navigation.ts
 │   │   ├── blog.ts
-│   │   ├── i18n-md.ts           # Markdown content translation
 │   │   ├── images.ts
 │   │   ├── permalinks.ts
 │   │   └── ...
@@ -228,7 +231,7 @@ Astrowind uses a custom i18n system (`src/i18n/`) with zero framework dependenci
 
 4. **HTML post-processing** – after the build, an Astro integration walks `dist/` HTML files and replaces source-locale text with translations using full-string matching. Script tags are protected from corruption.
 
-5. **Markdown content translation** (`src/utils/i18n-md.ts`) – blog posts and pages in `src/data/{post,pages}/{sourceLocale}/` are automatically translated to all target locales. Frontmatter fields (title, excerpt, description) are translated individually; the body is translated as a single block preserving formatting.
+5. **Markdown content translation** (`src/i18n/markdown.ts`) – blog posts and pages in `src/data/{post,pages}/{sourceLocale}/` are automatically translated to all target locales. Frontmatter fields (title, excerpt, description) are translated individually; the body is translated as a single block preserving formatting.
 
 **Expected behaviors by user action:**
 

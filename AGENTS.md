@@ -74,15 +74,15 @@ In the most cases a `bun run build` or `bun run check` might be enough to check 
 
 ### Internationalization (i18n)
 
-Custom system (`src/i18n/`, ~600 lines) replacing Wuchale. No external i18n framework dependencies. All hardcoded `'en'` references eliminated in v1.2.6 — source locale comes from `config.yaml` `i18n.defaultLocale`.
+Custom system (`src/i18n/`, ~1500 lines) replacing Wuchale. No external i18n framework dependencies. All hardcoded `'en'` references eliminated in v1.2.6 — source locale comes from `config.yaml` `i18n.defaultLocale`.
 
 **Architecture layers:**
 1. **JSON catalogs** (`src/locales/{locale}.json`) — `{ "source string": "translated" }` maps. Keys are the source-locale text (e.g. English). Untranslated entries have value `""` (empty string).
-2. **AST-based extraction** (`src/i18n/extract.ts`) — walks `.astro` files via `@astrojs/compiler`, finds translatable text nodes. Heuristic classifier excludes code, attributes, URLs, script contents.
+2. **AST-based extraction** (`src/i18n/extract.ts`) — walks `.astro` files via `@astrojs/compiler`, finds translatable text nodes. Also parses **expression prop values** (e.g. `items={[...]}`, `slides={[...]}`) with acorn to extract string literals from JS expressions. Heuristic classifier excludes code, URLs, CSS classes, script contents.
 3. **Catalog sync** — New keys from extraction get `""` in target catalogs. Dead keys (removed from all `.astro` files) are pruned from all catalogs automatically during build.
 4. **AI translation** — Strings with `""` values are sent to the configured provider (Gemini REST API or DeepL) in batches of 30-50. Retries with exponential backoff.
-5. **HTML post-processing** (`src/i18n/postprocess.ts`) — after `astro:build:done`, walks `dist/` HTML, replaces source-locale text with catalog translations via full-string matching (no substring tokenization). Script tags excluded.
-6. **Markdown content translation** (`src/utils/i18n-md.ts`) — translates `src/data/{post,pages}/{sourceLocale}/` → all target locales. Content-addressable manifest (`src/locales/.i18n-manifest.json`) tracks SHA-256 hashes — skips unchanged files even across git clones.
+5. **HTML post-processing** (`src/i18n/postprocess.ts`) — after `astro:build:done`, walks `dist/` HTML, replaces source-locale text with catalog translations via DOM-based full-string matching (htmlparser2). Normalizes Tailwind v4 class reordering for canonical comparison. Script tags excluded.
+6. **Markdown content translation** (`src/i18n/markdown.ts`) — translates `src/data/{post,pages}/{sourceLocale}/` → all target locales. Content-addressable manifest (`src/i18n/manifest.ts`) tracks SHA-256 hashes — skips unchanged files even across git clones.
 
 **User story behaviors (verified in v1.2.6):**
 
@@ -119,13 +119,15 @@ i18n:
 Environment overrides: `GEMINI_API_KEY`, `DEEPL_API_KEY`, `I18N_PROVIDER`, `I18N_MODEL`.
 
 **Key files:**
-- `src/i18n/integration.ts` — main orchestration (extract → prune → sync → translate → cleanup)
-- `src/i18n/catalog.ts` — load/save/merge JSON catalogs
+- `src/i18n/integration.ts` — main orchestration (extract → prune → sync → translate → cleanup + post-process)
+- `src/i18n/catalog.ts` — load/save JSON catalogs
+- `src/i18n/config.ts` — reads `config.yaml` + env vars, caches singleton
+- `src/i18n/extract.ts` — AST-based string extraction (markup, attributes, expression props)
+- `src/i18n/heuristic.ts` — string classification (translatable/URL/false)
+- `src/i18n/postprocess.ts` — DOM-based HTML string replacement (full-string matching)
 - `src/i18n/provider.ts` — Gemini (raw `fetch()`) + DeepL (deepl-node SDK) implementations
-- `src/i18n/postprocess.ts` — HTML string replacement (full-string matching)
-- `src/i18n/prune.ts` — standalone CLI for manual catalog pruning (`bun run src/i18n/prune.ts --apply`)
-- `src/utils/i18n-md.ts` — markdown translation + orphan cleanup
-- `src/utils/i18n-manifest.ts` — content-addressed manifest management
+- `src/i18n/markdown.ts` — markdown translation + orphan cleanup
+- `src/i18n/manifest.ts` — content-addressed manifest management
 
 **Routing:** All routes locale-prefixed (`/[locale]/...`). `prefixDefaultLocale: true`, `redirectToDefaultLocale: false`. Pass `Astro.currentLocale` explicitly from `.astro` files to components. hreflang tags auto-generated in `Layout.astro`.
 
