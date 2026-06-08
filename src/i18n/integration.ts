@@ -14,7 +14,7 @@
  */
 
 import type { AstroIntegration } from 'astro';
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readFile, writeFile, readdir, rm, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readConfig } from './config';
@@ -22,9 +22,14 @@ import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './ca
 import { extractFromAstro } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
-import { translateContent, cleanMarkdownOrphans, cleanRemovedLocaleDirs } from '../utils/i18n-md';
+import { translateContent } from '../utils/i18n-md';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from '../utils/i18n-manifest';
+
+const CONTENT_TYPES = [
+  { dir: 'src/data/pages', pattern: '**/*.md' },
+  { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
+];
 
 /** Decode common HTML entities to their character equivalents. */
 function decodeEntities(text: string): string {
@@ -260,5 +265,112 @@ async function walkHtmlFiles(dir: string, visitor: (filePath: string) => Promise
     } else if (entry.isFile() && entry.name.endsWith('.html')) {
       await visitor(fullPath);
     }
+  }
+}
+
+async function fileExists(path: string): Promise<boolean> {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Remove translated markdown files whose source (in the default locale)
+ * no longer exists. Prevents stale content from being published after
+ * a source file is deleted.
+ */
+async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Promise<void> {
+  const targetLocales = locales.filter((l) => l !== sourceLocale);
+  if (targetLocales.length === 0) return;
+
+  let manifest = await loadManifest();
+  let manifestChanged = false;
+
+  for (const { dir } of CONTENT_TYPES) {
+    const srcDir = path.join(dir, sourceLocale);
+    if (!(await fileExists(srcDir))) continue; // no source dir = nothing to compare against
+
+    for (const locale of targetLocales) {
+      const targetDir = path.join(dir, locale);
+      if (!(await fileExists(targetDir))) continue;
+
+      let files: string[];
+      try {
+        files = await glob('**/*.{md,mdx}', { cwd: targetDir });
+      } catch {
+        continue;
+      }
+
+      for (const relPath of files) {
+        const srcPath = path.join(srcDir, relPath);
+        if (await fileExists(srcPath)) continue; // source still exists, keep
+
+        // Source deleted — clean up translation
+        const targetPath = path.join(targetDir, relPath);
+        const manifestKey = `${dir}/${sourceLocale}/${relPath}`;
+
+        try {
+          await rm(targetPath);
+          console.log(`[clean] Removed orphan: ${targetPath}`);
+        } catch (err) {
+          console.warn(`[clean] Failed to remove ${targetPath}:`, (err as Error).message);
+        }
+
+        // Remove from manifest so it doesn't linger
+        if (manifest.markdown[manifestKey]) {
+          const rest = { ...manifest.markdown };
+          delete rest[manifestKey];
+          manifest = { ...manifest, markdown: rest };
+          manifestChanged = true;
+        }
+      }
+    }
+  }
+
+  if (manifestChanged) {
+    await saveManifest(manifest);
+  }
+}
+
+/**
+ * Warn about stale locale directories (from locales that were removed
+ * from config.yaml). Does NOT auto-delete — manual cleanup is safer.
+ */
+async function cleanRemovedLocaleDirs(locales: string[], sourceLocale: string): Promise<void> {
+  const activeLocales = new Set(locales);
+  activeLocales.add(sourceLocale); // source locale dirs are needed too
+
+  // Check content directories for removed locales
+  for (const { dir } of CONTENT_TYPES) {
+    let entries;
+    try {
+      entries = await readdir(dir, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      if (!/^[a-z]{2}$/.test(entry.name)) continue;
+      if (activeLocales.has(entry.name)) continue;
+      console.warn(`[i18n] Stale locale dir (not in config.yaml locales): ${path.join(dir, entry.name)}/`);
+    }
+  }
+
+  // Check catalog files for removed locales
+  try {
+    const catalogEntries = await readdir('src/locales', { withFileTypes: true });
+    for (const entry of catalogEntries) {
+      if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
+      const locale = entry.name.replace(/\.json$/, '');
+      if (!/^[a-z]{2}$/.test(locale)) continue;
+      if (activeLocales.has(locale)) continue;
+      console.warn(`[i18n] Stale catalog file (not in config.yaml locales): src/locales/${entry.name}`);
+    }
+  } catch {
+    // src/locales might not exist yet — ignore
   }
 }

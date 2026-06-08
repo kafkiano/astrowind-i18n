@@ -47,4 +47,3 @@ export async function saveCatalog(localesDir: string, locale: string, catalog: C
   }
   await writeFile(filePath, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
 }
-

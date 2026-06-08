@@ -18,11 +18,7 @@ function normalizeDom(node: Parameters<typeof hasChildren>[0]): void {
   for (const child of node.children) {
     if (isTag(child)) {
       if (child.attribs && child.attribs['class']) {
-        child.attribs['class'] = child.attribs['class']
-          .split(/\s+/)
-          .filter(Boolean)
-          .sort()
-          .join(' ');
+        child.attribs['class'] = child.attribs['class'].split(/\s+/).filter(Boolean).sort().join(' ');
       }
       normalizeDom(child);
     }
@@ -37,10 +33,7 @@ function normalizeDom(node: Parameters<typeof hasChildren>[0]): void {
 function canonicalInnerHtml(html: string): string {
   const doc = parseDocument(html);
   normalizeDom(doc);
-  return getInnerHTML(doc)
-    .replace(/>\s+/g, '>')
-    .replace(/\s+</g, '<')
-    .trim();
+  return getInnerHTML(doc).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
 }
 
 /**
@@ -73,6 +66,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
 
   // Parse the full HTML into a DOM
   const doc = parseDocument(html);
+  normalizeDom(doc);
 
   let replaced = 0;
 
@@ -94,11 +88,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
       walk(child);
 
       // Normalize element before comparison (sort classes, strip tag-adjacent whitespace)
-      normalizeDom(child);
-      const normalized = getInnerHTML(child)
-        .replace(/>\s+/g, '>')
-        .replace(/\s+</g, '<')
-        .trim();
+      const normalized = getInnerHTML(child).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
       if (!normalized) continue;
 
       const translation = translationMap.get(normalized);
@@ -118,10 +108,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
   // Also check top-level text segments in the document root
   // (handles cases where the full HTML is a single top-level element)
   if (replaced === 0 && hasChildren(doc)) {
-    const rootInner = getInnerHTML(doc)
-      .replace(/>\s+/g, '>')
-      .replace(/\s+</g, '<')
-      .trim();
+    const rootInner = getInnerHTML(doc).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
     const translation = translationMap.get(rootInner);
     if (translation) {
       const translatedDoc = parseDocument(translation);
@@ -136,5 +123,3 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
 function getTopLevelNodes(doc: ReturnType<typeof parseDocument>) {
   return hasChildren(doc) ? [...doc.children] : [];
 }
-
-

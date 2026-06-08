@@ -238,7 +238,8 @@ function extractTemplateStrings(ast: any, _content: string, file: string): Extra
 
                 // Recurse
                 for (const key of Object.keys(node)) {
-                  if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key)) continue;
+                  if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key))
+                    continue;
                   const val = node[key];
                   if (Array.isArray(val)) {
                     for (const item of val) walkJs(item);
