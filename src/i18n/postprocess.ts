@@ -78,28 +78,47 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
   function walk(node: Parameters<typeof hasChildren>[0]): void {
     if (!hasChildren(node)) return;
 
-    for (const child of node.children) {
+    // Copy-iteration: child replacement (text node → elements) mutates the array,
+    // so we iterate over a snapshot to avoid skipping or double-visiting nodes.
+    for (const child of [...node.children]) {
+      // ── Text nodes: match trimmed content against catalog keys ──────
+      if (child.type === 'text') {
+        const content = (child.data as string).trim();
+        if (!content) continue;
+        const translation = translationMap.get(content);
+        if (translation) {
+          const translatedDoc = parseDocument(translation);
+          const newNodes = getTopLevelNodes(translatedDoc);
+          const idx = node.children.indexOf(child);
+          if (idx !== -1) node.children.splice(idx, 1, ...newNodes);
+          replaced++;
+        }
+        continue;
+      }
+
       if (!isTag(child)) continue;
 
       // Skip <script> tags
       if (child.name === 'script') continue;
 
-      // Recurse into children first (depth-first)
-      walk(child);
-
-      // Normalize element before comparison (sort classes, strip tag-adjacent whitespace)
+      // Check element BEFORE recursing into children (top-down).
+      // If the element's innerHTML matches a catalog key, replace its
+      // children wholesale and skip recursion — avoids the depth-first
+      // race condition where a child's translation corrupts the parent's
+      // innerHTML before the parent can match.
       const normalized = getInnerHTML(child).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
-      if (!normalized) continue;
+      if (normalized) {
+        const translation = translationMap.get(normalized);
+        if (translation) {
+          const translatedDoc = parseDocument(translation);
+          child.children = getTopLevelNodes(translatedDoc);
+          replaced++;
+          continue; // skip recursion — children already replaced
+        }
+      }
 
-      const translation = translationMap.get(normalized);
-      if (!translation) continue;
-
-      // Parse translation HTML and replace this element's children
-      const translatedDoc = parseDocument(translation);
-      const newChildren = getTopLevelNodes(translatedDoc);
-
-      child.children = newChildren;
-      replaced++;
+      // No match at this level — recurse into children
+      walk(child);
     }
   }
 
