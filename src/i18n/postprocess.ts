@@ -6,7 +6,7 @@
 
 import { parseDocument } from 'htmlparser2';
 import { hasChildren, isTag } from 'domhandler';
-import { getOuterHTML, getInnerHTML } from 'domutils';
+import render from 'dom-serializer';
 import type { CatalogSet } from './catalog';
 
 /**
@@ -33,7 +33,7 @@ function normalizeDom(node: Parameters<typeof hasChildren>[0]): void {
 function canonicalInnerHtml(html: string): string {
   const doc = parseDocument(html);
   normalizeDom(doc);
-  return getInnerHTML(doc).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
+  return render(doc.children).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
 }
 
 /**
@@ -106,7 +106,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
       // children wholesale and skip recursion — avoids the depth-first
       // race condition where a child's translation corrupts the parent's
       // innerHTML before the parent can match.
-      const normalized = getInnerHTML(child).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
+      const normalized = render(child.children).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
       if (normalized) {
         const translation = translationMap.get(normalized);
         if (translation) {
@@ -127,7 +127,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
   // Also check top-level text segments in the document root
   // (handles cases where the full HTML is a single top-level element)
   if (replaced === 0 && hasChildren(doc)) {
-    const rootInner = getInnerHTML(doc).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
+    const rootInner = render(doc.children).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
     const translation = translationMap.get(rootInner);
     if (translation) {
       const translatedDoc = parseDocument(translation);
@@ -135,7 +135,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
     }
   }
 
-  return getOuterHTML(doc);
+  return render(doc);
 }
 
 /** Extract top-level child nodes from a Document. */
