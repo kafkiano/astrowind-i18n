@@ -49,6 +49,9 @@ const {
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+
+// Used in JSX expression so the extraction pipeline picks it up for i18n catalogs
+const moreLabel = 'More';
 ---
 
 <header
@@ -63,18 +66,16 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div
     class:list={[
       'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'md:flex md:items-center gap-2 md:gap-4',
       {
-        'md:flex md:justify-between': position !== 'center',
-      },
-      {
-        'md:grid md:grid-cols-3 md:items-center': position === 'center',
+        'md:justify-between': position !== 'center',
       },
       {
         'max-w-7xl': !isFullWidth,
       },
     ]}
   >
-    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
+    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between shrink-0']}>
       <a class="flex items-center" href={getHomePermalink(currentLocale)}>
         <Logo />
       </a>
@@ -83,15 +84,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class="items-center w-full md:w-auto hidden md:flex text-default flex-1 justify-center overflow-hidden"
       aria-label="Main navigation"
+      id="aw-main-nav"
     >
       <ul
+        id="aw-nav-items"
         class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
       >
         {
           links.map(({ title, href, links }) => (
-            <li class={links?.length ? 'dropdown' : ''}>
+            <li class={links?.length ? 'dropdown' : ''} data-nav-item>
               {links?.length ? (
                 <>
                   <button
@@ -131,12 +134,26 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             </li>
           ))
         }
+        <li id="aw-nav-more" class="dropdown hidden" data-nav-more>
+          <button
+            type="button"
+            class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+          >
+            {moreLabel}{' '}
+            <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+          </button>
+          <ul
+            id="aw-nav-more-menu"
+            class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"
+          >
+          </ul>
+        </li>
       </ul>
     </nav>
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 md:justify-self-end',
+        'hidden md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0 shrink-0',
       ]}
     >
       <div class="items-center flex justify-between w-full md:w-auto">
@@ -170,3 +187,118 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+
+<script>
+  function initPriorityNav() {
+    const nav = document.getElementById('aw-main-nav');
+    const itemList = document.getElementById('aw-nav-items');
+    const moreItem = document.getElementById('aw-nav-more');
+    const moreMenu = document.getElementById('aw-nav-more-menu');
+    if (!nav || !moreItem || !itemList) return;
+
+    const navItems = itemList.querySelectorAll(':scope > [data-nav-item]');
+    if (navItems.length === 0) return;
+
+    let isUpdating = false;
+
+    function update() {
+      if (isUpdating) return;
+      isUpdating = true;
+      requestAnimationFrame(() => {
+        // Only run on desktop (mobile uses hamburger)
+        if (window.innerWidth < 768) {
+          moreItem.classList.add('hidden');
+          moreMenu.innerHTML = '';
+          navItems.forEach((item) => item.classList.remove('hidden'));
+          isUpdating = false;
+          return;
+        }
+
+        // Reset: clear More dropdown, unhide all nav items
+        moreMenu.innerHTML = '';
+        navItems.forEach((item) => item.classList.remove('hidden'));
+        moreItem.classList.add('hidden');
+
+        // Measure. Account for the More button width (reserve space for it).
+        const moreWidth = moreItem.offsetWidth || 140; // fallback for hidden element
+        const gapSize = 4; // matches the implicit flex gap
+        const availableWidth = nav.clientWidth - moreWidth - gapSize;
+
+        let totalWidth = 0;
+        let overflow = false;
+
+        navItems.forEach((item) => {
+          totalWidth += item.offsetWidth + gapSize;
+          if (totalWidth > availableWidth) {
+            // Overflow: hide this item from main row, clone into More dropdown
+            item.classList.add('hidden');
+            const clone = item.cloneNode(true) as HTMLElement;
+            clone.classList.remove('hidden');
+
+            if (item.classList.contains('dropdown')) {
+              // Extract sub-links BEFORE removing dropdown-menu
+              const dropdownMenu = clone.querySelector(':scope > .dropdown-menu');
+              const subLinks = dropdownMenu
+                ? Array.from(dropdownMenu.querySelectorAll(':scope > li > a'))
+                : [];
+              const firstHref = subLinks[0]?.getAttribute('href') || '#';
+
+              // Remove nested dropdown-menu
+              dropdownMenu?.remove();
+
+              // Replace dropdown button with a link to the first sub-item
+              const btn = clone.querySelector(':scope > button');
+              if (btn) {
+                const a = document.createElement('a');
+                a.href = firstHref;
+                a.className = btn.className;
+                a.textContent = btn.textContent?.replace(/\s*$/, '') || '';
+                btn.replaceWith(a);
+              }
+
+              clone.classList.remove('dropdown');
+              moreMenu.appendChild(clone);
+
+              // Add remaining sub-items as indented entries
+              subLinks.forEach((link, i) => {
+                if (i === 0) return; // first already linked via parent
+                const subLi = document.createElement('li');
+                const subA = document.createElement('a');
+                subA.href = link.getAttribute('href') || '#';
+                subA.className =
+                  'md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 pl-8 block whitespace-no-wrap';
+                subA.textContent = link.textContent || '';
+                subLi.appendChild(subA);
+                moreMenu.appendChild(subLi);
+              });
+            } else {
+              // Plain link: just append to More dropdown
+              moreMenu.appendChild(clone);
+            }
+            overflow = true;
+          }
+        });
+
+        if (overflow) {
+          moreItem.classList.remove('hidden');
+        }
+        isUpdating = false;
+      });
+    }
+
+    const ro = new ResizeObserver(() => update());
+    ro.observe(nav);
+    update();
+
+    // Re-run on font load (affects text measurements)
+    document.fonts?.ready.then(() => update());
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPriorityNav);
+  } else {
+    initPriorityNav();
+  }
+
+  document.addEventListener('astro:after-swap', initPriorityNav);
+</script>
