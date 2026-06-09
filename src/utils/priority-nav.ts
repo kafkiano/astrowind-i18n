@@ -51,9 +51,12 @@ export function initPriorityNav(): void {
       let totalWidth = 0;
       let overflow = false;
 
-      navItems.forEach((item) => {
+      navItems.forEach((item, index) => {
         totalWidth += item.offsetWidth + gapSize;
         if (totalWidth > availableWidth) {
+          // Never move the last item — a solo entry in More looks worse
+          // than slight overflow, and the hamburger takes over soon after
+          if (index === navItems.length - 1) return;
           // Overflow: hide this item from main row, clone into More dropdown
           item.classList.add('hidden');
           const clone = item.cloneNode(true) as HTMLElement;
