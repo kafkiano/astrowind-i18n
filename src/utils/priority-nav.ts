@@ -14,10 +14,10 @@
  *   - Remaining sub-items listed as indented entries
  */
 export function initPriorityNav(): void {
-  const nav = document.getElementById('aw-main-nav');
-  const itemList = document.getElementById('aw-nav-items');
-  const moreItem = document.getElementById('aw-nav-more');
-  const moreMenu = document.getElementById('aw-nav-more-menu');
+  const nav = document.getElementById('aw-main-nav')!;
+  const itemList = document.getElementById('aw-nav-items')!;
+  const moreItem = document.getElementById('aw-nav-more')!;
+  const moreMenu = document.getElementById('aw-nav-more-menu')!;
   if (!nav || !moreItem || !itemList) return;
 
   const navItems = itemList.querySelectorAll<HTMLElement>(':scope > [data-nav-item]');
