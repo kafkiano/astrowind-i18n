@@ -68,23 +68,19 @@ const postCollection = defineCollection({
 
 const pagesCollection = defineCollection({
   loader: glob({ pattern: ['**/*.md'], base: 'src/data/pages' }),
-  schema: z
-    .object({
-      title: z.string(),
-      showIn: z.enum(['header', 'footer', 'none']).optional().default('footer'),
-      order: z.number().optional().default(999),
-      group: z.string().optional(),
-    })
-    .passthrough(),
+  schema: z.looseObject({
+    title: z.string(),
+    showIn: z.enum(['header', 'footer', 'none']).optional().default('footer'),
+    order: z.number().optional().default(999),
+    group: z.string().optional(),
+  }),
 });
 
 const templatesCollection = defineCollection({
   loader: glob({ pattern: ['**/*.md'], base: 'src/data/templates' }),
-  schema: z
-    .object({
-      title: z.string(),
-    })
-    .passthrough(),
+  schema: z.looseObject({
+    title: z.string(),
+  }),
 });
 
 const snippetsCollection = defineCollection({
