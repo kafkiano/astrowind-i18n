@@ -78,3 +78,38 @@ collections:
       - label: Content
         name: body
         widget: markdown
+
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/data/pages/en
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Show in navigation
+        name: showIn
+        widget: select
+        options: ['header', 'footer', 'none']
+        default: footer
+        required: false
+
+      - label: Order
+        name: order
+        widget: number
+        default: 999
+        required: false
+
+      - label: Group
+        name: group
+        widget: string
+        required: false
+
+      - label: Body
+        name: body
+        widget: markdown
+        required: false

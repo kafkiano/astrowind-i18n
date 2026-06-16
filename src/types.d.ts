@@ -255,6 +255,11 @@ export interface Pricing extends Omit<Headline, 'classes'>, Widget {
 export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   testimonials?: Array<Testimonial>;
   callToAction?: CallToAction;
+  variant?: 'grid' | 'slider';
+  autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
+  sliderPagination?: boolean;
+  sliderNavigation?: boolean;
+  sliderLoop?: boolean;
 }
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {
