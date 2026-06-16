@@ -3,16 +3,16 @@
 backend:
   name: github
   repo: kafkiano/astrowind-i18n
-  branch: main
+  branch: client/artesano
 
 media_folder: src/assets/images
 public_folder: ~/assets/images
 
 collections:
-  - name: posts
-    label: Blog Posts
-    label_singular: Post
-    folder: src/data/post/en
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/data/pages/en
     create: true
     extension: md
     format: frontmatter
@@ -20,47 +20,264 @@ collections:
       - label: Title
         name: title
         widget: string
-
-      - label: Publish Date
-        name: publishDate
-        widget: datetime
-        date_format: 'DD.MM.YYYY'
-        time_format: 'HH:mm'
-        format: 'YYYY-MM-DDTHH:mm:ss[Z]'
-        picker_utc: true
-
-      - label: Excerpt
-        name: excerpt
-        widget: text
-
-      - label: Image URL
-        name: image
-        widget: string
-
-      - label: Category
-        name: category
+      - label: Show in navigation
+        name: showIn
+        widget: select
+        options: ['header', 'footer', 'none']
+        default: footer
+        required: false
+      - label: Order
+        name: order
+        widget: number
+        default: 999
+        required: false
+      - label: Group
+        name: group
         widget: string
         required: false
-
-      - label: Tags
-        name: tags
-        widget: list
-        required: false
-        field: { label: Tag, name: tag, widget: string }
-
-      - label: Metadata
-        name: metadata
-        widget: object
-        required: false
-        fields:
-          - label: Canonical URL
-            name: canonical
-            widget: string
-            required: false
-
       - label: Body
         name: body
         widget: markdown
+        required: false
+
+  - name: templates
+    label: Landing Page
+    label_singular: Landing Page Section
+    folder: src/data/templates/en
+    create: false
+    extension: md
+    format: frontmatter
+    description: >
+      Edit the Artesano landing page content. Each section
+      controls a part of the homepage. Leave a section's
+      fields empty to hide it.
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: Browser tab title
+
+      - label: Hero
+        name: hero
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+            required: false
+          - label: Tagline
+            name: tagline
+            widget: string
+            required: false
+
+      - label: Welcome
+        name: welcome
+        widget: object
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+          - label: Title
+            name: title
+            widget: string
+          - label: Image
+            name: image
+            widget: image
+            required: false
+          - label: Features
+            name: items
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+
+      - label: Kitchen Heading
+        name: kitchenHeading
+        widget: object
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+          - label: Title
+            name: title
+            widget: string
+
+      - label: Dishes
+        name: dishes
+        widget: object
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+          - label: Title
+            name: title
+            widget: string
+          - label: Image
+            name: image
+            widget: image
+            required: false
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+
+      - label: Cocktails
+        name: cocktails
+        widget: object
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+          - label: Title
+            name: title
+            widget: string
+          - label: Image
+            name: image
+            widget: image
+            required: false
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+
+      - label: Exhibitions
+        name: exhibitions
+        widget: object
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+          - label: Title
+            name: title
+            widget: string
+          - label: Image
+            name: image
+            widget: image
+            required: false
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+
+      - label: Testimonials
+        name: testimonials
+        widget: list
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Quote
+            name: testimonial
+            widget: text
+          - label: Author
+            name: name
+            widget: string
+
+      - label: Team
+        name: team
+        widget: list
+        fields:
+          - label: Name
+            name: name
+            widget: string
+          - label: Job
+            name: job
+            widget: string
+          - label: Photo
+            name: image
+            widget: image
+            required: false
+          - label: Photo alt text
+            name: imageAlt
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: text
+            required: false
+          - label: Social Links
+            name: socials
+            widget: list
+            required: false
+            fields:
+              - label: Icon
+                name: icon
+                widget: string
+                hint: 'tabler icon name, e.g. tabler:brand-facebook'
+              - label: URL
+                name: href
+                widget: string
+
+      - label: Call to Action
+        name: cta
+        widget: object
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+            required: false
+          - label: Buttons
+            name: actions
+            widget: list
+            fields:
+              - label: Button text
+                name: text
+                widget: string
+              - label: Link
+                name: href
+                widget: string
+              - label: Style
+                name: variant
+                widget: select
+                options: ['primary', 'secondary', 'outline']
+                default: primary
+                required: false
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+                hint: 'tabler icon name, e.g. tabler:map-pin'
+              - label: Open in new tab
+                name: target
+                widget: select
+                options: ['_blank', '_self']
+                default: _self
+                required: false
+
+      - label: Welcome Body Text
+        name: body
+        widget: markdown
+        required: false
+        hint: Text shown below the welcome section features
 
   - name: snippets
     label: Snippets
@@ -74,67 +291,6 @@ collections:
         name: title
         widget: string
         required: false
-
       - label: Content
         name: body
         widget: markdown
-
-  - name: pages
-    label: Pages
-    label_singular: Page
-    folder: src/data/pages/en
-    create: true
-    extension: md
-    format: frontmatter
-    fields:
-      - label: Title
-        name: title
-        widget: string
-
-      - label: Show in navigation
-        name: showIn
-        widget: select
-        options: ['header', 'footer', 'none']
-        default: footer
-        required: false
-
-      - label: Order
-        name: order
-        widget: number
-        default: 999
-        required: false
-
-      - label: Group
-        name: group
-        widget: string
-        required: false
-
-      - label: Body
-        name: body
-        widget: markdown
-        required: false
-
-  - name: templates
-    label: Page Templates
-    label_singular: Template
-    folder: src/data/templates/en
-    create: true
-    extension: md
-    format: frontmatter
-    description: >
-      Data files for custom .astro page templates.
-      These are NOT standalone pages — they are consumed
-      by specific .astro templates via getEntry().
-      All frontmatter fields are free-form; add whatever
-      sections your template expects.
-    fields:
-      - label: Title
-        name: title
-        widget: string
-        hint: Used for metadata. The template reads all other fields from frontmatter.
-
-      - label: Body
-        name: body
-        widget: markdown
-        required: false
-        hint: Optional. Some templates use the body, others ignore it.
