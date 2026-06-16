@@ -113,3 +113,28 @@ collections:
         name: body
         widget: markdown
         required: false
+
+  - name: templates
+    label: Page Templates
+    label_singular: Template
+    folder: src/data/templates/en
+    create: true
+    extension: md
+    format: frontmatter
+    description: >
+      Data files for custom .astro page templates.
+      These are NOT standalone pages — they are consumed
+      by specific .astro templates via getEntry().
+      All frontmatter fields are free-form; add whatever
+      sections your template expects.
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: Used for metadata. The template reads all other fields from frontmatter.
+
+      - label: Body
+        name: body
+        widget: markdown
+        required: false
+        hint: Optional. Some templates use the body, others ignore it.

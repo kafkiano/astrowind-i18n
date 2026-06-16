@@ -39,6 +39,7 @@ main                      ← Clean base theme (astrowind-i18n)
 | **Favicons** | `src/components/Favicons.astro` | Client favicon and app icons |
 | **Content** | `src/data/post/{locale}/` | Blog posts, news, menu updates |
 | **Content** | `src/data/pages/{locale}/` | Structural pages (privacy, terms, about markdown) |
+| **Content** | `src/data/templates/{locale}/` | Data-driven page templates (landing page, custom pages) |
 
 ### ❌ Never Touched (immutable)
 
@@ -50,6 +51,119 @@ main                      ← Clean base theme (astrowind-i18n)
 | **i18n system** | `src/i18n/*` — extraction, translation, post-processing |
 | **Utilities** | `src/utils/*` — permalinks, navigation, images, blog |
 | **Common components** | `src/components/common/*` — Image, Metadata, LocaleSwitcher, etc. |
+
+---
+
+## Content Architecture: Four Directories, Two Translation Pipelines
+
+Every piece of content in astrowind-i18n lives in one of four directories under `src/data/`. Each has a clear purpose and a specific translation path.
+
+```
+src/data/
+├── pages/{locale}/      ← Full markdown pages (body = content)
+│   ├── privacy.md            Rendered by [...pages] catch-all
+│   └── terms.md              Translated via markdown pipeline
+│
+├── post/{locale}/        ← Blog posts
+│   └── *.md                  Rendered by [...blog] routes
+│                             Translated via markdown pipeline
+│
+├── templates/{locale}/   ← Data for custom .astro page templates
+│   └── landing.md             Consumed by landing/template.astro via getEntry()
+│                             Translated via markdown pipeline (nested YAML)
+│                             NOT rendered by any catch-all route
+│
+└── snippets/             ← Markdown fragments embedded in .astro components
+    └── *.md                  Imported via MarkdownSlot.astro
+                              Translated via UI string pipeline (JSON catalogs)
+```
+
+### Translation Paths
+
+| Content type | Pipeline | Output |
+|---|---|---|
+| `pages/` | Markdown translation | Target-locale `.md` copies (e.g. `es/privacy.md`) |
+| `post/` | Markdown translation | Target-locale `.md` copies |
+| `templates/` | Markdown translation (nested YAML) | Target-locale `.md` copies |
+| `snippets/` | UI string extraction → JSON catalogs → HTML post-processing | Translated strings in `dist/` HTML |
+
+**Why templates use the markdown pipeline, not the UI string pipeline:**
+
+The UI string extractor walks `.astro` file ASTs and finds hardcoded text nodes. It cannot see dynamic data from `getEntry()` results. Template data lives in markdown frontmatter — it's dynamic, not hardcoded. The markdown translator creates proper target-locale copies (e.g. `es/landing.md`) that `getEntry()` reads at build time.
+
+### The Template Pattern
+
+A **template** is a markdown file with rich nested YAML frontmatter that defines an entire page's content. A custom `.astro` page reads it via `getEntry()` and maps frontmatter fields to widgets.
+
+**Template file** (`src/data/templates/en/landing.md`):
+```yaml
+---
+title: Landing Demo
+
+hero:
+  title: Welcome
+  subtitle: This page is driven by markdown
+  actions:
+    - text: Get started
+      href: '#'
+      variant: primary
+
+features:
+  items:
+    - title: Feature one
+      description: ...
+    - title: Feature two
+      description: ...
+
+testimonials:
+  - title: Great product
+    testimonial: ...
+    name: Jane D.
+
+cta:
+  title: Ready to start?
+  actions:
+    - text: Contact us
+      href: '#'
+---
+```
+
+**Page template** (`src/pages/[locale]/landing/template.astro`):
+```astro
+---
+import { getEntry } from 'astro:content';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const locale = Astro.currentLocale ?? 'en';
+const { data } = await getEntry('templates', `${locale}/landing`);
+---
+
+<Layout>
+  {data.hero && <Hero {...data.hero} />}
+  {data.features && <Features {...data.features} />}
+  {data.testimonials && <Testimonials variant="slider" testimonials={data.testimonials} />}
+  {data.cta && <CallToAction {...data.cta} />}
+</Layout>
+```
+
+**Key properties:**
+- **CMS-editable**: All content in one file. Client edits text and images via Sveltia CMS.
+- **Auto-translated**: The i18n system traverses all nested YAML values and translates them via DeepL/Gemini.
+- **Section-optional**: The `.astro` template checks for each section's presence. Remove a section from frontmatter → it disappears from the page.
+- **No code changes**: Adding a new section means adding YAML to the markdown file. The template already knows about all available widgets.
+- **`showIn` untouched**: Templates are in their own collection. The `showIn` field on `pages/` remains purely about navigation visibility.
+
+### When to use each directory
+
+| You want to... | Use |
+|---|---|
+| Add a standalone page with body content (privacy, terms, about) | `pages/` |
+| Write a blog post | `post/` |
+| Build a data-driven landing page or custom page | `templates/` |
+| Embed a reusable markdown fragment in a component | `snippets/` |
 
 ---
 
@@ -92,121 +206,115 @@ These are the building blocks. A client page is just a sequence of widget invoca
 
 ---
 
-## Page Composition Example
+## Page Composition: Two Approaches
 
-A typical client `index.astro` — nothing but widget composition:
+### Approach A: Template-Driven (recommended for CMS)
+
+The markdown file defines all content. The `.astro` template reads it and maps to widgets. Client edits one file in CMS.
+
+**Template** (`src/data/templates/en/home.md`):
+```yaml
+---
+title: Artesano — Gallery · Café · Juice Bar
+
+hero:
+  title: artesano
+  subtitle: GALLERY • CAFE • JUICE BAR
+  tagline: Welcome to a refreshing change
+  image:
+    src: /images/artesano-logo.png
+    alt: artesano logo
+  actions:
+    - text: View menu
+      href: '#dishes'
+      variant: primary
+
+welcome:
+  tagline: Welcome
+  title: A refreshing change
+  image: /images/food-salad.jpg
+  items:
+    - title: Vegetarian, vegan & gluten free
+      description: A wide selection for every dietary preference.
+    - title: Fresh-pressed juices & smoothies
+      description: Made to order alongside local wines and craft beers.
+
+testimonials:
+  - title: Creative, healthy and delicious!
+    testimonial: A wonderful find in Moraira. The food is fresh and creative.
+    name: Sarah M.
+  - title: A Beautiful Breakfast
+    testimonial: Beautiful presentation, fresh ingredients, friendly service.
+    name: James K.
+
+team:
+  - name: Ismael
+    job: Owner
+    image: /images/ismael.jpg
+    imageAlt: Ismael, Owner of Artesano
+    description: Originally from Tangier, Morocco...
+    socials:
+      - icon: tabler:brand-facebook
+        href: https://facebook.com/artesanomoraira
+
+cta:
+  title: Visit us today
+  subtitle: Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante
+  actions:
+    - variant: primary
+      text: Get directions
+      href: https://maps.google.com/...
+      icon: tabler:map-pin
+---
+```
+
+**Page** (`src/pages/[locale]/index.astro`):
+```astro
+---
+import { getEntry } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Team from '~/components/widgets/Team.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const locale = Astro.currentLocale ?? 'en';
+const { data } = await getEntry('templates', `${locale}/home`);
+---
+
+<Layout metadata={{ title: data.title }}>
+  {data.hero && <Hero {...data.hero} />}
+  {data.welcome && <Content {...data.welcome} />}
+  {data.testimonials && <Testimonials variant="slider" testimonials={data.testimonials} />}
+  {data.team && <Team team={data.team} />}
+  {data.cta && <CallToAction {...data.cta} />}
+</Layout>
+```
+
+### Approach B: Hardcoded (for simple sites, no CMS)
+
+Widgets are invoked directly with inline data. Simpler but requires code changes for content updates.
 
 ```astro
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Badge from '~/components/widgets/Badge.astro';
-import Content from '~/components/widgets/Content.astro';
-import Gallery from '~/components/widgets/Gallery.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Team from '~/components/widgets/Team.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
-import { getStaticPathsForLocale } from '~/utils/i18n';
-export const getStaticPaths = getStaticPathsForLocale;
-
-const metadata = {
-  title: 'Artesano — Gallery · Café · Juice Bar',
-  ignoreTitleTemplate: true,
-};
 ---
 
-<Layout metadata={metadata}>
-  <!-- Hero with TripAdvisor corner badge -->
+<Layout metadata={{ title: 'My Site' }}>
   <Hero
     variant="centered"
-    title="artesano"
-    subtitle="GALLERY • CAFE • JUICE BAR"
-    image={{ src: '~/assets/images/artesano-logo.png', alt: 'artesano logo' }}
-  >
-    <Badge
-      slot="badge"
-      variant="corner"
-      position="top-right"
-      image={{ src: '~/assets/images/tripadvisor-badge.png', alt: 'TripAdvisor Certificate of Excellence' }}
-      href="https://www.tripadvisor.com/..."
-    />
-  </Hero>
-
-  <!-- About section -->
-  <Content
-    tagline="Welcome"
-    title="A refreshing change"
-    items={[
-      { title: 'Vegetarian, vegan & gluten free', description: '...' },
-      { title: 'Fresh-pressed juices & smoothies', description: '...' },
-      { title: 'Local wines & micro-brew beers', description: '...' },
-    ]}
-    image={{ src: '~/assets/images/food-salad.jpg', alt: 'Fresh salad at Artesano' }}
-  />
-
-  <!-- TripAdvisor badges inline -->
-  <Badge variant="inline" image={{ src: '~/assets/images/ta-2019.png', alt: 'Certificate of Excellence 2019' }} />
-  <Badge variant="inline" image={{ src: '~/assets/images/ta-2018.png', alt: 'Certificate of Excellence 2018' }} />
-  <Badge variant="inline" image={{ src: '~/assets/images/ta-2017.png', alt: 'Certificate of Excellence 2017' }} />
-
-  <!-- Food gallery -->
-  <Gallery
-    tagline="Our kitchen"
-    title="Fresh, made-to-order"
-    images={[
-      { src: '~/assets/images/food-1.jpg', alt: 'Goat cheese salad' },
-      { src: '~/assets/images/food-2.jpg', alt: 'Fresh wrap' },
-      { src: '~/assets/images/drinks-1.jpg', alt: 'Cocktails' },
-      { src: '~/assets/images/drinks-2.jpg', alt: 'Fresh juice' },
-      { src: '~/assets/images/art-1.jpg', alt: 'Local artwork' },
-      { src: '~/assets/images/art-2.jpg', alt: 'Jewelry display' },
-    ]}
-  />
-
-  <!-- Testimonials -->
-  <Testimonials
-    title="What our guests say"
-    subtitle="From our TripAdvisor reviews"
-    testimonials={[
-      { title: 'Creative, healthy and delicious!', testimonial: '...', name: 'Sarah M.' },
-      { title: 'A Beautiful Breakfast', testimonial: '...', name: 'James K.' },
-      // ... more reviews
-    ]}
-  />
-
-  <!-- Team -->
-  <Team
-    tagline="The Artesano Team"
-    title="Always at your service"
-    team={[
-      {
-        name: 'Ismael',
-        job: 'Owner',
-        image: { src: '~/assets/images/ismael.jpg', alt: 'Ismael, Owner' },
-        description: 'Originally from Tangier, Morocco...',
-        socials: [
-          { icon: 'tabler:brand-facebook', href: 'https://facebook.com/...' },
-          { icon: 'tabler:brand-instagram', href: 'https://instagram.com/...' },
-        ],
-      },
-      {
-        name: 'Matthew',
-        job: 'Owner',
-        image: { src: '~/assets/images/matthew.jpg', alt: 'Matthew, Owner' },
-        description: '...',
-      },
-    ]}
-  />
-
-  <!-- Call to Action -->
-  <CallToAction
-    title="Visit us today"
-    subtitle="Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante"
+    title="Welcome"
+    subtitle="The best place in town"
     actions={[
-      { variant: 'primary', text: 'Get directions', href: 'https://maps.google.com/...', icon: 'tabler:map-pin' },
-      { text: 'Call us', href: 'tel:+34966272127', icon: 'tabler:phone' },
+      { variant: 'primary', text: 'Get started', href: '#' },
     ]}
+  />
+  <CallToAction
+    title="Ready?"
+    actions={[{ text: 'Contact us', href: '#' }]}
   />
 </Layout>
 ```

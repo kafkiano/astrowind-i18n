@@ -78,6 +78,15 @@ const pagesCollection = defineCollection({
     .passthrough(),
 });
 
+const templatesCollection = defineCollection({
+  loader: glob({ pattern: ['**/*.md'], base: 'src/data/templates' }),
+  schema: z
+    .object({
+      title: z.string(),
+    })
+    .passthrough(),
+});
+
 const snippetsCollection = defineCollection({
   loader: glob({ pattern: ['**/*.md'], base: 'src/data/snippets' }),
   schema: z.object({
@@ -88,5 +97,6 @@ const snippetsCollection = defineCollection({
 export const collections = {
   post: postCollection,
   pages: pagesCollection,
+  templates: templatesCollection,
   snippets: snippetsCollection,
 };

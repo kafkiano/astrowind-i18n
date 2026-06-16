@@ -88,8 +88,6 @@ export const getStaticPathsPages = async (): Promise<
   for (const locale of I18N.locales) {
     const pages = await load(locale);
     for (const page of pages) {
-      // Skip pages marked as data-only (consumed by custom templates, not standalone routes)
-      if (page.showIn === 'none') continue;
       paths.push({
         params: {
           locale,
