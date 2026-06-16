@@ -5,8 +5,8 @@ backend:
   repo: kafkiano/astrowind-i18n
   branch: main
 
-media_folder: public/images
-public_folder: /images
+media_folder: src/assets/images
+public_folder: ~/assets/images
 
 collections:
   - name: posts

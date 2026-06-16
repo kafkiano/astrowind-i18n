@@ -36,34 +36,9 @@ const testimonials = data.testimonials as any;
 const rawTeam = data.team as any[] | undefined;
 const cta = data.cta as any;
 
-// Image dimensions for public/ images (required by Astro's Image component)
-const imgDimensions: Record<string, { width: number; height: number }> = {
-  '/images/artesano_goats_cheese_salad.jpg': { width: 350, height: 220 },
-  '/images/mojitos.jpg': { width: 350, height: 220 },
-  '/images/Teresa_Tormo_home.jpg': { width: 350, height: 220 },
-  '/images/ismael_el_harrak_artesano1-320x320.jpg': { width: 320, height: 320 },
-};
-
-const withDimensions = (img: any) => {
-  if (!img) return img;
-  // Handle string paths from frontmatter (e.g. '/images/foo.jpg')
-  if (typeof img === 'string') {
-    const dims = imgDimensions[img];
-    return dims ? { src: img, ...dims } : { src: img };
-  }
-  // Handle object with src property
-  if (typeof img.src === 'string') {
-    const dims = imgDimensions[img.src];
-    return dims ? { ...img, ...dims } : img;
-  }
-  return img;
-};
-
 const team = rawTeam?.map((member: any) => ({
   ...member,
-  image: member.image
-    ? { ...withDimensions(member.image), alt: member.imageAlt || member.name || 'Team member' }
-    : undefined,
+  image: member.image ? { src: member.image, alt: member.imageAlt || member.name || 'Team member' } : undefined,
 }));
 
 const metadata = {
@@ -84,7 +59,7 @@ const metadata = {
       tagline={welcome?.tagline}
       title={welcome?.title}
       items={welcome?.items}
-      image={withDimensions(welcome?.image ? { src: welcome.image, alt: 'Fresh food at Artesano' } : undefined)}
+      image={welcome?.image ? { src: welcome.image, alt: 'Fresh food at Artesano' } : undefined}
     >
       <div slot="content">
         <div class="text-lg text-muted dark:text-slate-400">
@@ -123,9 +98,7 @@ const metadata = {
         tagline={dishes.tagline}
         title={dishes.title}
         items={dishes.items}
-        image={withDimensions(
-          dishes.image ? { src: dishes.image, alt: dishes.tagline || 'Dishes at Artesano' } : undefined
-        )}
+        image={dishes.image ? { src: dishes.image, alt: dishes.tagline || 'Dishes at Artesano' } : undefined}
       />
     )
   }
@@ -139,9 +112,9 @@ const metadata = {
         tagline={cocktails.tagline}
         title={cocktails.title}
         items={cocktails.items}
-        image={withDimensions(
+        image={
           cocktails.image ? { src: cocktails.image, alt: cocktails.tagline || 'Cocktails at Artesano' } : undefined
-        )}
+        }
       />
     )
   }
@@ -154,9 +127,9 @@ const metadata = {
         tagline={exhibitions.tagline}
         title={exhibitions.title}
         items={exhibitions.items}
-        image={withDimensions(
+        image={
           exhibitions.image ? { src: exhibitions.image, alt: exhibitions.tagline || 'Art at Artesano' } : undefined
-        )}
+        }
       />
     )
   }

@@ -10,7 +10,7 @@ hero:
 welcome:
   tagline: Welcome
   title: A refreshing change
-  image: /images/artesano_goats_cheese_salad.jpg
+  image: ~/assets/images/artesano_goats_cheese_salad.jpg
   items:
     - title: Fresh, made-to-order dishes
       description: Salads, wraps, cakes, dips and more — all prepared daily in-house by owners Ismael & Matthew.
@@ -26,7 +26,7 @@ kitchenHeading:
 dishes:
   tagline: Dishes
   title: Made-to-order, every day
-  image: /images/artesano_goats_cheese_salad.jpg
+  image: ~/assets/images/artesano_goats_cheese_salad.jpg
   items:
     - title: Healthy salads & wraps
       description: Fresh, vibrant salads and wraps made with locally-sourced ingredients. Every dish is prepared to order.
@@ -38,7 +38,7 @@ dishes:
 cocktails:
   tagline: Cocktail Bar
   title: The best mojitos around
-  image: /images/mojitos.jpg
+  image: ~/assets/images/mojitos.jpg
   items:
     - title: Signature cocktails
       description: From classic mojitos to creative signature drinks — we are told we make the best mojitos around.
@@ -50,7 +50,7 @@ cocktails:
 exhibitions:
   tagline: Exhibitions
   title: Local art, always on display
-  image: /images/Teresa_Tormo_home.jpg
+  image: ~/assets/images/Teresa_Tormo_home.jpg
   items:
     - title: Rotating art exhibitions
       description: Our gallery space showcases work by talented local artists. The collection changes regularly — there is always something new to discover.
@@ -91,7 +91,7 @@ testimonials:
 team:
   - name: Ismael
     job: Owner
-    image: /images/ismael_el_harrak_artesano1-320x320.jpg
+    image: ~/assets/images/ismael_el_harrak_artesano1-320x320.jpg
     imageAlt: Ismael, Owner of Artesano
     description: Originally from Tangier, Morocco, Ismael has lived in Spain since 2009. An amateur photographer with a passion for art, food, and hospitality. Speaks English, Spanish, French, and Arabic.
     socials:

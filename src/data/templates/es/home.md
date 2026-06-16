@@ -8,9 +8,9 @@ hero:
 welcome:
   tagline: Bienvenidos
   title: Un cambio refrescante
-  image: /images/artesano_goats_cheese_salad.jpg
+  image: ~/assets/images/artesano_goats_cheese_salad.jpg
   items:
-    - title: Platos frescos, preparados al momento
+    - title: Platos frescos y preparados al momento
       description: 'Ensaladas, wraps, pasteles, salsas y mucho más: todo ello preparado a diario en el propio local por los propietarios, Ismael y Matthew.'
     - title: Vegetariano, vegano y sin gluten
       description: Una amplia selección de opciones para todos los gustos alimentarios. De verdad que tenemos algo para todos los gustos.
@@ -22,21 +22,21 @@ kitchenHeading:
 dishes:
   tagline: Platos
   title: Hecho a medida, todos los días
-  image: /images/artesano_goats_cheese_salad.jpg
+  image: ~/assets/images/artesano_goats_cheese_salad.jpg
   items:
     - title: Ensaladas y wraps saludables
       description: Ensaladas y wraps frescos y apetecibles, elaborados con ingredientes de origen local. Todos los platos se preparan al momento.
     - title: Pasteles y salsas caseras
       description: Una deliciosa selección de pasteles caseros, salsas y raciones pequeñas, perfectos para compartir o disfrutar en solitario.
     - title: Vegetariano, vegano y sin gluten
-      description: Una amplia variedad de opciones para todas las preferencias alimentarias. Creemos que todo el mundo se merece una comida deliciosa.
+      description: Una amplia variedad de opciones para todos los gustos alimentarios. Creemos que todo el mundo se merece una comida deliciosa.
 cocktails:
   tagline: Bar de cócteles
   title: Los mejores mojitos de la zona
-  image: /images/mojitos.jpg
+  image: ~/assets/images/mojitos.jpg
   items:
     - title: Cócteles de autor
-      description: 'Desde los clásicos mojitos hasta las creativas bebidas de la casa: nos dicen que hacemos los mejores mojitos de la zona.'
+      description: 'Desde los mojitos clásicos hasta las creativas bebidas de la casa: nos dicen que hacemos los mejores mojitos de la zona.'
     - title: Vinos locales y cervezas artesanales
       description: Una selección cuidadosamente elegida de vinos españoles locales y cervezas artesanales importadas.
     - title: Zumos naturales y batidos
@@ -44,7 +44,7 @@ cocktails:
 exhibitions:
   tagline: Exposiciones
   title: Arte local, siempre en exposición
-  image: /images/Teresa_Tormo_home.jpg
+  image: ~/assets/images/Teresa_Tormo_home.jpg
   items:
     - title: Exposiciones de arte temporales
       description: En nuestra galería se exponen obras de talentosos artistas locales. La colección cambia con frecuencia, por lo que siempre hay algo nuevo que descubrir.
@@ -71,19 +71,19 @@ testimonials:
   - title: No me canso de este sitio
     testimonial: Fuimos tres veces durante nuestra semana en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
     name: Michael B.
-  - title: ¡Comida, bebidas y ambiente perfectos!
+  - title: ¡La comida, las bebidas y el ambiente son perfectos!
     testimonial: El ambiente es muy relajante, la comida es perfecta y las bebidas son increíbles. Una auténtica joya en Moraira.
     name: Claire W.
   - title: Un nuevo tipo de cafetería llega a Moraira
     testimonial: 'Artesano aporta algo completamente nuevo a Moraira. Una mezcla entre galería de arte, cafetería y bar de cócteles: un concepto genial.'
     name: Tom H.
   - title: ¡Una nueva aventura estupenda!
-    testimonial: Me alegra mucho ver que este nuevo proyecto va viento en popa. Los propietarios ponen toda su pasión en ello y eso se nota en cada plato y cada bebida.
+    testimonial: Me alegra mucho ver que este nuevo proyecto va viento en popa. Los propietarios ponen toda su pasión en él y eso se nota en cada plato y cada bebida.
     name: Anna S.
 team:
   - name: Ismael
     job: Owner
-    image: /images/ismael_el_harrak_artesano1-320x320.jpg
+    image: ~/assets/images/ismael_el_harrak_artesano1-320x320.jpg
     imageAlt: Ismael, propietario de Artesano
     description: Originario de Tánger, Marruecos, Ismael vive en España desde 2009. Es un fotógrafo aficionado apasionado por el arte, la gastronomía y la hostelería. Habla inglés, español, francés y árabe.
     socials:
