@@ -8,6 +8,13 @@ This file provides guidance to agents when working with code in this repository.
 - **Styling**: Tailwind CSS (base styles NOT applied automatically - see astro.config.ts)
 - **Language**: TypeScript with strict null checks
 
+## Architecture
+
+- **Website Farm model**: One repo, multiple client websites. `main` = base theme; `client/<name>` branches = individual sites.
+- **Full architecture docs**: [`docs/client-architecture.md`](docs/client-architecture.md) — branch model, content architecture, widget toolbox, onboarding process, design decisions.
+- **Four content directories**: `pages/` (standalone pages), `post/` (blog), `templates/` (data-driven templates with nested YAML), `snippets/` (markdown fragments). Each has a specific translation path.
+- **Widgets are immutable on client branches** — compose from existing widgets, never modify widget internals per client. New widgets needed by multiple clients go to `main`.
+
 ## Critical Non-Obvious Patterns
 
 ## Commands
@@ -39,6 +46,7 @@ In the most cases a `bun run build` or `bun run check` might be enough to check 
 - Frontmatter schema in `src/content.config.ts`: publishDate, title, excerpt, image, category, tags, metadata (canonical, openGraph, robots), draft.
 - Snippets in `src/data/snippets/` (flat, no locale subdirectories) — markdown content consumed by `MarkdownSlot.astro` component. Translated via UI string pipeline (extracted into JSON catalogs).
 - Pages in `src/data/pages/{locale}/` — structural content pages (privacy, terms, markdown demo).
+- Templates in `src/data/templates/{locale}/` — data-driven page templates with rich nested YAML frontmatter. Consumed by custom `.astro` pages via `getEntry()`. Translated via markdown pipeline (nested YAML traversal). NOT rendered by any catch-all route.
 - Permalinks generated via `src/utils/blog.ts` using pattern from `src/config.yaml`.
 - Reading time auto-calculated via remark plugin in `src/utils/frontmatter.ts`.
 - Tables wrapped in overflow div automatically via rehype plugin.
@@ -138,9 +146,11 @@ Environment overrides: `GEMINI_API_KEY`, `DEEPL_API_KEY`, `I18N_PROVIDER`, `I18N
 - **Backend**: GitHub API (commits directly to the repo). Auth via personal access token (PAT).
 - **Collections**:
   - Blog Posts (`src/data/post/en/`) — English-only editing; Gemini/DeepL handles translation at build time.
+  - Pages (`src/data/pages/en/`) — standalone pages (privacy, terms) with navigation settings (showIn, order, group).
+  - Templates (`src/data/templates/en/`) — data-driven landing pages with rich nested YAML. Define fields matching the actual frontmatter structure per client.
   - Snippets (`src/data/snippets/`) — flat markdown files with optional title frontmatter.
-- **Deploy flow**: CMS edit → commit to `main` → GitHub Actions triggers → `bun run build` → translate → deploy.
-- **No locale editing for blog**: Target locales (es/fr/de) are auto-translated at build time. Manual translation editing can be added later as a separate CMS collection if needed.
+- **Branch-per-client**: `config.yml` `branch` field points to the client's branch (e.g. `client/artesano`). `main`'s CMS edits the base theme; each client branch has its own CMS at its own domain.
+- **Deploy flow**: CMS edit → commit to branch → CI/CD triggers → `bun run build` → translate → deploy. `main` uses GitHub Actions → GitHub Pages. Client branches use Netlify Git integration.
 - **Legacy**: Old `public/decapcms/` directory removed — was tied to Netlify Identity and wrong content paths.
 
 ### Styling

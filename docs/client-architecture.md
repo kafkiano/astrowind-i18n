@@ -179,7 +179,10 @@ These are the building blocks. A client page is just a sequence of widget invoca
 | **Content** | default, `isReversed`, `isAfterContent` | Text + image sections, feature bullets |
 | **Features** | `cards`, `cards-image`, `cards-vertical`, `slider` | Feature grids, service cards, image grids |
 | **CallToAction** | — | CTA boxes, banners, conversion sections |
-| **Testimonials** | — | Customer reviews, quotes, social proof |
+| **Testimonials** | `grid`, `slider` (Embla carousel with autoplay) | Customer reviews, quotes, social proof |
+| **Team** | `cards` (photo grid) | Team members with photo, name, role, bio, social links |
+| **Gallery** | `grid` (static) | Image galleries, portfolios, product photos |
+| **Badge** | `corner` (ribbon), `inline`, `banner` | Certifications, awards, ratings, social-proof badges |
 | **Stats** | — | Numbers, metrics, achievements |
 | **Steps** | default, `isReversed` | Process steps, how-it-works |
 | **FAQs** | — | Accordion FAQ sections |
@@ -195,14 +198,6 @@ These are the building blocks. A client page is just a sequence of widget invoca
 | **Header** | Navigation, actions, locale switcher, theme toggle |
 | **Footer** | Footer links, social icons, copyright |
 | **Announcement** | Top banner bar (needs configurable props — currently hardcoded) |
-
-### New Widgets (to be added to `main`)
-
-| Widget | Variants | Use for |
-|---|---|---|
-| **Team** | `cards` (grid), more later | Team members with photo, name, role, bio, socials |
-| **Gallery** | `grid` (static), lightbox deferred | Image galleries, portfolios, product photos |
-| **Badge** | `corner` (ribbon), `inline`, `banner` | Certifications, awards, ratings, social-proof badges |
 
 ---
 
@@ -222,7 +217,7 @@ hero:
   subtitle: GALLERY • CAFE • JUICE BAR
   tagline: Welcome to a refreshing change
   image:
-    src: /images/artesano-logo.png
+    src: ~/assets/images/artesano-logo.png
     alt: artesano logo
   actions:
     - text: View menu
@@ -232,7 +227,7 @@ hero:
 welcome:
   tagline: Welcome
   title: A refreshing change
-  image: /images/food-salad.jpg
+  image: ~/assets/images/food-salad.jpg
   items:
     - title: Vegetarian, vegan & gluten free
       description: A wide selection for every dietary preference.
@@ -250,7 +245,7 @@ testimonials:
 team:
   - name: Ismael
     job: Owner
-    image: /images/ismael.jpg
+    image: ~/assets/images/ismael.jpg
     imageAlt: Ismael, Owner of Artesano
     description: Originally from Tangier, Morocco...
     socials:
@@ -338,15 +333,49 @@ The client's old site has bilingual content inline. Our model separates locales 
 ## New Client Onboarding Process
 
 1. **Create branch**: `git checkout -b client/client-name` from `main`
-2. **Configure**: Edit `src/config.yaml` — site name, metadata, locales, navigation
+2. **Configure site**: Edit `src/config.yaml` — site name, metadata, locales, navigation. Set `base: '/'` for Netlify deployment.
 3. **Add images**: Drop client assets into `src/assets/images/`
-4. **Build landing page**: Rewrite `src/pages/[locale]/index.astro` — compose widgets
-5. **Delete unused pages**: Remove irrelevant templates from `src/pages/[locale]/`
-6. **Add content**: Create markdown files in `src/data/post/{locale}/` and `src/data/pages/{locale}/`
-7. **Style**: Adjust `CustomStyles.astro` for brand colors/fonts
-8. **Favicon**: Update `Favicons.astro`
-9. **Build & verify**: `bun run build` — check all locales render correctly
-10. **Launch**: Deploy static output from `dist/`
+4. **Create landing template**: Write `src/data/templates/en/home.md` with rich nested YAML frontmatter defining all sections (hero, features, testimonials, team, CTA, etc.)
+5. **Wire up index page**: Rewrite `src/pages/[locale]/index.astro` to read from `getEntry('templates', ...)` and map frontmatter fields to widgets
+6. **Delete unused pages**: Remove irrelevant templates from `src/pages/[locale]/` (keep only what the client needs)
+7. **Add content pages**: Create markdown files in `src/data/pages/{locale}/` (privacy, terms, about)
+8. **Style**: Adjust `CustomStyles.astro` for brand colors/fonts
+9. **Favicon**: Update `Favicons.astro`
+10. **CMS config**: Edit `public/admin/config.yml`:
+    - Set `branch: client/client-name`
+    - Define template collection fields matching the landing page YAML structure
+    - Remove unused collections (posts if no blog, etc.)
+11. **Netlify setup**: Create `netlify.toml` with build command and publish directory. Add `DEEPL_API_KEY` or `GEMINI_API_KEY` in Netlify's environment variables (never commit API keys).
+12. **Build & verify**: `bun run build` — check all locales render correctly
+13. **Push & deploy**: Push branch to GitHub. In Netlify UI: Add new site → Import from GitHub → set production branch to `client/client-name`. Every subsequent push triggers auto-deploy with full i18n translation.
+
+### CMS Configuration Per Client
+
+Each client branch needs its own CMS config. Key differences from `main`:
+
+```yaml
+# public/admin/config.yml
+backend:
+  name: github
+  repo: kafkiano/astrowind-i18n
+  branch: client/client-name  # ← points to this client's branch
+
+media_folder: src/assets/images
+public_folder: ~/assets/images
+```
+
+The template collection should define fields matching the actual YAML structure of the client's landing page. Use `widget: object` for nested sections, `widget: list` for arrays (testimonials, team members), and `widget: image` for photo fields.
+
+### Netlify Configuration
+
+```toml
+# netlify.toml
+[build]
+  command = "bun run build"
+  publish = "dist"
+```
+
+Set API keys in Netlify UI → Site configuration → Environment variables. Never commit them to the repository.
 
 ---
 
@@ -357,6 +386,10 @@ The client's old site has bilingual content inline. Our model separates locales 
 | Branch-per-client, not fork-per-client | Merging base improvements into client branches is trivial. Forks diverge irreversibly. |
 | Widgets immutable on client branches | Prevents component sprawl. Forces composition discipline. New widgets go to `main`. |
 | Source-locale-only content | Our value prop is automated i18n. Manual bilingual content is an anti-pattern. |
+| Template-driven pages (nested YAML) | One file per page, CMS-editable, auto-translated. Client edits content without touching code. |
+| Four-directory content model | `pages/`, `post/`, `templates/`, `snippets/` — each has a clear purpose and translation path. No overloading `showIn`. |
+| CMS media_folder = `src/assets/images/` | Unifies image handling. CMS uploads go through Astro's full asset pipeline (webp, srcset, lazy loading). |
+| Netlify per client branch, GitHub Pages for `main` | One GitHub Pages site per repo. Client sites need their own domains → Netlify. |
 | Badge as standalone widget | Composable — can attach to any section. Not coupled to Hero or Content. |
 | Gallery lightbox deferred | Adds JS complexity. Static grid covers 80% of client needs. Build the simple thing first. |
 | Team `cards` variant first | Covers the common case. Advanced variants (featured, list) added when clients demand them. |
