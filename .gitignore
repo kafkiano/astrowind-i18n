@@ -33,3 +33,6 @@ digest.txt
 
 # i18n content
 .i18n-cache/
+
+# Local Netlify folder
+.netlify

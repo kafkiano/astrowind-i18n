@@ -1,7 +1,7 @@
 site:
   name: artesano
   site: 'https://artesanomoraira.com'
-  base: '/astrowind-i18n'
+  base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: null
