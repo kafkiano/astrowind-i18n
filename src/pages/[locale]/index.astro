@@ -1,521 +1,245 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import Team from '~/components/widgets/Team.astro';
-import Gallery from '~/components/widgets/Gallery.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Badge from '~/components/widgets/Badge.astro';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
 
 const metadata = {
-  title: 'AstroWind I18n — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'artesano — Gallery · Café · Juice Bar in Moraira',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero **************************** -->
+
+  <Hero
+    variant="centered"
+    title="artesano"
+    subtitle="GALLERY • CAFE • JUICE BAR"
+    tagline="Welcome to a refreshing change"
+  />
+
+
+  <!-- TripAdvisor certificates ******** -->
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 text-center">
+    <div class="flex flex-wrap gap-6 justify-center items-center">
+      <Badge variant="inline" text="Certificate of Excellence 2019" />
+      <Badge variant="inline" text="Certificate of Excellence 2018" />
+      <Badge variant="inline" text="Certificate of Excellence 2017" />
+    </div>
+    <p class="mt-4 text-muted text-sm">Recommended on Tripadvisor</p>
+  </div>
+  
+  <!-- Welcome **************************** -->
 
   <div class="relative">
-    <Hero
-      variant="centered"
-      title='Free template for <span class="hidden xl:inline">creating websites with</span> <span class="text-accent dark:text-white"> Astro 6</span> + Tailwind CSS'
-      subtitle='<span class="hidden sm:inline"><span class="font-semibold">AstroWind I18n</span> is a free, customizable and production-ready template for Astro 6 + Tailwind CSS.</span> <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.'
-      image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-      actions={[
+    <Content
+      tagline="Welcome"
+      title="A refreshing change"
+      items={[
         {
-          variant: 'primary',
-          text: 'Get template',
-          href: 'https://github.com/arthelokyo/astrowind',
-          target: '_blank',
-          icon: 'tabler:download',
+          title: 'Fresh, made-to-order dishes',
+          description: 'Salads, wraps, cakes, dips and more — all prepared daily in-house by owners Ismael & Matthew.',
         },
-        { text: 'Learn more', href: '#features' },
+        {
+          title: 'Vegetarian, vegan & gluten free',
+          description:
+            'A wide selection of options for every dietary preference. We really have something for everyone.',
+        },
+        {
+          title: 'Fresh-pressed juices & smoothies',
+          description:
+            'Alongside a hand-picked selection of local wines, micro-brew beers, and an exciting cocktail menu.',
+        },
       ]}
-    />
-
-    <Badge variant="corner" position="top-right" text="NEW" />
+      image={{
+        src: '~/assets/images/artesano_goats_cheese_salad.jpg',
+        alt: 'Fresh goat cheese salad at Artesano',
+      }}
+    >
+      <div slot="content">
+        <p class="text-lg text-muted dark:text-slate-400">
+          Artesano is a unique combination of art gallery, coffee shop, juice bar, café/restaurant and cocktail lounge.
+          Currently rated #2 of more than 200 restaurants in Moraira.
+        </p>
+      </div>
+    </Content>
   </div>
 
-  <!-- Note Widget ******************* -->
-
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
+  <!-- Cocktail Bar ******************** -->
 
   <Content
     isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    tagline="Cocktail Bar"
+    title="The best mojitos around"
     items={[
       {
-        title: 'Built on top of Astro 6',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+        title: 'Signature cocktails',
+        description: 'From classic mojitos to creative signature drinks — we are told we make the best mojitos around.',
       },
       {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+        title: 'Local wines & craft beers',
+        description: 'A hand-picked selection of local Spanish wines and imported micro-brew beers.',
       },
       {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+        title: 'Fresh juices & smoothies',
+        description: 'Fresh-pressed juices and smoothies made to order. The perfect complement to any meal.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <div slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </div>
-
-    <div slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </div>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <div slot="content">Ensure your online presence truly represents you.</div>
-
-    <div slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </div>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <div slot="content">Designed to foster growth and success.</div>
-
-    <div slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </div>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
+      src: '~/assets/images/mojitos.jpg',
+      alt: 'Handcrafted mojitos at Artesano cocktail bar',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Exhibitions ********************* -->
 
-  <Features
+  <Content
+    tagline="Exhibitions"
+    title="Local art, always on display"
+    items={[
+      {
+        title: 'Rotating art exhibitions',
+        description:
+          'Our gallery space showcases work by talented local artists. The collection changes regularly — there is always something new to discover.',
+      },
+      {
+        title: 'Jewelry & home decor',
+        description: 'Browse unique handmade jewelry and home decor pieces. Every item tells a story.',
+      },
+      {
+        title: 'Online art galleries available',
+        description:
+          'Can\'t visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/Teresa_Tormo_home.jpg',
+      alt: 'Local artwork and jewelry at Artesano gallery',
+    }}
+  />
+
+  <!-- Testimonials slider ************ -->
+
+  <Testimonials
     variant="slider"
-    autoplay={{ delay: 4000, disableOnInteraction: true }}
-    sliderPagination={true}
-    sliderNavigation={true}
-    sliderLoop={false}
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
+    tagline="Testimonials"
+    title="What our guests say"
+    subtitle="From our TripAdvisor reviews…"
+    testimonials={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: 'Creative, healthy and delicious!',
+        testimonial:
+          'A wonderful find in Moraira. The food is fresh, creative, and absolutely delicious. Great atmosphere too!',
+        name: 'Sarah M.',
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        title: 'A Beautiful Breakfast',
+        testimonial:
+          'Stopped by for breakfast and was blown away. Beautiful presentation, fresh ingredients, and friendly service.',
+        name: 'James K.',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+        title: 'Eat HERE',
+        testimonial:
+          "If you're in Moraira, you must eat here. The menu is imaginative, the drinks are perfect, and the vibe is unmatched.",
+        name: 'Laura P.',
       },
       {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+        title: 'Imaginative Menu',
+        testimonial:
+          'So refreshing to find a place with such an imaginative menu. Vegetarian and vegan options are outstanding.',
+        name: 'David R.',
       },
       {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+        title: 'Fresh, delicious, great value',
+        testimonial:
+          "Fresh, delicious, and great value. Highly recommended for anyone visiting the area. We'll be back!",
+        name: 'Emma T.',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
+        title: "Can't get enough of this place",
+        testimonial:
+          'We came three times during our week in Moraira. The juices, the salads, the cocktails — everything is perfect.',
+        name: 'Michael B.',
       },
       {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
+        title: 'Perfect food, drinks and atmosphere!',
+        testimonial:
+          'The atmosphere is so relaxing, the food is perfect, and the drinks are amazing. A true gem in Moraira.',
+        name: 'Claire W.',
       },
       {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
+        title: 'A new style of cafe to hit Moraira',
+        testimonial:
+          'Artesano brings something completely new to Moraira. Art gallery meets café meets cocktail bar — brilliant concept.',
+        name: 'Tom H.',
       },
       {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <div slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </div>
-  </Features>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        title: 'Great new venture!',
+        testimonial:
+          'So happy to see this new venture thriving. The owners are passionate and it shows in every dish and drink.',
+        name: 'Anna S.',
       },
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- Team Widget (NEW) ************* -->
+  <!-- Team **************************** -->
 
   <Team
-    tagline="Our Team"
-    title="Meet the people behind AstroWind"
-    subtitle="A passionate group of designers and developers crafting beautiful templates."
+    tagline="The Artesano Team"
+    title="Always at your service"
     team={[
       {
-        name: 'Alex Morgan',
-        job: 'Lead Designer',
+        name: 'Ismael',
+        job: 'Owner',
         image: {
-          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
-          alt: 'Alex Morgan',
+          src: '~/assets/images/ismael_el_harrak_artesano1-320x320.jpg',
+          alt: 'Ismael, Owner of Artesano',
         },
-        description: 'Alex brings 10 years of UI/UX expertise, crafting pixel-perfect designs that delight users.',
+        description:
+          'Originally from Tangier, Morocco, Ismael has lived in Spain since 2009. An amateur photographer with a passion for art, food, and hospitality. Speaks English, Spanish, French, and Arabic.',
         socials: [
-          { icon: 'tabler:brand-twitter', href: '#' },
-          { icon: 'tabler:brand-linkedin', href: '#' },
+          { icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/artesanomoraira' },
+          { icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/artesanomoraira' },
         ],
       },
       {
-        name: 'Sam Chen',
-        job: 'Full-Stack Developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
-          alt: 'Sam Chen',
-        },
-        description: 'Sam architects the technical foundation, ensuring every template is fast and accessible.',
-        socials: [{ icon: 'tabler:brand-github', href: '#' }],
-      },
-      {
-        name: 'Riley Torres',
-        job: 'Content Strategist',
-        image: {
-          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
-          alt: 'Riley Torres',
-        },
-        description: 'Riley shapes the narrative, making complex features sound simple and compelling.',
-        socials: [
-          { icon: 'tabler:brand-instagram', href: '#' },
-          { icon: 'tabler:brand-twitter', href: '#' },
-        ],
+        name: 'Matthew',
+        job: 'Owner',
+        description:
+          'Co-owner of Artesano, Matthew works daily in-house alongside Ismael to create the delicious menu and welcoming atmosphere that makes Artesano special.',
+        socials: [{ icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/artesanomoraira' }],
       },
     ]}
   />
 
-  <!-- Gallery Widget (NEW) ********** -->
-
-  <Gallery
-    tagline="Showcase"
-    title="Beautiful template designs"
-    subtitle="A glimpse of what you can build with AstroWind's versatile components."
-    columns={3}
-    images={[
-      {
-        src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-        alt: 'Team collaboration',
-        caption: 'Modern workspace',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-        alt: 'Design process',
-        caption: 'Creative process',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-        alt: 'Storytelling',
-        caption: 'Crafting narratives',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-        alt: 'Blueprint',
-        caption: 'Architecture planning',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-        alt: 'Launch',
-        caption: 'Ready for takeoff',
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-        alt: 'Details',
-        caption: 'Attention to detail',
-      },
-    ]}
-  />
-
-  <!-- Badge Widget Demos (NEW) ****** -->
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16 lg:py-20">
-    <div class="text-center mb-8">
-      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase">Badges</p>
-      <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter font-heading text-heading">
-        Social proof, anywhere
-      </h2>
-      <p class="mt-4 text-xl text-muted">Corner ribbons, inline badges, and banner strips — all from one widget.</p>
-    </div>
-
-    <!-- Inline badges -->
-    <div class="flex flex-wrap gap-6 justify-center items-center mb-12">
-      <Badge variant="inline" text="Certificate of Excellence" href="#" />
-      <Badge variant="inline" text="Featured on Product Hunt" href="#" />
-      <Badge variant="inline" text="5-Star Rated" />
-    </div>
-
-    <!-- Corner badge demo card -->
-    <div
-      class="relative max-w-md mx-auto p-8 rounded-xl shadow-xl dark:shadow-none dark:border dark:border-slate-700 bg-white dark:bg-slate-900 text-center"
-    >
-      <h3 class="text-xl font-bold text-heading dark:text-white">Premium Template</h3>
-      <p class="mt-2 text-muted dark:text-slate-400">
-        Get the complete package with all widgets and unlimited support.
-      </p>
-      <Badge variant="corner" position="top-right" text="POPULAR" />
-    </div>
-  </div>
-
-  <!-- Badge Banner (NEW) ************ -->
-
-  <Badge variant="banner" text="Now with Team, Gallery & Badge widgets!" href="#team" />
-
-  <!-- CallToAction Widget *********** -->
+  <!-- Call to Action ****************** -->
 
   <CallToAction
+    title="Visit us today"
+    subtitle="Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante, España"
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
+        text: 'Get directions',
+        href: 'https://maps.google.com/?q=Carretera+Moraira-Calpe+16a+03724+Moraira+Alicante+España',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:map-pin',
+      },
+      {
+        text: 'Call +34 966 27 21 27',
+        href: 'tel:+34966272127',
+        icon: 'tabler:phone',
       },
     ]}
-  >
-    <div slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </div>
-
-    <span slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </span>
-  </CallToAction>
+  />
 </Layout>

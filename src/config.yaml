@@ -1,6 +1,6 @@
 site:
-  name: AstroWind I18n
-  site: 'https://kafkiano.github.io'
+  name: artesano
+  site: 'https://artesanomoraira.com'
   base: '/astrowind-i18n'
   trailingSlash: false
 
@@ -9,96 +9,63 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind I18n
-    template: '%s — AstroWind'
-  description: 'Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.'
+    default: artesano — Gallery · Café · Juice Bar
+    template: '%s — artesano'
+  description: 'Artesano is a unique combination of art gallery, coffee shop, juice bar, café/restaurant and cocktail lounge in Moraira, Alicante. Fresh, healthy, made-to-order dishes with vegetarian, vegan and gluten free options.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind I18n
+    site_name: artesano
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: null
+    site: null
     cardType: summary_large_image
 
 i18n:
   language: en
   textDirection: ltr
-  locales: ['en', 'es', 'fr', 'de']
+  locales: ['en', 'es', 'fr', 'de', 'nl']
   defaultLocale: en
   localeNames:
     en: English
     es: Español
     fr: Français
     de: Deutsch
-    # Add more as needed
+    nl: Nederlands
   ai:
+    provider: 'deepl'
     geminiApiKey: null
-    provider: 'deepl' # optional
-    # Select model for gemini provider,
-    # gemma-4-26b-a4b-it, gemini-2.0-flash-lite, etc.
-    # model: 'gemma-4-26b-a4b-it'
 
 apps:
   blog:
-    isEnabled: true
-    postsPerPage: 6
-
-    post:
-      isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
-
-    isRelatedPostsEnabled: true
-    relatedPostsCount: 4
+    isEnabled: false
 
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: null
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'system'
 
 navigation:
   actions:
-    - text: 'Download'
-      href: 'https://github.com/kafkiano/astrowind-i18n'
+    - text: 'Call us'
+      href: 'tel:+34966272127'
+      icon: 'tabler:phone'
+    - text: 'Directions'
+      href: 'https://maps.google.com/?q=Carretera+Moraira-Calpe+16a+03724+Moraira+Alicante+España'
       target: '_blank'
+      icon: 'tabler:map-pin'
 
   footer:
     secondaryLinks:
-      - text: 'Terms'
-        page: 'terms'
       - text: 'Privacy Policy'
         page: 'privacy'
-    footNote: 'Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/kafkiano/astrowind-i18n">Kafkiano</a> · All rights reserved.'
-
-  blog:
-    categorySlug: 'documentation'
-    tagSlug: 'astro'
+    footNote: '©2026 artesano · Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante, España'
