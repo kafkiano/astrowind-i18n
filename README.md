@@ -18,6 +18,9 @@
 - ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
 - ✅ **Internationalization (i18n)** with custom system: JSON catalogs, HTML post-processing, AI-powered translation (Gemini/DeepL).
 - ✅ **Git-based CMS** via Sveltia CMS — edit content online, commits trigger automatic redeploy.
+- ✅ **Website Farm architecture** — one repo, unlimited client websites. Branch-per-client model keeps the base theme pristine while each client gets their own deployment pipeline.
+
+**Live demo:** [artesano-moraira.netlify.app](https://artesano-moraira.netlify.app) — a real client site built on this template (Artesano Moraira: gallery · café · juice bar in Alicante, Spain).
 
 **AstroWind** tries to give you quick access to creating a website using [Astro 6](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
 
@@ -57,9 +60,10 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   ├── Favicons.astro
 │   │   └── Logo.astro
 │   ├── data/
-│   │   ├── post/{en,es,fr,de}/ # Blog posts per locale
-│   │   ├── pages/{en,es,fr,de}/ # Content pages per locale
-│   │   └── snippets/            # Flat markdown snippets (no locale dirs)
+│   │   ├── post/{locale}/       # Blog posts per locale
+│   │   ├── pages/{locale}/      # Standalone content pages per locale
+│   │   ├── templates/{locale}/  # Data-driven page templates (nested YAML)
+│   │   └── snippets/            # Reusable markdown fragments (flat, no locale dirs)
 │   ├── i18n/                    # Custom i18n system
 │   │   ├── catalog.ts           # JSON catalog management
 │   │   ├── config.ts            # Configuration (reads config.yaml + env vars)
@@ -153,7 +157,7 @@ metadata:
   openGraph:
     site_name: 'Example'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/og-default.jpg'
         width: 1200
         height: 628
     type: website
@@ -231,7 +235,7 @@ Astrowind uses a custom i18n system (`src/i18n/`) with zero framework dependenci
 
 4. **HTML post-processing** – after the build, an Astro integration walks `dist/` HTML files and replaces source-locale text with translations using full-string matching. Script tags are protected from corruption.
 
-5. **Markdown content translation** (`src/i18n/markdown.ts`) – blog posts and pages in `src/data/{post,pages}/{sourceLocale}/` are automatically translated to all target locales. Frontmatter fields (title, excerpt, description) are translated individually; the body is translated as a single block preserving formatting.
+5. **Markdown content translation** (`src/i18n/markdown.ts`) – blog posts, pages, and templates in `src/data/{post,pages,templates}/{sourceLocale}/` are automatically translated to all target locales. Frontmatter is parsed as YAML and all nested string values are recursively translated — even deeply nested structures like hero sections, feature lists, and team member bios. The body is translated as a single block preserving formatting.
 
 **Expected behaviors by user action:**
 
@@ -257,16 +261,38 @@ Astrowind includes **Sveltia CMS** – a lightweight, Git-based content editor a
 - **Authentication** – log in with a GitHub personal access token (PAT).
 - **Editable content:**
   - **Blog Posts** (`src/data/post/en/`) – all frontmatter fields (title, date, excerpt, image, tags, etc.) plus the markdown body.
+  - **Pages** (`src/data/pages/en/`) – standalone pages (privacy, terms, about) with navigation settings.
+  - **Templates** (`src/data/templates/en/`) – data-driven landing pages with rich nested YAML frontmatter. Edit hero, features, testimonials, team, CTA – all from one file.
   - **Snippets** (`src/data/snippets/`) – reusable markdown content rendered by the `MarkdownSlot` component.
 
 Target locale translations (es, fr, de) are handled automatically at build time and don't need manual CMS editing.
 
-#### Deploy
+#### Website Farm Deployment
 
-GitHub Actions (`.github/workflows/actions.yaml`) handles CI/CD:
+The repo is a **website farm** — one codebase, multiple client websites, each on its own branch with its own deployment target.
+
+| Branch | Deploys to | URL |
+|---|---|---|
+| `main` | GitHub Pages | `https://kafkiano.github.io/astrowind-i18n/` |
+| `client/artesano` | Netlify | `https://artesano-moraira.netlify.app/` |
+| `client/<name>` | Netlify (per client) | `<name>.netlify.app` or custom domain |
+
+**How it works:**
+
+- **`main`** — the base theme. GitHub Actions builds on push and deploys to GitHub Pages. This is the demo/showcase site.
+- **Client branches** — created from `main`. Each has its own `config.yaml` (site name, domain, locales), `netlify.toml` (build config), and CMS config (`public/admin/config.yml` pointed at its own branch). Netlify auto-deploys on push.
+- **CMS per client** — each client branch has its own CMS at `<client-url>/admin/`. The CMS commits to that client's branch, triggering a Netlify rebuild. The base theme's CMS at the GitHub Pages URL edits `main`.
+
+See [`docs/client-architecture.md`](docs/client-architecture.md) for the full architecture, onboarding process, and widget toolbox.
+
+#### CI/CD (GitHub Actions)
+
+`.github/workflows/actions.yaml` handles the `main` branch:
 
 - **On push to `main`**: checkout → `bun install` → `bun run check` → `bun run build` (includes i18n translation) → deploy to GitHub Pages.
 - **On pull request**: checkout → `bun install` → `bun run check` → `bun run build` (no deploy).
+
+Client branches use Netlify's Git integration for CI/CD — no GitHub Actions needed per client.
 
 #### Customize Design
 
@@ -304,17 +330,23 @@ docker build --target deploy -t astrowind-prod .
 docker run -d -p 8080:8080 --name astrowind-server astrowind-prod
 ```
 
-#### Deploy to Netlify
+#### Deploy a client to Netlify
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+1. Create a client branch: `git checkout -b client/<name>` from `main`
+2. Configure `src/config.yaml` (site name, domain, locales) and `netlify.toml`
+3. Push the branch to GitHub
+4. In Netlify: **Add new site → Import an existing project → GitHub**
+5. Set **Production branch** to `client/<name>`
+6. Add `DEEPL_API_KEY` or `GEMINI_API_KEY` in Netlify's environment variables
+7. Deploy! Every push to the client branch triggers a rebuild with full i18n translation
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/astrowind)
+See [`docs/client-architecture.md`](docs/client-architecture.md) for the complete onboarding checklist.
 
 #### Deploy to Vercel
 
-Clone this repository on your own GitHub account and deploy to Vercel:
+Clone this repository and deploy to Vercel. The same branch-per-client model works — set the production branch to your client branch in Vercel's project settings.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Fastrowind)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkafkiano%2Fastrowind-i18n)
 
 ## Acknowledgements
 
