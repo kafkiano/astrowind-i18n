@@ -4,9 +4,10 @@
     "src/data/post/en/astrowind-template-in-depth.mdx": "2486bd1c0b51f2bee4269c8d06ad4e99de5855395724930fc9e98567946712dc",
     "src/data/post/en/mastering-landing-pages.md": "8245d7dfac7ce0ce46ed0eeae0fd12dd22d73a0243672f325848eafd537ebdb1",
     "src/data/pages/en/privacy.md": "b56249c0efb5ed739cf39b24ce6ffcb7cf5fecd109144c68f982521d5b491bd1",
-    "src/data/pages/en/terms.md": "3cbd0c641f84042fd6105024401af86478081ff0dfa630f811afc7ce4f6f2f1d"
+    "src/data/pages/en/terms.md": "3cbd0c641f84042fd6105024401af86478081ff0dfa630f811afc7ce4f6f2f1d",
+    "src/data/pages/en/home.md": "6845a6961e5a12eaaeaefa1adfd815ec9b7752bd00f8c6708adcae625f8e0529"
   },
   "catalogs": {
-    "en": "c61509de6b980192e2f6b9987eac8662eca4c9364480363142cc6c43643b65cb"
+    "en": "525e5685b5738bcce617309b4d5bc87ca14e6f98d4577c01dcc85bc31c803203"
   }
 }

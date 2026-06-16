@@ -1,4 +1,5 @@
 ---
+import { getEntry, render } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -10,8 +11,58 @@ import Badge from '~/components/widgets/Badge.astro';
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
 
+const locale = Astro.currentLocale ?? 'en';
+const home = await getEntry('pages', `${locale}/home`);
+if (!home) {
+  throw new Error(`Home page not found for locale: ${locale}`);
+}
+
+const { Content: BodyContent } = await render(home);
+const { data } = home;
+
+// Extract sections from frontmatter (passthrough schema — fields are untyped)
+const hero = data.hero as any;
+const welcome = data.welcome as any;
+const kitchenHeading = data.kitchenHeading as any;
+const dishes = data.dishes as any;
+const cocktails = data.cocktails as any;
+const exhibitions = data.exhibitions as any;
+const testimonials = data.testimonials as any;
+const rawTeam = data.team as any[] | undefined;
+const cta = data.cta as any;
+
+// Image dimensions for public/ images (required by Astro's Image component)
+const imgDimensions: Record<string, { width: number; height: number }> = {
+  '/images/artesano_goats_cheese_salad.jpg': { width: 350, height: 220 },
+  '/images/mojitos.jpg': { width: 350, height: 220 },
+  '/images/Teresa_Tormo_home.jpg': { width: 350, height: 220 },
+  '/images/ismael_el_harrak_artesano1-320x320.jpg': { width: 320, height: 320 },
+};
+
+const withDimensions = (img: any) => {
+  if (!img) return img;
+  // Handle string paths from frontmatter (e.g. '/images/foo.jpg')
+  if (typeof img === 'string') {
+    const dims = imgDimensions[img];
+    return dims ? { src: img, ...dims } : { src: img };
+  }
+  // Handle object with src property
+  if (typeof img.src === 'string') {
+    const dims = imgDimensions[img.src];
+    return dims ? { ...img, ...dims } : img;
+  }
+  return img;
+};
+
+const team = rawTeam?.map((member: any) => ({
+  ...member,
+  image: member.image
+    ? { ...withDimensions(member.image), alt: member.imageAlt || member.name || 'Team member' }
+    : undefined,
+}));
+
 const metadata = {
-  title: 'artesano — Gallery · Café · Juice Bar in Moraira',
+  title: data.title,
   ignoreTitleTemplate: true,
 };
 ---
@@ -21,11 +72,106 @@ const metadata = {
 
   <Hero
     variant="centered"
-    title="artesano"
-    subtitle="GALLERY • CAFE • JUICE BAR"
-    tagline="Welcome to a refreshing change"
+    title={hero?.title}
+    subtitle={hero?.subtitle}
+    tagline={hero?.tagline}
   />
 
+  <!-- Welcome + TripAdvisor ribbon **** -->
+
+  <div class="relative">
+    <Content
+      tagline={welcome?.tagline}
+      title={welcome?.title}
+      items={welcome?.items}
+      image={withDimensions(welcome?.image ? { src: welcome.image, alt: 'Fresh food at Artesano' } : undefined)}
+    >
+      <div slot="content">
+        <div class="text-lg text-muted dark:text-slate-400">
+          <BodyContent />
+        </div>
+      </div>
+    </Content>
+
+    <Badge
+      variant="corner"
+      position="top-right"
+      text="#2 of 200+ on Tripadvisor"
+    />
+  </div>
+
+  <!-- Kitchen & bar heading *********** -->
+
+  {
+    kitchenHeading && (
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16 text-center">
+        {kitchenHeading.tagline && (
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase">
+            {kitchenHeading.tagline}
+          </p>
+        )}
+        {kitchenHeading.title && (
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter font-heading text-heading dark:text-white">
+            {kitchenHeading.title}
+          </h2>
+        )}
+      </div>
+    )
+  }
+
+  <!-- Dishes ************************** -->
+
+  {
+    dishes && (
+      <Content
+        tagline={dishes.tagline}
+        title={dishes.title}
+        items={dishes.items}
+        image={withDimensions(dishes.image ? { src: dishes.image, alt: dishes.tagline || 'Dishes at Artesano' } : undefined)}
+      />
+    )
+  }
+
+  <!-- Cocktail Bar ******************** -->
+
+  {
+    cocktails && (
+      <Content
+        isReversed
+        tagline={cocktails.tagline}
+        title={cocktails.title}
+        items={cocktails.items}
+        image={withDimensions(cocktails.image ? { src: cocktails.image, alt: cocktails.tagline || 'Cocktails at Artesano' } : undefined)}
+      />
+    )
+  }
+
+  <!-- Exhibitions ********************* -->
+
+  {
+    exhibitions && (
+      <Content
+        tagline={exhibitions.tagline}
+        title={exhibitions.title}
+        items={exhibitions.items}
+        image={withDimensions(exhibitions.image ? { src: exhibitions.image, alt: exhibitions.tagline || 'Art at Artesano' } : undefined)}
+      />
+    )
+  }
+
+  <!-- Testimonials slider ************ -->
+
+  {
+    testimonials && (
+      <Testimonials
+        variant="slider"
+        tagline="Testimonials"
+        title="What our guests say"
+        subtitle="From our TripAdvisor reviews…"
+        testimonials={testimonials}
+      />
+    )
+  }
 
   <!-- TripAdvisor certificates ******** -->
 
@@ -35,211 +181,32 @@ const metadata = {
       <Badge variant="inline" text="Certificate of Excellence 2018" />
       <Badge variant="inline" text="Certificate of Excellence 2017" />
     </div>
-    <p class="mt-4 text-muted text-sm">Recommended on Tripadvisor</p>
+    <p class="mt-4 text-muted text-sm">
+      Recommended on Tripadvisor
+    </p>
   </div>
-  
-  <!-- Welcome **************************** -->
-
-  <div class="relative">
-    <Content
-      tagline="Welcome"
-      title="A refreshing change"
-      items={[
-        {
-          title: 'Fresh, made-to-order dishes',
-          description: 'Salads, wraps, cakes, dips and more — all prepared daily in-house by owners Ismael & Matthew.',
-        },
-        {
-          title: 'Vegetarian, vegan & gluten free',
-          description:
-            'A wide selection of options for every dietary preference. We really have something for everyone.',
-        },
-        {
-          title: 'Fresh-pressed juices & smoothies',
-          description:
-            'Alongside a hand-picked selection of local wines, micro-brew beers, and an exciting cocktail menu.',
-        },
-      ]}
-      image={{
-        src: '~/assets/images/artesano_goats_cheese_salad.jpg',
-        alt: 'Fresh goat cheese salad at Artesano',
-      }}
-    >
-      <div slot="content">
-        <p class="text-lg text-muted dark:text-slate-400">
-          Artesano is a unique combination of art gallery, coffee shop, juice bar, café/restaurant and cocktail lounge.
-          Currently rated #2 of more than 200 restaurants in Moraira.
-        </p>
-      </div>
-    </Content>
-  </div>
-
-  <!-- Cocktail Bar ******************** -->
-
-  <Content
-    isReversed
-    tagline="Cocktail Bar"
-    title="The best mojitos around"
-    items={[
-      {
-        title: 'Signature cocktails',
-        description: 'From classic mojitos to creative signature drinks — we are told we make the best mojitos around.',
-      },
-      {
-        title: 'Local wines & craft beers',
-        description: 'A hand-picked selection of local Spanish wines and imported micro-brew beers.',
-      },
-      {
-        title: 'Fresh juices & smoothies',
-        description: 'Fresh-pressed juices and smoothies made to order. The perfect complement to any meal.',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/mojitos.jpg',
-      alt: 'Handcrafted mojitos at Artesano cocktail bar',
-    }}
-  />
-
-  <!-- Exhibitions ********************* -->
-
-  <Content
-    tagline="Exhibitions"
-    title="Local art, always on display"
-    items={[
-      {
-        title: 'Rotating art exhibitions',
-        description:
-          'Our gallery space showcases work by talented local artists. The collection changes regularly — there is always something new to discover.',
-      },
-      {
-        title: 'Jewelry & home decor',
-        description: 'Browse unique handmade jewelry and home decor pieces. Every item tells a story.',
-      },
-      {
-        title: 'Online art galleries available',
-        description:
-          'Can\'t visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/Teresa_Tormo_home.jpg',
-      alt: 'Local artwork and jewelry at Artesano gallery',
-    }}
-  />
-
-  <!-- Testimonials slider ************ -->
-
-  <Testimonials
-    variant="slider"
-    tagline="Testimonials"
-    title="What our guests say"
-    subtitle="From our TripAdvisor reviews…"
-    testimonials={[
-      {
-        title: 'Creative, healthy and delicious!',
-        testimonial:
-          'A wonderful find in Moraira. The food is fresh, creative, and absolutely delicious. Great atmosphere too!',
-        name: 'Sarah M.',
-      },
-      {
-        title: 'A Beautiful Breakfast',
-        testimonial:
-          'Stopped by for breakfast and was blown away. Beautiful presentation, fresh ingredients, and friendly service.',
-        name: 'James K.',
-      },
-      {
-        title: 'Eat HERE',
-        testimonial:
-          "If you're in Moraira, you must eat here. The menu is imaginative, the drinks are perfect, and the vibe is unmatched.",
-        name: 'Laura P.',
-      },
-      {
-        title: 'Imaginative Menu',
-        testimonial:
-          'So refreshing to find a place with such an imaginative menu. Vegetarian and vegan options are outstanding.',
-        name: 'David R.',
-      },
-      {
-        title: 'Fresh, delicious, great value',
-        testimonial:
-          "Fresh, delicious, and great value. Highly recommended for anyone visiting the area. We'll be back!",
-        name: 'Emma T.',
-      },
-      {
-        title: "Can't get enough of this place",
-        testimonial:
-          'We came three times during our week in Moraira. The juices, the salads, the cocktails — everything is perfect.',
-        name: 'Michael B.',
-      },
-      {
-        title: 'Perfect food, drinks and atmosphere!',
-        testimonial:
-          'The atmosphere is so relaxing, the food is perfect, and the drinks are amazing. A true gem in Moraira.',
-        name: 'Claire W.',
-      },
-      {
-        title: 'A new style of cafe to hit Moraira',
-        testimonial:
-          'Artesano brings something completely new to Moraira. Art gallery meets café meets cocktail bar — brilliant concept.',
-        name: 'Tom H.',
-      },
-      {
-        title: 'Great new venture!',
-        testimonial:
-          'So happy to see this new venture thriving. The owners are passionate and it shows in every dish and drink.',
-        name: 'Anna S.',
-      },
-    ]}
-  />
 
   <!-- Team **************************** -->
 
-  <Team
-    tagline="The Artesano Team"
-    title="Always at your service"
-    team={[
-      {
-        name: 'Ismael',
-        job: 'Owner',
-        image: {
-          src: '~/assets/images/ismael_el_harrak_artesano1-320x320.jpg',
-          alt: 'Ismael, Owner of Artesano',
-        },
-        description:
-          'Originally from Tangier, Morocco, Ismael has lived in Spain since 2009. An amateur photographer with a passion for art, food, and hospitality. Speaks English, Spanish, French, and Arabic.',
-        socials: [
-          { icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/artesanomoraira' },
-          { icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/artesanomoraira' },
-        ],
-      },
-      {
-        name: 'Matthew',
-        job: 'Owner',
-        description:
-          'Co-owner of Artesano, Matthew works daily in-house alongside Ismael to create the delicious menu and welcoming atmosphere that makes Artesano special.',
-        socials: [{ icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/artesanomoraira' }],
-      },
-    ]}
-  />
+  {
+    team && (
+      <Team
+        tagline="The Artesano Team"
+        title="Always at your service"
+        team={team}
+      />
+    )
+  }
 
   <!-- Call to Action ****************** -->
 
-  <CallToAction
-    title="Visit us today"
-    subtitle="Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante, España"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get directions',
-        href: 'https://maps.google.com/?q=Carretera+Moraira-Calpe+16a+03724+Moraira+Alicante+España',
-        target: '_blank',
-        icon: 'tabler:map-pin',
-      },
-      {
-        text: 'Call +34 966 27 21 27',
-        href: 'tel:+34966272127',
-        icon: 'tabler:phone',
-      },
-    ]}
-  />
+  {
+    cta && (
+      <CallToAction
+        title={cta.title}
+        subtitle={cta.subtitle}
+        actions={cta.actions}
+      />
+    )
+  }
 </Layout>
