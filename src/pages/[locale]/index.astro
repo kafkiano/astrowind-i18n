@@ -1,4 +1,5 @@
 ---
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getEntry, render } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -70,12 +71,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero **************************** -->
 
-  <Hero
-    variant="centered"
-    title={hero?.title}
-    subtitle={hero?.subtitle}
-    tagline={hero?.tagline}
-  />
+  <Hero variant="centered" title={hero?.title} subtitle={hero?.subtitle} tagline={hero?.tagline} />
 
   <!-- Welcome + TripAdvisor ribbon **** -->
 
@@ -93,11 +89,7 @@ const metadata = {
       </div>
     </Content>
 
-    <Badge
-      variant="corner"
-      position="top-right"
-      text="#2 of 200+ on Tripadvisor"
-    />
+    <Badge variant="corner" position="top-right" text="#2 of 200+ on Tripadvisor" />
   </div>
 
   <!-- Kitchen & bar heading *********** -->
@@ -127,7 +119,9 @@ const metadata = {
         tagline={dishes.tagline}
         title={dishes.title}
         items={dishes.items}
-        image={withDimensions(dishes.image ? { src: dishes.image, alt: dishes.tagline || 'Dishes at Artesano' } : undefined)}
+        image={withDimensions(
+          dishes.image ? { src: dishes.image, alt: dishes.tagline || 'Dishes at Artesano' } : undefined
+        )}
       />
     )
   }
@@ -141,7 +135,9 @@ const metadata = {
         tagline={cocktails.tagline}
         title={cocktails.title}
         items={cocktails.items}
-        image={withDimensions(cocktails.image ? { src: cocktails.image, alt: cocktails.tagline || 'Cocktails at Artesano' } : undefined)}
+        image={withDimensions(
+          cocktails.image ? { src: cocktails.image, alt: cocktails.tagline || 'Cocktails at Artesano' } : undefined
+        )}
       />
     )
   }
@@ -154,7 +150,9 @@ const metadata = {
         tagline={exhibitions.tagline}
         title={exhibitions.title}
         items={exhibitions.items}
-        image={withDimensions(exhibitions.image ? { src: exhibitions.image, alt: exhibitions.tagline || 'Art at Artesano' } : undefined)}
+        image={withDimensions(
+          exhibitions.image ? { src: exhibitions.image, alt: exhibitions.tagline || 'Art at Artesano' } : undefined
+        )}
       />
     )
   }
@@ -181,32 +179,14 @@ const metadata = {
       <Badge variant="inline" text="Certificate of Excellence 2018" />
       <Badge variant="inline" text="Certificate of Excellence 2017" />
     </div>
-    <p class="mt-4 text-muted text-sm">
-      Recommended on Tripadvisor
-    </p>
+    <p class="mt-4 text-muted text-sm">Recommended on Tripadvisor</p>
   </div>
 
   <!-- Team **************************** -->
 
-  {
-    team && (
-      <Team
-        tagline="The Artesano Team"
-        title="Always at your service"
-        team={team}
-      />
-    )
-  }
+  {team && <Team tagline="The Artesano Team" title="Always at your service" team={team} />}
 
   <!-- Call to Action ****************** -->
 
-  {
-    cta && (
-      <CallToAction
-        title={cta.title}
-        subtitle={cta.subtitle}
-        actions={cta.actions}
-      />
-    )
-  }
+  {cta && <CallToAction title={cta.title} subtitle={cta.subtitle} actions={cta.actions} />}
 </Layout>
