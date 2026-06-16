@@ -56,9 +56,7 @@ if (
 const BASE_URL = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 if (image) {
   const fixPath = (url: string) =>
-    url.startsWith('/') && !url.startsWith('http') && !url.startsWith(BASE_URL + '/')
-      ? BASE_URL + url
-      : url;
+    url.startsWith('/') && !url.startsWith('http') && !url.startsWith(BASE_URL + '/') ? BASE_URL + url : url;
 
   image.src = fixPath(image.src);
   if (image.attributes.srcset) {
