@@ -1,6 +1,5 @@
 ---
 title: artesano — Gallery · Café · Juice Bar in Moraira
-showIn: none
 order: 1
 
 hero:

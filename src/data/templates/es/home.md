@@ -1,6 +1,5 @@
 ---
 title: artesano — Galería · Cafetería · Bar de zumos en Moraira
-showIn: none
 order: 1
 hero:
   title: artesano
@@ -11,7 +10,7 @@ welcome:
   title: Un cambio refrescante
   image: /images/artesano_goats_cheese_salad.jpg
   items:
-    - title: Platos frescos y preparados al momento
+    - title: Platos frescos, preparados al momento
       description: 'Ensaladas, wraps, pasteles, salsas y mucho más: todo ello preparado a diario en el propio local por los propietarios, Ismael y Matthew.'
     - title: Vegetariano, vegano y sin gluten
       description: Una amplia selección de opciones para todos los gustos alimentarios. De verdad que tenemos algo para todos los gustos.
@@ -19,14 +18,14 @@ welcome:
       description: Además de una selección cuidadosamente elegida de vinos locales, cervezas artesanales y una atractiva carta de cócteles.
 kitchenHeading:
   tagline: Nuestra cocina y nuestro bar
-  title: Fresca, sana y bonita
+  title: Fresco, saludable y bonito
 dishes:
   tagline: Platos
   title: Hecho a medida, todos los días
   image: /images/artesano_goats_cheese_salad.jpg
   items:
     - title: Ensaladas y wraps saludables
-      description: Ensaladas y wraps frescos y coloridos, elaborados con ingredientes de origen local. Todos los platos se preparan al momento.
+      description: Ensaladas y wraps frescos y apetecibles, elaborados con ingredientes de origen local. Todos los platos se preparan al momento.
     - title: Pasteles y salsas caseras
       description: Una deliciosa selección de pasteles caseros, salsas y raciones pequeñas, perfectos para compartir o disfrutar en solitario.
     - title: Vegetariano, vegano y sin gluten
@@ -37,7 +36,7 @@ cocktails:
   image: /images/mojitos.jpg
   items:
     - title: Cócteles de autor
-      description: 'Desde los mojitos clásicos hasta las creativas bebidas de la casa: nos dicen que hacemos los mejores mojitos de la zona.'
+      description: 'Desde los clásicos mojitos hasta las creativas bebidas de la casa: nos dicen que hacemos los mejores mojitos de la zona.'
     - title: Vinos locales y cervezas artesanales
       description: Una selección cuidadosamente elegida de vinos españoles locales y cervezas artesanales importadas.
     - title: Zumos naturales y batidos
@@ -50,7 +49,7 @@ exhibitions:
     - title: Exposiciones de arte temporales
       description: En nuestra galería se exponen obras de talentosos artistas locales. La colección cambia con frecuencia, por lo que siempre hay algo nuevo que descubrir.
     - title: Joyería y decoración del hogar
-      description: Descubre joyas únicas hechas a mano y artículos de decoración para el hogar. Cada artículo cuenta una historia.
+      description: Descubre joyas y artículos de decoración para el hogar únicos y hechos a mano. Cada artículo cuenta una historia.
     - title: Galerías de arte en línea disponibles
       description: Can't visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.
 testimonials:
@@ -64,13 +63,13 @@ testimonials:
     testimonial: Si estás en Moraira, no te puedes perder este sitio. El menú es muy creativo, las bebidas son perfectas y el ambiente es inigualable.
     name: Laura P.
   - title: Menú creativo
-    testimonial: Es muy gratificante encontrar un sitio con una carta tan creativa. Las opciones vegetarianas y veganas son excelentes.
+    testimonial: Es un auténtico placer encontrar un sitio con una carta tan creativa. Las opciones vegetarianas y veganas son excepcionales.
     name: David R.
   - title: Fresco, delicioso y a muy buen precio
     testimonial: Fresco, delicioso y con una excelente relación calidad-precio. Muy recomendable para cualquiera que visite la zona. ¡Volveremos!
     name: Emma T.
   - title: No me canso de este sitio
-    testimonial: Fuimos tres veces durante la semana que pasamos en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
+    testimonial: Fuimos tres veces durante nuestra semana en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
     name: Michael B.
   - title: ¡Comida, bebidas y ambiente perfectos!
     testimonial: El ambiente es muy relajante, la comida es perfecta y las bebidas son increíbles. Una auténtica joya en Moraira.

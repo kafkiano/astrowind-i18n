@@ -13,9 +13,13 @@ import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
 
 const locale = Astro.currentLocale ?? 'en';
-const home = await getEntry('pages', `${locale}/home`);
+let home = await getEntry('templates', `${locale}/home`);
+// Fall back to source locale if translation doesn't exist yet
 if (!home) {
-  throw new Error(`Home page not found for locale: ${locale}`);
+  home = await getEntry('templates', `en/home`);
+}
+if (!home) {
+  throw new Error(`Home page not found for locale: ${locale} (or fallback en)`);
 }
 
 const { Content: BodyContent } = await render(home);
