@@ -4,7 +4,11 @@
  * Reads:  src/data/{type}/{sourceLocale}/*.{md,mdx}
  * Writes: src/data/{type}/{targetLocale}/*.{md,mdx}
  *
- * Translates both body content and specified frontmatter fields.
+ * Translates both body content and all translatable frontmatter fields.
+ * Frontmatter is parsed as YAML (js-yaml), all nested string values are
+ * collected, translated, and reconstructed — supporting rich frontmatter
+ * with nested objects and arrays (e.g. landing page section definitions).
+ *
  * Uses a content-addressable manifest (.i18n-manifest.json) so
  * re-builds skip unchanged source files (git-safe — not mtime-based).
  *
@@ -13,15 +17,133 @@
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import yaml from 'js-yaml';
 import { type TranslationProvider } from './provider';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, needsTranslation, markTranslated } from './manifest';
 
-const FRONTMATTER_KEYS = ['title', 'excerpt', 'description', 'group'];
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
 ];
+
+// ── YAML frontmatter helpers ──────────────────────────────────────
+
+/** Keys whose values are identifiers/enums and should never be translated. */
+const NON_TRANSLATABLE_KEYS = new Set(['showIn', 'target', 'variant', 'icon', 'name', 'job', 'type']);
+
+/** Recursively collect all translatable string leaf values from a parsed YAML object. */
+function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ path: string; value: string }> {
+  const result: Array<{ path: string; value: string }> = [];
+
+  if (typeof obj === 'string') {
+    // Extract the leaf key name from the path (last segment after . or [)
+    // eslint-disable-next-line no-useless-escape
+    const leafKey = prefix.replace(/^.*[.\[]/, '').replace(/\]$/, '');
+    if (!NON_TRANSLATABLE_KEYS.has(leafKey) && isTranslatable(obj)) {
+      result.push({ path: prefix, value: obj });
+    }
+  } else if (Array.isArray(obj)) {
+    for (let i = 0; i < obj.length; i++) {
+      const childResults = collectTranslatableStrings(obj[i], `${prefix}[${i}]`);
+      result.push(...childResults);
+    }
+  } else if (typeof obj === 'object' && obj !== null) {
+    for (const [key, val] of Object.entries(obj as Record<string, unknown>)) {
+      const childResults = collectTranslatableStrings(val, prefix ? `${prefix}.${key}` : key);
+      result.push(...childResults);
+    }
+  }
+
+  return result;
+}
+
+/** Check if a string value should be translated (exclude URLs, icons, emails, phones, numbers). */
+function isTranslatable(s: string): boolean {
+  if (!s.trim()) return false;
+  // URLs
+  if (/^https?:\/\//.test(s)) return false;
+  // Icon references (e.g. tabler:brand-facebook)
+  if (/^[a-z][a-z0-9]*(:[a-z][a-z0-9-]*)+$/i.test(s)) return false;
+  // Email addresses
+  if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(s)) return false;
+  // Phone/fax numbers (mostly digits, +, spaces, dashes, parens)
+  if (/^[+\d\s\-()]{6,}$/.test(s)) return false;
+  // Pure numbers
+  if (/^\d+$/.test(s)) return false;
+  // HTML fragments (contain tags)
+  if (/<[a-z][\s\S]*>/i.test(s)) return false;
+  return true;
+}
+
+/** Set a value at a dotted/array path in a nested object. */
+function setValueAtPath(obj: Record<string, unknown>, path: string, value: string): void {
+  // eslint-disable-next-line no-useless-escape
+  const parts = path.split(/(?<=[^\[\]])\.|(?<=\])\.|\[|\]/).filter(Boolean);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let current: any = obj;
+
+  for (let i = 0; i < parts.length - 1; i++) {
+    const key = parts[i];
+    if (/^\d+$/.test(key)) {
+      current = current[parseInt(key)];
+    } else {
+      if (current[key] === undefined) return; // safety: path doesn't exist
+      current = current[key];
+    }
+  }
+
+  const lastKey = parts[parts.length - 1];
+  if (/^\d+$/.test(lastKey)) {
+    current[parseInt(lastKey)] = value;
+  } else {
+    current[lastKey] = value;
+  }
+}
+
+/** Parse frontmatter YAML, translate all nested strings, dump back. Returns null if parsing fails. */
+async function translateFrontmatterYaml(
+  frontmatter: string,
+  provider: TranslationProvider,
+  locale: string,
+  defaultLocale: string
+): Promise<string | null> {
+  let fmObj: unknown;
+  try {
+    fmObj = yaml.load(frontmatter);
+  } catch {
+    return null; // malformed YAML — caller should fall back
+  }
+
+  if (!fmObj || typeof fmObj !== 'object') return null;
+
+  const translatable = collectTranslatableStrings(fmObj);
+  if (translatable.length === 0) return frontmatter; // nothing to translate
+
+  const texts = translatable.map((t) => t.value);
+  const results = await provider.translateBatch(texts, locale, defaultLocale);
+
+  let anyTranslated = false;
+  for (let i = 0; i < translatable.length; i++) {
+    if (results[i] && results[i] !== translatable[i].value) {
+      setValueAtPath(fmObj as Record<string, unknown>, translatable[i].path, results[i]);
+      anyTranslated = true;
+    }
+  }
+
+  if (!anyTranslated) return frontmatter;
+
+  return yaml
+    .dump(fmObj, {
+      indent: 2,
+      lineWidth: -1,
+      noCompatMode: true,
+      sortKeys: false,
+    })
+    .trim();
+}
+
+// ── Main translation logic ────────────────────────────────────────
 
 /**
  * Translate all markdown content. Called by the i18n integration during build.
@@ -57,7 +179,7 @@ export async function translateContent(
       const srcPath = join(srcDir, relPath);
       const srcContent = await readFile(srcPath, 'utf-8');
       const { frontmatter, body } = splitFrontmatter(srcContent);
-      if (!body.trim() && !hasTranslatableFm(frontmatter)) continue;
+      if (!body.trim() && !frontmatter.trim()) continue;
 
       // Check manifest — skip if source content hasn't changed
       const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
@@ -74,36 +196,24 @@ export async function translateContent(
         let translatedFm = frontmatter;
         let translatedBody = body;
         let bodyTranslated = !body.trim(); // true if no body to translate
-        let allFmTranslated = true;
+        let fmTranslated = !frontmatter.trim(); // true if no frontmatter to translate
 
-        // Translate frontmatter fields
-        const fmTexts: string[] = [];
-        const fmKeys: string[] = [];
-        for (const key of FRONTMATTER_KEYS) {
-          const val = extractFmValue(frontmatter, key);
-          if (val && val.trim()) {
-            fmTexts.push(val);
-            fmKeys.push(key);
-          }
-        }
+        // ── Translate frontmatter (nested YAML) ─────────────────
 
-        if (fmTexts.length > 0) {
+        if (frontmatter.trim()) {
           try {
-            const fmResults = await provider.translateBatch(fmTexts, locale, defaultLocale);
-            for (let i = 0; i < fmKeys.length; i++) {
-              if (fmResults[i]) {
-                translatedFm = replaceFmValue(translatedFm, fmKeys[i], fmResults[i]);
-              } else {
-                allFmTranslated = false;
-              }
+            const result = await translateFrontmatterYaml(frontmatter, provider, locale, defaultLocale);
+            if (result !== null) {
+              translatedFm = result;
+              fmTranslated = true;
             }
           } catch (err) {
             console.warn(`  ⚠ fm translation failed for ${locale}:`, (err as Error).message);
-            allFmTranslated = false;
           }
         }
 
-        // Translate body (full multi-line text, not line-by-line batch)
+        // ── Translate body (full multi-line text) ───────────────
+
         if (body.trim()) {
           try {
             const result = await provider.translateText(body, locale, defaultLocale);
@@ -116,10 +226,8 @@ export async function translateContent(
           }
         }
 
-        // Only write the output file if translation actually produced results.
-        // If body or FM translation failed, skip this locale — otherwise we'd
-        // write English content into the target locale directory.
-        const shouldWrite = body.trim() ? bodyTranslated : allFmTranslated;
+        // Only write if translation actually produced results
+        const shouldWrite = body.trim() ? bodyTranslated : fmTranslated;
         if (shouldWrite) {
           const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
           await mkdir(join(outPath, '..'), { recursive: true });
@@ -137,8 +245,7 @@ export async function translateContent(
         }
       }
 
-      // Only mark source as translated in manifest if ALL locales succeeded.
-      // If any locale failed, retry on next build (e.g. API quota exhausted).
+      // Only mark source as translated in manifest if ALL locales succeeded
       if (allLocalesSucceeded) {
         manifest = await markTranslated(manifest, manifestKey, srcContent);
         manifestChanged = true;
@@ -161,7 +268,7 @@ export async function translateContent(
   }
 }
 
-// --- Helpers ---
+// ── Legacy helpers (splitFrontmatter still needed) ────────────────
 
 function splitFrontmatter(content: string): { frontmatter: string; body: string } {
   const trimmed = content.trimStart();
@@ -173,28 +280,4 @@ function splitFrontmatter(content: string): { frontmatter: string; body: string 
     return { frontmatter: trimmed.slice(4, alt).trim(), body: trimmed.slice(alt + 3).trim() };
   }
   return { frontmatter: trimmed.slice(4, secondSep).trim(), body: trimmed.slice(secondSep + 4).trim() };
-}
-
-function extractFmValue(fm: string, key: string): string | null {
-  const re = new RegExp(`^${key}:\\s*(.+)$`, 'm');
-  const match = fm.match(re);
-  if (!match) return null;
-  const val = match[1].trim();
-  // Remove surrounding quotes
-  return val.replace(/^['"](.*)['"]$/, '$1');
-}
-
-function replaceFmValue(fm: string, key: string, newVal: string): string {
-  const re = new RegExp(`^(${key}:\\s*)(.+)$`, 'm');
-  // Quote if value contains chars that break YAML (colons, hashes, etc.)
-  const needsQuote = /[#&*{}[\]|>,!%@`'":\n]/.test(newVal);
-  const replacement = needsQuote ? `'${newVal.replace(/'/g, "''")}'` : newVal;
-  return fm.replace(re, `$1${replacement}`);
-}
-
-function hasTranslatableFm(fm: string): boolean {
-  return FRONTMATTER_KEYS.some((k) => {
-    const re = new RegExp(`^${k}:\\s*.+$`, 'm');
-    return re.test(fm);
-  });
 }

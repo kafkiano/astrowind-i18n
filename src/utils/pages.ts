@@ -11,6 +11,7 @@ export type NormalizedPage = {
   slug: string;
   permalink: string;
   title: string;
+  showIn?: string;
   Content: AstroComponentFactory;
 };
 
@@ -18,7 +19,7 @@ const getNormalizedPage = async (page: CollectionEntry<'pages'>, locale: string)
   const { id, data } = page;
   const { Content } = await render(page);
 
-  const { title } = data;
+  const { title, showIn } = data;
 
   // Extract slug from the file path: .wuchale-content/pages/{locale}/{slug}.md
   const pathParts = id.split('/');
@@ -30,6 +31,7 @@ const getNormalizedPage = async (page: CollectionEntry<'pages'>, locale: string)
     slug,
     permalink,
     title,
+    showIn,
     Content,
   };
 };
@@ -86,6 +88,8 @@ export const getStaticPathsPages = async (): Promise<
   for (const locale of I18N.locales) {
     const pages = await load(locale);
     for (const page of pages) {
+      // Skip pages marked as data-only (consumed by custom templates, not standalone routes)
+      if (page.showIn === 'none') continue;
       paths.push({
         params: {
           locale,
