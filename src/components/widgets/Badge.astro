@@ -1,0 +1,156 @@
+---
+import Image from '~/components/common/Image.astro';
+import type { Badge as Props } from '~/types';
+
+const {
+  image,
+  text,
+  href,
+  variant = 'inline',
+  position = 'top-right',
+
+  id,
+  classes = {},
+} = Astro.props;
+
+const hasContent = image || text;
+if (!hasContent) return;
+---
+
+{
+  variant === 'corner' && (
+    <div
+      {...(id ? { id } : {})}
+      class={`absolute z-10 ${
+        position === 'top-right'
+          ? 'top-0 right-0 translate-x-1/4 -translate-y-1/4'
+          : 'top-0 left-0 -translate-x-1/4 -translate-y-1/4'
+      } ${(classes?.container as string) ?? ''}`}
+    >
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block drop-shadow-lg hover:drop-shadow-xl transition-shadow duration-200"
+        >
+          {image && (
+            <Image
+              class="w-20 h-20 md:w-24 md:h-24 object-contain"
+              width={96}
+              height={96}
+              widths={[96, 192]}
+              layout="fixed"
+              {...image}
+            />
+          )}
+          {text && !image && (
+            <span class="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded shadow-lg">{text}</span>
+          )}
+        </a>
+      ) : (
+        <>
+          {image && (
+            <Image
+              class="w-20 h-20 md:w-24 md:h-24 object-contain drop-shadow-lg"
+              width={96}
+              height={96}
+              widths={[96, 192]}
+              layout="fixed"
+              {...image}
+            />
+          )}
+          {text && !image && (
+            <span class="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded shadow-lg">{text}</span>
+          )}
+        </>
+      )}
+    </div>
+  )
+}
+
+{
+  variant === 'inline' && (
+    <div {...(id ? { id } : {})} class={`inline-flex items-center gap-2 ${(classes?.container as string) ?? ''}`}>
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" class="inline-block">
+          {image && (
+            <Image
+              class="h-16 md:h-20 w-auto object-contain"
+              width={80}
+              height={80}
+              widths={[80, 160]}
+              layout="fixed"
+              {...image}
+            />
+          )}
+          {text && !image && (
+            <span class="inline-block bg-accent text-white text-sm font-semibold px-4 py-2 rounded-lg">{text}</span>
+          )}
+        </a>
+      ) : (
+        <>
+          {image && (
+            <Image
+              class="h-16 md:h-20 w-auto object-contain"
+              width={80}
+              height={80}
+              widths={[80, 160]}
+              layout="fixed"
+              {...image}
+            />
+          )}
+          {text && !image && (
+            <span class="inline-block bg-accent text-white text-sm font-semibold px-4 py-2 rounded-lg">{text}</span>
+          )}
+        </>
+      )}
+    </div>
+  )
+}
+
+{
+  variant === 'banner' && (
+    <div
+      {...(id ? { id } : {})}
+      class={`w-full bg-accent dark:bg-slate-800 text-white text-center py-4 md:py-6 ${(classes?.container as string) ?? ''}`}
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center gap-4">
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 hover:underline"
+          >
+            {image && (
+              <Image
+                class="h-10 md:h-12 w-auto object-contain"
+                width={48}
+                height={48}
+                widths={[48, 96]}
+                layout="fixed"
+                {...image}
+              />
+            )}
+            {text && <span class="text-lg md:text-xl font-semibold">{text}</span>}
+          </a>
+        ) : (
+          <div class="inline-flex items-center gap-3">
+            {image && (
+              <Image
+                class="h-10 md:h-12 w-auto object-contain"
+                width={48}
+                height={48}
+                widths={[48, 96]}
+                layout="fixed"
+                {...image}
+              />
+            )}
+            {text && <span class="text-lg md:text-xl font-semibold">{text}</span>}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}

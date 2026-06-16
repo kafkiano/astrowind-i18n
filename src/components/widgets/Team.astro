@@ -1,0 +1,77 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
+import type { Team as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  team = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-6xl mx-auto ${(classes?.container as string) ?? ''}`}
+  bg={bg}
+>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+
+  {
+    team && team.length > 0 && (
+      <div class={`grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ${(classes?.grid as string) ?? ''}`}>
+        {team.map(({ name, job, image, description, socials }) => (
+          <div class="flex flex-col items-center text-center p-6 rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700 bg-white dark:bg-slate-900 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+            {image && (
+              <div class="mb-4 h-24 w-24 rounded-full overflow-hidden border-2 border-gray-200 dark:border-slate-600">
+                {typeof image === 'string' ? (
+                  <Fragment set:html={image} />
+                ) : (
+                  <Image
+                    class="h-24 w-24 rounded-full object-cover min-w-full min-h-full"
+                    width={96}
+                    height={96}
+                    widths={[96, 192]}
+                    layout="fixed"
+                    {...image}
+                  />
+                )}
+              </div>
+            )}
+            {name && <h3 class="text-xl font-bold text-heading dark:text-white">{name}</h3>}
+            {job && <p class="text-sm text-accent dark:text-blue-200 font-medium mt-1">{job}</p>}
+            {description && (
+              <p class="mt-3 text-muted dark:text-slate-400 text-sm leading-relaxed" set:html={description} />
+            )}
+            {socials && socials.length > 0 && (
+              <ul class="flex gap-3 mt-4">
+                {socials.map(({ icon, href }) => (
+                  <li>
+                    <a
+                      class="text-muted dark:text-slate-400 hover:text-accent dark:hover:text-white transition duration-150 ease-in-out"
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={icon}
+                    >
+                      {icon && <Icon name={icon} class="w-5 h-5" />}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    )
+  }
+</WidgetWrapper>

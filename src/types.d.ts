@@ -113,6 +113,12 @@ export interface Video {
   type?: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Widget {
   id?: string;
   isDark?: boolean;
@@ -294,6 +300,19 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export interface Gallery extends Omit<Headline, 'classes'>, Widget {
+  images?: Array<GalleryImage>;
+  columns?: number;
+}
+
+export interface Badge extends Widget {
+  image?: Image;
+  text?: string;
+  href?: string;
+  variant?: 'corner' | 'inline' | 'banner';
+  position?: 'top-right' | 'top-left';
+}
 
 // Navigation types
 export interface AutoNavConfig {

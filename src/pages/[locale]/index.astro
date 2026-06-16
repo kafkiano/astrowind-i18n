@@ -9,6 +9,9 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Team from '~/components/widgets/Team.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
+import Badge from '~/components/widgets/Badge.astro';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
@@ -22,22 +25,26 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    variant="centered"
-    title='Free template for <span class="hidden xl:inline">creating websites with</span> <span class="text-accent dark:text-white"> Astro 6</span> + Tailwind CSS'
-    subtitle='<span class="hidden sm:inline"><span class="font-semibold">AstroWind I18n</span> is a free, customizable and production-ready template for Astro 6 + Tailwind CSS.</span> <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.'
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
-  />
+  <div class="relative">
+    <Hero
+      variant="centered"
+      title='Free template for <span class="hidden xl:inline">creating websites with</span> <span class="text-accent dark:text-white"> Astro 6</span> + Tailwind CSS'
+      subtitle='<span class="hidden sm:inline"><span class="font-semibold">AstroWind I18n</span> is a free, customizable and production-ready template for Astro 6 + Tailwind CSS.</span> <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.'
+      image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Get template',
+          href: 'https://github.com/arthelokyo/astrowind',
+          target: '_blank',
+          icon: 'tabler:download',
+        },
+        { text: 'Learn more', href: '#features' },
+      ]}
+    />
+
+    <Badge variant="corner" position="top-right" text="NEW" />
+  </div>
 
   <!-- Note Widget ******************* -->
 
@@ -367,6 +374,127 @@ const metadata = {
       { title: 'Users', amount: '48.4K' },
     ]}
   />
+
+  <!-- Team Widget (NEW) ************* -->
+
+  <Team
+    tagline="Our Team"
+    title="Meet the people behind AstroWind"
+    subtitle="A passionate group of designers and developers crafting beautiful templates."
+    team={[
+      {
+        name: 'Alex Morgan',
+        job: 'Lead Designer',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
+          alt: 'Alex Morgan',
+        },
+        description: 'Alex brings 10 years of UI/UX expertise, crafting pixel-perfect designs that delight users.',
+        socials: [
+          { icon: 'tabler:brand-twitter', href: '#' },
+          { icon: 'tabler:brand-linkedin', href: '#' },
+        ],
+      },
+      {
+        name: 'Sam Chen',
+        job: 'Full-Stack Developer',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
+          alt: 'Sam Chen',
+        },
+        description: 'Sam architects the technical foundation, ensuring every template is fast and accessible.',
+        socials: [{ icon: 'tabler:brand-github', href: '#' }],
+      },
+      {
+        name: 'Riley Torres',
+        job: 'Content Strategist',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
+          alt: 'Riley Torres',
+        },
+        description: 'Riley shapes the narrative, making complex features sound simple and compelling.',
+        socials: [
+          { icon: 'tabler:brand-instagram', href: '#' },
+          { icon: 'tabler:brand-twitter', href: '#' },
+        ],
+      },
+    ]}
+  />
+
+  <!-- Gallery Widget (NEW) ********** -->
+
+  <Gallery
+    tagline="Showcase"
+    title="Beautiful template designs"
+    subtitle="A glimpse of what you can build with AstroWind's versatile components."
+    columns={3}
+    images={[
+      {
+        src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Team collaboration',
+        caption: 'Modern workspace',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Design process',
+        caption: 'Creative process',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Storytelling',
+        caption: 'Crafting narratives',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Blueprint',
+        caption: 'Architecture planning',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Launch',
+        caption: 'Ready for takeoff',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Details',
+        caption: 'Attention to detail',
+      },
+    ]}
+  />
+
+  <!-- Badge Widget Demos (NEW) ****** -->
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16 lg:py-20">
+    <div class="text-center mb-8">
+      <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase">Badges</p>
+      <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter font-heading text-heading">
+        Social proof, anywhere
+      </h2>
+      <p class="mt-4 text-xl text-muted">Corner ribbons, inline badges, and banner strips — all from one widget.</p>
+    </div>
+
+    <!-- Inline badges -->
+    <div class="flex flex-wrap gap-6 justify-center items-center mb-12">
+      <Badge variant="inline" text="Certificate of Excellence" href="#" />
+      <Badge variant="inline" text="Featured on Product Hunt" href="#" />
+      <Badge variant="inline" text="5-Star Rated" />
+    </div>
+
+    <!-- Corner badge demo card -->
+    <div
+      class="relative max-w-md mx-auto p-8 rounded-xl shadow-xl dark:shadow-none dark:border dark:border-slate-700 bg-white dark:bg-slate-900 text-center"
+    >
+      <h3 class="text-xl font-bold text-heading dark:text-white">Premium Template</h3>
+      <p class="mt-2 text-muted dark:text-slate-400">
+        Get the complete package with all widgets and unlimited support.
+      </p>
+      <Badge variant="corner" position="top-right" text="POPULAR" />
+    </div>
+  </div>
+
+  <!-- Badge Banner (NEW) ************ -->
+
+  <Badge variant="banner" text="Now with Team, Gallery & Badge widgets!" href="#team" />
 
   <!-- CallToAction Widget *********** -->
 
