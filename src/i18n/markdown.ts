@@ -25,6 +25,7 @@ import { loadManifest, saveManifest, needsTranslation, markTranslated } from './
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
+  { dir: 'src/data/templates', pattern: '**/*.md' },
 ];
 
 // ── YAML frontmatter helpers ──────────────────────────────────────
