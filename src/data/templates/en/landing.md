@@ -39,7 +39,6 @@ features:
     - title: Zero code changes
       description: Clients edit markdown and images only. The .astro template reads frontmatter and maps it to widgets. No HTML, no JavaScript.
       icon: tabler:code-off
----
 
 testimonials:
   - title: Clean architecture
@@ -66,3 +65,4 @@ cta:
     - text: Read the docs
       href: '#features'
       icon: tabler:book
+---

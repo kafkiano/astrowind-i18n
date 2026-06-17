@@ -32,35 +32,35 @@ features:
       description: Frontmatter unterstützt tief verschachtelte Objekte und Arrays. Das Übersetzungssystem durchläuft jeden String-Wert – ohne Einschränkungen durch „Flat-Field“-Strukturen.
       icon: tabler:json
     - title: Eine Filiale pro Kunde
-      description: Jeder Kunde erhält einen eigenen Zweig. Passen Sie Konfiguration, Branding und Inhalte an, ohne in die Interna der Widgets oder das Basisthema einzugreifen.
+      description: Jeder Kunde erhält einen eigenen Zweig. Passen Sie Konfiguration, Branding und Inhalte an, ohne in die Interna der Widgets oder das Basis-Theme einzugreifen.
       icon: tabler:git-branch
     - title: Keine Codeänderungen
       description: Kunden bearbeiten ausschließlich Markdown-Inhalte und Bilder. Die .astro-Vorlage liest die Frontmatter-Daten aus und ordnet sie den Widgets zu. Kein HTML, kein JavaScript.
       icon: tabler:code-off
----
-
-Kundenstimmen:
-  - Titel: Clean Architecture
-    Kundenstimme: Die Trennung von Inhalt und Darstellung ist der richtige Weg. Dank dieses Musters lassen sich Kundenwebsites kinderleicht erstellen und pflegen.
-    Name: Leitender Entwickler
-  - Titel: CMS-freundlich
-    Kundenmeinung: Kunden können ihre eigenen Landingpages bearbeiten, ohne auch nur eine Zeile Code anzurühren. Genau das, was unsere Agentur gebraucht hat.
-    Name: Agenturinhaber
-  - Titel: Übersetzungszauber
-    Kundenmeinung: Die verschachtelte YAML-Übersetzung ist genial. Eine einzige englische Datei, und schon haben wir perfekte spanische, französische und deutsche Versionen.
-    name: Content-Manager
+testimonials:
+  - title: Saubere Architektur
+    testimonial: Die Trennung von Inhalt und Darstellung ist die richtige Entscheidung. Dank dieses Musters lassen sich Client-Websites kinderleicht erstellen und pflegen.
+    name: Lead Developer
+  - title: CMS-kompatibel
+    testimonial: Kunden können ihre eigenen Landingpages bearbeiten, ohne auch nur eine Zeile Code zu schreiben. Genau das, was unsere Agentur gebraucht hat.
+    name: Agency Owner
+  - title: Die Magie der Übersetzung
+    testimonial: Die verschachtelte YAML-Übersetzung ist genial. Eine einzige englische Datei, und schon haben wir perfekte spanische, französische und deutsche Versionen.
+    name: Content Manager
   - title: Flexible Widgets
-    Zitat: Die Möglichkeit, durch Bearbeiten des Frontmatter ganze Abschnitte hinzuzufügen oder zu entfernen, ist ein echter Game-Changer für das schnelle Prototyping.
-    name: UX-Designer
-
+    testimonial: Die Möglichkeit, durch Bearbeiten des Frontmatter ganze Abschnitte hinzuzufügen oder zu entfernen, ist ein entscheidender Fortschritt für das schnelle Prototyping.
+    name: UX Designer
 cta:
-  title: Beginnen Sie noch heute mit der Entwicklung
+  title: Fangen Sie noch heute mit dem Bau an
   subtitle: Klonen Sie das Repo, erstellen Sie eine Datei „templates/home.md“, und schon kann es losgehen. Die i18n-Pipeline kümmert sich um den Rest.
   actions:
     - text: Vorlage herunterladen
       href: https://github.com/arthelokyo/astrowind
       variant: primary
       icon: tabler:download
-    - text: Dokumentation lesen
-      href: &#x27;#features&#x27;
+    - text: Lies die Dokumentation
+      href: '#Funktionen'
       icon: tabler:book
+---
+
+
