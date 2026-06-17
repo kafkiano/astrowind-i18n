@@ -1,6 +1,5 @@
 ---
 title: artesano — Galería · Cafetería · Bar de zumos en Moraira
-order: 1
 hero:
   title: artesano
   subtitle: GALERÍA • CAFETERÍA • BAR DE ZUMOS
@@ -8,9 +7,9 @@ hero:
 welcome:
   tagline: Bienvenidos
   title: Un cambio refrescante
-  image: ~/assets/images/artesano_goats_cheese_salad.jpg
+  image: ~/assets/images/artesano-table.jpeg
   items:
-    - title: Platos frescos y preparados al momento
+    - title: Platos frescos, preparados al momento
       description: 'Ensaladas, wraps, pasteles, salsas y mucho más: todo ello preparado a diario en el propio local por los propietarios, Ismael y Matthew.'
     - title: Vegetariano, vegano y sin gluten
       description: Una amplia selección de opciones para todos los gustos alimentarios. De verdad que tenemos algo para todos los gustos.
@@ -18,11 +17,11 @@ welcome:
       description: Además de una selección cuidadosamente elegida de vinos locales, cervezas artesanales y una atractiva carta de cócteles.
 kitchenHeading:
   tagline: Nuestra cocina y nuestro bar
-  title: Fresco, saludable y bonito
+  title: Fresca, sana y bonita
 dishes:
   tagline: Platos
   title: Hecho a medida, todos los días
-  image: ~/assets/images/artesano_goats_cheese_salad.jpg
+  image: /~/assets/images/629440652_18508760803076706_4388001678440304741_n.webp
   items:
     - title: Ensaladas y wraps saludables
       description: Ensaladas y wraps frescos y apetecibles, elaborados con ingredientes de origen local. Todos los platos se preparan al momento.
@@ -33,7 +32,7 @@ dishes:
 cocktails:
   tagline: Bar de cócteles
   title: Los mejores mojitos de la zona
-  image: ~/assets/images/mojitos.jpg
+  image: /~/assets/images/618668246_17958843992904055_443452070198879998_n.webp
   items:
     - title: Cócteles de autor
       description: 'Desde los mojitos clásicos hasta las creativas bebidas de la casa: nos dicen que hacemos los mejores mojitos de la zona.'
@@ -49,7 +48,7 @@ exhibitions:
     - title: Exposiciones de arte temporales
       description: En nuestra galería se exponen obras de talentosos artistas locales. La colección cambia con frecuencia, por lo que siempre hay algo nuevo que descubrir.
     - title: Joyería y decoración del hogar
-      description: Descubre joyas y artículos de decoración para el hogar únicos y hechos a mano. Cada artículo cuenta una historia.
+      description: Descubre joyas únicas hechas a mano y artículos de decoración para el hogar. Cada artículo cuenta una historia.
     - title: Galerías de arte en línea disponibles
       description: Can't visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.
 testimonials:
@@ -69,16 +68,16 @@ testimonials:
     testimonial: Fresco, delicioso y con una excelente relación calidad-precio. Muy recomendable para cualquiera que visite la zona. ¡Volveremos!
     name: Emma T.
   - title: No me canso de este sitio
-    testimonial: Fuimos tres veces durante nuestra semana en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
+    testimonial: Fuimos tres veces durante la semana que pasamos en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
     name: Michael B.
-  - title: ¡La comida, las bebidas y el ambiente son perfectos!
+  - title: ¡Comida, bebidas y ambiente perfectos!
     testimonial: El ambiente es muy relajante, la comida es perfecta y las bebidas son increíbles. Una auténtica joya en Moraira.
     name: Claire W.
   - title: Un nuevo tipo de cafetería llega a Moraira
     testimonial: 'Artesano aporta algo completamente nuevo a Moraira. Una mezcla entre galería de arte, cafetería y bar de cócteles: un concepto genial.'
     name: Tom H.
   - title: ¡Una nueva aventura estupenda!
-    testimonial: Me alegra mucho ver que este nuevo proyecto va viento en popa. Los propietarios ponen toda su pasión en él y eso se nota en cada plato y cada bebida.
+    testimonial: Me alegra mucho ver que este nuevo proyecto va viento en popa. Los propietarios ponen toda su pasión en ello y eso se nota en cada plato y cada bebida.
     name: Anna S.
 team:
   - name: Ismael
@@ -93,6 +92,7 @@ team:
         href: https://www.instagram.com/artesanomoraira
   - name: Matthew
     job: Owner
+    imageAlt: ''
     description: Matthew, copropietario de Artesano, trabaja a diario en el local junto a Ismael para crear el delicioso menú y el ambiente acogedor que hacen que Artesano sea un lugar especial.
     socials:
       - icon: tabler:brand-facebook
@@ -101,14 +101,15 @@ cta:
   title: Visítanos hoy mismo
   subtitle: Carretera Moraira-Calpe, n.º 16a, 03724 Moraira, Alicante, España
   actions:
-    - variant: primary
-      text: Ver cómo llegar
+    - text: Ver cómo llegar
       href: https://maps.google.com/?q=Carretera+Moraira-Calpe+16a+03724+Moraira+Alicante+España
-      target: _blank
+      variant: primary
       icon: tabler:map-pin
+      target: _blank
     - text: Llama al +34 966 27 21 27
       href: tel:+34966272127
       icon: tabler:phone
+order: 1
 ---
 
 Artesano es una combinación única de galería de arte, cafetería, bar de zumos, café-restaurante y bar de cócteles.
