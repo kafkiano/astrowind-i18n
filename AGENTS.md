@@ -44,7 +44,7 @@ In the most cases a `bun run build` or `bun run check` might be enough to check 
 - Blog posts live in `src/data/post/{locale}/` with locale subdirectories (en, es, fr, de).
 - Content collection uses glob loader from `src/data/post` with pattern `*.md,*.mdx`.
 - Frontmatter schema in `src/content.config.ts`: publishDate, title, excerpt, image, category, tags, metadata (canonical, openGraph, robots), draft.
-- Snippets in `src/data/snippets/` (flat, no locale subdirectories) — markdown content consumed by `MarkdownSlot.astro` component. Translated via UI string pipeline (extracted into JSON catalogs).
+- Snippets in `src/data/snippets/` (flat, no locale subdirectories) — markdown content consumed by `MarkdownSlot.astro` component. Translated via markdown pipeline (target-locale copies written to `{locale}/` subdirs).
 - Pages in `src/data/pages/{locale}/` — structural content pages (privacy, terms, markdown demo).
 - Templates in `src/data/templates/{locale}/` — data-driven page templates with rich nested YAML frontmatter. Consumed by custom `.astro` pages via `getEntry()`. Translated via markdown pipeline (nested YAML traversal). NOT rendered by any catch-all route.
 - Permalinks generated via `src/utils/blog.ts` using pattern from `src/config.yaml`.

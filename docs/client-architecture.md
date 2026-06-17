@@ -75,7 +75,8 @@ src/data/
 │
 └── snippets/             ← Markdown fragments embedded in .astro components
     └── *.md                  Imported via MarkdownSlot.astro
-                              Translated via UI string pipeline (JSON catalogs)
+                              Translated via markdown pipeline
+                              (target-locale copies written to {locale}/ subdirs)
 ```
 
 ### Translation Paths
@@ -85,7 +86,7 @@ src/data/
 | `pages/` | Markdown translation | Target-locale `.md` copies (e.g. `es/privacy.md`) |
 | `post/` | Markdown translation | Target-locale `.md` copies |
 | `templates/` | Markdown translation (nested YAML) | Target-locale `.md` copies |
-| `snippets/` | UI string extraction → JSON catalogs → HTML post-processing | Translated strings in `dist/` HTML |
+| `snippets/` | Markdown translation | Target-locale `.md` copies in `{locale}/` subdirs |
 
 **Why templates use the markdown pipeline, not the UI string pipeline:**
 

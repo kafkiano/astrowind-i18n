@@ -1,21 +1,31 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import { I18N } from 'astrowind:config';
 
 export interface Props {
   /** Content entry from getEntry() */
   content?: CollectionEntry<'snippets'> | undefined;
+  /** Snippet slug to load for the current locale */
+  slug?: string;
   /** Inline markdown string (for simple cases) */
   inline?: string;
 }
 
-const { content, inline } = Astro.props;
+const { content, slug, inline } = Astro.props;
+const locale = Astro.currentLocale ?? I18N.defaultLocale;
+
+let entry = content;
+if (!entry && slug) {
+  const entryId = locale === I18N.defaultLocale ? slug : `${locale}/${slug}`;
+  entry = await getEntry('snippets', entryId);
+}
 
 let Content: AstroComponentFactory | null = null;
 
-if (content) {
-  const rendered = await render(content);
+if (entry) {
+  const rendered = await render(entry);
   Content = rendered.Content;
 }
 ---

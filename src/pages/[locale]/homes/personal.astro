@@ -11,12 +11,9 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
-import { getEntry } from 'astro:content';
 import MarkdownSlot from '~/components/common/MarkdownSlot.astro';
 
 const locale = Astro.currentLocale;
-const heroSubtitle = await getEntry('snippets', 'hero-subtitle');
-const aboutContent = await getEntry('snippets', 'about-content');
 
 export const getStaticPaths = getStaticPathsForLocale;
 
@@ -58,7 +55,7 @@ export const navigation = {
     tagline="Personal Web Demo"
     actions={[{ variant: 'primary', title: 'Hire me', href: getPermalink('/contact#form', 'page', locale) }]}
   >
-    <MarkdownSlot slot="subtitle" content={heroSubtitle} />
+    <MarkdownSlot slot="subtitle" slug="hero-subtitle" />
   </Hero>
 
   <!-- Content Widget **************** -->
@@ -102,7 +99,7 @@ export const navigation = {
       slot="content"
       class="prose prose-lg dark:prose-invert prose-headings:font-heading prose-headings:tracking-tighter prose-headings:font-bold"
     >
-      <MarkdownSlot content={aboutContent} />
+      <MarkdownSlot slug="about-content" />
     </div>
 
     <div slot="bg">

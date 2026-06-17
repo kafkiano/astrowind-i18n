@@ -26,6 +26,7 @@ const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
   { dir: 'src/data/templates', pattern: '**/*.md' },
+  { dir: 'src/data/snippets', pattern: '**/*.md' },
 ];
 
 // ── YAML frontmatter helpers ──────────────────────────────────────
@@ -205,7 +206,8 @@ export async function translateContent(
   let anyWork = false;
 
   for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = join(dir, defaultLocale);
+    const isSnippet = dir === 'src/data/snippets';
+    const srcDir = isSnippet ? dir : join(dir, defaultLocale);
     const files = await glob(pattern, { cwd: srcDir });
     if (files.length === 0) continue;
 
@@ -219,7 +221,7 @@ export async function translateContent(
       if (!body.trim() && !frontmatter.trim()) continue;
 
       // Check manifest — skip if source content hasn't changed
-      const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
+      const manifestKey = isSnippet ? `${dir}/${relPath}` : `${dir}/${defaultLocale}/${relPath}`;
       if (!(await needsTranslation(manifest, manifestKey, srcContent))) {
         skipped++;
         continue;
@@ -290,9 +292,8 @@ export async function translateContent(
     }
 
     if (translated > 0 || skipped > 0) {
-      console.log(
-        `─ ${dir}/${defaultLocale}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
-      );
+      const logDir = isSnippet ? `${dir}/` : `${dir}/${defaultLocale}/`;
+      console.log(`─ ${logDir} → ${files.length} files (${translated} translated, ${skipped} unchanged)`);
     }
   }
 
