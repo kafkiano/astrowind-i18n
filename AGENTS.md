@@ -82,7 +82,7 @@ In the most cases a `bun run build` or `bun run check` might be enough to check 
 
 ### Internationalization (i18n)
 
-Custom system (`src/i18n/`, ~1500 lines) replacing Wuchale. No external i18n framework dependencies. All hardcoded `'en'` references eliminated in v1.2.6 — source locale comes from `config.yaml` `i18n.defaultLocale`.
+Custom system (`src/i18n/`, ~1500 lines). No external i18n framework dependencies. Source locale comes from `config.yaml` `i18n.defaultLocale`.
 
 **Architecture layers:**
 1. **JSON catalogs** (`src/locales/{locale}.json`) — `{ "source string": "translated" }` maps. Keys are the source-locale text (e.g. English). Untranslated entries have value `""` (empty string).
