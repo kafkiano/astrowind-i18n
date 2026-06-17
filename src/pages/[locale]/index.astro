@@ -52,7 +52,18 @@ const metadata = {
 
   <Hero variant="centered" title={hero?.title} subtitle={hero?.subtitle} tagline={hero?.tagline} />
 
-  <!-- Welcome + TripAdvisor ribbon **** -->
+  <!-- TripAdvisor certificates ******** -->
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 text-center">
+    <div class="flex flex-wrap gap-6 justify-center items-center">
+      <Badge variant="inline" text="Certificate of Excellence 2019" />
+      <Badge variant="inline" text="Certificate of Excellence 2018" />
+      <Badge variant="inline" text="Certificate of Excellence 2017" />
+    </div>
+    <p class="mt-4 text-muted text-sm">Recommended on Tripadvisor</p>
+  </div>
+
+  <!-- Welcome ************************* -->
 
   <div class="relative">
     <Content
@@ -67,8 +78,6 @@ const metadata = {
         </div>
       </div>
     </Content>
-
-    <Badge variant="corner" position="top-right" text="#2 of 200+ on Tripadvisor" />
   </div>
 
   <!-- Kitchen & bar heading *********** -->
@@ -147,17 +156,6 @@ const metadata = {
       />
     )
   }
-
-  <!-- TripAdvisor certificates ******** -->
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 text-center">
-    <div class="flex flex-wrap gap-6 justify-center items-center">
-      <Badge variant="inline" text="Certificate of Excellence 2019" />
-      <Badge variant="inline" text="Certificate of Excellence 2018" />
-      <Badge variant="inline" text="Certificate of Excellence 2017" />
-    </div>
-    <p class="mt-4 text-muted text-sm">Recommended on Tripadvisor</p>
-  </div>
 
   <!-- Team **************************** -->
 
