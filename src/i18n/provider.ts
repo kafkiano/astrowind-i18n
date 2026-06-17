@@ -15,10 +15,14 @@ import type { SourceLanguageCode, TargetLanguageCode } from 'deepl-node';
 export interface TranslationProvider {
   readonly name: string;
   readonly maxBatchSize: number;
-  /** Translate multiple short strings (UI labels, one per line). */
+  /** Translate multiple short strings (UI labels, one per line). HTML tag handling enabled. */
   translateBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]>;
-  /** Translate a single multi-line text (markdown body). Returns full translation. */
+  /** Translate a single multi-line text (markdown body). HTML tag handling enabled. */
   translateText(text: string, targetLang: string, sourceLang?: string): Promise<string>;
+  /** Translate plain text without HTML tag handling. No entity encoding. For markdown pipeline. */
+  translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string>;
+  /** Translate multiple plain text strings without HTML tag handling. For markdown frontmatter. */
+  translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]>;
 }
 
 // ---------------------------------------------------------------------------
@@ -99,6 +103,16 @@ class GeminiProvider implements TranslationProvider {
       return '';
     }
   }
+
+  async translatePlainText(text: string, targetLang: string, sourceLang: string): Promise<string> {
+    // Gemini doesn't HTML-encode, so plain text is the same as regular translation
+    return this.translateText(text, targetLang, sourceLang);
+  }
+
+  async translatePlainTextBatch(texts: string[], targetLang: string, sourceLang: string): Promise<string[]> {
+    // Gemini doesn't HTML-encode, so plain text batch is the same as regular batch
+    return this.translateBatch(texts, targetLang, sourceLang);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -141,6 +155,44 @@ class DeepLProvider implements TranslationProvider {
   async translateText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
     const [result] = await this.translateBatch([text], targetLang, sourceLang);
     return result || '';
+  }
+
+  async translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
+    try {
+      const response = await this.client.translateText(
+        text,
+        sourceLang ? (sourceLang.toUpperCase() as SourceLanguageCode) : null,
+        targetLang.toUpperCase() as TargetLanguageCode,
+        { formality: 'default', preserveFormatting: true }
+      );
+      return typeof response === 'object' && 'text' in response ? response.text : '';
+    } catch (err) {
+      console.warn(`[provider:deepl] Plain text translation failed:`, (err as Error).message);
+      return '';
+    }
+  }
+
+  async translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]> {
+    const results: string[] = new Array(texts.length).fill('');
+    for (let i = 0; i < texts.length; i += this.maxBatchSize) {
+      const batch = texts.slice(i, i + this.maxBatchSize);
+      try {
+        const response = await this.client.translateText(
+          batch,
+          sourceLang ? (sourceLang.toUpperCase() as SourceLanguageCode) : null,
+          targetLang.toUpperCase() as TargetLanguageCode,
+          { formality: 'default', preserveFormatting: true }
+        );
+        for (let j = 0; j < response.length; j++) {
+          if (response[j].text) {
+            results[i + j] = response[j].text;
+          }
+        }
+      } catch (err) {
+        console.warn(`[provider:deepl] Plain text batch ${i} failed:`, (err as Error).message);
+      }
+    }
+    return results;
   }
 }
 

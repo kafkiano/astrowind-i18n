@@ -118,23 +118,155 @@ collections:
     label: Page Templates
     label_singular: Template
     folder: src/data/templates/en
-    create: true
+    create: false
     extension: md
     format: frontmatter
     description: >
       Data files for custom .astro page templates.
       These are NOT standalone pages — they are consumed
       by specific .astro templates via getEntry().
-      All frontmatter fields are free-form; add whatever
-      sections your template expects.
+      All structured content lives in frontmatter.
     fields:
       - label: Title
         name: title
         widget: string
-        hint: Used for metadata. The template reads all other fields from frontmatter.
+        hint: Browser tab title.
+
+      - label: Hero
+        name: hero
+        widget: object
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+            required: false
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+            required: false
+          - label: Image
+            name: image
+            widget: object
+            required: false
+            fields:
+              - label: Source
+                name: src
+                widget: image
+              - label: Alt text
+                name: alt
+                widget: string
+          - label: Actions
+            name: actions
+            widget: list
+            required: false
+            fields:
+              - label: Button text
+                name: text
+                widget: string
+              - label: Link
+                name: href
+                widget: string
+              - label: Style
+                name: variant
+                widget: select
+                options: ['primary', 'secondary', 'outline']
+                default: primary
+                required: false
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+                hint: 'tabler icon name, e.g. tabler:brand-github'
+
+      - label: Features
+        name: features
+        widget: object
+        required: false
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+            required: false
+          - label: Title
+            name: title
+            widget: string
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+                hint: 'tabler icon name, e.g. tabler:edit'
+
+      - label: Testimonials
+        name: testimonials
+        widget: list
+        required: false
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Quote
+            name: testimonial
+            widget: text
+          - label: Author
+            name: name
+            widget: string
+
+      - label: Call to Action
+        name: cta
+        widget: object
+        required: false
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+            required: false
+          - label: Buttons
+            name: actions
+            widget: list
+            fields:
+              - label: Button text
+                name: text
+                widget: string
+              - label: Link
+                name: href
+                widget: string
+              - label: Style
+                name: variant
+                widget: select
+                options: ['primary', 'secondary', 'outline']
+                default: primary
+                required: false
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+                hint: 'tabler icon name, e.g. tabler:download'
+              - label: Open in new tab
+                name: target
+                widget: select
+                options: ['_blank', '_self']
+                default: _self
+                required: false
 
       - label: Body
         name: body
         widget: markdown
         required: false
-        hint: Optional. Some templates use the body, others ignore it.
+        hint: Optional markdown body. Leave empty if all content is in the sections above.
