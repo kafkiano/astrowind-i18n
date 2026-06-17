@@ -433,6 +433,81 @@ function extractTemplateStrings(ast: any, _content: string, file: string): Extra
   return results;
 }
 
+/** Config keys whose string values are identifiers, not user-facing text. */
+const NON_TRANSLATABLE_CONFIG_KEYS = new Set([
+  'provider',
+  'apiKey',
+  'geminiApiKey',
+  'deeplApiKey',
+  'googleSiteVerificationId',
+  'id',
+  'base',
+  'site',
+  'target',
+  'href',
+  'icon',
+  'variant',
+  'type',
+  'class',
+  'classes',
+  'style',
+  'pathname',
+  'slug',
+  'categorySlug',
+  'tagSlug',
+  'robots',
+  'index',
+  'follow',
+  'locales',
+  'defaultLocale',
+  'language',
+  'locale',
+  'textDirection',
+]);
+
+/**
+ * Extract translatable strings from the parsed `src/config.yaml` object.
+ *
+ * Recursively walks nested mappings and sequences, skips known identifier keys,
+ * and applies the same heuristic used for UI strings.
+ */
+export function extractFromConfig(config: Record<string, unknown>): string[] {
+  const results: string[] = [];
+  const seen = new Set<string>();
+
+  function walk(value: unknown, key: string | undefined) {
+    if (typeof value === 'string') {
+      if (!key || NON_TRANSLATABLE_CONFIG_KEYS.has(key)) return;
+
+      const normalized = value.replace(/\s+/g, ' ').trim();
+      if (!normalized) return;
+
+      const ctx: StringContext = { scope: 'config' };
+      if (classifyString(normalized, ctx) === 'message' && !seen.has(normalized)) {
+        seen.add(normalized);
+        results.push(normalized);
+      }
+      return;
+    }
+
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        walk(item, key);
+      }
+      return;
+    }
+
+    if (value && typeof value === 'object') {
+      for (const [childKey, childValue] of Object.entries(value)) {
+        walk(childValue, childKey);
+      }
+    }
+  }
+
+  walk(config, undefined);
+  return results;
+}
+
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------

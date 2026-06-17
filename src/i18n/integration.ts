@@ -17,9 +17,10 @@ import type { AstroIntegration } from 'astro';
 import { readFile, writeFile, readdir, rm, access } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
 import { readConfig } from './config';
 import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './catalog';
-import { extractFromAstro } from './extract';
+import { extractFromAstro, extractFromConfig } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
 import { translateContent } from './markdown';
@@ -89,6 +90,21 @@ export function i18nIntegration(): AstroIntegration {
           } catch (err) {
             console.warn(`[i18n] Skipped ${file}: ${(err as Error).message}`);
           }
+        }
+
+        // ── Extract strings from config.yaml ─────────────────────────
+
+        try {
+          const configPath = path.resolve('src/config.yaml');
+          const configRaw = await readFile(configPath, 'utf-8');
+          const fullConfig = yaml.load(configRaw) as Record<string, unknown>;
+          const configStrings = extractFromConfig(fullConfig);
+          for (const str of configStrings) {
+            const normalized = decodeEntities(str.replace(/\s+/g, ' ').trim());
+            if (normalized) activeStrings.add(normalized);
+          }
+        } catch (err) {
+          console.warn(`[i18n] Failed to extract config strings: ${(err as Error).message}`);
         }
 
         // ── Prune dead strings + merge new into source catalog ──────

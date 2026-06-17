@@ -12,7 +12,7 @@
 export type HeuristicResult = 'message' | 'url' | false;
 
 export interface StringContext {
-  scope: 'markup' | 'attribute' | 'script' | 'expression';
+  scope: 'markup' | 'attribute' | 'script' | 'expression' | 'config';
   element?: string;
   attribute?: string;
   call?: string;
@@ -64,6 +64,21 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
         if (ctx.element === el && ctx.attribute === attr) return 'url';
       }
     }
+  }
+
+  // Config scope: user-facing YAML values — permissive but filtered
+  if (ctx.scope === 'config') {
+    // URLs / paths / protocols
+    if (/^(https?:|mailto:|tel:|sms:|\/\/|\/|~\/|#)/i.test(str)) return false;
+    // Email addresses
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str)) return false;
+    // Social handles / usernames
+    if (str.startsWith('@')) return false;
+    // Icon identifiers
+    if (/^(tabler:|flat-color-icons:)/.test(str)) return false;
+    // Single-token lowercase identifier or Tailwind class-like token
+    if (!str.includes(' ') && /^[a-z][a-z0-9_:-]*$/.test(str)) return false;
+    return 'message';
   }
 
   // Markup text: always translatable
