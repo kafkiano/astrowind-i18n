@@ -16,6 +16,7 @@
     "check:astro": "astro check",
     "check:eslint": "eslint .",
     "check:prettier": "prettier --check .",
+    "test": "vitest run",
     "fix": "bun run fix:eslint && bun run fix:prettier",
     "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier -w ."
@@ -69,6 +70,7 @@
     "tailwind-merge": "^3.6.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3",
-    "unist-util-visit": "^5.1.0"
+    "unist-util-visit": "^5.1.0",
+    "vitest": "^3.0.0"
   }
 }

@@ -139,7 +139,7 @@ function setValueAtPath(obj: Record<string, unknown>, path: string, value: strin
 }
 
 /** Parse frontmatter YAML, translate all nested strings, dump back. Returns null if parsing fails. */
-async function translateFrontmatterYaml(
+export async function translateFrontmatterYaml(
   frontmatter: string,
   provider: TranslationProvider,
   locale: string,
