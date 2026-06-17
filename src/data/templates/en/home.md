@@ -90,13 +90,6 @@ team:
         href: https://www.facebook.com/artesanomoraira
       - icon: tabler:brand-instagram
         href: https://www.instagram.com/artesanomoraira
-  - name: Matthew
-    job: Owner
-    imageAlt: ''
-    description: Co-owner of Artesano, Matthew works daily in-house alongside Ismael to create the delicious menu and welcoming atmosphere that makes Artesano special.
-    socials:
-      - icon: tabler:brand-facebook
-        href: https://www.facebook.com/artesanomoraira
 cta:
   title: Visit us today
   subtitle: Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante, España
