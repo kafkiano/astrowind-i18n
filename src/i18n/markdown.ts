@@ -122,7 +122,7 @@ async function translateFrontmatterYaml(
   if (translatable.length === 0) return frontmatter; // nothing to translate
 
   const texts = translatable.map((t) => t.value);
-  const results = await provider.translateBatch(texts, locale, defaultLocale);
+  const results = await provider.translatePlainTextBatch(texts, locale, defaultLocale);
 
   let anyTranslated = false;
   for (let i = 0; i < translatable.length; i++) {
@@ -217,7 +217,7 @@ export async function translateContent(
 
         if (body.trim()) {
           try {
-            const result = await provider.translateText(body, locale, defaultLocale);
+            const result = await provider.translatePlainText(body, locale, defaultLocale);
             if (result) {
               translatedBody = result;
               bodyTranslated = true;

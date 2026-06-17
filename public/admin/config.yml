@@ -7,6 +7,8 @@ backend:
 
 media_folder: src/assets/images
 public_folder: ~/assets/images
+media_folder: src/assets/images
+public_folder: ~/assets/images
 
 collections:
   - name: pages
@@ -44,6 +46,7 @@ collections:
     label: Landing Page
     label_singular: Landing Page Section
     folder: src/data/templates/en
+    create: false
     create: false
     extension: md
     format: frontmatter
