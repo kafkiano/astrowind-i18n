@@ -7,7 +7,7 @@ hero:
 welcome:
   tagline: Welcome
   title: A refreshing change
-  image: /~/assets/images/artesano-table.jpeg
+  image: ~/assets/images/artesano-table.jpeg
   items:
     - title: Fresh, made-to-order dishes
       description: Salads, wraps, cakes, dips and more — all prepared daily in-house by owners Ismael & Matthew.

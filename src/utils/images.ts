@@ -33,6 +33,12 @@ export const findImage = async (
     return imagePath;
   }
 
+  // Normalize CMS-generated paths: /~/assets/... → ~/assets/...
+  // Sveltia CMS prepends / to public_folder values that don't start with /
+  if (imagePath.startsWith('/~/')) {
+    imagePath = imagePath.slice(1);
+  }
+
   // Absolute paths
   if (imagePath.startsWith('http://') || imagePath.startsWith('https://') || imagePath.startsWith('/')) {
     return imagePath;
