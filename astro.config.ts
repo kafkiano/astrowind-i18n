@@ -58,6 +58,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx(),
+    i18nIntegration(),
     icon({
       include: {
         tabler: ['*'],
@@ -94,7 +95,6 @@ export default defineConfig({
     astrowind({
       config: './src/config.yaml',
     }),
-    i18nIntegration(),
   ],
 
   image: {

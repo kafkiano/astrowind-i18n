@@ -29,6 +29,7 @@ import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTransla
 const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
+  { dir: 'src/data/templates', pattern: '**/*.md' },
 ];
 
 /** Decode common HTML entities to their character equivalents. */
@@ -42,9 +43,16 @@ function decodeEntities(text: string): string {
     .replace(/&apos;/g, "'");
 }
 
+/** Escape a string for safe inclusion in a regular expression. */
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 export function i18nIntegration(): AstroIntegration {
   let catalogs: CatalogSet;
   let defaultLocale: string;
+  let activeLocales: Set<string>;
+  let localeRegex: RegExp;
 
   return {
     name: 'astrowind-i18n',
@@ -54,6 +62,16 @@ export function i18nIntegration(): AstroIntegration {
         const { locales } = config;
         const srcLocale = config.defaultLocale;
         defaultLocale = srcLocale;
+        activeLocales = new Set(locales);
+        activeLocales.add(srcLocale);
+        localeRegex = new RegExp(
+          '^(' +
+            [...activeLocales]
+              .sort((a, b) => b.length - a.length)
+              .map(escapeRegExp)
+              .join('|') +
+            ')\\/'
+        );
 
         // ── Extract strings from .astro files ────────────────────────
 
@@ -139,7 +157,11 @@ export function i18nIntegration(): AstroIntegration {
 
         // ── Clean up removed locales ─────────────────────────────────
 
-        await cleanRemovedLocaleDirs(locales, srcLocale);
+        await cleanRemovedLocaleDirs(activeLocales);
+
+        // ── Clean up orphaned markdown (source deleted, translation remains)
+
+        await cleanMarkdownOrphans(locales, srcLocale);
 
         // ── Translation (manifest-protected) ─────────────────────────
 
@@ -148,10 +170,7 @@ export function i18nIntegration(): AstroIntegration {
           // 1. Translate markdown content
           await translateContent(provider, locales, srcLocale);
 
-          // 2. Clean up orphaned markdown (source deleted, translation remains)
-          await cleanMarkdownOrphans(locales, srcLocale);
-
-          // 3. Translate UI catalog strings
+          // 2. Translate UI catalog strings
           const srcJson = JSON.stringify(await loadCatalog('src/locales', srcLocale), null, 2);
           let manifest = await loadManifest();
 
@@ -230,7 +249,7 @@ export function i18nIntegration(): AstroIntegration {
 
         await walkHtmlFiles(distDir, async (filePath: string) => {
           const relPath = path.relative(distDir, filePath);
-          const localeMatch = relPath.match(/^([a-z]{2})\//);
+          const localeMatch = relPath.match(localeRegex);
           if (!localeMatch) return;
 
           const locale = localeMatch[1];
@@ -289,7 +308,7 @@ async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Pr
   let manifest = await loadManifest();
   let manifestChanged = false;
 
-  for (const { dir } of CONTENT_TYPES) {
+  for (const { dir, pattern } of CONTENT_TYPES) {
     const srcDir = path.join(dir, sourceLocale);
     if (!(await fileExists(srcDir))) continue; // no source dir = nothing to compare against
 
@@ -299,7 +318,7 @@ async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Pr
 
       let files: string[];
       try {
-        files = await glob('**/*.{md,mdx}', { cwd: targetDir });
+        files = await glob(pattern, { cwd: targetDir });
       } catch {
         continue;
       }
@@ -339,10 +358,7 @@ async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Pr
  * Warn about stale locale directories (from locales that were removed
  * from config.yaml). Does NOT auto-delete — manual cleanup is safer.
  */
-async function cleanRemovedLocaleDirs(locales: string[], sourceLocale: string): Promise<void> {
-  const activeLocales = new Set(locales);
-  activeLocales.add(sourceLocale); // source locale dirs are needed too
-
+async function cleanRemovedLocaleDirs(activeLocales: Set<string>): Promise<void> {
   // Check content directories for removed locales
   for (const { dir } of CONTENT_TYPES) {
     let entries;
@@ -354,7 +370,6 @@ async function cleanRemovedLocaleDirs(locales: string[], sourceLocale: string): 
 
     for (const entry of entries) {
       if (!entry.isDirectory()) continue;
-      if (!/^[a-z]{2}$/.test(entry.name)) continue;
       if (activeLocales.has(entry.name)) continue;
       console.warn(`[i18n] Stale locale dir (not in config.yaml locales): ${path.join(dir, entry.name)}/`);
     }
@@ -365,8 +380,8 @@ async function cleanRemovedLocaleDirs(locales: string[], sourceLocale: string): 
     const catalogEntries = await readdir('src/locales', { withFileTypes: true });
     for (const entry of catalogEntries) {
       if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
+      if (entry.name.startsWith('.')) continue; // skip manifest and hidden files
       const locale = entry.name.replace(/\.json$/, '');
-      if (!/^[a-z]{2}$/.test(locale)) continue;
       if (activeLocales.has(locale)) continue;
       console.warn(`[i18n] Stale catalog file (not in config.yaml locales): src/locales/${entry.name}`);
     }
