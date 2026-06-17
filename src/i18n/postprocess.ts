@@ -6,8 +6,9 @@
 
 import { parseDocument } from 'htmlparser2';
 import { hasChildren, isTag } from 'domhandler';
+import type { Element } from 'domhandler';
 import render from 'dom-serializer';
-import type { CatalogSet } from './catalog';
+import type { Catalog, CatalogSet } from './catalog';
 
 /**
  * Walk a DOM tree and normalize for canonical comparison:
@@ -36,6 +37,38 @@ function canonicalInnerHtml(html: string): string {
   return render(doc.children).replace(/>\s+/g, '>').replace(/\s+</g, '<').trim();
 }
 
+/** Attribute names whose values can be translated. */
+const TRANSLATABLE_ATTRS = new Set(['alt', 'aria-label', 'title', 'placeholder', 'content']);
+
+/**
+ * Determine whether an attribute value should be considered for translation.
+ * Excludes empty strings, URLs, icon identifiers, and numeric values.
+ */
+function isTranslatableAttributeValue(value: string): boolean {
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+  if (/^\d+(\.\d+)?$/.test(trimmed)) return false;
+  if (/^(https?:\/\/|\/\/|mailto:|tel:|sms:|\/|#)/i.test(trimmed)) return false;
+  if (/^tabler:/i.test(trimmed)) return false;
+  return true;
+}
+
+/**
+ * Build an exact-string translation map for attribute values.
+ * Only includes catalog entries whose translation differs from the key,
+ * is non-empty, and passes attribute-value heuristics.
+ */
+function buildAttributeTranslationMap(catalog: Catalog): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const [key, translation] of Object.entries(catalog)) {
+    if (!translation || translation === key) continue;
+    const trimmed = key.trim();
+    if (!trimmed || !isTranslatableAttributeValue(trimmed)) continue;
+    map.set(trimmed, translation);
+  }
+  return map;
+}
+
 /**
  * Replace English text content in HTML with catalog translations.
  * Uses DOM-based approach (htmlparser2) to correctly handle inline HTML
@@ -62,7 +95,10 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
     }
   }
 
-  if (translationMap.size === 0) return html;
+  // Build an exact-string map for attribute values.
+  const attributeTranslationMap = buildAttributeTranslationMap(targetCatalog);
+
+  if (translationMap.size === 0 && attributeTranslationMap.size === 0) return html;
 
   // Parse the full HTML into a DOM
   const doc = parseDocument(html);
@@ -101,6 +137,11 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
       // Skip <script> tags
       if (child.name === 'script') continue;
 
+      // Translate eligible attribute values with exact-string matching
+      if (attributeTranslationMap.size > 0) {
+        translateElementAttributes(child, attributeTranslationMap);
+      }
+
       // Check element BEFORE recursing into children (top-down).
       // If the element's innerHTML matches a catalog key, replace its
       // children wholesale and skip recursion — avoids the depth-first
@@ -136,6 +177,22 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
   }
 
   return render(doc);
+}
+
+/**
+ * Translate eligible attribute values on an element using exact-string matching.
+ */
+function translateElementAttributes(element: Element, attributeMap: Map<string, string>): void {
+  for (const [name, value] of Object.entries(element.attribs)) {
+    if (!TRANSLATABLE_ATTRS.has(name)) continue;
+    if (name === 'content' && element.name !== 'meta') continue;
+    const trimmed = value.trim();
+    if (!trimmed) continue;
+    const translation = attributeMap.get(trimmed);
+    if (translation) {
+      element.attribs[name] = translation;
+    }
+  }
 }
 
 /** Extract top-level child nodes from a Document. */

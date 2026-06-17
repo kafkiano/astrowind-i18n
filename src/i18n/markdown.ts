@@ -26,12 +26,40 @@ const CONTENT_TYPES = [
   { dir: 'src/data/pages', pattern: '**/*.md' },
   { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
   { dir: 'src/data/templates', pattern: '**/*.md' },
+  { dir: 'src/data/snippets', pattern: '**/*.md' },
 ];
 
 // ── YAML frontmatter helpers ──────────────────────────────────────
 
 /** Keys whose values are identifiers/enums and should never be translated. */
-const NON_TRANSLATABLE_KEYS = new Set(['showIn', 'target', 'variant', 'icon', 'name', 'job', 'type']);
+const NON_TRANSLATABLE_KEYS = new Set([
+  'showIn',
+  'target',
+  'variant',
+  'icon',
+  'name',
+  'job',
+  'type',
+  'href',
+  'src',
+  'slug',
+  'pathname',
+  'page',
+  'base',
+  'rel',
+  'lang',
+  'dir',
+  'id',
+  'key',
+  'url',
+  'link',
+  'to',
+  'from',
+  'ref',
+  'class',
+  'classes',
+  'style',
+]);
 
 /** Recursively collect all translatable string leaf values from a parsed YAML object. */
 function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ path: string; value: string }> {
@@ -59,21 +87,30 @@ function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ path: st
   return result;
 }
 
+const ASSET_EXTENSION_RE = /\.(jpe?g|png|webp|svg|pdf|mdx?)$/i;
+
 /** Check if a string value should be translated (exclude URLs, icons, emails, phones, numbers). */
 function isTranslatable(s: string): boolean {
-  if (!s.trim()) return false;
-  // URLs
-  if (/^https?:\/\//.test(s)) return false;
+  const trimmed = s.trim();
+  if (!trimmed) return false;
+  // Relative paths and URL-like identifiers
+  if (/^[~./]/.test(trimmed)) return false;
+  // URLs with common schemes, anchors, and protocol URLs
+  if (/^(https?:\/\/|mailto:|tel:|sms:|#)/i.test(trimmed)) return false;
+  // Common asset extensions
+  if (ASSET_EXTENSION_RE.test(trimmed)) return false;
+  // CSS class-like strings (single Tailwind class or modifier variant)
+  if (/^(text-|bg-|font-|hover:|dark:|sm:|md:|lg:|xl:)[a-z0-9-:/]+$/i.test(trimmed)) return false;
   // Icon references (e.g. tabler:brand-facebook)
-  if (/^[a-z][a-z0-9]*(:[a-z][a-z0-9-]*)+$/i.test(s)) return false;
+  if (/^[a-z][a-z0-9]*(:[a-z][a-z0-9-]*)+$/i.test(trimmed)) return false;
   // Email addresses
-  if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(s)) return false;
+  if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(trimmed)) return false;
   // Phone/fax numbers (mostly digits, +, spaces, dashes, parens)
-  if (/^[+\d\s\-()]{6,}$/.test(s)) return false;
+  if (/^[+\d\s\-()]{6,}$/.test(trimmed)) return false;
   // Pure numbers
-  if (/^\d+$/.test(s)) return false;
+  if (/^\d+$/.test(trimmed)) return false;
   // HTML fragments (contain tags)
-  if (/<[a-z][\s\S]*>/i.test(s)) return false;
+  if (/<[a-z][\s\S]*>/i.test(trimmed)) return false;
   return true;
 }
 
@@ -103,7 +140,7 @@ function setValueAtPath(obj: Record<string, unknown>, path: string, value: strin
 }
 
 /** Parse frontmatter YAML, translate all nested strings, dump back. Returns null if parsing fails. */
-async function translateFrontmatterYaml(
+export async function translateFrontmatterYaml(
   frontmatter: string,
   provider: TranslationProvider,
   locale: string,
@@ -169,7 +206,8 @@ export async function translateContent(
   let anyWork = false;
 
   for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = join(dir, defaultLocale);
+    const isSnippet = dir === 'src/data/snippets';
+    const srcDir = isSnippet ? dir : join(dir, defaultLocale);
     const files = await glob(pattern, { cwd: srcDir });
     if (files.length === 0) continue;
 
@@ -183,7 +221,7 @@ export async function translateContent(
       if (!body.trim() && !frontmatter.trim()) continue;
 
       // Check manifest — skip if source content hasn't changed
-      const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
+      const manifestKey = isSnippet ? `${dir}/${relPath}` : `${dir}/${defaultLocale}/${relPath}`;
       if (!(await needsTranslation(manifest, manifestKey, srcContent))) {
         skipped++;
         continue;
@@ -254,9 +292,8 @@ export async function translateContent(
     }
 
     if (translated > 0 || skipped > 0) {
-      console.log(
-        `─ ${dir}/${defaultLocale}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
-      );
+      const logDir = isSnippet ? `${dir}/` : `${dir}/${defaultLocale}/`;
+      console.log(`─ ${logDir} → ${files.length} files (${translated} translated, ${skipped} unchanged)`);
     }
   }
 
