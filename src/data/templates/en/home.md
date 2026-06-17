@@ -21,7 +21,7 @@ kitchenHeading:
 dishes:
   tagline: Dishes
   title: Made-to-order, every day
-  image: ~/assets/images/artesano_goats_cheese_salad.jpg
+  image: /~/assets/images/629440652_18508760803076706_4388001678440304741_n.webp
   items:
     - title: Healthy salads & wraps
       description: Fresh, vibrant salads and wraps made with locally-sourced ingredients. Every dish is prepared to order.
@@ -32,7 +32,7 @@ dishes:
 cocktails:
   tagline: Cocktail Bar
   title: The best mojitos around
-  image: ~/assets/images/mojitos.jpg
+  image: /~/assets/images/618668246_17958843992904055_443452070198879998_n.webp
   items:
     - title: Signature cocktails
       description: From classic mojitos to creative signature drinks — we are told we make the best mojitos around.
