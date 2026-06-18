@@ -326,8 +326,7 @@ async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Pr
   let manifestChanged = false;
 
   for (const { dir, pattern } of CONTENT_TYPES) {
-    const isSnippet = dir === 'src/data/snippets';
-    const srcDir = isSnippet ? dir : path.join(dir, sourceLocale);
+    const srcDir = path.join(dir, sourceLocale);
     if (!(await fileExists(srcDir))) continue; // no source dir = nothing to compare against
 
     for (const locale of targetLocales) {
@@ -347,7 +346,7 @@ async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Pr
 
         // Source deleted — clean up translation
         const targetPath = path.join(targetDir, relPath);
-        const manifestKey = isSnippet ? `${dir}/${relPath}` : `${dir}/${sourceLocale}/${relPath}`;
+        const manifestKey = `${dir}/${sourceLocale}/${relPath}`;
 
         try {
           await rm(targetPath);
