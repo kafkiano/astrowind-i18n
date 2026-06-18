@@ -1,11 +1,17 @@
 {
   "markdown": {
-    "src/data/pages/en/privacy.md": "b56249c0efb5ed739cf39b24ce6ffcb7cf5fecd109144c68f982521d5b491bd1",
-    "src/data/pages/en/terms.md": "3cbd0c641f84042fd6105024401af86478081ff0dfa630f811afc7ce4f6f2f1d",
+    "src/data/pages/en/privacy.md": "e56e47a2d9e8f0bb411a1ffa284cde50df0f5722c6b4bafd4bceaceaba39a9d9",
+    "src/data/pages/en/terms.md": "cd2dd6ce0f832370e5904ffdce3c84e9f3d32e1470053836685dbd23160ed4c6",
     "src/data/snippets/en/hero-subtitle.md": "eb4f752dd91bdced3fa1927cec9f12004440ebace7163272a183901a1c8aca5a",
-    "src/data/snippets/en/about-content.md": "9308c796e28f1d48672c597ff38eaf005d0eade263e22b42c333366e57d2d8b0"
+    "src/data/snippets/en/about-content.md": "9308c796e28f1d48672c597ff38eaf005d0eade263e22b42c333366e57d2d8b0",
+    "src/data/post/en/uae-free-zone-company-setup-2026.md": "63d6cebc75830e162af46dad4d32d2fa951786d2879f9e0fb8aab38fb7513762",
+    "src/data/post/en/corporate-identity-international-markets.md": "c75b79795b2282590f4b2c0ea124ef900a3741bc69b565a5423d53da85a192b1",
+    "src/data/post/en/cross-border-real-estate-uae-eu.md": "f3a897e0eb7f7a5a5fda934894b90ec29ba4f36a19cc8910c5ced93845f2edc2",
+    "src/data/post/en/free-zone-vs-mainland-vs-offshore.md": "aa5b1f4898005b01a4a50361d7f3a99ad2a0765f716ba48dc8a2a2a3712bf586",
+    "src/data/post/en/project-reporting-decision-making.md": "93eea91c8ba2a6175d16b4408dadf0c378b5d4c89d15acc243209519fbdc593a",
+    "src/data/templates/en/home.md": "722e67b3583f957cbbe1eb4a6dc3bc1df63811170125b005bd4dae47ee7470e1"
   },
   "catalogs": {
-    "en": "cb98d1f842a9c3ed4664c47a4f5b98aa098185346fd8ba0d3597f02b5baec2b6"
+    "en": "639c7e04c5f6b96caad7edbfaff944fec7741c3c928bb29ba27b92216aa561ec"
   }
 }
