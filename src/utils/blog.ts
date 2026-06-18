@@ -137,19 +137,19 @@ export const blogTagRobots = APP_BLOG.tag.robots;
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
 /** */
-export const fetchPosts = async (): Promise<Array<Post>> => {
+export const fetchPosts = async (lang?: string): Promise<Array<Post>> => {
   if (!_posts) {
     _posts = await load();
   }
 
-  return _posts;
+  return lang ? _posts.filter((post) => getLangFromPostId(post.id) === lang) : _posts;
 };
 
 /** */
-export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post>> => {
+export const findPostsBySlugs = async (slugs: Array<string>, lang?: string): Promise<Array<Post>> => {
   if (!Array.isArray(slugs)) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(lang);
 
   return slugs.reduce(function (r: Array<Post>, slug: string) {
     posts.some(function (post: Post) {
@@ -160,10 +160,10 @@ export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Post
 };
 
 /** */
-export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> => {
+export const findPostsByIds = async (ids: Array<string>, lang?: string): Promise<Array<Post>> => {
   if (!Array.isArray(ids)) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(lang);
 
   return ids.reduce(function (r: Array<Post>, id: string) {
     posts.some(function (post: Post) {
@@ -174,9 +174,9 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestPosts = async ({ count, locale }: { count?: number; locale?: string }): Promise<Array<Post>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(locale);
 
   return posts ? posts.slice(0, _count) : [];
 };
@@ -296,8 +296,8 @@ export const getStaticPathsBlogTag = async ({
 };
 
 /** */
-export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
-  const allPosts = await fetchPosts();
+export async function getRelatedPosts(originalPost: Post, maxResults: number = 4, locale?: string): Promise<Post[]> {
+  const allPosts = await fetchPosts(locale);
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
 
   const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
