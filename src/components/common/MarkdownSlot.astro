@@ -18,7 +18,7 @@ const locale = Astro.currentLocale ?? I18N.defaultLocale;
 
 let entry = content;
 if (!entry && slug) {
-  const entryId = locale === I18N.defaultLocale ? slug : `${locale}/${slug}`;
+  const entryId = `${locale}/${slug}`;
   entry = await getEntry('snippets', entryId);
 }
 
