@@ -44,7 +44,7 @@ In the most cases a `bun run build` or `bun run check` might be enough to check 
 - Blog posts live in `src/data/post/{locale}/` with locale subdirectories (en, es, fr, de).
 - Content collection uses glob loader from `src/data/post` with pattern `*.md,*.mdx`.
 - Frontmatter schema in `src/content.config.ts`: publishDate, title, excerpt, image, category, tags, metadata (canonical, openGraph, robots), draft.
-- Snippets in `src/data/snippets/` (flat, no locale subdirectories) — markdown content consumed by `MarkdownSlot.astro` component. Translated via markdown pipeline (target-locale copies written to `{locale}/` subdirs).
+- Snippets in `src/data/snippets/{locale}/` — reusable markdown fragments consumed by `MarkdownSlot.astro`. Source lives in the default-locale subdir (`en/`) and target-locale copies are written alongside by the markdown pipeline.
 - Pages in `src/data/pages/{locale}/` — structural content pages (privacy, terms, markdown demo).
 - Templates in `src/data/templates/{locale}/` — data-driven page templates with rich nested YAML frontmatter. Consumed by custom `.astro` pages via `getEntry()`. Translated via markdown pipeline (nested YAML traversal). NOT rendered by any catch-all route.
 - Permalinks generated via `src/utils/blog.ts` using pattern from `src/config.yaml`.
@@ -148,7 +148,7 @@ Environment overrides: `GEMINI_API_KEY`, `DEEPL_API_KEY`, `I18N_PROVIDER`, `I18N
   - Blog Posts (`src/data/post/en/`) — English-only editing; Gemini/DeepL handles translation at build time.
   - Pages (`src/data/pages/en/`) — standalone pages (privacy, terms) with navigation settings (showIn, order, group).
   - Templates (`src/data/templates/en/`) — data-driven landing pages with rich nested YAML. Define fields matching the actual frontmatter structure per client.
-  - Snippets (`src/data/snippets/`) — flat markdown files with optional title frontmatter.
+  - Snippets (`src/data/snippets/en/`) — reusable markdown fragments with optional title frontmatter. Target-locale copies are generated at build time.
 - **Branch-per-client**: `config.yml` `branch` field points to the client's branch (e.g. `client/artesano`). `main`'s CMS edits the base theme; each client branch has its own CMS at its own domain.
 - **Deploy flow**: CMS edit → commit to branch → CI/CD triggers → `bun run build` → translate → deploy. `main` uses GitHub Actions → GitHub Pages. Client branches use Netlify Git integration.
 - **Legacy**: Old `public/decapcms/` directory removed — was tied to Netlify Identity and wrong content paths.

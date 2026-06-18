@@ -1,120 +1,120 @@
 ---
 title: Allgemeine Geschäftsbedingungen
-showIn: 'none'
+showIn: none
 ---
 
-_Zuletzt aktualisiert_: 06. Januar 2023
+_Zuletzt aktualisiert_: 6. Januar 2023
 
-Bitte lesen Sie diese Allgemeinen Geschäftsbedingungen sorgfältig durch, bevor Sie unseren Service nutzen.
+Bitte lesen Sie diese Nutzungsbedingungen sorgfältig durch, bevor Sie unseren Dienst nutzen.
 
-## Auslegung und Definitionen
+## Auslegung und Begriffsbestimmungen
 
 ### Auslegung
 
-Wörter, deren Anfangsbuchstabe großgeschrieben ist, haben unter den folgenden Bedingungen definierte Bedeutungen. Die folgenden Definitionen haben die gleiche Bedeutung, unabhängig davon, ob sie im Singular oder im Plural erscheinen.
+Begriffe, deren Anfangsbuchstabe großgeschrieben ist, haben die im Folgenden definierte Bedeutung. Die folgenden Begriffsbestimmungen haben unabhängig davon, ob sie im Singular oder Plural verwendet werden, dieselbe Bedeutung.
 
-### Definitionen
+### Begriffsbestimmungen
 
-Für die Zwecke dieser Allgemeinen Geschäftsbedingungen:
+Für die Zwecke dieser Allgemeinen Geschäftsbedingungen gilt Folgendes:
 
-- **Affiliate** bedeutet eine Einheit, die eine Partei kontrolliert, von einer Partei kontrolliert wird oder unter gemeinsamer Kontrolle mit einer Partei steht, wobei „Kontrolle“ das Eigentum an 50 % oder mehr der Anteile, Kapitalanteile oder anderen Wertpapieren bedeutet, die zur Wahl von Direktoren oder anderen leitenden Behörden berechtigt sind.
+- **Verbundenes Unternehmen** bezeichnet ein Unternehmen, das eine Partei kontrolliert, von dieser kontrolliert wird oder mit dieser unter gemeinsamer Kontrolle steht, wobei „Kontrolle“ den Besitz von 50 % oder mehr der Anteile, Kapitalbeteiligungen oder sonstigen Wertpapiere bedeutet, die zur Wahl von Vorstandsmitgliedern oder anderen Führungskräften berechtigen.
 
 - **Land** bezieht sich auf: Kalifornien, Vereinigte Staaten
 
-- **Unternehmen** (in dieser Vereinbarung entweder als „das Unternehmen“, „Wir“, „Uns“ oder „Unser“ bezeichnet) bezieht sich auf AstroWind LLC, 1 Cupertino, CA 95014.
+- **Unternehmen** (in dieser Vereinbarung entweder als „das Unternehmen“, „wir“, „uns“ oder „unser“ bezeichnet) bezieht sich auf AstroWind LLC, 1 Cupertino, CA 95014.
 
-- **Gerät** bezeichnet jedes Gerät, das auf den Service zugreifen kann, wie z. B. einen Computer, ein Mobiltelefon oder ein digitales Tablet.
+- **Gerät** bezeichnet jedes Gerät, das auf den Dienst zugreifen kann, wie beispielsweise einen Computer, ein Mobiltelefon oder ein Tablet.
 
-- **Service** bezieht sich auf die Website.
+- **Dienst** bezieht sich auf die Website.
 
-- **Allgemeine Geschäftsbedingungen** (auch als „Bedingungen“ bezeichnet) bedeuten diese Allgemeinen Geschäftsbedingungen, die die gesamte Vereinbarung zwischen Ihnen und dem Unternehmen hinsichtlich der Nutzung des Service bilden. Diese Vereinbarung über die Allgemeinen Geschäftsbedingungen ist eine Demo.
+- **Allgemeine Geschäftsbedingungen** (auch als „AGB“ bezeichnet) bezeichnen diese Allgemeinen Geschäftsbedingungen, die die gesamte Vereinbarung zwischen Ihnen und dem Unternehmen hinsichtlich der Nutzung des Dienstes bilden. Diese Vereinbarung über die Allgemeinen Geschäftsbedingungen ist eine Demo.
 
-- **Social-Media-Dienst von Drittanbietern** bezeichnet Dienste oder Inhalte (einschließlich Daten, Informationen, Produkte oder Dienstleistungen), die von einem Dritten bereitgestellt werden und durch den Service angezeigt, enthalten oder verfügbar gemacht werden können.
+- **Social-Media-Dienste von Drittanbietern** bezeichnet alle Dienste oder Inhalte (einschließlich Daten, Informationen, Produkte oder Dienstleistungen), die von einem Drittanbieter bereitgestellt werden und die über den Dienst angezeigt, eingebunden oder zur Verfügung gestellt werden können.
 
-- **Website** bezieht sich auf AstroWind, erreichbar unter [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **Website** bezeichnet AstroWind, erreichbar unter [https://astrowind.vercel.app](https://astrowind.vercel.app)
 
-- **Sie** bezeichnet die Person, die auf den Service zugreift oder ihn nutzt, oder das Unternehmen oder eine andere juristische Person, in deren Namen diese Person auf den Service zugreift oder ihn nutzt, je nach Fall.
+- **Sie** bezeichnet die Person, die auf den Dienst zugreift oder diesen nutzt, oder das Unternehmen bzw. die sonstige juristische Person, in deren Namen diese Person auf den Dienst zugreift oder diesen nutzt, je nach Anwendbarkeit.
 
-## Anerkennung
+## Bestätigung
 
-Dies sind die Allgemeinen Geschäftsbedingungen, die die Nutzung dieses Service regeln und die Vereinbarung darstellen, die zwischen Ihnen und dem Unternehmen besteht. Diese Allgemeinen Geschäftsbedingungen legen die Rechte und Pflichten aller Nutzer in Bezug auf die Nutzung des Service fest.
+Dies sind die Allgemeinen Geschäftsbedingungen, die die Nutzung dieses Dienstes regeln, sowie die Vereinbarung, die zwischen Ihnen und dem Unternehmen besteht. Diese Allgemeinen Geschäftsbedingungen legen die Rechte und Pflichten aller Nutzer hinsichtlich der Nutzung des Dienstes fest.
 
-Ihr Zugriff auf den Service und dessen Nutzung sind an Ihre Annahme und Einhaltung dieser Allgemeinen Geschäftsbedingungen gebunden. Diese Allgemeinen Geschäftsbedingungen gelten für alle Besucher, Nutzer und andere Personen, die auf den Service zugreifen oder ihn nutzen.
+Ihr Zugriff auf den Dienst und dessen Nutzung setzen voraus, dass Sie diese Allgemeinen Geschäftsbedingungen akzeptieren und einhalten. Diese Allgemeinen Geschäftsbedingungen gelten für alle Besucher, Nutzer und sonstigen Personen, die auf den Dienst zugreifen oder ihn nutzen.
 
-Durch den Zugriff auf den Service oder dessen Nutzung erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie mit einem Teil dieser Allgemeinen Geschäftsbedingungen nicht einverstanden sind, dürfen Sie nicht auf den Service zugreifen.
+Durch den Zugriff auf den Dienst oder dessen Nutzung erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie mit einem Teil dieser Allgemeinen Geschäftsbedingungen nicht einverstanden sind, dürfen Sie nicht auf den Dienst zugreifen.
 
-Sie erklären, dass Sie über 18 Jahre alt sind. Das Unternehmen gestattet es Personen unter 18 Jahren nicht, den Service zu nutzen.
+Sie versichern, dass Sie über 18 Jahre alt sind. Das Unternehmen gestattet Personen unter 18 Jahren nicht, den Dienst zu nutzen.
 
-Ihr Zugriff auf den Service und dessen Nutzung sind auch an Ihre Annahme und Einhaltung der Datenschutzrichtlinie des Unternehmens gebunden. Unsere Datenschutzrichtlinie beschreibt unsere Richtlinien und Verfahren zur Erhebung, Nutzung und Offenlegung Ihrer personenbezogenen Daten, wenn Sie die Anwendung oder die Website nutzen, und informiert Sie über Ihre Datenschutzrechte und darüber, wie das Gesetz Sie schützt. Bitte lesen Sie unsere Datenschutzrichtlinie sorgfältig durch, bevor Sie unseren Service nutzen.
+Ihr Zugriff auf den Dienst und dessen Nutzung setzen zudem voraus, dass Sie die Datenschutzerklärung des Unternehmens akzeptieren und einhalten. Unsere Datenschutzerklärung beschreibt unsere Richtlinien und Verfahren zur Erhebung, Nutzung und Weitergabe Ihrer personenbezogenen Daten, wenn Sie die Anwendung oder die Website nutzen, und informiert Sie über Ihre Datenschutzrechte sowie darüber, wie Sie gesetzlich geschützt sind. Bitte lesen Sie unsere Datenschutzerklärung sorgfältig durch, bevor Sie unseren Dienst nutzen.
 
 ## Links zu anderen Websites
 
-Unser Service kann Links zu Websites oder Diensten von Drittanbietern enthalten, die nicht dem Unternehmen gehören oder von diesem nicht kontrolliert werden.
+Unser Dienst kann Links zu Websites oder Diensten Dritter enthalten, die nicht Eigentum des Unternehmens sind und nicht von diesem kontrolliert werden.
 
-Das Unternehmen hat keine Kontrolle über die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter und übernimmt dafür keine Verantwortung. Sie erkennen ferner an und erklären sich damit einverstanden, dass das Unternehmen nicht direkt oder indirekt für Schäden oder Verluste haftet, die durch oder im Zusammenhang mit der Nutzung oder dem Vertrauen auf solche Inhalte, Waren oder Dienstleistungen verursacht wurden oder angeblich verursacht wurden, die auf oder über solche Websites oder Dienste verfügbar sind.
+Das Unternehmen hat keine Kontrolle über die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter und übernimmt hierfür keine Verantwortung. Sie erkennen ferner an und erklären sich damit einverstanden, dass das Unternehmen weder direkt noch indirekt für Schäden oder Verluste verantwortlich oder haftbar ist, die durch oder in Verbindung mit der Nutzung oder dem Vertrauen auf solche Inhalte, Waren oder Dienste, die auf oder über solche Websites oder Dienste verfügbar sind, verursacht wurden oder angeblich verursacht wurden.
 
-Wir raten Ihnen dringend, die Allgemeinen Geschäftsbedingungen und Datenschutzrichtlinien der Websites oder Dienste von Drittanbietern zu lesen, die Sie besuchen.
+Wir empfehlen Ihnen dringend, die Nutzungsbedingungen und Datenschutzrichtlinien aller Websites oder Dienste von Dritten, die Sie besuchen, zu lesen.
 
 ## Kündigung
 
-Wir können Ihren Zugriff ohne vorherige Ankündigung oder Haftung aus jeglichem Grund sofort beenden oder aussetzen, einschließlich, aber nicht beschränkt auf den Fall, dass Sie gegen diese Allgemeinen Geschäftsbedingungen verstoßen.
+Wir sind berechtigt, Ihren Zugang unverzüglich, ohne vorherige Ankündigung und ohne Haftung aus beliebigen Gründen zu kündigen oder auszusetzen, insbesondere wenn Sie gegen diese Allgemeinen Geschäftsbedingungen verstoßen.
 
-Mit der Beendigung erlischt Ihr Recht zur Nutzung des Service unverzüglich.
+Mit der Kündigung erlischt Ihr Recht zur Nutzung des Dienstes sofort.
 
 ## Haftungsbeschränkung
 
-Ungeachtet der Schäden, die Ihnen entstehen könnten, ist die gesamte Haftung des Unternehmens und seiner Lieferanten unter jeder Bestimmung dieser Bedingungen und Ihr ausschließlicher Rechtsbehelf für das Vorstehende auf den Betrag beschränkt, den Sie tatsächlich über den Service bezahlt haben, oder auf 100 USD, falls Sie nichts über den Service gekauft haben.
+Ungeachtet etwaiger Schäden, die Ihnen entstehen könnten, ist die gesamte Haftung des Unternehmens und seiner Lieferanten gemäß den Bestimmungen dieser Nutzungsbedingungen sowie Ihr ausschließlicher Rechtsbehelf für alle vorgenannten Fälle auf den Betrag beschränkt, den Sie tatsächlich über den Dienst bezahlt haben, oder auf 100 USD, falls Sie über den Dienst nichts erworben haben.
 
-Soweit nach geltendem Recht zulässig, haftet das Unternehmen oder seine Lieferanten in keinem Fall für besondere, zufällige, indirekte oder Folgeschäden jeglicher Art (einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Datenverlust oder anderen Informationen, Betriebsunterbrechung, Personenschäden, Verletzung der Privatsphäre, die sich aus der Nutzung oder der Unfähigkeit zur Nutzung des Service ergibt, Software von Drittanbietern und/oder Hardware von Drittanbietern, die mit dem Service verwendet wird, oder anderweitig im Zusammenhang mit einer Bestimmung dieser Bedingungen), selbst wenn das Unternehmen oder ein Lieferant auf die Möglichkeit solcher Schäden hingewiesen wurde und selbst wenn der Rechtsbehelf seinen wesentlichen Zweck verfehlt.
+Soweit dies nach geltendem Recht zulässig ist, haften das Unternehmen oder seine Lieferanten in keinem Fall für besondere, zufällige, indirekte oder Folgeschäden jeglicher Art (einschließlich, aber nicht beschränkt auf Schäden aufgrund von entgangenem Gewinn, Datenverlust oder Verlust anderer Informationen, für Betriebsunterbrechungen, für Personenschäden oder für die Verletzung der Privatsphäre, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung des Dienstes, der in Verbindung mit dem Dienst genutzten Software und/oder Hardware von Drittanbietern ergeben oder in irgendeiner Weise damit zusammenhängen, oder anderweitig im Zusammenhang mit einer Bestimmung dieser Nutzungsbedingungen stehen), selbst wenn das Unternehmen oder ein Lieferant auf die Möglichkeit solcher Schäden hingewiesen wurde und selbst wenn die Abhilfemaßnahme ihren wesentlichen Zweck verfehlt.
 
-In einigen Bundesstaaten ist der Ausschluss von stillschweigenden Gewährleistungen oder die Beschränkung der Haftung für zufällige oder Folgeschäden nicht zulässig, was bedeutet, dass einige der oben genannten Beschränkungen möglicherweise nicht gelten. In diesen Bundesstaaten wird die Haftung jeder Partei auf das gesetzlich zulässige Höchstmaß beschränkt.
+In einigen Bundesstaaten ist der Ausschluss stillschweigender Gewährleistungen oder die Beschränkung der Haftung für zufällige oder Folgeschäden nicht zulässig, was bedeutet, dass einige der oben genannten Beschränkungen möglicherweise nicht gelten. In diesen Bundesstaaten ist die Haftung jeder Partei auf den gesetzlich zulässigen Höchstumfang beschränkt.
 
-## „WIE BESEHEN“ und „VERFÜGBAR“ Haftungsausschluss
+## Haftungsausschluss „WIE BESEHEN“ und „WIE VERFÜGBAR“
 
-Der Service wird Ihnen „WIE BESEHEN“ und „VERFÜGBAR“ und mit allen Fehlern und Mängeln ohne Gewährleistung jeglicher Art zur Verfügung gestellt. Soweit nach geltendem Recht zulässig, schließt das Unternehmen in eigenem Namen und im Namen seiner verbundenen Unternehmen sowie deren jeweiliger Lizenzgeber und Dienstleister ausdrücklich alle Gewährleistungen aus, ob ausdrücklich, stillschweigend, gesetzlich oder anderweitig, in Bezug auf den Service, einschließlich aller stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck, der Rechtsmäßigkeit und der Nichtverletzung von Rechten sowie Gewährleistungen, die sich aus dem Geschäftsverlauf, der Leistungserbringung, der Verwendung oder der Handelspraxis ergeben können. Ohne Einschränkung des Vorstehenden übernimmt das Unternehmen keine Gewährleistung oder Verpflichtung und gibt keine Zusicherung jeglicher Art ab, dass der Service Ihre Anforderungen erfüllen, beabsichtigte Ergebnisse erzielen, kompatibel sein oder mit anderer Software, Anwendungen, Systemen oder Diensten funktionieren, unterbrechungsfrei arbeiten, Leistungs- oder Zuverlässigkeitsstandards erfüllen oder fehlerfrei sein wird oder dass Fehler oder Mängel korrigiert werden können oder werden.
+Der Dienst wird Ihnen „WIE BESEHEN“ und „WIE VERFÜGBAR“ sowie mit allen Fehlern und Mängeln ohne jegliche Gewährleistung bereitgestellt. Soweit dies nach geltendem Recht zulässig ist, lehnt das Unternehmen in eigenem Namen sowie im Namen seiner verbundenen Unternehmen und seiner bzw. deren jeweiligen Lizenzgeber und Dienstleister ausdrücklich alle Gewährleistungen ab – seien sie ausdrücklich, stillschweigend, gesetzlich oder anderweitig – in Bezug auf den Dienst, einschließlich aller stillschweigenden Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck, Rechtsmängelfreiheit und Nichtverletzung von Rechten Dritter sowie Gewährleistungen, die sich aus dem Geschäftsverlauf, der Leistungserbringung, der Handelsbrauch oder der Handelspraxis ergeben könnten. Ohne Einschränkung des Vorstehenden gibt das Unternehmen keine Gewährleistung oder Zusicherung und macht keinerlei Zusicherung, dass der Dienst Ihren Anforderungen entspricht, beabsichtigte Ergebnisse erzielt, mit anderer Software, Anwendungen, Systemen oder Diensten kompatibel ist oder mit diesen zusammenarbeitet, unterbrechungsfrei funktioniert, Leistungs- oder Zuverlässigkeitsstandards erfüllt oder fehlerfrei ist oder dass etwaige Fehler oder Mängel behoben werden können oder werden.
 
-Ohne das Vorstehende einzuschränken, gibt weder das Unternehmen noch ein Anbieter des Unternehmens eine ausdrückliche oder stillschweigende Zusicherung oder Gewährleistung ab: (i) hinsichtlich des Betriebs oder der Verfügbarkeit des Service oder der darauf enthaltenen Informationen, Inhalte, Materialien oder Produkte; (ii) dass der Service ununterbrochen oder fehlerfrei sein wird; (iii) hinsichtlich der Richtigkeit, Zuverlässigkeit oder Aktualität von Informationen oder Inhalten, die über den Service bereitgestellt werden; oder (iv) dass der Service, seine Server, die Inhalte oder E-Mails, die vom Unternehmen oder in dessen Namen versendet werden, frei von Viren, Skripten, Trojanern, Würmern, Malware, Zeitbomben oder anderen schädlichen Komponenten sind.
+Ohne Einschränkung des Vorstehenden geben weder das Unternehmen noch einer seiner Anbieter ausdrückliche oder stillschweigende Zusicherungen oder Gewährleistungen jeglicher Art ab: (i) hinsichtlich des Betriebs oder der Verfügbarkeit des Dienstes oder der darin enthaltenen Informationen, Inhalte, Materialien oder Produkte; (ii) dass der Dienst unterbrechungsfrei oder fehlerfrei ist; (iii) hinsichtlich der Richtigkeit, Zuverlässigkeit oder Aktualität von Informationen oder Inhalten, die über den Dienst bereitgestellt werden; oder (iv) dass der Dienst, seine Server, die Inhalte oder E-Mails, die vom Unternehmen oder in dessen Auftrag versendet werden, frei von Viren, Skripten, Trojanern, Würmern, Malware, Zeitbomben oder anderen schädlichen Komponenten sind.
 
-In einigen Rechtsordnungen ist der Ausschluss bestimmter Gewährleistungsarten oder Beschränkungen der geltenden gesetzlichen Rechte eines Verbrauchers nicht zulässig, sodass einige oder alle der oben genannten Ausschlüsse und Beschränkungen möglicherweise nicht für Sie gelten. In einem solchen Fall werden die in diesem Abschnitt dargelegten Ausschlüsse und Beschränkungen jedoch im größtmöglichen nach geltendem Recht durchsetzbaren Umfang angewendet.
+In einigen Rechtsordnungen ist der Ausschluss bestimmter Arten von Gewährleistungen oder die Einschränkung der geltenden gesetzlichen Rechte eines Verbrauchers nicht zulässig, sodass einige oder alle der oben genannten Ausschlüsse und Einschränkungen möglicherweise nicht auf Sie zutreffen. In einem solchen Fall gelten die in diesem Abschnitt dargelegten Ausschlüsse und Einschränkungen jedoch im größtmöglichen, nach geltendem Recht durchsetzbaren Umfang.
 
 ## Anwendbares Recht
 
-Die Gesetze des Landes, unter Ausschluss seiner Kollisionsnormen, regeln diese Bedingungen und Ihre Nutzung des Service. Ihre Nutzung der Anwendung kann auch anderen lokalen, staatlichen, nationalen oder internationalen Gesetzen unterliegen.
+Für diese Nutzungsbedingungen und Ihre Nutzung des Dienstes gelten die Gesetze des Landes unter Ausschluss seiner Kollisionsnormen. Ihre Nutzung der Anwendung kann zudem anderen lokalen, bundesstaatlichen, nationalen oder internationalen Gesetzen unterliegen.
 
 ## Streitbeilegung
 
-Wenn Sie Bedenken oder Streitigkeiten bezüglich des Service haben, erklären Sie sich damit einverstanden, zunächst zu versuchen, den Streitfall informell durch Kontaktaufnahme mit dem Unternehmen zu lösen.
+Sollten Sie Bedenken oder Streitigkeiten bezüglich des Dienstes haben, erklären Sie sich damit einverstanden, zunächst zu versuchen, die Streitigkeit informell durch Kontaktaufnahme mit dem Unternehmen beizulegen.
 
-## Für Nutzer in der Europäischen Union (EU)
+## Für Nutzer aus der Europäischen Union (EU)
 
-Wenn Sie ein Verbraucher in der Europäischen Union sind, profitieren Sie von den zwingenden Bestimmungen des Rechts des Landes, in dem Sie Ihren Wohnsitz haben.
+Wenn Sie ein Verbraucher aus der Europäischen Union sind, profitieren Sie von allen zwingenden Bestimmungen des Rechts des Landes, in dem Sie Ihren Wohnsitz haben.
 
-## Einhaltung der US-Rechtsvorschriften
+## Einhaltung der Rechtsvorschriften der Vereinigten Staaten
 
-Sie erklären und garantieren, dass (i) Sie sich nicht in einem Land befinden, das einem Embargo der US-Regierung unterliegt oder von der US-Regierung als „Terroristen unterstützendes“ Land eingestuft wurde, und (ii) Sie nicht auf einer Liste der US-Regierung für verbotene oder eingeschränkte Parteien stehen.
+Sie versichern und gewährleisten, dass (i) Sie sich nicht in einem Land befinden, das einem Embargo der Regierung der Vereinigten Staaten unterliegt oder von der Regierung der Vereinigten Staaten als „Terrorismus unterstützendes“ Land eingestuft wurde, und (ii) Sie nicht auf einer Liste der Regierung der Vereinigten Staaten mit verbotenen oder eingeschränkten Parteien aufgeführt sind.
 
 ## Salvatorische Klausel und Verzicht
 
 ### Salvatorische Klausel
 
-Sollte eine Bestimmung dieser Bedingungen für nicht durchsetzbar oder ungültig erklärt werden, wird diese Bestimmung so geändert und ausgelegt, dass die Ziele dieser Bestimmung im größtmöglichen nach geltendem Recht zulässigen Umfang erreicht werden, und die übrigen Bestimmungen bleiben in vollem Umfang in Kraft.
+Sollte eine Bestimmung dieser Bedingungen als nicht durchsetzbar oder ungültig erachtet werden, wird diese Bestimmung so geändert und ausgelegt, dass die Ziele dieser Bestimmung im Rahmen des anwendbaren Rechts so weit wie möglich erreicht werden, und die übrigen Bestimmungen bleiben in vollem Umfang in Kraft und wirksam.
 
 ### Verzicht
 
-Sofern hierin nicht anders vorgesehen, hat das Versäumnis, ein Recht auszuüben oder die Erfüllung einer Verpflichtung gemäß diesen Bedingungen zu verlangen, keinen Einfluss auf die Fähigkeit einer Partei, ein solches Recht zu einem späteren Zeitpunkt auszuüben oder eine solche Erfüllung zu verlangen; ebenso gilt, dass der Verzicht auf einen Verstoß keinen Verzicht auf einen nachfolgenden Verstoß darstellt.
+Sofern hierin nicht anders vorgesehen, hat die Nichtwahrnehmung eines Rechts oder die Nichtgeltendmachung der Erfüllung einer Verpflichtung gemäß diesen Bedingungen keinen Einfluss auf die Fähigkeit einer Partei, dieses Recht zu einem späteren Zeitpunkt auszuüben oder die Erfüllung dieser Verpflichtung zu verlangen; ebenso wenig stellt der Verzicht auf die Geltendmachung eines Verstoßes einen Verzicht auf die Geltendmachung späterer Verstöße dar.
 
-## Auslegung der Übersetzung
+## Auslegung von Übersetzungen
 
-Diese Allgemeinen Geschäftsbedingungen können übersetzt worden sein, wenn wir sie Ihnen auf unserem Service zur Verfügung gestellt haben. Sie erklären sich damit einverstanden, dass im Falle eines Rechtsstreits der englische Originaltext maßgebend ist.
+Diese Allgemeinen Geschäftsbedingungen wurden möglicherweise übersetzt, wenn wir sie Ihnen über unseren Dienst zur Verfügung gestellt haben. Sie erklären sich damit einverstanden, dass im Streitfall der englische Originaltext maßgeblich ist.
 
 ## Änderungen dieser Allgemeinen Geschäftsbedingungen
 
-Wir behalten uns das Recht vor, diese Bedingungen nach eigenem Ermessen jederzeit zu ändern oder zu ersetzen. Wenn es sich um eine wesentliche Änderung handelt, werden wir uns bemühen, mindestens 30 Tage im Voraus Bescheid zu geben, bevor neue Bedingungen in Kraft treten. Was eine wesentliche Änderung darstellt, wird nach unserem alleinigen Ermessen bestimmt.
+Wir behalten uns das Recht vor, diese Bedingungen nach eigenem Ermessen jederzeit zu ändern oder zu ersetzen. Sollte eine Änderung wesentlich sein, werden wir uns in angemessener Weise bemühen, Sie mindestens 30 Tage vor Inkrafttreten der neuen Bedingungen darüber zu informieren. Was als wesentliche Änderung gilt, liegt in unserem alleinigen Ermessen.
 
-Durch den fortgesetzten Zugriff auf unseren Service oder dessen Nutzung nach Inkrafttreten dieser Änderungen erklären Sie sich mit den überarbeiteten Bedingungen einverstanden. Wenn Sie den neuen Bedingungen nicht ganz oder teilweise zustimmen, stellen Sie bitte die Nutzung der Website und des Service ein.
+Indem Sie nach Inkrafttreten dieser Änderungen weiterhin auf unseren Dienst zugreifen oder diesen nutzen, erklären Sie sich mit den geänderten Bedingungen einverstanden. Wenn Sie den neuen Bedingungen ganz oder teilweise nicht zustimmen, stellen Sie bitte die Nutzung der Website und des Dienstes ein.
 
-## Kontaktieren Sie uns
+## Kontakt
 
-Wenn Sie Fragen zu diesen Allgemeinen Geschäftsbedingungen haben, können Sie uns kontaktieren:
+Wenn Sie Fragen zu diesen Allgemeinen Geschäftsbedingungen haben, können Sie uns wie folgt kontaktieren:
 
-- Per E-Mail: somecoelemail@domain.com
+- Per E-Mail: somecoolemail@domain.com

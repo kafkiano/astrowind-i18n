@@ -13,7 +13,7 @@ hero:
       variant: primary
       icon: tabler:brand-github
     - text: Mehr erfahren
-      href: '#Funktionen'
+      href: '#features'
       icon: tabler:arrow-down
 features:
   tagline: So funktioniert es
@@ -32,7 +32,7 @@ features:
       description: Frontmatter unterstützt tief verschachtelte Objekte und Arrays. Das Übersetzungssystem durchläuft jeden String-Wert – ohne Einschränkungen durch „Flat-Field“-Strukturen.
       icon: tabler:json
     - title: Eine Filiale pro Kunde
-      description: Jeder Kunde erhält einen eigenen Zweig. Passen Sie Konfiguration, Branding und Inhalte an, ohne in die Interna der Widgets oder das Basis-Theme einzugreifen.
+      description: Jeder Kunde erhält einen eigenen Zweig. Passen Sie Konfiguration, Branding und Inhalte an, ohne in die Interna der Widgets oder das Basisthema einzugreifen.
       icon: tabler:git-branch
     - title: Keine Codeänderungen
       description: Kunden bearbeiten ausschließlich Markdown-Inhalte und Bilder. Die .astro-Vorlage liest die Frontmatter-Daten aus und ordnet sie den Widgets zu. Kein HTML, kein JavaScript.
@@ -59,7 +59,7 @@ cta:
       variant: primary
       icon: tabler:download
     - text: Lies die Dokumentation
-      href: '#Funktionen'
+      href: '#features'
       icon: tabler:book
 ---
 

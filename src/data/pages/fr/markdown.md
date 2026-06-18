@@ -1,45 +1,45 @@
 ---
 title: Page Markdown
-showIn: 'header'
+showIn: header
 order: 1
 group: Ressources
 ---
 
 ### Qu'est-ce que Markdown ?
 
-Markdown est un langage de balisage léger que vous pouvez utiliser pour formater des documents en texte brut.
-Rédigez des documents pour vos projets GitHub, modifiez votre profil GitHub _README_ etc. Vous trouverez tout cela ici.
+Markdown est un langage de balisage léger qui vous permet de mettre en forme des documents en texte brut.  
+Rédigez des documents pour vos projets GitHub, modifiez le fichier _README_ de votre profil GitHub, etc. Vous trouverez toutes les informations nécessaires ici.
 
-Plongeons-y. ⤵️
+Plongeons-nous dans le vif du sujet. ⤵️
 
-#### Table des Matières
+#### Table des matières
 
-1. [Paragraphe](#paragraph)
-2. [Titres](#headings)
-3. [Emphase](#emphasis)
-4. [Citation](#blockquote)
+1. [Paragraphe](#paragraphe)
+2. [Titres](#titres)
+3. [Mise en évidence](#miseenevidance)
+4. [Citation en bloc](#citationenbloc)
 5. [Images](#images)
 6. [Liens](#links)
 7. [Code](#code)
 8. [Listes](#lists)
-   - [Liste Ordonnée](#orderedlist)
-   - [Liste Non Ordonnée](#unorderedlist)
-   - [Liste Mixte](#mixedlist)
+   - [Liste ordonnée](#orderedlist)
+   - [Liste non ordonnée](#unorderedlist)
+   - [Liste mixte](#mixedlist)
 9. [Tableau](#table)
-10. [Liste de Tâches](#tasklist)
-11. [Note de Bas de Page](#footnote)
-12. [Saut de section](#sectionjump)
-13. [Ligne Horizontale](#horizontalline)
+10. [Liste de tâches](#tasklist)
+11. [Note de bas de page](#footnote)
+12. [Aller à la section](#sectionjump)
+13. [Ligne horizontale](#horizontalline)
 14. [HTML](#html)
 
 ---
 
 ## Paragraphe
 
-En écrivant du texte normal, vous écrivez en fait un paragraphe.
+En écrivant du texte normal, vous rédigez en fait un paragraphe.
 
 ```
-This is a paragraph.
+Ceci est un paragraphe.
 ```
 
 Ceci est un paragraphe.
@@ -48,90 +48,90 @@ Ceci est un paragraphe.
 
 ## Titres
 
-Il existe 6 variantes de titres. Le nombre de symboles « # », suivi du texte, indique l'importance du titre.
+Il existe 6 niveaux de titres. Le nombre de symboles « # », suivis de texte, indique l’importance du titre.
 
 ```
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+# Titre 1
+## Titre 2
+### Titre 3
+#### Titre 4
+##### Titre 5
+###### Titre 6
 ```
 
-# Heading 1
+# Titre 1
 
-## Heading 2
+## Titre 2
 
-### Heading 3
+### Titre 3
 
-#### Heading 4
+#### Titre 4
 
-##### Heading 5
+##### Titre 5
 
-###### Heading 6
+###### Titre 6
 
 ---
 
-## Emphase
+## Mise en évidence
 
-Modifier le texte est si simple et facile. Vous pouvez mettre votre texte en gras, en italique et le barrer.
+Modifier le texte est très simple et pratique. Vous pouvez mettre votre texte en gras, en italique ou le barrer.
 
 ```
-Using two asterisks **this text is bold**.
-Two underscores __work as well__.
-Let's make it *italic now*.
-You guessed it, _one underscore is also enough_.
-Can we combine **_both of that_?** Absolutely.
-What if I want to ~~strikethrough~~?
+En utilisant deux astérisques **ce texte est en gras**.
+Deux traits de soulignement __fonctionnent également__.
+Mettons-le *en italique maintenant*.
+Vous l’avez deviné, _un seul trait de soulignement suffit également_.
+Peut-on combiner **_ces deux techniques_ ?** Bien sûr.
+Et si je veux ~~barrer~~ ?
 ```
 
-En utilisant deux astérisques **ce texte est en gras**.  
-Deux tirets bas **fonctionnent aussi bien**.  
-Mettons-le *en italique maintenant*.  
-Vous l'avez deviné, _un seul tiret bas suffit aussi_.  
-Pouvons-nous combiner **_les deux_ ?** Absolument.  
+Avec deux astérisques, **ce texte est en gras**.  
+Deux traits de soulignement **fonctionnent aussi**.  
+Mettons-le _en italique maintenant_.  
+Vous l’avez deviné, _un seul trait de soulignement suffit également_.  
+Peut-on combiner **_les deux_ ?** Absolument.  
 Et si je veux ~~barrer~~ ?
 
 ---
 
 ## Citation
 
-Envie de souligner l'importance du texte ? N'en dites pas plus.
+Vous voulez souligner l’importance du texte ? N’en dites pas plus.
 
 ```
-> This is a blockquote.
-> Want to write on a new line with space between?
+> Voici une citation en bloc.
+> Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 >
-> > And nested? No problem at all.
+> > Et imbriquer les citations ? Aucun problème.
 > >
-> > > PS. you can **style** your text _as you want_.
+> > > PS : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_.
 ```
 
-> Ceci est une citation.
-> Vous voulez écrire sur une nouvelle ligne avec un espace entre les deux ?
+> Voici une citation en bloc.
+> Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 >
-> > Et imbriqué ? Aucun problème.
+> > Et imbriquer les citations ? Aucun problème.
 > >
-> > > PS. vous pouvez **styliser** votre texte _comme vous le souhaitez_. :
+> > > PS : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_. :
 
 ---
 
 ## Images
 
-La meilleure façon est de simplement glisser-déposer l'image directement depuis votre ordinateur. Vous pouvez également créer une référence à l'image et l'attribuer de cette manière.  
+Le plus simple est de glisser-déposer directement une image depuis votre ordinateur. Vous pouvez également créer une référence à une image et l’assigner de cette manière.  
 Voici la syntaxe.
 
 ```
-![text if the image fails to load](auto-generated-path-to-file-when-you-upload-image "Text displayed on hover")
+![texte à afficher si l'image ne se charge pas](chemin-automatiquement-généré-vers-le-fichier-lors-du-téléchargement-de-l'image "Texte affiché au survol")
 
-[logo]: auto-generated-path-to-file-when-you-upload-image "Hover me"
-![error text][logo]
+[logo] : chemin-automatiquement-généré-vers-le-fichier-lors-du-téléchargement-de-l'image "Passez la souris dessus"
+![texte d'erreur][logo]
 ```
 
 ![texte si l'image ne se charge pas](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Texte affiché au survol')
 
-[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Survolez-moi'
+[logo] : https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png « Passez la souris ici »
 
 ![texte d'erreur][logo]
 
@@ -139,91 +139,91 @@ Voici la syntaxe.
 
 ## Liens
 
-Semblable aux images, les liens peuvent également être insérés directement ou en créant une référence. Vous pouvez créer des liens en ligne et des liens de bloc.
+Tout comme les images, les liens peuvent être insérés directement ou via une référence. Vous pouvez créer des liens en ligne et des liens de bloc.
 
 ```
-[markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
+[markdown-cheatsheet] : https://github.com/im-luka/markdown-cheatsheet
+[docs] : https://github.com/adam-p/markdown-here
 
-[Like it so far? Follow me on GitHub](https://github.com/im-luka)
-[My Markdown Cheatsheet - star it if you like it][markdown-cheatsheet]
-Find some great docs [here][docs]
+[Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)
+[Mon aide-mémoire Markdown – ajoutez-le à vos favoris s’il vous plaît][markdown-cheatsheet]
+Retrouvez d’excellentes ressources [ici][docs]
 ```
 
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
+[docs] : https://github.com/adam-p/markdown-here
 
-[Ça vous plaît jusqu'à présent ? Suivez-moi sur GitHub](https://github.com/im-luka)  
-[Ma Cheatsheet Markdown - mettez une étoile si vous l'aimez][markdown-cheatsheet]  
-Trouvez d'excellents documents [ici][docs]
+[Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)  
+[Mon aide-mémoire Markdown - ajoutez-le à vos favoris si vous l'appréciez][markdown-cheatsheet]  
+Retrouvez d’excellentes ressources [ici][docs]
 
 ---
 
 ## Code
 
-Vous pouvez créer des extraits de code en ligne et des blocs de code complets. Vous pouvez également définir le langage de programmation que vous utilisiez dans votre extrait. Tout cela en utilisant des apostrophes inversées.
+Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets. Vous pouvez également définir le langage de programmation utilisé dans votre extrait. Tout cela en utilisant des guillemets inversés.
 
 ````
-    I created `.env` file at the root.
-    Backticks inside backticks? `` `No problem.` ``
+    J’ai créé un fichier `.env` à la racine.
+    Des backticks à l’intérieur d’autres backticks ? `` `Pas de problème.` ``
 
-    ```
+ ```
     {
-      learning: "Markdown",
-      showing: "block code snippet"
+ learning: "Markdown",
+ showing: "extrait de code en bloc"
     }
     ```
 
-    ```js
-    const x = "Block code snippet in JS";
+ ```js
+    const x = "Extrait de code en bloc en JS";
     console.log(x);
     ```
 ````
 
-J'ai créé le fichier `.env` à la racine.
-Des apostrophes inversées à l'intérieur d'apostrophes inversées ? `` `No problem.` ``
+J'ai créé un fichier `.env` à la racine.
+Des backticks à l'intérieur d'autres backticks ? `` `Pas de problème.` ``
 
 ```
 {
   learning: "Markdown",
-  showing: "block code snippet"
+  showing: "extrait de code en bloc"
 }
 ```
 
 ```js
-const x = 'Block code snippet in JS';
-console.log(x);
+const x = 'Extrait de code en bloc en JS' ;
+console.log(x) ;
 ```
 
 ---
 
 ## Listes
 
-Comme en HTML, Markdown permet de créer des listes ordonnées et non ordonnées.
+Tout comme en HTML, Markdown permet de créer des listes ordonnées et non ordonnées.
 
-### Liste Ordonnée
+### Liste ordonnée
 
 ```
 1. HTML
 2. CSS
-3. Javascript
+3. JavaScript
 4. React
-7. I'm Frontend Dev now 👨🏼‍🎨
+7. Je suis désormais développeur front-end 👨🏼‍🎨
 ```
 
 1. HTML
 2. CSS
-3. Javascript
+3. JavaScript
 4. React
-5. Je suis développeur Frontend maintenant 👨🏼‍🎨
+5. Je suis désormais développeur front-end 👨🏼‍🎨
 
-### Liste Non Ordonnée
+### Liste non ordonnée
 
 ```
 - Node.js
 + Express
 * Nest.js
-- Learning Backend ⌛️
+- J'apprends le back-end ⌛️
 ```
 
 - Node.js
@@ -232,22 +232,22 @@ Comme en HTML, Markdown permet de créer des listes ordonnées et non ordonnées
 
 - Nest.js
 
-* Apprentissage du Backend ⌛️
+* J'apprends le back-end ⌛️
 
-### Liste Mixte
+### Liste mixte
 
 Vous pouvez également mélanger les deux types de listes et créer des sous-listes.  
 **PS.** Essayez de ne pas créer de listes de plus de deux niveaux de profondeur. C'est la meilleure pratique.
 
 ```
-1. Learn Basics
+1. Apprendre les bases
    1. HTML
    2. CSS
-   7. Javascript
-2. Learn One Framework
+   7. JavaScript
+2. Apprendre un framework
    - React
-     - Router
-     - Redux
+ - Router
+ - Redux
    * Vue
    + Svelte
 ```
@@ -255,11 +255,11 @@ Vous pouvez également mélanger les deux types de listes et créer des sous-lis
 1. Apprendre les bases
    1. HTML
    2. CSS
-   3. Javascript
-2. Apprendre un Framework
+   3. JavaScript
+2. Apprendre un framework
    - React
-     - Router
-     - Redux
+ - Router
+ - Redux
    * Vue
    - Svelte
 
@@ -267,100 +267,100 @@ Vous pouvez également mélanger les deux types de listes et créer des sous-lis
 
 ## Tableau
 
-Excellent moyen d'afficher des données bien agencées. Utilisez le symbole « | » pour séparer les colonnes et le symbole « : » pour aligner le contenu des lignes.
+Un excellent moyen de présenter des données bien organisées. Utilisez le symbole « | » pour séparer les colonnes et le symbole « : » pour aligner le contenu des lignes.
 
 ```
-| Left Align (default) | Center Align | Right Align |
+| Alignement à gauche (par défaut) | Alignement au centre | Alignement à droite |
 | :------------------- | :----------: | ----------: |
-| React.js             | Node.js      | MySQL       |
-| Next.js              | Express      | MongoDB     |
-| Vue.js               | Nest.js      | Redis       |
+| React.js | Node.js | MySQL |
+| Next.js | Express | MongoDB     |
+| Vue.js | Nest.js | Redis |
 ```
 
 | Alignement à gauche (par défaut) | Alignement au centre | Alignement à droite |
-| :----------------------------- | :----------------: | ----------------: |
-| React.js                       |      Node.js       |             MySQL |
-| Next.js                        |      Express       |           MongoDB |
-| Vue.js                         |      Nest.js       |             Redis |
+| :------------------- | :----------: | ----------: |
+| React.js |   Node.js    | MySQL |
+| Next.js |   Express    |     MongoDB |
+| Vue.js |   Nest.js    | Redis |
 
 ---
 
-## Liste de Tâches
+## Liste des tâches
 
-Permet de suivre les tâches accomplies et celles qui restent à faire.
+Suivi des tâches terminées et de celles qui restent à faire.
 
 ```
-- [x] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
+- [x] Apprendre Markdown
+- [ ] Apprendre le développement front-end
+- [ ] Apprendre le développement full-stack
 ```
 
 - [x] Apprendre Markdown
-- [ ] Apprendre le Développement Frontend
-- [ ] Apprendre le Développement Full Stack
+- [ ] Apprendre le développement front-end
+- [ ] Apprendre le développement full-stack
 
 ---
 
-## Note de Bas de Page
+## Note de bas de page
 
-Vous voulez décrire quelque chose à la fin du fichier ? Utilisez une note de bas de page !
+Vous souhaitez ajouter une note à la fin du fichier ? Utilisez la note de bas de page !
 
 ```
-#### I am working on a new project. [^1]
-[^1]: Stack is: React, Typescript, Tailwind CSS
+#### Je travaille sur un nouveau projet. [^1]
+[^1] : La pile technologique est : React, TypeScript, Tailwind CSS
 
-Project is about music & movies.
+Le projet porte sur la musique et les films.
 
-##### Hope you will like it. [^see]
-[^see]: Loading... ⌛️
+##### J'espère qu'il vous plaira. [^voir]
+[^voir] : Chargement en cours.... ⌛️
 ```
 
 #### Je travaille sur un nouveau projet. [^1]
 
-[^1]: La stack est : React, Typescript, Tailwind CSS
+[^1] : La pile technologique est la suivante : React, TypeScript, Tailwind CSS
 
-Le projet concerne la musique et les films.
+Le projet porte sur la musique et les films.
 
-##### J'espère que vous l'aimerez. [^see]
+##### J'espère qu'il vous plaira. [^voir]
 
-[^see]: Chargement... ⌛️
-
----
-
-## Saut de section
-
-Astro (et la plupart des parseurs Markdown) génère automatiquement des IDs pour vos en-têtes. Vous n'avez généralement pas besoin de créer manuellement des balises `<a name="...">`.
+[^voir] : Chargement... ⌛️
 
 ---
 
-## Ligne Horizontale
+## Aller à la section
 
-Vous pouvez utiliser des astérisques, des tirets ou des tirets bas (\*, -, \_) pour créer une ligne horizontale.  
+Astro (et la plupart des analyseurs Markdown) génère automatiquement des identifiants pour vos titres. Vous n’avez généralement pas besoin de créer manuellement des balises `<a name="...">`.
+
+---
+
+## Ligne horizontale
+
+Vous pouvez utiliser des astérisques, des tirets ou des traits de soulignement (\*, -, \_) pour créer une ligne horizontale.  
 La seule règle est que vous devez inclure au moins trois caractères du symbole.
 
 ```
-First Horizontal Line
+Première ligne horizontale
 
 ***
 
-Second One
+Deuxième ligne
 
 -----
 
-Third
+Troisième ligne
 
 _________
 ```
 
-Première Ligne Horizontale
+Première ligne horizontale
 
 ---
 
-Seconde
+Deuxième ligne
 
 ---
 
-Troisième
+Troisième ligne
 
 ---
 
@@ -368,28 +368,28 @@ Troisième
 
 ## HTML
 
-Vous pouvez également utiliser du HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera bien, mais vous pouvez parfois rencontrer des différences auxquelles vous n'êtes pas habitué lorsque vous travaillez avec du HTML standard. L'utilisation de CSS ne fonctionnera pas.
+Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera correctement, mais vous pouvez parfois rencontrer des différences auxquelles vous n’êtes pas habitué lorsque vous travaillez avec du HTML standard. L’utilisation de CSS ne fonctionnera pas.
 
 ```
-<h1>This is a heading</h1>
-<p>Paragraph...</p>
+<h1>Ceci est un titre</h1>
+<p>Paragraphe...</p>
 
 <hr />
 
-<img src="auto-generated-path-to-file-when-you-upload-image" width="200">
-<a href="https://github.com/im-luka">Follow me on GitHub</a>
+<img src="chemin-généré-automatiquement-vers-le-fichier-lorsque-vous-téléchargez-l'image" width="200">
+<a href="https://github.com/im-luka">Suivez-moi sur GitHub</a>
 
 <br />
 <br />
 
-<p>Quick hack for <strong><em>centering image</em></strong>?</p>
-<p align="center"><img src="auto-generated-path-to-file-when-you-upload-image" /></p>
+<p>Astuce rapide pour <strong><em>centrer une image</em></strong> ?</p>
+<p align="center"><img src="chemin-généré-automatiquement-vers-le-fichier-lorsque-vous-téléchargez-l'image" /></p>
 
 <details>
-  <summary>One more quick hack? 🎭</summary>
+  <summary>Encore une astuce rapide ? 🎭</summary>
 
-  → Easy
-  → And simple
+  → Facile
+  → Et simple
 </details>
 ```
 
@@ -408,7 +408,7 @@ Vous pouvez également utiliser du HTML brut dans votre fichier Markdown. La plu
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
-  <summary>Une autre astuce rapide ? 🎭</summary>
+  <summary>Encore une astuce rapide ? 🎭</summary>
   
   → Facile  
   → Et simple
@@ -418,46 +418,46 @@ Vous pouvez également utiliser du HTML brut dans votre fichier Markdown. La plu
 
 ## Diagrammes Mermaid
 
-### Carte Mentale
+### Carte mentale
 
 ```mermaid
 mindmap
   root((Test Intelligence Hub))
-    Data Acquisition
-      API Integration
-      Browser Automation
-      RSS Feeds
-      Scheduling & Orchestration
-    Data Processing
-      Structured Data Storage
-      Unstructured Data Processing
-      LLM Integration
-      Matching & Scoring
-    Human Interface
-      Dashboard & Visualization
-      Alert Management
-      Configuration & Settings
+    Acquisition de données
+ Intégration d’API
+ Automatisation du navigateur
+ Flux RSS
+      Planification et orchestration
+    Traitement des données
+ Stockage des données structurées
+ Traitement des données non structurées
+ Intégration LLM
+ Correspondance et notation
+    Interface utilisateur
+ Tableau de bord et visualisation
+ Gestion des alertes
+ Configuration et paramètres
     Infrastructure
-      Monitoring & Logging
-      Error Handling
-      Scalability
-      Cost Efficiency
+ Surveillance et journalisation
+ Gestion des erreurs
+ Évolutivité
+ Rentabilité
 ```
 
 ### Organigramme
 
 ```mermaid
 flowchart LR
-    A[Data Sources] --> B[Ingestion Layer]
-    B --> C[Processing Layer]
-    C --> D[Storage Layer]
-    D --> E[Human Interface]
-    D --> F[LLM Interface]
-    G[Monitoring Layer] -.-> B
+    A[Sources de données] --> B[Couche d’ingestion]
+    B --> C[Couche de traitement]
+    C --> D[Couche de stockage]
+    D --> E[Interface utilisateur]
+    D --> F[Interface LLM]
+    G[Couche de surveillance] -.-> B
     G -.-> C
     G -.-> D
 ```
 
 ---
 
-##### Section avec un ID
+##### Section avec un identifiant

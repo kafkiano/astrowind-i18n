@@ -13,7 +13,7 @@ hero:
       variant: primary
       icon: tabler:brand-github
     - text: En savoir plus
-      href: '#fonctionnalités'
+      href: '#features'
       icon: tabler:arrow-down
 features:
   tagline: Comment ça marche ?
@@ -29,7 +29,7 @@ features:
       description: 'Choisissez les widgets qui s''affichent en ajoutant ou en supprimant des sections dans le frontmatter. Hero, Features, Témoignages, CTA : combinez-les à votre guise.'
       icon: tabler:puzzle
     - title: YAML imbriqué
-      description: Frontmatter prend en charge les objets et les tableaux profondément imbriqués. Le système de traduction parcourt chaque valeur de chaîne de caractères — sans aucune limitation liée à la structure plate des champs.
+      description: Frontmatter prend en charge les objets et les tableaux profondément imbriqués. Le système de traduction parcourt chaque chaîne de caractères — sans aucune limitation liée à la structure plate des champs.
       icon: tabler:json
     - title: Une succursale par client
       description: Chaque client dispose de sa propre branche. Personnalisez la configuration, l'identité visuelle et le contenu sans modifier le fonctionnement interne des widgets ni le thème de base.
@@ -48,10 +48,10 @@ testimonials:
     testimonial: La traduction YAML imbriquée est géniale. Un seul fichier en anglais, et hop, on obtient d'un coup des versions parfaites en espagnol, en français et en allemand.
     name: Content Manager
   - title: Widgets flexibles
-    testimonial: La possibilité d'ajouter ou de supprimer des sections entières en modifiant le « frontmatter » change la donne en matière de prototypage rapide.
+    testimonial: La possibilité d'ajouter ou de supprimer des sections entières en modifiant le frontmatter change la donne en matière de prototypage rapide.
     name: UX Designer
 cta:
-  title: Commencez dès aujourd'hui
+  title: Commencez dès aujourd’hui
   subtitle: Clonez le dépôt, créez un fichier templates/home.md, et c'est parti ! Le pipeline d'internationalisation (i18n) s'occupe du reste.
   actions:
     - text: Télécharger le modèle
@@ -59,7 +59,7 @@ cta:
       variant: primary
       icon: tabler:download
     - text: Consultez la documentation
-      href: '#fonctionnalités'
+      href: '#features'
       icon: tabler:book
 ---
 

@@ -13,7 +13,7 @@ hero:
       variant: primary
       icon: tabler:brand-github
     - text: Más información
-      href: '#características'
+      href: '#features'
       icon: tabler:arrow-down
 features:
   tagline: Cómo funciona
@@ -35,7 +35,7 @@ features:
       description: Cada cliente dispone de su propia rama. Personaliza la configuración, la imagen de marca y el contenido sin modificar el funcionamiento interno de los widgets ni el tema base.
       icon: tabler:git-branch
     - title: Sin cambios en el código
-      description: Los clientes solo editan el código Markdown y las imágenes. La plantilla .astro lee la información preliminar y la asigna a los widgets. Sin HTML, sin JavaScript.
+      description: Los clientes solo editan el código Markdown y las imágenes. La plantilla .astro lee la información preliminar y la asigna a los widgets. Sin HTML ni JavaScript.
       icon: tabler:code-off
 testimonials:
   - title: Arquitectura limpia
@@ -59,7 +59,7 @@ cta:
       variant: primary
       icon: tabler:download
     - text: Lee la documentación
-      href: '#características'
+      href: '#features'
       icon: tabler:book
 ---
 

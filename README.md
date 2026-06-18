@@ -63,7 +63,7 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   ├── post/{locale}/       # Blog posts per locale
 │   │   ├── pages/{locale}/      # Standalone content pages per locale
 │   │   ├── templates/{locale}/  # Data-driven page templates (nested YAML)
-│   │   └── snippets/            # Reusable markdown fragments (flat, no locale dirs)
+│   │   └── snippets/{locale}/     # Reusable markdown fragments (source in default-locale dir)
 │   ├── i18n/                    # Custom i18n system
 │   │   ├── catalog.ts           # JSON catalog management
 │   │   ├── config.ts            # Configuration (reads config.yaml + env vars)
@@ -235,7 +235,7 @@ Astrowind uses a custom i18n system (`src/i18n/`) with zero framework dependenci
 
 4. **HTML post-processing** – after the build, an Astro integration walks `dist/` HTML files and replaces source-locale text with translations using full-string matching. Script tags are protected from corruption.
 
-5. **Markdown content translation** (`src/i18n/markdown.ts`) – blog posts, pages, and templates in `src/data/{post,pages,templates}/{sourceLocale}/` are automatically translated to all target locales. Frontmatter is parsed as YAML and all nested string values are recursively translated — even deeply nested structures like hero sections, feature lists, and team member bios. The body is translated as a single block preserving formatting.
+5. **Markdown content translation** (`src/i18n/markdown.ts`) – blog posts, pages, templates, and snippets in `src/data/{post,pages,templates,snippets}/{sourceLocale}/` are automatically translated to all target locales. Frontmatter is parsed as YAML and all nested string values are recursively translated — even deeply nested structures like hero sections, feature lists, and team member bios. The body is translated as a single block preserving formatting.
 
 **Expected behaviors by user action:**
 
@@ -263,7 +263,7 @@ Astrowind includes **Sveltia CMS** – a lightweight, Git-based content editor a
   - **Blog Posts** (`src/data/post/en/`) – all frontmatter fields (title, date, excerpt, image, tags, etc.) plus the markdown body.
   - **Pages** (`src/data/pages/en/`) – standalone pages (privacy, terms, about) with navigation settings.
   - **Templates** (`src/data/templates/en/`) – data-driven landing pages with rich nested YAML frontmatter. Edit hero, features, testimonials, team, CTA – all from one file.
-  - **Snippets** (`src/data/snippets/`) – reusable markdown content rendered by the `MarkdownSlot` component.
+  - **Snippets** (`src/data/snippets/en/`) – reusable markdown content rendered by the `MarkdownSlot` component. Target-locale copies are generated automatically at build time.
 
 Target locale translations (es, fr, de) are handled automatically at build time and don't need manual CMS editing.
 

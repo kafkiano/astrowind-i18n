@@ -1,196 +1,197 @@
 ---
 title: Markdown-Seite
-showIn: 'header'
+showIn: header
 order: 1
 group: Ressourcen
 ---
 
 ### Was ist Markdown?
 
-Markdown ist eine leichtgewichtige Auszeichnungssprache, die Sie verwenden können, um einfache Textdokumente zu formatieren.
-Schreiben Sie Dokumente für Ihre GitHub-Projekte, bearbeiten Sie Ihr GitHub-Profil _README_ usw. All das finden Sie hier.
+Markdown ist eine schlanke Auszeichnungssprache, mit der du reine Textdokumente formatieren kannst.  
+Erstelle Dokumente für deine GitHub-Projekte, bearbeite dein GitHub-Profil, die _README_-Datei usw. Hier findest du alles dazu.
 
-Tauchen wir ein. ⤵️
+Lass uns gleich loslegen. ⤵️
 
 #### Inhaltsverzeichnis
 
-1. [Absatz](#absatz)
-2. [Überschriften](#überschriften)
-3. [Hervorhebung](#hervorhebung)
-4. [Zitatblock](#zitatblock)
-5. [Bilder](#bilder)
+1. [Absatz](#paragraph)
+2. [Überschriften](#headings)
+3. [Hervorhebung](#emphasis)
+4. [Zitat](#blockquote)
+5. [Bilder](#images)
 6. [Links](#links)
 7. [Code](#code)
-8. [Listen](#listen)
-   - [Geordnete Liste](#geordnete-liste)
-   - [Ungeordnete Liste](#ungeordnete-liste)
-   - [Gemischte Liste](#gemischte-liste)
-9. [Tabelle](#tabelle)
-10. [Aufgabenliste](#aufgabenliste)
-11. [Fußnote](#fußnote)
-12. [Zum Abschnitt springen](#zum-abschnitt-springen)
-13. [Horizontale Linie](#horizontale-linie)
+8. [Listen](#lists)
+   - [Nummerierte Liste](#orderedlist)
+   - [Unnummerierte Liste](#unorderedlist)
+   - [Gemischte Liste](#mixedlist)
+9. [Tabelle](#table)
+10. [Aufgabenliste](#tasklist)
+11. [Fußnote](#footnote)
+12. [Zum Abschnitt springen](#sectionjump)
+13. [Horizontale Linie](#horizontalline)
 14. [HTML](#html)
 
 ---
 
 ## Absatz
 
-Indem Sie normalen Text schreiben, schreiben Sie im Grunde einen Absatz.
+Wenn du normalen Text schreibst, verfasst du im Grunde einen Absatz.
 
 ```
-This is a paragraph.
+Dies ist ein Absatz.
 ```
 
-This is a paragraph.
+Dies ist ein Absatz.
 
 ---
 
 ## Überschriften
 
-Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von Text, zeigt die Wichtigkeit der Überschrift an.
+Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von Text, gibt die Wichtigkeit der Überschrift an.
 
 ```
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+# Überschrift 1
+## Überschrift 2
+### Überschrift 3
+#### Überschrift 4
+##### Überschrift 5
+###### Überschrift 6
 ```
 
-# Heading 1
+# Überschrift 1
 
-## Heading 2
+## Überschrift 2
 
-### Heading 3
+### Überschrift 3
 
-#### Heading 4
+#### Überschrift 4
 
-##### Heading 5
+##### Überschrift 5
 
-###### Heading 6
+###### Überschrift 6
 
 ---
 
 ## Hervorhebung
 
-Text zu bearbeiten ist so einfach und praktisch. Sie können Ihren Text fett, kursiv und durchgestrichen formatieren.
+Das Formatieren von Text ist ganz einfach und praktisch. Du kannst deinen Text fett, kursiv und durchgestrichen darstellen.
 
 ```
-Using two asterisks **this text is bold**.
-Two underscores __work as well__.
-Let's make it *italic now*.
-You guessed it, _one underscore is also enough_.
-Can we combine **_both of that_?** Absolutely.
-What if I want to ~~strikethrough~~?
+Mit zwei Sternchen **ist dieser Text fett**.
+Zwei Unterstriche __funktionieren ebenfalls__.
+Lass uns den Text jetzt *kursiv* machen.
+Du hast es erraten: _Ein Unterstrich reicht ebenfalls aus_.
+Können wir **_beides_** kombinieren? Auf jeden Fall.
+Was ist, wenn ich ~~durchstreichen~~ möchte?
 ```
 
-Mit zwei Sternchen ist **dieser Text fett**.
-Zwei Unterstriche **funktionieren auch**.
-Machen wir es _jetzt kursiv_.
-Sie haben es erraten, _ein Unterstrich ist auch genug_.
-Können wir **_beides kombinieren_?** Absolut.
-Was, wenn ich etwas ~~durchstreichen~~ möchte?
+Mit zwei Sternchen **ist dieser Text fett**.  
+Zwei Unterstriche **funktionieren ebenfalls**.  
+Machen wir ihn jetzt _kursiv_.  
+Du hast es erraten: _Ein Unterstrich reicht auch_.  
+Können wir **_beides_ kombinieren?** Auf jeden Fall.  
+Was ist, wenn ich ~~durchstreichen~~ möchte?
 
 ---
 
-## Zitatblock
+## Blockzitat
 
-Möchten Sie die Wichtigkeit des Textes betonen? Sagen Sie nichts mehr.
+Möchtest du die Wichtigkeit des Textes hervorheben? Mehr musst du nicht sagen.
 
 ```
-> This is a blockquote.
-> Want to write on a new line with space between?
+> Dies ist ein Blockzitat.
+> Möchtest du in einer neuen Zeile mit Abstand dazwischen schreiben?
 >
-> > And nested? No problem at all.
+> > Und verschachtelt? Kein Problem.
 > >
-> > > PS. you can **style** your text _as you want_.
+> > > PS: Du kannst deinen Text **gestalten**, _wie du willst_.
 ```
 
-> This is a blockquote.
-> Want to write on a new line with space between?
+> Dies ist ein Blockzitat.
+> Möchtest du in einer neuen Zeile mit Abstand dazwischen schreiben?
 >
-> > And nested? No problem at all.
+> > Und verschachtelt? Überhaupt kein Problem.
 > >
-> > > PS. Sie können Ihren Text **formatieren**, _wie Sie möchten_. :
+> > > PS: Du kannst deinen Text **nach Belieben gestalten**. :
 
 ---
 
 ## Bilder
 
-Der beste Weg ist, Bilder direkt per Drag & Drop von Ihrem Computer zu ziehen. Sie können auch einen Verweis auf ein Bild erstellen und es auf diese Weise zuweisen. Hier ist die Syntax.
+Am besten ziehst du das Bild einfach per Drag & Drop direkt von deinem Computer hinein. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
+Hier ist die Syntax.
 
 ```
-![text if the image fails to load](auto-generated-path-to-file-when-you-upload-image "Text displayed on hover")
+![Text, falls das Bild nicht geladen werden kann](automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes "Text, der beim Darüberfahren mit der Maus angezeigt wird")
 
-[logo]: auto-generated-path-to-file-when-you-upload-image "Hover me"
-![error text][logo]
+[Logo]: automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes "Fahre mit der Maus darüber"
+![Fehlertext][Logo]
 ```
 
-![text if the image fails to load](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Text displayed on hover')
+![Text, falls das Bild nicht geladen werden kann](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Text, der beim Darüberfahren mit der Maus angezeigt wird')
 
-[logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Hover me'
+[Logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Mit der Maus darüberfahren'
 
-![error text][logo]
+![Fehlertext][Logo]
 
 ---
 
 ## Links
 
-Ähnlich wie bei Bildern können Links direkt oder durch Erstellen einer Referenz eingefügt werden. Sie können sowohl Inline- als auch Block-Links erstellen.
+Ähnlich wie Bilder können auch Links direkt oder durch Erstellen eines Verweises eingefügt werden. Du kannst sowohl Inline- als auch Block-Links erstellen.
 
 ```
+[Markdown-Spickzettel]: https://github.com/im-luka/markdown-cheatsheet
+[docs]: https://github.com/adam-p/markdown-here
+
+[Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)
+[Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]
+Tolle Dokumentationen findest du [hier][docs]
+```
+
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
 [docs]: https://github.com/adam-p/markdown-here
 
-[Like it so far? Follow me on GitHub](https://github.com/im-luka)
-[My Markdown Cheatsheet - star it if you like it][markdown-cheatsheet]
-Find some great docs [here][docs]
-```
-
-[markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
-
-[Gefällt es Ihnen bisher? Folgen Sie mir auf GitHub](https://github.com/im-luka)
-[Mein Markdown-Spickzettel – markieren Sie ihn mit einem Stern, wenn er Ihnen gefällt][markdown-cheatsheet]
-Tolle Dokumente finden Sie [hier][docs]
+[Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)  
+[Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]  
+Hier findest du einige tolle Dokumentationen [hier][docs]
 
 ---
 
 ## Code
 
-Sie können sowohl Inline- als auch vollständige Block-Code-Snippets erstellen. Sie können auch die Programmiersprache definieren, die Sie in Ihrem Snippet verwendet haben. Alles durch die Verwendung von Backticks.
+Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Du kannst auch die Programmiersprache definieren, die du in deinem Schnipsel verwendest. Alles mithilfe von Backticks.
 
 ````
-    Ich habe die Datei `.env` im Stammverzeichnis erstellt.
-    Backticks in Backticks? `` `Kein Problem.` ``
+    Ich habe eine `.env`-Datei im Stammverzeichnis erstellt.
+    Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 
     ```
     {
-      learning: "Markdown",
-      showing: "block code snippet"
+ learning: "Markdown",
+ showing: "Block-Code-Schnipsel"
     }
     ```
 
-    ```js
-    const x = "Block code snippet in JS";
+ ```js
+    const x = "Block-Code-Schnipsel in JS";
     console.log(x);
     ```
 ````
 
 Ich habe die Datei `.env` im Stammverzeichnis erstellt.
-Backticks in Backticks? `` `Kein Problem.` ``
+Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 
 ```
 {
   learning: "Markdown",
-  showing: "block code snippet"
+  showing: "Block-Code-Schnipsel"
 }
 ```
 
 ```js
-const x = 'Block code snippet in JS';
+const x = 'Block-Code-Schnipsel in JS';
 console.log(x);
 ```
 
@@ -198,21 +199,21 @@ console.log(x);
 
 ## Listen
 
-Wie in HTML können Sie in Markdown sowohl geordnete als auch ungeordnete Listen erstellen.
+Genau wie in HTML ermöglicht Markdown das Erstellen von nummerierten und unnummerierten Listen.
 
-### Geordnete Liste
+### Nummerierte Liste
 
 ```
 1. HTML
 2. CSS
-3. Javascript
+3. JavaScript
 4. React
-7. I'm Frontend Dev now 👨🏼‍🎨
+7. Ich bin jetzt Frontend-Entwickler 👨🏼‍🎨
 ```
 
 1. HTML
 2. CSS
-3. Javascript
+3. JavaScript
 4. React
 5. Ich bin jetzt Frontend-Entwickler 👨🏼‍🎨
 
@@ -222,7 +223,7 @@ Wie in HTML können Sie in Markdown sowohl geordnete als auch ungeordnete Listen
 - Node.js
 + Express
 * Nest.js
-- Learning Backend ⌛️
+- Backend lernen ⌛️
 ```
 
 - Node.js
@@ -235,30 +236,30 @@ Wie in HTML können Sie in Markdown sowohl geordnete als auch ungeordnete Listen
 
 ### Gemischte Liste
 
-Sie können auch beide Listen mischen und Unterlisten erstellen.
-**PS.** Versuchen Sie, Listen nicht tiefer als zwei Ebenen zu erstellen. Das ist die beste Vorgehensweise.
+Du kannst auch beide Listen mischen und Unterlisten erstellen.  
+**PS.** Versuche, keine Listen mit mehr als zwei Ebenen zu erstellen. Das ist die bewährte Vorgehensweise.
 
 ```
-1. Learn Basics
+1. Grundlagen lernen
    1. HTML
    2. CSS
-   7. Javascript
-2. Learn One Framework
+   7. JavaScript
+2. Ein Framework lernen
    - React
-     - Router
-     - Redux
+ - Router
+ - Redux
    * Vue
    + Svelte
 ```
 
-1. Learn Basics
+1. Grundlagen lernen
    1. HTML
    2. CSS
-   3. Javascript
-2. Learn One Framework
+   3. JavaScript
+2. Ein Framework lernen
    - React
-     - Router
-     - Redux
+ - Router
+ - Redux
    * Vue
    - Svelte
 
@@ -266,21 +267,21 @@ Sie können auch beide Listen mischen und Unterlisten erstellen.
 
 ## Tabelle
 
-Eine großartige Möglichkeit, gut geordnete Daten anzuzeigen. Verwenden Sie das „|“-Symbol, um Spalten zu trennen, und das „:“-Symbol, um den Zeileninhalt auszurichten.
+Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das Symbol „|“ zum Trennen von Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
 
 ```
-| Left Align (default) | Center Align | Right Align |
+| Linksbündig (Standard) | Zentriert | Rechtsbündig |
 | :------------------- | :----------: | ----------: |
-| React.js             | Node.js      | MySQL       |
-| Next.js              | Express      | MongoDB     |
-| Vue.js               | Nest.js      | Redis       |
+| React.js | Node.js | MySQL |
+| Next.js | Express | MongoDB     |
+| Vue.js | Nest.js | Redis |
 ```
 
 | Linksbündig (Standard) | Zentriert | Rechtsbündig |
 | :------------------- | :----------: | ----------: |
-| React.js             |   Node.js    |       MySQL |
-| Next.js              |   Express    |     MongoDB |
-| Vue.js               |   Nest.js    |       Redis |
+| React.js |   Node.js    | MySQL |
+| Next.js |   Express    |     MongoDB |
+| Vue.js |   Nest.js    | Redis |
 
 ---
 
@@ -289,9 +290,9 @@ Eine großartige Möglichkeit, gut geordnete Daten anzuzeigen. Verwenden Sie das
 Den Überblick über erledigte und noch zu erledigende Aufgaben behalten.
 
 ```
-- [x] Learn Markdown
-- [ ] Learn Frontend Development
-- [ ] Learn Full Stack Development
+- [x] Markdown lernen
+- [ ] Frontend-Entwicklung lernen
+- [ ] Full-Stack-Entwicklung lernen
 ```
 
 - [x] Markdown lernen
@@ -302,50 +303,51 @@ Den Überblick über erledigte und noch zu erledigende Aufgaben behalten.
 
 ## Fußnote
 
-Möchten Sie etwas am Ende der Datei beschreiben? Verwenden Sie eine Fußnote!
+Möchtest du am Ende der Datei etwas beschreiben? Verwende eine Fußnote!
 
 ```
-#### I am working on a new project. [^1]
-[^1]: Stack is: React, Typescript, Tailwind CSS
+#### Ich arbeite an einem neuen Projekt. [^1]
+[^1]: Der Stack besteht aus: React, TypeScript, Tailwind CSS
 
-Project is about music & movies.
+Das Projekt dreht sich um Musik und Filme.
 
-##### Hope you will like it. [^see]
-[^see]: Loading... ⌛️
+##### Ich hoffe, es gefällt euch. [^siehe]
+[^siehe]: Wird geladen... ⌛️
 ```
 
 #### Ich arbeite an einem neuen Projekt. [^1]
 
-[^1]: Der Stack ist: React, Typescript, Tailwind CSS
+[^1]: Der Stack besteht aus: React, TypeScript, Tailwind CSS
 
-Das Projekt handelt von Musik & Filmen.
+Das Projekt dreht sich um Musik und Filme.
 
-##### Ich hoffe, es wird Ihnen gefallen. [^see]
+##### Ich hoffe, es gefällt euch. [^siehe]
 
-[^see]: Wird geladen... ⌛️
+[^siehe]: Wird geladen... ⌛️
 
 ---
 
 ## Zum Abschnitt springen
 
-Astro (und die meisten Markdown-Parser) generieren automatisch IDs für Ihre Überschriften. Sie müssen normalerweise keine manuellen `<a name="...">`-Tags erstellen.
+Astro (und die meisten Markdown-Parser) generieren automatisch IDs für deine Überschriften. Du musst in der Regel keine manuellen `<a name="...">`-Tags erstellen.
 
 ---
 
 ## Horizontale Linie
 
-Sie können Sternchen, Bindestriche oder Unterstriche (\*, -, \_) verwenden, um eine horizontale Linie zu erstellen. Die einzige Regel ist, dass Sie mindestens drei Zeichen des Symbols verwenden müssen.
+Du kannst Sternchen, Bindestriche oder Unterstriche (\*, -, \_) verwenden, um eine horizontale Linie zu erstellen.  
+Die einzige Regel ist, dass du mindestens drei Zeichen des Symbols verwenden musst.
 
 ```
-First Horizontal Line
+Erste horizontale Linie
 
 ***
 
-Second One
+Zweite
 
 -----
 
-Third
+Dritte
 
 _________
 ```
@@ -366,50 +368,50 @@ Dritte
 
 ## HTML
 
-Sie können auch reines HTML in Ihrer Markdown-Datei verwenden. Meistens funktioniert das gut, aber manchmal kann es zu Unterschieden kommen, die Sie bei der Arbeit mit Standard-HTML nicht gewohnt sind. Die Verwendung von CSS funktioniert nicht.
+Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktioniert das gut, aber manchmal können Unterschiede auftreten, die Sie von der Arbeit mit Standard-HTML nicht gewohnt sind. Die Verwendung von CSS funktioniert nicht.
 
 ```
-<h1>This is a heading</h1>
-<p>Paragraph...</p>
-
-<hr />
-
-<img src="auto-generated-path-to-file-when-you-upload-image" width="200">
-<a href="https://github.com/im-luka">Follow me on GitHub</a>
-
-<br />
-<br />
-
-<p>Quick hack for <strong><em>centering image</em></strong>?</p>
-<p align="center"><img src="auto-generated-path-to-file-when-you-upload-image" /></p>
-
-<details>
-  <summary>One more quick hack? 🎭</summary>
-
-  → Easy
-  → And simple
-</details>
-```
-
 <h1>Dies ist eine Überschrift</h1>
 <p>Absatz...</p>
 
 <hr />
 
+<img src="automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" width="200">
+<a href="https://github.com/im-luka">Folge mir auf GitHub</a>
+
+<br />
+<br />
+
+<p>Ein schneller Hack für <strong><em>die Zentrierung des Bildes</em></strong>?</p>
+<p align="center"><img src="automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" /></p>
+
+<details>
+  <summary>Noch ein schneller Hack? 🎭</summary>
+
+  → Einfach
+  → Und unkompliziert
+</details>
+```
+
+<h1>Das ist eine Überschrift</h1>
+<p>Absatz...</p>
+
+<hr />
+
 <img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200">
-<a href="https://github.com/im-luka">Folgen Sie mir auf GitHub</a>
+<a href="https://github.com/im-luka">Folge mir auf GitHub</a>
 
 <br />
 <br />
 
-<p>Schneller Trick zum **_Zentrieren von Bildern_**?</p>
+<p>Schneller Hack für <strong><em>Bildzentrierung</em></strong>?</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
-  <summary>Noch ein schneller Trick? 🎭</summary>
+  <summary>Noch ein schneller Hack? 🎭</summary>
   
   → Einfach  
-  → Und simpel
+  → Und unkompliziert
 </details>
 
 ---
@@ -421,37 +423,37 @@ Sie können auch reines HTML in Ihrer Markdown-Datei verwenden. Meistens funktio
 ```mermaid
 mindmap
   root((Test Intelligence Hub))
-    Data Acquisition
-      API Integration
-      Browser Automation
-      RSS Feeds
-      Scheduling & Orchestration
-    Data Processing
-      Structured Data Storage
-      Unstructured Data Processing
-      LLM Integration
-      Matching & Scoring
-    Human Interface
-      Dashboard & Visualization
-      Alert Management
-      Configuration & Settings
-    Infrastructure
-      Monitoring & Logging
-      Error Handling
-      Scalability
-      Cost Efficiency
+    Datenerfassung
+ API-Integration
+ Browser-Automatisierung
+ RSS-Feeds
+      Planung & Orchestrierung
+    Datenverarbeitung
+ Speicherung strukturierter Daten
+ Verarbeitung unstrukturierter Daten
+ LLM-Integration
+ Abgleich & Bewertung
+    Benutzeroberfläche
+ Dashboard & Visualisierung
+ Alarmmanagement
+ Konfiguration & Einstellungen
+    Infrastruktur
+ Überwachung & Protokollierung
+      Fehlerbehandlung
+ Skalierbarkeit
+ Kosteneffizienz
 ```
 
 ### Flussdiagramm
 
 ```mermaid
 flowchart LR
-    A[Data Sources] --> B[Ingestion Layer]
-    B --> C[Processing Layer]
-    C --> D[Storage Layer]
-    D --> E[Human Interface]
-    D --> F[LLM Interface]
-    G[Monitoring Layer] -.-> B
+    A[Datenquellen] --> B[Erfassungsschicht]
+    B --> C[Verarbeitungsschicht]
+    C --> D[Speicherschicht]
+    D --> E[Benutzeroberfläche]
+    D --> F[LLM-Schnittstelle]
+    G[Überwachungsebene] -.-> B
     G -.-> C
     G -.-> D
 ```
