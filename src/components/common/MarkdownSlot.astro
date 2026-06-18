@@ -10,7 +10,14 @@ export interface Props {
   inline?: string;
 }
 
-const { content, inline } = Astro.props;
+const { content, slug, inline } = Astro.props;
+const locale = Astro.currentLocale ?? I18N.defaultLocale;
+
+let entry = content;
+if (!entry && slug) {
+  const entryId = `${locale}/${slug}`;
+  entry = await getEntry('snippets', entryId);
+}
 
 let Content: AstroComponentFactory | null = null;
 
