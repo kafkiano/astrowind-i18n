@@ -26,7 +26,7 @@ dishes:
     - title: Gezonde salades en wraps
       description: Verse, kleurrijke salades en wraps, bereid met ingrediënten uit de regio. Elk gerecht wordt op bestelling bereid.
     - title: Zelfgemaakte taarten en dipsauzen
-      description: Een heerlijke selectie van zelfgemaakte taarten, dipsauzen en hapjes — perfect om samen van te genieten of om in je eentje van te smullen.
+      description: Een heerlijke selectie van zelfgemaakte taarten, dipsauzen en hapjes — perfect om te delen of om in je eentje van te genieten.
     - title: Vegetarisch, veganistisch en glutenvrij
       description: Een breed scala aan opties voor elke voedingsvoorkeur. Wij vinden dat iedereen recht heeft op heerlijk eten.
 cocktails:
@@ -47,7 +47,7 @@ exhibitions:
   items:
     - title: Wisselende kunsttentoonstellingen
       description: In onze galerieruimte worden werken van getalenteerde lokale kunstenaars tentoongesteld. De collectie verandert regelmatig — er valt altijd wel iets nieuws te ontdekken.
-    - title: Sieraden &amp; woondecoratie
+    - title: Sieraden & woondecoratie
       description: Bekijk onze unieke, handgemaakte sieraden en woonaccessoires. Elk item vertelt een verhaal.
     - title: Beschikbare online kunstgalerijen
       description: Can't visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.
@@ -56,7 +56,7 @@ testimonials:
     testimonial: Een geweldige ontdekking in Moraira. Het eten is vers, creatief en absoluut heerlijk. Ook de sfeer is geweldig!
     name: Sarah M.
   - title: Een heerlijk ontbijt
-    testimonial: Ik ben even langsgegaan voor het ontbijt en was helemaal onder de indruk. Prachtige presentatie, verse ingrediënten en vriendelijke bediening.
+    testimonial: Ik ben even langsgegaan voor het ontbijt en was echt onder de indruk. Prachtige presentatie, verse ingrediënten en vriendelijke bediening.
     name: James K.
   - title: Eet HIER
     testimonial: Als je in Moraira bent, moet je hier zeker eens gaan eten. Het menu is creatief, de drankjes zijn perfect en de sfeer is ongeëvenaard.
@@ -65,16 +65,16 @@ testimonials:
     testimonial: Het is zo verfrissend om een plek te vinden met zo’n creatieve menukaart. De vegetarische en veganistische gerechten zijn werkelijk voortreffelijk.
     name: David R.
   - title: Vers, heerlijk, uitstekende prijs-kwaliteitverhouding
-    testimonial: Vers, heerlijk en een uitstekende prijs-kwaliteitverhouding. Een echte aanrader voor iedereen die de omgeving bezoekt. We komen zeker terug!
+    testimonial: Vers, heerlijk en een uitstekende prijs-kwaliteitverhouding. Een echte aanrader voor iedereen die de streek bezoekt. We komen zeker terug!
     name: Emma T.
   - title: Ik kan geen genoeg krijgen van deze plek
-    testimonial: We zijn er tijdens onze week in Moraira drie keer geweest. De sapjes, de salades, de cocktails — alles is perfect.
+    testimonial: We zijn tijdens onze week in Moraira drie keer langs geweest. De sapjes, de salades, de cocktails — alles is perfect.
     name: Michael B.
   - title: Heerlijk eten, lekkere drankjes en een geweldige sfeer!
     testimonial: De sfeer is zo ontspannend, het eten is perfect en de drankjes zijn geweldig. Een echt juweeltje in Moraira.
     name: Claire W.
   - title: Een nieuw soort café doet zijn intrede in Moraira
-    testimonial: Artesano brengt iets geheel nieuws naar Moraira. Een combinatie van kunstgalerie, café en cocktailbar — een briljant concept.
+    testimonial: Artesano brengt iets volkomen nieuws naar Moraira. Een kunstgalerie, café en cocktailbar in één — een briljant concept.
     name: Tom H.
   - title: Een geweldig nieuw avontuur!
     testimonial: Ik ben zo blij om te zien dat deze nieuwe onderneming zo goed loopt. De eigenaren zijn gepassioneerd en dat proef je in elk gerecht en elk drankje.
@@ -90,13 +90,6 @@ team:
         href: https://www.facebook.com/artesanomoraira
       - icon: tabler:brand-instagram
         href: https://www.instagram.com/artesanomoraira
-  - name: Matthew
-    job: Owner
-    imageAlt: ''
-    description: Matthew, mede-eigenaar van Artesano, werkt dagelijks samen met Ismael in het restaurant om het heerlijke menu en de gastvrije sfeer te creëren die Artesano zo bijzonder maken.
-    socials:
-      - icon: tabler:brand-facebook
-        href: https://www.facebook.com/artesanomoraira
 cta:
   title: Kom vandaag nog langs
   subtitle: Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante, Spanje

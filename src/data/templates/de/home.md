@@ -13,19 +13,19 @@ welcome:
       description: Salate, Wraps, Kuchen, Dips und vieles mehr – alles täglich vor Ort von den Inhabern Ismael und Matthew zubereitet.
     - title: Vegetarisch, vegan und glutenfrei
       description: Eine große Auswahl an Optionen für jeden Ernährungsgeschmack. Bei uns ist wirklich für jeden etwas dabei.
-    - title: Frisch gepresste Säfte &amp; Smoothies
-      description: Dazu gibt es eine sorgfältig zusammengestellte Auswahl an lokalen Weinen, Bieren aus Kleinbrauereien und eine spannende Cocktailkarte.
+    - title: Frisch gepresste Säfte & Smoothies
+      description: Dazu gibt es eine sorgfältig zusammengestellte Auswahl an regionalen Weinen, Bieren aus Kleinbrauereien und eine spannende Cocktailkarte.
 kitchenHeading:
-  tagline: Unsere Küche &amp; Bar
+  tagline: Unsere Küche & Bar
   title: Frisch, gesund und schön
 dishes:
   tagline: Gerichte
-  title: Jeden Tag auf Bestellung gefertigt
+  title: Jeden Tag frisch zubereitet
   image: /~/assets/images/629440652_18508760803076706_4388001678440304741_n.webp
   items:
-    - title: Gesunde Salate &amp; Wraps
+    - title: Gesunde Salate & Wraps
       description: Frische, farbenfrohe Salate und Wraps aus Zutaten aus der Region. Jedes Gericht wird auf Bestellung zubereitet.
-    - title: Selbstgebackene Kuchen &amp; Dips
+    - title: Selbstgebackene Kuchen & Dips
       description: Eine köstliche Auswahl an hausgemachten Kuchen, Dips und kleinen Häppchen – ideal zum Teilen oder zum alleinigen Genuss.
     - title: Vegetarisch, vegan und glutenfrei
       description: Eine große Auswahl für jeden Geschmack. Wir sind der Meinung, dass jeder das Recht auf leckeres Essen hat.
@@ -35,10 +35,10 @@ cocktails:
   image: /~/assets/images/618668246_17958843992904055_443452070198879998_n.webp
   items:
     - title: Signature-Cocktails
-      description: Von klassischen Mojitos bis hin zu kreativen Hauskreationen – man sagt uns nach, dass wir die besten Mojitos weit und breit mixen.
-    - title: Weine aus der Region &amp; Craft-Biere
+      description: Von klassischen Mojitos bis hin zu kreativen Hausspezialitäten – man sagt uns nach, dass wir die besten Mojitos weit und breit mixen.
+    - title: Weine aus der Region & Craft-Biere
       description: Eine sorgfältig zusammengestellte Auswahl an spanischen Weinen aus der Region und importierten Bieren aus Kleinbrauereien.
-    - title: Frische Säfte &amp; Smoothies
+    - title: Frische Säfte & Smoothies
       description: Frisch gepresste Säfte und Smoothies, die auf Bestellung zubereitet werden. Die perfekte Ergänzung zu jeder Mahlzeit.
 exhibitions:
   tagline: Ausstellungen
@@ -47,7 +47,7 @@ exhibitions:
   items:
     - title: Wechselnde Kunstausstellungen
       description: In unseren Galerieräumen werden Werke talentierter lokaler Künstler ausgestellt. Die Ausstellung wechselt regelmäßig – es gibt immer etwas Neues zu entdecken.
-    - title: Schmuck &amp; Wohnaccessoires
+    - title: Schmuck & Wohnaccessoires
       description: Entdecken Sie einzigartige, handgefertigte Schmuckstücke und Wohnaccessoires. Jeder Artikel erzählt eine Geschichte.
     - title: Verfügbare Online-Kunstgalerien
       description: Can't visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.
@@ -56,16 +56,16 @@ testimonials:
     testimonial: Ein wunderbarer Geheimtipp in Moraira. Das Essen ist frisch, kreativ und absolut köstlich. Auch die Atmosphäre ist großartig!
     name: Sarah M.
   - title: Ein herrliches Frühstück
-    testimonial: Ich habe zum Frühstück hier vorbeigeschaut und war total begeistert. Wunderschöne Präsentation, frische Zutaten und freundlicher Service.
+    testimonial: Ich habe hier zum Frühstück Halt gemacht und war total begeistert. Wunderschöne Präsentation, frische Zutaten und freundlicher Service.
     name: James K.
   - title: Hier essen
-    testimonial: Wenn Sie in Moraira sind, müssen Sie hier unbedingt essen. Die Speisekarte ist kreativ, die Getränke sind perfekt und die Atmosphäre ist unübertroffen.
+    testimonial: Wenn Sie in Moraira sind, müssen Sie unbedingt hier essen. Die Speisekarte ist kreativ, die Getränke sind perfekt und die Atmosphäre ist unübertroffen.
     name: Laura P.
   - title: Kreative Speisekarte
     testimonial: Es ist so erfrischend, ein Lokal mit einer so einfallsreichen Speisekarte zu entdecken. Die vegetarischen und veganen Gerichte sind hervorragend.
     name: David R.
   - title: Frisch, lecker, preiswert
-    testimonial: Frisch, lecker und preiswert. Für alle, die in der Gegend unterwegs sind, sehr zu empfehlen. Wir kommen wieder!
+    testimonial: Frisch, lecker und preiswert. Für alle, die die Gegend besuchen, sehr zu empfehlen. Wir kommen wieder!
     name: Emma T.
   - title: Ich kann von diesem Ort gar nicht genug bekommen
     testimonial: Während unserer Woche in Moraira waren wir dreimal dort. Die Säfte, die Salate, die Cocktails – alles ist perfekt.
@@ -77,7 +77,7 @@ testimonials:
     testimonial: Artesano bringt etwas völlig Neues nach Moraira. Kunstgalerie, Café und Cocktailbar in einem – ein geniales Konzept.
     name: Tom H.
   - title: Ein tolles neues Projekt!
-    testimonial: Ich freue mich riesig, dass dieses neue Projekt so gut läuft. Die Besitzer sind mit Leidenschaft bei der Sache, und das merkt man an jedem Gericht und jedem Getränk.
+    testimonial: Ich freue mich riesig, dass dieses neue Projekt so gut läuft. Die Besitzer sind mit ganzem Herzen dabei, und das merkt man an jedem Gericht und jedem Getränk.
     name: Anna S.
 team:
   - name: Ismael
@@ -90,13 +90,6 @@ team:
         href: https://www.facebook.com/artesanomoraira
       - icon: tabler:brand-instagram
         href: https://www.instagram.com/artesanomoraira
-  - name: Matthew
-    job: Owner
-    imageAlt: ''
-    description: Als Mitinhaber von Artesano arbeitet Matthew täglich vor Ort Seite an Seite mit Ismael daran, die köstliche Speisekarte und die einladende Atmosphäre zu schaffen, die Artesano so besonders machen.
-    socials:
-      - icon: tabler:brand-facebook
-        href: https://www.facebook.com/artesanomoraira
 cta:
   title: Besuchen Sie uns noch heute
   subtitle: Carretera Moraira-Calpe 16a, 03724 Moraira, Alicante, Spanien
@@ -107,7 +100,7 @@ cta:
       icon: tabler:map-pin
       target: _blank
     - text: Rufen Sie unter +34 966 27 21 27 an
-      href: 'Tel.: +34966272127'
+      href: tel:+34966272127
       icon: tabler:phone
 order: 1
 ---

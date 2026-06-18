@@ -17,7 +17,7 @@ welcome:
       description: Además de una selección cuidadosamente elegida de vinos locales, cervezas artesanales y una atractiva carta de cócteles.
 kitchenHeading:
   tagline: Nuestra cocina y nuestro bar
-  title: Fresca, sana y bonita
+  title: Fresco, saludable y bonito
 dishes:
   tagline: Platos
   title: Hecho a medida, todos los días
@@ -26,7 +26,7 @@ dishes:
     - title: Ensaladas y wraps saludables
       description: Ensaladas y wraps frescos y apetecibles, elaborados con ingredientes de origen local. Todos los platos se preparan al momento.
     - title: Pasteles y salsas caseras
-      description: Una deliciosa selección de pasteles caseros, salsas y raciones pequeñas, perfectos para compartir o disfrutar en solitario.
+      description: Una deliciosa selección de pasteles caseros, salsas y raciones —perfectos para compartir o disfrutar en solitario—.
     - title: Vegetariano, vegano y sin gluten
       description: Una amplia variedad de opciones para todos los gustos alimentarios. Creemos que todo el mundo se merece una comida deliciosa.
 cocktails:
@@ -62,15 +62,15 @@ testimonials:
     testimonial: Si estás en Moraira, no te puedes perder este sitio. El menú es muy creativo, las bebidas son perfectas y el ambiente es inigualable.
     name: Laura P.
   - title: Menú creativo
-    testimonial: Es un auténtico placer encontrar un sitio con una carta tan creativa. Las opciones vegetarianas y veganas son excepcionales.
+    testimonial: Es un auténtico placer encontrar un sitio con un menú tan creativo. Las opciones vegetarianas y veganas son excepcionales.
     name: David R.
   - title: Fresco, delicioso y a muy buen precio
     testimonial: Fresco, delicioso y con una excelente relación calidad-precio. Muy recomendable para cualquiera que visite la zona. ¡Volveremos!
     name: Emma T.
   - title: No me canso de este sitio
-    testimonial: Fuimos tres veces durante la semana que pasamos en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
+    testimonial: Fuimos tres veces durante nuestra semana en Moraira. Los zumos, las ensaladas, los cócteles... todo es perfecto.
     name: Michael B.
-  - title: ¡Comida, bebidas y ambiente perfectos!
+  - title: ¡La comida, las bebidas y el ambiente son perfectos!
     testimonial: El ambiente es muy relajante, la comida es perfecta y las bebidas son increíbles. Una auténtica joya en Moraira.
     name: Claire W.
   - title: Un nuevo tipo de cafetería llega a Moraira
@@ -84,19 +84,12 @@ team:
     job: Owner
     image: ~/assets/images/ismael_el_harrak_artesano1-320x320.jpg
     imageAlt: Ismael, propietario de Artesano
-    description: Originario de Tánger, Marruecos, Ismael vive en España desde 2009. Es un fotógrafo aficionado apasionado por el arte, la gastronomía y la hostelería. Habla inglés, español, francés y árabe.
+    description: Originario de Tánger, Marruecos, Ismael vive en España desde 2009. Es un fotógrafo aficionado al que le apasionan el arte, la gastronomía y la hostelería. Habla inglés, español, francés y árabe.
     socials:
       - icon: tabler:brand-facebook
         href: https://www.facebook.com/artesanomoraira
       - icon: tabler:brand-instagram
         href: https://www.instagram.com/artesanomoraira
-  - name: Matthew
-    job: Owner
-    imageAlt: ''
-    description: Matthew, copropietario de Artesano, trabaja a diario en el local junto a Ismael para crear el delicioso menú y el ambiente acogedor que hacen que Artesano sea un lugar especial.
-    socials:
-      - icon: tabler:brand-facebook
-        href: https://www.facebook.com/artesanomoraira
 cta:
   title: Visítanos hoy mismo
   subtitle: Carretera Moraira-Calpe, n.º 16a, 03724 Moraira, Alicante, España
