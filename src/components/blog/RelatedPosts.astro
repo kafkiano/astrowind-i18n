@@ -12,7 +12,8 @@ export interface Props {
 
 const { post } = Astro.props;
 
-const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
+const locale = Astro.currentLocale;
+const relatedPosts = post.tags ? await getRelatedPosts(post, 4, locale) : [];
 ---
 
 {
