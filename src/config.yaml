@@ -26,15 +26,16 @@ metadata:
 i18n:
   language: en
   textDirection: ltr
-  locales: ['en', 'de', 'es']
+  locales: ['en', 'es', 'fr', 'de', 'ar']
   defaultLocale: en
   localeNames:
     en: English
     de: Deutsch
-    es: Español
+    ar: العربية
+  localeDirections:
+    ar: rtl
   ai:
     provider: 'deepl'
-    geminiApiKey: null
 
 apps:
   blog:

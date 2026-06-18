@@ -48,11 +48,11 @@ const {
                       <span class="text-base leading-6 lowercase text-gray-600 dark:text-slate-400">{period}</span>
                     </div>
                     {items && (
-                      <ul class="my-8 md:my-10 space-y-2 text-left">
+                      <ul class="my-8 md:my-10 space-y-2 text-left rtl:text-right">
                         {items.map(
                           ({ description, icon }) =>
                             description && (
-                              <li class="mb-1.5 flex items-start space-x-3 leading-7">
+                              <li class="mb-1.5 flex items-start space-x-3 rtl:space-x-reverse leading-7">
                                 <div class="rounded-full bg-primary mt-1">
                                   <Icon name={icon ? icon : 'tabler:check'} class="w-5 h-5 font-bold p-1 text-white" />
                                 </div>

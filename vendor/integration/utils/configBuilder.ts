@@ -33,6 +33,7 @@ export interface I18NConfig {
   locales: string[];
   defaultLocale: string;
   localeNames?: Record<string, string>; // { en: 'English', es: 'Español' }
+  localeDirections?: Record<string, 'ltr' | 'rtl'>; // { ar: 'rtl' } — only specify RTL, default is ltr
   dateFormatter?: Intl.DateTimeFormat;
 }
 export interface AppBlogConfig {
@@ -166,6 +167,7 @@ const getI18N = (config: Config) => {
     locales: i18nConfig.locales,
     defaultLocale: i18nConfig.defaultLocale,
     localeNames: i18nConfig.localeNames || {},
+    localeDirections: i18nConfig.localeDirections || {},
   };
 
   // Ensure localeNames has entries for all locales
