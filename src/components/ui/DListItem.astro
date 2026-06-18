@@ -19,4 +19,4 @@ const content: string = await Astro.slots.render('default');
 ---
 
 <h6 set:html={dt} />
-<div class="dd ml-8" set:html={content} />
+<div class="dd ml-8 rtl:ml-0 rtl:mr-8" set:html={content} />

@@ -248,6 +248,7 @@ const responsiveCss = responsive
           loop: config.loop,
           align: 'start',
           slidesToScroll: 1,
+          direction: document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr',
         },
         plugins
       );

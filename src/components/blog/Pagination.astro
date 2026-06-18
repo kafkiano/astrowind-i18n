@@ -20,11 +20,11 @@ const currentLocale = Astro.currentLocale;
       <div class="flex flex-row mx-auto container justify-between">
         <Button
           variant="tertiary"
-          class={`md:px-3 px-3 mr-2 ${!prevUrl ? 'invisible' : ''}`}
+          class={`md:px-3 px-3 mr-2 rtl:mr-0 rtl:ml-2 ${!prevUrl ? 'invisible' : ''}`}
           href={getPermalink(prevUrl, 'page', currentLocale)}
         >
           <Icon name="tabler:chevron-left" class="w-6 h-6" />
-          <p class="ml-2">{prevText}</p>
+          <p class="ml-2 rtl:ml-0 rtl:mr-2">{prevText}</p>
         </Button>
 
         <Button
@@ -32,7 +32,7 @@ const currentLocale = Astro.currentLocale;
           class={`md:px-3 px-3 ${!nextUrl ? 'invisible' : ''}`}
           href={getPermalink(nextUrl, 'page', currentLocale)}
         >
-          <span class="mr-2">{nextText}</span>
+          <span class="mr-2 rtl:mr-0 rtl:ml-2">{nextText}</span>
           <Icon name="tabler:chevron-right" class="w-6 h-6" />
         </Button>
       </div>
