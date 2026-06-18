@@ -6,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
@@ -60,6 +61,16 @@ const metadata = {
 
   <!-- How We Work -->
   <Steps tagline={howWeWork?.tagline} title={howWeWork?.title} items={howWeWork?.items} />
+
+  <!-- Latest Insights -->
+  <BlogLatestPosts
+    title="Latest insights"
+    information="Practical articles for buyers, investors, and operators — covering UAE business setup, cross-border real estate, project management, and more."
+    linkText="View all insights"
+    linkUrl="/insights"
+    count={4}
+    classes={{ container: 'max-w-6xl' }}
+  />
 
   <!-- Call to Action -->
   <CallToAction title={cta?.title} subtitle={cta?.subtitle} actions={cta?.actions} />
