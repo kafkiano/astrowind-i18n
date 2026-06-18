@@ -65,7 +65,7 @@ collections:
   - name: snippets
     label: Snippets
     label_singular: Snippet
-    folder: src/data/snippets
+    folder: src/data/snippets/en
     create: true
     extension: md
     format: frontmatter
