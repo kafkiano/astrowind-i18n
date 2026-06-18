@@ -9,7 +9,7 @@ hero:
     alt: AstroWind-Titelbild
   actions:
     - text: Auf GitHub anzeigen
-      href: https://github.com/arthelokyo/astrowind
+      href: https://github.com/kafkiano/astrowind-i18n
       variant: primary
       icon: tabler:brand-github
     - text: Mehr erfahren
@@ -55,7 +55,7 @@ cta:
   subtitle: Klonen Sie das Repo, erstellen Sie eine Datei „templates/home.md“, und schon kann es losgehen. Die i18n-Pipeline kümmert sich um den Rest.
   actions:
     - text: Vorlage herunterladen
-      href: https://github.com/arthelokyo/astrowind
+      href: https://github.com/kafkiano/astrowind-i18n
       variant: primary
       icon: tabler:download
     - text: Lies die Dokumentation

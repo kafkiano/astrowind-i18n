@@ -10,7 +10,7 @@ hero:
     alt: AstroWind hero image
   actions:
     - text: View on GitHub
-      href: https://github.com/arthelokyo/astrowind
+      href: https://github.com/kafkiano/astrowind-i18n
       variant: primary
       icon: tabler:brand-github
     - text: Learn more
@@ -59,7 +59,7 @@ cta:
   subtitle: Clone the repo, create a templates/home.md, and you are off. The i18n pipeline handles the rest.
   actions:
     - text: Get the template
-      href: https://github.com/arthelokyo/astrowind
+      href: https://github.com/kafkiano/astrowind-i18n
       variant: primary
       icon: tabler:download
     - text: Read the docs
