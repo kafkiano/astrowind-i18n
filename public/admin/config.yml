@@ -3,15 +3,15 @@
 backend:
   name: github
   repo: kafkiano/astrowind-i18n
-  branch: main
+  branch: client/bestvisual
 
 media_folder: src/assets/images
 public_folder: ~/assets/images
 
 collections:
   - name: posts
-    label: Blog Posts
-    label_singular: Post
+    label: Insights
+    label_singular: Insight
     folder: src/data/post/en
     create: true
     extension: md
@@ -59,23 +59,6 @@ collections:
             required: false
 
       - label: Body
-        name: body
-        widget: markdown
-
-  - name: snippets
-    label: Snippets
-    label_singular: Snippet
-    folder: src/data/snippets/en
-    create: true
-    extension: md
-    format: frontmatter
-    fields:
-      - label: Title
-        name: title
-        widget: string
-        required: false
-
-      - label: Content
         name: body
         widget: markdown
 
@@ -147,17 +130,10 @@ collections:
             name: subtitle
             widget: string
             required: false
-          - label: Image
-            name: image
-            widget: object
+          - label: Content
+            name: content
+            widget: text
             required: false
-            fields:
-              - label: Source
-                name: src
-                widget: image
-              - label: Alt text
-                name: alt
-                widget: string
           - label: Actions
             name: actions
             widget: list
@@ -172,17 +148,55 @@ collections:
               - label: Style
                 name: variant
                 widget: select
-                options: ['primary', 'secondary', 'outline']
+                options: ['primary', 'secondary', 'tertiary', 'link']
                 default: primary
                 required: false
               - label: Icon
                 name: icon
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:brand-github'
+                hint: 'tabler icon name, e.g. tabler:phone'
 
-      - label: Features
-        name: features
+      - label: Services Intro
+        name: servicesIntro
+        widget: object
+        required: false
+        fields:
+          - label: Tagline
+            name: tagline
+            widget: string
+            required: false
+          - label: Title
+            name: title
+            widget: string
+          - label: Subtitle
+            name: subtitle
+            widget: string
+            required: false
+
+      - label: Services
+        name: services
+        widget: object
+        required: false
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Description
+                name: description
+                widget: text
+              - label: Icon
+                name: icon
+                widget: string
+                required: false
+                hint: 'tabler icon name, e.g. tabler:building-estate'
+
+      - label: How We Work
+        name: howWeWork
         widget: object
         required: false
         fields:
@@ -207,23 +221,7 @@ collections:
                 name: icon
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:edit'
-
-      - label: Testimonials
-        name: testimonials
-        widget: list
-        required: false
-        fields:
-          - label: Title
-            name: title
-            widget: string
-            required: false
-          - label: Quote
-            name: testimonial
-            widget: text
-          - label: Author
-            name: name
-            widget: string
+                hint: 'tabler icon name, e.g. tabler:phone-call'
 
       - label: Call to Action
         name: cta
@@ -250,23 +248,11 @@ collections:
               - label: Style
                 name: variant
                 widget: select
-                options: ['primary', 'secondary', 'outline']
+                options: ['primary', 'secondary', 'tertiary', 'link']
                 default: primary
                 required: false
               - label: Icon
                 name: icon
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:download'
-              - label: Open in new tab
-                name: target
-                widget: select
-                options: ['_blank', '_self']
-                default: _self
-                required: false
-
-      - label: Body
-        name: body
-        widget: markdown
-        required: false
-        hint: Optional markdown body. Leave empty if all content is in the sections above.
+                hint: 'tabler icon name, e.g. tabler:mail'

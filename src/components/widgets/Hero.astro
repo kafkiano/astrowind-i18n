@@ -48,7 +48,7 @@ const {
         <div class="py-12 md:py-20">
           <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
             <HeroTextBlock title={title} subtitle={subtitle} tagline={tagline} actions={actions} align="center" />
-            {content && <Fragment set:html={content} />}
+            {content && <div class="mt-6 text-lg text-muted dark:text-slate-400"><Fragment set:html={content} /></div>}
           </div>
           {image && (
             <div class="intersect-once intersect-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
@@ -78,7 +78,7 @@ const {
         <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
           <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
             <HeroTextBlock title={title} subtitle={subtitle} tagline={tagline} actions={actions} align="left" />
-            {content && <Fragment set:html={content} />}
+            {content && <div class="mt-6 text-lg text-muted dark:text-slate-400"><Fragment set:html={content} /></div>}
           </div>
           <div class="basis-1/2">
             {image && (
@@ -108,7 +108,7 @@ const {
         <div class="py-12 md:py-20 pb-8 md:pb-8">
           <div class="text-center max-w-5xl mx-auto">
             <HeroTextBlock title={title} subtitle={subtitle} tagline={tagline} actions={actions} align="center" />
-            {content && <Fragment set:html={content} />}
+            {content && <div class="mt-6 text-lg text-muted dark:text-slate-400"><Fragment set:html={content} /></div>}
           </div>
         </div>
       )

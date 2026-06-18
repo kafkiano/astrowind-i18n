@@ -1,10 +1,8 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features from '~/components/widgets/Features.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
@@ -14,217 +12,272 @@ export const navigation = {
   showIn: 'header',
   order: 1,
 };
+
+const metadata = {
+  title: 'Services — Best Visual',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<Layout metadata={navigation}>
-  <!-- Hero Widget ******************* -->
-
+<Layout metadata={metadata}>
+  <!-- Hero -->
   <Hero
+    variant="text-only"
     tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
+    title="Practical, execution-focused services"
+    subtitle="Every engagement includes clear deliverables, a timeline, and reporting — so you always know what is happening and what comes next."
   />
 
-  <!-- Features2 Widget ************** -->
-
-  <Features
-    variant="cards-vertical"
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
+  <!-- 1. Real Estate -->
+  <Content
+    title="Real Estate Consultancy & Brokerage"
+    subtitle="Buyer, seller, and cross-border support across UAE, Germany, and Spain"
     items={[
       {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
+        title: 'Buyer / investor support',
+        description: 'Requirements definition, shortlisting, viewings, due diligence coordination.',
+        icon: 'tabler:search',
       },
       {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
+        title: 'Seller support',
+        description: 'Positioning, marketing coordination, lead handling workflows.',
+        icon: 'tabler:home-share',
       },
       {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
+        title: 'Purchase / sale brokerage',
+        description: 'Brokerage support and transaction coordination from offer to closing.',
+        icon: 'tabler:cash-banknote',
       },
       {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
+        title: 'Off-plan & secondary market',
+        description: 'Process guidance and coordination for off-plan and secondary market properties.',
+        icon: 'tabler:building-skyscraper',
       },
       {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
+        title: 'Cross-border support',
+        description: 'Coordinated services for clients active in UAE, Germany, and Spain.',
+        icon: 'tabler:world',
       },
     ]}
-  />
+    image={{
+      src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80',
+      alt: 'Modern real estate building',
+    }}
+  >
+    <div slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Typical deliverables</h3>
+      <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-400">
+        <li>Requirements brief + shortlist</li>
+        <li>Viewing plan + comparison matrix</li>
+        <li>Offer / negotiation coordination</li>
+        <li>Transaction checklist and timeline tracking</li>
+      </ul>
+      <p class="mt-6 text-sm text-muted dark:text-slate-500">
+        Where local regulations or mandatory disclosures apply in a specific jurisdiction, services are performed
+        accordingly. For brokerage transactions, we coordinate with licensed real estate brokers in each jurisdiction
+        where required by local law.
+      </p>
+    </div>
+  </Content>
 
-  <!-- Content Widget **************** -->
-
+  <!-- 2. Financing Coordination -->
   <Content
     isReversed
+    title="Mortgage & Financing Coordination"
+    subtitle="Connecting you with the right financing options"
     items={[
       {
-        title: 'High-Quality Designs',
+        title: 'Financing option coordination',
         description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
+          'We work with banks and licensed partners to identify suitable financing options for your situation.',
+        icon: 'tabler:building-bank',
       },
       {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
+        title: 'Documentation support',
+        description: 'Checklist support and application coordination — we help you prepare what the banks need.',
+        icon: 'tabler:file-check',
       },
       {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
-      },
-      {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
+        title: 'Follow-up & status management',
+        description: 'We track your application and keep you informed until you have an outcome.',
+        icon: 'tabler:progress',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
+      src: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      alt: 'Financial documents and calculator',
     }}
   >
     <div slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <div class="p-4 rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30">
+        <p class="text-sm font-semibold text-amber-800 dark:text-amber-300 mb-1">Important disclaimer</p>
+        <p class="text-sm text-amber-700 dark:text-amber-400">
+          Best Visual provides financing coordination and does not issue loans. Financing is offered by licensed banks
+          and financial institutions. Best Visual acts as a coordinator only. All financing products are provided
+          directly by licensed banks and mortgage institutions. We do not receive or handle client funds.
+        </p>
+      </div>
     </div>
   </Content>
 
-  <!-- Content Widget **************** -->
-
+  <!-- 3. Marketing & Content -->
   <Content
-    isAfterContent
+    title="Marketing Management, Content Creation & Corporate Design"
+    subtitle="From strategy to execution — digital marketing, content, and brand identity"
     items={[
       {
-        title: 'Time Savings',
+        title: 'Digital Marketing & Social Media',
         description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
+          'Social media operations: planning, posting, community coordination. Website positioning and SEO fundamentals. Lead generation support with landing pages, forms, tracking, and monthly performance reporting.',
+        icon: 'tabler:ad',
       },
       {
-        title: 'Professional Appearance',
+        title: 'Content Creation',
         description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
+          'Content coordination: briefs, scripts, creative direction, publishing workflow. Visual content production: photography, video, graphics. Copywriting for web, social media, and marketing materials.',
+        icon: 'tabler:photo-edit',
       },
       {
-        title: 'Cost-Efficiency',
+        title: 'Corporate Design',
         description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
+          'Visual identity: logos, color palettes, typography. Brand materials: business cards, corporate stationery. Poster and promotional material design. Corporate presentations, pitch decks, and brand guidelines.',
+        icon: 'tabler:paint',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
+      src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      alt: 'Marketing team collaboration',
     }}
   >
     <div slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Typical deliverables</h3>
+      <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-400">
+        <li>30-day content plan</li>
+        <li>Weekly posting schedule + visual assets</li>
+        <li>Poster designs and promotional materials</li>
+        <li>Corporate identity manual</li>
+        <li>SEO page plan + keyword clusters</li>
+        <li>Monthly report + action plan</li>
+      </ul>
     </div>
   </Content>
 
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
+  <!-- 4. Project Management -->
+  <Content
+    isReversed
+    title="Project Management"
+    subtitle="Structure, reporting, and delivery control for complex initiatives"
+    items={[
       {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
-        },
+        title: 'Scope & planning',
+        description: 'Scope definition, planning, and milestone management with clear accountability.',
+        icon: 'tabler:chart-arrows',
       },
       {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
-        },
+        title: 'Stakeholder coordination',
+        description: 'Meeting cadence, stakeholder alignment, and communication across teams and borders.',
+        icon: 'tabler:users-group',
       },
       {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
-        },
+        title: 'Risk & issue tracking',
+        description: 'RAID-style discipline: risks, assumptions, issues, and dependencies tracked and actioned.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Vendor coordination',
+        description: 'Vendor follow-up and coordination to keep external dependencies on track.',
+        icon: 'tabler:truck-delivery',
+      },
+      {
+        title: 'Weekly executive reporting',
+        description: 'Clear reporting packs showing progress, next steps, and decisions needed.',
+        icon: 'tabler:report',
       },
     ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/arthelokyo/astrowind',
-      icon: 'tabler:chevron-right',
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      alt: 'Project planning session',
     }}
-  />
+  >
+    <div slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Use cases</h3>
+      <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-400">
+        <li>Real estate delivery and coordination projects</li>
+        <li>Corporate initiatives with multiple stakeholders</li>
+        <li>Marketing and operational projects requiring structure and timelines</li>
+        <li>Product launches and campaigns</li>
+        <li>Rebranding and transformation projects</li>
+      </ul>
+    </div>
+  </Content>
 
-  <!-- CallToAction Widget *********** -->
+  <!-- 5. Business Setup & Consulting -->
+  <Content
+    title="Business Setup & Business Consulting"
+    subtitle="UAE company formation and strategic advisory"
+    items={[
+      {
+        title: 'Company formation coordination',
+        description:
+          'Free Zone, Mainland, and Offshore setup coordination. Requirements checklist, timeline planning, and document preparation support.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Authority & provider coordination',
+        description:
+          'Coordination with relevant authorities and licensed providers. Support steps for banking via authorized partners.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Visa & residency coordination',
+        description: 'Business visa and residency permit coordination through licensed PRO service providers.',
+        icon: 'tabler:id-badge',
+      },
+      {
+        title: 'Strategic business consulting',
+        description:
+          'UAE market entry strategy, business structure evaluation (Free Zone vs Mainland vs Offshore), operational planning, financial projections, due diligence, and business plan development.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      alt: 'Dubai skyline',
+    }}
+  >
+    <div slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Typical deliverables</h3>
+      <ul class="list-disc list-inside space-y-1 text-muted dark:text-slate-400">
+        <li>Setup options analysis report (Free Zone vs Mainland)</li>
+        <li>Detailed company formation timeline</li>
+        <li>Required documentation checklist</li>
+        <li>Business plan for bank / investor presentations</li>
+        <li>Market analysis and entry strategy</li>
+        <li>Financial projection and cost analysis</li>
+        <li>Expansion roadmap</li>
+      </ul>
+      <div class="mt-6 p-4 rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30">
+        <p class="text-sm font-semibold text-amber-800 dark:text-amber-300 mb-1">Compliance disclaimer</p>
+        <p class="text-sm text-amber-700 dark:text-amber-400">
+          Best Visual provides operational coordination and strategic consulting but does not provide regulated legal or
+          tax advice. Where regulated services are required (legal, accounting, audit), we coordinate with licensed
+          professionals in each jurisdiction.
+        </p>
+      </div>
+    </div>
+  </Content>
 
+  <!-- CTA -->
   <CallToAction
+    title="Ready to start your project?"
+    subtitle="Tell us what you need — we will outline the next steps within 24 business hours."
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Get in touch',
+        href: '/contact',
+        icon: 'tabler:mail',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
   />
 </Layout>

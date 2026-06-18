@@ -1,7 +1,7 @@
 site:
-  name: AstroWind I18n
-  site: 'https://kafkiano.github.io'
-  base: '/astrowind-i18n'
+  name: Best Visual
+  site: 'https://bestvisual.ae'
+  base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: null
@@ -9,41 +9,32 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind I18n
-    template: '%s — AstroWind'
-  description: 'Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.'
+    default: Best Visual | Real Estate, Business Setup & Project Management | UAE · Germany · Spain
+    template: '%s — Best Visual'
+  description: 'Best Visual (RAKEZ, Ras Al Khaimah) provides real estate consultancy & brokerage, marketing management, content creation, corporate design, project management, business consulting and business setup support across the UAE, Germany, and Spain.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind I18n
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+    site_name: Best Visual
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: null
+    site: null
     cardType: summary_large_image
 
 i18n:
   language: en
   textDirection: ltr
-  locales: ['en', 'es', 'fr', 'de']
+  locales: ['en', 'de', 'es']
   defaultLocale: en
   localeNames:
     en: English
-    es: Español
-    fr: Français
     de: Deutsch
-    # Add more as needed
+    es: Español
   ai:
+    provider: 'deepl'
     geminiApiKey: null
-    provider: 'deepl' # optional
-    # Select model for gemini provider,
-    # gemma-4-26b-a4b-it, gemini-2.0-flash-lite, etc.
-    # model: 'gemma-4-26b-a4b-it'
 
 apps:
   blog:
@@ -52,53 +43,54 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%'
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: 'insights'
       robots:
         index: true
 
     category:
       isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      pathname: 'category'
       robots:
         index: true
 
     tag:
       isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      pathname: 'tag'
       robots:
         index: false
 
     isRelatedPostsEnabled: true
-    relatedPostsCount: 4
+    relatedPostsCount: 3
 
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: null
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'system'
 
 navigation:
   actions:
-    - text: 'Download'
-      href: 'https://github.com/kafkiano/astrowind-i18n'
-      target: '_blank'
+    - text: 'Speak with us'
+      href: '/contact'
+      icon: 'tabler:phone'
+      variant: 'primary'
 
   footer:
     secondaryLinks:
-      - text: 'Terms'
+      - text: 'Terms of Service'
         page: 'terms'
       - text: 'Privacy Policy'
         page: 'privacy'
-    footNote: 'Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/kafkiano/astrowind-i18n">Kafkiano</a> · All rights reserved.'
+    footNote: '©2026 Best Visual FZE · RAKEZ, Ras Al Khaimah, UAE · <a class="text-blue-600 underline dark:text-muted" href="mailto:info@bestvisual.ae">info@bestvisual.ae</a>'
 
   blog:
-    categorySlug: 'documentation'
-    tagSlug: 'astro'
+    categorySlug: 'insights'
+    tagSlug: 'uae'
