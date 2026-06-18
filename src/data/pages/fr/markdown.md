@@ -8,7 +8,7 @@ group: Ressources
 ### Qu'est-ce que Markdown ?
 
 Markdown est un langage de balisage léger qui vous permet de mettre en forme des documents en texte brut.  
-Rédigez des documents pour vos projets GitHub, modifiez le fichier _README_ de votre profil GitHub, etc. Vous trouverez toutes les informations nécessaires ici.
+Rédigez des documents pour vos projets GitHub, modifiez le fichier _README_ de votre profil GitHub, etc. Vous trouverez tout ce qu'il vous faut ici.
 
 Plongeons-nous dans le vif du sujet. ⤵️
 
@@ -16,7 +16,7 @@ Plongeons-nous dans le vif du sujet. ⤵️
 
 1. [Paragraphe](#paragraphe)
 2. [Titres](#titres)
-3. [Mise en évidence](#miseenevidance)
+3. [Mise en évidence](#miseenevidence)
 4. [Citation en bloc](#citationenbloc)
 5. [Images](#images)
 6. [Liens](#links)
@@ -48,7 +48,7 @@ Ceci est un paragraphe.
 
 ## Titres
 
-Il existe 6 niveaux de titres. Le nombre de symboles « # », suivis de texte, indique l’importance du titre.
+Il existe 6 types de titres. Le nombre de symboles « # », suivis de texte, indique l’importance du titre.
 
 ```
 # Titre 1
@@ -82,12 +82,12 @@ En utilisant deux astérisques **ce texte est en gras**.
 Deux traits de soulignement __fonctionnent également__.
 Mettons-le *en italique maintenant*.
 Vous l’avez deviné, _un seul trait de soulignement suffit également_.
-Peut-on combiner **_ces deux techniques_ ?** Bien sûr.
+Peut-on combiner **_ces deux techniques_ ?** Absolument.
 Et si je veux ~~barrer~~ ?
 ```
 
-Avec deux astérisques, **ce texte est en gras**.  
-Deux traits de soulignement **fonctionnent aussi**.  
+En utilisant deux astérisques **ce texte est en gras**.  
+Deux traits de soulignement **fonctionnent également**.  
 Mettons-le _en italique maintenant_.  
 Vous l’avez deviné, _un seul trait de soulignement suffit également_.  
 Peut-on combiner **_les deux_ ?** Absolument.  
@@ -100,10 +100,10 @@ Et si je veux ~~barrer~~ ?
 Vous voulez souligner l’importance du texte ? N’en dites pas plus.
 
 ```
-> Voici une citation en bloc.
+> Voici une citation.
 > Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 >
-> > Et imbriquer les citations ? Aucun problème.
+> > Et imbriqué ? Pas de problème du tout.
 > >
 > > > PS : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_.
 ```
@@ -111,9 +111,9 @@ Vous voulez souligner l’importance du texte ? N’en dites pas plus.
 > Voici une citation en bloc.
 > Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 >
-> > Et imbriquer les citations ? Aucun problème.
+> > Et imbriqué ? Pas de problème du tout.
 > >
-> > > PS : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_. :
+> > > P.S. : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_. :
 
 ---
 
@@ -123,13 +123,13 @@ Le plus simple est de glisser-déposer directement une image depuis votre ordina
 Voici la syntaxe.
 
 ```
-![texte à afficher si l'image ne se charge pas](chemin-automatiquement-généré-vers-le-fichier-lors-du-téléchargement-de-l'image "Texte affiché au survol")
+![texte à afficher si l'image ne se charge pas](chemin-vers-le-fichier-généré-automatiquement-lors-du-téléchargement-de-l'image "Texte affiché au survol")
 
-[logo] : chemin-automatiquement-généré-vers-le-fichier-lors-du-téléchargement-de-l'image "Passez la souris dessus"
+[logo] : chemin-vers-le-fichier-généré-automatiquement-lors-du-téléchargement-de-l'image "Passez la souris dessus"
 ![texte d'erreur][logo]
 ```
 
-![texte si l'image ne se charge pas](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Texte affiché au survol')
+![texte à afficher si l'image ne se charge pas](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Texte affiché au survol')
 
 [logo] : https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png « Passez la souris ici »
 
@@ -142,20 +142,20 @@ Voici la syntaxe.
 Tout comme les images, les liens peuvent être insérés directement ou via une référence. Vous pouvez créer des liens en ligne et des liens de bloc.
 
 ```
+[fiche pratique Markdown] : https://github.com/im-luka/markdown-cheatsheet
+[documentation] : https://github.com/adam-p/markdown-here
+
+[Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)
+[Mon aide-mémoire Markdown - ajoutez-le à vos favoris s'il vous plaît][markdown-cheatsheet]
+Retrouvez d'excellents documents [ici][docs]
+```
+
 [markdown-cheatsheet] : https://github.com/im-luka/markdown-cheatsheet
 [docs] : https://github.com/adam-p/markdown-here
 
-[Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)
-[Mon aide-mémoire Markdown – ajoutez-le à vos favoris s’il vous plaît][markdown-cheatsheet]
-Retrouvez d’excellentes ressources [ici][docs]
-```
-
-[markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs] : https://github.com/adam-p/markdown-here
-
 [Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)  
-[Mon aide-mémoire Markdown - ajoutez-le à vos favoris si vous l'appréciez][markdown-cheatsheet]  
-Retrouvez d’excellentes ressources [ici][docs]
+[Mon aide-mémoire Markdown – ajoutez-le à vos favoris s'il vous plaît][markdown-cheatsheet]  
+Retrouvez d'excellents documents [ici][docs]
 
 ---
 
@@ -164,10 +164,10 @@ Retrouvez d’excellentes ressources [ici][docs]
 Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets. Vous pouvez également définir le langage de programmation utilisé dans votre extrait. Tout cela en utilisant des guillemets inversés.
 
 ````
-    J’ai créé un fichier `.env` à la racine.
-    Des backticks à l’intérieur d’autres backticks ? `` `Pas de problème.` ``
+    J'ai créé un fichier `.env` à la racine.
+    Des guillemets inversés à l'intérieur d'autres guillemets inversés ? `` `Pas de problème.` ``
 
- ```
+    ```
     {
  learning: "Markdown",
  showing: "extrait de code en bloc"
@@ -180,8 +180,8 @@ Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets
     ```
 ````
 
-J'ai créé un fichier `.env` à la racine.
-Des backticks à l'intérieur d'autres backticks ? `` `Pas de problème.` ``
+J’ai créé un fichier `.env` à la racine.
+Des guillemets inversés à l’intérieur d’autres guillemets inversés ? `` `Pas de problème.` ``
 
 ```
 {
@@ -191,8 +191,8 @@ Des backticks à l'intérieur d'autres backticks ? `` `Pas de problème.` ``
 ```
 
 ```js
-const x = 'Extrait de code en bloc en JS' ;
-console.log(x) ;
+const x = 'Extrait de code en bloc en JS';
+console.log(x);
 ```
 
 ---
@@ -237,7 +237,7 @@ Tout comme en HTML, Markdown permet de créer des listes ordonnées et non ordon
 ### Liste mixte
 
 Vous pouvez également mélanger les deux types de listes et créer des sous-listes.  
-**PS.** Essayez de ne pas créer de listes de plus de deux niveaux de profondeur. C'est la meilleure pratique.
+**PS.** Évitez de créer des listes comportant plus de deux niveaux. C'est la meilleure pratique.
 
 ```
 1. Apprendre les bases
@@ -306,30 +306,30 @@ Suivi des tâches terminées et de celles qui restent à faire.
 Vous souhaitez ajouter une note à la fin du fichier ? Utilisez la note de bas de page !
 
 ```
-#### Je travaille sur un nouveau projet. [^1]
-[^1] : La pile technologique est : React, TypeScript, Tailwind CSS
-
-Le projet porte sur la musique et les films.
-
-##### J'espère qu'il vous plaira. [^voir]
-[^voir] : Chargement en cours.... ⌛️
-```
-
-#### Je travaille sur un nouveau projet. [^1]
-
+#### Je travaille actuellement sur un nouveau projet. [^1]
 [^1] : La pile technologique est la suivante : React, TypeScript, Tailwind CSS
 
 Le projet porte sur la musique et les films.
 
 ##### J'espère qu'il vous plaira. [^voir]
+[^voir] : Chargement en cours... ⌛️
+```
 
-[^voir] : Chargement... ⌛️
+#### Je travaille sur un nouveau projet. [^1]
+
+[^1] : La pile technologique est : React, TypeScript, Tailwind CSS
+
+Le projet porte sur la musique et les films.
+
+##### J'espère qu'il vous plaira. [^voir]
+
+[^voir] : Chargement en cours... ⌛️
 
 ---
 
 ## Aller à la section
 
-Astro (et la plupart des analyseurs Markdown) génère automatiquement des identifiants pour vos titres. Vous n’avez généralement pas besoin de créer manuellement des balises `<a name="...">`.
+Astro (et la plupart des analyseurs Markdown) génère automatiquement des identifiants pour vos en-têtes. Vous n’avez généralement pas besoin de créer manuellement des balises `<a name="...">`.
 
 ---
 
@@ -347,7 +347,7 @@ Deuxième ligne
 
 -----
 
-Troisième ligne
+Troisième
 
 _________
 ```
@@ -356,11 +356,11 @@ Première ligne horizontale
 
 ---
 
-Deuxième ligne
+Deuxième
 
 ---
 
-Troisième ligne
+Troisième
 
 ---
 
@@ -368,7 +368,7 @@ Troisième ligne
 
 ## HTML
 
-Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera correctement, mais vous pouvez parfois rencontrer des différences auxquelles vous n’êtes pas habitué lorsque vous travaillez avec du HTML standard. L’utilisation de CSS ne fonctionnera pas.
+Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera correctement, mais vous pouvez parfois rencontrer des différences auxquelles vous n’êtes pas habitué lorsque vous travaillez avec du HTML standard. L’utilisation du CSS ne fonctionnera pas.
 
 ```
 <h1>Ceci est un titre</h1>
@@ -376,7 +376,7 @@ Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. L
 
 <hr />
 
-<img src="chemin-généré-automatiquement-vers-le-fichier-lorsque-vous-téléchargez-l'image" width="200">
+<img src="chemin-vers-le-fichier-généré-automatiquement-lors-du-téléchargement-de-l'image" width="200">
 <a href="https://github.com/im-luka">Suivez-moi sur GitHub</a>
 
 <br />
@@ -424,14 +424,14 @@ Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. L
 mindmap
   root((Test Intelligence Hub))
     Acquisition de données
- Intégration d’API
+      Intégration d’API
  Automatisation du navigateur
  Flux RSS
-      Planification et orchestration
+ Planification et orchestration
     Traitement des données
  Stockage des données structurées
  Traitement des données non structurées
- Intégration LLM
+ Intégration de modèles de langage (LLM)
  Correspondance et notation
     Interface utilisateur
  Tableau de bord et visualisation
@@ -448,7 +448,7 @@ mindmap
 
 ```mermaid
 flowchart LR
-    A[Sources de données] --> B[Couche d’ingestion]
+    A[Sources de données] --> B[Couche d'ingestion]
     B --> C[Couche de traitement]
     C --> D[Couche de stockage]
     D --> E[Interface utilisateur]

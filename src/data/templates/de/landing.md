@@ -32,14 +32,14 @@ features:
       description: Frontmatter unterstützt tief verschachtelte Objekte und Arrays. Das Übersetzungssystem durchläuft jeden String-Wert – ohne Einschränkungen durch „Flat-Field“-Strukturen.
       icon: tabler:json
     - title: Eine Filiale pro Kunde
-      description: Jeder Kunde erhält einen eigenen Zweig. Passen Sie Konfiguration, Branding und Inhalte an, ohne in die Interna der Widgets oder das Basisthema einzugreifen.
+      description: Jeder Kunde erhält einen eigenen Zweig. Passen Sie Konfiguration, Branding und Inhalte an, ohne in die Interna der Widgets oder das Basis-Theme einzugreifen.
       icon: tabler:git-branch
     - title: Keine Codeänderungen
       description: Kunden bearbeiten ausschließlich Markdown-Inhalte und Bilder. Die .astro-Vorlage liest die Frontmatter-Daten aus und ordnet sie den Widgets zu. Kein HTML, kein JavaScript.
       icon: tabler:code-off
 testimonials:
   - title: Saubere Architektur
-    testimonial: Die Trennung von Inhalt und Darstellung ist die richtige Entscheidung. Dank dieses Musters lassen sich Client-Websites kinderleicht erstellen und pflegen.
+    testimonial: Die Trennung von Inhalt und Darstellung ist die richtige Entscheidung. Dank dieses Musters lassen sich Client-Websites ganz einfach erstellen und pflegen.
     name: Lead Developer
   - title: CMS-kompatibel
     testimonial: Kunden können ihre eigenen Landingpages bearbeiten, ohne auch nur eine Zeile Code zu schreiben. Genau das, was unsere Agentur gebraucht hat.

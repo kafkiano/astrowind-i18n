@@ -13,7 +13,7 @@ Wir verwenden Ihre personenbezogenen Daten, um den Dienst bereitzustellen und zu
 
 ### Auslegung
 
-Begriffe, deren Anfangsbuchstabe großgeschrieben ist, haben die unter den folgenden Bedingungen definierten Bedeutungen. Die folgenden Definitionen haben dieselbe Bedeutung, unabhängig davon, ob sie im Singular oder im Plural verwendet werden.
+Begriffe, deren erster Buchstabe großgeschrieben ist, haben die unter den folgenden Bedingungen definierten Bedeutungen. Die folgenden Definitionen haben dieselbe Bedeutung, unabhängig davon, ob sie im Singular oder im Plural verwendet werden.
 
 ### Definitionen
 
@@ -27,11 +27,11 @@ Für die Zwecke dieser Datenschutzerklärung gilt Folgendes:
 - **Personenbezogene Daten** sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.
 - **Dienst** bezeichnet die Website.
 - **Dienstleister** bezeichnet jede natürliche oder juristische Person, die die Daten im Auftrag des Unternehmens verarbeitet. Dies bezieht sich auf Drittunternehmen oder Einzelpersonen, die vom Unternehmen beauftragt wurden, um den Dienst zu ermöglichen, den Dienst im Auftrag des Unternehmens bereitzustellen, mit dem Dienst verbundene Dienstleistungen zu erbringen oder das Unternehmen bei der Analyse der Nutzung des Dienstes zu unterstützen.
-- **Nutzungsdaten** sind automatisch erfasste Daten, die entweder durch die Nutzung des Dienstes oder durch die Infrastruktur des Dienstes selbst generiert werden (beispielsweise die Dauer eines Seitenbesuchs).
+- **Nutzungsdaten** sind Daten, die automatisch erfasst werden und entweder durch die Nutzung des Dienstes oder aus der Infrastruktur des Dienstes selbst generiert werden (beispielsweise die Dauer eines Seitenbesuchs).
 - **Website** bezeichnet AstroWind, erreichbar unter [https://astrowind.vercel.app](https://astrowind.vercel.app)
 - **Sie** bezeichnet die Person, die auf den Dienst zugreift oder diesen nutzt, oder das Unternehmen bzw. die sonstige juristische Person, in deren Auftrag diese Person auf den Dienst zugreift oder diesen nutzt, je nach Anwendbarkeit.
 
-## Erhebung und Nutzung Ihrer personenbezogenen Daten
+## Erhebung und Verwendung Ihrer personenbezogenen Daten
 
 ### Arten der erhobenen Daten
 
@@ -56,7 +56,7 @@ Wir erfassen möglicherweise auch Informationen, die Ihr Browser übermittelt, w
 Wir verwenden Cookies und ähnliche Tracking-Technologien, um die Aktivitäten auf unserem Dienst zu verfolgen und bestimmte Informationen zu speichern. Zu den verwendeten Tracking-Technologien gehören Beacons, Tags und Skripte, um Informationen zu erfassen und zu verfolgen sowie unseren Dienst zu verbessern und zu analysieren. Zu den von uns verwendeten Technologien können gehören:
 
 - **Cookies oder Browser-Cookies.** Ein Cookie ist eine kleine Datei, die auf Ihrem Gerät abgelegt wird. Sie können Ihren Browser so einstellen, dass er alle Cookies ablehnt oder anzeigt, wenn ein Cookie gesendet wird. Wenn Sie jedoch keine Cookies akzeptieren, können Sie möglicherweise einige Teile unseres Dienstes nicht nutzen. Sofern Sie Ihre Browsereinstellungen nicht so angepasst haben, dass Cookies abgelehnt werden, kann unser Dienst Cookies verwenden.
-- **Web-Beacons.** Bestimmte Bereiche unseres Dienstes und unserer E-Mails können kleine elektronische Dateien enthalten, die als Web-Beacons (auch als Clear-GIFs, Pixel-Tags und Ein-Pixel-GIFs bezeichnet) bekannt sind und es dem Unternehmen beispielsweise ermöglichen, Nutzer zu zählen, die diese Seiten besucht oder eine E-Mail geöffnet haben, sowie weitere damit verbundene Website-Statistiken zu erstellen (beispielsweise zur Erfassung der Beliebtheit eines bestimmten Bereichs und zur Überprüfung der System- und Serverintegrität).
+- **Web-Beacons.** Bestimmte Bereiche unseres Dienstes und unserer E-Mails können kleine elektronische Dateien enthalten, die als Web-Beacons (auch als Clear-GIFs, Pixel-Tags und Ein-Pixel-GIFs bezeichnet) bekannt sind und es dem Unternehmen beispielsweise ermöglichen, Nutzer zu zählen, die diese Seiten besucht oder eine E-Mail geöffnet haben, sowie andere damit verbundene Website-Statistiken zu erstellen (beispielsweise zur Erfassung der Beliebtheit eines bestimmten Bereichs und zur Überprüfung der System- und Serverintegrität).
 
 Cookies können „dauerhafte“ oder „Sitzungs-Cookies“ sein. Dauerhafte Cookies verbleiben auf Ihrem PC oder Mobilgerät, wenn Sie offline gehen, während Sitzungs-Cookies gelöscht werden, sobald Sie Ihren Webbrowser schließen.
 
@@ -93,18 +93,18 @@ Weitere Informationen zu den von uns verwendeten Cookies und Ihren Wahlmöglichk
 Das Unternehmen kann personenbezogene Daten für folgende Zwecke verwenden:
 
 - **Zur Bereitstellung und Aufrechterhaltung unseres Dienstes**, einschließlich der Überwachung der Nutzung unseres Dienstes.
-- **Zur Verwaltung Ihres Kontos:** zur Verwaltung Ihrer Registrierung als Nutzer des Dienstes. Die von Ihnen bereitgestellten personenbezogenen Daten ermöglichen Ihnen den Zugriff auf verschiedene Funktionen des Dienstes, die Ihnen als registrierter Nutzer zur Verfügung stehen.
+- **Zur Verwaltung Ihres Kontos:** zur Verwaltung Ihrer Registrierung als Nutzer des Dienstes. Die von Ihnen bereitgestellten personenbezogenen Daten ermöglichen Ihnen den Zugriff auf verschiedene Funktionen des Dienstes, die Ihnen als registriertem Nutzer zur Verfügung stehen.
 - **Zur Erfüllung eines Vertrags:** zur Ausarbeitung, Einhaltung und Durchführung des Kaufvertrags für die von Ihnen erworbenen Produkte, Artikel oder Dienstleistungen oder eines sonstigen Vertrags mit uns über den Dienst.
-- **Um Sie zu kontaktieren:** Um Sie per E-Mail, Telefonanruf, SMS oder anderen gleichwertigen Formen der elektronischen Kommunikation zu kontaktieren, wie z. B. Push-Benachrichtigungen einer mobilen App bezüglich Updates oder informativer Mitteilungen im Zusammenhang mit den Funktionen, Produkten oder vertraglich vereinbarten Dienstleistungen, einschließlich Sicherheitsupdates, sofern dies für deren Umsetzung erforderlich oder angemessen ist.
+- **Um Sie zu kontaktieren:** Um Sie per E-Mail, Telefonanruf, SMS oder anderer gleichwertiger Formen der elektronischen Kommunikation zu kontaktieren, wie z. B. Push-Benachrichtigungen einer mobilen App bezüglich Updates oder informativer Mitteilungen im Zusammenhang mit den Funktionen, Produkten oder vertraglich vereinbarten Dienstleistungen, einschließlich Sicherheitsupdates, sofern dies für deren Umsetzung erforderlich oder angemessen ist.
 - **Um Ihnen** Neuigkeiten, Sonderangebote und allgemeine Informationen über andere Waren, Dienstleistungen und Veranstaltungen zukommen zu lassen, die wir anbieten und die denen ähneln, die Sie bereits erworben oder angefragt haben, es sei denn, Sie haben sich gegen den Erhalt solcher Informationen entschieden.
-- **Zur Bearbeitung Ihrer Anfragen:** Zur Bearbeitung und Abwicklung Ihrer an uns gerichteten Anfragen.
+- **Zur Bearbeitung Ihrer Anfragen:** Zur Bearbeitung und Abwicklung Ihrer Anfragen an uns.
 - **Für Unternehmensübertragungen:** Wir können Ihre Daten verwenden, um eine Fusion, Veräußerung, Umstrukturierung, Reorganisation, Auflösung oder einen sonstigen Verkauf oder eine Übertragung eines Teils oder aller unserer Vermögenswerte zu bewerten oder durchzuführen, sei es im Rahmen des laufenden Geschäftsbetriebs oder im Rahmen eines Insolvenz-, Liquidations- oder ähnlichen Verfahrens, bei dem die von uns über die Nutzer unseres Dienstes gespeicherten personenbezogenen Daten zu den übertragenen Vermögenswerten gehören.
 - **Für sonstige Zwecke**: Wir können Ihre Daten für andere Zwecke verwenden, beispielsweise zur Datenanalyse, zur Ermittlung von Nutzungstrends, zur Bestimmung der Wirksamkeit unserer Werbekampagnen sowie zur Bewertung und Verbesserung unseres Dienstes, unserer Produkte, Dienstleistungen, unseres Marketings und Ihrer Nutzererfahrung.
 
 Wir können Ihre personenbezogenen Daten in den folgenden Situationen weitergeben:
 
 - **An Dienstleister:** Wir können Ihre personenbezogenen Daten an Dienstleister weitergeben, um die Nutzung unseres Dienstes zu überwachen und zu analysieren sowie um mit Ihnen in Kontakt zu treten.
-- **Im Rahmen von Unternehmensübertragungen:** Wir können Ihre personenbezogenen Daten im Zusammenhang mit oder während Verhandlungen über eine Fusion, den Verkauf von Unternehmensvermögen, eine Finanzierung oder die Übernahme unseres gesamten Unternehmens oder eines Teils davon durch ein anderes Unternehmen weitergeben oder übertragen.
+- **Im Rahmen von Unternehmensübertragungen:** Wir können Ihre personenbezogenen Daten im Zusammenhang mit oder während Verhandlungen über eine Fusion, den Verkauf von Unternehmensvermögen, eine Finanzierung oder die Übernahme unseres gesamten Geschäfts oder eines Teils davon durch ein anderes Unternehmen weitergeben oder übertragen.
 - **An verbundene Unternehmen:** Wir können Ihre Daten an unsere verbundenen Unternehmen weitergeben; in diesem Fall verpflichten wir diese verbundenen Unternehmen, diese Datenschutzerklärung einzuhalten. Zu den verbundenen Unternehmen zählen unsere Muttergesellschaft sowie alle anderen Tochtergesellschaften, Joint-Venture-Partner oder sonstige Unternehmen, die wir kontrollieren oder die unter gemeinsamer Kontrolle mit uns stehen.
 - **An Geschäftspartner:** Wir können Ihre Daten an unsere Geschäftspartner weitergeben, um Ihnen bestimmte Produkte, Dienstleistungen oder Werbeaktionen anzubieten.
 - **An andere Nutzer:** Wenn Sie personenbezogene Daten weitergeben oder anderweitig in öffentlichen Bereichen mit anderen Nutzern interagieren, können diese Informationen von allen Nutzern eingesehen und öffentlich verbreitet werden.
@@ -118,9 +118,9 @@ Das Unternehmen speichert zudem Nutzungsdaten für interne Analysezwecke. Nutzun
 
 ## Übermittlung Ihrer personenbezogenen Daten
 
-Ihre Daten, einschließlich personenbezogener Daten, werden in den Betriebsstätten des Unternehmens sowie an allen anderen Orten verarbeitet, an denen die an der Verarbeitung beteiligten Parteien ansässig sind. Das bedeutet, dass diese Daten auf Computer außerhalb Ihres Bundeslandes, Ihrer Provinz, Ihres Landes oder einer anderen staatlichen Gerichtsbarkeit übertragen und dort gespeichert werden können, wo die Datenschutzgesetze von denen Ihrer Gerichtsbarkeit abweichen können.
+Ihre Daten, einschließlich personenbezogener Daten, werden in den Betriebsstätten des Unternehmens sowie an allen anderen Orten verarbeitet, an denen die an der Verarbeitung beteiligten Parteien ansässig sind. Das bedeutet, dass diese Daten auf Computer außerhalb Ihres Bundesstaates, Ihrer Provinz, Ihres Landes oder einer anderen staatlichen Gerichtsbarkeit übertragen und dort gespeichert werden können, wo die Datenschutzgesetze von denen Ihrer Gerichtsbarkeit abweichen können.
 
-Ihre Zustimmung zu dieser Datenschutzerklärung und die anschließende Übermittlung solcher Informationen gelten als Ihre Einwilligung zu dieser Übermittlung.
+Ihre Zustimmung zu dieser Datenschutzerklärung und die anschließende Übermittlung solcher Informationen stellen Ihre Einwilligung zu dieser Übermittlung dar.
 
 Das Unternehmen wird alle angemessenen Maßnahmen ergreifen, um sicherzustellen, dass Ihre Daten sicher und in Übereinstimmung mit dieser Datenschutzerklärung behandelt werden, und es erfolgt keine Übermittlung Ihrer personenbezogenen Daten an eine Organisation oder in ein Land, es sei denn, es bestehen angemessene Kontrollmechanismen, einschließlich der Sicherheit Ihrer Daten und anderer personenbezogener Informationen.
 
@@ -128,7 +128,7 @@ Das Unternehmen wird alle angemessenen Maßnahmen ergreifen, um sicherzustellen,
 
 Sie haben das Recht, die von uns über Sie erhobenen personenbezogenen Daten zu löschen oder zu verlangen, dass wir Sie bei deren Löschung unterstützen.
 
-Unser Dienst bietet Ihnen möglicherweise die Möglichkeit, bestimmte Informationen über Sie direkt innerhalb des Dienstes zu löschen.
+Unser Dienst bietet Ihnen möglicherweise die Möglichkeit, bestimmte Informationen über Sie innerhalb des Dienstes zu löschen.
 
 Sie können Ihre Daten jederzeit aktualisieren, ändern oder löschen, indem Sie sich bei Ihrem Konto anmelden (sofern Sie eines haben) und den Bereich „Kontoeinstellungen“ aufrufen, in dem Sie Ihre personenbezogenen Daten verwalten können. Sie können sich auch an uns wenden, um Zugriff auf die von Ihnen an uns übermittelten personenbezogenen Daten zu beantragen oder deren Berichtigung bzw. Löschung zu verlangen.
 
@@ -146,17 +146,17 @@ Unter bestimmten Umständen kann das Unternehmen verpflichtet sein, Ihre persone
 
 #### Sonstige gesetzliche Anforderungen
 
-Das Unternehmen kann Ihre personenbezogenen Daten in der gutgläubigen Annahme offenlegen, dass eine solche Maßnahme erforderlich ist, um:
+Das Unternehmen kann Ihre personenbezogenen Daten in der gutgläubigen Überzeugung offenlegen, dass eine solche Maßnahme erforderlich ist, um:
 
 - einer gesetzlichen Verpflichtung nachzukommen
 - die Rechte oder das Eigentum des Unternehmens zu schützen und zu verteidigen
-- mögliche Rechtsverstöße im Zusammenhang mit dem Dienst zu verhindern oder zu untersuchen
+- mögliches Fehlverhalten im Zusammenhang mit dem Dienst zu verhindern oder zu untersuchen
 - die persönliche Sicherheit der Nutzer des Dienstes oder der Öffentlichkeit zu schützen
 - sich vor rechtlicher Haftung zu schützen
 
 ## Sicherheit Ihrer personenbezogenen Daten
 
-Die Sicherheit Ihrer personenbezogenen Daten ist uns wichtig, doch bitte beachten Sie, dass keine Methode der Übertragung über das Internet und keine Methode der elektronischen Speicherung zu 100 % sicher ist. Obwohl wir uns bemühen, Ihre personenbezogenen Daten mit wirtschaftlich vertretbaren Mitteln zu schützen, können wir deren absolute Sicherheit nicht garantieren.
+Die Sicherheit Ihrer personenbezogenen Daten ist uns wichtig, doch bedenken Sie bitte, dass keine Methode der Übertragung über das Internet und keine Methode der elektronischen Speicherung zu 100 % sicher ist. Obwohl wir uns bemühen, Ihre personenbezogenen Daten mit wirtschaftlich vertretbaren Mitteln zu schützen, können wir deren absolute Sicherheit nicht garantieren.
 
 ## Datenschutz für Kinder
 
@@ -176,7 +176,7 @@ Wir können unsere Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir wer
 
 Wir werden Sie per E-Mail und/oder durch einen gut sichtbaren Hinweis in unserem Dienst informieren, bevor die Änderung in Kraft tritt, und das Datum unter „Zuletzt aktualisiert“ oben in dieser Datenschutzerklärung aktualisieren.
 
-Wir empfehlen Ihnen, diese Datenschutzerklärung regelmäßig auf etwaige Änderungen zu überprüfen. Änderungen an dieser Datenschutzerklärung treten in Kraft, sobald sie auf dieser Seite veröffentlicht werden.
+Wir empfehlen Ihnen, diese Datenschutzerklärung regelmäßig auf etwaige Änderungen zu überprüfen. Änderungen an dieser Datenschutzerklärung treten mit ihrer Veröffentlichung auf dieser Seite in Kraft.
 
 ## Kontakt
 

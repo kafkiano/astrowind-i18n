@@ -10,20 +10,20 @@ group: Ressourcen
 Markdown ist eine schlanke Auszeichnungssprache, mit der du reine Textdokumente formatieren kannst.  
 Erstelle Dokumente für deine GitHub-Projekte, bearbeite dein GitHub-Profil, die _README_-Datei usw. Hier findest du alles dazu.
 
-Lass uns gleich loslegen. ⤵️
+Lassen Sie uns loslegen. ⤵️
 
 #### Inhaltsverzeichnis
 
 1. [Absatz](#paragraph)
 2. [Überschriften](#headings)
 3. [Hervorhebung](#emphasis)
-4. [Zitat](#blockquote)
+4. [Blockzitat](#blockquote)
 5. [Bilder](#images)
 6. [Links](#links)
 7. [Code](#code)
 8. [Listen](#lists)
    - [Nummerierte Liste](#orderedlist)
-   - [Unnummerierte Liste](#unorderedlist)
+   - [Ungeordnete Liste](#unorderedlist)
    - [Gemischte Liste](#mixedlist)
 9. [Tabelle](#table)
 10. [Aufgabenliste](#tasklist)
@@ -75,13 +75,13 @@ Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von T
 
 ## Hervorhebung
 
-Das Formatieren von Text ist ganz einfach und praktisch. Du kannst deinen Text fett, kursiv und durchgestrichen darstellen.
+Das Formatieren von Text ist ganz einfach. Du kannst deinen Text fett, kursiv oder durchgestrichen darstellen.
 
 ```
 Mit zwei Sternchen **ist dieser Text fett**.
 Zwei Unterstriche __funktionieren ebenfalls__.
-Lass uns den Text jetzt *kursiv* machen.
-Du hast es erraten: _Ein Unterstrich reicht ebenfalls aus_.
+Machen wir ihn jetzt *kursiv*.
+Du hast es erraten: _ein Unterstrich reicht auch_.
 Können wir **_beides_** kombinieren? Auf jeden Fall.
 Was ist, wenn ich ~~durchstreichen~~ möchte?
 ```
@@ -113,13 +113,13 @@ Möchtest du die Wichtigkeit des Textes hervorheben? Mehr musst du nicht sagen.
 >
 > > Und verschachtelt? Überhaupt kein Problem.
 > >
-> > > PS: Du kannst deinen Text **nach Belieben gestalten**. :
+> > > PS: Du kannst deinen Text **nach Belieben** gestalten. :
 
 ---
 
 ## Bilder
 
-Am besten ziehst du das Bild einfach per Drag & Drop direkt von deinem Computer hinein. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
+Am besten ziehst du das Bild einfach per Drag & Drop direkt von deinem Computer hierher. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
 Hier ist die Syntax.
 
 ```
@@ -139,11 +139,11 @@ Hier ist die Syntax.
 
 ## Links
 
-Ähnlich wie Bilder können auch Links direkt oder durch Erstellen eines Verweises eingefügt werden. Du kannst sowohl Inline- als auch Block-Links erstellen.
+Ähnlich wie Bilder können auch Links direkt oder durch Erstellen eines Verweises eingefügt werden. Sie können sowohl Inline- als auch Block-Links erstellen.
 
 ```
 [Markdown-Spickzettel]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
+[Dokumentation]: https://github.com/adam-p/markdown-here
 
 [Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)
 [Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]
@@ -155,19 +155,19 @@ Tolle Dokumentationen findest du [hier][docs]
 
 [Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)  
 [Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]  
-Hier findest du einige tolle Dokumentationen [hier][docs]
+Hier findest du tolle Dokumentationen [hier][docs]
 
 ---
 
 ## Code
 
-Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Du kannst auch die Programmiersprache definieren, die du in deinem Schnipsel verwendest. Alles mithilfe von Backticks.
+Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Du kannst in deinem Schnipsel auch die verwendete Programmiersprache angeben. All dies geschieht mithilfe von Backticks.
 
 ````
-    Ich habe eine `.env`-Datei im Stammverzeichnis erstellt.
+    Ich habe im Stammverzeichnis eine `.env`-Datei erstellt.
     Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 
-    ```
+ ```
     {
  learning: "Markdown",
  showing: "Block-Code-Schnipsel"
@@ -180,7 +180,7 @@ Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. 
     ```
 ````
 
-Ich habe die Datei `.env` im Stammverzeichnis erstellt.
+Ich habe die Datei `.env` im Stammverzeichnis angelegt.
 Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 
 ```
@@ -199,7 +199,7 @@ console.log(x);
 
 ## Listen
 
-Genau wie in HTML ermöglicht Markdown das Erstellen von nummerierten und unnummerierten Listen.
+Genau wie in HTML ermöglicht Markdown das Erstellen sowohl von nummerierten als auch von unnummerierten Listen.
 
 ### Nummerierte Liste
 
@@ -267,7 +267,7 @@ Du kannst auch beide Listen mischen und Unterlisten erstellen.
 
 ## Tabelle
 
-Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das Symbol „|“ zum Trennen von Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
+Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwenden Sie das Symbol „|“ zum Trennen der Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
 
 ```
 | Linksbündig (Standard) | Zentriert | Rechtsbündig |
@@ -382,7 +382,7 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 <br />
 <br />
 
-<p>Ein schneller Hack für <strong><em>die Zentrierung des Bildes</em></strong>?</p>
+<p>Schneller Hack für <strong><em>die Zentrierung von Bildern</em></strong>?</p>
 <p align="center"><img src="automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" /></p>
 
 <details>
@@ -408,9 +408,9 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
-  <summary>Noch ein schneller Hack? 🎭</summary>
-  
-  → Einfach  
+  <summary>Noch ein schneller Trick? 🎭</summary>
+ 
+ → Einfach  
   → Und unkompliziert
 </details>
 
@@ -427,7 +427,7 @@ mindmap
  API-Integration
  Browser-Automatisierung
  RSS-Feeds
-      Planung & Orchestrierung
+ Planung & Orchestrierung
     Datenverarbeitung
  Speicherung strukturierter Daten
  Verarbeitung unstrukturierter Daten
@@ -439,7 +439,7 @@ mindmap
  Konfiguration & Einstellungen
     Infrastruktur
  Überwachung & Protokollierung
-      Fehlerbehandlung
+ Fehlerbehandlung
  Skalierbarkeit
  Kosteneffizienz
 ```

@@ -26,10 +26,10 @@ Aux fins de la présente Politique de confidentialité :
 - **Appareil** désigne tout appareil permettant d’accéder au Service, tel qu’un ordinateur, un téléphone portable ou une tablette numérique.
 - **Données à caractère personnel** désigne toute information relative à une personne physique identifiée ou identifiable.
 - **Service** désigne le site web.
-- **Prestataire de services** désigne toute personne physique ou morale qui traite les données pour le compte de la Société. Il s’agit de sociétés tierces ou de personnes physiques engagées par la Société pour faciliter le Service, fournir le Service pour le compte de la Société, exécuter des services liés au Service ou aider la Société à analyser l’utilisation du Service.
+- **Prestataire de services** désigne toute personne physique ou morale qui traite les données pour le compte de la Société. Il s’agit de sociétés tierces ou de personnes physiques engagées par la Société pour faciliter le Service, pour fournir le Service pour le compte de la Société, pour effectuer des prestations liées au Service ou pour aider la Société à analyser l’utilisation du Service.
 - Les **données d’utilisation** désignent les données collectées automatiquement, qu’elles soient générées par l’utilisation du Service ou par l’infrastructure du Service elle-même (par exemple, la durée de la consultation d’une page).
 - **Site web** désigne AstroWind, accessible depuis [https://astrowind.vercel.app](https://astrowind.vercel.app)
-- **Vous** désigne la personne physique accédant au Service ou l’utilisant, ou la société, ou toute autre entité juridique pour le compte de laquelle cette personne physique accède au Service ou l’utilise, selon le cas.
+- **Vous** désigne la personne physique accédant au Service ou l’utilisant, ou la société, ou toute autre personne morale pour le compte de laquelle cette personne physique accède au Service ou l’utilise, selon le cas.
 
 ## Collecte et utilisation de vos données à caractère personnel
 
@@ -53,10 +53,10 @@ Nous pouvons également collecter les informations que votre navigateur envoie c
 
 #### Technologies de suivi et cookies
 
-Nous utilisons des cookies et des technologies de suivi similaires pour suivre l’activité sur notre Service et stocker certaines informations. Les technologies de suivi utilisées comprennent des balises, des tags et des scripts destinés à collecter et suivre des informations, ainsi qu’à améliorer et analyser notre Service. Les technologies que nous utilisons peuvent inclure :
+Nous utilisons des cookies et des technologies de suivi similaires pour suivre l’activité sur notre Service et stocker certaines informations. Les technologies de suivi utilisées comprennent des balises, des tags et des scripts destinés à collecter et à suivre des informations, ainsi qu’à améliorer et analyser notre Service. Les technologies que nous utilisons peuvent inclure :
 
-- **Cookies ou cookies de navigateur.** Un cookie est un petit fichier placé sur votre appareil. Vous pouvez configurer votre navigateur pour qu’il refuse tous les cookies ou pour qu’il vous avertisse lorsqu’un cookie est envoyé. Toutefois, si vous n’acceptez pas les cookies, vous risquez de ne pas pouvoir utiliser certaines parties de notre Service. À moins que vous n’ayez réglé les paramètres de votre navigateur pour qu’il refuse les cookies, notre Service peut utiliser des cookies.
-- **Balises Web.** Certaines sections de notre Service et de nos e-mails peuvent contenir de petits fichiers électroniques appelés balises Web (également appelées « clear gifs », « pixel tags » et « gifs à pixel unique ») qui permettent à la Société, par exemple, de compter les utilisateurs ayant visité ces pages ou ouvert un e-mail, ainsi que d’obtenir d’autres statistiques liées au site Web (par exemple, enregistrer la popularité d’une certaine section et vérifier l’intégrité du système et du serveur).
+- **Cookies ou cookies de navigateur.** Un cookie est un petit fichier placé sur votre appareil. Vous pouvez configurer votre navigateur pour qu’il refuse tous les cookies ou pour qu’il vous avertisse lorsqu’un cookie est envoyé. Toutefois, si vous n’acceptez pas les cookies, il se peut que vous ne puissiez pas utiliser certaines parties de notre Service. À moins que vous n’ayez configuré votre navigateur pour qu’il refuse les cookies, notre Service peut utiliser des cookies.
+- **Balises web.** Certaines sections de notre Service et de nos e-mails peuvent contenir de petits fichiers électroniques appelés balises Web (également appelées « clear gifs », « pixel tags » et « gifs à pixel unique ») qui permettent à la Société, par exemple, de compter les utilisateurs ayant visité ces pages ou ouvert un e-mail, ainsi que d’établir d’autres statistiques liées au site Web (par exemple, enregistrer la popularité d’une certaine section et vérifier l’intégrité du système et du serveur).
 
 Les cookies peuvent être « persistants » ou « de session ». Les cookies persistants restent sur votre ordinateur personnel ou votre appareil mobile lorsque vous vous déconnectez, tandis que les cookies de session sont supprimés dès que vous fermez votre navigateur web.
 
@@ -92,14 +92,14 @@ Pour plus d’informations sur les cookies que nous utilisons et vos choix en la
 
 La Société peut utiliser vos données à caractère personnel aux fins suivantes :
 
-- **Pour fournir et assurer le bon fonctionnement de notre Service**, y compris pour surveiller l’utilisation de notre Service.
-- **Pour gérer votre compte :** pour gérer votre inscription en tant qu’utilisateur du Service. Les données à caractère personnel que vous fournissez peuvent vous donner accès à différentes fonctionnalités du Service qui vous sont proposées en tant qu’utilisateur inscrit.
+- **Pour fournir et assurer le bon fonctionnement de notre Service**, notamment pour surveiller l’utilisation de notre Service.
+- **Pour gérer votre compte :** pour gérer votre inscription en tant qu’utilisateur du service. Les données à caractère personnel que vous fournissez peuvent vous donner accès à différentes fonctionnalités du service qui vous sont proposées en tant qu’utilisateur inscrit.
 - **Pour l’exécution d’un contrat :** l’élaboration, le respect et l’exécution du contrat d’achat des produits, articles ou services que vous avez achetés ou de tout autre contrat conclu avec nous par l’intermédiaire du Service.
 - **Pour vous contacter :** pour vous contacter par e-mail, par téléphone, par SMS ou par d’autres moyens de communication électronique équivalents, tels que les notifications push d’une application mobile concernant des mises à jour ou des communications informatives relatives aux fonctionnalités, aux produits ou aux services souscrits, y compris les mises à jour de sécurité, lorsque cela est nécessaire ou raisonnable pour leur mise en œuvre.
 - **Pour vous fournir** des actualités, des offres spéciales et des informations générales sur d’autres biens, services et événements que nous proposons et qui sont similaires à ceux que vous avez déjà achetés ou sur lesquels vous vous êtes renseigné, sauf si vous avez choisi de ne pas recevoir ces informations.
 - **Pour traiter vos demandes :** pour répondre à vos demandes et les gérer.
 - **Dans le cadre de transferts d’activité :** Nous pouvons utiliser vos informations pour évaluer ou mener à bien une fusion, une cession, une restructuration, une réorganisation, une dissolution ou toute autre vente ou cession de tout ou partie de nos actifs, que ce soit dans le cadre d’une poursuite d’activité ou d’une procédure de faillite, de liquidation ou de toute autre procédure similaire, dans laquelle les données à caractère personnel que nous détenons concernant les utilisateurs de notre Service font partie des actifs transférés.
-- **À d’autres fins** : Nous pouvons utiliser vos informations à d’autres fins, telles que l’analyse des données, l’identification des tendances d’utilisation, la détermination de l’efficacité de nos campagnes promotionnelles, ainsi que pour évaluer et améliorer notre Service, nos produits, nos services, notre marketing et votre expérience.
+- **À d’autres fins** : Nous pouvons utiliser vos informations à d’autres fins, telles que l’analyse des données, l’identification des tendances d’utilisation, l’évaluation de l’efficacité de nos campagnes promotionnelles, ainsi que pour évaluer et améliorer notre Service, nos produits, nos services, notre marketing et votre expérience.
 
 Nous pouvons partager vos informations personnelles dans les situations suivantes :
 
@@ -134,11 +134,11 @@ Vous pouvez mettre à jour, modifier ou supprimer vos informations à tout momen
 
 Veuillez toutefois noter que nous pouvons être amenés à conserver certaines informations lorsque nous y sommes tenus par une obligation légale ou une base légale.
 
-## Divulgation de vos données personnelles
+## Divulgation de vos données à caractère personnel
 
 ### Transactions commerciales
 
-Si la Société est impliquée dans une fusion, une acquisition ou une cession d’actifs, vos données personnelles peuvent être transférées. Nous vous en informerons avant que vos données personnelles ne soient transférées et ne soient soumises à une autre politique de confidentialité.
+Si la Société est impliquée dans une fusion, une acquisition ou une cession d’actifs, vos données à caractère personnel peuvent être transférées. Nous vous en informerons avant que vos données personnelles ne soient transférées et ne soient soumises à une autre politique de confidentialité.
 
 #### Application de la loi
 
@@ -160,9 +160,9 @@ La sécurité de vos données personnelles est importante pour nous, mais n’ou
 
 ## Confidentialité des enfants
 
-Notre Service ne s’adresse pas aux personnes âgées de moins de 13 ans. Nous ne collectons pas sciemment d’informations permettant d’identifier personnellement des personnes âgées de moins de 13 ans. Si vous êtes un parent ou un tuteur et que vous savez que votre enfant nous a fourni des données personnelles, veuillez nous contacter. Si nous apprenons que nous avons collecté des données personnelles auprès d’une personne âgée de moins de 13 ans sans vérification du consentement parental, nous prendrons les mesures nécessaires pour supprimer ces informations de nos serveurs.
+Notre Service ne s’adresse pas aux personnes âgées de moins de 13 ans. Nous ne collectons pas sciemment d’informations permettant d’identifier personnellement des personnes âgées de moins de 13 ans. Si vous êtes un parent ou un tuteur et que vous savez que votre enfant nous a fourni des données personnelles, veuillez nous contacter. Si nous apprenons que nous avons collecté des données personnelles auprès d’une personne âgée de moins de 13 ans sans avoir vérifié le consentement parental, nous prendrons les mesures nécessaires pour supprimer ces informations de nos serveurs.
 
-Si nous devons nous appuyer sur le consentement comme base légale pour le traitement de vos informations et que votre pays exige le consentement d’un parent, nous pouvons exiger le consentement de votre parent avant de collecter et d’utiliser ces informations.
+Si nous devons nous fonder sur le consentement comme base légale pour le traitement de vos informations et que votre pays exige le consentement d’un parent, nous pouvons exiger le consentement de votre parent avant de collecter et d’utiliser ces informations.
 
 ## Liens vers d’autres sites web
 
@@ -174,7 +174,7 @@ Nous n’avons aucun contrôle sur le contenu, les politiques de confidentialit�
 
 Nous pouvons mettre à jour notre Politique de confidentialité de temps à autre. Nous vous informerons de toute modification en publiant la nouvelle Politique de confidentialité sur cette page.
 
-Nous vous en informerons par e-mail et/ou par une notification bien visible sur notre Service, avant que la modification n’entre en vigueur, et nous mettrons à jour la date de « Dernière mise à jour » en haut de la présente Politique de confidentialité.
+Nous vous en informerons par e-mail et/ou par le biais d’une notification bien visible sur notre Service, avant que la modification n’entre en vigueur, et nous mettrons à jour la date de « Dernière mise à jour » figurant en haut de la présente Politique de confidentialité.
 
 Nous vous recommandons de consulter régulièrement la présente Politique de confidentialité afin de prendre connaissance des éventuelles modifications. Les modifications apportées à la présente Politique de confidentialité prennent effet dès leur publication sur cette page.
 

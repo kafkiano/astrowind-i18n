@@ -3,7 +3,7 @@ title: Demostración de una página de destino basada en plantillas
 hero:
   tagline: Basado en Markdown
   title: Toda esta página se genera a partir de un único archivo Markdown
-  subtitle: Edita el archivo Markdown para modificar todo lo que ves aquí. Añade o elimina secciones y la página se adaptará automáticamente.
+  subtitle: Edita el archivo Markdown para cambiar todo lo que ves aquí. Añade o elimina secciones y la página se adaptará automáticamente.
   image:
     src: ~/assets/images/hero-image.png
     alt: Imagen destacada de AstroWind
@@ -23,7 +23,7 @@ features:
       description: 'Todo el contenido se encuentra en un único archivo Markdown. Edítalo a través del CMS de Sveltia: no es necesario modificar el código. Añade secciones, cambia el texto o sustituye imágenes.'
       icon: tabler:edit
     - title: Traducido automáticamente
-      description: El sistema i18n traduce automáticamente todos los campos de frontmatter anidados mediante DeepL o Gemini. Un solo archivo fuente para todas las configuraciones regionales.
+      description: El sistema i18n traduce automáticamente todos los campos de frontmatter anidados mediante DeepL o Gemini. Un único archivo fuente para todas las configuraciones regionales.
       icon: tabler:language
     - title: Composición de widgets
       description: 'Elige qué widgets aparecen añadiendo o eliminando secciones en el frontmatter. Hero, Destacados, Testimonios, CTA: combínalos como quieras.'
@@ -35,7 +35,7 @@ features:
       description: Cada cliente dispone de su propia rama. Personaliza la configuración, la imagen de marca y el contenido sin modificar el funcionamiento interno de los widgets ni el tema base.
       icon: tabler:git-branch
     - title: Sin cambios en el código
-      description: Los clientes solo editan el código Markdown y las imágenes. La plantilla .astro lee la información preliminar y la asigna a los widgets. Sin HTML ni JavaScript.
+      description: Los clientes solo editan el código Markdown y las imágenes. La plantilla .astro lee el frontmatter y lo asigna a los widgets. Sin HTML, sin JavaScript.
       icon: tabler:code-off
 testimonials:
   - title: Arquitectura limpia

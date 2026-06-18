@@ -19,8 +19,8 @@ Los términos cuya primera letra aparece en mayúscula tienen los significados q
 
 A los efectos de la presente Política de privacidad:
 
-- **Cuenta** se refiere a una cuenta única creada para que usted acceda a nuestro Servicio o a partes del mismo.
-- **Empresa** (denominada «la Empresa», «nosotros», «nos» o «nuestro» en el presente Acuerdo) se refiere a AstroWind LLC, 1 Cupertino, CA 95014.
+- **Cuenta** significa una cuenta única creada para que usted acceda a nuestro Servicio o a partes del mismo.
+- **Empresa** (denominada «la Empresa», «nosotros», «nos» o «nuestra» en el presente Acuerdo) se refiere a AstroWind LLC, 1 Cupertino, CA 95014.
 - **Cookies**: son pequeños archivos que un sitio web almacena en su ordenador, dispositivo móvil o cualquier otro dispositivo y que, entre otros muchos usos, contienen los detalles de su historial de navegación en dicho sitio web.
 - **País** se refiere a: California, Estados Unidos
 - **Dispositivo** significa cualquier dispositivo que pueda acceder al Servicio, como un ordenador, un teléfono móvil o una tableta digital.
@@ -56,7 +56,7 @@ También podemos recopilar información que su navegador envía cada vez que vis
 Utilizamos cookies y tecnologías de seguimiento similares para realizar un seguimiento de la actividad en nuestro Servicio y almacenar determinada información. Las tecnologías de seguimiento utilizadas son balizas, etiquetas y scripts para recopilar y rastrear información, así como para mejorar y analizar nuestro Servicio. Las tecnologías que utilizamos pueden incluir:
 
 - **Cookies o cookies del navegador.** Una cookie es un pequeño archivo que se almacena en su dispositivo. Puede configurar su navegador para que rechace todas las cookies o para que le avise cuando se envíe una. Sin embargo, si no acepta las cookies, es posible que no pueda utilizar algunas partes de nuestro Servicio. A menos que haya ajustado la configuración de su navegador para que rechace las cookies, nuestro Servicio podrá utilizarlas.
-- **Balizas web.** Ciertas secciones de nuestro Servicio y nuestros correos electrónicos pueden contener pequeños archivos electrónicos conocidos como balizas web (también denominadas «gifs transparentes», «etiquetas de píxel» y «gifs de un solo píxel») que permiten a la Empresa, por ejemplo, contar los usuarios que han visitado esas páginas o abierto un correo electrónico, así como obtener otras estadísticas relacionadas con el sitio web (por ejemplo, registrar la popularidad de una sección determinada y verificar la integridad del sistema y del servidor).
+- **Balizas web.** Ciertas secciones de nuestro Servicio y nuestros correos electrónicos pueden contener pequeños archivos electrónicos conocidos como balizas web (también denominadas «gifs transparentes», «etiquetas de píxel» y «gifs de un solo píxel») que permiten a la Empresa, por ejemplo, contabilizar los usuarios que han visitado esas páginas o abierto un correo electrónico, así como obtener otras estadísticas relacionadas con el sitio web (por ejemplo, registrar la popularidad de una sección determinada y verificar la integridad del sistema y del servidor).
 
 Las cookies pueden ser «persistentes» o «de sesión». Las cookies persistentes permanecen en su ordenador personal o dispositivo móvil cuando se desconecta, mientras que las cookies de sesión se eliminan tan pronto como cierra su navegador web.
 
@@ -93,13 +93,13 @@ Para obtener más información sobre las cookies que utilizamos y sus opciones c
 La empresa puede utilizar los datos personales para los siguientes fines:
 
 - **Para prestar y mantener nuestro servicio**, lo que incluye supervisar el uso de nuestro servicio.
-- **Para gestionar su cuenta:** gestionar su registro como usuario del Servicio. Los datos personales que nos facilite le permitirán acceder a las diferentes funcionalidades del Servicio que están a su disposición como usuario registrado.
+- **Para gestionar su cuenta:** gestionar su registro como usuario del servicio. Los datos personales que nos facilite le permitirán acceder a las diferentes funcionalidades del servicio que están a su disposición como usuario registrado.
 - **Para la ejecución de un contrato:** el desarrollo, el cumplimiento y la ejecución del contrato de compra de los productos, artículos o servicios que haya adquirido, o de cualquier otro contrato celebrado con nosotros a través del Servicio.
 - **Para ponernos en contacto con usted:** para comunicarnos con usted por correo electrónico, llamadas telefónicas, SMS u otras formas equivalentes de comunicación electrónica, como notificaciones push de una aplicación móvil relativas a actualizaciones o comunicaciones informativas relacionadas con las funcionalidades, los productos o los servicios contratados, incluidas las actualizaciones de seguridad, cuando sea necesario o razonable para su implementación.
 - **Para proporcionarle** noticias, ofertas especiales e información general sobre otros bienes, servicios y eventos que ofrecemos y que sean similares a los que ya ha adquirido o sobre los que ha solicitado información, a menos que haya optado por no recibir dicha información.
 - **Para gestionar sus solicitudes:** Atender y gestionar las solicitudes que nos envíe.
 - **Para operaciones empresariales:** Podemos utilizar su información para evaluar o llevar a cabo una fusión, desinversión, reestructuración, reorganización, disolución u otra venta o transferencia de algunos o todos nuestros activos, ya sea como empresa en funcionamiento o como parte de un procedimiento de quiebra, liquidación o similar, en el que los datos personales que obran en nuestro poder sobre los usuarios de nuestro Servicio se encuentren entre los activos transferidos.
-- **Para otros fines**: Podemos utilizar su información para otros fines, como el análisis de datos, la identificación de tendencias de uso, la determinación de la eficacia de nuestras campañas promocionales y la evaluación y mejora de nuestro Servicio, nuestros productos, servicios, marketing y su experiencia.
+- **Para otros fines**: Podemos utilizar su información para otros fines, como el análisis de datos, la identificación de tendencias de uso, la determinación de la eficacia de nuestras campañas promocionales y la evaluación y mejora de nuestro Servicio, productos, servicios, marketing y su experiencia.
 
 Podemos compartir su información personal en las siguientes situaciones:
 
@@ -114,7 +114,7 @@ Podemos compartir su información personal en las siguientes situaciones:
 
 La Empresa conservará sus datos personales únicamente durante el tiempo que sea necesario para los fines establecidos en la presente Política de privacidad. Conservaremos y utilizaremos sus datos personales en la medida necesaria para cumplir con nuestras obligaciones legales (por ejemplo, si se nos exige conservar sus datos para cumplir con la legislación aplicable), resolver disputas y hacer cumplir nuestros acuerdos y políticas legales.
 
-La Empresa también conservará los datos de uso con fines de análisis interno. Los datos de uso suelen conservarse durante un periodo de tiempo más breve, salvo cuando dichos datos se utilicen para reforzar la seguridad o mejorar la funcionalidad de nuestro servicio, o cuando tengamos la obligación legal de conservarlos durante periodos de tiempo más largos.
+La Empresa también conservará los datos de uso con fines de análisis interno. Los datos de uso suelen conservarse durante un periodo de tiempo más breve, salvo cuando dichos datos se utilicen para reforzar la seguridad o mejorar la funcionalidad de nuestro servicio, o cuando tengamos la obligación legal de conservarlos durante periodos más largos.
 
 ## Transferencia de sus datos personales
 
@@ -152,7 +152,7 @@ La Empresa podrá divulgar sus datos personales si considera, de buena fe, que d
 - Proteger y defender los derechos o la propiedad de la Empresa
 - Prevenir o investigar posibles irregularidades relacionadas con el Servicio
 - Proteger la seguridad personal de los usuarios del Servicio o del público
-- Proteger contra la responsabilidad legal
+- Protegernos frente a responsabilidades legales
 
 ## Seguridad de sus datos personales
 
@@ -176,7 +176,7 @@ Podemos actualizar nuestra Política de privacidad de vez en cuando. Le notifica
 
 Se lo comunicaremos por correo electrónico y/o mediante un aviso destacado en nuestro Servicio, antes de que el cambio entre en vigor, y actualizaremos la fecha de «Última actualización» que figura en la parte superior de esta Política de privacidad.
 
-Le recomendamos que revise esta Política de privacidad periódicamente para estar al tanto de cualquier cambio. Los cambios en esta Política de privacidad entran en vigor en el momento en que se publican en esta página.
+Le recomendamos que revise esta Política de privacidad periódicamente para estar al tanto de cualquier cambio. Los cambios en esta Política de privacidad entrarán en vigor en el momento en que se publiquen en esta página.
 
 ## Contacte con nosotros
 

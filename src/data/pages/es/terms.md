@@ -15,7 +15,7 @@ Los términos que comienzan con mayúscula tienen los significados que se define
 
 ### Definiciones
 
-A los efectos de los presentes Términos y Condiciones:
+A los efectos de los presentes Términos y condiciones:
 
 - **Afiliado** significa una entidad que controla, es controlada por o está bajo control común con una parte, entendiéndose por «control» la propiedad del 50 % o más de las acciones, participaciones o otros valores que den derecho a voto para la elección de consejeros u otra autoridad de gestión.
 
@@ -27,7 +27,7 @@ A los efectos de los presentes Términos y Condiciones:
 
 - **Servicio** se refiere al sitio web.
 
-- **Términos y condiciones** (también denominados «Términos») se refieren a los presentes Términos y condiciones, que constituyen el acuerdo completo entre usted y la Empresa en relación con el uso del Servicio. El presente acuerdo de Términos y condiciones es una versión de demostración.
+- **Términos y condiciones** (también denominados «Términos») se refieren a estos Términos y condiciones, que constituyen el acuerdo completo entre usted y la Empresa en relación con el uso del Servicio. Este acuerdo de Términos y condiciones es una versión de demostración.
 
 - **Servicio de redes sociales de terceros** se refiere a cualquier servicio o contenido (incluidos datos, información, productos o servicios) proporcionado por un tercero que pueda mostrarse, incluirse o ponerse a disposición a través del Servicio.
 
@@ -51,7 +51,7 @@ Su acceso y uso del Servicio también están condicionados a su aceptación y cu
 
 Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad de la Empresa ni están controlados por ella.
 
-La Empresa no tiene control alguno sobre el contenido, las políticas de privacidad o las prácticas de dichos sitios web o servicios de terceros, ni asume responsabilidad alguna al respecto. Asimismo, usted reconoce y acepta que la Empresa no será responsable, ni directa ni indirectamente, de ningún daño o pérdida causados o supuestamente causados por, o en relación con, el uso o la confianza depositada en dichos contenidos, bienes o servicios disponibles en dichos sitios web o servicios, o a través de ellos.
+La Empresa no tiene control alguno sobre el contenido, las políticas de privacidad ni las prácticas de los sitios web o servicios de terceros, y no asume responsabilidad alguna al respecto. Asimismo, usted reconoce y acepta que la Empresa no será responsable, ni directa ni indirectamente, de ningún daño o pérdida causados o supuestamente causados por, o en relación con, el uso o la confianza depositada en dichos contenidos, bienes o servicios disponibles en dichos sitios web o servicios, o a través de ellos.
 
 Le recomendamos encarecidamente que lea los términos y condiciones y las políticas de privacidad de cualquier sitio web o servicio de terceros que visite.
 
@@ -71,15 +71,15 @@ Algunos estados no permiten la exclusión de garantías implícitas ni la limita
 
 ## Exención de responsabilidad «TAL CUAL» y «SEGÚN DISPONIBILIDAD»
 
-El Servicio se le proporciona «TAL CUAL» y «SEGÚN DISPONIBILIDAD», con todos sus fallos y defectos, sin garantía de ningún tipo. En la medida máxima permitida por la legislación aplicable, la Empresa, en su propio nombre y en nombre de sus filiales y de sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluidas todas las garantías implícitas de comerciabilidad, idoneidad para un fin determinado, titularidad y ausencia de infracción, así como las garantías que puedan derivarse de la relación comercial, el cumplimiento de las obligaciones, los usos o las prácticas comerciales. Sin perjuicio de lo anterior, la Empresa no ofrece garantía ni compromiso alguno, ni realiza declaración de ningún tipo en cuanto a que el Servicio satisfaga sus necesidades, logre los resultados previstos, sea compatible o funcione con cualquier otro software, aplicación, sistema o servicio, funcione sin interrupciones, cumpla con estándares de rendimiento o fiabilidad, esté libre de errores o que cualquier error o defecto pueda ser o vaya a ser corregido.
+El Servicio se le proporciona «TAL CUAL» y «SEGÚN DISPONIBILIDAD», con todos sus fallos y defectos, sin garantía de ningún tipo. En la medida máxima permitida por la legislación aplicable, la Empresa, en su propio nombre y en nombre de sus filiales y de sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, legales o de otro tipo, con respecto al Servicio, incluidas todas las garantías implícitas de comerciabilidad, idoneidad para un fin determinado, titularidad y no infracción, así como las garantías que puedan derivarse de la relación comercial, el cumplimiento de las obligaciones, los usos o las prácticas comerciales. Sin perjuicio de lo anterior, la Empresa no ofrece garantía ni compromiso alguno, ni realiza declaración de ningún tipo en cuanto a que el Servicio satisfaga sus necesidades, logre los resultados previstos, sea compatible o funcione con cualquier otro software, aplicación, sistema o servicio, funcione sin interrupciones, cumpla con estándares de rendimiento o fiabilidad, esté libre de errores o que cualquier error o defecto pueda ser o vaya a ser corregido.
 
-Sin perjuicio de lo anterior, ni la Empresa ni ninguno de sus proveedores realiza declaración ni ofrece garantía alguna, ya sea expresa o implícita: (i) en cuanto al funcionamiento o la disponibilidad del Servicio, o a la información, los contenidos, los materiales o los productos incluidos en el mismo; (ii) de que el Servicio sea ininterrumpido o esté libre de errores; (iii) en cuanto a la exactitud, fiabilidad o actualidad de cualquier información o contenido facilitado a través del Servicio; o (iv) de que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde la Empresa o en su nombre estén libres de virus, scripts, troyanos, gusanos, malware, bombas de tiempo u otros componentes dañinos.
+Sin perjuicio de lo anterior, ni la Empresa ni ninguno de sus proveedores ofrece declaración ni garantía de ningún tipo, ya sea expresa o implícita: (i) en cuanto al funcionamiento o la disponibilidad del Servicio, o a la información, los contenidos, los materiales o los productos incluidos en el mismo; (ii) de que el Servicio sea ininterrumpido o esté libre de errores; (iii) en cuanto a la exactitud, fiabilidad o actualidad de cualquier información o contenido facilitado a través del Servicio; o (iv) de que el Servicio, sus servidores, el contenido o los correos electrónicos enviados desde la Empresa o en su nombre estén libres de virus, scripts, troyanos, gusanos, malware, bombas de tiempo u otros componentes dañinos.
 
 Algunas jurisdicciones no permiten la exclusión de determinados tipos de garantías ni las limitaciones de los derechos legales aplicables de un consumidor, por lo que es posible que algunas o todas las exclusiones y limitaciones anteriores no se apliquen en su caso. No obstante, en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la medida máxima permitida por la legislación aplicable.
 
 ## Legislación aplicable
 
-Las leyes del País, con exclusión de sus normas de conflicto de leyes, regirán las presentes Condiciones y su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, regionales, nacionales o internacionales.
+Las leyes del País, con exclusión de sus normas de conflicto de leyes, regirán las presentes Condiciones y su uso del Servicio. Su uso de la Aplicación también podrá estar sujeto a otras leyes locales, regionales, nacionales o internacionales.
 
 ## Resolución de controversias
 
@@ -103,7 +103,7 @@ Si alguna disposición de estas Condiciones se considerara inaplicable o inváli
 
 Salvo lo dispuesto en el presente documento, el hecho de no ejercer un derecho o de no exigir el cumplimiento de una obligación en virtud de las presentes Condiciones no afectará a la capacidad de una parte para ejercer dicho derecho o exigir dicho cumplimiento en cualquier momento posterior, ni la renuncia a reclamar un incumplimiento constituirá una renuncia a reclamar cualquier incumplimiento posterior.
 
-## Interpretación de las traducciones
+## Interpretación de la traducción
 
 Es posible que estos Términos y Condiciones hayan sido traducidos si se los hemos puesto a su disposición en nuestro Servicio. Usted acepta que, en caso de controversia, prevalecerá el texto original en inglés.
 

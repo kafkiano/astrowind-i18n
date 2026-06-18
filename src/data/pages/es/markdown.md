@@ -8,22 +8,22 @@ group: Recursos
 ### ¿Qué es Markdown?
 
 Markdown es un lenguaje de marcado ligero que puedes utilizar para dar formato a documentos de texto sin formato.  
-Escribe documentos para tus proyectos de GitHub, edita el archivo _README_ de tu perfil de GitHub, etc. Aquí encontrarás todo lo que necesitas.
+Escribe documentación para tus proyectos de GitHub, edita el archivo _README_ de tu perfil de GitHub, etc. Aquí encontrarás todo lo que necesitas.
 
-Vamos a profundizar en ello. ⤵️
+Vamos a profundizar en el tema. ⤵️
 
 #### Índice
 
 1. [Párrafo](#párrafo)
 2. [Encabezados](#encabezados)
 3. [Énfasis](#énfasis)
-4. [Cita destacada](#blockquote)
+4. [Cita destacada](#cita_destacada)
 5. [Imágenes](#images)
 6. [Enlaces](#links)
 7. [Código](#code)
 8. [Listas](#lists)
    - [Lista ordenada](#orderedlist)
-   - [Lista sin ordenar](#unorderedlist)
+   - [Lista desordenada](#unorderedlist)
    - [Lista mixta](#mixedlist)
 9. [Tabla](#table)
 10. [Lista de tareas](#tasklist)
@@ -42,7 +42,7 @@ Al escribir texto normal, básicamente estás escribiendo un párrafo.
 Este es un párrafo.
 ```
 
-Este es un párrafo.
+Esto es un párrafo.
 
 ---
 
@@ -86,8 +86,8 @@ Lo has adivinado, _un guión bajo también es suficiente_.
 ¿Y si quiero ~~tacharlo~~?
 ```
 
-Usando dos asteriscos **este texto está en negrita**.  
-Dos guiones bajos **también funcionan**.  
+Con dos asteriscos **este texto está en negrita**.  
+Dos guiones bajos **también sirven**.  
 Ahora pongámoslo _en cursiva_.  
 Lo has adivinado, _un guión bajo también basta_.  
 ¿Podemos combinar **_ambas cosas_?** Por supuesto.  
@@ -105,7 +105,7 @@ Lo has adivinado, _un guión bajo también basta_.
 >
 > > ¿Y anidada? No hay ningún problema.
 > >
-> > > P. D.: puedes **dar estilo** a tu texto _como quieras_.
+> > > PD: puedes **dar estilo** a tu texto _como quieras_.
 ```
 
 > Esto es una cita en bloque.
@@ -131,7 +131,7 @@ Aquí tienes la sintaxis.
 
 ![texto si la imagen no se carga](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Texto que se muestra al pasar el cursor')
 
-[logotipo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Pasa el cursor por aquí'
+[logotipo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png «Pasa el cursor por encima»
 
 ![texto de error][logotipo]
 
@@ -153,8 +153,8 @@ Encuentra documentación muy útil [aquí][docs]
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
 [docs]: https://github.com/adam-p/markdown-here
 
-[¿Te está gustando hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
-[Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][markdown-cheatsheet]  
+[¿Te gusta lo que has visto hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
+[Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][hoja-de-referencia-de-Markdown]  
 Encuentra documentación estupenda [aquí][docs]
 
 ---
@@ -164,17 +164,17 @@ Encuentra documentación estupenda [aquí][docs]
 Puedes crear fragmentos de código tanto en línea como en bloques completos. También puedes definir el lenguaje de programación que estás utilizando en tu fragmento. Todo ello utilizando comillas invertidas.
 
 ````
-    He creado el archivo `.env` en la raíz.
+    He creado un archivo `.env` en la raíz.
     ¿Comillas invertidas dentro de comillas invertidas? `` `No hay problema.` ``
 
-    ```
+ ```
     {
  learning: "Markdown",
  showing: "fragmento de código en bloque"
     }
     ```
 
- ```js
+    ```js
     const x = "Fragmento de código en bloque en JS";
     console.log(x);
     ```
@@ -303,7 +303,7 @@ Llevar un registro de las tareas que se han completado y de las que quedan por h
 
 ## Nota al pie
 
-¿Quieres añadir algo al final del archivo? ¡Utiliza una nota al pie!
+¿Quieres añadir algo al final del archivo? ¡Usa una nota al pie!
 
 ```
 #### Estoy trabajando en un nuevo proyecto. [^1]
@@ -312,16 +312,16 @@ Llevar un registro de las tareas que se han completado y de las que quedan por h
 El proyecto trata sobre música y películas.
 
 ##### Espero que te guste. [^ver]
-[^ver]: Cargando... ⌛️
+[^ver]: Cargando.... ⌛️
 ```
 
 #### Estoy trabajando en un nuevo proyecto. [^1]
 
-[^1]: La pila tecnológica es: React, TypeScript, Tailwind CSS
+[^1]: El stack es: React, TypeScript, Tailwind CSS
 
 El proyecto trata sobre música y películas.
 
-##### Espero que os guste. [^ver]
+##### Espero que te guste. [^ver]
 
 [^ver]: Cargando... ⌛️
 
@@ -386,7 +386,7 @@ También puedes utilizar código HTML sin formato en tu archivo Markdown. La may
 <p align="center"><img src="ruta-generada-automáticamente-al-subir-la-imagen" /></p>
 
 <details>
-  <summary>¿Otro truco rápido? 🎭</summary>
+  <summary>¿Otro truco rápido más? 🎭</summary>
 
   → Fácil
   → Y sencillo
@@ -409,14 +409,14 @@ También puedes utilizar código HTML sin formato en tu archivo Markdown. La may
 
 <details>
   <summary>¿Otro truco rápido más? 🎭</summary>
-  
-  → Fácil  
+ 
+ → Fácil  
   → Y sencillo
 </details>
 
 ---
 
-## Diagramas Mermaid
+## Diagramas de Mermaid
 
 ### Mapa mental
 
@@ -427,19 +427,19 @@ mindmap
  Integración de API
  Automatización del navegador
  Fuentes RSS
-      Programación y orquestación
+ Programación y orquestación
     Procesamiento de datos
  Almacenamiento de datos estructurados
  Procesamiento de datos no estructurados
  Integración de LLM
- Emparejamiento y puntuación
+ Coincidencia y puntuación
     Interfaz de usuario
  Panel de control y visualización
  Gestión de alertas
  Configuración y ajustes
     Infraestructura
  Supervisión y registro
-      Gestión de errores
+ Gestión de errores
  Escalabilidad
  Eficiencia de costes
 ```
@@ -453,7 +453,7 @@ flowchart LR
     C --> D[Capa de almacenamiento]
     D --> E[Interfaz de usuario]
     D --> F[Interfaz LLM]
-    G[Capa de supervisión] -.-> B
+    G[Capa de monitorización] -.-> B
     G -.-> C
     G -.-> D
 ```
