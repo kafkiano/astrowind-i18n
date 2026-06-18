@@ -221,7 +221,24 @@ export async function translateContent(
 
       // Check manifest — skip if source content hasn't changed
       const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
-      if (!(await needsTranslation(manifest, manifestKey, srcContent))) {
+      const sourceUnchanged = !(await needsTranslation(manifest, manifestKey, srcContent));
+
+      // Even if source is unchanged, check that all target locales have the file.
+      // A newly added locale won't have translations yet.
+      let allTargetsExist = true;
+      if (sourceUnchanged) {
+        for (const locale of targetLocales) {
+          const outPath = join(dir, locale, relPath);
+          try {
+            await readFile(outPath, 'utf-8');
+          } catch {
+            allTargetsExist = false;
+            break;
+          }
+        }
+      }
+
+      if (sourceUnchanged && allTargetsExist) {
         skipped++;
         continue;
       }

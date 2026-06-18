@@ -12,6 +12,8 @@ import yaml from 'js-yaml';
 export interface I18nConfig {
   locales: string[];
   defaultLocale: string;
+  /** Per-locale text direction. Only specify RTL locales (e.g. { ar: 'rtl' }). Default is 'ltr'. */
+  localeDirections?: Record<string, 'ltr' | 'rtl'>;
   /** Translation provider: 'gemini' or 'deepl' */
   provider: 'gemini' | 'deepl';
   geminiApiKey?: string;
@@ -31,6 +33,7 @@ export function readConfig(): I18nConfig {
     i18n?: {
       locales?: string[];
       defaultLocale?: string;
+      localeDirections?: Record<string, 'ltr' | 'rtl'>;
       translation?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string; model?: string };
       ai?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string; model?: string };
     };
@@ -43,6 +46,7 @@ export function readConfig(): I18nConfig {
   _config = {
     locales: i18n.locales || ['en'],
     defaultLocale: i18n.defaultLocale || 'en',
+    localeDirections: (i18n.localeDirections as Record<string, 'ltr' | 'rtl'>) || {},
     provider: (process.env.I18N_PROVIDER as 'gemini' | 'deepl') || (t.provider as 'gemini' | 'deepl') || 'gemini',
     geminiApiKey: (process.env.GEMINI_API_KEY || t.geminiApiKey || undefined) as string | undefined,
     deeplApiKey: (process.env.DEEPL_API_KEY || t.deeplApiKey || undefined) as string | undefined,

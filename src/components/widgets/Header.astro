@@ -104,7 +104,7 @@ const moreLabel = 'More';
                     {title}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
-                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                  <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 rtl:pl-0 rtl:pr-4 rtl:md:pr-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ title: title2, href: href2 }) => (
                       <li>
                         <a
@@ -144,7 +144,7 @@ const moreLabel = 'More';
           </button>
           <ul
             id="aw-nav-more-menu"
-            class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"
+            class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 rtl:pl-0 rtl:pr-4 rtl:md:pr-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"
           >
           </ul>
         </li>
@@ -176,7 +176,10 @@ const moreLabel = 'More';
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                <Button
+                  {...btnProps}
+                  class="ml-2 rtl:ml-0 rtl:mr-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"
+                />
               ))}
             </span>
           ) : (

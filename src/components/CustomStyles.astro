@@ -1,5 +1,6 @@
 ---
 import '@fontsource-variable/inter';
+import '@fontsource-variable/cairo';
 
 // 'DM Sans'
 // Nunito
@@ -41,6 +42,13 @@ import '@fontsource-variable/inter';
     }
   }
 
+  /* RTL (Arabic, etc.) — swap fonts and adjust typography */
+  :dir(rtl) {
+    --aw-font-sans: 'Cairo Variable';
+    --aw-font-serif: 'Cairo Variable';
+    --aw-font-heading: 'Cairo Variable';
+  }
+
   .dark {
     --aw-font-sans: 'Inter Variable';
     --aw-font-serif: 'Inter Variable';
@@ -59,5 +67,11 @@ import '@fontsource-variable/inter';
       background-color: black;
       color: snow;
     }
+  }
+
+  .dark:dir(rtl) {
+    --aw-font-sans: 'Cairo Variable';
+    --aw-font-serif: 'Cairo Variable';
+    --aw-font-heading: 'Cairo Variable';
   }
 </style>

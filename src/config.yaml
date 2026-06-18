@@ -30,20 +30,18 @@ metadata:
 i18n:
   language: en
   textDirection: ltr
-  locales: ['en', 'es', 'fr', 'de']
+  locales: ['en', 'es', 'fr', 'de', 'ar']
   defaultLocale: en
   localeNames:
     en: English
     es: Español
     fr: Français
     de: Deutsch
-    # Add more as needed
+    ar: العربية
+  localeDirections:
+    ar: rtl
   ai:
-    geminiApiKey: null
-    provider: 'deepl' # optional
-    # Select model for gemini provider,
-    # gemma-4-26b-a4b-it, gemini-2.0-flash-lite, etc.
-    # model: 'gemma-4-26b-a4b-it'
+    provider: 'deepl'
 
 apps:
   blog:
