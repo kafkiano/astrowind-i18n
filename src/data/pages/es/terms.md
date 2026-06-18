@@ -11,7 +11,7 @@ Best Visual FZE ofrece servicios de coordinación, asesoramiento, consultoría e
 
 ## Responsabilidades del cliente
 
-Los clientes son responsables de verificar que los servicios cumplan con sus requisitos normativos, legales y comerciales específicos en su jurisdicción. Cuando los servicios impliquen la coordinación con terceros (bancos, intermediarios, autoridades), la relación del cliente con dichas partes se regirá por sus respectivos términos y condiciones.
+Los clientes son responsables de verificar que los servicios cumplan con sus requisitos normativos, legales y comerciales específicos en su jurisdicción. Cuando los servicios impliquen la coordinación con terceros (bancos, corredores, autoridades), la relación del cliente con dichas partes se regirá por sus respectivos términos y condiciones.
 
 ## Propiedad intelectual
 

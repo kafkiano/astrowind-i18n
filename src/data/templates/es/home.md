@@ -16,7 +16,7 @@ hero:
 servicesIntro:
   tagline: Qué hacemos
   title: Servicios orientados a la ejecución
-  subtitle: Cada proyecto incluye unos resultados concretos, un calendario y la elaboración de informes, para que siempre sepas qué está pasando y cuál es el siguiente paso.
+  subtitle: Cada proyecto incluye unos resultados concretos, un calendario y la presentación de informes, para que siempre sepas qué está pasando y cuál es el siguiente paso.
 services:
   items:
     - title: Inmobiliaria

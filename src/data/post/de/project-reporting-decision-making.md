@@ -25,7 +25,7 @@ Das sagt den Beteiligten nichts, worauf sie reagieren könnten. Es vermittelt zw
 
 1. **Aktivitätsorientiert statt entscheidungsorientiert**: Berichte listen auf, was erledigt wurde, nicht, was entschieden werden muss
 2. **Keine expliziten Aufforderungen**: Die Beteiligten wissen nicht, was von ihnen erwartet wird
-3. **Vage Statusangaben**: „Liegt im Zeitplan“ bedeutet für verschiedene Personen unterschiedliche Dinge
+3. **Vage Statusangaben**: „Im Zeitplan“ bedeutet für verschiedene Personen unterschiedliche Dinge
 
 ## Die entscheidungsorientierte Berichtsstruktur
 
@@ -42,7 +42,7 @@ Dies ist der wichtigste Abschnitt. Beispiel:
 
 | Entscheidung | Erforderlich von | Frist | Auswirkungen bei Verzögerung |
 |---|---|---|---|
-| Genehmigung des Budgets für die Ausschreibung | CFO | 28. Mai | Versand der Ausschreibung verzögert sich um 1 Woche |
+| Genehmigung des Budgets für die Ausschreibung | CFO | 28. Mai | Versand der Ausschreibung um 1 Woche verzögert |
 | Starttermin bestätigen | CEO | 30. Mai | Zeitplan der Marketingkampagne beeinträchtigt |
 
 ### 4. Welche Risiken oder Hindernisse müssen beachtet werden?
@@ -54,7 +54,7 @@ Verwenden Sie ein einfaches RAID-Format:
 - **Abhängigkeiten**: Dinge, die wir von anderen benötigen (mit Frist)
 
 ### 5. Was hat sich gegenüber dem Plan geändert?
-Wenn sich Zeitplan, Umfang oder Budget verschoben haben, weisen Sie ausdrücklich darauf hin. Überraschungen am Ende eines Projekts lassen sich fast immer in Wochenberichten erkennen – sofern diese so strukturiert sind, dass sie solche Probleme aufzeigen.
+Wenn sich Zeitplan, Umfang oder Budget verschoben haben, weisen Sie ausdrücklich darauf hin. Überraschungen am Ende eines Projekts lassen sich fast immer bereits in den Wochenberichten erkennen – sofern diese so strukturiert sind, dass sie solche Probleme aufzeigen.
 
 ## Die Ein-Seiten-Regel
 
@@ -69,11 +69,11 @@ Wenn Ihr Wochenbericht länger als eine Seite ist, wird er nicht gelesen. Achten
 
 | Zielgruppe | Häufigkeit | Schwerpunkt |
 |---|---|---|
-| Kernprojektteam | Tägliches Standup (15 Min.) | Taktisch: Wer macht heute was, gibt es Hindernisse? |
+| Kernprojektteam | Tägliches Stand-up-Meeting (15 Min.) | Taktisch: Wer macht heute was, gibt es Hindernisse? |
 | Projektsponsor / Führungskraft | Wöchentlich (1-seitiger Bericht) | Erforderliche Entscheidungen, Risiken, Plan vs. Ist |
 | Lenkungsausschuss | Monatlich (Präsentation + Bericht) | Strategisch: Budget, Zeitplan, Umfang, wichtige Entscheidungen |
 
-## Der eigentliche Test
+## Der echte Test
 
 Fragen Sie nach Ihrem nächsten Bericht jeden Stakeholder: „Welche Maßnahmen haben Sie auf der Grundlage dieses Berichts ergriffen?“ Wenn sie keine Antwort geben können, ist der Bericht gescheitert – unabhängig davon, wie gut er verfasst wurde.
 

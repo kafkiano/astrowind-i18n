@@ -1,7 +1,7 @@
 ---
 publishDate: 2026-05-15T00:00:00.000Z
 title: Cómo estructurar una compra inmobiliaria transfronteriza entre los Emiratos Árabes Unidos y la UE
-excerpt: 'Orientación práctica para inversores que desean adquirir inmuebles en los mercados de los Emiratos Árabes Unidos y Europa: financiación, gestión de los aspectos jurídicos, consideraciones fiscales y gestión de las transacciones.'
+excerpt: 'Orientación práctica para inversores que desean adquirir inmuebles en los mercados de los Emiratos Árabes Unidos y Europa: financiación, gestión de los aspectos jurídicos, consideraciones fiscales y gestión de transacciones.'
 image: https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80
 category: inmobiliario
 tags:
@@ -23,9 +23,9 @@ Antes de buscar inmuebles, aclara lo siguiente:
 - **Objetivo**: ¿Uso personal, ingresos por alquiler, revalorización del capital o una combinación de todo ello?
 - **Estructura de tenencia**: ¿A nombre propio, a través de una empresa de los EAU o de una entidad offshore?
 - **Fuente de financiación**: ¿Efectivo, hipoteca en el país de compra o financiación transfronteriza?
-- **Estrategia de salida**: ¿Cuánto tiempo vas a mantener la propiedad? ¿Qué factores motivarían una venta?
+- **Estrategia de salida**: ¿Cuánto tiempo la mantendrá? ¿Qué factores motivarían una venta?
 
-## 2. Financiación: dónde conseguir tu hipoteca
+## 2. Financiación: dónde obtener su hipoteca
 
 Los compradores transfronterizos tienen tres opciones principales:
 
@@ -59,10 +59,10 @@ La transferencia de fondos entre el euro (EUR) y el dirham de los Emiratos Árab
 
 La propiedad transfronteriza genera obligaciones fiscales en varias jurisdicciones:
 
-- **Rentas de alquiler**: normalmente se gravan en el lugar donde se encuentra el inmueble
-- **Plusvalías**: se gravan en el país del inmueble en el momento de la venta
+- **Rentas de alquiler**: suelen tributar en el lugar donde se encuentra el inmueble
+- **Plusvalías**: tributan en el país del inmueble en el momento de la venta
 - **Convenios de doble imposición**: Los EAU tienen convenios de doble imposición con muchos países, pero benefician principalmente a los residentes de los EAU
-- **Impuesto sobre sucesiones y donaciones**: Varía significativamente; solicite asesoramiento específico
+- **Impuesto sobre sucesiones y donaciones**: Varía considerablemente; solicite asesoramiento específico
 
 **Importante**: Colaboramos con asesores fiscales autorizados en cada jurisdicción. Este artículo no constituye asesoramiento fiscal.
 
@@ -81,4 +81,4 @@ Contar con un único coordinador que supervise todas las fases del proceso —en
 
 ## Cómo te ayudamos
 
-Coordinamos la compra de inmuebles en los Emiratos Árabes Unidos, Alemania y España. Desde la definición de requisitos y la preselección de inmuebles hasta el cierre de la transacción, ofrecemos un proceso estructurado con informes semanales sobre el estado de avance. [Ponte en contacto con nosotros](/contact) para hablar sobre tus objetivos inmobiliarios transfronterizos.
+Coordinamos la compra de inmuebles en los Emiratos Árabes Unidos, Alemania y España. Desde la definición de requisitos y la selección de propiedades hasta el cierre de la transacción, ofrecemos un proceso estructurado con informes semanales sobre el estado de avance. [Ponte en contacto con nosotros](/contact) para hablar sobre tus objetivos inmobiliarios transfronterizos.

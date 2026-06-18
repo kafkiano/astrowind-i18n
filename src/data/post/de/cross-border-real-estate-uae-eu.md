@@ -33,7 +33,7 @@ Grenzüberschreitende Käufer haben drei Hauptoptionen:
 |---|---|
 | **Hypothek im Kaufland** | Käufer mit lokalem Einkommen oder bestehenden Bankbeziehungen |
 | **Grenzüberschreitende Hypothek** | Nicht ansässige Käufer – einige Banken in den VAE und der EU bieten dies an |
-| **Barzahlung + spätere Refinanzierung** | Käufer, die Wert auf Schnelligkeit legen und nach dem Erwerb refinanzieren möchten |
+| **Barzahlung + spätere Refinanzierung** | Käufer, die Wert auf Schnelligkeit legen und nach dem Erwerb refinanzieren wollen |
 
 **Wichtiger Hinweis**: Banken in den VAE bieten Nichtansässigen Hypotheken mit einer Beleihungsquote (LTV) von 50–75 % an, je nach Immobilie und Käuferprofil. Europäische Banken haben je nach Land unterschiedliche Richtlinien. Ein Finanzierungskoordinator kann Ihre Optionen aufzeigen, bevor Sie sich für eine Immobilie entscheiden.
 
@@ -43,21 +43,21 @@ Jede Rechtsordnung hat ihre eigenen Anforderungen:
 
 - **VAE**: Keine Grundsteuer, aber es fallen Registrierungsgebühren (in Dubai typischerweise 4 %), Maklergebühren und Oqood-Gebühren (Registrierung von Off-Plan-Immobilien) an. Eine Due-Diligence-Prüfung des Bauträgers, die Überprüfung der Eigentumsurkunde und die Bestätigung des Treuhandkontos sind unerlässlich.
 - **Deutschland**: Die Hinzuziehung eines Notars ist zwingend vorgeschrieben. Die Grunderwerbsteuer variiert je nach Bundesland (3,5–6,5 %). Der Eintrag im Grundbuch ist der rechtliche Nachweis des Eigentums.
-- **Spanien**: Notar und Grundbuchamt (Registro de la Propiedad) sind erforderlich. Die Übertragungssteuer (ITP) beträgt je nach Region 6–10 %. Eine NIE (Ausländeridentifikationsnummer) ist für alle Käufer obligatorisch.
+- **Spanien**: Notar und Grundbuchamt (Registro de la Propiedad) sind erforderlich. Die Übertragungssteuer (ITP) beträgt je nach Region 6–10 %. Eine NIE (Ausländeridentifikationsnummer) ist für alle Käufer vorgeschrieben.
 
 ## 4. Währungs- und Überweisungsmanagement
 
 Der Geldtransfer zwischen EUR und AED umfasst:
 
-- Wahl des richtigen Zeitpunkts für den Wechselkurs (kann die Kaufkosten um 2–5 % beeinflussen)
-- Überweisungslimits der Banken und Compliance-Prüfungen
+- den Zeitpunkt des Wechselkurses (kann die Kaufkosten um 2–5 % beeinflussen)
+- Überweisungslimits und Compliance-Prüfungen
 - Dokumentationspflichten (Herkunft der Mittel, Geldwäschebekämpfung)
 
 **Praktischer Tipp**: Nutzen Sie bei Überweisungen von mehr als 100.000 € einen Terminkontrakt oder eine Limit-Order bei einem Währungsspezialisten. Die Einsparungen können im Vergleich zu den üblichen Bankkursen erheblich sein.
 
-## 5. Steuerliche Aspekte
+## 5. Steuerliche Überlegungen
 
-Grenzüberschreitender Immobilienbesitz führt zu steuerlichen Verpflichtungen in mehreren Ländern:
+Grenzüberschreitendes Eigentum führt zu steuerlichen Verpflichtungen in mehreren Ländern:
 
 - **Mieteinnahmen**: Werden in der Regel dort besteuert, wo sich die Immobilie befindet
 - **Veräußerungsgewinne**: Werden beim Verkauf im Land der Immobilie besteuert

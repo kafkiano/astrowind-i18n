@@ -25,7 +25,7 @@ Cuando te pones en contacto con nosotros o contratas nuestros servicios, recopil
 
 No vendemos sus datos. Podemos compartir información con:
 
-- **Proveedores de servicios** necesarios para la ejecución de proyectos (con su consentimiento)
+- **Proveedores de servicios** necesarios para la ejecución de los proyectos (con su consentimiento)
 - **Profesionales colegiados** (corredores, bancos, asesores jurídicos, diseñadores) a la hora de coordinar servicios regulados
 - **Las autoridades de los EAU** cuando sea necesario para los procesos de constitución de empresas
 - **Las autoridades** cuando así lo exija la ley

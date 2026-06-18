@@ -79,7 +79,6 @@
   "English": "Inglés",
   "Entrepreneurs & business owners": "Emprendedores y propietarios de empresas",
   "Error 404": "Error 404",
-  "Español": "Español",
   "Every engagement includes clear deliverables, a timeline, and reporting — so you always know what is happening and what comes next.": "Cada proyecto incluye unos resultados concretos, un calendario y la presentación de informes, para que siempre sepas qué está pasando y cuál es el siguiente paso.",
   "Every engagement includes deliverables, timelines, and weekly progress reporting. We do not work on retainer without defined outputs.": "Cada proyecto incluye resultados esperados, plazos e informes semanales de avance. No trabajamos a comisión sin resultados definidos.",
   "Execution focus": "Enfoque en la ejecución",
@@ -235,5 +234,6 @@
   "Your full name": "Tu nombre completo",
   "[INSERT FULL RAKEZ REGISTERED ADDRESS]": "[INSERTAR LA DIRECCIÓN COMPLETA DE RAKEZ QUE FIGURA EN EL REGISTRO]",
   "[INSERT RAKEZ LICENSE NUMBER]": "[INSERTAR NÚMERO DE LICENCIA DE RAKEZ]",
-  "©2026 Best Visual FZE · RAKEZ, Ras Al Khaimah, UAE · <a class=\"text-blue-600 underline dark:text-muted\" href=\"mailto:info@bestvisual.ae\">info@bestvisual.ae</a>": "©2026 Best Visual FZE · RAKEZ, Ras Al Khaimah, Emiratos Árabes Unidos · <a class=\"text-blue-600 underline dark:text-muted\" href=\"mailto:info@bestvisual.ae\">info@bestvisual.ae</a>"
+  "©2026 Best Visual FZE · RAKEZ, Ras Al Khaimah, UAE · <a class=\"text-blue-600 underline dark:text-muted\" href=\"mailto:info@bestvisual.ae\">info@bestvisual.ae</a>": "©2026 Best Visual FZE · RAKEZ, Ras Al Khaimah, Emiratos Árabes Unidos · <a class=\"text-blue-600 underline dark:text-muted\" href=\"mailto:info@bestvisual.ae\">info@bestvisual.ae</a>",
+  "العربية": "Árabe"
 }

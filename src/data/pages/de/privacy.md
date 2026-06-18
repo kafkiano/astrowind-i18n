@@ -14,7 +14,7 @@ Wenn Sie uns kontaktieren oder unsere Dienstleistungen in Anspruch nehmen, erfas
 - **Kommunikationsaufzeichnungen** im Zusammenhang mit der Erbringung der Dienstleistungen
 - **Geschäftsinformationen**, die für die Beratung und die Unternehmensgründung erforderlich sind
 
-## Wie wir Ihre Daten verwenden
+## Wie wir Ihre Daten nutzen
 
 - Zur Erbringung der angeforderten Dienstleistungen und zur Kommunikation über Projekte
 - Zum Versand von Service-Updates, Berichten und relevanten Informationen
@@ -43,7 +43,7 @@ Kontaktieren Sie uns unter **info@bestvisual.ae**, um diese Rechte auszuüben.
 
 ## Datensicherheit
 
-Wir wenden branchenübliche Sicherheitsmaßnahmen an, um Ihre Daten zu schützen. Die Daten werden sicher gespeichert und sind nur autorisiertem Personal zugänglich.
+Wir setzen branchenübliche Sicherheitsmaßnahmen ein, um Ihre Daten zu schützen. Die Daten werden sicher gespeichert und sind nur autorisiertem Personal zugänglich.
 
 ## Cookies
 

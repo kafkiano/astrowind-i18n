@@ -47,9 +47,9 @@ Farben wecken in verschiedenen Kulturen unterschiedliche Assoziationen:
 | **Weiß** | Reinheit, Frieden, Trauer | Sauberkeit, Schlichtheit | Reinheit, Frieden |
 | **Gold** | Reichtum, Luxus, Prestige | Reichtum, Qualität | Reichtum, Wärme |
 
-**Praktische Regel**: Wählen Sie Ihre Kernpalette so aus, dass sie universell ansprechend ist, und passen Sie die Akzentfarben bei Bedarf je nach Markt an. Ein Markenleitfaden sollte festlegen, welche Elemente feststehen und welche flexibel sind.
+**Praktische Regel**: Wählen Sie Ihre Kernfarbpalette so aus, dass sie universell ansprechend ist, und passen Sie die Akzentfarben bei Bedarf je nach Markt an. Ein Markenleitfaden sollte festlegen, welche Elemente feststehen und welche flexibel sind.
 
-## 3. Typografie: Überall lesbar
+## 3. Typografie: Überall gut lesbar
 
 - **Lateinische Schriftzeichen**: Ihre Hauptschriftart muss Deutsch (mit Umlauten und ß) und Spanisch (mit Akzenten und ñ) unterstützen
 - **Arabische Schrift**: Wenn Ihre Marke in arabischen Kontexten auftritt, sollten Sie über eine arabischkompatible Schriftart oder eine Logo-Variante verfügen, die in beiden Schriften funktioniert
@@ -80,10 +80,10 @@ Jedes international tätige Unternehmen benötigt ein Markenhandbuch, das folgen
 
 Ihre Website ist oft der erste Kontaktpunkt. Für grenzüberschreitend tätige Unternehmen:
 
-- **Separate Sprachpfade** (`/en`, `/de`, `/es`) mit korrekten `hreflang`-Tags – keine automatisch übersetzten Browser-Overlays
+- **Separate Länderseiten** (`/en`, `/de`, `/es`) mit korrekten `hreflang`-Tags – keine automatisch übersetzten Browser-Overlays
 - **Länderspezifisches Bildmaterial**: Zeigen Sie Objekte, Personen und Kontexte, die für den jeweiligen Markt relevant sind
 - **Lokale Kontaktdaten**: Telefonnummern, Adressen und rechtliche Angaben je nach Rechtsraum
-- **Einheitliches visuelles Erscheinungsbild**: Gleiches Layout, gleiche Markenelemente, unterschiedliche Inhalte
+- **Einheitliches visuelles Rahmenkonzept**: Gleiches Layout, gleiche Markenelemente, unterschiedliche Inhalte
 
 ## So unterstützen wir Sie
 

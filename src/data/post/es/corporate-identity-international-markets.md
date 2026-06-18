@@ -28,7 +28,7 @@ Las marcas internacionales más exitosas no eligen entre la estandarización glo
 
 ## 1. Logotipo: una sola marca, todos los mercados
 
-Tu logotipo es el elemento más visible de tu identidad. Para su uso transfronterizo:
+Tu logotipo es el elemento más visible de tu identidad. Para su uso internacional:
 
 - **Prueba con tamaños reducidos**: un logotipo en una tarjeta de visita en Alemania debe ser tan legible como uno en el letrero de un edificio en Dubái
 - **Evita los símbolos específicos de una cultura**: lo que se percibe como «de alta gama» en un mercado puede interpretarse de forma diferente en otro
@@ -51,7 +51,7 @@ Los colores evocan asociaciones diferentes según la cultura:
 
 ## 3. Tipografía: legible en cualquier lugar
 
-- **Alfabetos latinos**: tu tipografía principal debe ser compatible con el alemán (con diéresis y ß) y el español (con acentos y ñ)
+- **Alfabetos latinos**: tu tipo de letra principal debe ser compatible con el alemán (con diéresis y ß) y el español (con acentos y ñ)
 - **Alfabeto árabe**: si tu marca aparece en contextos árabes, cuenta con un tipo de letra compatible con el árabe o una variante del logotipo que funcione en ambos alfabetos
 - **Fuentes web**: asegúrate de que la fuente elegida tenga una cobertura adecuada de caracteres y se cargue de forma fiable en todas las regiones
 
@@ -87,6 +87,6 @@ Tu sitio web suele ser el primer punto de contacto. Para empresas que operan a n
 
 ## Cómo te ayudamos
 
-Ofrecemos servicios completos de diseño corporativo, desde la identidad visual y el diseño del logotipo hasta las directrices de marca, los materiales empresariales, las presentaciones y la implementación de sitios web multilingües. Cada proyecto incluye un documento con las directrices de marca que puede entregar a cualquier diseñador o agencia en cualquier mercado.
+Ofrecemos servicios completos de diseño corporativo, desde la identidad visual y el diseño del logotipo hasta las directrices de marca, los materiales de empresa, las presentaciones y la implementación de sitios web multilingües. Cada proyecto incluye un documento con las directrices de marca que puede entregar a cualquier diseñador o agencia en cualquier mercado.
 
 [Póngase en contacto con nosotros](/contact) para hablar sobre sus necesidades de identidad de marca en los Emiratos Árabes Unidos, Alemania y España.

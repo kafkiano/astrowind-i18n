@@ -13,7 +13,7 @@ tags:
 
 ## ¿Por qué una zona franca?
 
-Las zonas francas de los Emiratos Árabes Unidos ofrecen una participación extranjera del 100 %, un impuesto de sociedades del 0 % (para las actividades que cumplan los requisitos), la repatriación total de los beneficios y la ausencia de restricciones cambiarias. Para las empresas de servicios internacionales, las consultoras y las empresas comerciales, una zona franca suele ser la estructura más eficiente.
+Las zonas francas de los Emiratos Árabes Unidos ofrecen una participación extranjera del 100 %, un impuesto de sociedades del 0 % (para las actividades que cumplan los requisitos), la repatriación total de los beneficios y la ausencia de restricciones monetarias. Para las empresas de servicios internacionales, las consultoras y las empresas comerciales, una zona franca suele ser la estructura más eficiente.
 
 La licencia comercial en sí puede expedirse en **entre 3 y 7 días laborables** una vez que la documentación esté completa. Sin embargo, la plena operatividad —incluida la tramitación de visados y la apertura de una cuenta bancaria corporativa— suele tardar, de forma realista, **entre 4 y 8 semanas**.
 
