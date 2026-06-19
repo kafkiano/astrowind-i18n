@@ -30,9 +30,7 @@ const gridCols =
         ? 'sm:grid-cols-2'
         : 'sm:grid-cols-2 lg:grid-cols-3';
 
-const masonryCss = isMasonry
-  ? 'grid grid-flow-dense items-start gap-4 ' + gridCols
-  : 'grid gap-6 ' + gridCols;
+const masonryCss = isMasonry ? 'grid grid-flow-dense items-start gap-4 ' + gridCols : 'grid gap-6 ' + gridCols;
 ---
 
 <WidgetWrapper
@@ -49,7 +47,7 @@ const masonryCss = isMasonry
         class={`${masonryCss} ${(classes?.grid as string) ?? ''}`}
         {...(isMasonry ? { 'data-masonry': 'balanced' } : {})}
       >
-        {images.map(({ src, alt, caption, width, height, colSpan }) => (
+        {images.map(({ src, alt, width, height, colSpan }) => (
           <figure
             class={`m-0 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${isMasonry ? 'mb-4' : ''}`}
             data-src={src}
@@ -71,7 +69,6 @@ const masonryCss = isMasonry
                 alt={alt}
               />
             </div>
-
           </figure>
         ))}
       </div>
