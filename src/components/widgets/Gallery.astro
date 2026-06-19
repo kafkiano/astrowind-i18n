@@ -1,4 +1,5 @@
 ---
+import { getAsset } from '~/utils/permalinks';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
@@ -10,6 +11,7 @@ const {
   tagline,
   images = [],
   columns = 3,
+  variant = 'grid',
 
   id,
   isDark = false,
@@ -17,8 +19,20 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
+const isMasonry = variant === 'masonry';
+
 const gridCols =
-  columns === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : columns === 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'sm:grid-cols-2';
+  columns === 4
+    ? 'sm:grid-cols-2 lg:grid-cols-4'
+    : columns === 3
+      ? 'sm:grid-cols-2 lg:grid-cols-3'
+      : columns === 2
+        ? 'sm:grid-cols-2'
+        : 'sm:grid-cols-2 lg:grid-cols-3';
+
+const masonryCss = isMasonry
+  ? 'grid grid-flow-dense items-start gap-4 ' + gridCols
+  : 'grid gap-6 ' + gridCols;
 ---
 
 <WidgetWrapper
@@ -31,27 +45,38 @@ const gridCols =
 
   {
     images && images.length > 0 && (
-      <div class={`grid gap-6 ${gridCols} ${(classes?.grid as string) ?? ''}`}>
-        {images.map(({ src, alt, caption }) => (
-          <figure class="intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div
+        class={`${masonryCss} ${(classes?.grid as string) ?? ''}`}
+        {...(isMasonry ? { 'data-masonry': 'balanced' } : {})}
+      >
+        {images.map(({ src, alt, caption, width, height, colSpan }) => (
+          <figure
+            class={`m-0 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${isMasonry ? 'mb-4' : ''}`}
+            data-src={src}
+            data-alt={alt}
+            data-width={width}
+            data-height={height}
+            data-col-span={colSpan && colSpan > 1 ? colSpan : undefined}
+          >
             <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
               <Image
-                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                width={400}
-                height={256}
+                class={`w-full hover:scale-105 transition-transform duration-300 ${isMasonry ? 'h-auto' : 'h-64 object-cover'}`}
+                width={width || 400}
+                height={height || (isMasonry ? undefined : 256)}
                 widths={[400, 768, 1024]}
                 sizes={`(max-width: 639px) 100vw, (max-width: 1023px) 50vw, ${100 / columns}vw`}
                 layout="responsive"
+                loading={isMasonry ? 'eager' : undefined}
                 src={src}
                 alt={alt}
               />
             </div>
-            {caption && (
-              <figcaption class="mt-2 text-sm text-center text-muted dark:text-slate-400">{caption}</figcaption>
-            )}
+
           </figure>
         ))}
       </div>
     )
   }
 </WidgetWrapper>
+
+{isMasonry && <script is:inline src={getAsset('assets/scripts/masonry-polyfill.js')} async />}
