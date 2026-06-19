@@ -20,7 +20,7 @@ features:
   title: Pages axées sur le contenu
   items:
     - title: Modifier dans le CMS
-      description: Tout le contenu est regroupé dans un seul fichier Markdown. Modifiez-le via le CMS Sveltia — aucune modification du code n'est nécessaire. Ajoutez des sections, modifiez le texte, remplacez des images.
+      description: Tout le contenu est regroupé dans un seul fichier Markdown. Modifiez-le via le CMS Sveltia — aucune modification du code n'est nécessaire. Ajoutez des sections, modifiez le texte, remplacez les images.
       icon: tabler:edit
     - title: Traduction automatique
       description: Le système d'internationalisation (i18n) traduit automatiquement tous les champs de frontmatter imbriqués via DeepL ou Gemini. Un seul fichier source pour toutes les langues.
@@ -29,7 +29,7 @@ features:
       description: 'Choisissez les widgets qui s''affichent en ajoutant ou en supprimant des sections dans le frontmatter. Hero, Features, Témoignages, CTA : combinez-les à votre guise.'
       icon: tabler:puzzle
     - title: YAML imbriqué
-      description: Frontmatter prend en charge les objets et les tableaux profondément imbriqués. Le système de traduction parcourt chaque valeur de chaîne de caractères — sans aucune limitation liée à la structure plate des champs.
+      description: Frontmatter prend en charge les objets et les tableaux profondément imbriqués. Le système de traduction parcourt chaque chaîne de caractères — sans aucune limitation liée à la structure plate des champs.
       icon: tabler:json
     - title: Une succursale par client
       description: Chaque client dispose de sa propre branche. Personnalisez la configuration, l'identité visuelle et le contenu sans modifier le fonctionnement interne des widgets ni le thème de base.

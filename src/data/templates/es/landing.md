@@ -52,7 +52,7 @@ testimonials:
     name: UX Designer
 cta:
   title: Empieza a construir hoy mismo
-  subtitle: Clona el repositorio, crea un archivo «templates/home.md» y ya estás listo. El proceso de internacionalización (i18n) se encarga del resto.
+  subtitle: Clona el repositorio, crea un archivo templates/home.md y ya estás listo. El proceso de internacionalización (i18n) se encarga del resto.
   actions:
     - text: Descarga la plantilla
       href: https://github.com/kafkiano/astrowind-i18n
