@@ -117,6 +117,9 @@ export interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
+  width?: number;
+  height?: number;
+  colSpan?: number;
 }
 
 export interface Widget {
@@ -309,6 +312,8 @@ export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 export interface Gallery extends Omit<Headline, 'classes'>, Widget {
   images?: Array<GalleryImage>;
   columns?: number;
+  variant?: 'grid' | 'masonry';
+  gap?: string;
 }
 
 export interface Badge extends Widget {
