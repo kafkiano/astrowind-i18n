@@ -1,0 +1,219 @@
+---
+import { getStaticPathsForLocale } from '~/utils/i18n';
+
+import Layout from '~/layouts/LandingLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+export const getStaticPaths = getStaticPathsForLocale;
+
+export const navigation = {
+  title: 'Gallery Demo',
+  group: 'Landing',
+  showIn: 'all',
+};
+---
+
+<Layout metadata={navigation}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    variant="side-by-side"
+    tagline="Gallery Demo"
+    title="Gallery Landing Page: Showcase Your Work in Style!"
+    subtitle="A dedicated landing page demonstrating the versatile Gallery widget with different column layouts and captions."
+    actions={[
+      { variant: 'primary', text: 'Call to Action', href: '#', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Learn more', href: '#gallery' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Gallery Landing Page Hero Image',
+    }}
+  />
+
+  <!-- Gallery Widget (3 columns) **************** -->
+
+  <Gallery
+    id="gallery"
+    tagline="Showcase"
+    title="Image gallery (3 columns)"
+    subtitle="A responsive three-column grid with hover zoom and captions."
+    columns={3}
+    images={[
+      {
+        src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Team collaboration',
+        caption: 'Modern workspace',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Design process',
+        caption: 'Creative process',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Storytelling',
+        caption: 'Crafting narratives',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Blueprint',
+        caption: 'Architecture planning',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Launch',
+        caption: 'Ready for takeoff',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+        alt: 'Details',
+        caption: 'Attention to detail',
+      },
+    ]}
+  />
+
+  <!-- Gallery Widget (4 columns) *************** -->
+
+  <Gallery
+    tagline="Compact view"
+    title="Image gallery (4 columns)"
+    subtitle="A denser four-column grid for portfolios and product catalogs."
+    columns={4}
+    classes={{
+      container: 'bg-blue-50 dark:bg-slate-900',
+    }}
+    images={[
+      {
+        src: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Mountains at sunrise',
+        caption: 'Sunrise peaks',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Forest trail',
+        caption: 'Forest trail',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Green valley',
+        caption: 'Green valley',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Lake reflection',
+        caption: 'Lake reflection',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Woodland path',
+        caption: 'Woodland path',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Coastal cliffs',
+        caption: 'Coastal cliffs',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Misty hills',
+        caption: 'Misty hills',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Sunlit forest',
+        caption: 'Sunlit forest',
+      },
+    ]}
+  />
+
+  <!-- Gallery Widget (masonry) *************** -->
+
+  <Gallery
+    variant="masonry"
+    tagline="Real masonry"
+    title="Image gallery (masonry)"
+    subtitle="A true masonry layout where wide images span two columns and each photo keeps its natural aspect ratio."
+    columns={3}
+    classes={{
+      container: 'bg-blue-50 dark:bg-slate-900',
+    }}
+    images={[
+      {
+        src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Designer at work',
+        caption: 'Designer at work',
+        width: 400,
+        height: 600,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+        alt: 'Open workspace',
+        caption: 'Open workspace',
+        width: 800,
+        height: 400,
+        colSpan: 2,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Team meeting',
+        caption: 'Team meeting',
+        width: 400,
+        height: 400,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Mobile interface',
+        caption: 'Mobile interface',
+        width: 400,
+        height: 600,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+        alt: 'Modern office',
+        caption: 'Modern office',
+        width: 800,
+        height: 350,
+        colSpan: 2,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Office building',
+        caption: 'Office building',
+        width: 400,
+        height: 400,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80',
+        alt: 'Collaboration',
+        caption: 'Collaboration',
+        width: 400,
+        height: 600,
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+        alt: 'Creative desk',
+        caption: 'Creative desk',
+        width: 800,
+        height: 400,
+        colSpan: 2,
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Ready to use the Gallery widget?"
+    subtitle="Drop it into any page to create beautiful, responsive image grids in seconds."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Template',
+        href: 'https://github.com/kafkiano/astrowind-i18n',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>
