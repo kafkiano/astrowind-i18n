@@ -16,10 +16,7 @@ import { getEntry, type CollectionEntry } from 'astro:content';
  * @returns The template entry (locale-specific or English fallback)
  * @throws If the template doesn't exist in any locale
  */
-export async function getTemplateEntry(
-  slug: string,
-  locale: string
-): Promise<CollectionEntry<'templates'>> {
+export async function getTemplateEntry(slug: string, locale: string): Promise<CollectionEntry<'templates'>> {
   let entry = await getEntry('templates', `${locale}/${slug}`);
   if (!entry) {
     entry = await getEntry('templates', `en/${slug}`);

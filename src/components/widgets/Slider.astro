@@ -83,9 +83,10 @@ if (gap !== undefined) {
   trackBaseRules.push(`--gap: ${gap}px`);
 }
 
-const baseTrackCss = trackBaseRules.length > 0
-  ? `[data-embla-id="${containerId}"] [data-embla-track] { ${trackBaseRules.join('; ')} }`
-  : '';
+const baseTrackCss =
+  trackBaseRules.length > 0
+    ? `[data-embla-id="${containerId}"] [data-embla-track] { ${trackBaseRules.join('; ')} }`
+    : '';
 
 const responsiveTrackCss = responsive
   ? Object.entries(responsive)
@@ -107,9 +108,8 @@ const responsiveTrackCss = responsive
 const slideBaseRules: string[] = [];
 if (slidesPerView !== undefined) slideBaseRules.push(`--spv: ${slidesPerView}`);
 
-const baseSlideCss = slideBaseRules.length > 0
-  ? `[data-embla-id="${containerId}"] .embla-slide { ${slideBaseRules.join('; ')} }`
-  : '';
+const baseSlideCss =
+  slideBaseRules.length > 0 ? `[data-embla-id="${containerId}"] .embla-slide { ${slideBaseRules.join('; ')} }` : '';
 
 const responsiveSlideCss = responsive
   ? Object.entries(responsive)
@@ -125,9 +125,7 @@ const responsiveSlideCss = responsive
       .join('\n')
   : '';
 
-const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlideCss]
-  .filter(Boolean)
-  .join('\n');
+const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlideCss].filter(Boolean).join('\n');
 ---
 
 <div
@@ -232,24 +230,22 @@ const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlid
           minimalNavPosition === 'left' ? 'left-4' : 'right-4',
         ]}
       >
-        {
-          hasAutoplay && (
-            <button
-              data-embla-pause
-              class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-              aria-label="Pause slideshow"
-              type="button"
-            >
-              <svg class="embla-pause-icon w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="6" y="4" width="4" height="16" rx="1" />
-                <rect x="14" y="4" width="4" height="16" rx="1" />
-              </svg>
-              <svg class="embla-play-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </button>
-          )
-        }
+        {hasAutoplay && (
+          <button
+            data-embla-pause
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+            aria-label="Pause slideshow"
+            type="button"
+          >
+            <svg class="embla-pause-icon w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1" />
+              <rect x="14" y="4" width="4" height="16" rx="1" />
+            </svg>
+            <svg class="embla-play-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+        )}
         <button
           data-embla-prev
           class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"

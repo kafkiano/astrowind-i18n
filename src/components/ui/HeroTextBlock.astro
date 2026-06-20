@@ -38,18 +38,17 @@ const animationClasses = animate
 <div class={align === 'left' ? 'max-w-3xl mx-auto lg:max-w-none' : 'max-w-3xl mx-auto'}>
   {
     subtitle && (
-      <p
-        class={`text-lg md:text-xl text-muted mb-6 dark:text-slate-300 ${animationClasses}`}
-        set:html={subtitle}
-      />
+      <p class={`text-lg md:text-xl text-muted mb-6 dark:text-slate-300 ${animationClasses}`} set:html={subtitle} />
     )
   }
   {
     actions && (
       <div
-        class={align === 'left'
-          ? `max-w-3xl mx-auto lg:max-w-none flex flex-nowrap flex-row justify-center lg:justify-start gap-4 ${animationClasses}`
-          : `max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-row justify-center gap-4 ${animationClasses}`}
+        class={
+          align === 'left'
+            ? `max-w-3xl mx-auto lg:max-w-none flex flex-nowrap flex-row justify-center lg:justify-start gap-4 ${animationClasses}`
+            : `max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-row justify-center gap-4 ${animationClasses}`
+        }
       >
         {Array.isArray(actions) ? (
           actions.map((action) => (
