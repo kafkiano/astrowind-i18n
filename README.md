@@ -20,8 +20,6 @@
 - ✅ **Git-based CMS** via Sveltia CMS — edit content online, commits trigger automatic redeploy.
 - ✅ **Website Farm architecture** — one repo, unlimited client websites. Branch-per-client model keeps the base theme pristine while each client gets their own deployment pipeline.
 
-**Live demo:** [artesano-moraira.netlify.app](https://artesano-moraira.netlify.app) — a real client site built on this template (Artesano Moraira: gallery · café · juice bar in Alicante, Spain).
-
 **AstroWind** tries to give you quick access to creating a website using [Astro 6](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
 
 Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
@@ -266,24 +264,6 @@ Astrowind includes **Sveltia CMS** – a lightweight, Git-based content editor a
   - **Snippets** (`src/data/snippets/en/`) – reusable markdown content rendered by the `MarkdownSlot` component. Target-locale copies are generated automatically at build time.
 
 Target locale translations (es, fr, de) are handled automatically at build time and don't need manual CMS editing.
-
-#### Website Farm Deployment
-
-The repo is a **website farm** — one codebase, multiple client websites, each on its own branch with its own deployment target.
-
-| Branch | Deploys to | URL |
-|---|---|---|
-| `main` | GitHub Pages | `https://kafkiano.github.io/astrowind-i18n/` |
-| `client/artesano` | Netlify | `https://artesano-moraira.netlify.app/` |
-| `client/<name>` | Netlify (per client) | `<name>.netlify.app` or custom domain |
-
-**How it works:**
-
-- **`main`** — the base theme. GitHub Actions builds on push and deploys to GitHub Pages. This is the demo/showcase site.
-- **Client branches** — created from `main`. Each has its own `config.yaml` (site name, domain, locales), `netlify.toml` (build config), and CMS config (`public/admin/config.yml` pointed at its own branch). Netlify auto-deploys on push.
-- **CMS per client** — each client branch has its own CMS at `<client-url>/admin/`. The CMS commits to that client's branch, triggering a Netlify rebuild. The base theme's CMS at the GitHub Pages URL edits `main`.
-
-See [`docs/client-architecture.md`](docs/client-architecture.md) for the full architecture, onboarding process, and widget toolbox.
 
 #### CI/CD (GitHub Actions)
 
