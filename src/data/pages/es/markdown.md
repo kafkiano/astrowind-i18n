@@ -1,8 +1,7 @@
 ---
-title: Página en Markdown
-showIn: header
-order: 1
-group: Recursos
+title: 'Página en Markdown'
+showIn: 'header'
+group: 'Demostraciones'
 ---
 
 ### ¿Qué es Markdown?
@@ -17,13 +16,13 @@ Vamos a profundizar en el tema. ⤵️
 1. [Párrafo](#párrafo)
 2. [Encabezados](#encabezados)
 3. [Énfasis](#énfasis)
-4. [Cita destacada](#cita_destacada)
-5. [Imágenes](#images)
+4. [Cita destacada](#cita destacada)
+5. [Imágenes](#imágenes)
 6. [Enlaces](#links)
 7. [Código](#code)
 8. [Listas](#lists)
    - [Lista ordenada](#orderedlist)
-   - [Lista desordenada](#unorderedlist)
+   - [Lista sin ordenar](#unorderedlist)
    - [Lista mixta](#mixedlist)
 9. [Tabla](#table)
 10. [Lista de tareas](#tasklist)
@@ -42,7 +41,7 @@ Al escribir texto normal, básicamente estás escribiendo un párrafo.
 Este es un párrafo.
 ```
 
-Esto es un párrafo.
+Este es un párrafo.
 
 ---
 
@@ -52,20 +51,20 @@ Hay 6 variantes de encabezados. El número de símbolos «#», seguidos de texto
 
 ```
 # Encabezado 1
-## Encabezado 2
-### Encabezado 3
-#### Encabezado 4
-##### Encabezado 5
-###### Encabezado 6
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+###### Título 6
 ```
 
-# Encabezado 1
+# Título 1
 
-## Encabezado 2
+## Título 2
 
-### Encabezado 3
+### Título 3
 
-#### Encabezado 4
+#### Título 4
 
 ##### Título 5
 
@@ -86,8 +85,8 @@ Lo has adivinado, _un guión bajo también es suficiente_.
 ¿Y si quiero ~~tacharlo~~?
 ```
 
-Con dos asteriscos **este texto está en negrita**.  
-Dos guiones bajos **también sirven**.  
+Usando dos asteriscos **este texto está en negrita**.  
+Dos guiones bajos **también funcionan**.  
 Ahora pongámoslo _en cursiva_.  
 Lo has adivinado, _un guión bajo también basta_.  
 ¿Podemos combinar **_ambas cosas_?** Por supuesto.  
@@ -95,12 +94,12 @@ Lo has adivinado, _un guión bajo también basta_.
 
 ---
 
-## Cita destacada
+## Cita en bloque
 
-¿Quieres resaltar la importancia del texto? No digas más.
+¿Quieres destacar la importancia del texto? No digas más.
 
 ```
-> Esto es una cita destacada.
+> Esto es una cita en bloque.
 > ¿Quieres escribir en una nueva línea con espacio entre líneas?
 >
 > > ¿Y anidada? No hay ningún problema.
@@ -153,8 +152,8 @@ Encuentra documentación muy útil [aquí][docs]
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
 [docs]: https://github.com/adam-p/markdown-here
 
-[¿Te gusta lo que has visto hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
-[Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][hoja-de-referencia-de-Markdown]  
+[¿Te está gustando hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
+[Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][markdown-cheatsheet]  
 Encuentra documentación estupenda [aquí][docs]
 
 ---
@@ -164,17 +163,17 @@ Encuentra documentación estupenda [aquí][docs]
 Puedes crear fragmentos de código tanto en línea como en bloques completos. También puedes definir el lenguaje de programación que estás utilizando en tu fragmento. Todo ello utilizando comillas invertidas.
 
 ````
-    He creado un archivo `.env` en la raíz.
+    He creado el archivo `.env` en la raíz.
     ¿Comillas invertidas dentro de comillas invertidas? `` `No hay problema.` ``
 
- ```
+    ```
     {
  learning: "Markdown",
  showing: "fragmento de código en bloque"
     }
     ```
 
-    ```js
+ ```js
     const x = "Fragmento de código en bloque en JS";
     console.log(x);
     ```
@@ -240,7 +239,7 @@ También puedes mezclar ambas listas y crear sublistas.
 **PD:** Intenta no crear listas con más de dos niveles de profundidad. Es la mejor práctica.
 
 ```
-1. Aprender los conceptos básicos
+1. Aprender conceptos básicos
    1. HTML
    2. CSS
    7. JavaScript
@@ -252,7 +251,7 @@ También puedes mezclar ambas listas y crear sublistas.
    + Svelte
 ```
 
-1. Aprende los conceptos básicos
+1. Aprender conceptos básicos
    1. HTML
    2. CSS
    3. JavaScript
@@ -267,17 +266,17 @@ También puedes mezclar ambas listas y crear sublistas.
 
 ## Tabla
 
-Una forma estupenda de mostrar datos bien organizados. Utiliza el símbolo «|» para separar columnas y el símbolo «:» para alinear el contenido de las filas.
+Una forma estupenda de mostrar datos bien organizados. Utiliza el símbolo «|» para separar las columnas y el símbolo «:» para alinear el contenido de las filas.
 
 ```
-| Alineación a la izquierda (por defecto) | Alineación centrada | Alineación a la derecha |
+| Alineación a la izquierda (predeterminada) | Alineación centrada | Alineación a la derecha |
 | :------------------- | :----------: | ----------: |
 | React.js | Node.js | MySQL |
 | Next.js | Express | MongoDB     |
 | Vue.js | Nest.js | Redis |
 ```
 
-| Alineación a la izquierda (predeterminada) | Alineación centrada | Alineación a la derecha |
+| Alineación a la izquierda (predeterminada) | Alineación al centro | Alineación a la derecha |
 | :------------------- | :----------: | ----------: |
 | React.js |   Node.js    | MySQL |
 | Next.js |   Express    |     MongoDB |
@@ -287,7 +286,7 @@ Una forma estupenda de mostrar datos bien organizados. Utiliza el símbolo «|»
 
 ## Lista de tareas
 
-Llevar un registro de las tareas que se han completado y de las que quedan por hacer.
+Llevar un registro de las tareas que ya se han realizado y de las que quedan por hacer.
 
 ```
 - [x] Aprender Markdown
@@ -297,7 +296,7 @@ Llevar un registro de las tareas que se han completado y de las que quedan por h
 
 - [x] Aprender Markdown
 - [ ] Aprender desarrollo front-end
-- [ ] Aprender desarrollo full-stack
+- [ ] Aprender desarrollo full stack
 
 ---
 
@@ -312,7 +311,7 @@ Llevar un registro de las tareas que se han completado y de las que quedan por h
 El proyecto trata sobre música y películas.
 
 ##### Espero que te guste. [^ver]
-[^ver]: Cargando.... ⌛️
+[^ver]: Cargando... ⌛️
 ```
 
 #### Estoy trabajando en un nuevo proyecto. [^1]
@@ -321,7 +320,7 @@ El proyecto trata sobre música y películas.
 
 El proyecto trata sobre música y películas.
 
-##### Espero que te guste. [^ver]
+##### Espero que os guste. [^ver]
 
 [^ver]: Cargando... ⌛️
 
@@ -404,13 +403,13 @@ También puedes utilizar código HTML sin formato en tu archivo Markdown. La may
 <br />
 <br />
 
-<p>Truco rápido para <strong><em>centrar una imagen</em></strong>?</p>
+<p>¿Un truco rápido para <strong><em>centrar una imagen</em></strong>?</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
   <summary>¿Otro truco rápido más? 🎭</summary>
- 
- → Fácil  
+  
+  → Fácil  
   → Y sencillo
 </details>
 
@@ -427,19 +426,19 @@ mindmap
  Integración de API
  Automatización del navegador
  Fuentes RSS
- Programación y orquestación
+      Programación y orquestación
     Procesamiento de datos
  Almacenamiento de datos estructurados
  Procesamiento de datos no estructurados
  Integración de LLM
- Coincidencia y puntuación
+ Emparejamiento y puntuación
     Interfaz de usuario
  Panel de control y visualización
  Gestión de alertas
  Configuración y ajustes
     Infraestructura
  Supervisión y registro
- Gestión de errores
+      Gestión de errores
  Escalabilidad
  Eficiencia de costes
 ```
@@ -453,7 +452,7 @@ flowchart LR
     C --> D[Capa de almacenamiento]
     D --> E[Interfaz de usuario]
     D --> F[Interfaz LLM]
-    G[Capa de monitorización] -.-> B
+    G[Capa de supervisión] -.-> B
     G -.-> C
     G -.-> D
 ```

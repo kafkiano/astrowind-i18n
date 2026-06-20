@@ -1,8 +1,7 @@
 ---
-title: Markdown-Seite
-showIn: header
-order: 1
-group: Ressourcen
+title: 'Markdown-Seite'
+showIn: 'header'
+group: 'Demos'
 ---
 
 ### Was ist Markdown?
@@ -28,7 +27,7 @@ Lassen Sie uns loslegen. ⤵️
 9. [Tabelle](#table)
 10. [Aufgabenliste](#tasklist)
 11. [Fußnote](#footnote)
-12. [Zum Abschnitt springen](#sectionjump)
+12. [Sprung zum Abschnitt](#sectionjump)
 13. [Horizontale Linie](#horizontalline)
 14. [HTML](#html)
 
@@ -36,7 +35,7 @@ Lassen Sie uns loslegen. ⤵️
 
 ## Absatz
 
-Wenn du normalen Text schreibst, verfasst du im Grunde einen Absatz.
+Wenn Sie normalen Text schreiben, verfassen Sie im Grunde einen Absatz.
 
 ```
 Dies ist ein Absatz.
@@ -48,7 +47,7 @@ Dies ist ein Absatz.
 
 ## Überschriften
 
-Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von Text, gibt die Wichtigkeit der Überschrift an.
+Es gibt 6 Arten von Überschriften. Die Anzahl der „#“-Symbole, gefolgt von Text, gibt die Wichtigkeit der Überschrift an.
 
 ```
 # Überschrift 1
@@ -73,9 +72,9 @@ Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von T
 
 ---
 
-## Hervorhebung
+## Hervorhebungen
 
-Das Formatieren von Text ist ganz einfach. Du kannst deinen Text fett, kursiv oder durchgestrichen darstellen.
+Das Bearbeiten von Text ist ganz einfach und übersichtlich. Du kannst deinen Text fett, kursiv oder durchgestrichen formatieren.
 
 ```
 Mit zwei Sternchen **ist dieser Text fett**.
@@ -89,9 +88,9 @@ Was ist, wenn ich ~~durchstreichen~~ möchte?
 Mit zwei Sternchen **ist dieser Text fett**.  
 Zwei Unterstriche **funktionieren ebenfalls**.  
 Machen wir ihn jetzt _kursiv_.  
-Du hast es erraten: _Ein Unterstrich reicht auch_.  
+Du hast es erraten: _Ein Unterstrich reicht ebenfalls aus_.  
 Können wir **_beides_ kombinieren?** Auf jeden Fall.  
-Was ist, wenn ich ~~durchstreichen~~ möchte?
+Was ist, wenn ich den Text ~~durchstreichen~~ möchte?
 
 ---
 
@@ -119,7 +118,7 @@ Möchtest du die Wichtigkeit des Textes hervorheben? Mehr musst du nicht sagen.
 
 ## Bilder
 
-Am besten ziehst du das Bild einfach per Drag & Drop direkt von deinem Computer hierher. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
+Am besten ziehst du das Bild einfach direkt von deinem Computer per Drag & Drop hinein. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
 Hier ist die Syntax.
 
 ```
@@ -131,7 +130,7 @@ Hier ist die Syntax.
 
 ![Text, falls das Bild nicht geladen werden kann](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Text, der beim Darüberfahren mit der Maus angezeigt wird')
 
-[Logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Mit der Maus darüberfahren'
+[Logo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Fahre mit der Maus darüber'
 
 ![Fehlertext][Logo]
 
@@ -151,17 +150,17 @@ Tolle Dokumentationen findest du [hier][docs]
 ```
 
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
+[Dokumente]: https://github.com/adam-p/markdown-here
 
 [Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)  
 [Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]  
-Hier findest du tolle Dokumentationen [hier][docs]
+Tolle Dokumentationen findest du [hier][docs]
 
 ---
 
 ## Code
 
-Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Du kannst in deinem Schnipsel auch die verwendete Programmiersprache angeben. All dies geschieht mithilfe von Backticks.
+Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Außerdem kannst du die in deinem Schnipsel verwendete Programmiersprache angeben. All das geschieht mithilfe von Backticks.
 
 ````
     Ich habe im Stammverzeichnis eine `.env`-Datei erstellt.
@@ -174,13 +173,13 @@ Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. 
     }
     ```
 
- ```js
+    ```js
     const x = "Block-Code-Schnipsel in JS";
     console.log(x);
     ```
 ````
 
-Ich habe die Datei `.env` im Stammverzeichnis angelegt.
+Ich habe die Datei `.env` im Stammverzeichnis erstellt.
 Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 
 ```
@@ -199,7 +198,7 @@ console.log(x);
 
 ## Listen
 
-Genau wie in HTML ermöglicht Markdown das Erstellen sowohl von nummerierten als auch von unnummerierten Listen.
+Genau wie in HTML lassen sich in Markdown sowohl nummerierte als auch unnummerierte Listen erstellen.
 
 ### Nummerierte Liste
 
@@ -267,7 +266,7 @@ Du kannst auch beide Listen mischen und Unterlisten erstellen.
 
 ## Tabelle
 
-Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwenden Sie das Symbol „|“ zum Trennen der Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
+Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das Symbol „|“ zum Trennen der Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
 
 ```
 | Linksbündig (Standard) | Zentriert | Rechtsbündig |
@@ -382,7 +381,7 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 <br />
 <br />
 
-<p>Schneller Hack für <strong><em>die Zentrierung von Bildern</em></strong>?</p>
+<p>Schneller Hack für <strong><em>Bildzentrierung</em></strong>?</p>
 <p align="center"><img src="automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" /></p>
 
 <details>
@@ -431,7 +430,7 @@ mindmap
     Datenverarbeitung
  Speicherung strukturierter Daten
  Verarbeitung unstrukturierter Daten
- LLM-Integration
+      LLM-Integration
  Abgleich & Bewertung
     Benutzeroberfläche
  Dashboard & Visualisierung
@@ -453,7 +452,7 @@ flowchart LR
     C --> D[Speicherschicht]
     D --> E[Benutzeroberfläche]
     D --> F[LLM-Schnittstelle]
-    G[Überwachungsebene] -.-> B
+    G[Überwachungsschicht] -.-> B
     G -.-> C
     G -.-> D
 ```
