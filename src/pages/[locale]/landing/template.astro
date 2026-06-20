@@ -1,7 +1,7 @@
 ---
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getEntry } from 'astro:content';
 import { getStaticPathsForLocale } from '~/utils/i18n';
+import { getTemplateEntry } from '~/utils/templates';
 import Layout from '~/layouts/LandingLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -17,14 +17,7 @@ export const navigation = {
 };
 
 const locale = Astro.currentLocale ?? 'en';
-let page = await getEntry('templates', `${locale}/landing`);
-// Fall back to source locale if translation doesn't exist yet
-if (!page) {
-  page = await getEntry('templates', `en/landing`);
-}
-if (!page) {
-  throw new Error(`Template landing not found for locale: ${locale} (or fallback en)`);
-}
+const page = await getTemplateEntry('landing', locale);
 const { data } = page;
 
 // Cast passthrough fields — schema only requires title, rest is free-form
