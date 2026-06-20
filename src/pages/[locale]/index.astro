@@ -1,25 +1,18 @@
 ---
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getEntry } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getTemplateEntry } from '~/utils/templates';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
 
 const locale = Astro.currentLocale ?? 'en';
-let home = await getEntry('templates', `${locale}/home`);
-if (!home) {
-  home = await getEntry('templates', `en/home`);
-}
-if (!home) {
-  throw new Error(`Home page not found for locale: ${locale} (or fallback en)`);
-}
-
+const home = await getTemplateEntry('home', locale);
 const { data } = home;
 
 const hero = data.hero as any;

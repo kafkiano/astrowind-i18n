@@ -100,159 +100,547 @@ collections:
   - name: templates
     label: Page Templates
     label_singular: Template
-    folder: src/data/templates/en
-    create: false
-    extension: md
-    format: frontmatter
-    description: >
-      Data files for custom .astro page templates.
-      These are NOT standalone pages — they are consumed
-      by specific .astro templates via getEntry().
-      All structured content lives in frontmatter.
-    fields:
-      - label: Title
-        name: title
-        widget: string
-        hint: Browser tab title.
-
-      - label: Hero
-        name: hero
-        widget: object
+    files:
+      - name: home
+        label: Homepage
+        file: src/data/templates/en/home.md
+        description: Homepage hero, services slider, how-we-work steps, and CTA.
         fields:
-          - label: Tagline
-            name: tagline
-            widget: string
-            required: false
           - label: Title
             name: title
             widget: string
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            required: false
-          - label: Content
-            name: content
-            widget: text
-            required: false
-          - label: Actions
-            name: actions
-            widget: list
-            required: false
+            hint: Browser tab title.
+
+          - label: Hero
+            name: hero
+            widget: object
             fields:
-              - label: Button text
-                name: text
-                widget: string
-              - label: Link
-                name: href
-                widget: string
-              - label: Style
-                name: variant
-                widget: select
-                options: ['primary', 'secondary', 'tertiary', 'link']
-                default: primary
-                required: false
-              - label: Icon
-                name: icon
+              - label: Tagline
+                name: tagline
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:phone'
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Content
+                name: content
+                widget: text
+                required: false
+              - label: Actions
+                name: actions
+                widget: list
+                required: false
+                fields:
+                  - label: Button text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+                  - label: Style
+                    name: variant
+                    widget: select
+                    options: ['primary', 'secondary', 'tertiary', 'link']
+                    default: primary
+                    required: false
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:phone'
 
-      - label: Services Intro
-        name: servicesIntro
-        widget: object
-        required: false
-        fields:
-          - label: Tagline
-            name: tagline
-            widget: string
-            required: false
-          - label: Title
-            name: title
-            widget: string
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            required: false
+          - label: Services Intro
+            name: servicesIntro
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
 
-      - label: Services
-        name: services
-        widget: object
-        required: false
-        fields:
-          - label: Items
-            name: items
-            widget: list
+          - label: Services
+            name: services
+            widget: object
+            fields:
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:building-estate'
+
+          - label: How We Work
+            name: howWeWork
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:phone-call'
+
+          - label: Call to Action
+            name: cta
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Description
-                name: description
-                widget: text
-              - label: Icon
-                name: icon
+              - label: Subtitle
+                name: subtitle
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:building-estate'
+              - label: Buttons
+                name: actions
+                widget: list
+                fields:
+                  - label: Button text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+                  - label: Style
+                    name: variant
+                    widget: select
+                    options: ['primary', 'secondary', 'tertiary', 'link']
+                    default: primary
+                    required: false
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:mail'
 
-      - label: How We Work
-        name: howWeWork
-        widget: object
-        required: false
+      - name: about
+        label: About Page
+        file: src/data/templates/en/about.md
+        description: Company overview, core services, stats, and contact details.
         fields:
-          - label: Tagline
-            name: tagline
-            widget: string
-            required: false
           - label: Title
             name: title
             widget: string
-          - label: Items
-            name: items
-            widget: list
+            hint: Browser tab title.
+
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+
+          - label: Description
+            name: description
+            widget: object
             fields:
               - label: Title
                 name: title
                 widget: string
-              - label: Description
-                name: description
-                widget: text
-              - label: Icon
-                name: icon
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+              - label: Image URL
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: string
+                  - label: Alt text
+                    name: alt
+                    widget: string
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+
+          - label: Core Services
+            name: coreServices
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:phone-call'
+              - label: Title
+                name: title
+                widget: string
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
 
-      - label: Call to Action
-        name: cta
-        widget: object
-        required: false
+          - label: Who We Serve
+            name: whoWeServe
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: string
+                  - label: Alt text
+                    name: alt
+                    widget: string
+
+          - label: Stats
+            name: stats
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Amount
+                    name: amount
+                    widget: string
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+
+          - label: Company Details
+            name: companyDetails
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Fields
+                name: fields
+                widget: list
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                  - label: Value
+                    name: value
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+                    required: false
+                    hint: 'e.g. mailto:info@example.com or tel:+971...'
+
+          - label: Call to Action
+            name: cta
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Buttons
+                name: actions
+                widget: list
+                fields:
+                  - label: Button text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+                  - label: Style
+                    name: variant
+                    widget: select
+                    options: ['primary', 'secondary', 'tertiary', 'link']
+                    default: primary
+                    required: false
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:mail'
+
+      - name: services
+        label: Services Page
+        file: src/data/templates/en/services.md
+        description: All service sections with deliverables and disclaimers.
         fields:
           - label: Title
             name: title
             widget: string
-          - label: Subtitle
-            name: subtitle
-            widget: string
-            required: false
-          - label: Buttons
-            name: actions
+            hint: Browser tab title.
+
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+
+          - label: Service Sections
+            name: sections
             widget: list
             fields:
-              - label: Button text
-                name: text
+              - label: Key
+                name: key
                 widget: string
-              - label: Link
-                name: href
+                hint: 'Unique identifier, e.g. realEstate, financing'
+              - label: Title
+                name: title
                 widget: string
-              - label: Style
-                name: variant
-                widget: select
-                options: ['primary', 'secondary', 'tertiary', 'link']
-                default: primary
-                required: false
-              - label: Icon
-                name: icon
+              - label: Subtitle
+                name: subtitle
                 widget: string
                 required: false
-                hint: 'tabler icon name, e.g. tabler:mail'
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source
+                    name: src
+                    widget: string
+                  - label: Alt text
+                    name: alt
+                    widget: string
+              - label: Slot Content
+                name: slotContent
+                widget: object
+                required: false
+                fields:
+                  - label: Heading
+                    name: heading
+                    widget: string
+                    required: false
+                  - label: Deliverables
+                    name: deliverables
+                    widget: list
+                    required: false
+                    field: { label: Item, name: item, widget: string }
+                  - label: Note
+                    name: note
+                    widget: text
+                    required: false
+                  - label: Disclaimer
+                    name: disclaimer
+                    widget: object
+                    required: false
+                    fields:
+                      - label: Title
+                        name: title
+                        widget: string
+                      - label: Text
+                        name: text
+                        widget: text
+
+          - label: Call to Action
+            name: cta
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Buttons
+                name: actions
+                widget: list
+                fields:
+                  - label: Button text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+                  - label: Style
+                    name: variant
+                    widget: select
+                    options: ['primary', 'secondary', 'tertiary', 'link']
+                    default: primary
+                    required: false
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:mail'
+
+      - name: faq
+        label: FAQ Page
+        file: src/data/templates/en/faq.md
+        description: Frequently asked questions.
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            hint: Browser tab title.
+
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+
+          - label: Questions
+            name: items
+            widget: list
+            fields:
+              - label: Question
+                name: title
+                widget: string
+              - label: Answer
+                name: description
+                widget: text
+
+          - label: Call to Action
+            name: cta
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+                required: false
+              - label: Buttons
+                name: actions
+                widget: list
+                fields:
+                  - label: Button text
+                    name: text
+                    widget: string
+                  - label: Link
+                    name: href
+                    widget: string
+                  - label: Style
+                    name: variant
+                    widget: select
+                    options: ['primary', 'secondary', 'tertiary', 'link']
+                    default: primary
+                    required: false
+                  - label: Icon
+                    name: icon
+                    widget: string
+                    required: false
+                    hint: 'tabler icon name, e.g. tabler:mail'

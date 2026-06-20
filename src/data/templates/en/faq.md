@@ -1,0 +1,36 @@
+---
+title: "Frequently Asked Questions — Best Visual"
+
+hero:
+  tagline: FAQ
+  title: Frequently Asked Questions
+
+items:
+  - title: Do you handle properties in all UAE emirates?
+    description: "Yes, we coordinate real estate services across Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, and other emirates. Where local brokerage licenses are required, we work with licensed partners in that jurisdiction."
+  - title: What does "financing coordination" actually mean?
+    description: "We help you understand financing options, prepare documentation, liaise with banks and mortgage providers, and track the application process. We do not approve loans or handle funds — that is done directly by licensed financial institutions."
+  - title: Do you offer graphic design and branding services?
+    description: "Yes, we offer complete corporate design including visual identity, logos, brand materials, posters, presentations, and brand guidelines. We work from initial concept through to delivery of all necessary assets."
+  - title: What does business consulting include?
+    description: "Our consulting services include market entry strategy analysis, business structure evaluation, operational planning, financial projections, due diligence, and business plan development. We focus on practical, executable aspects."
+  - title: Can you help with visa processing?
+    description: "For business setup clients, we coordinate business visa and residency permit applications as part of company formation through licensed PRO service providers. We do not process tourist or visit visas."
+  - title: Do you charge upfront fees?
+    description: "Project scope and payment terms are agreed before work begins. Depending on the service, this may include an initial deposit, milestone payments, or other structures appropriate to the engagement."
+  - title: How long does UAE business setup take?
+    description: "Free Zone company formation typically takes 2–4 weeks. Mainland setup can take 4–8 weeks. Offshore structures are usually 1–2 weeks. Timelines depend on documentation readiness and authority processing times."
+  - title: What is the difference between Free Zone, Mainland, and Offshore?
+    description: "Free Zone: 100% foreign ownership, tax exemptions, ideal for services and international trade, but with restrictions on operating in the local UAE market. Mainland: Allows operation throughout UAE, may require local sponsor, suitable for B2C business and government contracts. Offshore: No physical operations in UAE, used for holding, investments, and asset protection, no office requirements. We offer consulting to determine which structure is optimal for your specific goals."
+  - title: Do you work with clients outside UAE, Germany, and Spain?
+    description: "Yes, but our deepest operational experience is in these three markets. We can support clients in other regions on a case-by-case basis depending on project requirements."
+
+cta:
+  title: Still have questions?
+  subtitle: "Reach out and we will get back to you within 24 business hours."
+  actions:
+    - text: Contact us
+      href: /contact
+      variant: primary
+      icon: tabler:mail
+---

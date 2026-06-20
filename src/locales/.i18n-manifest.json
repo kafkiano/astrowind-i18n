@@ -9,9 +9,12 @@
     "src/data/post/en/cross-border-real-estate-uae-eu.md": "f3a897e0eb7f7a5a5fda934894b90ec29ba4f36a19cc8910c5ced93845f2edc2",
     "src/data/post/en/free-zone-vs-mainland-vs-offshore.md": "aa5b1f4898005b01a4a50361d7f3a99ad2a0765f716ba48dc8a2a2a3712bf586",
     "src/data/post/en/project-reporting-decision-making.md": "93eea91c8ba2a6175d16b4408dadf0c378b5d4c89d15acc243209519fbdc593a",
-    "src/data/templates/en/home.md": "722e67b3583f957cbbe1eb4a6dc3bc1df63811170125b005bd4dae47ee7470e1"
+    "src/data/templates/en/home.md": "722e67b3583f957cbbe1eb4a6dc3bc1df63811170125b005bd4dae47ee7470e1",
+    "src/data/templates/en/services.md": "3ae7457d0240cd24439a3a2697add354a6cea238a47c619b4193af5ef61f4971",
+    "src/data/templates/en/faq.md": "cd9e201797aebb5e01889f6ef84fceb0fd1ed5a6d88d4bbaf90c39f2c7216aad",
+    "src/data/templates/en/about.md": "233444151981fcead0e57c3fa878dd9936fc2d9ddd38f496dd5fedc313af4101"
   },
   "catalogs": {
-    "en": "207f542f56f93de5e5d1e6c3af23b868c32d3b1c24834ffae903d742219f722b"
+    "en": "34cc96a6b1e74ab88cef99c6fa6ec178d852dec00b8afa531784623d949da63f"
   }
 }
