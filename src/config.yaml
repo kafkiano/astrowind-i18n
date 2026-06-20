@@ -1,6 +1,6 @@
 site:
   name: AstroWind I18n
-  site: 'https://kafkiano.github.io'
+  site: 'https://kafkiano.org'
   base: '/astrowind-i18n'
   trailingSlash: false
 
