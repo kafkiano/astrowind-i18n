@@ -111,47 +111,47 @@ collections:
             widget: string
             hint: Browser tab title.
 
-          - label: Hero
-            name: hero
+          - label: Hero Slider
+            name: heroSlider
             widget: object
+            required: false
+            hint: Replaces the standard hero with a full-width image slider.
             fields:
-              - label: Tagline
-                name: tagline
-                widget: string
-                required: false
-              - label: Title
-                name: title
-                widget: string
-              - label: Subtitle
-                name: subtitle
-                widget: string
-                required: false
-              - label: Content
-                name: content
-                widget: text
-                required: false
-              - label: Actions
-                name: actions
+              - label: Slides
+                name: slides
                 widget: list
                 required: false
                 fields:
-                  - label: Button text
-                    name: text
+                  - label: Image
+                    name: image
+                    widget: object
+                    fields:
+                      - label: Source
+                        name: src
+                        widget: string
+                        hint: 'Local path or external URL, e.g. ~/assets/images/hero.jpg or https://images.unsplash.com/...'
+                      - label: Alt text
+                        name: alt
+                        widget: string
+                        required: false
+                  - label: Title
+                    name: title
                     widget: string
-                  - label: Link
-                    name: href
+                  - label: Subtitle
+                    name: subtitle
                     widget: string
-                  - label: Style
-                    name: variant
-                    widget: select
-                    options: ['primary', 'secondary', 'tertiary', 'link']
-                    default: primary
                     required: false
-                  - label: Icon
-                    name: icon
-                    widget: string
+                  - label: Actions
+                    name: actions
+                    widget: list
                     required: false
-                    hint: 'tabler icon name, e.g. tabler:phone'
+                    fields:
+                      - label: Button text
+                        name: text
+                        widget: string
+                      - label: Link
+                        name: href
+                        widget: string
 
           - label: Services Intro
             name: servicesIntro
@@ -237,17 +237,6 @@ collections:
                   - label: Link
                     name: href
                     widget: string
-                  - label: Style
-                    name: variant
-                    widget: select
-                    options: ['primary', 'secondary', 'tertiary', 'link']
-                    default: primary
-                    required: false
-                  - label: Icon
-                    name: icon
-                    widget: string
-                    required: false
-                    hint: 'tabler icon name, e.g. tabler:mail'
 
       - name: about
         label: About Page

@@ -1,6 +1,53 @@
 ---
 title: Best Visual | Real Estate, Business Setup & Project Management | UAE · Germany · Spain
 
+heroSlider:
+  slides:
+    - image:
+        src: https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1374&auto=format&fit=crop
+        alt: Modern architecture in the UAE
+      title: Real Estate, Business Setup, and Project Management
+      subtitle: across UAE, Germany, and Spain
+      actions:
+        - text: Speak with us
+          href: /contact
+          variant: primary
+          icon: tabler:phone
+        - text: View services
+          href: /services
+          icon: tabler:arrow-right
+    - image:
+        src: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        alt: Contemporary commercial building exterior
+      title: RAKEZ-Licensed in Ras Al Khaimah
+      subtitle: Structured execution and reliable follow-through for corporate, property, and consulting engagements
+      actions:
+        - text: Contact us
+          href: /contact
+          variant: primary
+          icon: tabler:phone
+    - image:
+        src: https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80
+        alt: Real estate property interior
+      title: Real Estate Consultancy & Brokerage
+      subtitle: Advisory, sourcing, and transaction coordination across UAE, Germany, and Spain
+      actions:
+        - text: Explore real estate
+          href: /services
+          variant: primary
+          icon: tabler:building-estate
+    - image:
+        src: https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        alt: Project planning meeting
+      title: Business Setup, Marketing & Project Delivery
+      subtitle: From company formation to content creation — with weekly progress reporting and clear deliverables
+      actions:
+        - text: View services
+          href: /services
+          variant: primary
+          icon: tabler:arrow-right
+
+# Legacy hero fallback (kept until all locales migrate)
 hero:
   title: Real Estate, Business Setup, and Project Management
   subtitle: across UAE, Germany, and Spain

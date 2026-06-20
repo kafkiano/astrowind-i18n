@@ -1,5 +1,50 @@
 ---
 title: Beste visuelle Darstellung | Immobilien, Unternehmensgründung und Projektmanagement | VAE · Deutschland · Spanien
+heroSlider:
+  slides:
+    - image:
+        src: https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1374&auto=format&fit=crop
+        alt: Moderne Architektur in den Vereinigten Arabischen Emiraten
+      title: Immobilien, Unternehmensgründung und Projektmanagement
+      subtitle: in den Vereinigten Arabischen Emiraten, Deutschland und Spanien
+      actions:
+        - text: Sprechen Sie mit uns
+          href: /contact
+          variant: primary
+          icon: tabler:phone
+        - text: Dienstleistungen anzeigen
+          href: /services
+          icon: tabler:arrow-right
+    - image:
+        src: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        alt: Fassade eines modernen Geschäftsgebäudes
+      title: RAKEZ-lizenziert in Ras Al Khaimah
+      subtitle: Strukturierte Abwicklung und zuverlässige Umsetzung bei Unternehmens-, Immobilien- und Beratungsaufträgen
+      actions:
+        - text: Kontaktieren Sie uns
+          href: /contact
+          variant: primary
+          icon: tabler:phone
+    - image:
+        src: https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80
+        alt: Innenausstattung von Immobilien
+      title: Immobilienberatung und -vermittlung
+      subtitle: Beratung, Beschaffung und Transaktionskoordination in den Vereinigten Arabischen Emiraten, Deutschland und Spanien
+      actions:
+        - text: Immobilien entdecken
+          href: /services
+          variant: primary
+          icon: tabler:building-estate
+    - image:
+        src: https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        alt: Projektplanungssitzung
+      title: Unternehmensgründung, Marketing und Projektumsetzung
+      subtitle: Von der Unternehmensgründung bis zur Erstellung von Inhalten – mit wöchentlichen Fortschrittsberichten und klar definierten Leistungen
+      actions:
+        - text: Dienstleistungen anzeigen
+          href: /services
+          variant: primary
+          icon: tabler:arrow-right
 hero:
   title: Immobilien, Unternehmensgründung und Projektmanagement
   subtitle: in den Vereinigten Arabischen Emiraten, Deutschland und Spanien

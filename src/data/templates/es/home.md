@@ -1,5 +1,50 @@
 ---
 title: Best Visual | Inmobiliaria, creación de empresas y gestión de proyectos | Emiratos Árabes Unidos · Alemania · España
+heroSlider:
+  slides:
+    - image:
+        src: https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1374&auto=format&fit=crop
+        alt: Arquitectura moderna en los Emiratos Árabes Unidos
+      title: Inmobiliaria, creación de empresas y gestión de proyectos
+      subtitle: en los Emiratos Árabes Unidos, Alemania y España
+      actions:
+        - text: Habla con nosotros
+          href: /contact
+          variant: primary
+          icon: tabler:phone
+        - text: Ver servicios
+          href: /services
+          icon: tabler:arrow-right
+    - image:
+        src: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        alt: Exterior de un edificio comercial contemporáneo
+      title: Con licencia de RAKEZ en Ras Al Khaimah
+      subtitle: Ejecución estructurada y seguimiento fiable en proyectos corporativos, inmobiliarios y de consultoría
+      actions:
+        - text: Contáctanos
+          href: /contact
+          variant: primary
+          icon: tabler:phone
+    - image:
+        src: https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80
+        alt: Interior de un inmueble
+      title: Asesoramiento y intermediación inmobiliaria
+      subtitle: Asesoramiento, búsqueda de proveedores y coordinación de operaciones en los Emiratos Árabes Unidos, Alemania y España
+      actions:
+        - text: Explora el mercado inmobiliario
+          href: /services
+          variant: primary
+          icon: tabler:building-estate
+    - image:
+        src: https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        alt: Reunión de planificación del proyecto
+      title: Creación de empresas, marketing y ejecución de proyectos
+      subtitle: Desde la constitución de la empresa hasta la creación de contenidos, con informes semanales sobre el progreso y unos resultados claros
+      actions:
+        - text: Ver servicios
+          href: /services
+          variant: primary
+          icon: tabler:arrow-right
 hero:
   title: Inmobiliaria, creación de empresas y gestión de proyectos
   subtitle: en los Emiratos Árabes Unidos, Alemania y España

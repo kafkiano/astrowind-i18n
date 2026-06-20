@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
+import HeroSlider from '~/components/widgets/HeroSlider.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -16,6 +17,7 @@ const home = await getTemplateEntry('home', locale);
 const { data } = home;
 
 const hero = data.hero as any;
+const heroSlider = data.heroSlider as any;
 const servicesIntro = data.servicesIntro as any;
 const services = data.services as any;
 const howWeWork = data.howWeWork as any;
@@ -29,14 +31,25 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero -->
-  <Hero
-    variant="centered"
-    title={hero?.title}
-    subtitle={hero?.subtitle}
-    tagline={hero?.tagline}
-    content={hero?.content}
-    actions={hero?.actions}
-  />
+  {
+    heroSlider?.slides?.length ? (
+      <HeroSlider
+        autoplay={{ delay: 5000, disableOnInteraction: true }}
+        sliderNavigation
+        navStyle="minimal"
+        slides={heroSlider.slides}
+      />
+    ) : (
+      <Hero
+        variant="centered"
+        title={hero?.title}
+        subtitle={hero?.subtitle}
+        tagline={hero?.tagline}
+        content={hero?.content}
+        actions={hero?.actions}
+      />
+    )
+  }
 
   <!-- Services Intro + Slider -->
   <Features
