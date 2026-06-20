@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import HeroSlider from '~/components/widgets/HeroSlider.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -24,25 +24,102 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
-  <div class="relative">
-    <Hero
-      variant="centered"
-      title='Free template for <span class="hidden xl:inline">creating websites with</span> <span class="text-accent dark:text-white"> Astro 6</span> + Tailwind CSS'
-      subtitle='<span class="hidden sm:inline"><span class="font-semibold">AstroWind I18n</span> is a free, customizable and production-ready template for Astro 6 + Tailwind CSS.</span> <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.'
-      image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Get template',
-          href: 'https://github.com/kafkiano/astrowind-i18n',
-          target: '_blank',
-          icon: 'tabler:download',
+   
+  <HeroSlider
+    autoplay={{ delay: 4000, disableOnInteraction: true }}
+    sliderPagination
+    sliderNavigation
+    slides={[
+      {
+        image: { src: '~/assets/images/hero-image.png', alt: 'Astro + Tailwind CSS' },
+        title: '<span class="text-accent dark:text-white">Astro 6</span> + Tailwind CSS',
+        subtitle:
+          '<span class="font-semibold">AstroWind I18n</span> is a free, customizable and production-ready template. Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Download',
+            href: 'https://github.com/kafkiano/astrowind-i18n',
+            target: '_blank',
+            icon: 'tabler:download',
+          },
+          { text: 'Learn more', href: '#features' },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Team collaboration',
         },
-        { text: 'Learn more', href: '#features' },
-      ]}
-    />
-  </div>
+        title: 'Auto-translated <span class="text-accent dark:text-white">i18n</span> pipeline',
+        subtitle:
+          'Full internationalization with DeepL and Gemini AI translation. Extract, sync, translate — all automated at build time. Supports 4+ locales out of the box.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'View docs',
+            href: 'https://github.com/kafkiano/astrowind-i18n/blob/main/docs/i18n.md',
+            target: '_blank',
+            icon: 'tabler:book',
+          },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+          alt: 'Blueprint design',
+        },
+        title: '<span class="text-accent dark:text-white">Sveltia CMS</span> ready',
+        subtitle:
+          'Lightweight Git-based content management. Edit content directly in the admin panel — commits go straight to your repo. Zero infrastructure, zero npm dependencies.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Check Sveltia',
+            href: 'https://sveltiacms.app/en/',
+            target: '_blank',
+            icon: 'tabler:settings',
+          },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Space exploration',
+        },
+        title: 'Blazing <span class="text-accent dark:text-white">performance</span>',
+        subtitle:
+          'Static output, optimized images, zero JavaScript by default. Lighthouse scores in the high 90s. Your users will never wait for a page to load.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Lighthouse Test',
+            href: 'https://pagespeed.web.dev/analysis/https-kafkiano-github-io-astrowind-i18n-en/xypdswa1vz?form_factor=mobile',
+            target: '_blank',
+            icon: 'tabler:bolt',
+          },
+        ],
+      },
+      {
+        image: {
+          src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+          alt: 'Development workflow',
+        },
+        title: 'Open source & <span class="text-accent dark:text-white">community driven</span>',
+        subtitle:
+          'MIT licensed. Most starred Astro theme in 2022–2024. Contributions welcome — join the community and help shape the future of Astro templates.',
+        actions: [
+          {
+            variant: 'primary',
+            text: 'Star on GitHub',
+            href: 'https://github.com/kafkiano/astrowind-i18n',
+            target: '_blank',
+            icon: 'tabler:star',
+          },
+        ],
+      },
+    ]}
+  />
 
   <!-- Note Widget ******************* -->
 
