@@ -125,8 +125,10 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
       items.length > 0 && (
         <Slider
           config={{
-            slidesPerView: 1,
-            gap: 24,
+            slidesPerView: 1.25,
+            gap: 16,
+            align: 'start',
+            peek: true,
             loop: sliderLoop ?? true,
             pagination: sliderPagination ? true : false,
             navigation: sliderNavigation ? true : false,
@@ -154,7 +156,7 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
                 defaultIcon={defaultIcon}
                 callToAction={callToAction}
                 classes={{
-                  panel: 'mx-4 p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-xl dark:shadow-none',
+                  panel: 'mx-4 p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-lg dark:shadow-none',
                   icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
                   ...(mergedItemClasses as Record<string, string>),
                 }}

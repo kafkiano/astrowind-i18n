@@ -17,10 +17,26 @@ interface Props {
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
   sliderPagination?: boolean;
   sliderNavigation?: boolean;
+  /** Navigation style: side arrows+dots (default) or bottom minimal controls (minimal) */
+  navStyle?: 'default' | 'minimal';
+  /** Horizontal position of minimal navigation */
+  minimalNavPosition?: 'left' | 'right';
+  /** Enable glassmorphism backdrop behind text content for readability over complex images */
+  glass?: boolean;
   id?: string;
 }
 
-const { tagline, slides = [], autoplay = 5000, sliderPagination, sliderNavigation, id } = Astro.props;
+const {
+  tagline,
+  slides = [],
+  autoplay = 5000,
+  sliderPagination,
+  sliderNavigation,
+  navStyle = 'minimal',
+  minimalNavPosition = 'right',
+  glass = true,
+  id,
+} = Astro.props;
 
 const hasPagination = sliderPagination ?? slides.length > 1;
 const hasNavigation = sliderNavigation ?? slides.length > 1;
@@ -36,10 +52,12 @@ const hasNavigation = sliderNavigation ?? slides.length > 1;
           effect: 'fade',
           slidesPerView: 1,
           gap: 0,
-          pagination: hasPagination,
+          pagination: navStyle === 'minimal' ? false : hasPagination,
           navigation: hasNavigation,
+          navStyle,
+          minimalNavPosition,
         }}
-        class="h-[600px] md:h-[700px] lg:h-screen"
+        class="h-[520px] md:h-[640px] lg:h-[calc(100vh-var(--aw-header-height,0px))]"
       >
         {slides.map((slide) => (
           <div class="embla-slide relative flex items-center justify-center overflow-hidden">
@@ -56,14 +74,27 @@ const hasNavigation = sliderNavigation ?? slides.length > 1;
                 {...(typeof slide.image === 'object' ? slide.image : {})}
               />
             </div>
-            <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-              <HeroTextBlock
-                title={slide.title}
-                subtitle={slide.subtitle}
-                tagline={tagline}
-                actions={slide.actions}
-                align="center"
-              />
+            <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+              {glass ? (
+                <div class="bg-white/25 dark:bg-slate-900/40 backdrop-blur-xl rounded-2xl shadow-lg p-5 md:p-10 lg:p-12 xl:p-10 2xl:p-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                  <HeroTextBlock
+                    title={slide.title}
+                    subtitle={slide.subtitle}
+                    tagline={tagline}
+                    actions={slide.actions}
+                    align="center"
+                    animate={false}
+                  />
+                </div>
+              ) : (
+                <HeroTextBlock
+                  title={slide.title}
+                  subtitle={slide.subtitle}
+                  tagline={tagline}
+                  actions={slide.actions}
+                  align="center"
+                />
+              )}
             </div>
           </div>
         ))}
@@ -71,3 +102,26 @@ const hasNavigation = sliderNavigation ?? slides.length > 1;
     </section>
   )
 }
+
+<script is:inline>
+  (function () {
+    if (window.__awHeroHeaderHeight) return;
+    window.__awHeroHeaderHeight = true;
+
+    function updateHeaderHeight() {
+      const header = document.getElementById('header');
+      if (!header || header.classList.contains('h-screen')) {
+        return;
+      }
+      const style = window.getComputedStyle(header);
+      const isOverlay = style.position === 'fixed' || style.position === 'sticky';
+      const height = isOverlay ? 0 : header.offsetHeight;
+      document.documentElement.style.setProperty('--aw-header-height', `${height}px`);
+    }
+
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+    window.addEventListener('orientationchange', updateHeaderHeight);
+    document.addEventListener('astro:page-load', updateHeaderHeight);
+  })();
+</script>
