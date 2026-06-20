@@ -13,7 +13,8 @@ export const getStaticPaths = getStaticPathsForLocale;
 
 export const navigation = {
   title: 'About',
-  group: 'Company',
+  showIn: 'header',
+  order: 2,
 };
 
 const locale = Astro.currentLocale ?? 'en';
