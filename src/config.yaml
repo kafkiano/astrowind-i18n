@@ -1,6 +1,6 @@
 site:
   name: AstroWind I18n
-  site: 'https://web.kafkiano.org'
+  site: 'https://astro.kafkiano.org'
   base: '/'
   trailingSlash: false
 
