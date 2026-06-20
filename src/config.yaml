@@ -1,7 +1,7 @@
 site:
   name: AstroWind I18n
-  site: 'https://kafkiano.org'
-  base: '/astrowind-i18n'
+  site: 'https://web.kafkiano.org'
+  base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: null
