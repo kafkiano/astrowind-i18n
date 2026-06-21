@@ -9,7 +9,7 @@ group: 'Demos'
 Markdown ist eine schlanke Auszeichnungssprache, mit der du reine Textdokumente formatieren kannst.  
 Erstelle Dokumente für deine GitHub-Projekte, bearbeite dein GitHub-Profil, die _README_-Datei usw. Hier findest du alles dazu.
 
-Lassen Sie uns loslegen. ⤵️
+Lass uns gleich loslegen. ⤵️
 
 #### Inhaltsverzeichnis
 
@@ -22,12 +22,12 @@ Lassen Sie uns loslegen. ⤵️
 7. [Code](#code)
 8. [Listen](#lists)
    - [Nummerierte Liste](#orderedlist)
-   - [Ungeordnete Liste](#unorderedlist)
+   - [Unnummerierte Liste](#unorderedlist)
    - [Gemischte Liste](#mixedlist)
 9. [Tabelle](#table)
 10. [Aufgabenliste](#tasklist)
 11. [Fußnote](#footnote)
-12. [Sprung zum Abschnitt](#sectionjump)
+12. [Zum Abschnitt springen](#sectionjump)
 13. [Horizontale Linie](#horizontalline)
 14. [HTML](#html)
 
@@ -35,7 +35,7 @@ Lassen Sie uns loslegen. ⤵️
 
 ## Absatz
 
-Wenn Sie normalen Text schreiben, verfassen Sie im Grunde einen Absatz.
+Wenn du normalen Text schreibst, verfasst du im Grunde einen Absatz.
 
 ```
 Dies ist ein Absatz.
@@ -47,7 +47,7 @@ Dies ist ein Absatz.
 
 ## Überschriften
 
-Es gibt 6 Arten von Überschriften. Die Anzahl der „#“-Symbole, gefolgt von Text, gibt die Wichtigkeit der Überschrift an.
+Es gibt 6 Überschriftenvarianten. Die Anzahl der „#“-Symbole, gefolgt von Text, gibt die Wichtigkeit der Überschrift an.
 
 ```
 # Überschrift 1
@@ -72,15 +72,15 @@ Es gibt 6 Arten von Überschriften. Die Anzahl der „#“-Symbole, gefolgt von 
 
 ---
 
-## Hervorhebungen
+## Hervorhebung
 
-Das Bearbeiten von Text ist ganz einfach und übersichtlich. Du kannst deinen Text fett, kursiv oder durchgestrichen formatieren.
+Das Formatieren von Text ist ganz einfach und praktisch. Du kannst deinen Text fett, kursiv und durchgestrichen darstellen.
 
 ```
 Mit zwei Sternchen **ist dieser Text fett**.
 Zwei Unterstriche __funktionieren ebenfalls__.
-Machen wir ihn jetzt *kursiv*.
-Du hast es erraten: _ein Unterstrich reicht auch_.
+Lass uns den Text jetzt *kursiv* machen.
+Du hast es erraten: _Ein Unterstrich reicht auch_.
 Können wir **_beides_** kombinieren? Auf jeden Fall.
 Was ist, wenn ich ~~durchstreichen~~ möchte?
 ```
@@ -88,9 +88,9 @@ Was ist, wenn ich ~~durchstreichen~~ möchte?
 Mit zwei Sternchen **ist dieser Text fett**.  
 Zwei Unterstriche **funktionieren ebenfalls**.  
 Machen wir ihn jetzt _kursiv_.  
-Du hast es erraten: _Ein Unterstrich reicht ebenfalls aus_.  
+Du hast es erraten: _Ein Unterstrich reicht auch_.  
 Können wir **_beides_ kombinieren?** Auf jeden Fall.  
-Was ist, wenn ich den Text ~~durchstreichen~~ möchte?
+Was ist, wenn ich ~~durchstreichen~~ möchte?
 
 ---
 
@@ -112,13 +112,13 @@ Möchtest du die Wichtigkeit des Textes hervorheben? Mehr musst du nicht sagen.
 >
 > > Und verschachtelt? Überhaupt kein Problem.
 > >
-> > > PS: Du kannst deinen Text **nach Belieben** gestalten. :
+> > > PS: Du kannst deinen Text **gestalten**, _wie du willst_. :
 
 ---
 
 ## Bilder
 
-Am besten ziehst du das Bild einfach direkt von deinem Computer per Drag & Drop hinein. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
+Am besten ziehst du das Bild einfach per Drag & Drop direkt von deinem Computer hinein. Du kannst auch einen Verweis auf das Bild erstellen und es auf diese Weise zuweisen.  
 Hier ist die Syntax.
 
 ```
@@ -138,7 +138,7 @@ Hier ist die Syntax.
 
 ## Links
 
-Ähnlich wie Bilder können auch Links direkt oder durch Erstellen eines Verweises eingefügt werden. Sie können sowohl Inline- als auch Block-Links erstellen.
+Ähnlich wie Bilder können auch Links direkt oder durch Erstellen eines Verweises eingefügt werden. Du kannst sowohl Inline- als auch Block-Links erstellen.
 
 ```
 [Markdown-Spickzettel]: https://github.com/im-luka/markdown-cheatsheet
@@ -150,7 +150,7 @@ Tolle Dokumentationen findest du [hier][docs]
 ```
 
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[Dokumente]: https://github.com/adam-p/markdown-here
+[docs]: https://github.com/adam-p/markdown-here
 
 [Gefällt es dir bisher? Folge mir auf GitHub](https://github.com/im-luka)  
 [Mein Markdown-Spickzettel – mit einem Stern markieren, wenn er dir gefällt][markdown-cheatsheet]  
@@ -160,20 +160,20 @@ Tolle Dokumentationen findest du [hier][docs]
 
 ## Code
 
-Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Außerdem kannst du die in deinem Schnipsel verwendete Programmiersprache angeben. All das geschieht mithilfe von Backticks.
+Du kannst sowohl Inline- als auch vollständige Block-Code-Schnipsel erstellen. Du kannst auch die Programmiersprache definieren, die du in deinem Schnipsel verwendest. Alles mithilfe von Backticks.
 
 ````
-    Ich habe im Stammverzeichnis eine `.env`-Datei erstellt.
+    Ich habe eine `.env`-Datei im Stammverzeichnis erstellt.
     Backticks innerhalb von Backticks? `` `Kein Problem.` ``
 
- ```
+    ```
     {
  learning: "Markdown",
  showing: "Block-Code-Schnipsel"
     }
     ```
 
-    ```js
+ ```js
     const x = "Block-Code-Schnipsel in JS";
     console.log(x);
     ```
@@ -198,7 +198,7 @@ console.log(x);
 
 ## Listen
 
-Genau wie in HTML lassen sich in Markdown sowohl nummerierte als auch unnummerierte Listen erstellen.
+Genau wie in HTML lassen sich auch in Markdown sowohl nummerierte als auch unnummerierte Listen erstellen.
 
 ### Nummerierte Liste
 
@@ -266,7 +266,7 @@ Du kannst auch beide Listen mischen und Unterlisten erstellen.
 
 ## Tabelle
 
-Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwende das Symbol „|“ zum Trennen der Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
+Eine hervorragende Möglichkeit, Daten übersichtlich darzustellen. Verwenden Sie das Symbol „|“ zum Trennen von Spalten und das Symbol „:“ zum Ausrichten des Zeileninhalts.
 
 ```
 | Linksbündig (Standard) | Zentriert | Rechtsbündig |
@@ -328,7 +328,7 @@ Das Projekt dreht sich um Musik und Filme.
 
 ## Zum Abschnitt springen
 
-Astro (und die meisten Markdown-Parser) generieren automatisch IDs für deine Überschriften. Du musst in der Regel keine manuellen `<a name="...">`-Tags erstellen.
+Astro (und die meisten Markdown-Parser) generieren automatisch IDs für eure Überschriften. Normalerweise musst du keine manuellen `<a name="...">`-Tags erstellen.
 
 ---
 
@@ -375,13 +375,13 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 
 <hr />
 
-<img src="automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" width="200">
+<img src="automatisch generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" width="200">
 <a href="https://github.com/im-luka">Folge mir auf GitHub</a>
 
 <br />
 <br />
 
-<p>Schneller Hack für <strong><em>Bildzentrierung</em></strong>?</p>
+<p>Ein kleiner Trick für <strong><em>die Zentrierung von Bildern</em></strong>?</p>
 <p align="center"><img src="automatisch-generierter-Pfad-zur-Datei-beim-Hochladen-des-Bildes" /></p>
 
 <details>
@@ -407,7 +407,7 @@ Sie können in Ihrer Markdown-Datei auch reines HTML verwenden. Meistens funktio
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
-  <summary>Noch ein schneller Trick? 🎭</summary>
+  <summary>Noch ein schneller Hack? 🎭</summary>
  
  → Einfach  
   → Und unkompliziert
@@ -424,13 +424,13 @@ mindmap
   root((Test Intelligence Hub))
     Datenerfassung
  API-Integration
- Browser-Automatisierung
+      Browser-Automatisierung
  RSS-Feeds
  Planung & Orchestrierung
     Datenverarbeitung
  Speicherung strukturierter Daten
  Verarbeitung unstrukturierter Daten
-      LLM-Integration
+ LLM-Integration
  Abgleich & Bewertung
     Benutzeroberfläche
  Dashboard & Visualisierung

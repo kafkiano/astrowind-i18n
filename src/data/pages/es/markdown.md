@@ -16,13 +16,13 @@ Vamos a profundizar en el tema. ⤵️
 1. [Párrafo](#párrafo)
 2. [Encabezados](#encabezados)
 3. [Énfasis](#énfasis)
-4. [Cita destacada](#cita destacada)
+4. [Cita destacada](#cita_destacada)
 5. [Imágenes](#imágenes)
 6. [Enlaces](#links)
 7. [Código](#code)
 8. [Listas](#lists)
    - [Lista ordenada](#orderedlist)
-   - [Lista sin ordenar](#unorderedlist)
+   - [Lista desordenada](#unorderedlist)
    - [Lista mixta](#mixedlist)
 9. [Tabla](#table)
 10. [Lista de tareas](#tasklist)
@@ -41,30 +41,30 @@ Al escribir texto normal, básicamente estás escribiendo un párrafo.
 Este es un párrafo.
 ```
 
-Este es un párrafo.
+Esto es un párrafo.
 
 ---
 
 ## Encabezados
 
-Hay 6 variantes de encabezados. El número de símbolos «#», seguidos de texto, indica la importancia del encabezado.
+Hay 6 variantes de encabezado. El número de símbolos «#», seguidos de texto, indica la importancia del encabezado.
 
 ```
 # Encabezado 1
-## Título 2
-### Título 3
-#### Título 4
-##### Título 5
-###### Título 6
+## Encabezado 2
+### Encabezado 3
+#### Encabezado 4
+##### Encabezado 5
+###### Encabezado 6
 ```
 
-# Título 1
+# Encabezado 1
 
-## Título 2
+## Encabezado 2
 
-### Título 3
+### Encabezado 3
 
-#### Título 4
+#### Encabezado 4
 
 ##### Título 5
 
@@ -130,7 +130,7 @@ Aquí tienes la sintaxis.
 
 ![texto si la imagen no se carga](https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Texto que se muestra al pasar el cursor')
 
-[logotipo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png «Pasa el cursor por encima»
+[logotipo]: https://user-images.githubusercontent.com/46372998/212541682-9907aaea-5198-45a9-8961-2acc8a98a0db.png 'Pasa el cursor por aquí'
 
 ![texto de error][logotipo]
 
@@ -150,11 +150,11 @@ Encuentra documentación muy útil [aquí][docs]
 ```
 
 [markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
-[docs]: https://github.com/adam-p/markdown-here
+[documentación]: https://github.com/adam-p/markdown-here
 
-[¿Te está gustando hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
-[Mi hoja de referencia de Markdown: márcala con una estrella si te gusta][markdown-cheatsheet]  
-Encuentra documentación estupenda [aquí][docs]
+[¿Te gusta lo que has visto hasta ahora? Sígueme en GitHub](https://github.com/im-luka)  
+[Mi hoja de referencia de Markdown: añádela a tus favoritos si te gusta][markdown-cheatsheet]  
+Encuentra documentación muy útil [aquí][docs]
 
 ---
 
@@ -163,7 +163,7 @@ Encuentra documentación estupenda [aquí][docs]
 Puedes crear fragmentos de código tanto en línea como en bloques completos. También puedes definir el lenguaje de programación que estás utilizando en tu fragmento. Todo ello utilizando comillas invertidas.
 
 ````
-    He creado el archivo `.env` en la raíz.
+    He creado un archivo `.env` en la raíz.
     ¿Comillas invertidas dentro de comillas invertidas? `` `No hay problema.` ``
 
     ```
@@ -198,7 +198,7 @@ console.log(x);
 
 ## Listas
 
-Al igual que en HTML, Markdown permite crear listas tanto numeradas como sin numerar.
+Al igual que en HTML, Markdown permite crear listas tanto ordenadas como desordenadas.
 
 ### Lista ordenada
 
@@ -276,7 +276,7 @@ Una forma estupenda de mostrar datos bien organizados. Utiliza el símbolo «|»
 | Vue.js | Nest.js | Redis |
 ```
 
-| Alineación a la izquierda (predeterminada) | Alineación al centro | Alineación a la derecha |
+| Alineación a la izquierda (predeterminada) | Alineación centrada | Alineación a la derecha |
 | :------------------- | :----------: | ----------: |
 | React.js |   Node.js    | MySQL |
 | Next.js |   Express    |     MongoDB |
@@ -403,13 +403,13 @@ También puedes utilizar código HTML sin formato en tu archivo Markdown. La may
 <br />
 <br />
 
-<p>¿Un truco rápido para <strong><em>centrar una imagen</em></strong>?</p>
+<p>Truco rápido para <strong><em>centrar una imagen</em></strong>?</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
 <details>
   <summary>¿Otro truco rápido más? 🎭</summary>
-  
-  → Fácil  
+ 
+ → Fácil  
   → Y sencillo
 </details>
 
@@ -426,19 +426,19 @@ mindmap
  Integración de API
  Automatización del navegador
  Fuentes RSS
-      Programación y orquestación
+ Programación y orquestación
     Procesamiento de datos
  Almacenamiento de datos estructurados
  Procesamiento de datos no estructurados
  Integración de LLM
- Emparejamiento y puntuación
+ Coincidencia y puntuación
     Interfaz de usuario
  Panel de control y visualización
  Gestión de alertas
  Configuración y ajustes
     Infraestructura
  Supervisión y registro
-      Gestión de errores
+ Gestión de errores
  Escalabilidad
  Eficiencia de costes
 ```
@@ -450,9 +450,9 @@ flowchart LR
     A[Fuentes de datos] --> B[Capa de ingestión]
     B --> C[Capa de procesamiento]
     C --> D[Capa de almacenamiento]
-    D --> E[Interfaz de usuario]
+    D --> E[Interfaz humana]
     D --> F[Interfaz LLM]
-    G[Capa de supervisión] -.-> B
+    G[Capa de monitorización] -.-> B
     G -.-> C
     G -.-> D
 ```

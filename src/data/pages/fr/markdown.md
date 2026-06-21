@@ -13,10 +13,10 @@ Plongeons-nous dans le vif du sujet. ⤵️
 
 #### Table des matières
 
-1. [Paragraphe](#paragraph)
-2. [Titres](#headings)
-3. [Mise en évidence](#emphasis)
-4. [Citation](#blockquote)
+1. [Paragraphe](#paragraphe)
+2. [Titres](#titres)
+3. [Mise en évidence](#miseenevidance)
+4. [Citation en bloc](#citationenbloc)
 5. [Images](#images)
 6. [Liens](#links)
 7. [Code](#code)
@@ -35,7 +35,7 @@ Plongeons-nous dans le vif du sujet. ⤵️
 
 ## Paragraphe
 
-En écrivant du texte normal, vous rédigez en fait un paragraphe.
+En écrivant du texte normal, vous créez en fait un paragraphe.
 
 ```
 Ceci est un paragraphe.
@@ -47,7 +47,7 @@ Ceci est un paragraphe.
 
 ## Titres
 
-Il existe 6 niveaux de titres. Le nombre de symboles « # », suivis de texte, indique l’importance du titre.
+Il existe 6 niveaux de titres. Le nombre de symboles « # », suivis de texte, indique l'importance du titre.
 
 ```
 # Titre 1
@@ -78,14 +78,14 @@ Modifier le texte est très simple et pratique. Vous pouvez mettre votre texte e
 
 ```
 En utilisant deux astérisques **ce texte est en gras**.
-Deux traits de soulignement __fonctionnent également__.
+Deux traits de soulignement __fonctionnent aussi__.
 Mettons-le *en italique maintenant*.
 Vous l’avez deviné, _un seul trait de soulignement suffit également_.
 Peut-on combiner **_les deux_ ?** Absolument.
 Et si je veux ~~barrer~~ ?
 ```
 
-Avec deux astérisques, **ce texte est en gras**.  
+Avec deux astérisques **ce texte est en gras**.  
 Deux traits de soulignement **fonctionnent aussi**.  
 Mettons-le _en italique maintenant_.  
 Vous l’avez deviné, _un seul trait de soulignement suffit également_.  
@@ -94,12 +94,12 @@ Et si je veux ~~barrer~~ ?
 
 ---
 
-## Citation en bloc
+## Citation
 
 Vous voulez souligner l’importance du texte ? N’en dites pas plus.
 
 ```
-> Voici une citation en bloc.
+> Voici une citation.
 > Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 >
 > > Et imbriquer les citations ? Aucun problème.
@@ -110,21 +110,21 @@ Vous voulez souligner l’importance du texte ? N’en dites pas plus.
 > Voici une citation en bloc.
 > Vous voulez écrire sur une nouvelle ligne avec un espace entre les lignes ?
 >
-> > Et imbriquer les niveaux ? Aucun problème.
+> > Et imbriquer les citations ? Aucun problème.
 > >
-> > > PS : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_. :
+> > > P.S. : vous pouvez **mettre en forme** votre texte _comme vous le souhaitez_. :
 
 ---
 
 ## Images
 
-Le plus simple est de glisser-déposer directement une image depuis votre ordinateur. Vous pouvez également créer un lien vers une image et l'ajouter de cette manière.  
+Le plus simple est de glisser-déposer directement une image depuis votre ordinateur. Vous pouvez également créer une référence à une image et l'assigner de cette manière.  
 Voici la syntaxe.
 
 ```
-![texte à afficher si l'image ne se charge pas](chemin-automatiquement-généré-vers-le-fichier-lorsque-vous-téléchargez-l'image "Texte affiché au survol")
+![texte à afficher si l'image ne se charge pas](chemin-automatiquement-généré-vers-le-fichier-lors-du-téléchargement-de-l'image "Texte affiché au survol")
 
-[logo] : chemin-automatiquement-généré-vers-le-fichier-lorsque-vous-téléchargez-l'image « Passez la souris ici »
+[logo] : chemin-automatiquement-généré-vers-le-fichier-lors-du-téléchargement-de-l'image "Passez la souris ici"
 ![texte d'erreur][logo]
 ```
 
@@ -138,33 +138,33 @@ Voici la syntaxe.
 
 ## Liens
 
-Tout comme les images, les liens peuvent être insérés directement ou via une référence. Vous pouvez créer des liens en ligne et des liens en bloc.
+Tout comme les images, les liens peuvent être insérés directement ou en créant une référence. Vous pouvez créer des liens en ligne et des liens de bloc.
 
 ```
-[markdown-cheatsheet] : https://github.com/im-luka/markdown-cheatsheet
-[docs] : https://github.com/adam-p/markdown-here
+[markdown-cheatsheet]: https://github.com/im-luka/markdown-cheatsheet
+[docs]: https://github.com/adam-p/markdown-here
 
 [Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)
-[Mon aide-mémoire Markdown – ajoutez-le à vos favoris s'il vous plaît][markdown-cheatsheet]
-Retrouvez d'excellents documents [ici][docs]
+[Mon aide-mémoire Markdown - ajoutez-le à vos favoris s'il vous plaît][markdown-cheatsheet]
+Retrouvez d'excellentes ressources [ici][docs]
 ```
 
 [markdown-cheatsheet] : https://github.com/im-luka/markdown-cheatsheet
 [docs] : https://github.com/adam-p/markdown-here
 
-[Ça vous plaît jusqu'ici ? Suivez-moi sur GitHub](https://github.com/im-luka)  
-[Mon aide-mémoire Markdown - ajoutez-le à vos favoris si vous l'appréciez][markdown-cheatsheet]  
-Retrouvez d’excellentes ressources [ici][docs]
+[Ça vous plaît jusqu’ici ? Suivez-moi sur GitHub](https://github.com/im-luka)  
+[Mon aide-mémoire Markdown – ajoutez-le à vos favoris si vous l’appréciez][markdown-cheatsheet]  
+Retrouvez d’excellents documents [ici][docs]
 
 ---
 
 ## Code
 
-Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets. Vous pouvez également définir le langage de programmation utilisé dans votre extrait. Tout cela en utilisant des backticks.
+Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets. Vous pouvez également définir le langage de programmation utilisé dans votre extrait. Tout cela en utilisant des guillemets inversés.
 
 ````
     J’ai créé un fichier `.env` à la racine.
-    Des backticks à l’intérieur d’autres backticks ? `` `Pas de problème.` ``
+    Des guillemets inversés à l’intérieur d’autres guillemets inversés ? `` `Pas de problème.` ``
 
  ```
     {
@@ -173,14 +173,14 @@ Vous pouvez créer des extraits de code en ligne ou sous forme de blocs complets
     }
     ```
 
-    ```js
+ ```js
     const x = "Extrait de code en bloc en JS";
     console.log(x);
     ```
 ````
 
 J'ai créé un fichier `.env` à la racine.
-Des backticks à l'intérieur d'autres backticks ? `` `Pas de problème.` ``
+Des guillemets inversés à l'intérieur d'autres guillemets inversés ? `` `Pas de problème.` ``
 
 ```
 {
@@ -222,7 +222,7 @@ Tout comme en HTML, Markdown permet de créer des listes ordonnées et non ordon
 - Node.js
 + Express
 * Nest.js
-- J'apprends le backend ⌛️
+- J'apprends le back-end ⌛️
 ```
 
 - Node.js
@@ -231,12 +231,12 @@ Tout comme en HTML, Markdown permet de créer des listes ordonnées et non ordon
 
 - Nest.js
 
-* J'apprends le backend ⌛️
+* J'apprends le back-end ⌛️
 
 ### Liste mixte
 
 Vous pouvez également mélanger les deux types de listes et créer des sous-listes.  
-**PS.** Évitez de créer des listes comportant plus de deux niveaux. C'est la meilleure pratique.
+**PS.** Évitez de créer des listes de plus de deux niveaux de profondeur. C'est la meilleure pratique.
 
 ```
 1. Apprendre les bases
@@ -302,7 +302,7 @@ Suivi des tâches terminées et de celles qui restent à faire.
 
 ## Note de bas de page
 
-Vous souhaitez ajouter une note à la fin du fichier ? Utilisez la note de bas de page !
+Vous souhaitez ajouter une remarque à la fin du fichier ? Utilisez une note de bas de page !
 
 ```
 #### Je travaille sur un nouveau projet. [^1]
@@ -311,12 +311,12 @@ Vous souhaitez ajouter une note à la fin du fichier ? Utilisez la note de bas d
 Le projet porte sur la musique et les films.
 
 ##### J'espère qu'il vous plaira. [^voir]
-[^voir] : Chargement en cours.... ⌛️
+[^voir] : Chargement en cours... ⌛️
 ```
 
 #### Je travaille sur un nouveau projet. [^1]
 
-[^1] : La pile technologique est la suivante : React, TypeScript, Tailwind CSS
+[^1] : La pile technologique est : React, TypeScript, Tailwind CSS
 
 Le projet porte sur la musique et les films.
 
@@ -367,7 +367,7 @@ Troisième ligne
 
 ## HTML
 
-Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera correctement, mais vous pouvez parfois rencontrer des différences auxquelles vous n’êtes pas habitué lorsque vous travaillez avec du HTML standard. L’utilisation de CSS ne fonctionnera pas.
+Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. La plupart du temps, cela fonctionnera bien, mais vous pouvez parfois rencontrer des différences auxquelles vous n’êtes pas habitué lorsque vous travaillez avec du HTML standard. L’utilisation de CSS ne fonctionnera pas.
 
 ```
 <h1>Ceci est un titre</h1>
@@ -375,7 +375,7 @@ Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. L
 
 <hr />
 
-<img src="chemin-généré-automatiquement-vers-le-fichier-lorsque-vous-téléchargez-l'image" width="200">
+<img src="chemin-vers-le-fichier-généré-automatiquement-lors-du-téléchargement-de-l'image" width="200">
 <a href="https://github.com/im-luka">Suivez-moi sur GitHub</a>
 
 <br />
@@ -408,8 +408,8 @@ Vous pouvez également utiliser du code HTML brut dans votre fichier Markdown. L
 
 <details>
   <summary>Encore une astuce rapide ? 🎭</summary>
- 
- → Facile  
+  
+  → Facile  
   → Et simple
 </details>
 
@@ -426,12 +426,12 @@ mindmap
  Intégration d’API
  Automatisation du navigateur
  Flux RSS
- Planification et orchestration
+      Planification et orchestration
     Traitement des données
  Stockage des données structurées
  Traitement des données non structurées
-      Intégration de modèles de langage (LLM)
-Correspondance et notation
+ Intégration LLM
+ Correspondance et notation
     Interface utilisateur
  Tableau de bord et visualisation
  Gestion des alertes
@@ -447,7 +447,7 @@ Correspondance et notation
 
 ```mermaid
 flowchart LR
-    A[Sources de données] --> B[Couche d'ingestion]
+    A[Sources de données] --> B[Couche d’ingestion]
     B --> C[Couche de traitement]
     C --> D[Couche de stockage]
     D --> E[Interface utilisateur]
