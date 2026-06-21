@@ -9,9 +9,9 @@ import type { Features as BaseProps } from '~/types';
 interface Props extends Omit<BaseProps, 'classes'> {
   variant?: 'cards' | 'cards-vertical' | 'cards-image' | 'slider';
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-  sliderPagination?: boolean;
-  sliderNavigation?: boolean;
-  sliderLoop?: boolean;
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
   id?: string;
   isDark?: boolean;
   classes?: Record<string, string | Record<string, string>>;
@@ -20,9 +20,9 @@ interface Props extends Omit<BaseProps, 'classes'> {
 const {
   variant = 'cards',
   autoplay,
-  sliderPagination,
-  sliderNavigation,
-  sliderLoop,
+  pagination,
+  navigation,
+  loop,
 
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -127,9 +127,9 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
           columns={columns}
           defaultIcon={defaultIcon}
           autoplay={autoplay}
-          pagination={sliderPagination ? true : false}
-          navigation={sliderNavigation ? true : false}
-          loop={sliderLoop ?? true}
+          pagination={pagination ? true : false}
+          navigation={navigation ? true : false}
+          loop={loop ?? true}
           classes={mergedItemClasses as Record<string, string>}
         />
       )

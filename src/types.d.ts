@@ -260,9 +260,9 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
   variant?: 'grid' | 'slider';
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-  sliderPagination?: boolean;
-  sliderNavigation?: boolean;
-  sliderLoop?: boolean;
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
 }
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {
@@ -281,6 +281,11 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+  variant?: 'cards' | 'cards-vertical' | 'cards-image' | 'slider';
+  autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
 }
 
 export interface Faqs extends Omit<Headline, 'classes'>, Widget {

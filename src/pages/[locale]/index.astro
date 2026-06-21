@@ -35,8 +35,6 @@ const metadata = {
     heroSlider?.slides?.length ? (
       <HeroSlider
         autoplay={{ delay: 5000, disableOnInteraction: true }}
-        sliderNavigation
-        navStyle="minimal"
         slides={heroSlider.slides}
       />
     ) : (
@@ -55,9 +53,9 @@ const metadata = {
   <Features
     variant="slider"
     autoplay={{ delay: 4000, disableOnInteraction: false }}
-    sliderPagination={true}
-    sliderNavigation={true}
-    sliderLoop={true}
+    pagination={true}
+    navigation={true}
+    loop={true}
     columns={3}
     tagline={servicesIntro?.tagline}
     title={servicesIntro?.title}
