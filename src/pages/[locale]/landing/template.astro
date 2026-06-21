@@ -1,5 +1,4 @@
 ---
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getStaticPathsForLocale } from '~/utils/i18n';
 import { getTemplateEntry } from '~/utils/templates';
 import Layout from '~/layouts/LandingLayout.astro';
@@ -7,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import type { Item, Testimonial, CallToAction as CallToActionType } from '~/types';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
@@ -16,15 +16,35 @@ export const navigation = {
   showIn: 'all',
 };
 
+interface HeroSection {
+  tagline?: string;
+  title?: string;
+  subtitle?: string;
+  image?: string | unknown;
+  actions?: string | CallToActionType[];
+}
+
+interface FeaturesSection {
+  tagline?: string;
+  title?: string;
+  items?: Item[];
+}
+
+interface CTASection {
+  title?: string;
+  subtitle?: string;
+  actions?: string | CallToActionType[];
+}
+
 const locale = Astro.currentLocale ?? 'en';
 const page = await getTemplateEntry('landing', locale);
 const { data } = page;
 
 // Cast passthrough fields — schema only requires title, rest is free-form
-const hero = data.hero as any;
-const features = data.features as any;
-const testimonials = data.testimonials as any;
-const cta = data.cta as any;
+const hero = data.hero as HeroSection | undefined;
+const features = data.features as FeaturesSection | undefined;
+const testimonials = data.testimonials as Testimonial[] | undefined;
+const cta = data.cta as CTASection | undefined;
 ---
 
 <Layout metadata={navigation}>
