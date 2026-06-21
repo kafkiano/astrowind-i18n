@@ -1,0 +1,249 @@
+---
+import FeatureCard from '~/components/ui/FeatureCard.astro';
+import type { Item } from '~/types';
+
+interface Props {
+  items: Item[];
+  columns?: number;
+  defaultIcon?: string;
+  autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
+  classes?: Record<string, string>;
+}
+
+const {
+  items = [],
+  columns = 3,
+  defaultIcon,
+  autoplay,
+  pagination = false,
+  navigation = true,
+  loop = true,
+  classes = {},
+} = Astro.props;
+
+const containerId = `feature-slider-${crypto.randomUUID()}`;
+
+const hasAutoplay = autoplay !== false;
+const autoplayDelay = hasAutoplay
+  ? typeof autoplay === 'object'
+    ? autoplay.delay
+    : typeof autoplay === 'number'
+      ? autoplay
+      : 5000
+  : 5000;
+
+const autoplayDisableOnInteraction =
+  hasAutoplay && typeof autoplay === 'object' && autoplay.disableOnInteraction !== false;
+---
+
+{
+  items.length > 0 && (
+    <div
+      class="relative"
+      id={containerId}
+      data-feature-slider-id={containerId}
+      data-feature-config={JSON.stringify({
+        hasAutoplay,
+        autoplayDelay,
+        autoplayDisableOnInteraction,
+        loop,
+        hasNavigation: navigation,
+      })}
+    >
+      <div class="overflow-visible md:overflow-hidden md:[mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]">
+        <div
+          class="flex h-full feature-track"
+          style="gap: 16px; --gap: 16px;"
+          data-feature-track
+        >
+          {items.map(({ title, description, icon, callToAction }) => (
+            <div class="feature-slide embla-slide" style={`--spv: ${columns ?? 3};`}>
+              <FeatureCard
+                layout="horizontal"
+                title={title}
+                description={description}
+                icon={icon}
+                defaultIcon={defaultIcon}
+                callToAction={callToAction}
+                classes={{
+                  panel: 'mx-4 p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-lg dark:shadow-none',
+                  icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
+                  ...classes,
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {navigation && (
+        <>
+          <button
+            data-feature-prev
+            class="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 z-10 items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+            aria-label="Previous slide"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            data-feature-next
+            class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 z-10 items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+            aria-label="Next slide"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {pagination && (
+        <div data-feature-dots class="flex justify-center gap-2 mt-3" />
+      )}
+
+      <style is:inline set:html={`
+        @media (min-width: 640px) {
+          [data-feature-slider-id="${containerId}"] .feature-track { gap: 16px; --gap: 16px; }
+          [data-feature-slider-id="${containerId}"] .feature-slide { --spv: ${Math.min(columns ?? 3, 2)}; }
+        }
+        @media (min-width: 1024px) {
+          [data-feature-slider-id="${containerId}"] .feature-track { gap: 24px; --gap: 24px; }
+          [data-feature-slider-id="${containerId}"] .feature-slide { --spv: ${columns ?? 3}; }
+        }
+      `} />
+    </div>
+  )
+}
+
+<script>
+  import EmblaCarousel from 'embla-carousel';
+  import Autoplay from 'embla-carousel-autoplay';
+  import type { EmblaPluginType } from 'embla-carousel';
+  import type { AutoplayType } from 'embla-carousel-autoplay';
+
+  const ACTIVE_ATTR = 'data-active';
+
+  function buildPagination(emblaApi: any, rootEl: HTMLElement): void {
+    const dotsContainer = rootEl.querySelector<HTMLElement>('[data-feature-dots]');
+    if (!dotsContainer) return;
+
+    const slides = emblaApi.scrollSnapList();
+    dotsContainer.innerHTML = '';
+
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className =
+        'w-3 h-3 rounded-full bg-slate-400 dark:bg-white/30 border-none cursor-pointer p-0 transition-colors data-[active]:bg-slate-700 dark:data-[active]:bg-white/90';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => emblaApi.scrollTo(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = dotsContainer.querySelectorAll('button');
+
+    const updateDots = (): void => {
+      const selected = emblaApi.selectedScrollSnap();
+      dots.forEach((dot, i) => {
+        if (i === selected) {
+          dot.setAttribute(ACTIVE_ATTR, '');
+        } else {
+          dot.removeAttribute(ACTIVE_ATTR);
+        }
+      });
+    };
+
+    emblaApi.on('select', updateDots);
+    emblaApi.on('reInit', updateDots);
+    updateDots();
+  }
+
+  function setupPauseOnInteraction(
+    autoplayPlugin: AutoplayType,
+    rootEl: HTMLElement,
+    isUserPaused: () => boolean
+  ): void {
+    let resumeTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const scheduleResume = (): void => {
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        if (!autoplayPlugin.isPlaying() && !isUserPaused()) {
+          autoplayPlugin.play();
+        }
+      }, 3000);
+    };
+
+    const stopAndClear = (): void => {
+      autoplayPlugin.stop();
+      if (resumeTimer) clearTimeout(resumeTimer);
+    };
+
+    rootEl.addEventListener('pointerdown', stopAndClear);
+    rootEl.addEventListener('touchstart', stopAndClear, { passive: true });
+    rootEl.addEventListener('pointerup', scheduleResume);
+    rootEl.addEventListener('mouseleave', scheduleResume);
+  }
+
+  function initFeatureSliders(): void {
+    document.querySelectorAll<HTMLElement>('[data-feature-config]:not(.feature-initialized)').forEach((el) => {
+      const config = JSON.parse(el.dataset.featureConfig || '{}');
+      const viewport = el.querySelector<HTMLElement>('[data-feature-track]');
+      if (!viewport) return;
+
+      const plugins: EmblaPluginType[] = [];
+      let autoplayPlugin: AutoplayType | null = null;
+
+      if (config.hasAutoplay) {
+        autoplayPlugin = Autoplay({
+          delay: config.autoplayDelay,
+          stopOnLastSnap: !config.loop,
+          stopOnInteraction: false,
+          playOnInit: false,
+        });
+        plugins.push(autoplayPlugin);
+      }
+
+      const emblaApi = EmblaCarousel(
+        viewport,
+        {
+          loop: config.loop,
+          align: 'start',
+          slidesToScroll: 1,
+          direction: document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr',
+        },
+        plugins
+      );
+
+      let userPaused = false;
+      if (autoplayPlugin && emblaApi.slideNodes().length > 1) {
+        autoplayPlugin.play();
+      }
+
+      if (autoplayPlugin && config.autoplayDisableOnInteraction && emblaApi.slideNodes().length > 1) {
+        setupPauseOnInteraction(autoplayPlugin, el, () => userPaused);
+      }
+
+      const prevBtn = el.querySelector<HTMLElement>('[data-feature-prev]');
+      const nextBtn = el.querySelector<HTMLElement>('[data-feature-next]');
+      if (prevBtn) prevBtn.addEventListener('click', () => emblaApi.scrollPrev());
+      if (nextBtn) nextBtn.addEventListener('click', () => emblaApi.scrollNext());
+
+      if (config.hasPagination) {
+        buildPagination(emblaApi, el);
+      }
+
+      el.classList.add('feature-initialized');
+    });
+  }
+
+  initFeatureSliders();
+  document.addEventListener('astro:page-load', initFeatureSliders);
+</script>

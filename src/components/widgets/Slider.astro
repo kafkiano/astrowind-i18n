@@ -1,35 +1,23 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 
+export interface SliderConfig {
+  /** Autoplay delay in ms, object with options, or false to disable */
+  autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
+  /** Loop slides */
+  loop?: boolean;
+  /** Slides visible at once */
+  slidesPerView?: number;
+  /** Show pagination dots */
+  pagination?: boolean;
+  /** Show prev/next arrows */
+  navigation?: boolean;
+  /** Slide alignment inside the viewport */
+  align?: 'start' | 'center' | 'end';
+}
+
 interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
-  config?: {
-    /** Autoplay delay in ms, object with options, or false to disable */
-    autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-    /** Loop slides */
-    loop?: boolean;
-    /** Transition effect */
-    effect?: 'slide' | 'fade';
-    /** Slide alignment inside the viewport */
-    align?: 'start' | 'center' | 'end';
-    /** Show adjacent slides peeking on mobile; hides arrows on mobile and masks edges on desktop */
-    peek?: boolean;
-    /** Slides visible at once */
-    slidesPerView?: number;
-    /** Gap between slides in px */
-    gap?: number;
-    /** Responsive breakpoints — keys are min-width in px */
-    responsive?: Record<number, { slidesPerView?: number; gap?: number }>;
-    /** Show pagination dots */
-    pagination?: boolean;
-    /** Show prev/next arrows */
-    navigation?: boolean;
-    /** Place navigation arrows outside the slide viewport */
-    navOutside?: boolean;
-    /** Navigation style */
-    navStyle?: 'default' | 'minimal';
-    /** Horizontal position of minimal navigation */
-    minimalNavPosition?: 'left' | 'right';
-  };
+  config?: SliderConfig;
 }
 
 const { config = {}, class: className, ...attrs } = Astro.props;
@@ -39,17 +27,10 @@ const containerId = `slider-${crypto.randomUUID()}`;
 const {
   autoplay = false,
   loop = false,
-  effect = 'slide',
-  align = 'start',
-  peek = false,
   slidesPerView,
-  gap = 0,
-  responsive,
   pagination = false,
   navigation = false,
-  navOutside = false,
-  navStyle = 'default',
-  minimalNavPosition = 'right',
+  align = 'start',
 } = config;
 
 const hasAutoplay = autoplay !== false;
@@ -69,206 +50,58 @@ const emblaConfig = {
   autoplayDelay,
   autoplayDisableOnInteraction,
   loop,
-  effect,
   align,
-  peek,
-  hasPagination: pagination !== false,
-  hasNavigation: navigation !== false,
+  hasPagination: pagination,
+  hasNavigation: navigation,
 };
 
-// Build CSS for track gap and slide width, including base + breakpoint overrides
-const trackBaseRules: string[] = [];
-if (gap !== undefined) {
-  trackBaseRules.push(`gap: ${gap}px`);
-  trackBaseRules.push(`--gap: ${gap}px`);
-}
-
-const baseTrackCss =
-  trackBaseRules.length > 0
-    ? `[data-embla-id="${containerId}"] [data-embla-track] { ${trackBaseRules.join('; ')} }`
+const slideCss =
+  slidesPerView !== undefined
+    ? `[data-embla-id="${containerId}"] .embla-slide { --spv: ${slidesPerView}; }`
     : '';
-
-const responsiveTrackCss = responsive
-  ? Object.entries(responsive)
-      .sort(([a], [b]) => Number(a) - Number(b))
-      .map(([bp, cfg]) => {
-        const rules: string[] = [];
-        if (cfg.gap !== undefined) {
-          rules.push(`gap: ${cfg.gap}px`);
-          rules.push(`--gap: ${cfg.gap}px`);
-        }
-        return rules.length > 0
-          ? `@media (min-width: ${bp}px) { [data-embla-id="${containerId}"] [data-embla-track] { ${rules.join('; ')} } }`
-          : '';
-      })
-      .filter(Boolean)
-      .join('\n')
-  : '';
-
-const slideBaseRules: string[] = [];
-if (slidesPerView !== undefined) slideBaseRules.push(`--spv: ${slidesPerView}`);
-
-const baseSlideCss =
-  slideBaseRules.length > 0 ? `[data-embla-id="${containerId}"] .embla-slide { ${slideBaseRules.join('; ')} }` : '';
-
-const responsiveSlideCss = responsive
-  ? Object.entries(responsive)
-      .sort(([a], [b]) => Number(a) - Number(b))
-      .map(([bp, cfg]) => {
-        const rules: string[] = [];
-        if (cfg.slidesPerView !== undefined) rules.push(`--spv: ${cfg.slidesPerView}`);
-        return rules.length > 0
-          ? `@media (min-width: ${bp}px) { [data-embla-id="${containerId}"] .embla-slide { ${rules.join('; ')} } }`
-          : '';
-      })
-      .filter(Boolean)
-      .join('\n')
-  : '';
-
-const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlideCss].filter(Boolean).join('\n');
 ---
 
 <div
-  class:list={['relative', navOutside && (peek ? 'md:px-12' : 'px-12'), className]}
+  class:list={['relative', className]}
   id={containerId}
   data-embla-id={containerId}
   data-embla-config={JSON.stringify(emblaConfig)}
   {...attrs}
 >
-  <div
-    class:list={[
-      'h-full relative',
-      peek
-        ? 'overflow-visible md:overflow-hidden md:[mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]'
-        : 'overflow-hidden',
-    ]}
-  >
-    <div class:list={['flex h-full mb-8']} data-embla-track>
+  <div class="h-full relative overflow-hidden">
+    <div class="flex h-full mb-8" data-embla-track>
       <slot />
     </div>
 
-    {
-      pagination && !navOutside && navStyle !== 'minimal' && (
-        <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
-      )
-    }
+    {pagination && (
+      <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
+    )}
   </div>
 
-  {pagination && navOutside && navStyle !== 'minimal' && <div data-embla-dots class="flex justify-center gap-2 mt-3" />}
-
-  {
-    navigation && !navOutside && navStyle !== 'minimal' && (
-      <>
-        <button
-          data-embla-prev
-          class:list={[
-            'absolute top-1/2 -translate-y-1/2 left-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800',
-            peek && 'hidden md:flex',
-          ]}
-          aria-label="Previous slide"
-          type="button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button
-          data-embla-next
-          class:list={[
-            'absolute top-1/2 -translate-y-1/2 right-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800',
-            peek && 'hidden md:flex',
-          ]}
-          aria-label="Next slide"
-          type="button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      </>
-    )
-  }
-
-  {
-    navigation && navOutside && navStyle !== 'minimal' && (
-      <>
-        <button
-          data-embla-prev
-          class:list={[
-            'absolute top-1/2 -translate-y-1/2 left-0 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800',
-            peek && 'hidden md:flex',
-          ]}
-          aria-label="Previous slide"
-          type="button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button
-          data-embla-next
-          class:list={[
-            'absolute top-1/2 -translate-y-1/2 right-0 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800',
-            peek && 'hidden md:flex',
-          ]}
-          aria-label="Next slide"
-          type="button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      </>
-    )
-  }
-
-  {
-    navigation && navStyle === 'minimal' && (
-      <div
-        class:list={[
-          'absolute bottom-4 z-10 flex items-center gap-2',
-          minimalNavPosition === 'left' ? 'left-4' : 'right-4',
-        ]}
+  {navigation && (
+    <>
+      <button
+        data-embla-prev
+        class="absolute top-1/2 -translate-y-1/2 left-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+        aria-label="Previous slide"
+        type="button"
       >
-        {hasAutoplay && (
-          <button
-            data-embla-pause
-            class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-            aria-label="Pause slideshow"
-            type="button"
-          >
-            <svg class="embla-pause-icon w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="6" y="4" width="4" height="16" rx="1" />
-              <rect x="14" y="4" width="4" height="16" rx="1" />
-            </svg>
-            <svg class="embla-play-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </button>
-        )}
-        <button
-          data-embla-prev
-          class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-          aria-label="Previous slide"
-          type="button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button
-          data-embla-next
-          class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-          aria-label="Next slide"
-          type="button"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-      </div>
-    )
-  }
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button
+        data-embla-next
+        class="absolute top-1/2 -translate-y-1/2 right-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+        aria-label="Next slide"
+        type="button"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </>
+  )}
 
   {slideCss && <style is:inline set:html={slideCss} />}
 </div>
@@ -276,7 +109,6 @@ const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlid
 <script>
   import EmblaCarousel from 'embla-carousel';
   import Autoplay from 'embla-carousel-autoplay';
-  import Fade from 'embla-carousel-fade';
   import type { EmblaCarouselType, EmblaPluginType } from 'embla-carousel';
   import type { AutoplayType } from 'embla-carousel-autoplay';
 
@@ -363,10 +195,6 @@ const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlid
         plugins.push(autoplayPlugin);
       }
 
-      if (config.effect === 'fade') {
-        plugins.push(Fade());
-      }
-
       const emblaApi = EmblaCarousel(
         viewport,
         {
@@ -378,45 +206,20 @@ const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlid
         plugins
       );
 
-      // Start autoplay (only if more than 1 slide)
       let userPaused = false;
       if (autoplayPlugin && emblaApi.slideNodes().length > 1) {
         autoplayPlugin.play();
       }
 
-      // Pause-on-interaction with auto-resume after 3s
       if (autoplayPlugin && config.autoplayDisableOnInteraction && emblaApi.slideNodes().length > 1) {
         setupPauseOnInteraction(autoplayPlugin, el, () => userPaused);
       }
 
-      // Pause button
-      const pauseBtn = el.querySelector<HTMLElement>('[data-embla-pause]');
-      if (autoplayPlugin && pauseBtn) {
-        const updatePauseIcon = (playing: boolean): void => {
-          pauseBtn.querySelector<HTMLElement>('.embla-pause-icon')?.classList.toggle('hidden', !playing);
-          pauseBtn.querySelector<HTMLElement>('.embla-play-icon')?.classList.toggle('hidden', playing);
-          pauseBtn.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
-        };
-
-        pauseBtn.addEventListener('click', () => {
-          if (autoplayPlugin.isPlaying() && !userPaused) {
-            autoplayPlugin.stop();
-            userPaused = true;
-          } else {
-            autoplayPlugin.play();
-            userPaused = false;
-          }
-          updatePauseIcon(!userPaused);
-        });
-      }
-
-      // Navigation buttons
       const prevBtn = el.querySelector<HTMLElement>('[data-embla-prev]');
       const nextBtn = el.querySelector<HTMLElement>('[data-embla-next]');
       if (prevBtn) prevBtn.addEventListener('click', () => emblaApi.scrollPrev());
       if (nextBtn) nextBtn.addEventListener('click', () => emblaApi.scrollNext());
 
-      // Pagination dots
       if (config.hasPagination) {
         buildPagination(emblaApi, el);
       }
@@ -426,7 +229,5 @@ const slideCss = [baseTrackCss, responsiveTrackCss, baseSlideCss, responsiveSlid
   }
 
   initEmblaCarousels();
-
-  // Re-init after Astro view transitions
   document.addEventListener('astro:page-load', initEmblaCarousels);
 </script>
