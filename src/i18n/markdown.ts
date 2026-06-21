@@ -248,7 +248,7 @@ export async function translateFrontmatterYaml(
  * (no change since last translation). Content-addressable: survives
  * git clone, branch switches, and mtime resets.
  *
- * @param provider - Translation provider (Gemini, DeepL, etc.)
+ * @param provider - Translation provider (DeepL, Google Translate, etc.)
  * @param locales - All configured locales (from config.yaml).
  * @param defaultLocale - Source locale (from config.yaml i18n.defaultLocale).
  */
