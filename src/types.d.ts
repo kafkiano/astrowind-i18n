@@ -260,9 +260,9 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
   variant?: 'grid' | 'slider';
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-  sliderPagination?: boolean;
-  sliderNavigation?: boolean;
-  sliderLoop?: boolean;
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
 }
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {

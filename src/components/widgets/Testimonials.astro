@@ -9,9 +9,9 @@ import type { Testimonials as Props } from '~/types';
 const {
   variant = 'grid',
   autoplay,
-  sliderPagination = true,
-  sliderNavigation = false,
-  sliderLoop = true,
+  pagination = true,
+  navigation = false,
+  loop = true,
 
   title = '',
   subtitle = '',
@@ -34,9 +34,9 @@ const {
       <Slider
         config={{
           slidesPerView: 1,
-          loop: sliderLoop,
-          pagination: sliderPagination ? true : false,
-          navigation: sliderNavigation ? true : false,
+          loop: loop,
+          pagination: pagination ? true : false,
+          navigation: navigation ? true : false,
           autoplay: autoplay !== undefined ? autoplay : { delay: 5000, disableOnInteraction: true },
         }}
       >
