@@ -114,28 +114,32 @@ function isTranslatable(s: string): boolean {
   return true;
 }
 
+/** Indexable type for traversing nested YAML/object structures. */
+type NestedIndexable = { [key: string]: unknown } | unknown[];
+
 /** Set a value at a dotted/array path in a nested object. */
 function setValueAtPath(obj: Record<string, unknown>, path: string, value: string): void {
   // eslint-disable-next-line no-useless-escape
   const parts = path.split(/(?<=[^\[\]])\.|(?<=\])\.|\[|\]/).filter(Boolean);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let current: any = obj;
+  let current: NestedIndexable = obj;
 
   for (let i = 0; i < parts.length - 1; i++) {
     const key = parts[i];
     if (/^\d+$/.test(key)) {
-      current = current[parseInt(key)];
+      const arr = current as unknown[];
+      current = arr[parseInt(key)] as NestedIndexable;
     } else {
-      if (current[key] === undefined) return; // safety: path doesn't exist
-      current = current[key];
+      const obj = current as { [key: string]: unknown };
+      if (obj[key] === undefined) return; // safety: path doesn't exist
+      current = obj[key] as NestedIndexable;
     }
   }
 
   const lastKey = parts[parts.length - 1];
   if (/^\d+$/.test(lastKey)) {
-    current[parseInt(lastKey)] = value;
+    (current as unknown[])[parseInt(lastKey)] = value;
   } else {
-    current[lastKey] = value;
+    (current as { [key: string]: unknown })[lastKey] = value;
   }
 }
 
