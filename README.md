@@ -61,7 +61,7 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   ├── post/{locale}/       # Blog posts per locale
 │   │   ├── pages/{locale}/      # Standalone content pages per locale
 │   │   ├── templates/{locale}/  # Data-driven page templates (nested YAML)
-│   │   └── snippets/{locale}/     # Reusable markdown fragments (source in default-locale dir)
+│   │   └── snippets/{locale}/   # Reusable markdown fragments (source in default-locale dir)
 │   ├── i18n/                    # Custom i18n system
 │   │   ├── catalog.ts           # JSON catalog management
 │   │   ├── config.ts            # Configuration (reads config.yaml + env vars)
@@ -73,10 +73,8 @@ Inside **AstroWind** template, you'll see the following folders and files:
 │   │   ├── postprocess.ts       # DOM-based HTML post-processing
 │   │   └── provider.ts          # Gemini/DeepL AI translation
 │   ├── locales/                 # JSON translation catalogs
-│   │   ├── en.json
-│   │   ├── es.json
-│   │   ├── fr.json
-│   │   └── de.json
+│   │   ├── en.json              # Default locale string translation file
+│   │   └── ...                  # More configured locales
 │   ├── layouts/
 │   │   ├── Layout.astro
 │   │   ├── MarkdownLayout.astro
@@ -167,16 +165,18 @@ metadata:
 i18n:
   language: en
   textDirection: ltr
-  locales: ['en', 'es', 'fr', 'de']
+  locales: ['en', 'es', 'fr', 'de', 'ar']
   defaultLocale: en
   localeNames:
     en: English
     es: Español
     fr: Français
     de: Deutsch
+    ar: العربية
+  localeDirections:
+    ar: rtl
   ai:
     provider: 'deepl' # 'gemini' or 'deepl'
-    geminiApiKey: null # or your API key string
 
 apps:
   blog:
