@@ -45,7 +45,8 @@ export function readConfig(): I18nConfig {
     locales: i18n.locales || ['en'],
     defaultLocale: i18n.defaultLocale || 'en',
     localeDirections: (i18n.localeDirections as Record<string, 'ltr' | 'rtl'>) || {},
-    provider: (process.env.I18N_PROVIDER as I18nConfig['provider']) || (t.provider as I18nConfig['provider']) || 'deepl',
+    provider:
+      (process.env.I18N_PROVIDER as I18nConfig['provider']) || (t.provider as I18nConfig['provider']) || 'deepl',
     deeplApiKey: (process.env.DEEPL_API_KEY || t.deeplApiKey || undefined) as string | undefined,
     googleApiKey: (process.env.GOOGLE_API_KEY || t.googleApiKey || undefined) as string | undefined,
   };

@@ -54,11 +54,7 @@ const autoplayDisableOnInteraction =
       })}
     >
       <div class="overflow-visible md:overflow-hidden md:[mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]">
-        <div
-          class="flex h-full feature-track"
-          style="gap: 16px; --gap: 16px;"
-          data-feature-track
-        >
+        <div class="flex h-full feature-track" style="gap: 16px; --gap: 16px;" data-feature-track>
           {items.map(({ title, description, icon, callToAction }) => (
             <div class="feature-slide embla-slide" style={`--spv: ${columns ?? 3};`}>
               <FeatureCard
@@ -104,11 +100,11 @@ const autoplayDisableOnInteraction =
         </>
       )}
 
-      {pagination && (
-        <div data-feature-dots class="flex justify-center gap-2 mt-3" />
-      )}
+      {pagination && <div data-feature-dots class="flex justify-center gap-2 mt-3" />}
 
-      <style is:inline set:html={`
+      <style
+        is:inline
+        set:html={`
         @media (min-width: 640px) {
           [data-feature-slider-id="${containerId}"] .feature-track { gap: 16px; --gap: 16px; }
           [data-feature-slider-id="${containerId}"] .feature-slide { --spv: ${Math.min(columns ?? 3, 2)}; }
@@ -117,7 +113,8 @@ const autoplayDisableOnInteraction =
           [data-feature-slider-id="${containerId}"] .feature-track { gap: 24px; --gap: 24px; }
           [data-feature-slider-id="${containerId}"] .feature-slide { --spv: ${columns ?? 3}; }
         }
-      `} />
+      `}
+      />
     </div>
   )
 }
@@ -125,12 +122,12 @@ const autoplayDisableOnInteraction =
 <script>
   import EmblaCarousel from 'embla-carousel';
   import Autoplay from 'embla-carousel-autoplay';
-  import type { EmblaPluginType } from 'embla-carousel';
+  import type { EmblaPluginType, EmblaCarouselType } from 'embla-carousel';
   import type { AutoplayType } from 'embla-carousel-autoplay';
 
   const ACTIVE_ATTR = 'data-active';
 
-  function buildPagination(emblaApi: any, rootEl: HTMLElement): void {
+  function buildPagination(emblaApi: EmblaCarouselType, rootEl: HTMLElement): void {
     const dotsContainer = rootEl.querySelector<HTMLElement>('[data-feature-dots]');
     if (!dotsContainer) return;
 
@@ -222,7 +219,7 @@ const autoplayDisableOnInteraction =
         plugins
       );
 
-      let userPaused = false;
+      const userPaused = false;
       if (autoplayPlugin && emblaApi.slideNodes().length > 1) {
         autoplayPlugin.play();
       }
