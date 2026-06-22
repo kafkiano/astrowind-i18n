@@ -27,6 +27,8 @@ kitchenHeading:
       alt: Fresh dish at Artesano
     - src: ~/assets/images/dish-4.webp
       alt: Fresh dish at Artesano
+    - src: /~/assets/images/drink-1.webp
+      alt: ''
 dishes:
   tagline: Dishes
   title: Made-to-order, every day
@@ -60,14 +62,6 @@ exhibitions:
       description: Browse unique handmade jewelry and home decor pieces. Every item tells a story.
     - title: Online art galleries available
       description: Can't visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.
-tripadvisor:
-  image: ~/assets/images/tripadvisor-logo.png
-  imageAlt: Tripadvisor
-  years:
-    - 2019
-    - 2018
-    - 2017
-  caption: Recommended on Tripadvisor
 testimonials:
   - title: Creative, healthy and delicious!
     testimonial: A wonderful find in Moraira. The food is fresh, creative, and absolutely delicious. Great atmosphere too!
@@ -120,6 +114,14 @@ cta:
       href: tel:+34966272127
       icon: tabler:phone
 order: 1
+tripadvisor:
+  image: ~/assets/images/tripadvisor-logo.png
+  imageAlt: Tripadvisor
+  years:
+    - 2019
+    - 2018
+    - 2017
+  caption: Recommended on Tripadvisor
 ---
 
 Artesano is a unique combination of art gallery, coffee shop, juice bar, café/restaurant and cocktail lounge.
