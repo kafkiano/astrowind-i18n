@@ -1,18 +1,17 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
-import FeatureCard from '~/components/ui/FeatureCard.astro';
 import Headline from '~/components/ui/Headline.astro';
-import Slider from '~/components/widgets/Slider.astro';
+import FeatureSlider from '~/components/widgets/FeatureSlider.astro';
 import Image from '~/components/common/Image.astro';
 import type { Features as BaseProps } from '~/types';
 
 interface Props extends Omit<BaseProps, 'classes'> {
   variant?: 'cards' | 'cards-vertical' | 'cards-image' | 'slider';
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-  sliderPagination?: boolean;
-  sliderNavigation?: boolean;
-  sliderLoop?: boolean;
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
   id?: string;
   isDark?: boolean;
   classes?: Record<string, string | Record<string, string>>;
@@ -21,9 +20,9 @@ interface Props extends Omit<BaseProps, 'classes'> {
 const {
   variant = 'cards',
   autoplay,
-  sliderPagination,
-  sliderNavigation,
-  sliderLoop,
+  pagination,
+  navigation,
+  loop,
 
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
@@ -123,45 +122,16 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
   {
     variant === 'slider' ? (
       items.length > 0 && (
-        <Slider
-          config={{
-            slidesPerView: 1,
-            gap: 24,
-            loop: sliderLoop ?? true,
-            pagination: sliderPagination ? true : false,
-            navigation: sliderNavigation ? true : false,
-            navOutside: true,
-            ...(autoplay !== undefined ? { autoplay } : {}),
-            responsive: {
-              640: {
-                slidesPerView: Math.min(columns ?? 3, 2),
-                gap: 16,
-              },
-              1024: {
-                slidesPerView: columns ?? 3,
-                gap: 24,
-              },
-            },
-          }}
-        >
-          {items.map(({ title: itemTitle, description, icon, callToAction }) => (
-            <div class="embla-slide">
-              <FeatureCard
-                layout="horizontal"
-                title={itemTitle}
-                description={description}
-                icon={icon}
-                defaultIcon={defaultIcon}
-                callToAction={callToAction}
-                classes={{
-                  panel: 'mx-4 p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-xl dark:shadow-none',
-                  icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
-                  ...(mergedItemClasses as Record<string, string>),
-                }}
-              />
-            </div>
-          ))}
-        </Slider>
+        <FeatureSlider
+          items={items}
+          columns={columns}
+          defaultIcon={defaultIcon}
+          autoplay={autoplay}
+          pagination={pagination ? true : false}
+          navigation={navigation ? true : false}
+          loop={loop ?? true}
+          classes={mergedItemClasses as Record<string, string>}
+        />
       )
     ) : (
       <ItemGrid

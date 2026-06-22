@@ -28,7 +28,7 @@ const dir = I18N.localeDirections?.[currentLocale ?? I18N.defaultLocale] ?? I18N
 ---
 
 <!doctype html>
-<html lang={currentLocale} dir={dir} class="2xl:text-[20px]">
+<html lang={currentLocale} dir={dir} class="2xl:text-[20px] overflow-x-hidden">
   <head>
     <CommonMeta />
     <Favicons />
@@ -54,7 +54,7 @@ const dir = I18N.localeDirections?.[currentLocale ?? I18N.defaultLocale] ?? I18N
     />
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <body class="antialiased text-default bg-page tracking-tight overflow-x-hidden">
     <slot />
 
     <BasicScripts />

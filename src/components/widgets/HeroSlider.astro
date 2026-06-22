@@ -1,7 +1,6 @@
 ---
 import HeroTextBlock from '~/components/ui/HeroTextBlock.astro';
 import Image from '~/components/common/Image.astro';
-import Slider from '~/components/widgets/Slider.astro';
 import type { CallToAction, Image as ImageType } from '~/types';
 
 interface HeroSlide {
@@ -15,59 +14,167 @@ interface Props {
   tagline?: string;
   slides: HeroSlide[];
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-  sliderPagination?: boolean;
-  sliderNavigation?: boolean;
   id?: string;
 }
 
-const { tagline, slides = [], autoplay = 5000, sliderPagination, sliderNavigation, id } = Astro.props;
+const { tagline, slides = [], autoplay = 5000, id } = Astro.props;
 
-const hasPagination = sliderPagination ?? slides.length > 1;
-const hasNavigation = sliderNavigation ?? slides.length > 1;
+const containerId = id || `hero-slider-${crypto.randomUUID()}`;
+
+const hasAutoplay = autoplay !== false;
+const autoplayDelay = hasAutoplay
+  ? typeof autoplay === 'object'
+    ? autoplay.delay
+    : typeof autoplay === 'number'
+      ? autoplay
+      : 5000
+  : 5000;
+
+const autoplayDisableOnInteraction =
+  hasAutoplay && typeof autoplay === 'object' && autoplay.disableOnInteraction !== false;
 ---
 
 {
   slides.length > 0 && (
     <section class="relative not-prose" {...(id ? { id } : {})}>
-      <Slider
-        config={{
-          autoplay,
+      <div
+        class="h-[520px] md:h-[640px] lg:h-[calc(100vh-var(--aw-header-height,0px))]"
+        id={containerId}
+        data-hero-slider-id={containerId}
+        data-hero-config={JSON.stringify({
+          hasAutoplay,
+          autoplayDelay,
+          autoplayDisableOnInteraction,
           loop: true,
-          effect: 'fade',
-          slidesPerView: 1,
-          gap: 0,
-          pagination: hasPagination,
-          navigation: hasNavigation,
-        }}
-        class="h-[600px] md:h-[700px] lg:h-screen"
+        })}
       >
-        {slides.map((slide) => (
-          <div class="embla-slide relative flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0">
-              <Image
-                src={slide.image.src}
-                alt={slide.image.alt || ''}
-                widths={[400, 768, 1024, 2040]}
-                sizes="100vw"
-                loading="eager"
-                class="w-full h-full object-cover"
-                width={2040}
-                height={1200}
-                {...(typeof slide.image === 'object' ? slide.image : {})}
-              />
-            </div>
-            <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-              <HeroTextBlock
-                title={slide.title}
-                subtitle={slide.subtitle}
-                tagline={tagline}
-                actions={slide.actions}
-                align="center"
-              />
-            </div>
+        <div class="h-full relative overflow-hidden" data-hero-viewport>
+          <div class="flex h-full" data-hero-track>
+            {slides.map((slide) => (
+              <div class="embla-slide relative flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0">
+                  <Image
+                    src={slide.image.src}
+                    alt={slide.image.alt || ''}
+                    widths={[400, 768, 1024, 2040]}
+                    sizes="100vw"
+                    loading="eager"
+                    class="w-full h-full object-cover"
+                    width={2040}
+                    height={1200}
+                  />
+                </div>
+                <div class="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+                  <div class="bg-white/25 dark:bg-slate-900/40 backdrop-blur-xl rounded-2xl shadow-lg p-5 md:p-10 lg:p-12 xl:p-10 2xl:p-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+                    <HeroTextBlock
+                      title={slide.title}
+                      subtitle={slide.subtitle}
+                      tagline={tagline}
+                      actions={slide.actions}
+                      align="center"
+                      animate={false}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </Slider>
+        </div>
+
+        <div class="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+          {hasAutoplay && (
+            <button
+              data-hero-pause
+              class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+              aria-label="Pause slideshow"
+              type="button"
+            >
+              <svg class="hero-pause-icon w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
+              <svg class="hero-play-icon w-5 h-5 hidden" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+          )}
+          <button
+            data-hero-prev
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+            aria-label="Previous slide"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            data-hero-next
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+            aria-label="Next slide"
+            type="button"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </section>
   )
 }
+
+<script is:inline>
+  (function () {
+    if (window.__awHeroHeaderHeight) return;
+    window.__awHeroHeaderHeight = true;
+
+    function updateHeroOffset() {
+      const hero = document.querySelector('[data-hero-slider-id]');
+      if (!hero) return;
+      const offset = hero.getBoundingClientRect().top + window.scrollY;
+      document.documentElement.style.setProperty('--aw-header-height', `${offset}px`);
+    }
+
+    updateHeroOffset();
+    window.addEventListener('resize', updateHeroOffset);
+    window.addEventListener('orientationchange', updateHeroOffset);
+    document.addEventListener('astro:page-load', updateHeroOffset);
+  })();
+</script>
+
+<script>
+  import Fade from 'embla-carousel-fade';
+  import { registerEmblaSliders } from '~/utils/embla';
+
+  registerEmblaSliders('[data-hero-config]', '[data-hero-viewport]', 'hero-initialized', '', {
+    getConfig: (el) => JSON.parse(el.dataset.heroConfig || '{}') as import('~/utils/embla').EmblaBaseConfig,
+    getOptions: (config) => ({ loop: config.loop, align: 'center' }),
+    getExtraPlugins: () => [Fade()],
+    prevSelector: '[data-hero-prev]',
+    nextSelector: '[data-hero-next]',
+    onInit: (_emblaApi, rootEl, _config, autoplayPlugin) => {
+      const pauseBtn = rootEl.querySelector<HTMLElement>('[data-hero-pause]');
+      if (!pauseBtn || !autoplayPlugin) return;
+
+      let userPaused = false;
+
+      const updatePauseIcon = (playing: boolean): void => {
+        pauseBtn.querySelector<HTMLElement>('.hero-pause-icon')?.classList.toggle('hidden', !playing);
+        pauseBtn.querySelector<HTMLElement>('.hero-play-icon')?.classList.toggle('hidden', playing);
+        pauseBtn.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
+      };
+
+      pauseBtn.addEventListener('click', () => {
+        if (autoplayPlugin.isPlaying() && !userPaused) {
+          autoplayPlugin.stop();
+          userPaused = true;
+        } else {
+          autoplayPlugin.play();
+          userPaused = false;
+        }
+        updatePauseIcon(!userPaused);
+      });
+    },
+  });
+</script>

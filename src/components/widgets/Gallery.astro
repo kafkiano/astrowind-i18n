@@ -1,7 +1,8 @@
 ---
+import { getAsset } from '~/utils/permalinks';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import Image from '~/components/common/Image.astro';
+import GalleryFigure from '~/components/widgets/GalleryFigure.astro';
 import type { Gallery as Props } from '~/types';
 
 const {
@@ -10,6 +11,9 @@ const {
   tagline,
   images = [],
   columns = 3,
+  variant = 'grid',
+  mobileVariant = 'expandable',
+  pagination = false,
 
   id,
   isDark = false,
@@ -17,8 +21,24 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
+const isMasonry = variant === 'masonry';
+
 const gridCols =
-  columns === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : columns === 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'sm:grid-cols-2';
+  columns === 4
+    ? 'sm:grid-cols-2 lg:grid-cols-4'
+    : columns === 3
+      ? 'sm:grid-cols-2 lg:grid-cols-3'
+      : columns === 2
+        ? 'sm:grid-cols-2'
+        : 'sm:grid-cols-2 lg:grid-cols-3';
+
+const masonryCss = isMasonry ? 'grid grid-flow-dense items-start gap-4 ' + gridCols : 'grid gap-6 ' + gridCols;
+const galleryId = `gallery-${crypto.randomUUID()}`;
+const visibleMobileCount = 4;
+const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibleMobileCount;
+
+const intersectClass =
+  'intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade';
 ---
 
 <WidgetWrapper
@@ -31,27 +51,167 @@ const gridCols =
 
   {
     images && images.length > 0 && (
-      <div class={`grid gap-6 ${gridCols} ${(classes?.grid as string) ?? ''}`}>
-        {images.map(({ src, alt, caption }) => (
-          <figure class="intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-            <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
-              <Image
-                class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                width={400}
-                height={256}
-                widths={[400, 768, 1024]}
-                sizes={`(max-width: 639px) 100vw, (max-width: 1023px) 50vw, ${100 / columns}vw`}
-                layout="responsive"
-                src={src}
-                alt={alt}
-              />
+      <>
+        {/* Desktop + tablet grid (always visible from sm up) */}
+        <div
+          class:list={[masonryCss, (classes?.grid as string) ?? '', 'hidden sm:grid']}
+          {...(isMasonry ? { 'data-masonry': 'balanced' } : {})}
+          data-gallery-desktop
+        >
+          {images.map((image) => (
+            <GalleryFigure
+              image={image}
+              classes={intersectClass}
+              imageSizes={`(max-width: 639px) 100vw, (max-width: 1023px) 50vw, ${100 / columns}vw`}
+              isMasonry={isMasonry}
+            />
+          ))}
+        </div>
+
+        {/* Mobile expandable grid */}
+        {mobileVariant === 'expandable' && (
+          <>
+            <div
+              class:list={['grid grid-cols-1 gap-6 sm:hidden', (classes?.grid as string) ?? '']}
+              data-gallery-mobile={galleryId}
+              data-expanded="false"
+            >
+              {images.map((image, index) => (
+                <GalleryFigure
+                  image={image}
+                  classes={intersectClass}
+                  imageSizes="100vw"
+                  isMasonry={isMasonry}
+                  hidden={index >= visibleMobileCount}
+                />
+              ))}
             </div>
-            {caption && (
-              <figcaption class="mt-2 text-sm text-center text-muted dark:text-slate-400">{caption}</figcaption>
+
+            {hasMobileExpand && (
+              <div class="flex justify-center mt-4 sm:hidden">
+                <button
+                  type="button"
+                  data-gallery-toggle={galleryId}
+                  class="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium transition hover:bg-secondary"
+                  aria-expanded="false"
+                >
+                  <span data-gallery-more-text>Show {images.length - visibleMobileCount} more</span>
+                  <span data-gallery-less-text class="hidden">
+                    Show less
+                  </span>
+                  <svg
+                    class="w-4 h-4 transition-transform"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+              </div>
             )}
-          </figure>
-        ))}
-      </div>
+          </>
+        )}
+
+        {/* Mobile peek carousel */}
+        {mobileVariant === 'peek' && (
+          <div
+            class="relative sm:hidden"
+            id={galleryId}
+            data-gallery-peek-id={galleryId}
+            data-gallery-peek-config={JSON.stringify({
+              loop: false,
+              align: 'start',
+              hasPagination: pagination,
+            })}
+          >
+            <div class="embla-viewport overflow-hidden" data-gallery-peek-viewport>
+              <div class="flex gap-4" data-gallery-peek-track>
+                {images.map((image) => (
+                  <GalleryFigure
+                    image={image}
+                    classes="flex-[0_0_85%] min-w-0"
+                    imageSizes="85vw"
+                    isMasonry={isMasonry}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {pagination && <div data-gallery-peek-dots class="flex justify-center gap-2 mt-3" />}
+          </div>
+        )}
+      </>
     )
   }
 </WidgetWrapper>
+
+<script>
+  function initExpandableGalleries() {
+    document.querySelectorAll<HTMLElement>('[data-gallery-toggle]').forEach((btn) => {
+      if (btn.dataset.awInitialized) return;
+      btn.dataset.awInitialized = 'true';
+
+      const galleryId = btn.dataset.galleryToggle;
+      const container = document.querySelector<HTMLElement>(`[data-gallery-mobile="${galleryId}"]`);
+      if (!container) return;
+
+      const hiddenItems = container.querySelectorAll('[data-gallery-hidden-item]');
+      const moreText = btn.querySelector('[data-gallery-more-text]');
+      const lessText = btn.querySelector('[data-gallery-less-text]');
+
+      btn.addEventListener('click', () => {
+        const expanded = container.getAttribute('data-expanded') === 'true';
+
+        if (!expanded) {
+          hiddenItems.forEach((item) => {
+            item.classList.remove('hidden');
+            item.classList.add('motion-safe:animate-fade-in');
+          });
+          container.setAttribute('data-expanded', 'true');
+          btn.setAttribute('aria-expanded', 'true');
+          moreText?.classList.add('hidden');
+          lessText?.classList.remove('hidden');
+        } else {
+          hiddenItems.forEach((item) => {
+            item.classList.add('hidden');
+            item.classList.remove('motion-safe:animate-fade-in');
+          });
+          container.setAttribute('data-expanded', 'false');
+          btn.setAttribute('aria-expanded', 'false');
+          moreText?.classList.remove('hidden');
+          lessText?.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  initExpandableGalleries();
+  document.addEventListener('astro:page-load', initExpandableGalleries);
+</script>
+
+<script>
+  import { registerEmblaSliders } from '~/utils/embla';
+
+  registerEmblaSliders(
+    '[data-gallery-peek-config]',
+    '[data-gallery-peek-viewport]',
+    'gallery-peek-initialized',
+    '[data-gallery-peek-dots]',
+    {
+      getConfig: (el) => JSON.parse(el.dataset.galleryPeekConfig || '{}'),
+      getOptions: (config) => ({ loop: config.loop, align: config.align || 'start' }),
+      prevSelector: '[data-gallery-peek-prev]',
+      nextSelector: '[data-gallery-peek-next]',
+    }
+  );
+</script>
+
+<style>
+  [data-gallery-toggle][aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+</style>
+
+{isMasonry && <script is:inline src={getAsset('assets/scripts/masonry-polyfill.js')} async />}

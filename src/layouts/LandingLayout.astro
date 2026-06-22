@@ -21,11 +21,11 @@ const headerData = await getHeaderData(locale);
   <div slot="header">
     <slot name="header">
       <Header
-        links={headerData?.links[2] ? [headerData.links[2]] : undefined}
+        {...headerData}
         actions={[
           {
             text: 'Download',
-            href: 'https://github.com/arthelokyo/astrowind',
+            href: 'https://github.com/kafkiano/astrowind-i18n',
           },
         ]}
         showToggleTheme

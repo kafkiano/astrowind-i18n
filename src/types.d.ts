@@ -117,6 +117,9 @@ export interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
+  width?: number;
+  height?: number;
+  colSpan?: number;
 }
 
 export interface Widget {
@@ -257,9 +260,9 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
   variant?: 'grid' | 'slider';
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
-  sliderPagination?: boolean;
-  sliderNavigation?: boolean;
-  sliderLoop?: boolean;
+  pagination?: boolean;
+  navigation?: boolean;
+  loop?: boolean;
 }
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {
@@ -309,6 +312,10 @@ export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 export interface Gallery extends Omit<Headline, 'classes'>, Widget {
   images?: Array<GalleryImage>;
   columns?: number;
+  variant?: 'grid' | 'masonry';
+  mobileVariant?: 'expandable' | 'peek';
+  pagination?: boolean;
+  gap?: string;
 }
 
 export interface Badge extends Widget {

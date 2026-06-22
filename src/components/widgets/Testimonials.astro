@@ -9,9 +9,9 @@ import type { Testimonials as Props } from '~/types';
 const {
   variant = 'grid',
   autoplay,
-  sliderPagination = true,
-  sliderNavigation = false,
-  sliderLoop = true,
+  pagination = true,
+  navigation = false,
+  loop = true,
 
   title = '',
   subtitle = '',
@@ -34,16 +34,10 @@ const {
       <Slider
         config={{
           slidesPerView: 1,
-          gap: 24,
-          loop: sliderLoop,
-          pagination: sliderPagination ? true : false,
-          navigation: sliderNavigation ? true : false,
-          navOutside: true,
-          ...(autoplay !== undefined ? { autoplay } : { autoplay: { delay: 5000, disableOnInteraction: true } }),
-          responsive: {
-            640: { slidesPerView: 2, gap: 16 },
-            1024: { slidesPerView: 3, gap: 24 },
-          },
+          loop: loop,
+          pagination: pagination ? true : false,
+          navigation: navigation ? true : false,
+          autoplay: autoplay !== undefined ? autoplay : { delay: 5000, disableOnInteraction: true },
         }}
       >
         {testimonials.map(({ title: tTitle, testimonial, name, job, image }) => (

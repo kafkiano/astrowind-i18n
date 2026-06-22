@@ -8,15 +8,21 @@ interface Props {
   tagline?: string;
   actions?: string | (string | CallToAction)[];
   align?: 'center' | 'left';
+  /** Enable intersection-observer fade animation on text elements */
+  animate?: boolean;
 }
 
-const { title, subtitle, tagline, actions, align = 'center' } = Astro.props;
+const { title, subtitle, tagline, actions, align = 'center', animate = true } = Astro.props;
+
+const animationClasses = animate
+  ? 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
+  : '';
 ---
 
 {
   tagline && (
     <p
-      class={`text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade`}
+      class={`text-sm md:text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase ${animationClasses}`}
       set:html={tagline}
     />
   )
@@ -24,7 +30,7 @@ const { title, subtitle, tagline, actions, align = 'center' } = Astro.props;
 {
   title && (
     <h1
-      class="text-5xl md:text-6xl font-bold leading-tight tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+      class={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-4 font-heading dark:text-gray-200 ${animationClasses}`}
       set:html={title}
     />
   )
@@ -32,16 +38,17 @@ const { title, subtitle, tagline, actions, align = 'center' } = Astro.props;
 <div class={align === 'left' ? 'max-w-3xl mx-auto lg:max-w-none' : 'max-w-3xl mx-auto'}>
   {
     subtitle && (
-      <p
-        class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-        set:html={subtitle}
-      />
+      <p class={`text-lg md:text-xl text-muted mb-6 dark:text-slate-300 ${animationClasses}`} set:html={subtitle} />
     )
   }
   {
     actions && (
       <div
-        class={`max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 ${align === 'left' ? 'lg:justify-start lg:m-0 lg:max-w-7xl' : ''} intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade`}
+        class={
+          align === 'left'
+            ? `max-w-3xl mx-auto lg:max-w-none flex flex-nowrap flex-row justify-center lg:justify-start gap-4 ${animationClasses}`
+            : `max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-row justify-center gap-4 ${animationClasses}`
+        }
       >
         {Array.isArray(actions) ? (
           actions.map((action) => (
