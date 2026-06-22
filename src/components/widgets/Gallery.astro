@@ -2,7 +2,7 @@
 import { getAsset } from '~/utils/permalinks';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import Image from '~/components/common/Image.astro';
+import GalleryFigure from '~/components/widgets/GalleryFigure.astro';
 import type { Gallery as Props } from '~/types';
 
 const {
@@ -36,6 +36,9 @@ const masonryCss = isMasonry ? 'grid grid-flow-dense items-start gap-4 ' + gridC
 const galleryId = `gallery-${crypto.randomUUID()}`;
 const visibleMobileCount = 4;
 const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibleMobileCount;
+
+const intersectClass =
+  'intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade';
 ---
 
 <WidgetWrapper
@@ -51,45 +54,18 @@ const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibl
       <>
         {/* Desktop + tablet grid (always visible from sm up) */}
         <div
-          class:list={[
-            masonryCss,
-            (classes?.grid as string) ?? '',
-            { 'hidden sm:grid': mobileVariant === 'expandable' || mobileVariant === 'peek' },
-          ]}
+          class:list={[masonryCss, (classes?.grid as string) ?? '', 'hidden sm:grid']}
           {...(isMasonry ? { 'data-masonry': 'balanced' } : {})}
           data-gallery-desktop
         >
-          {images.map((image, index) => {
-            const { src, alt, width, height, colSpan } = image;
-            return (
-              <figure
-                class:list={[
-                  'm-0 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
-                  isMasonry ? 'mb-4' : '',
-                ]}
-                data-src={src}
-                data-alt={alt}
-                data-width={width}
-                data-height={height}
-                data-col-span={colSpan && colSpan > 1 ? colSpan : undefined}
-                data-index={index}
-              >
-                <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
-                  <Image
-                    class={`w-full hover:scale-105 transition-transform duration-300 ${isMasonry ? 'h-auto' : 'h-64 object-cover'}`}
-                    width={width || 400}
-                    height={height || (isMasonry ? undefined : 256)}
-                    widths={[400, 768, 1024]}
-                    sizes={`(max-width: 639px) 100vw, (max-width: 1023px) 50vw, ${100 / columns}vw`}
-                    layout="responsive"
-                    loading={isMasonry ? 'eager' : undefined}
-                    src={src}
-                    alt={alt}
-                  />
-                </div>
-              </figure>
-            );
-          })}
+          {images.map((image) => (
+            <GalleryFigure
+              image={image}
+              classes={intersectClass}
+              imageSizes={`(max-width: 639px) 100vw, (max-width: 1023px) 50vw, ${100 / columns}vw`}
+              isMasonry={isMasonry}
+            />
+          ))}
         </div>
 
         {/* Mobile expandable grid */}
@@ -100,40 +76,15 @@ const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibl
               data-gallery-mobile={galleryId}
               data-expanded="false"
             >
-              {images.map((image, index) => {
-                const { src, alt, width, height, colSpan } = image;
-                const isHiddenInitially = index >= visibleMobileCount;
-                return (
-                  <figure
-                    class:list={[
-                      'm-0 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
-                      isMasonry ? 'mb-4' : '',
-                      { hidden: isHiddenInitially },
-                    ]}
-                    data-src={src}
-                    data-alt={alt}
-                    data-width={width}
-                    data-height={height}
-                    data-col-span={colSpan && colSpan > 1 ? colSpan : undefined}
-                    data-index={index}
-                    data-gallery-hidden-item={isHiddenInitially ? '' : undefined}
-                  >
-                    <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
-                      <Image
-                        class={`w-full hover:scale-105 transition-transform duration-300 ${isMasonry ? 'h-auto' : 'h-64 object-cover'}`}
-                        width={width || 400}
-                        height={height || (isMasonry ? undefined : 256)}
-                        widths={[400, 768, 1024]}
-                        sizes="100vw"
-                        layout="responsive"
-                        loading={isMasonry ? 'eager' : undefined}
-                        src={src}
-                        alt={alt}
-                      />
-                    </div>
-                  </figure>
-                );
-              })}
+              {images.map((image, index) => (
+                <GalleryFigure
+                  image={image}
+                  classes={intersectClass}
+                  imageSizes="100vw"
+                  isMasonry={isMasonry}
+                  hidden={index >= visibleMobileCount}
+                />
+              ))}
             </div>
 
             {hasMobileExpand && (
@@ -143,14 +94,13 @@ const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibl
                   data-gallery-toggle={galleryId}
                   class="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium transition hover:bg-secondary"
                   aria-expanded="false"
-                  data-count={images.length - visibleMobileCount}
                 >
                   <span data-gallery-more-text>Show {images.length - visibleMobileCount} more</span>
                   <span data-gallery-less-text class="hidden">
                     Show less
                   </span>
                   <svg
-                    class="w-4 h-4 transition-transform group-aria-expanded:rotate-180"
+                    class="w-4 h-4 transition-transform"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -178,34 +128,14 @@ const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibl
           >
             <div class="embla-viewport overflow-hidden" data-gallery-peek-viewport>
               <div class="flex gap-4" data-gallery-peek-track>
-                {images.map((image, index) => {
-                  const { src, alt, width, height, colSpan } = image;
-                  return (
-                    <figure
-                      class:list={['m-0 embla-slide feature-slide', 'flex-[0_0_85%] min-w-0', isMasonry ? 'mb-4' : '']}
-                      data-src={src}
-                      data-alt={alt}
-                      data-width={width}
-                      data-height={height}
-                      data-col-span={colSpan && colSpan > 1 ? colSpan : undefined}
-                      data-index={index}
-                    >
-                      <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
-                        <Image
-                          class={`w-full hover:scale-105 transition-transform duration-300 ${isMasonry ? 'h-auto' : 'h-64 object-cover'}`}
-                          width={width || 400}
-                          height={height || (isMasonry ? undefined : 256)}
-                          widths={[400, 768, 1024]}
-                          sizes="85vw"
-                          layout="responsive"
-                          loading={isMasonry ? 'eager' : undefined}
-                          src={src}
-                          alt={alt}
-                        />
-                      </div>
-                    </figure>
-                  );
-                })}
+                {images.map((image) => (
+                  <GalleryFigure
+                    image={image}
+                    classes="flex-[0_0_85%] min-w-0"
+                    imageSizes="85vw"
+                    isMasonry={isMasonry}
+                  />
+                ))}
               </div>
             </div>
 
@@ -217,57 +147,48 @@ const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibl
   }
 </WidgetWrapper>
 
-<script is:inline>
-  (function () {
-    function initExpandableGalleries() {
-      document.querySelectorAll('[data-gallery-toggle]').forEach((button) => {
-        /** @type {HTMLElement} */
-        const btn = button;
-        if (btn.dataset.awInitialized) return;
-        btn.dataset.awInitialized = 'true';
+<script>
+  function initExpandableGalleries() {
+    document.querySelectorAll<HTMLElement>('[data-gallery-toggle]').forEach((btn) => {
+      if (btn.dataset.awInitialized) return;
+      btn.dataset.awInitialized = 'true';
 
-        const galleryId = btn.dataset.galleryToggle;
-        /** @type {HTMLElement | null} */
-        const container = document.querySelector(`[data-gallery-mobile="${galleryId}"]`);
-        if (!container) return;
+      const galleryId = btn.dataset.galleryToggle;
+      const container = document.querySelector<HTMLElement>(`[data-gallery-mobile="${galleryId}"]`);
+      if (!container) return;
 
-        const hiddenItems = container.querySelectorAll('[data-gallery-hidden-item]');
-        const moreText = btn.querySelector('[data-gallery-more-text]');
-        const lessText = btn.querySelector('[data-gallery-less-text]');
+      const hiddenItems = container.querySelectorAll('[data-gallery-hidden-item]');
+      const moreText = btn.querySelector('[data-gallery-more-text]');
+      const lessText = btn.querySelector('[data-gallery-less-text]');
 
-        btn.addEventListener('click', () => {
-          const expanded = container.getAttribute('data-expanded') === 'true';
+      btn.addEventListener('click', () => {
+        const expanded = container.getAttribute('data-expanded') === 'true';
 
-          if (!expanded) {
-            hiddenItems.forEach((item) => {
-              item.classList.remove('hidden');
-              item.classList.add('motion-safe:animate-fadeIn');
-            });
-            container.setAttribute('data-expanded', 'true');
-            btn.setAttribute('aria-expanded', 'true');
-            moreText?.classList.add('hidden');
-            lessText?.classList.remove('hidden');
-          } else {
-            hiddenItems.forEach((item) => {
-              item.classList.add('hidden');
-              item.classList.remove('motion-safe:animate-fadeIn');
-            });
-            container.setAttribute('data-expanded', 'false');
-            btn.setAttribute('aria-expanded', 'false');
-            moreText?.classList.remove('hidden');
-            lessText?.classList.add('hidden');
-          }
-        });
+        if (!expanded) {
+          hiddenItems.forEach((item) => {
+            item.classList.remove('hidden');
+            item.classList.add('motion-safe:animate-fade-in');
+          });
+          container.setAttribute('data-expanded', 'true');
+          btn.setAttribute('aria-expanded', 'true');
+          moreText?.classList.add('hidden');
+          lessText?.classList.remove('hidden');
+        } else {
+          hiddenItems.forEach((item) => {
+            item.classList.add('hidden');
+            item.classList.remove('motion-safe:animate-fade-in');
+          });
+          container.setAttribute('data-expanded', 'false');
+          btn.setAttribute('aria-expanded', 'false');
+          moreText?.classList.remove('hidden');
+          lessText?.classList.add('hidden');
+        }
       });
-    }
+    });
+  }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initExpandableGalleries);
-    } else {
-      initExpandableGalleries();
-    }
-    document.addEventListener('astro:after-swap', initExpandableGalleries);
-  })();
+  initExpandableGalleries();
+  document.addEventListener('astro:page-load', initExpandableGalleries);
 </script>
 
 <script>
@@ -287,19 +208,9 @@ const hasMobileExpand = mobileVariant === 'expandable' && images.length > visibl
   );
 </script>
 
-<style is:inline>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 0.3s ease-out both;
+<style>
+  [data-gallery-toggle][aria-expanded='true'] svg {
+    transform: rotate(180deg);
   }
 </style>
 

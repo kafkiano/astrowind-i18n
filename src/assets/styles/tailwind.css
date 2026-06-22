@@ -23,6 +23,7 @@
     'Noto Color Emoji';
 
   --animate-fade: fadeInUp 1s both;
+  --animate-fade-in: fadeIn 0.3s ease-out both;
 }
 
 @keyframes fadeInUp {
@@ -31,6 +32,17 @@
     transform: translateY(2rem);
   }
   100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
   }

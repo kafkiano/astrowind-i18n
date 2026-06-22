@@ -89,9 +89,9 @@ export function setupPauseOnInteraction(
 /* ─── Base slider config (fields the shared init reads directly) ──── */
 
 export interface EmblaBaseConfig {
-  hasAutoplay: boolean;
-  autoplayDelay: number;
-  autoplayDisableOnInteraction: boolean;
+  hasAutoplay?: boolean;
+  autoplayDelay?: number;
+  autoplayDisableOnInteraction?: boolean;
   loop: boolean;
   hasPagination?: boolean;
   align?: 'start' | 'center' | 'end';
@@ -155,7 +155,7 @@ export function initEmblaSliders<T extends EmblaBaseConfig>(
 
     if (config.hasAutoplay) {
       autoplayPlugin = Autoplay({
-        delay: config.autoplayDelay,
+        delay: config.autoplayDelay ?? 5000,
         stopOnLastSnap: !config.loop,
         stopOnInteraction: false,
         playOnInit: false,
