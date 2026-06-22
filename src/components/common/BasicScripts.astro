@@ -2,7 +2,7 @@
 import { UI } from 'astrowind:config';
 ---
 
-<script is:inline define:vars={{ defaultTheme: UI.theme, defaultStyle: UI.style || 'default' }}>
+<script is:inline define:vars={{ defaultTheme: UI.theme }}>
   if (window.basic_script) {
     return;
   }
@@ -40,23 +40,23 @@ import { UI } from 'astrowind:config';
     }
   }
 
+  const toggleMenuExpanded = (expanded) => {
+    const toggle = document.querySelector('[data-aw-toggle-menu]');
+    const header = document.getElementById('header');
+    const nav = document.querySelector('#header nav');
+    const actions = document.querySelector('#header > div > div:last-child');
+
+    toggle?.classList.toggle('expanded', expanded);
+    document.body.classList.toggle('overflow-hidden', expanded);
+    document.documentElement.classList.toggle('overflow-hidden', expanded);
+    header?.classList.toggle('h-screen', expanded);
+    header?.classList.toggle('expanded', expanded);
+    header?.classList.toggle('bg-page', expanded);
+    nav?.classList.toggle('hidden', !expanded);
+    actions?.classList.toggle('hidden', !expanded);
+  };
+
   const onLoad = function () {
-    const toggleMenuExpanded = (expanded) => {
-      const toggle = document.querySelector('[data-aw-toggle-menu]');
-      const header = document.getElementById('header');
-      const nav = document.querySelector('#header nav');
-      const actions = document.querySelector('#header > div > div:last-child');
-
-      toggle?.classList.toggle('expanded', expanded);
-      document.body.classList.toggle('overflow-hidden', expanded);
-      document.documentElement.classList.toggle('overflow-hidden', expanded);
-      header?.classList.toggle('h-screen', expanded);
-      header?.classList.toggle('expanded', expanded);
-      header?.classList.toggle('bg-page', expanded);
-      nav?.classList.toggle('hidden', !expanded);
-      actions?.classList.toggle('hidden', !expanded);
-    };
-
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
 
