@@ -28,7 +28,7 @@ interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
   config?: SliderConfig;
 }
 
-const { config = {}, class: className, ...attrs } = Astro.props;
+const { config = {}, class: className, ...attrs }: Props = Astro.props;
 
 const containerId = `slider-${crypto.randomUUID()}`;
 
