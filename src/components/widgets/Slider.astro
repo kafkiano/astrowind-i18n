@@ -60,7 +60,7 @@ const slideCss =
 ---
 
 <div
-  class:list={['relative', className]}
+  class:list={['relative md:px-14', className]}
   id={containerId}
   data-embla-id={containerId}
   data-embla-config={JSON.stringify(emblaConfig)}
@@ -83,7 +83,7 @@ const slideCss =
       <>
         <button
           data-embla-prev
-          class="absolute top-1/2 -translate-y-1/2 left-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+          class="absolute top-1/2 -translate-y-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
           aria-label="Previous slide"
           type="button"
         >
@@ -93,7 +93,7 @@ const slideCss =
         </button>
         <button
           data-embla-next
-          class="absolute top-1/2 -translate-y-1/2 right-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+          class="absolute top-1/2 -translate-y-1/2 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
           aria-label="Next slide"
           type="button"
         >
