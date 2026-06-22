@@ -7,8 +7,6 @@ backend:
 
 media_folder: src/assets/images
 public_folder: ~/assets/images
-media_folder: src/assets/images
-public_folder: ~/assets/images
 
 collections:
   - name: pages
@@ -46,7 +44,6 @@ collections:
     label: Landing Page
     label_singular: Landing Page Section
     folder: src/data/templates/en
-    create: false
     create: false
     extension: md
     format: frontmatter
@@ -111,6 +108,19 @@ collections:
           - label: Title
             name: title
             widget: string
+          - label: Gallery Images
+            name: images
+            widget: list
+            required: false
+            hint: Images shown in the "Fresh, healthy, and beautiful" gallery row
+            fields:
+              - label: Image
+                name: src
+                widget: image
+              - label: Alt text
+                name: alt
+                widget: string
+                required: false
 
       - label: Dishes
         name: dishes
