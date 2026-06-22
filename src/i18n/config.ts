@@ -14,12 +14,10 @@ export interface I18nConfig {
   defaultLocale: string;
   /** Per-locale text direction. Only specify RTL locales (e.g. { ar: 'rtl' }). Default is 'ltr'. */
   localeDirections?: Record<string, 'ltr' | 'rtl'>;
-  /** Translation provider: 'gemini' or 'deepl' */
-  provider: 'gemini' | 'deepl';
-  geminiApiKey?: string;
+  /** Translation provider: 'deepl' or 'google' */
+  provider: 'deepl' | 'google';
   deeplApiKey?: string;
-  /** Gemini model (e.g. 'gemini-2.5-flash', 'gemma-4-26b-a4b-it') */
-  model?: string;
+  googleApiKey?: string;
 }
 
 let _config: I18nConfig | null = null;
@@ -34,8 +32,8 @@ export function readConfig(): I18nConfig {
       locales?: string[];
       defaultLocale?: string;
       localeDirections?: Record<string, 'ltr' | 'rtl'>;
-      translation?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string; model?: string };
-      ai?: { provider?: string; geminiApiKey?: string; deeplApiKey?: string; model?: string };
+      translation?: { provider?: string; deeplApiKey?: string; googleApiKey?: string };
+      ai?: { provider?: string; deeplApiKey?: string; googleApiKey?: string };
     };
   };
 
@@ -47,10 +45,10 @@ export function readConfig(): I18nConfig {
     locales: i18n.locales || ['en'],
     defaultLocale: i18n.defaultLocale || 'en',
     localeDirections: (i18n.localeDirections as Record<string, 'ltr' | 'rtl'>) || {},
-    provider: (process.env.I18N_PROVIDER as 'gemini' | 'deepl') || (t.provider as 'gemini' | 'deepl') || 'gemini',
-    geminiApiKey: (process.env.GEMINI_API_KEY || t.geminiApiKey || undefined) as string | undefined,
+    provider:
+      (process.env.I18N_PROVIDER as I18nConfig['provider']) || (t.provider as I18nConfig['provider']) || 'deepl',
     deeplApiKey: (process.env.DEEPL_API_KEY || t.deeplApiKey || undefined) as string | undefined,
-    model: (process.env.I18N_MODEL || t.model || undefined) as string | undefined,
+    googleApiKey: (process.env.GOOGLE_API_KEY || t.googleApiKey || undefined) as string | undefined,
   };
 
   return _config;

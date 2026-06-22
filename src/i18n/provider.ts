@@ -1,7 +1,7 @@
 /**
  * Translation provider interface, factory, and implementations.
  *
- * Supports: Gemini (via REST API) and DeepL (via deepl-node).
+ * Supports: DeepL (via deepl-node) and Google Translate (v2 REST API).
  * Configured via src/i18n/config.ts → src/config.yaml
  */
 import { readConfig } from './config';
@@ -23,96 +23,6 @@ export interface TranslationProvider {
   translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string>;
   /** Translate multiple plain text strings without HTML tag handling. For markdown frontmatter. */
   translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]>;
-}
-
-// ---------------------------------------------------------------------------
-// Gemini provider
-// ---------------------------------------------------------------------------
-
-interface GeminiPart {
-  text: string;
-}
-
-interface GeminiCandidate {
-  content: { parts: GeminiPart[] };
-}
-
-interface GeminiResponse {
-  candidates?: GeminiCandidate[];
-  error?: { message: string };
-}
-
-class GeminiProvider implements TranslationProvider {
-  readonly name = 'gemini';
-  readonly maxBatchSize = 30;
-  private apiKey: string;
-  private model: string;
-
-  constructor(apiKey: string, model: string = 'gemini-2.5-flash') {
-    this.apiKey = apiKey;
-    this.model = model;
-  }
-
-  private async generateContent(prompt: string): Promise<string> {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent?key=${this.apiKey}`;
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      }),
-    });
-
-    if (!res.ok) {
-      throw new Error(`Gemini API ${res.status}: ${await res.text()}`);
-    }
-
-    const data: GeminiResponse = await res.json();
-    if (data.error) throw new Error(data.error.message);
-    return data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
-  }
-
-  async translateBatch(texts: string[], targetLang: string, sourceLang: string): Promise<string[]> {
-    const results: string[] = new Array(texts.length).fill('');
-
-    for (let i = 0; i < texts.length; i += this.maxBatchSize) {
-      const batch = texts.slice(i, i + this.maxBatchSize);
-      try {
-        const prompt = `Translate these ${getLanguageName(sourceLang)} strings to ${getLanguageName(targetLang)} (${targetLang}).\nReturn ONLY the translations, one per line, in the same order.\nDo not add quotes, numbering, or explanations.\n\n${batch.join('\n')}`;
-        const raw = (await this.generateContent(prompt)).trim();
-        const lines = raw.split('\n').map((l) => l.trim());
-        for (let j = 0; j < batch.length && j < lines.length; j++) {
-          if (lines[j]) results[i + j] = lines[j];
-        }
-      } catch (err) {
-        console.warn(`[provider:gemini] Batch ${i} failed:`, (err as Error).message);
-      }
-      if (i + this.maxBatchSize < texts.length) {
-        await new Promise((r) => setTimeout(r, 500));
-      }
-    }
-    return results;
-  }
-
-  async translateText(text: string, targetLang: string, sourceLang: string): Promise<string> {
-    try {
-      const prompt = `Translate the following ${getLanguageName(sourceLang)} text to ${getLanguageName(targetLang)} (${targetLang}).\nPreserve all formatting, markdown syntax, code blocks, and structure exactly.\nReturn ONLY the translation, nothing else.\n\n${text}`;
-      return (await this.generateContent(prompt)).trim();
-    } catch (err) {
-      console.warn(`[provider:gemini] Text translation failed:`, (err as Error).message);
-      return '';
-    }
-  }
-
-  async translatePlainText(text: string, targetLang: string, sourceLang: string): Promise<string> {
-    // Gemini doesn't HTML-encode, so plain text is the same as regular translation
-    return this.translateText(text, targetLang, sourceLang);
-  }
-
-  async translatePlainTextBatch(texts: string[], targetLang: string, sourceLang: string): Promise<string[]> {
-    // Gemini doesn't HTML-encode, so plain text batch is the same as regular batch
-    return this.translateBatch(texts, targetLang, sourceLang);
-  }
 }
 
 // ---------------------------------------------------------------------------
@@ -197,19 +107,153 @@ class DeepLProvider implements TranslationProvider {
 }
 
 // ---------------------------------------------------------------------------
+// Google Translate provider (v2 REST API)
+// ---------------------------------------------------------------------------
+
+class GoogleProvider implements TranslationProvider {
+  readonly name = 'google';
+  readonly maxBatchSize = 128;
+  private apiKey: string;
+
+  constructor(apiKey: string) {
+    this.apiKey = apiKey;
+  }
+
+  private buildUrl(): string {
+    return `https://translation.googleapis.com/language/translate/v2?key=${this.apiKey}`;
+  }
+
+  async translateBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]> {
+    const results: string[] = new Array(texts.length).fill('');
+
+    for (let i = 0; i < texts.length; i += this.maxBatchSize) {
+      const batch = texts.slice(i, i + this.maxBatchSize);
+      try {
+        const params = new URLSearchParams();
+        for (const text of batch) params.append('q', text);
+        params.set('target', targetLang);
+        if (sourceLang) params.set('source', sourceLang);
+        params.set('format', 'html');
+
+        const res = await fetch(this.buildUrl(), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+        });
+
+        if (!res.ok) throw new Error(`Google Translate API ${res.status}: ${await res.text()}`);
+
+        const data = (await res.json()) as { data?: { translations?: Array<{ translatedText: string }> } };
+        const translations = data.data?.translations ?? [];
+        for (let j = 0; j < batch.length && j < translations.length; j++) {
+          if (translations[j].translatedText) {
+            results[i + j] = translations[j].translatedText;
+          }
+        }
+      } catch (err) {
+        console.warn(`[provider:google] Batch ${i} failed:`, (err as Error).message);
+      }
+    }
+    return results;
+  }
+
+  async translateText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
+    try {
+      const params = new URLSearchParams();
+      params.set('q', text);
+      params.set('target', targetLang);
+      if (sourceLang) params.set('source', sourceLang);
+      params.set('format', 'html');
+
+      const res = await fetch(this.buildUrl(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+
+      if (!res.ok) throw new Error(`Google Translate API ${res.status}: ${await res.text()}`);
+
+      const data = (await res.json()) as { data?: { translations?: Array<{ translatedText: string }> } };
+      return data.data?.translations?.[0]?.translatedText ?? '';
+    } catch (err) {
+      console.warn(`[provider:google] Translation failed:`, (err as Error).message);
+      return '';
+    }
+  }
+
+  async translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
+    try {
+      const params = new URLSearchParams();
+      params.set('q', text);
+      params.set('target', targetLang);
+      if (sourceLang) params.set('source', sourceLang);
+      params.set('format', 'text');
+
+      const res = await fetch(this.buildUrl(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString(),
+      });
+
+      if (!res.ok) throw new Error(`Google Translate API ${res.status}: ${await res.text()}`);
+
+      const data = (await res.json()) as { data?: { translations?: Array<{ translatedText: string }> } };
+      return data.data?.translations?.[0]?.translatedText ?? '';
+    } catch (err) {
+      console.warn(`[provider:google] Plain text translation failed:`, (err as Error).message);
+      return '';
+    }
+  }
+
+  async translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]> {
+    const results: string[] = new Array(texts.length).fill('');
+
+    for (let i = 0; i < texts.length; i += this.maxBatchSize) {
+      const batch = texts.slice(i, i + this.maxBatchSize);
+      try {
+        const params = new URLSearchParams();
+        for (const text of batch) params.append('q', text);
+        params.set('target', targetLang);
+        if (sourceLang) params.set('source', sourceLang);
+        params.set('format', 'text');
+
+        const res = await fetch(this.buildUrl(), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+        });
+
+        if (!res.ok) throw new Error(`Google Translate API ${res.status}: ${await res.text()}`);
+
+        const data = (await res.json()) as { data?: { translations?: Array<{ translatedText: string }> } };
+        const translations = data.data?.translations ?? [];
+        for (let j = 0; j < batch.length && j < translations.length; j++) {
+          if (translations[j].translatedText) {
+            results[i + j] = translations[j].translatedText;
+          }
+        }
+      } catch (err) {
+        console.warn(`[provider:google] Plain text batch ${i} failed:`, (err as Error).message);
+      }
+    }
+    return results;
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Factory
 // ---------------------------------------------------------------------------
 
 function createProvider(): TranslationProvider {
   const config = readConfig();
 
-  if (config.provider === 'deepl') {
-    if (!config.deeplApiKey) throw new Error('[i18n] DeepL API key not set.');
-    return new DeepLProvider(config.deeplApiKey);
+  if (config.provider === 'google') {
+    if (!config.googleApiKey) throw new Error('[i18n] Google Translate API key not set.');
+    return new GoogleProvider(config.googleApiKey);
   }
 
-  if (!config.geminiApiKey) throw new Error('[i18n] Gemini API key not set.');
-  return new GeminiProvider(config.geminiApiKey, config.model);
+  if (!config.deeplApiKey) throw new Error('[i18n] DeepL API key not set.');
+  return new DeepLProvider(config.deeplApiKey);
 }
 
 let _provider: TranslationProvider | null = null;
@@ -223,26 +267,4 @@ export async function getProvider(): Promise<TranslationProvider | null> {
     console.warn('[i18n] Translation provider unavailable:', (err as Error).message);
     return null;
   }
-}
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-export function getLanguageName(locale: string): string {
-  const names: Record<string, string> = {
-    en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    de: 'German',
-    it: 'Italian',
-    pt: 'Portuguese',
-    nl: 'Dutch',
-    pl: 'Polish',
-    ru: 'Russian',
-    ja: 'Japanese',
-    zh: 'Chinese',
-    ko: 'Korean',
-  };
-  return names[locale] || locale;
 }

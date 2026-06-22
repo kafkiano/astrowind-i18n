@@ -1,0 +1,36 @@
+---
+import Image from '~/components/common/Image.astro';
+import type { GalleryImage } from '~/types';
+
+interface Props {
+  image: GalleryImage;
+  classes?: string; // animation + sizing classes for the <figure>
+  imageSizes: string; // `sizes` attr value (differs per variant)
+  isMasonry: boolean;
+  hidden?: boolean; // expandable: hide initially?
+}
+
+const { image, classes = '', imageSizes, isMasonry, hidden = false } = Astro.props;
+const { src, alt, caption, width, height, colSpan } = image;
+---
+
+<figure
+  class:list={['m-0', classes, isMasonry ? 'mb-4' : '', { hidden }]}
+  data-col-span={colSpan && colSpan > 1 ? colSpan : undefined}
+  {...hidden ? { 'data-gallery-hidden-item': '' } : {}}
+>
+  <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
+    <Image
+      class={`w-full hover:scale-105 transition-transform duration-300 ${isMasonry ? 'h-auto' : 'h-64 object-cover'}`}
+      width={width || 400}
+      height={height || (isMasonry ? undefined : 256)}
+      widths={[400, 768, 1024]}
+      sizes={imageSizes}
+      layout="responsive"
+      loading={isMasonry ? 'eager' : undefined}
+      src={src}
+      alt={alt}
+    />
+  </div>
+  {caption && <figcaption class="mt-2 text-sm text-muted text-center">{caption}</figcaption>}
+</figure>

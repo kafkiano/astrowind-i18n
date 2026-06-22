@@ -72,6 +72,20 @@ url: https://example.com
     expect(result).toContain('url: https://example.com');
   });
 
+  it('preserves original quoting style from source frontmatter', async () => {
+    const frontmatter = `
+title: 'Markdown Page'
+group: 'Demos'
+excerpt: 'A short summary'
+`;
+    const result = await translateFrontmatterYaml(frontmatter, fakeProvider, 'es', 'en');
+    expect(result).not.toBeNull();
+    // Source had single quotes — translated output must keep them
+    expect(result).toContain("title: '[Markdown Page]'");
+    expect(result).toContain("group: '[Demos]'");
+    expect(result).toContain("excerpt: '[A short summary]'");
+  });
+
   it('preserves YAML structure and key order', async () => {
     const frontmatter = `
 title: Hello

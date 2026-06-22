@@ -21,7 +21,7 @@ const headerData = await getHeaderData(locale);
   <div slot="header">
     <slot name="header">
       <Header
-        links={headerData?.links[2] ? [headerData.links[2]] : undefined}
+        {...headerData}
         actions={[
           {
             text: 'Download',

@@ -56,178 +56,63 @@ const emblaConfig = {
 };
 
 const slideCss =
-  slidesPerView !== undefined
-    ? `[data-embla-id="${containerId}"] .embla-slide { --spv: ${slidesPerView}; }`
-    : '';
+  slidesPerView !== undefined ? `[data-embla-id="${containerId}"] .embla-slide { --spv: ${slidesPerView}; }` : '';
 ---
 
 <div
-  class:list={['relative', className]}
+  class:list={['relative md:px-14', className]}
   id={containerId}
   data-embla-id={containerId}
   data-embla-config={JSON.stringify(emblaConfig)}
   {...attrs}
 >
-  <div class="h-full relative overflow-hidden">
+  <div class="embla-viewport h-full relative overflow-hidden">
     <div class="flex h-full mb-8" data-embla-track>
       <slot />
     </div>
 
-    {pagination && (
-      <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
-    )}
+    {
+      pagination && (
+        <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
+      )
+    }
   </div>
 
-  {navigation && (
-    <>
-      <button
-        data-embla-prev
-        class="absolute top-1/2 -translate-y-1/2 left-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-        aria-label="Previous slide"
-        type="button"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <button
-        data-embla-next
-        class="absolute top-1/2 -translate-y-1/2 right-2 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-        aria-label="Next slide"
-        type="button"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
-    </>
-  )}
+  {
+    navigation && (
+      <>
+        <button
+          data-embla-prev
+          class="absolute top-1/2 -translate-y-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+          aria-label="Previous slide"
+          type="button"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          data-embla-next
+          class="absolute top-1/2 -translate-y-1/2 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+          aria-label="Next slide"
+          type="button"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </>
+    )
+  }
 
   {slideCss && <style is:inline set:html={slideCss} />}
 </div>
 
 <script>
-  import EmblaCarousel from 'embla-carousel';
-  import Autoplay from 'embla-carousel-autoplay';
-  import type { EmblaCarouselType, EmblaPluginType } from 'embla-carousel';
-  import type { AutoplayType } from 'embla-carousel-autoplay';
+  import { registerEmblaSliders } from '~/utils/embla';
 
-  const ACTIVE_ATTR = 'data-active';
-
-  function buildPagination(emblaApi: EmblaCarouselType, rootEl: HTMLElement): void {
-    const dotsContainer = rootEl.querySelector<HTMLElement>('[data-embla-dots]');
-    if (!dotsContainer) return;
-
-    const slides = emblaApi.scrollSnapList();
-    dotsContainer.innerHTML = '';
-
-    for (let i = 0; i < slides.length; i++) {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className =
-        'w-3 h-3 rounded-full bg-slate-400 dark:bg-white/30 border-none cursor-pointer p-0 transition-colors data-[active]:bg-slate-700 dark:data-[active]:bg-white/90';
-      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-      dot.addEventListener('click', () => emblaApi.scrollTo(i));
-      dotsContainer.appendChild(dot);
-    }
-
-    const dots = dotsContainer.querySelectorAll('button');
-
-    const updateDots = (): void => {
-      const selected = emblaApi.selectedScrollSnap();
-      dots.forEach((dot, i) => {
-        if (i === selected) {
-          dot.setAttribute(ACTIVE_ATTR, '');
-        } else {
-          dot.removeAttribute(ACTIVE_ATTR);
-        }
-      });
-    };
-
-    emblaApi.on('select', updateDots);
-    emblaApi.on('reInit', updateDots);
-    updateDots();
-  }
-
-  function setupPauseOnInteraction(
-    autoplayPlugin: AutoplayType,
-    rootEl: HTMLElement,
-    isUserPaused: () => boolean
-  ): void {
-    let resumeTimer: ReturnType<typeof setTimeout> | null = null;
-
-    const scheduleResume = (): void => {
-      if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(() => {
-        if (!autoplayPlugin.isPlaying() && !isUserPaused()) {
-          autoplayPlugin.play();
-        }
-      }, 3000);
-    };
-
-    const stopAndClear = (): void => {
-      autoplayPlugin.stop();
-      if (resumeTimer) clearTimeout(resumeTimer);
-    };
-
-    rootEl.addEventListener('pointerdown', stopAndClear);
-    rootEl.addEventListener('touchstart', stopAndClear, { passive: true });
-    rootEl.addEventListener('pointerup', scheduleResume);
-    rootEl.addEventListener('mouseleave', scheduleResume);
-  }
-
-  function initEmblaCarousels(): void {
-    document.querySelectorAll<HTMLElement>('[data-embla-config]:not(.embla-initialized)').forEach((el) => {
-      const config = JSON.parse(el.dataset.emblaConfig || '{}');
-      const viewport = el.querySelector<HTMLElement>('[class*="overflow-hidden"]');
-      if (!viewport || !config) return;
-
-      const plugins: EmblaPluginType[] = [];
-      let autoplayPlugin: AutoplayType | null = null;
-
-      if (config.hasAutoplay) {
-        autoplayPlugin = Autoplay({
-          delay: config.autoplayDelay,
-          stopOnLastSnap: !config.loop,
-          stopOnInteraction: false,
-          playOnInit: false,
-        });
-        plugins.push(autoplayPlugin);
-      }
-
-      const emblaApi = EmblaCarousel(
-        viewport,
-        {
-          loop: config.loop,
-          align: config.align || 'start',
-          slidesToScroll: 1,
-          direction: document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr',
-        },
-        plugins
-      );
-
-      let userPaused = false;
-      if (autoplayPlugin && emblaApi.slideNodes().length > 1) {
-        autoplayPlugin.play();
-      }
-
-      if (autoplayPlugin && config.autoplayDisableOnInteraction && emblaApi.slideNodes().length > 1) {
-        setupPauseOnInteraction(autoplayPlugin, el, () => userPaused);
-      }
-
-      const prevBtn = el.querySelector<HTMLElement>('[data-embla-prev]');
-      const nextBtn = el.querySelector<HTMLElement>('[data-embla-next]');
-      if (prevBtn) prevBtn.addEventListener('click', () => emblaApi.scrollPrev());
-      if (nextBtn) nextBtn.addEventListener('click', () => emblaApi.scrollNext());
-
-      if (config.hasPagination) {
-        buildPagination(emblaApi, el);
-      }
-
-      el.classList.add('embla-initialized');
-    });
-  }
-
-  initEmblaCarousels();
-  document.addEventListener('astro:page-load', initEmblaCarousels);
+  registerEmblaSliders('[data-embla-config]', '.embla-viewport', 'embla-initialized', '[data-embla-dots]', {
+    getConfig: (el) => JSON.parse(el.dataset.emblaConfig || '{}') as import('~/utils/embla').EmblaBaseConfig,
+    getOptions: (config) => ({ loop: config.loop, align: config.align || 'start' }),
+  });
 </script>

@@ -114,29 +114,89 @@ function isTranslatable(s: string): boolean {
   return true;
 }
 
+/** Indexable type for traversing nested YAML/object structures. */
+type NestedIndexable = { [key: string]: unknown } | unknown[];
+
 /** Set a value at a dotted/array path in a nested object. */
 function setValueAtPath(obj: Record<string, unknown>, path: string, value: string): void {
   // eslint-disable-next-line no-useless-escape
   const parts = path.split(/(?<=[^\[\]])\.|(?<=\])\.|\[|\]/).filter(Boolean);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let current: any = obj;
+  let current: NestedIndexable = obj;
 
   for (let i = 0; i < parts.length - 1; i++) {
     const key = parts[i];
     if (/^\d+$/.test(key)) {
-      current = current[parseInt(key)];
+      const arr = current as unknown[];
+      current = arr[parseInt(key)] as NestedIndexable;
     } else {
-      if (current[key] === undefined) return; // safety: path doesn't exist
-      current = current[key];
+      const obj = current as { [key: string]: unknown };
+      if (obj[key] === undefined) return; // safety: path doesn't exist
+      current = obj[key] as NestedIndexable;
     }
   }
 
   const lastKey = parts[parts.length - 1];
   if (/^\d+$/.test(lastKey)) {
-    current[parseInt(lastKey)] = value;
+    (current as unknown[])[parseInt(lastKey)] = value;
   } else {
-    current[lastKey] = value;
+    (current as { [key: string]: unknown })[lastKey] = value;
   }
+}
+
+/**
+ * Restore original quoting style after yaml.dump() strips it.
+ *
+ * yaml.load() discards quote information, and yaml.dump() only adds
+ * quotes when syntactically necessary. This function compares the
+ * dumped output line-by-line against the source frontmatter and
+ * re-applies quotes where the source had them.
+ *
+ * Matches lines of the form:  key: value  or  key: 'value'  or  key: "value"
+ * Skips multi-line block scalars (|, >) and nested structure lines.
+ */
+function restoreQuoting(source: string, dumped: string): string {
+  const YAML_LINE_RE = /^(\s*[\w.-]+):\s*(['"]?)((?:(?!\s+#).)*?)(\2)\s*(#.*)?$/;
+
+  const sourceLines = source.split('\n');
+  const dumpedLines = dumped.split('\n');
+
+  // Build a lookup: key → source quote character (empty string if unquoted)
+  const sourceQuoteByKey = new Map<string, string>();
+  for (const line of sourceLines) {
+    const m = line.match(YAML_LINE_RE);
+    if (m) {
+      sourceQuoteByKey.set(m[1].trim(), m[2]); // m[2] is ' or " or ''
+    }
+  }
+
+  return dumpedLines
+    .map((line) => {
+      const m = line.match(YAML_LINE_RE);
+      if (!m) return line;
+
+      const key = m[1].trim();
+      const dumpedQuote = m[2];
+      const value = m[3];
+      const trailing = m[5] || '';
+
+      // Only restore quotes if the source had them and the dump dropped them
+      const sourceQuote = sourceQuoteByKey.get(key);
+      if (sourceQuote && !dumpedQuote && value) {
+        const pad = line.match(/^(\s*)/)?.[1] || '';
+        const comment = trailing ? ` ${trailing}` : '';
+        // If the translated value contains the source quote character,
+        // switch to the other quote style to avoid invalid YAML.
+        let quote = sourceQuote;
+        if (value.includes(quote)) {
+          quote = quote === "'" ? '"' : "'";
+          if (value.includes(quote)) return line; // contains both — skip
+        }
+        return `${pad}${key}: ${quote}${value}${quote}${comment}`;
+      }
+
+      return line;
+    })
+    .join('\n');
 }
 
 /** Parse frontmatter YAML, translate all nested strings, dump back. Returns null if parsing fails. */
@@ -171,7 +231,7 @@ export async function translateFrontmatterYaml(
 
   if (!anyTranslated) return frontmatter;
 
-  return yaml
+  const dumped = yaml
     .dump(fmObj, {
       indent: 2,
       lineWidth: -1,
@@ -179,6 +239,8 @@ export async function translateFrontmatterYaml(
       sortKeys: false,
     })
     .trim();
+
+  return restoreQuoting(frontmatter, dumped);
 }
 
 // ── Main translation logic ────────────────────────────────────────
@@ -190,7 +252,7 @@ export async function translateFrontmatterYaml(
  * (no change since last translation). Content-addressable: survives
  * git clone, branch switches, and mtime resets.
  *
- * @param provider - Translation provider (Gemini, DeepL, etc.)
+ * @param provider - Translation provider (DeepL, Google Translate, etc.)
  * @param locales - All configured locales (from config.yaml).
  * @param defaultLocale - Source locale (from config.yaml i18n.defaultLocale).
  */

@@ -144,107 +144,37 @@ const autoplayDisableOnInteraction =
 </script>
 
 <script>
-  import EmblaCarousel from 'embla-carousel';
   import Fade from 'embla-carousel-fade';
-  import Autoplay from 'embla-carousel-autoplay';
-  import type { EmblaPluginType } from 'embla-carousel';
-  import type { AutoplayType } from 'embla-carousel-autoplay';
+  import { registerEmblaSliders } from '~/utils/embla';
 
-  function setupPauseOnInteraction(
-    autoplayPlugin: AutoplayType,
-    rootEl: HTMLElement,
-    isUserPaused: () => boolean
-  ): void {
-    let resumeTimer: ReturnType<typeof setTimeout> | null = null;
-
-    const scheduleResume = (): void => {
-      if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(() => {
-        if (!autoplayPlugin.isPlaying() && !isUserPaused()) {
-          autoplayPlugin.play();
-        }
-      }, 3000);
-    };
-
-    const stopAndClear = (): void => {
-      autoplayPlugin.stop();
-      if (resumeTimer) clearTimeout(resumeTimer);
-    };
-
-    rootEl.addEventListener('pointerdown', stopAndClear);
-    rootEl.addEventListener('touchstart', stopAndClear, { passive: true });
-    rootEl.addEventListener('pointerup', scheduleResume);
-    rootEl.addEventListener('mouseleave', scheduleResume);
-  }
-
-  function initHeroSliders(): void {
-    document.querySelectorAll<HTMLElement>('[data-hero-config]:not(.hero-initialized)').forEach((el) => {
-      const config = JSON.parse(el.dataset.heroConfig || '{}');
-      const viewport = el.querySelector<HTMLElement>('[data-hero-viewport]');
-      if (!viewport) return;
-
-      const plugins: EmblaPluginType[] = [Fade()];
-      let autoplayPlugin: AutoplayType | null = null;
-
-      if (config.hasAutoplay) {
-        autoplayPlugin = Autoplay({
-          delay: config.autoplayDelay,
-          stopOnLastSnap: !config.loop,
-          stopOnInteraction: false,
-          playOnInit: false,
-        });
-        plugins.push(autoplayPlugin);
-      }
-
-      const emblaApi = EmblaCarousel(
-        viewport,
-        {
-          loop: config.loop,
-          align: 'center',
-          slidesToScroll: 1,
-          direction: document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr',
-        },
-        plugins
-      );
+  registerEmblaSliders('[data-hero-config]', '[data-hero-viewport]', 'hero-initialized', '', {
+    getConfig: (el) => JSON.parse(el.dataset.heroConfig || '{}') as import('~/utils/embla').EmblaBaseConfig,
+    getOptions: (config) => ({ loop: config.loop, align: 'center' }),
+    getExtraPlugins: () => [Fade()],
+    prevSelector: '[data-hero-prev]',
+    nextSelector: '[data-hero-next]',
+    onInit: (_emblaApi, rootEl, _config, autoplayPlugin) => {
+      const pauseBtn = rootEl.querySelector<HTMLElement>('[data-hero-pause]');
+      if (!pauseBtn || !autoplayPlugin) return;
 
       let userPaused = false;
-      if (autoplayPlugin && emblaApi.slideNodes().length > 1) {
-        autoplayPlugin.play();
-      }
 
-      if (autoplayPlugin && config.autoplayDisableOnInteraction && emblaApi.slideNodes().length > 1) {
-        setupPauseOnInteraction(autoplayPlugin, el, () => userPaused);
-      }
+      const updatePauseIcon = (playing: boolean): void => {
+        pauseBtn.querySelector<HTMLElement>('.hero-pause-icon')?.classList.toggle('hidden', !playing);
+        pauseBtn.querySelector<HTMLElement>('.hero-play-icon')?.classList.toggle('hidden', playing);
+        pauseBtn.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
+      };
 
-      const pauseBtn = el.querySelector<HTMLElement>('[data-hero-pause]');
-      if (autoplayPlugin && pauseBtn) {
-        const updatePauseIcon = (playing: boolean): void => {
-          pauseBtn.querySelector<HTMLElement>('.hero-pause-icon')?.classList.toggle('hidden', !playing);
-          pauseBtn.querySelector<HTMLElement>('.hero-play-icon')?.classList.toggle('hidden', playing);
-          pauseBtn.setAttribute('aria-label', playing ? 'Pause slideshow' : 'Play slideshow');
-        };
-
-        pauseBtn.addEventListener('click', () => {
-          if (autoplayPlugin!.isPlaying() && !userPaused) {
-            autoplayPlugin!.stop();
-            userPaused = true;
-          } else {
-            autoplayPlugin!.play();
-            userPaused = false;
-          }
-          updatePauseIcon(!userPaused);
-        });
-      }
-
-      const prevBtn = el.querySelector<HTMLElement>('[data-hero-prev]');
-      const nextBtn = el.querySelector<HTMLElement>('[data-hero-next]');
-      if (prevBtn) prevBtn.addEventListener('click', () => emblaApi.scrollPrev());
-      if (nextBtn) nextBtn.addEventListener('click', () => emblaApi.scrollNext());
-
-      el.classList.add('hero-initialized');
-    });
-  }
-
-  initHeroSliders();
-  document.addEventListener('astro:page-load', initHeroSliders);
+      pauseBtn.addEventListener('click', () => {
+        if (autoplayPlugin.isPlaying() && !userPaused) {
+          autoplayPlugin.stop();
+          userPaused = true;
+        } else {
+          autoplayPlugin.play();
+          userPaused = false;
+        }
+        updatePauseIcon(!userPaused);
+      });
+    },
+  });
 </script>

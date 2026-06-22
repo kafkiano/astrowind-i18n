@@ -318,6 +318,8 @@ export interface Gallery extends Omit<Headline, 'classes'>, Widget {
   images?: Array<GalleryImage>;
   columns?: number;
   variant?: 'grid' | 'masonry';
+  mobileVariant?: 'expandable' | 'peek';
+  pagination?: boolean;
   gap?: string;
 }
 
