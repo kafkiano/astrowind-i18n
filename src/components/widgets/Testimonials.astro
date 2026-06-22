@@ -8,6 +8,7 @@ import type { Testimonials as Props } from '~/types';
 
 const {
   variant = 'grid',
+  columns,
   autoplay,
   pagination = true,
   navigation = false,
@@ -33,7 +34,7 @@ const {
     variant === 'slider' && testimonials.length > 0 && (
       <Slider
         config={{
-          slidesPerView: 1,
+          columns: columns ?? 1,
           loop: loop,
           pagination: pagination ? true : false,
           navigation: navigation ? true : false,
@@ -42,7 +43,7 @@ const {
       >
         {testimonials.map(({ title: tTitle, testimonial, name, job, image }) => (
           <div class="embla-slide">
-            <div class="flex flex-col p-4 md:p-6 rounded-xl shadow-xl dark:shadow-none dark:border dark:border-slate-600 h-full">
+            <div class="max-w-3xl mx-auto flex flex-col p-4 md:p-6 rounded-xl shadow-xl dark:shadow-none dark:border dark:border-slate-600 h-full">
               {tTitle && <h2 class="text-lg font-medium leading-6 pb-4">{tTitle}</h2>}
               {testimonial && (
                 <blockquote class="flex-auto">

@@ -1,5 +1,6 @@
 ---
 import FeatureCard from '~/components/ui/FeatureCard.astro';
+import Slider from '~/components/widgets/Slider.astro';
 import type { Item } from '~/types';
 
 interface Props {
@@ -23,120 +24,38 @@ const {
   loop = true,
   classes = {},
 } = Astro.props;
-
-const containerId = `feature-slider-${crypto.randomUUID()}`;
-
-const hasAutoplay = autoplay !== false;
-const autoplayDelay = hasAutoplay
-  ? typeof autoplay === 'object'
-    ? autoplay.delay
-    : typeof autoplay === 'number'
-      ? autoplay
-      : 5000
-  : 5000;
-
-const autoplayDisableOnInteraction =
-  hasAutoplay && typeof autoplay === 'object' && autoplay.disableOnInteraction !== false;
 ---
 
 {
   items.length > 0 && (
-    <div
-      class="relative md:px-14"
-      id={containerId}
-      data-feature-slider-id={containerId}
-      data-feature-config={JSON.stringify({
-        hasAutoplay,
-        autoplayDelay,
-        autoplayDisableOnInteraction,
+    <Slider
+      config={{
+        columns,
+        autoplay,
         loop,
-        hasPagination: pagination,
-        hasNavigation: navigation,
-      })}
+        pagination,
+        navigation,
+      }}
     >
-      <div
-        class="overflow-visible md:overflow-x-hidden pb-8 md:[mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]"
-        data-feature-viewport
-      >
-        <div class="flex h-full feature-track" style="gap: 16px; --gap: 16px;" data-feature-track>
-          {items.map(({ title, description, icon, callToAction }) => (
-            <div class="feature-slide embla-slide">
-              <FeatureCard
-                layout="horizontal"
-                title={title}
-                description={description}
-                icon={icon}
-                defaultIcon={defaultIcon}
-                callToAction={callToAction}
-                classes={{
-                  panel: 'mx-4 p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-lg dark:shadow-none',
-                  icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
-                  ...classes,
-                }}
-              />
-            </div>
-          ))}
+      {items.map(({ title, description, icon, callToAction }) => (
+        <div class="embla-slide">
+          <FeatureCard
+            layout="horizontal"
+            title={title}
+            description={description}
+            icon={icon}
+            defaultIcon={defaultIcon}
+            callToAction={callToAction}
+            classes={{
+              panel: `p-4 md:p-6 rounded-xl dark:border dark:border-slate-600 shadow-lg dark:shadow-none ${
+                columns === 1 ? 'max-w-3xl mx-auto' : 'mx-4'
+              }`,
+              icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
+              ...classes,
+            }}
+          />
         </div>
-      </div>
-
-      {navigation && (
-        <>
-          <button
-            data-feature-prev
-            class="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 z-10 items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-            aria-label="Previous slide"
-            type="button"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <button
-            data-feature-next
-            class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 z-10 items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
-            aria-label="Next slide"
-            type="button"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-        </>
-      )}
-
-      {pagination && <div data-feature-dots class="flex justify-center gap-2 mt-3" />}
-
-      <style
-        is:inline
-        set:html={`
-        [data-feature-slider-id="${containerId}"] .feature-slide { --spv: 1.15; }
-        @media (min-width: 640px) {
-          [data-feature-slider-id="${containerId}"] .feature-track { gap: 16px; --gap: 16px; }
-          [data-feature-slider-id="${containerId}"] .feature-slide { --spv: ${Math.min(columns ?? 3, 2)}; }
-        }
-        @media (min-width: 1024px) {
-          [data-feature-slider-id="${containerId}"] .feature-track { gap: 24px; --gap: 24px; }
-          [data-feature-slider-id="${containerId}"] .feature-slide { --spv: ${columns ?? 3}; }
-        }
-      `}
-      />
-    </div>
+      ))}
+    </Slider>
   )
 }
-
-<script>
-  import { registerEmblaSliders } from '~/utils/embla';
-
-  registerEmblaSliders(
-    '[data-feature-config]',
-    '[data-feature-viewport]',
-    'feature-initialized',
-    '[data-feature-dots]',
-    {
-      getConfig: (el) => JSON.parse(el.dataset.featureConfig || '{}') as import('~/utils/embla').EmblaBaseConfig,
-      getOptions: (config) => ({ loop: config.loop, align: 'start' }),
-      prevSelector: '[data-feature-prev]',
-      nextSelector: '[data-feature-next]',
-    }
-  );
-</script>

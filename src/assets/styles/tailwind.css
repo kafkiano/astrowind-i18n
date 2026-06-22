@@ -129,9 +129,15 @@
 }
 
 @utility embla-slide {
-  flex: 0 0 calc((100% - var(--gap, 0px) * max(0, var(--spv, 1) - 1)) / max(1, var(--spv, 1)));
-  --spv: 1;
+  flex: 0 0 calc((100% - var(--peek, 0px)) / max(1, var(--spv, 1)));
+  padding-inline-start: var(--gap, 0px);
+  box-sizing: border-box;
   min-width: 0;
+}
+
+@utility embla-track {
+  display: flex;
+  margin-inline-start: calc(-1 * var(--gap, 0px));
 }
 
 /* To deprecated */
