@@ -44,7 +44,6 @@ const autoplayDisableOnInteraction =
         data-hero-config={JSON.stringify({
           hasAutoplay,
           autoplayDelay,
-          autoplayDisableOnInteraction,
           loop: true,
         })}
       >
@@ -59,6 +58,7 @@ const autoplayDisableOnInteraction =
                     widths={[400, 768, 1024, 2040]}
                     sizes="100vw"
                     loading="eager"
+                    layout="cover"
                     class="w-full h-full object-cover"
                     width={2040}
                     height={1200}
@@ -82,7 +82,7 @@ const autoplayDisableOnInteraction =
         </div>
 
         <div class="absolute bottom-4 right-4 z-20 flex items-center gap-2">
-          {hasAutoplay && (
+          {hasAutoplay && autoplayDisableOnInteraction && (
             <button
               data-hero-pause
               class="flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"

@@ -95,6 +95,7 @@ export interface EmblaBaseConfig {
   loop: boolean;
   hasPagination?: boolean;
   align?: 'start' | 'center' | 'end';
+  slidesToScroll?: number | 'auto';
 }
 
 /* ─── Generic initialiser ───────────────────────────────────────────── */
@@ -168,7 +169,7 @@ export function initEmblaSliders<T extends EmblaBaseConfig>(
       viewport,
       {
         ...adapter.getOptions(config),
-        slidesToScroll: 1,
+        slidesToScroll: config.slidesToScroll ?? 1,
         direction: document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr',
       },
       plugins
