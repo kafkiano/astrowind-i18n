@@ -259,6 +259,7 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   testimonials?: Array<Testimonial>;
   callToAction?: CallToAction;
   variant?: 'grid' | 'slider';
+  columns?: number;
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
   pagination?: boolean;
   navigation?: boolean;

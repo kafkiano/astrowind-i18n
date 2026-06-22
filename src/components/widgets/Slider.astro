@@ -6,14 +6,22 @@ export interface SliderConfig {
   autoplay?: number | false | { delay: number; disableOnInteraction?: boolean };
   /** Loop slides */
   loop?: boolean;
-  /** Slides visible at once */
+  /** Number of slides visible at once (slidesPerView alias kept for compatibility) */
+  columns?: number;
+  /** Deprecated alias for columns */
   slidesPerView?: number;
+  /** Gap between slides in px */
+  gap?: number;
+  /** Visible width (in px) of the next/prev slide peek on mobile (<640px) */
+  peek?: number;
   /** Show pagination dots */
   pagination?: boolean;
   /** Show prev/next arrows */
   navigation?: boolean;
-  /** Slide alignment inside the viewport */
+  /** Slide alignment inside the viewport (defaults to center for 1 column, start otherwise) */
   align?: 'start' | 'center' | 'end';
+  /** Number of slides to scroll per navigation action (defaults to 1 for 1 column, 'auto' otherwise) */
+  slidesToScroll?: number | 'auto';
 }
 
 interface Props extends Omit<HTMLAttributes<'div'>, 'id'> {
@@ -27,11 +35,22 @@ const containerId = `slider-${crypto.randomUUID()}`;
 const {
   autoplay = false,
   loop = false,
+  columns: columnsProp,
   slidesPerView,
+  gap: gapProp,
+  peek: peekProp,
   pagination = false,
   navigation = false,
-  align = 'start',
+  align: alignProp,
+  slidesToScroll: slidesToScrollProp,
 } = config;
+
+const columns = columnsProp ?? slidesPerView ?? 1;
+const isMulti = columns > 1;
+const gap = gapProp ?? 24;
+const peek = peekProp ?? 80;
+const align = alignProp ?? (isMulti ? 'start' : 'center');
+const slidesToScroll = slidesToScrollProp ?? (isMulti ? 'auto' : 1);
 
 const hasAutoplay = autoplay !== false;
 const autoplayDelay = hasAutoplay
@@ -51,12 +70,20 @@ const emblaConfig = {
   autoplayDisableOnInteraction,
   loop,
   align,
+  slidesToScroll,
   hasPagination: pagination,
   hasNavigation: navigation,
 };
 
-const slideCss =
-  slidesPerView !== undefined ? `[data-embla-id="${containerId}"] .embla-slide { --spv: ${slidesPerView}; }` : '';
+const responsiveCss = `
+  [data-embla-id="${containerId}"] { --spv: 1; --gap: ${gap}px; --peek: ${peek}px; }
+  @media (min-width: 640px) {
+    [data-embla-id="${containerId}"] { --spv: ${Math.min(columns, 2)}; --peek: 0px; }
+  }
+  @media (min-width: 1024px) {
+    [data-embla-id="${containerId}"] { --spv: ${columns}; }
+  }
+`;
 ---
 
 <div
@@ -66,24 +93,22 @@ const slideCss =
   data-embla-config={JSON.stringify(emblaConfig)}
   {...attrs}
 >
-  <div class="embla-viewport h-full relative overflow-hidden">
-    <div class="flex h-full mb-8" data-embla-track>
+  <div
+    class="embla-viewport h-full relative overflow-visible md:overflow-hidden pb-8 md:[mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]"
+  >
+    <div class="embla-track h-full" data-embla-track>
       <slot />
     </div>
-
-    {
-      pagination && (
-        <div data-embla-dots class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-10" />
-      )
-    }
   </div>
+
+  {pagination && <div data-embla-dots class="flex justify-center gap-3 mt-3" />}
 
   {
     navigation && (
       <>
         <button
           data-embla-prev
-          class="absolute top-1/2 -translate-y-1/2 left-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+          class="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 z-10 items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
           aria-label="Previous slide"
           type="button"
         >
@@ -93,7 +118,7 @@ const slideCss =
         </button>
         <button
           data-embla-next
-          class="absolute top-1/2 -translate-y-1/2 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
+          class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 z-10 items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 shadow-md border-none cursor-pointer transition-colors hover:bg-white dark:hover:bg-slate-800"
           aria-label="Next slide"
           type="button"
         >
@@ -105,7 +130,7 @@ const slideCss =
     )
   }
 
-  {slideCss && <style is:inline set:html={slideCss} />}
+  <style is:inline set:html={responsiveCss}></style>
 </div>
 
 <script>

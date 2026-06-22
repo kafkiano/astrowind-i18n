@@ -4,6 +4,7 @@ import { getStaticPathsForLocale } from '~/utils/i18n';
 import Layout from '~/layouts/LandingLayout.astro';
 import HeroSlider from '~/components/widgets/HeroSlider.astro';
 import Features from '~/components/widgets/Features.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 export const getStaticPaths = getStaticPathsForLocale;
 
@@ -116,7 +117,7 @@ const metadata = {
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     variant="slider"
-    columns={3}
+    columns={1}
     navigation
     pagination
     loop
@@ -160,9 +161,67 @@ const metadata = {
     ]}
   />
 
+  <Testimonials
+    tagline="Feedback"
+    title="What people say"
+    subtitle="Real voices from developers, agencies, and content teams using AstroWind I18n."
+    variant="slider"
+    columns={1}
+    autoplay={{ delay: 6000, disableOnInteraction: true }}
+    navigation
+    pagination
+    loop
+    testimonials={[
+      {
+        title: 'Clean architecture',
+        testimonial:
+          'Separating content from presentation is the right call. This pattern makes client sites trivial to build and maintain.',
+        name: 'Lead Developer',
+        job: 'Engineering',
+        image: {
+          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+          alt: 'Lead Developer portrait',
+        },
+      },
+      {
+        title: 'CMS-friendly',
+        testimonial:
+          'Clients can edit their own landing pages without touching a line of code. Exactly what our agency needed.',
+        name: 'Agency Owner',
+        job: 'Operations',
+        image: {
+          src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+          alt: 'Agency Owner portrait',
+        },
+      },
+      {
+        title: 'Translation magic',
+        testimonial:
+          'The nested YAML translation is brilliant. One English file, and suddenly we have perfect Spanish, French, and German versions.',
+        name: 'Content Manager',
+        job: 'Localization',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+          alt: 'Content Manager portrait',
+        },
+      },
+      {
+        title: 'Flexible widgets',
+        testimonial:
+          'Being able to add or remove entire sections by editing frontmatter is a game-changer for rapid prototyping.',
+        name: 'UX Designer',
+        job: 'Product Design',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+          alt: 'UX Designer portrait',
+        },
+      },
+    ]}
+  />
+
   <p class="text-center text-muted dark:text-slate-400 mt-12 mb-4">
-    This page demonstrates the <strong>HeroSlider</strong> and <strong>Features</strong> slider widgets powered by
-    <strong>Embla Carousel</strong>. Swipe or use the arrows and dots to navigate between slides. Autoplay pauses on
-    interaction and resumes after 3 seconds.
+    This page demonstrates the <strong>HeroSlider</strong>, <strong>Features</strong>, and <strong>Testimonials</strong>
+    slider widgets powered by <strong>Embla Carousel</strong>. Swipe or use the arrows and dots to navigate between
+    slides. Autoplay pauses on interaction and resumes after 3 seconds.
   </p>
 </Layout>
