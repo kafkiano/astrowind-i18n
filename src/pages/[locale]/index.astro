@@ -148,11 +148,16 @@ const metadata = {
   {
     testimonials && (
       <Testimonials
-        variant="slider"
-        tagline="Testimonials"
+        tagline="Testimonials" 
         title="What our guests say"
         subtitle="From our TripAdvisor reviews…"
         testimonials={testimonials}
+        variant="slider"
+        columns={2}
+        autoplay={{ delay: 6000, disableOnInteraction: true }}
+        navigation
+        pagination
+        loop
       />
     )
   }
