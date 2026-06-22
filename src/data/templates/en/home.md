@@ -60,6 +60,14 @@ exhibitions:
       description: Browse unique handmade jewelry and home decor pieces. Every item tells a story.
     - title: Online art galleries available
       description: Can't visit in person? Browse our online galleries. Follow us on <a href="https://www.facebook.com/artesanomoraira" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Facebook</a> for the latest updates and exhibition news.
+tripadvisor:
+  image: ~/assets/images/tripadvisor-logo.png
+  imageAlt: Tripadvisor
+  years:
+    - 2019
+    - 2018
+    - 2017
+  caption: Recommended on Tripadvisor
 testimonials:
   - title: Creative, healthy and delicious!
     testimonial: A wonderful find in Moraira. The food is fresh, creative, and absolutely delicious. Great atmosphere too!

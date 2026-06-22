@@ -33,6 +33,7 @@ const kitchenHeading = data.kitchenHeading as any;
 const dishes = data.dishes as any;
 const cocktails = data.cocktails as any;
 const exhibitions = data.exhibitions as any;
+const tripadvisor = data.tripadvisor as any;
 const testimonials = data.testimonials as any;
 const rawTeam = data.team as any[] | undefined;
 const cta = data.cta as any;
@@ -55,14 +56,24 @@ const metadata = {
 
   <!-- TripAdvisor certificates ******** -->
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 text-center">
-    <div class="flex flex-wrap gap-6 justify-center items-center">
-      <Badge variant="inline" text="Certificate of Excellence 2019" />
-      <Badge variant="inline" text="Certificate of Excellence 2018" />
-      <Badge variant="inline" text="Certificate of Excellence 2017" />
-    </div>
-    <p class="mt-4 text-muted text-sm">Recommended on Tripadvisor</p>
-  </div>
+  {
+    tripadvisor && (
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12 text-center">
+        <div class="flex flex-wrap gap-6 justify-center items-start">
+          {tripadvisor.years?.map((year: string | number) => (
+            <Badge
+              variant="inline"
+              text={`Certificate of Excellence ${year}`}
+              image={
+                tripadvisor.image ? { src: tripadvisor.image, alt: tripadvisor.imageAlt || 'Tripadvisor' } : undefined
+              }
+            />
+          ))}
+        </div>
+        {tripadvisor.caption && <p class="mt-4 text-muted text-sm">{tripadvisor.caption}</p>}
+      </div>
+    )
+  }
 
   <!-- Welcome ************************* -->
 
