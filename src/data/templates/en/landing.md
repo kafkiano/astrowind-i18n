@@ -1,12 +1,11 @@
 ---
 title: Template-Driven Landing Demo
-
 hero:
   tagline: Markdown-Powered
   title: This entire page is driven by a single markdown file
   subtitle: Edit the markdown file to change everything you see here. Add or remove sections and the page adapts automatically.
   image:
-    src: ~/assets/images/hero-image.png
+    src: /~/assets/images/kisspng-steampunk-cyberpunk-science-fiction-dystopia-illus-future-warrior-helmet-5a70f3c14bda81.3497552815173518733107.png
     alt: AstroWind hero image
   actions:
     - text: View on GitHub
@@ -16,7 +15,6 @@ hero:
     - text: Learn more
       href: '#features'
       icon: tabler:arrow-down
-
 features:
   tagline: How it works
   title: Content-driven pages
@@ -39,7 +37,6 @@ features:
     - title: Zero code changes
       description: Clients edit markdown and images only. The .astro template reads frontmatter and maps it to widgets. No HTML, no JavaScript.
       icon: tabler:code-off
-
 testimonials:
   - title: Clean architecture
     testimonial: Separating content from presentation is the right call. This pattern makes client sites trivial to build and maintain.
@@ -53,7 +50,6 @@ testimonials:
   - title: Flexible widgets
     testimonial: Being able to add or remove entire sections by editing frontmatter is a game-changer for rapid prototyping.
     name: UX Designer
-
 cta:
   title: Start building today
   subtitle: Clone the repo, create a templates/home.md, and you are off. The i18n pipeline handles the rest.
