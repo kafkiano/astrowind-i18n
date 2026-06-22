@@ -102,13 +102,7 @@ const metadata = {
 
   {
     kitchenHeading?.images && (
-      <Gallery
-        images={kitchenHeading.images}
-        columns={4}
-        variant="grid"
-        mobileVariant="peek"
-        pagination={false}
-      />
+      <Gallery images={kitchenHeading.images} columns={4} variant="grid" mobileVariant="peek" pagination={false} />
     )
   }
 
@@ -161,7 +155,7 @@ const metadata = {
   {
     testimonials && (
       <Testimonials
-        tagline="Testimonials" 
+        tagline="Testimonials"
         title="What our guests say"
         subtitle="From our TripAdvisor reviews…"
         testimonials={testimonials}
