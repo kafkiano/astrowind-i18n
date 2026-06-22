@@ -8,6 +8,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Team from '~/components/widgets/Team.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Badge from '~/components/widgets/Badge.astro';
+import Gallery from '~/components/widgets/Gallery.astro';
 
 import { getStaticPathsForLocale } from '~/utils/i18n';
 export const getStaticPaths = getStaticPathsForLocale;
@@ -96,6 +97,18 @@ const metadata = {
           </h2>
         )}
       </div>
+    )
+  }
+
+  {
+    kitchenHeading?.images && (
+      <Gallery
+        images={kitchenHeading.images}
+        columns={4}
+        variant="grid"
+        mobileVariant="peek"
+        pagination={false}
+      />
     )
   }
 

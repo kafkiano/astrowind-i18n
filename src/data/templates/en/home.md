@@ -18,6 +18,15 @@ welcome:
 kitchenHeading:
   tagline: Our kitchen & bar
   title: Fresh, healthy, and beautiful
+  images:
+    - src: ~/assets/images/dish-1.webp
+      alt: Fresh dish at Artesano
+    - src: ~/assets/images/dish-2.webp
+      alt: Fresh dish at Artesano
+    - src: ~/assets/images/dish-3.webp
+      alt: Fresh dish at Artesano
+    - src: ~/assets/images/dish-4.webp
+      alt: Fresh dish at Artesano
 dishes:
   tagline: Dishes
   title: Made-to-order, every day
