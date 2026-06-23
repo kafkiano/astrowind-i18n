@@ -23,16 +23,14 @@ import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './ca
 import { extractFromAstro, extractFromConfig } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
-import { translateContent } from './markdown';
+import { translateContent, splitFrontmatter, collectTranslatableStrings } from './markdown';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from './manifest';
 
-const CONTENT_TYPES = [
-  { dir: 'src/data/pages', pattern: '**/*.md' },
-  { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
-  { dir: 'src/data/templates', pattern: '**/*.md' },
-  { dir: 'src/data/snippets', pattern: '**/*.md' },
-];
+// Only `post` (MDX) is physically translated. templates/pages/snippets are served
+// by the virtual content loader (src/i18n/virtual-loader.ts), so orphan cleanup
+// only applies to post.
+const CONTENT_TYPES = [{ dir: 'src/data/post', pattern: '**/*.{md,mdx}' }];
 
 /** Decode common HTML entities to their character equivalents. */
 function decodeEntities(text: string): string {
@@ -106,6 +104,53 @@ export function i18nIntegration(): AstroIntegration {
           }
         } catch (err) {
           console.warn(`[i18n] Failed to extract config strings: ${(err as Error).message}`);
+        }
+
+        // ── Extract frontmatter + body strings from source-locale markdown ──
+        // Frontmatter leaves ride the existing UI-string flow (HTML-tag batch).
+        // Bodies are whole-block strings translated via plain text (preserveFormatting,
+        // no HTML tag handling) — tracked in `bodyStrings` to route them at translation time.
+
+        const catalogContentTypes = [
+          { dir: 'src/data/templates', pattern: '**/*.md' },
+          { dir: 'src/data/pages', pattern: '**/*.md' },
+          { dir: 'src/data/snippets', pattern: '**/*.md' },
+        ];
+
+        const bodyStrings = new Set<string>();
+
+        for (const { dir, pattern } of catalogContentTypes) {
+          const srcDir = path.join(dir, srcLocale);
+          try {
+            const files = await glob(pattern, { cwd: srcDir });
+            for (const relPath of files) {
+              try {
+                const filePath = path.join(srcDir, relPath);
+                const content = await readFile(filePath, 'utf-8');
+                const { frontmatter, body } = splitFrontmatter(content);
+                if (frontmatter.trim()) {
+                  const fmObj = yaml.load(frontmatter);
+                  if (fmObj && typeof fmObj === 'object') {
+                    for (const { value } of collectTranslatableStrings(fmObj)) {
+                      const normalized = decodeEntities(value.replace(/\s+/g, ' ').trim());
+                      if (normalized) activeStrings.add(normalized);
+                    }
+                  }
+                }
+                // Whole body = ONE catalog key. Preserve newlines/structure (no whitespace
+                // collapse) so the Phase 2 virtual loader can look it up verbatim.
+                const bodyKey = decodeEntities(body.trim());
+                if (bodyKey) {
+                  activeStrings.add(bodyKey);
+                  bodyStrings.add(bodyKey);
+                }
+              } catch (err) {
+                console.warn(`[i18n] Skipped markdown ${dir}/${srcLocale}/${relPath}: ${(err as Error).message}`);
+              }
+            }
+          } catch {
+            // Source locale dir may not exist — skip silently
+          }
         }
 
         // ── Prune dead strings + merge new into source catalog ──────
@@ -211,12 +256,28 @@ export function i18nIntegration(): AstroIntegration {
                 const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '');
                 if (untranslated.length === 0) continue;
 
-                const translations = await provider.translateBatch(untranslated, locale, srcLocale);
+                // Route body strings through plain-text translation (preserveFormatting,
+                // no HTML tag handling — markdown bodies are not HTML). UI/frontmatter
+                // strings go through the HTML-tag batch. Both write back to the same catalog.
+                const bodyKeys = untranslated.filter((k) => bodyStrings.has(k));
+                const otherKeys = untranslated.filter((k) => !bodyStrings.has(k));
                 let localeTranslated = 0;
-                for (let i = 0; i < untranslated.length; i++) {
-                  if (translations[i]) {
-                    catalog[untranslated[i]] = translations[i];
-                    localeTranslated++;
+                if (otherKeys.length > 0) {
+                  const other = await provider.translateBatch(otherKeys, locale, srcLocale);
+                  for (let i = 0; i < otherKeys.length; i++) {
+                    if (other[i]) {
+                      catalog[otherKeys[i]] = other[i];
+                      localeTranslated++;
+                    }
+                  }
+                }
+                if (bodyKeys.length > 0) {
+                  const bodies = await provider.translatePlainTextBatch(bodyKeys, locale, srcLocale);
+                  for (let i = 0; i < bodyKeys.length; i++) {
+                    if (bodies[i]) {
+                      catalog[bodyKeys[i]] = bodies[i];
+                      localeTranslated++;
+                    }
                   }
                 }
                 if (localeTranslated > 0) {

@@ -22,17 +22,15 @@ import { type TranslationProvider } from './provider';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, needsTranslation, markTranslated } from './manifest';
 
-const CONTENT_TYPES = [
-  { dir: 'src/data/pages', pattern: '**/*.md' },
-  { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
-  { dir: 'src/data/templates', pattern: '**/*.md' },
-  { dir: 'src/data/snippets', pattern: '**/*.md' },
-];
+// Only `post` (MDX) is physically translated. templates/pages/snippets are served
+// by the virtual content loader (src/i18n/virtual-loader.ts), which synthesizes
+// per-locale entries from the source files + the shared catalog.
+const CONTENT_TYPES = [{ dir: 'src/data/post', pattern: '**/*.{md,mdx}' }];
 
 // ── YAML frontmatter helpers ──────────────────────────────────────
 
 /** Keys whose values are identifiers/enums and should never be translated. */
-const NON_TRANSLATABLE_KEYS = new Set([
+export const NON_TRANSLATABLE_KEYS = new Set([
   'showIn',
   'target',
   'variant',
@@ -62,7 +60,7 @@ const NON_TRANSLATABLE_KEYS = new Set([
 ]);
 
 /** Recursively collect all translatable string leaf values from a parsed YAML object. */
-function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ path: string; value: string }> {
+export function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ path: string; value: string }> {
   const result: Array<{ path: string; value: string }> = [];
 
   if (typeof obj === 'string') {
@@ -90,7 +88,7 @@ function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ path: st
 const ASSET_EXTENSION_RE = /\.(jpe?g|png|webp|svg|pdf|mdx?)$/i;
 
 /** Check if a string value should be translated (exclude URLs, icons, emails, phones, numbers). */
-function isTranslatable(s: string): boolean {
+export function isTranslatable(s: string): boolean {
   const trimmed = s.trim();
   if (!trimmed) return false;
   // Relative paths and URL-like identifiers
@@ -118,7 +116,7 @@ function isTranslatable(s: string): boolean {
 type NestedIndexable = { [key: string]: unknown } | unknown[];
 
 /** Set a value at a dotted/array path in a nested object. */
-function setValueAtPath(obj: Record<string, unknown>, path: string, value: string): void {
+export function setValueAtPath(obj: Record<string, unknown>, path: string, value: string): void {
   // eslint-disable-next-line no-useless-escape
   const parts = path.split(/(?<=[^\[\]])\.|(?<=\])\.|\[|\]/).filter(Boolean);
   let current: NestedIndexable = obj;
@@ -387,7 +385,7 @@ export async function translateContent(
 
 // ── Legacy helpers (splitFrontmatter still needed) ────────────────
 
-function splitFrontmatter(content: string): { frontmatter: string; body: string } {
+export function splitFrontmatter(content: string): { frontmatter: string; body: string } {
   const trimmed = content.trimStart();
   if (!trimmed.startsWith('---')) return { frontmatter: '', body: content };
   const secondSep = trimmed.indexOf('\n---', 3);

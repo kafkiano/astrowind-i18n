@@ -1,6 +1,7 @@
 import { z } from 'astro/zod';
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { virtualLoader } from './i18n/virtual-loader';
 
 const metadataDefinition = () =>
   z
@@ -67,7 +68,7 @@ const postCollection = defineCollection({
 });
 
 const pagesCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md'], base: 'src/data/pages' }),
+  loader: virtualLoader({ base: 'src/data/pages' }),
   schema: z.looseObject({
     title: z.string(),
     showIn: z.enum(['header', 'footer', 'none']).optional().default('footer'),
@@ -77,14 +78,14 @@ const pagesCollection = defineCollection({
 });
 
 const templatesCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md'], base: 'src/data/templates' }),
+  loader: virtualLoader({ base: 'src/data/templates' }),
   schema: z.looseObject({
     title: z.string(),
   }),
 });
 
 const snippetsCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md'], base: 'src/data/snippets' }),
+  loader: virtualLoader({ base: 'src/data/snippets' }),
   schema: z.object({
     title: z.string().optional(),
   }),
