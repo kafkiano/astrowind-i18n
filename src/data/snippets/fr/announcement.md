@@ -1,6 +1,0 @@
----
-
----
-
-Désormais disponible sur GitHub »
-

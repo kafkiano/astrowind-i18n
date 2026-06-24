@@ -1,16 +1,5 @@
 {
-  "markdown": {
-    "src/data/pages/en/privacy.md": "b56249c0efb5ed739cf39b24ce6ffcb7cf5fecd109144c68f982521d5b491bd1",
-    "src/data/pages/en/markdown.md": "cf3f241920ebf5b70329d1dfdf937d4eb6dd44fcb0a592d359e425954545e636",
-    "src/data/pages/en/terms.md": "3cbd0c641f84042fd6105024401af86478081ff0dfa630f811afc7ce4f6f2f1d",
-    "src/data/post/en/astrowind-template-in-depth.mdx": "2486bd1c0b51f2bee4269c8d06ad4e99de5855395724930fc9e98567946712dc",
-    "src/data/post/en/mastering-landing-pages.md": "8245d7dfac7ce0ce46ed0eeae0fd12dd22d73a0243672f325848eafd537ebdb1",
-    "src/data/templates/en/landing.md": "4a6a2ec0789d75a27f1953d38b9702c44fd41806ac981dc2f630768bd902de0a",
-    "src/data/snippets/en/hero-subtitle.md": "eb4f752dd91bdced3fa1927cec9f12004440ebace7163272a183901a1c8aca5a",
-    "src/data/snippets/en/about-content.md": "9308c796e28f1d48672c597ff38eaf005d0eade263e22b42c333366e57d2d8b0",
-    "src/data/snippets/en/announcement.md": "d7db22cac6a659c8f5a9f3b112194c54497c4c28bf1595fd0439c73aa5a46d23"
-  },
   "catalogs": {
-    "en": "aeb4c3ac5fa8a54e2fc8fedbcee1e1f1e3e2fa0060f8bb8583e1bc4638126a9f"
+    "en": "582f0a3c3769b01d0b98a594094f66fdb66f0db99ce11d02a8102377a47a4998"
   }
 }
