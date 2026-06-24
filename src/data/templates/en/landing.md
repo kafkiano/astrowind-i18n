@@ -5,7 +5,7 @@ hero:
   title: This entire page is driven by a single markdown file
   subtitle: Edit the markdown file to change everything you see here. Add or remove sections and the page adapts automatically.
   image:
-    src: /~/assets/images/kisspng-steampunk-cyberpunk-science-fiction-dystopia-illus-future-warrior-helmet-5a70f3c14bda81.3497552815173518733107.png
+    src: ~/assets/images/isle.jpg
     alt: AstroWind hero image
   actions:
     - text: View on GitHub
