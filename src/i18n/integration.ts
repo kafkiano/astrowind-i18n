@@ -1,20 +1,22 @@
 /**
  * Astro integration for i18n.
  *
- * Orchestrates the i18n pipeline:
- *   1. Extract new strings from .astro → source catalog
- *   2. Prune dead strings (removed from all .astro files)
- *   3. Sync new keys to target locale catalogs
- *   4. Clean up stale locale artifacts (removed locales, orphaned markdown)
- *   5. Translate markdown content (manifest-protected)
- *   6. Translate catalog strings (manifest-protected)
- *   7. Post-process HTML output (replace source-locale text with translations)
+ * Orchestrates the unified string-translation pipeline:
+ *   1. Extract translatable strings from .astro, config.yaml, and source-locale
+ *      markdown (frontmatter leaves + whole bodies) → source catalog
+ *   2. Prune dead strings + sync new keys to target locale catalogs
+ *   3. Translate catalog gaps (HTML batch for UI/frontmatter, plain-text for bodies)
+ *   4. Post-process HTML output (replace source-locale UI text with translations)
+ *
+ * Content collections (templates, pages, snippets, post) are rendered per-locale
+ * by the virtual content loader (src/i18n/virtual-loader.ts), which substitutes
+ * from this catalog at build time. No physical per-locale markdown files exist.
  *
  * All I/O is async (fs/promises) — consistent with the rest of the pipeline.
  */
 
 import type { AstroIntegration } from 'astro';
-import { readFile, writeFile, readdir, rm, access } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
@@ -23,16 +25,8 @@ import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './ca
 import { extractFromAstro, extractFromConfig } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
-import { translateContent } from './markdown';
+import { splitFrontmatter, collectTranslatableStrings } from './markdown';
 import { glob } from 'tinyglobby';
-import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from './manifest';
-
-const CONTENT_TYPES = [
-  { dir: 'src/data/pages', pattern: '**/*.md' },
-  { dir: 'src/data/post', pattern: '**/*.{md,mdx}' },
-  { dir: 'src/data/templates', pattern: '**/*.md' },
-  { dir: 'src/data/snippets', pattern: '**/*.md' },
-];
 
 /** Decode common HTML entities to their character equivalents. */
 function decodeEntities(text: string): string {
@@ -108,6 +102,54 @@ export function i18nIntegration(): AstroIntegration {
           console.warn(`[i18n] Failed to extract config strings: ${(err as Error).message}`);
         }
 
+        // ── Extract frontmatter + body strings from source-locale markdown ──
+        // Frontmatter leaves ride the existing UI-string flow (HTML-tag batch).
+        // Bodies are whole-block strings translated via plain text (preserveFormatting,
+        // no HTML tag handling) — tracked in `bodyStrings` to route them at translation time.
+
+        const catalogContentTypes = [
+          { dir: 'src/data/templates', pattern: '**/*.md' },
+          { dir: 'src/data/pages', pattern: '**/*.md' },
+          { dir: 'src/data/snippets', pattern: '**/*.md' },
+          { dir: 'src/data/post', pattern: '**/*.md' },
+        ];
+
+        const bodyStrings = new Set<string>();
+
+        for (const { dir, pattern } of catalogContentTypes) {
+          const srcDir = path.join(dir, srcLocale);
+          try {
+            const files = await glob(pattern, { cwd: srcDir });
+            for (const relPath of files) {
+              try {
+                const filePath = path.join(srcDir, relPath);
+                const content = await readFile(filePath, 'utf-8');
+                const { frontmatter, body } = splitFrontmatter(content);
+                if (frontmatter.trim()) {
+                  const fmObj = yaml.load(frontmatter);
+                  if (fmObj && typeof fmObj === 'object') {
+                    for (const { value } of collectTranslatableStrings(fmObj)) {
+                      const normalized = decodeEntities(value.replace(/\s+/g, ' ').trim());
+                      if (normalized) activeStrings.add(normalized);
+                    }
+                  }
+                }
+                // Whole body = ONE catalog key. Preserve newlines/structure (no whitespace
+                // collapse) so the Phase 2 virtual loader can look it up verbatim.
+                const bodyKey = decodeEntities(body.trim());
+                if (bodyKey) {
+                  activeStrings.add(bodyKey);
+                  bodyStrings.add(bodyKey);
+                }
+              } catch (err) {
+                console.warn(`[i18n] Skipped markdown ${dir}/${srcLocale}/${relPath}: ${(err as Error).message}`);
+              }
+            }
+          } catch {
+            // Source locale dir may not exist — skip silently
+          }
+        }
+
         // ── Prune dead strings + merge new into source catalog ──────
 
         const srcCatalog = await loadCatalog('src/locales', srcLocale);
@@ -176,22 +218,11 @@ export function i18nIntegration(): AstroIntegration {
 
         await cleanRemovedLocaleDirs(activeLocales);
 
-        // ── Clean up orphaned markdown (source deleted, translation remains)
-
-        await cleanMarkdownOrphans(locales, srcLocale);
-
-        // ── Translation (manifest-protected) ─────────────────────────
+        // ── Translation ─────────────────────────────────────────────
 
         const provider = await getProvider();
         if (provider) {
-          // 1. Translate markdown content
-          await translateContent(provider, locales, srcLocale);
-
-          // 2. Translate UI catalog strings
-          const srcJson = JSON.stringify(await loadCatalog('src/locales', srcLocale), null, 2);
-          let manifest = await loadManifest();
-
-          // Check if source catalog changed OR any target locale has untranslated gaps
+          // Translate catalog gaps: UI/frontmatter via HTML batch, bodies via plain text.
           let hasGaps = false;
           for (const locale of locales) {
             if (locale === srcLocale) continue;
@@ -202,7 +233,7 @@ export function i18nIntegration(): AstroIntegration {
             }
           }
 
-          if (hasGaps || catalogNeedsTranslation(manifest, srcJson, srcLocale)) {
+          if (hasGaps) {
             let totalTranslated = 0;
             for (const locale of locales) {
               if (locale === srcLocale) continue;
@@ -211,12 +242,28 @@ export function i18nIntegration(): AstroIntegration {
                 const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '');
                 if (untranslated.length === 0) continue;
 
-                const translations = await provider.translateBatch(untranslated, locale, srcLocale);
+                // Route body strings through plain-text translation (preserveFormatting,
+                // no HTML tag handling — markdown bodies are not HTML). UI/frontmatter
+                // strings go through the HTML-tag batch. Both write back to the same catalog.
+                const bodyKeys = untranslated.filter((k) => bodyStrings.has(k));
+                const otherKeys = untranslated.filter((k) => !bodyStrings.has(k));
                 let localeTranslated = 0;
-                for (let i = 0; i < untranslated.length; i++) {
-                  if (translations[i]) {
-                    catalog[untranslated[i]] = translations[i];
-                    localeTranslated++;
+                if (otherKeys.length > 0) {
+                  const other = await provider.translateBatch(otherKeys, locale, srcLocale);
+                  for (let i = 0; i < otherKeys.length; i++) {
+                    if (other[i]) {
+                      catalog[otherKeys[i]] = other[i];
+                      localeTranslated++;
+                    }
+                  }
+                }
+                if (bodyKeys.length > 0) {
+                  const bodies = await provider.translatePlainTextBatch(bodyKeys, locale, srcLocale);
+                  for (let i = 0; i < bodyKeys.length; i++) {
+                    if (bodies[i]) {
+                      catalog[bodyKeys[i]] = bodies[i];
+                      localeTranslated++;
+                    }
                   }
                 }
                 if (localeTranslated > 0) {
@@ -232,21 +279,14 @@ export function i18nIntegration(): AstroIntegration {
               console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
             }
 
-            // Only update manifest if every locale is fully translated
-            let stillUntranslated = false;
+            // If gaps remain (e.g. provider error), they stay as "" and retry on the next build.
             for (const locale of locales) {
               if (locale === srcLocale) continue;
               const cat = await loadCatalog('src/locales', locale);
               if (Object.keys(cat).some((k) => cat[k] === '')) {
-                stillUntranslated = true;
+                console.log('[i18n] Some strings still untranslated — will retry on next build');
                 break;
               }
-            }
-            if (!stillUntranslated) {
-              manifest = markCatalogTranslated(manifest, srcJson, srcLocale);
-              await saveManifest(manifest);
-            } else if (totalTranslated > 0) {
-              console.log('[i18n] Some strings still untranslated — will retry on next build');
             }
           }
         }
@@ -304,100 +344,17 @@ async function walkHtmlFiles(dir: string, visitor: (filePath: string) => Promise
   }
 }
 
-async function fileExists(path: string): Promise<boolean> {
-  try {
-    await access(path);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Remove translated markdown files whose source (in the default locale)
- * no longer exists. Prevents stale content from being published after
- * a source file is deleted.
- */
-async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Promise<void> {
-  const targetLocales = locales.filter((l) => l !== sourceLocale);
-  if (targetLocales.length === 0) return;
-
-  let manifest = await loadManifest();
-  let manifestChanged = false;
-
-  for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = path.join(dir, sourceLocale);
-    if (!(await fileExists(srcDir))) continue; // no source dir = nothing to compare against
-
-    for (const locale of targetLocales) {
-      const targetDir = path.join(dir, locale);
-      if (!(await fileExists(targetDir))) continue;
-
-      let files: string[];
-      try {
-        files = await glob(pattern, { cwd: targetDir });
-      } catch {
-        continue;
-      }
-
-      for (const relPath of files) {
-        const srcPath = path.join(srcDir, relPath);
-        if (await fileExists(srcPath)) continue; // source still exists, keep
-
-        // Source deleted — clean up translation
-        const targetPath = path.join(targetDir, relPath);
-        const manifestKey = `${dir}/${sourceLocale}/${relPath}`;
-
-        try {
-          await rm(targetPath);
-          console.log(`[clean] Removed orphan: ${targetPath}`);
-        } catch (err) {
-          console.warn(`[clean] Failed to remove ${targetPath}:`, (err as Error).message);
-        }
-
-        // Remove from manifest so it doesn't linger
-        if (manifest.markdown[manifestKey]) {
-          const rest = { ...manifest.markdown };
-          delete rest[manifestKey];
-          manifest = { ...manifest, markdown: rest };
-          manifestChanged = true;
-        }
-      }
-    }
-  }
-
-  if (manifestChanged) {
-    await saveManifest(manifest);
-  }
-}
-
 /**
  * Warn about stale locale directories (from locales that were removed
  * from config.yaml). Does NOT auto-delete — manual cleanup is safer.
  */
 async function cleanRemovedLocaleDirs(activeLocales: Set<string>): Promise<void> {
-  // Check content directories for removed locales
-  for (const { dir } of CONTENT_TYPES) {
-    let entries;
-    try {
-      entries = await readdir(dir, { withFileTypes: true });
-    } catch {
-      continue;
-    }
-
-    for (const entry of entries) {
-      if (!entry.isDirectory()) continue;
-      if (activeLocales.has(entry.name)) continue;
-      console.warn(`[i18n] Stale locale dir (not in config.yaml locales): ${path.join(dir, entry.name)}/`);
-    }
-  }
-
   // Check catalog files for removed locales
   try {
     const catalogEntries = await readdir('src/locales', { withFileTypes: true });
     for (const entry of catalogEntries) {
       if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
-      if (entry.name.startsWith('.')) continue; // skip manifest and hidden files
+      if (entry.name.startsWith('.')) continue; // skip hidden files
       const locale = entry.name.replace(/\.json$/, '');
       if (activeLocales.has(locale)) continue;
       console.warn(`[i18n] Stale catalog file (not in config.yaml locales): src/locales/${entry.name}`);

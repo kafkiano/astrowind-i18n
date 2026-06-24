@@ -71,20 +71,22 @@ if (!hasContent) return;
 
 {
   variant === 'inline' && (
-    <div {...(id ? { id } : {})} class={`inline-flex items-center gap-2 ${(classes?.container as string) ?? ''}`}>
+    <div
+      {...(id ? { id } : {})}
+      class={`inline-flex flex-col items-center gap-1.5 ${(classes?.container as string) ?? ''}`}
+    >
       {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer" class="inline-block">
+        <a href={href} target="_blank" rel="noopener noreferrer" class="inline-flex flex-col items-center gap-1.5">
           {image && (
             <Image
-              class="h-16 md:h-20 w-auto object-contain"
-              width={80}
-              height={80}
-              widths={[80, 160]}
-              layout="fixed"
+              class="h-8 md:h-10 w-auto object-contain"
+              width={160}
+              widths={[160, 320]}
+              layout="constrained"
               {...image}
             />
           )}
-          {text && !image && (
+          {text && (
             <span class="inline-block bg-accent text-white text-sm font-semibold px-4 py-2 rounded-lg">{text}</span>
           )}
         </a>
@@ -92,15 +94,14 @@ if (!hasContent) return;
         <>
           {image && (
             <Image
-              class="h-16 md:h-20 w-auto object-contain"
-              width={80}
-              height={80}
-              widths={[80, 160]}
-              layout="fixed"
+              class="h-8 md:h-10 w-auto object-contain"
+              width={160}
+              widths={[160, 320]}
+              layout="constrained"
               {...image}
             />
           )}
-          {text && !image && (
+          {text && (
             <span class="inline-block bg-accent text-white text-sm font-semibold px-4 py-2 rounded-lg">{text}</span>
           )}
         </>
