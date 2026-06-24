@@ -1,6 +1,5 @@
 import { z } from 'astro/zod';
 import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
 import { virtualLoader } from './i18n/virtual-loader';
 
 const metadataDefinition = () =>
@@ -49,7 +48,7 @@ const metadataDefinition = () =>
     .optional();
 
 const postCollection = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: 'src/data/post' }),
+  loader: virtualLoader({ base: 'src/data/post' }),
   schema: z.object({
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),

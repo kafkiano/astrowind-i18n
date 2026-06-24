@@ -1,33 +1,16 @@
 /**
- * Translate markdown content from source locale to all target locales.
+ * Frontmatter helpers for the i18n pipeline.
  *
- * Reads:  src/data/{type}/{sourceLocale}/*.{md,mdx}
- * Writes: src/data/{type}/{targetLocale}/*.{md,mdx}
+ * Pure utilities that partition a parsed YAML frontmatter object into
+ * translatable string leaves vs. non-translatable identifiers/paths, and
+ * split a markdown file into its frontmatter + body. Shared by the
+ * extraction pass (src/i18n/integration.ts) and the virtual content
+ * loader (src/i18n/virtual-loader.ts).
  *
- * Translates both body content and all translatable frontmatter fields.
- * Frontmatter is parsed as YAML (js-yaml), all nested string values are
- * collected, translated, and reconstructed — supporting rich frontmatter
- * with nested objects and arrays (e.g. landing page section definitions).
- *
- * Uses a content-addressable manifest (.i18n-manifest.json) so
- * re-builds skip unchanged source files (git-safe — not mtime-based).
- *
- * Called by the i18n Astro integration during build.
+ * No collection is physically translated anymore — all content is served
+ * by the virtual loader from source files + the shared source-text-as-key
+ * catalog. This module holds only the classification + parsing helpers.
  */
-
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { join } from 'node:path';
-import yaml from 'js-yaml';
-import { type TranslationProvider } from './provider';
-import { glob } from 'tinyglobby';
-import { loadManifest, saveManifest, needsTranslation, markTranslated } from './manifest';
-
-// Only `post` (MDX) is physically translated. templates/pages/snippets are served
-// by the virtual content loader (src/i18n/virtual-loader.ts), which synthesizes
-// per-locale entries from the source files + the shared catalog.
-const CONTENT_TYPES = [{ dir: 'src/data/post', pattern: '**/*.{md,mdx}' }];
-
-// ── YAML frontmatter helpers ──────────────────────────────────────
 
 /** Keys whose values are identifiers/enums and should never be translated. */
 export const NON_TRANSLATABLE_KEYS = new Set([
@@ -57,6 +40,8 @@ export const NON_TRANSLATABLE_KEYS = new Set([
   'class',
   'classes',
   'style',
+  'tags',
+  'category',
 ]);
 
 /** Recursively collect all translatable string leaf values from a parsed YAML object. */
@@ -141,250 +126,7 @@ export function setValueAtPath(obj: Record<string, unknown>, path: string, value
   }
 }
 
-/**
- * Restore original quoting style after yaml.dump() strips it.
- *
- * yaml.load() discards quote information, and yaml.dump() only adds
- * quotes when syntactically necessary. This function compares the
- * dumped output line-by-line against the source frontmatter and
- * re-applies quotes where the source had them.
- *
- * Matches lines of the form:  key: value  or  key: 'value'  or  key: "value"
- * Skips multi-line block scalars (|, >) and nested structure lines.
- */
-function restoreQuoting(source: string, dumped: string): string {
-  const YAML_LINE_RE = /^(\s*[\w.-]+):\s*(['"]?)((?:(?!\s+#).)*?)(\2)\s*(#.*)?$/;
-
-  const sourceLines = source.split('\n');
-  const dumpedLines = dumped.split('\n');
-
-  // Build a lookup: key → source quote character (empty string if unquoted)
-  const sourceQuoteByKey = new Map<string, string>();
-  for (const line of sourceLines) {
-    const m = line.match(YAML_LINE_RE);
-    if (m) {
-      sourceQuoteByKey.set(m[1].trim(), m[2]); // m[2] is ' or " or ''
-    }
-  }
-
-  return dumpedLines
-    .map((line) => {
-      const m = line.match(YAML_LINE_RE);
-      if (!m) return line;
-
-      const key = m[1].trim();
-      const dumpedQuote = m[2];
-      const value = m[3];
-      const trailing = m[5] || '';
-
-      // Only restore quotes if the source had them and the dump dropped them
-      const sourceQuote = sourceQuoteByKey.get(key);
-      if (sourceQuote && !dumpedQuote && value) {
-        const pad = line.match(/^(\s*)/)?.[1] || '';
-        const comment = trailing ? ` ${trailing}` : '';
-        // If the translated value contains the source quote character,
-        // switch to the other quote style to avoid invalid YAML.
-        let quote = sourceQuote;
-        if (value.includes(quote)) {
-          quote = quote === "'" ? '"' : "'";
-          if (value.includes(quote)) return line; // contains both — skip
-        }
-        return `${pad}${key}: ${quote}${value}${quote}${comment}`;
-      }
-
-      return line;
-    })
-    .join('\n');
-}
-
-/** Parse frontmatter YAML, translate all nested strings, dump back. Returns null if parsing fails. */
-export async function translateFrontmatterYaml(
-  frontmatter: string,
-  provider: TranslationProvider,
-  locale: string,
-  defaultLocale: string
-): Promise<string | null> {
-  let fmObj: unknown;
-  try {
-    fmObj = yaml.load(frontmatter);
-  } catch {
-    return null; // malformed YAML — caller should fall back
-  }
-
-  if (!fmObj || typeof fmObj !== 'object') return null;
-
-  const translatable = collectTranslatableStrings(fmObj);
-  if (translatable.length === 0) return frontmatter; // nothing to translate
-
-  const texts = translatable.map((t) => t.value);
-  const results = await provider.translatePlainTextBatch(texts, locale, defaultLocale);
-
-  let anyTranslated = false;
-  for (let i = 0; i < translatable.length; i++) {
-    if (results[i] && results[i] !== translatable[i].value) {
-      setValueAtPath(fmObj as Record<string, unknown>, translatable[i].path, results[i]);
-      anyTranslated = true;
-    }
-  }
-
-  if (!anyTranslated) return frontmatter;
-
-  const dumped = yaml
-    .dump(fmObj, {
-      indent: 2,
-      lineWidth: -1,
-      noCompatMode: true,
-      sortKeys: false,
-    })
-    .trim();
-
-  return restoreQuoting(frontmatter, dumped);
-}
-
-// ── Main translation logic ────────────────────────────────────────
-
-/**
- * Translate all markdown content. Called by the i18n integration during build.
- *
- * Incremental — skips files whose source hash matches the manifest
- * (no change since last translation). Content-addressable: survives
- * git clone, branch switches, and mtime resets.
- *
- * @param provider - Translation provider (DeepL, Google Translate, etc.)
- * @param locales - All configured locales (from config.yaml).
- * @param defaultLocale - Source locale (from config.yaml i18n.defaultLocale).
- */
-export async function translateContent(
-  provider: TranslationProvider,
-  locales: string[],
-  defaultLocale: string
-): Promise<void> {
-  const targetLocales = locales.filter((l) => l !== defaultLocale);
-  if (targetLocales.length === 0) return;
-  let manifest = await loadManifest();
-  let manifestChanged = false;
-  let anyWork = false;
-
-  for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = join(dir, defaultLocale);
-    const files = await glob(pattern, { cwd: srcDir });
-    if (files.length === 0) continue;
-
-    let translated = 0;
-    let skipped = 0;
-
-    for (const relPath of files) {
-      const srcPath = join(srcDir, relPath);
-      const srcContent = await readFile(srcPath, 'utf-8');
-      const { frontmatter, body } = splitFrontmatter(srcContent);
-      if (!body.trim() && !frontmatter.trim()) continue;
-
-      // Check manifest — skip if source content hasn't changed
-      const manifestKey = `${dir}/${defaultLocale}/${relPath}`;
-      const sourceUnchanged = !(await needsTranslation(manifest, manifestKey, srcContent));
-
-      // Even if source is unchanged, check that all target locales have the file.
-      // A newly added locale won't have translations yet.
-      let allTargetsExist = true;
-      if (sourceUnchanged) {
-        for (const locale of targetLocales) {
-          const outPath = join(dir, locale, relPath);
-          try {
-            await readFile(outPath, 'utf-8');
-          } catch {
-            allTargetsExist = false;
-            break;
-          }
-        }
-      }
-
-      if (sourceUnchanged && allTargetsExist) {
-        skipped++;
-        continue;
-      }
-
-      let allLocalesSucceeded = true;
-
-      for (const locale of targetLocales) {
-        const outPath = join(dir, locale, relPath);
-
-        let translatedFm = frontmatter;
-        let translatedBody = body;
-        let bodyTranslated = !body.trim(); // true if no body to translate
-        let fmTranslated = !frontmatter.trim(); // true if no frontmatter to translate
-
-        // ── Translate frontmatter (nested YAML) ─────────────────
-
-        if (frontmatter.trim()) {
-          try {
-            const result = await translateFrontmatterYaml(frontmatter, provider, locale, defaultLocale);
-            if (result !== null) {
-              translatedFm = result;
-              fmTranslated = true;
-            }
-          } catch (err) {
-            console.warn(`  ⚠ fm translation failed for ${locale}:`, (err as Error).message);
-          }
-        }
-
-        // ── Translate body (full multi-line text) ───────────────
-
-        if (body.trim()) {
-          try {
-            const result = await provider.translatePlainText(body, locale, defaultLocale);
-            if (result) {
-              translatedBody = result;
-              bodyTranslated = true;
-            }
-          } catch (err) {
-            console.warn(`  ⚠ body translation failed for ${locale}:`, (err as Error).message);
-          }
-        }
-
-        // Only write if translation actually produced results
-        const shouldWrite = body.trim() ? bodyTranslated : fmTranslated;
-        if (shouldWrite) {
-          const output = `---\n${translatedFm}\n---\n\n${translatedBody}\n`;
-          await mkdir(join(outPath, '..'), { recursive: true });
-          await writeFile(outPath, output, 'utf-8');
-
-          if (!anyWork) {
-            anyWork = true;
-            console.log(`[content] Translating via ${provider.name}...`);
-          }
-          translated++;
-          console.log(`  ✓ ${outPath}`);
-        } else {
-          allLocalesSucceeded = false;
-          console.warn(`  ⚠ Skipping ${outPath}: translation failed (will retry on next build)`);
-        }
-      }
-
-      // Only mark source as translated in manifest if ALL locales succeeded
-      if (allLocalesSucceeded) {
-        manifest = await markTranslated(manifest, manifestKey, srcContent);
-        manifestChanged = true;
-      }
-    }
-
-    if (translated > 0 || skipped > 0) {
-      console.log(
-        `─ ${dir}/${defaultLocale}/ → ${files.length} files (${translated} translated, ${skipped} unchanged)`
-      );
-    }
-  }
-
-  if (manifestChanged) {
-    await saveManifest(manifest);
-  }
-
-  if (anyWork) {
-    console.log('Done.');
-  }
-}
-
-// ── Legacy helpers (splitFrontmatter still needed) ────────────────
-
+/** Split a markdown file into its YAML frontmatter and body. */
 export function splitFrontmatter(content: string): { frontmatter: string; body: string } {
   const trimmed = content.trimStart();
   if (!trimmed.startsWith('---')) return { frontmatter: '', body: content };

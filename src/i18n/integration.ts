@@ -1,20 +1,22 @@
 /**
  * Astro integration for i18n.
  *
- * Orchestrates the i18n pipeline:
- *   1. Extract new strings from .astro → source catalog
- *   2. Prune dead strings (removed from all .astro files)
- *   3. Sync new keys to target locale catalogs
- *   4. Clean up stale locale artifacts (removed locales, orphaned markdown)
- *   5. Translate markdown content (manifest-protected)
- *   6. Translate catalog strings (manifest-protected)
- *   7. Post-process HTML output (replace source-locale text with translations)
+ * Orchestrates the unified string-translation pipeline:
+ *   1. Extract translatable strings from .astro, config.yaml, and source-locale
+ *      markdown (frontmatter leaves + whole bodies) → source catalog
+ *   2. Prune dead strings + sync new keys to target locale catalogs
+ *   3. Translate catalog gaps (HTML batch for UI/frontmatter, plain-text for bodies)
+ *   4. Post-process HTML output (replace source-locale UI text with translations)
+ *
+ * Content collections (templates, pages, snippets, post) are rendered per-locale
+ * by the virtual content loader (src/i18n/virtual-loader.ts), which substitutes
+ * from this catalog at build time. No physical per-locale markdown files exist.
  *
  * All I/O is async (fs/promises) — consistent with the rest of the pipeline.
  */
 
 import type { AstroIntegration } from 'astro';
-import { readFile, writeFile, readdir, rm, access } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
@@ -23,14 +25,9 @@ import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './ca
 import { extractFromAstro, extractFromConfig } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
-import { translateContent, splitFrontmatter, collectTranslatableStrings } from './markdown';
+import { splitFrontmatter, collectTranslatableStrings } from './markdown';
 import { glob } from 'tinyglobby';
 import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from './manifest';
-
-// Only `post` (MDX) is physically translated. templates/pages/snippets are served
-// by the virtual content loader (src/i18n/virtual-loader.ts), so orphan cleanup
-// only applies to post.
-const CONTENT_TYPES = [{ dir: 'src/data/post', pattern: '**/*.{md,mdx}' }];
 
 /** Decode common HTML entities to their character equivalents. */
 function decodeEntities(text: string): string {
@@ -115,6 +112,7 @@ export function i18nIntegration(): AstroIntegration {
           { dir: 'src/data/templates', pattern: '**/*.md' },
           { dir: 'src/data/pages', pattern: '**/*.md' },
           { dir: 'src/data/snippets', pattern: '**/*.md' },
+          { dir: 'src/data/post', pattern: '**/*.md' },
         ];
 
         const bodyStrings = new Set<string>();
@@ -221,18 +219,11 @@ export function i18nIntegration(): AstroIntegration {
 
         await cleanRemovedLocaleDirs(activeLocales);
 
-        // ── Clean up orphaned markdown (source deleted, translation remains)
-
-        await cleanMarkdownOrphans(locales, srcLocale);
-
         // ── Translation (manifest-protected) ─────────────────────────
 
         const provider = await getProvider();
         if (provider) {
-          // 1. Translate markdown content
-          await translateContent(provider, locales, srcLocale);
-
-          // 2. Translate UI catalog strings
+          // Translate catalog gaps (UI/frontmatter via HTML batch, bodies via plain text)
           const srcJson = JSON.stringify(await loadCatalog('src/locales', srcLocale), null, 2);
           let manifest = await loadManifest();
 
@@ -365,94 +356,11 @@ async function walkHtmlFiles(dir: string, visitor: (filePath: string) => Promise
   }
 }
 
-async function fileExists(path: string): Promise<boolean> {
-  try {
-    await access(path);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Remove translated markdown files whose source (in the default locale)
- * no longer exists. Prevents stale content from being published after
- * a source file is deleted.
- */
-async function cleanMarkdownOrphans(locales: string[], sourceLocale: string): Promise<void> {
-  const targetLocales = locales.filter((l) => l !== sourceLocale);
-  if (targetLocales.length === 0) return;
-
-  let manifest = await loadManifest();
-  let manifestChanged = false;
-
-  for (const { dir, pattern } of CONTENT_TYPES) {
-    const srcDir = path.join(dir, sourceLocale);
-    if (!(await fileExists(srcDir))) continue; // no source dir = nothing to compare against
-
-    for (const locale of targetLocales) {
-      const targetDir = path.join(dir, locale);
-      if (!(await fileExists(targetDir))) continue;
-
-      let files: string[];
-      try {
-        files = await glob(pattern, { cwd: targetDir });
-      } catch {
-        continue;
-      }
-
-      for (const relPath of files) {
-        const srcPath = path.join(srcDir, relPath);
-        if (await fileExists(srcPath)) continue; // source still exists, keep
-
-        // Source deleted — clean up translation
-        const targetPath = path.join(targetDir, relPath);
-        const manifestKey = `${dir}/${sourceLocale}/${relPath}`;
-
-        try {
-          await rm(targetPath);
-          console.log(`[clean] Removed orphan: ${targetPath}`);
-        } catch (err) {
-          console.warn(`[clean] Failed to remove ${targetPath}:`, (err as Error).message);
-        }
-
-        // Remove from manifest so it doesn't linger
-        if (manifest.markdown[manifestKey]) {
-          const rest = { ...manifest.markdown };
-          delete rest[manifestKey];
-          manifest = { ...manifest, markdown: rest };
-          manifestChanged = true;
-        }
-      }
-    }
-  }
-
-  if (manifestChanged) {
-    await saveManifest(manifest);
-  }
-}
-
 /**
  * Warn about stale locale directories (from locales that were removed
  * from config.yaml). Does NOT auto-delete — manual cleanup is safer.
  */
 async function cleanRemovedLocaleDirs(activeLocales: Set<string>): Promise<void> {
-  // Check content directories for removed locales
-  for (const { dir } of CONTENT_TYPES) {
-    let entries;
-    try {
-      entries = await readdir(dir, { withFileTypes: true });
-    } catch {
-      continue;
-    }
-
-    for (const entry of entries) {
-      if (!entry.isDirectory()) continue;
-      if (activeLocales.has(entry.name)) continue;
-      console.warn(`[i18n] Stale locale dir (not in config.yaml locales): ${path.join(dir, entry.name)}/`);
-    }
-  }
-
   // Check catalog files for removed locales
   try {
     const catalogEntries = await readdir('src/locales', { withFileTypes: true });
