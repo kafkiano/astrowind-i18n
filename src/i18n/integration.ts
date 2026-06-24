@@ -27,7 +27,6 @@ import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
 import { splitFrontmatter, collectTranslatableStrings } from './markdown';
 import { glob } from 'tinyglobby';
-import { loadManifest, saveManifest, catalogNeedsTranslation, markCatalogTranslated } from './manifest';
 
 /** Decode common HTML entities to their character equivalents. */
 function decodeEntities(text: string): string {
@@ -219,15 +218,11 @@ export function i18nIntegration(): AstroIntegration {
 
         await cleanRemovedLocaleDirs(activeLocales);
 
-        // ── Translation (manifest-protected) ─────────────────────────
+        // ── Translation ─────────────────────────────────────────────
 
         const provider = await getProvider();
         if (provider) {
-          // Translate catalog gaps (UI/frontmatter via HTML batch, bodies via plain text)
-          const srcJson = JSON.stringify(await loadCatalog('src/locales', srcLocale), null, 2);
-          let manifest = await loadManifest();
-
-          // Check if source catalog changed OR any target locale has untranslated gaps
+          // Translate catalog gaps: UI/frontmatter via HTML batch, bodies via plain text.
           let hasGaps = false;
           for (const locale of locales) {
             if (locale === srcLocale) continue;
@@ -238,7 +233,7 @@ export function i18nIntegration(): AstroIntegration {
             }
           }
 
-          if (hasGaps || catalogNeedsTranslation(manifest, srcJson, srcLocale)) {
+          if (hasGaps) {
             let totalTranslated = 0;
             for (const locale of locales) {
               if (locale === srcLocale) continue;
@@ -284,21 +279,14 @@ export function i18nIntegration(): AstroIntegration {
               console.log(`[i18n] ${provider.name}: ${totalTranslated} total translations across all locales`);
             }
 
-            // Only update manifest if every locale is fully translated
-            let stillUntranslated = false;
+            // If gaps remain (e.g. provider error), they stay as "" and retry on the next build.
             for (const locale of locales) {
               if (locale === srcLocale) continue;
               const cat = await loadCatalog('src/locales', locale);
               if (Object.keys(cat).some((k) => cat[k] === '')) {
-                stillUntranslated = true;
+                console.log('[i18n] Some strings still untranslated — will retry on next build');
                 break;
               }
-            }
-            if (!stillUntranslated) {
-              manifest = markCatalogTranslated(manifest, srcJson, srcLocale);
-              await saveManifest(manifest);
-            } else if (totalTranslated > 0) {
-              console.log('[i18n] Some strings still untranslated — will retry on next build');
             }
           }
         }
@@ -366,7 +354,7 @@ async function cleanRemovedLocaleDirs(activeLocales: Set<string>): Promise<void>
     const catalogEntries = await readdir('src/locales', { withFileTypes: true });
     for (const entry of catalogEntries) {
       if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
-      if (entry.name.startsWith('.')) continue; // skip manifest and hidden files
+      if (entry.name.startsWith('.')) continue; // skip hidden files
       const locale = entry.name.replace(/\.json$/, '');
       if (activeLocales.has(locale)) continue;
       console.warn(`[i18n] Stale catalog file (not in config.yaml locales): src/locales/${entry.name}`);
