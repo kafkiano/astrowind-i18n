@@ -125,21 +125,27 @@ export function i18nIntegration(): AstroIntegration {
                 const filePath = path.join(srcDir, relPath);
                 const content = await readFile(filePath, 'utf-8');
                 const { frontmatter, body } = splitFrontmatter(content);
-                if (frontmatter.trim()) {
-                  const fmObj = yaml.load(frontmatter);
-                  if (fmObj && typeof fmObj === 'object') {
-                    for (const { value } of collectTranslatableStrings(fmObj)) {
-                      const normalized = decodeEntities(value.replace(/\s+/g, ' ').trim());
-                      if (normalized) activeStrings.add(normalized);
-                    }
+                let fmObj: unknown = null;
+                if (frontmatter.trim()) fmObj = yaml.load(frontmatter);
+                if (fmObj && typeof fmObj === 'object') {
+                  for (const { value } of collectTranslatableStrings(fmObj)) {
+                    const normalized = decodeEntities(value.replace(/\s+/g, ' ').trim());
+                    if (normalized) activeStrings.add(normalized);
                   }
                 }
                 // Whole body = ONE catalog key. Preserve newlines/structure (no whitespace
                 // collapse) so the Phase 2 virtual loader can look it up verbatim.
-                const bodyKey = decodeEntities(body.trim());
-                if (bodyKey) {
-                  activeStrings.add(bodyKey);
-                  bodyStrings.add(bodyKey);
+                // `translate: false` in frontmatter opts the body out of translation —
+                // frontmatter leaves above are still extracted; the virtual loader then
+                // renders the source-locale body verbatim for every locale (graceful
+                // fallback when the body key is absent from the catalog).
+                const skipBody = (fmObj as { translate?: unknown } | null)?.translate === false;
+                if (!skipBody) {
+                  const bodyKey = decodeEntities(body.trim());
+                  if (bodyKey) {
+                    activeStrings.add(bodyKey);
+                    bodyStrings.add(bodyKey);
+                  }
                 }
               } catch (err) {
                 console.warn(`[i18n] Skipped markdown ${dir}/${srcLocale}/${relPath}: ${(err as Error).message}`);

@@ -2,6 +2,7 @@
 title: 'Markdown Page'
 showIn: 'header'
 group: 'Demos'
+translate: false
 ---
 
 ### What is Markdown?

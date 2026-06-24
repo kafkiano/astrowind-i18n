@@ -42,6 +42,7 @@ export const NON_TRANSLATABLE_KEYS = new Set([
   'style',
   'tags',
   'category',
+  'translate',
 ]);
 
 /** Recursively collect all translatable string leaf values from a parsed YAML object. */
