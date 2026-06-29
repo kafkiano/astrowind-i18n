@@ -20,7 +20,7 @@ export interface StringContext {
 }
 
 /** Elements whose text content is never translatable */
-const IGNORE_ELEMENTS = new Set(['script', 'style', 'path', 'code', 'pre']);
+export const IGNORE_ELEMENTS = new Set(['script', 'style', 'path', 'code', 'pre']);
 
 /** Attribute values that are never translatable: [element, attribute] */
 const IGNORE_ATTRIBUTES: [string, string][] = [['form', 'method']];

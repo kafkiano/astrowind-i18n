@@ -69,6 +69,39 @@ function buildAttributeTranslationMap(catalog: Catalog): Map<string, string> {
   return map;
 }
 
+interface TranslationMaps {
+  text: Map<string, string>;
+  attr: Map<string, string>;
+}
+
+/**
+ * Build per-locale text + attribute translation maps for a catalog, memoized
+ * by catalog object identity (WeakMap). The maps depend only on the catalog
+ * contents, which are stable for a build's lifetime, so building them once per
+ * locale (not once per HTML file) avoids O(files × catalog) DOM parsing in the
+ * post-process pass. A fresh catalog object (next build) is a natural cache miss.
+ */
+const mapsCache = new WeakMap<Catalog, TranslationMaps>();
+
+function buildTranslationMaps(catalog: Catalog): TranslationMaps {
+  const cached = mapsCache.get(catalog);
+  if (cached) return cached;
+
+  const text = new Map<string, string>();
+  for (const [key, translation] of Object.entries(catalog)) {
+    if (!translation || translation === key) continue;
+    const trimmed = key.trim();
+    if (!trimmed) continue;
+    const canonical = canonicalInnerHtml(trimmed);
+    if (canonical && canonical !== translation) text.set(canonical, translation);
+  }
+  const attr = buildAttributeTranslationMap(catalog);
+
+  const maps: TranslationMaps = { text, attr };
+  mapsCache.set(catalog, maps);
+  return maps;
+}
+
 /**
  * Replace English text content in HTML with catalog translations.
  * Uses DOM-based approach (htmlparser2) to correctly handle inline HTML
@@ -81,22 +114,7 @@ export function translateHtml(html: string, locale: string, catalogs: CatalogSet
   const targetCatalog = catalogs[locale];
   if (!targetCatalog) return html;
 
-  // Build a lookup map: normalized innerHTML → translation.
-  // Normalization: parse→sort classes→serialize for canonical form.
-  const translationMap = new Map<string, string>();
-  for (const [key, translation] of Object.entries(targetCatalog)) {
-    if (!translation || translation === key) continue;
-    const trimmed = key.trim();
-    if (!trimmed) continue;
-
-    const canonical = canonicalInnerHtml(trimmed);
-    if (canonical && canonical !== translation) {
-      translationMap.set(canonical, translation);
-    }
-  }
-
-  // Build an exact-string map for attribute values.
-  const attributeTranslationMap = buildAttributeTranslationMap(targetCatalog);
+  const { text: translationMap, attr: attributeTranslationMap } = buildTranslationMaps(targetCatalog);
 
   if (translationMap.size === 0 && attributeTranslationMap.size === 0) return html;
 

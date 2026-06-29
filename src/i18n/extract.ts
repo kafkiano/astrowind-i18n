@@ -9,7 +9,7 @@ import { parse } from '@astrojs/compiler';
 import { Parser } from 'acorn';
 import { tsPlugin } from '@sveltejs/acorn-typescript';
 import type { StringContext } from './heuristic';
-import { classifyString } from './heuristic';
+import { classifyString, IGNORE_ELEMENTS } from './heuristic';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -148,9 +148,6 @@ const INLINE_PHRASING_ELEMENTS = new Set([
   'var',
   'wbr',
 ]);
-
-/** Elements whose text content is never translatable (mirrors heuristic.ts). */
-const IGNORE_ELEMENTS = new Set(['script', 'style', 'path', 'code', 'pre']);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isInlineOnly(node: any): boolean {

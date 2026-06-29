@@ -21,7 +21,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { readConfig } from './config';
-import { loadAllCatalogs, loadCatalog, saveCatalog, type CatalogSet } from './catalog';
+import { loadAllCatalogs, saveCatalog, type CatalogSet, type Catalog } from './catalog';
 import { extractFromAstro, extractFromConfig } from './extract';
 import { getProvider } from './provider';
 import { translateHtml } from './postprocess';
@@ -42,6 +42,11 @@ function decodeEntities(text: string): string {
 /** Escape a string for safe inclusion in a regular expression. */
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Whether a catalog still has any untranslated ("") entries. */
+function catalogHasGaps(catalog: Catalog): boolean {
+  return Object.keys(catalog).some((k) => catalog[k] === '');
 }
 
 export function i18nIntegration(): AstroIntegration {
@@ -156,9 +161,15 @@ export function i18nIntegration(): AstroIntegration {
           }
         }
 
-        // ── Prune dead strings + merge new into source catalog ──────
+        // ── Load all catalogs once (source + targets) ────────────────
+        // Reused in-memory through sync → translate → post-processing:
+        // one load, save-on-change — no repeated JSON reads per locale.
 
-        const srcCatalog = await loadCatalog('src/locales', srcLocale);
+        catalogs = await loadAllCatalogs('src/locales', [...new Set([...locales, srcLocale])]);
+        const srcCatalog = catalogs[srcLocale];
+        console.log(`[i18n] Loaded catalogs for: ${Object.keys(catalogs).join(', ')}`);
+
+        // ── Prune dead strings + merge new into source catalog ──────
         let newStrings = 0;
         let removedStrings = 0;
 
@@ -176,11 +187,10 @@ export function i18nIntegration(): AstroIntegration {
           removedStrings = deadStrings.length;
         }
 
-        // Merge in new strings
+        // Merge in new strings (activeStrings entries are already entity-decoded + normalized).
         for (const t of activeStrings) {
-          const text = decodeEntities(t);
-          if (!text || text in srcCatalog) continue;
-          srcCatalog[text] = ''; // placeholder: untranslated
+          if (!t || t in srcCatalog) continue;
+          srcCatalog[t] = ''; // placeholder: untranslated
           newStrings++;
         }
 
@@ -196,7 +206,7 @@ export function i18nIntegration(): AstroIntegration {
 
         for (const locale of locales) {
           if (locale === srcLocale) continue;
-          const targetCatalog = await loadCatalog('src/locales', locale);
+          const targetCatalog = catalogs[locale];
           let synced = 0;
 
           // Add new keys (from source catalog) with empty placeholder
@@ -232,8 +242,7 @@ export function i18nIntegration(): AstroIntegration {
           let hasGaps = false;
           for (const locale of locales) {
             if (locale === srcLocale) continue;
-            const cat = await loadCatalog('src/locales', locale);
-            if (Object.keys(cat).some((k) => cat[k] === '')) {
+            if (catalogHasGaps(catalogs[locale])) {
               hasGaps = true;
               break;
             }
@@ -244,7 +253,7 @@ export function i18nIntegration(): AstroIntegration {
             for (const locale of locales) {
               if (locale === srcLocale) continue;
               try {
-                const catalog = await loadCatalog('src/locales', locale);
+                const catalog = catalogs[locale];
                 const untranslated = Object.keys(catalog).filter((k) => catalog[k] === '');
                 if (untranslated.length === 0) continue;
 
@@ -288,8 +297,7 @@ export function i18nIntegration(): AstroIntegration {
             // If gaps remain (e.g. provider error), they stay as "" and retry on the next build.
             for (const locale of locales) {
               if (locale === srcLocale) continue;
-              const cat = await loadCatalog('src/locales', locale);
-              if (Object.keys(cat).some((k) => cat[k] === '')) {
+              if (catalogHasGaps(catalogs[locale])) {
                 console.log('[i18n] Some strings still untranslated — will retry on next build');
                 break;
               }
@@ -297,10 +305,7 @@ export function i18nIntegration(): AstroIntegration {
           }
         }
 
-        // ── Load catalogs for post-processing ────────────────────────
-
-        catalogs = await loadAllCatalogs('src/locales', locales);
-        console.log(`[i18n] Loaded catalogs for: ${Object.keys(catalogs).join(', ')}`);
+        // (catalogs loaded once above — reused in-memory for post-processing)
       },
 
       'astro:build:done': async ({ dir }) => {
