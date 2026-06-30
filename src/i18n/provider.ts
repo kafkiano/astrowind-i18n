@@ -15,13 +15,9 @@ import type { SourceLanguageCode, TargetLanguageCode } from 'deepl-node';
 export interface TranslationProvider {
   readonly name: string;
   readonly maxBatchSize: number;
-  /** Translate multiple short strings (UI labels, one per line). HTML tag handling enabled. */
+  /** Translate multiple short strings (UI labels, frontmatter leaves). HTML tag handling enabled. */
   translateBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]>;
-  /** Translate a single multi-line text (markdown body). HTML tag handling enabled. */
-  translateText(text: string, targetLang: string, sourceLang?: string): Promise<string>;
-  /** Translate plain text without HTML tag handling. No entity encoding. For markdown pipeline. */
-  translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string>;
-  /** Translate multiple plain text strings without HTML tag handling. For markdown frontmatter. */
+  /** Translate multiple plain-text strings (markdown bodies). No HTML tag handling. */
   translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]>;
 }
 
@@ -60,26 +56,6 @@ class DeepLProvider implements TranslationProvider {
       }
     }
     return results;
-  }
-
-  async translateText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
-    const [result] = await this.translateBatch([text], targetLang, sourceLang);
-    return result || '';
-  }
-
-  async translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
-    try {
-      const response = await this.client.translateText(
-        text,
-        sourceLang ? (sourceLang.toUpperCase() as SourceLanguageCode) : null,
-        targetLang.toUpperCase() as TargetLanguageCode,
-        { formality: 'default', preserveFormatting: true }
-      );
-      return typeof response === 'object' && 'text' in response ? response.text : '';
-    } catch (err) {
-      console.warn(`[provider:deepl] Plain text translation failed:`, (err as Error).message);
-      return '';
-    }
   }
 
   async translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]> {
@@ -155,54 +131,6 @@ class GoogleProvider implements TranslationProvider {
       }
     }
     return results;
-  }
-
-  async translateText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
-    try {
-      const params = new URLSearchParams();
-      params.set('q', text);
-      params.set('target', targetLang);
-      if (sourceLang) params.set('source', sourceLang);
-      params.set('format', 'html');
-
-      const res = await fetch(this.buildUrl(), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString(),
-      });
-
-      if (!res.ok) throw new Error(`Google Translate API ${res.status}: ${await res.text()}`);
-
-      const data = (await res.json()) as { data?: { translations?: Array<{ translatedText: string }> } };
-      return data.data?.translations?.[0]?.translatedText ?? '';
-    } catch (err) {
-      console.warn(`[provider:google] Translation failed:`, (err as Error).message);
-      return '';
-    }
-  }
-
-  async translatePlainText(text: string, targetLang: string, sourceLang?: string): Promise<string> {
-    try {
-      const params = new URLSearchParams();
-      params.set('q', text);
-      params.set('target', targetLang);
-      if (sourceLang) params.set('source', sourceLang);
-      params.set('format', 'text');
-
-      const res = await fetch(this.buildUrl(), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString(),
-      });
-
-      if (!res.ok) throw new Error(`Google Translate API ${res.status}: ${await res.text()}`);
-
-      const data = (await res.json()) as { data?: { translations?: Array<{ translatedText: string }> } };
-      return data.data?.translations?.[0]?.translatedText ?? '';
-    } catch (err) {
-      console.warn(`[provider:google] Plain text translation failed:`, (err as Error).message);
-      return '';
-    }
   }
 
   async translatePlainTextBatch(texts: string[], targetLang: string, sourceLang?: string): Promise<string[]> {

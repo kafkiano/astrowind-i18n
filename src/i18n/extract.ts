@@ -1,15 +1,24 @@
 /**
  * Extract translatable strings from .astro files.
  *
- * Parses frontmatter with acorn and template with @astrojs/compiler,
- * applies heuristic to identify translatable strings.
+ * Template: @astrojs/compiler's typed AST (RootNode), walked with the `is.*`
+ * type guards. Frontmatter + expression props: acorn ESTree, walked with
+ * estree-walker. Both ASTs are typed — no `any`.
  */
 
 import { parse } from '@astrojs/compiler';
+import { is } from '@astrojs/compiler/utils';
+import { walk as walkEstree } from 'estree-walker';
+import type { Node as EstreeNode } from 'estree';
 import { Parser } from 'acorn';
 import { tsPlugin } from '@sveltejs/acorn-typescript';
 import type { StringContext } from './heuristic';
-import { classifyString } from './heuristic';
+import { classifyString, IGNORE_ELEMENTS } from './heuristic';
+
+/** @astrojs/compiler's typed AST node (derived from the `is.*` guard inputs). */
+type CompilerNode = Parameters<typeof is.text>[0];
+/** The root node returned by `parse()` (derived from its return type). */
+type CompilerRootNode = Awaited<ReturnType<typeof parse>>['ast'];
 
 // ---------------------------------------------------------------------------
 // Types
@@ -24,7 +33,7 @@ export interface ExtractedString {
 }
 
 // ---------------------------------------------------------------------------
-// Script parser (frontmatter)
+// Acorn setup (frontmatter + expression props)
 // ---------------------------------------------------------------------------
 
 const scriptParser = Parser.extend(tsPlugin());
@@ -38,84 +47,75 @@ const SCRIPT_OPTIONS = {
   allowImportExportEverywhere: true,
 };
 
-// ---------------------------------------------------------------------------
-// Frontmatter extraction
-// ---------------------------------------------------------------------------
+/** Classify a candidate string; if translatable, dedup-push it into results. */
+function pushIfTranslatable(
+  str: string,
+  ctx: StringContext,
+  file: string,
+  seen: Set<string>,
+  results: ExtractedString[]
+): void {
+  if (!str) return;
+  if (classifyString(str, ctx) !== 'message') return;
+  const key = `${str}::${file}`;
+  if (seen.has(key)) return;
+  seen.add(key);
+  results.push({
+    msgid: str,
+    file,
+    scope: ctx.scope as ExtractedString['scope'],
+    element: ctx.element,
+    attribute: ctx.attribute,
+  });
+}
 
+/**
+ * Walk an acorn/ESTree AST and extract translatable string literals
+ * (Literal string values + TemplateLiteral quasis). Used for both .astro
+ * frontmatter (scope: 'script') and expression-prop values (scope: 'expression').
+ */
+function walkEstreeLiterals(
+  ast: ReturnType<typeof scriptParser.parse>,
+  scope: 'script' | 'expression',
+  file: string,
+  seen: Set<string>,
+  results: ExtractedString[]
+): void {
+  // acorn produces an ESTree-shaped AST; its Program type isn't structurally
+  // identical to estree-walker's Node param, so bridge with a cast (acorn
+  // guarantees the ESTree shape).
+  walkEstree(ast as unknown as EstreeNode, {
+    enter(node: EstreeNode) {
+      if (node.type === 'Literal' && typeof node.value === 'string') {
+        // Literals are classified untrimmed (leading whitespace would fail the
+        // first-char heuristic, matching prior behavior).
+        pushIfTranslatable(node.value, { scope }, file, seen, results);
+      } else if (node.type === 'TemplateLiteral') {
+        for (const q of node.quasis) {
+          pushIfTranslatable((q.value.cooked ?? '').trim(), { scope }, file, seen, results);
+        }
+      }
+    },
+  });
+}
+
+/** Extract string literals from .astro frontmatter (scope: 'script'). */
 function extractScriptStrings(code: string, file: string): ExtractedString[] {
-  const results: ExtractedString[] = [];
-  const seen = new Set<string>();
-
   let ast: ReturnType<typeof scriptParser.parse>;
   try {
-    ast = scriptParser.parse(code, SCRIPT_OPTIONS) as ReturnType<typeof scriptParser.parse>;
+    ast = scriptParser.parse(code, SCRIPT_OPTIONS);
   } catch {
-    return results;
+    return [];
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function walk(node: any, declaring?: string) {
-    if (!node || typeof node !== 'object') return;
-
-    // String literals
-    if (node.type === 'Literal' && typeof node.value === 'string') {
-      const str: string = node.value;
-      if (str.length > 0) {
-        const ctx: StringContext = { scope: 'script', declaring };
-        if (classifyString(str, ctx) === 'message') {
-          const key = `${str}::${file}`;
-          if (!seen.has(key)) {
-            seen.add(key);
-            results.push({ msgid: str, file, scope: 'script' });
-          }
-        }
-      }
-    }
-
-    // Template literals — static parts
-    if (node.type === 'TemplateLiteral' && Array.isArray(node.quasis)) {
-      for (const q of node.quasis) {
-        const str: string = q.value?.cooked?.trim() ?? '';
-        if (str.length > 0) {
-          const ctx: StringContext = { scope: 'script', declaring };
-          if (classifyString(str, ctx) === 'message') {
-            const key = `${str}::${file}`;
-            if (!seen.has(key)) {
-              seen.add(key);
-              results.push({ msgid: str, file, scope: 'script' });
-            }
-          }
-        }
-      }
-    }
-
-    // Track declaring context
-    let childDeclaring = declaring;
-    if (node.type === 'VariableDeclaration') childDeclaring = 'variable';
-    else if (node.type === 'FunctionDeclaration' || node.type === 'ArrowFunctionExpression')
-      childDeclaring = 'function';
-
-    // Recurse
-    for (const key of Object.keys(node)) {
-      if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key)) continue;
-      const val = node[key];
-      if (Array.isArray(val)) {
-        for (const item of val) walk(item, childDeclaring);
-      } else if (typeof val === 'object' && val !== null) {
-        walk(val, childDeclaring);
-      }
-    }
-  }
-
-  walk(ast, undefined);
+  const results: ExtractedString[] = [];
+  const seen = new Set<string>();
+  walkEstreeLiterals(ast, 'script', file, seen, results);
   return results;
 }
 
 // ---------------------------------------------------------------------------
-// Template extraction
+// Template extraction (@astrojs/compiler typed AST)
 // ---------------------------------------------------------------------------
-
-const TAG_NODES = new Set(['element', 'component', 'custom-element']);
 
 const INLINE_PHRASING_ELEMENTS = new Set([
   'a',
@@ -149,28 +149,6 @@ const INLINE_PHRASING_ELEMENTS = new Set([
   'wbr',
 ]);
 
-/** Elements whose text content is never translatable (mirrors heuristic.ts). */
-const IGNORE_ELEMENTS = new Set(['script', 'style', 'path', 'code', 'pre']);
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function isInlineOnly(node: any): boolean {
-  if (!node || typeof node !== 'object') return true;
-  const children = node.children as Array<Record<string, unknown>> | undefined;
-  if (!children || children.length === 0) return true;
-
-  for (const child of children) {
-    const childType = child.type as string | undefined;
-    if (childType === 'text') continue;
-    if (childType !== 'element') return false;
-
-    const name = (child.name as string | undefined)?.toLowerCase();
-    if (!name || !INLINE_PHRASING_ELEMENTS.has(name)) return false;
-    if (IGNORE_ELEMENTS.has(name)) return false;
-    if (!isInlineOnly(child)) return false;
-  }
-  return true;
-}
-
 const VOID_ELEMENTS = new Set([
   'area',
   'base',
@@ -188,286 +166,172 @@ const VOID_ELEMENTS = new Set([
   'wbr',
 ]);
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function buildHtml(node: any): string {
-  if (!node || typeof node !== 'object') return '';
+/** Whether an element's children are all text or inline-phrasing elements. */
+function isInlineOnly(node: CompilerNode): boolean {
+  if (!is.element(node)) return true; // non-elements (text) are inline by default
+  if (node.children.length === 0) return true;
+  for (const child of node.children) {
+    if (is.text(child)) continue;
+    if (!is.element(child)) return false;
+    const name = child.name.toLowerCase();
+    if (!INLINE_PHRASING_ELEMENTS.has(name)) return false;
+    if (IGNORE_ELEMENTS.has(name)) return false;
+    if (!isInlineOnly(child)) return false;
+  }
+  return true;
+}
 
-  const type = node.type as string | undefined;
-  if (type === 'text') return (node.value as string) || '';
-  if (type !== 'element') return '';
-
-  const name = (node.name as string) || '';
-  const attrs = node.attributes as Array<Record<string, unknown>> | undefined;
+/** Serialize a template node to the HTML string form used as a catalog key. */
+function buildHtml(node: CompilerNode): string {
+  if (is.text(node)) return node.value || '';
+  if (!is.element(node)) return '';
+  const name = node.name;
   let attrStr = '';
-  if (attrs) {
-    for (const attr of attrs) {
-      const attrName = attr.name as string;
-      const kind = attr.kind as string | undefined;
-      const raw = attr.raw as string | undefined;
-      const value = attr.value as string | undefined;
-
-      if (kind === 'quoted') {
-        attrStr += raw ? ` ${attrName}=${raw}` : ` ${attrName}="${value ?? ''}"`;
-      } else if (kind === 'empty') {
-        attrStr += ` ${attrName}`;
-      } else if (kind === 'expression' && value !== undefined) {
-        attrStr += ` ${attrName}={${value}}`;
-      } else if (kind === 'spread') {
-        attrStr += ` {...${attrName}}`;
-      }
+  for (const attr of node.attributes) {
+    if (attr.kind === 'quoted') {
+      attrStr += attr.raw ? ` ${attr.name}=${attr.raw}` : ` ${attr.name}="${attr.value ?? ''}"`;
+    } else if (attr.kind === 'empty') {
+      attrStr += ` ${attr.name}`;
+    } else if (attr.kind === 'expression' && attr.value !== undefined) {
+      attrStr += ` ${attr.name}={${attr.value}}`;
+    } else if (attr.kind === 'spread') {
+      attrStr += ` {...${attr.name}}`;
     }
+    // 'shorthand' | 'template-literal': intentionally not serialized — preserves
+    // the existing catalog-key format (handling them would change inline-merge keys).
   }
-
-  if (VOID_ELEMENTS.has(name.toLowerCase())) {
-    return `<${name}${attrStr}>`;
-  }
-
-  const children = node.children as Array<Record<string, unknown>> | undefined;
-  const childHtml = children?.map(buildHtml).join('') ?? '';
+  if (VOID_ELEMENTS.has(name.toLowerCase())) return `<${name}${attrStr}>`;
+  const childHtml = node.children.map(buildHtml).join('');
   return `<${name}${attrStr}>${childHtml}</${name}>`;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getInnerHtml(node: any): string {
-  const children = node.children as Array<Record<string, unknown>> | undefined;
-  if (!children || children.length === 0) return '';
-  return children.map(buildHtml).join('');
+function getInnerHtml(node: CompilerNode): string {
+  return is.element(node) ? node.children.map(buildHtml).join('') : '';
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getTextContent(node: any): string {
-  if (!node || typeof node !== 'object') return '';
-  const type = node.type as string | undefined;
-
-  if (type === 'text') return (node.value as string) || '';
-
-  if (type === 'element') {
-    const children = node.children as Array<Record<string, unknown>> | undefined;
-    return children?.map(getTextContent).join('') ?? '';
-  }
-
+function getTextContent(node: CompilerNode): string {
+  if (is.text(node)) return node.value || '';
+  if (is.element(node)) return node.children.map(getTextContent).join('');
   return '';
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function extractTemplateStrings(ast: any, _content: string, file: string): ExtractedString[] {
+/**
+ * Walk the @astrojs/compiler template AST and extract translatable strings.
+ *
+ * Control-flow invariants (preserved from the prior implementation — these are
+ * exactly the behaviors `any` was hiding):
+ *  - text nodes → markup extraction (suppressed inside a merged inline element)
+ *  - expression nodes → children are NOT recursed (raw expression source is JS,
+ *    not UI text; recursing would extract variable names like `label`)
+ *  - frontmatter/doctype/comment → no-op (ValueNodes, no children)
+ *  - element/component/custom-element → handle attributes; inline-merge is
+ *    ELEMENT-ONLY (components/custom-elements keep individual text children)
+ */
+function extractTemplateStrings(ast: CompilerRootNode, file: string): ExtractedString[] {
   const results: ExtractedString[] = [];
   const seen = new Set<string>();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function walk(node: any, parentEl?: string, suppressMarkup = false) {
-    if (!node || typeof node !== 'object') return;
-
-    const type = node.type as string | undefined;
-
-    // Text nodes — only reached for block-level / mixed content
-    if (type === 'text') {
+  function walkNode(node: CompilerNode, parentEl: string | undefined, suppressMarkup: boolean): void {
+    // Text node → markup extraction (unless suppressed)
+    if (is.text(node)) {
       if (suppressMarkup) return;
-      const text = (node.value as string)?.replace(/\s+/g, ' ').trim();
-      if (text && text.length > 0) {
-        const ctx: StringContext = { scope: 'markup', element: parentEl };
-        if (classifyString(text, ctx) === 'message') {
-          const key = `${text}::${file}`;
-          if (!seen.has(key)) {
-            seen.add(key);
-            results.push({ msgid: text, file, scope: 'markup', element: parentEl });
-          }
-        }
-      }
+      const text = node.value.replace(/\s+/g, ' ').trim();
+      if (text) pushIfTranslatable(text, { scope: 'markup', element: parentEl }, file, seen, results);
       return;
     }
 
-    // Element / Component → track name, check attributes
-    let currentEl = parentEl;
-    if (type && TAG_NODES.has(type)) {
-      currentEl = (node.name as string) || parentEl;
+    // Expression node → do NOT recurse into children (raw expression source is code).
+    if (is.expression(node)) return;
 
-      const attrs = node.attributes as Array<Record<string, unknown>> | undefined;
-      if (attrs) {
-        for (const attr of attrs) {
-          if (attr.kind === 'quoted' && typeof attr.value === 'string') {
-            const val = (attr.value as string).replace(/\s+/g, ' ').trim();
-            if (val.trim()) {
-              const ctx: StringContext = {
-                scope: 'attribute',
-                element: currentEl,
-                attribute: attr.name as string,
-              };
-              if (classifyString(val, ctx) === 'message') {
-                const key = `${val}::${file}`;
-                if (!seen.has(key)) {
-                  seen.add(key);
-                  results.push({
-                    msgid: val,
-                    file,
-                    scope: 'attribute',
-                    element: ctx.element,
-                    attribute: ctx.attribute,
-                  });
-                }
-              }
-            }
+    // Value nodes with no children → no-op.
+    if (is.frontmatter(node) || is.doctype(node) || is.comment(node)) return;
+
+    // Element / component / custom-element → attributes + (element-only) inline-merge.
+    if (is.element(node) || is.component(node) || is.customElement(node)) {
+      const currentEl = node.name;
+
+      for (const attr of node.attributes) {
+        if (attr.kind === 'quoted' && typeof attr.value === 'string') {
+          const val = attr.value.replace(/\s+/g, ' ').trim();
+          if (val) {
+            pushIfTranslatable(
+              val,
+              { scope: 'attribute', element: currentEl, attribute: attr.name },
+              file,
+              seen,
+              results
+            );
           }
-
-          // Expression props: parse JS value with acorn, extract string literals
-          if (attr.kind === 'expression' && typeof attr.value === 'string') {
-            const exprCode = `const __x = ${attr.value}`;
-            try {
-              const jsAst = scriptParser.parse(exprCode, SCRIPT_OPTIONS) as ReturnType<typeof scriptParser.parse>;
-              const exprSeen = new Set<string>();
-
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              function walkJs(node: any): void {
-                if (!node || typeof node !== 'object') return;
-
-                // String literals
-                if (node.type === 'Literal' && typeof node.value === 'string' && node.value.length > 0) {
-                  const str = node.value;
-                  const ctx: StringContext = {
-                    scope: 'expression',
-                    element: currentEl,
-                    attribute: attr.name as string,
-                  };
-                  if (classifyString(str, ctx) === 'message') {
-                    const key = `${str}::${file}`;
-                    if (!seen.has(key) && !exprSeen.has(key)) {
-                      exprSeen.add(key);
-                      results.push({
-                        msgid: str,
-                        file,
-                        scope: 'expression',
-                        element: ctx.element,
-                        attribute: ctx.attribute,
-                      });
-                    }
-                  }
-                }
-
-                // Template literal static parts (quasis)
-                if (node.type === 'TemplateLiteral' && Array.isArray(node.quasis)) {
-                  for (const q of node.quasis) {
-                    const str: string = q.value?.cooked?.trim() ?? '';
-                    if (str.length > 0) {
-                      const ctx: StringContext = {
-                        scope: 'expression',
-                        element: currentEl,
-                        attribute: attr.name as string,
-                      };
-                      if (classifyString(str, ctx) === 'message') {
-                        const key = `${str}::${file}`;
-                        if (!seen.has(key) && !exprSeen.has(key)) {
-                          exprSeen.add(key);
-                          results.push({
-                            msgid: str,
-                            file,
-                            scope: 'expression',
-                            element: ctx.element,
-                            attribute: ctx.attribute,
-                          });
-                        }
-                      }
-                    }
-                  }
-                }
-
-                // Recurse
-                for (const key of Object.keys(node)) {
-                  if (['type', 'start', 'end', 'loc', 'range', 'leadingComments', 'trailingComments'].includes(key))
-                    continue;
-                  const val = node[key];
-                  if (Array.isArray(val)) {
-                    for (const item of val) walkJs(item);
-                  } else if (typeof val === 'object' && val !== null) {
-                    walkJs(val);
-                  }
-                }
-              }
-
-              walkJs(jsAst);
-            } catch {
-              // Malformed expression — skip silently
-            }
+        } else if (attr.kind === 'expression' && typeof attr.value === 'string') {
+          // Expression prop: wrap in a declaration, acorn-parse, walk for literals.
+          // Per-attribute try/catch preserves robustness against malformed expressions.
+          try {
+            const jsAst = scriptParser.parse(`const __x = ${attr.value}`, SCRIPT_OPTIONS);
+            walkEstreeLiterals(jsAst, 'expression', file, seen, results);
+          } catch {
+            // Malformed expression — skip silently
           }
         }
       }
 
-      // Merge inline-only phrasing content into a single translatable key
-      if (!suppressMarkup && type === 'element' && isInlineOnly(node)) {
-        const children = node.children as Array<Record<string, unknown>> | undefined;
-        if (children && children.length > 0) {
+      // Inline-merge: ELEMENT ONLY (components/custom-elements keep individual text children).
+      if (!suppressMarkup && is.element(node) && isInlineOnly(node)) {
+        if (node.children.length > 0) {
           const innerHtml = getInnerHtml(node);
           const textContent = getTextContent(node).replace(/\s+/g, ' ').trim();
-          if (textContent.length > 0) {
-            const ctx: StringContext = { scope: 'markup', element: currentEl };
-            if (classifyString(textContent, ctx) === 'message') {
-              const key = `${innerHtml}::${file}`;
-              if (!seen.has(key)) {
-                seen.add(key);
-                results.push({ msgid: innerHtml, file, scope: 'markup', element: currentEl });
-              }
+          // Classify the TEXT content, but key by the innerHTML — postprocess matches
+          // the HTML structure, and classifyString would reject the inline tags.
+          if (textContent && classifyString(textContent, { scope: 'markup', element: currentEl }) === 'message') {
+            const key = `${innerHtml}::${file}`;
+            if (!seen.has(key)) {
+              seen.add(key);
+              results.push({ msgid: innerHtml, file, scope: 'markup', element: currentEl });
             }
           }
         }
-
-        // Still recurse to extract attributes/expression props from children,
-        // but suppress further markup extraction since it is already merged.
-        if (children) {
-          for (const child of children) {
-            walk(child, currentEl, true);
-          }
-        }
+        // Recurse children with suppressMarkup=true to still extract their attrs/expression-props.
+        for (const child of node.children) walkNode(child, currentEl, true);
         return;
       }
+
+      for (const child of node.children) walkNode(child, currentEl, suppressMarkup);
+      return;
     }
 
-    // Recurse into children — skip expression nodes (JS code, not UI text)
-    const children = node.children as Array<Record<string, unknown>> | undefined;
-    if (children && type !== 'expression') {
-      for (const child of children) {
-        walk(child, currentEl, suppressMarkup);
-      }
+    // Root / fragment / other parent nodes → recurse children.
+    if (is.parent(node)) {
+      for (const child of node.children) walkNode(child, parentEl, suppressMarkup);
     }
   }
 
-  walk(ast, undefined);
+  walkNode(ast, undefined, false);
   return results;
 }
 
-/** Config keys whose string values are identifiers, not user-facing text. */
+// ---------------------------------------------------------------------------
+// Config extraction (src/config.yaml)
+// ---------------------------------------------------------------------------
+
+/**
+ * Config keys whose values are content-blind identifiers the heuristic cannot
+ * reliably classify (API keys / UUIDs / verification IDs, arbitrary alphanumeric
+ * IDs, multi-token CSS class lists). Small residue — most identifier patterns
+ * (URLs, paths, icons, kebab enums, locale codes) are caught generically by
+ * classifyString's config scope.
+ */
 const NON_TRANSLATABLE_CONFIG_KEYS = new Set([
-  'provider',
   'apiKey',
   'geminiApiKey',
   'deeplApiKey',
   'googleSiteVerificationId',
   'id',
-  'base',
-  'site',
-  'target',
-  'href',
-  'icon',
-  'variant',
-  'type',
   'class',
   'classes',
   'style',
-  'pathname',
-  'slug',
-  'categorySlug',
-  'tagSlug',
-  'robots',
-  'index',
-  'follow',
-  'locales',
-  'defaultLocale',
-  'language',
-  'locale',
-  'textDirection',
 ]);
 
 /**
  * Extract translatable strings from the parsed `src/config.yaml` object.
- *
  * Recursively walks nested mappings and sequences, skips known identifier keys,
  * and applies the same heuristic used for UI strings.
  */
@@ -478,10 +342,8 @@ export function extractFromConfig(config: Record<string, unknown>): string[] {
   function walk(value: unknown, key: string | undefined) {
     if (typeof value === 'string') {
       if (!key || NON_TRANSLATABLE_CONFIG_KEYS.has(key)) return;
-
       const normalized = value.replace(/\s+/g, ' ').trim();
       if (!normalized) return;
-
       const ctx: StringContext = { scope: 'config' };
       if (classifyString(normalized, ctx) === 'message' && !seen.has(normalized)) {
         seen.add(normalized);
@@ -489,18 +351,12 @@ export function extractFromConfig(config: Record<string, unknown>): string[] {
       }
       return;
     }
-
     if (Array.isArray(value)) {
-      for (const item of value) {
-        walk(item, key);
-      }
+      for (const item of value) walk(item, key);
       return;
     }
-
     if (value && typeof value === 'object') {
-      for (const [childKey, childValue] of Object.entries(value)) {
-        walk(childValue, childKey);
-      }
+      for (const [childKey, childValue] of Object.entries(value)) walk(childValue, childKey);
     }
   }
 
@@ -518,7 +374,7 @@ export async function extractFromAstro(content: string, file: string): Promise<E
   if (fmMatch) frontmatterCode = fmMatch[1];
 
   const { ast } = await parse(content.trim());
-  const templateStrings = extractTemplateStrings(ast, content, file);
+  const templateStrings = extractTemplateStrings(ast, file);
   const scriptStrings = extractScriptStrings(frontmatterCode, file);
 
   return [...scriptStrings, ...templateStrings];

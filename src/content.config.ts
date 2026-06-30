@@ -53,6 +53,7 @@ const postCollection = defineCollection({
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),
     draft: z.boolean().optional(),
+    translate: z.boolean().optional(),
 
     title: z.string(),
     excerpt: z.string().optional(),
@@ -87,6 +88,7 @@ const snippetsCollection = defineCollection({
   loader: virtualLoader({ base: 'src/data/snippets' }),
   schema: z.object({
     title: z.string().optional(),
+    translate: z.boolean().optional(),
   }),
 });
 
