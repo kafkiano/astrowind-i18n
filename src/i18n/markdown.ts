@@ -9,39 +9,29 @@
  *
  * No collection is physically translated anymore — all content is served
  * by the virtual loader from source files + the shared source-text-as-key
- * catalog. This module holds only the classification + parsing helpers.
+ * catalog. This module holds only the parsing helpers; translatable-string
+ * classification delegates to the shared heuristic (src/i18n/heuristic.ts).
  */
 
-/** Keys whose values are identifiers/enums and should never be translated. */
+import { classifyString } from './heuristic';
+
+/**
+ * Keys whose values are content-blind identifiers the heuristic cannot reliably
+ * classify from content alone (person/team names, job titles, arbitrary
+ * alphanumeric IDs, multi-token CSS class lists). Small residue — most
+ * identifier patterns (URLs, paths, icons, kebab enums, locale codes) are
+ * caught generically by classifyString's config/frontmatter scope.
+ */
 export const NON_TRANSLATABLE_KEYS = new Set([
-  'showIn',
-  'target',
-  'variant',
-  'icon',
   'name',
   'job',
-  'type',
-  'href',
-  'src',
-  'slug',
-  'pathname',
-  'page',
-  'base',
-  'rel',
-  'lang',
-  'dir',
   'id',
   'key',
-  'url',
-  'link',
-  'to',
-  'from',
   'ref',
   'class',
   'classes',
   'style',
-  'tags',
-  'category',
+  'translate',
 ]);
 
 /** Recursively collect all translatable string leaf values from a parsed YAML object. */
@@ -52,7 +42,7 @@ export function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ p
     // Extract the leaf key name from the path (last segment after . or [)
     // eslint-disable-next-line no-useless-escape
     const leafKey = prefix.replace(/^.*[.\[]/, '').replace(/\]$/, '');
-    if (!NON_TRANSLATABLE_KEYS.has(leafKey) && isTranslatable(obj)) {
+    if (!NON_TRANSLATABLE_KEYS.has(leafKey) && classifyString(obj, { scope: 'config' }) === 'message') {
       result.push({ path: prefix, value: obj });
     }
   } else if (Array.isArray(obj)) {
@@ -68,33 +58,6 @@ export function collectTranslatableStrings(obj: unknown, prefix = ''): Array<{ p
   }
 
   return result;
-}
-
-const ASSET_EXTENSION_RE = /\.(jpe?g|png|webp|svg|pdf|mdx?)$/i;
-
-/** Check if a string value should be translated (exclude URLs, icons, emails, phones, numbers). */
-export function isTranslatable(s: string): boolean {
-  const trimmed = s.trim();
-  if (!trimmed) return false;
-  // Relative paths and URL-like identifiers
-  if (/^[~./]/.test(trimmed)) return false;
-  // URLs with common schemes, anchors, and protocol URLs
-  if (/^(https?:\/\/|mailto:|tel:|sms:|#)/i.test(trimmed)) return false;
-  // Common asset extensions
-  if (ASSET_EXTENSION_RE.test(trimmed)) return false;
-  // CSS class-like strings (single Tailwind class or modifier variant)
-  if (/^(text-|bg-|font-|hover:|dark:|sm:|md:|lg:|xl:)[a-z0-9-:/]+$/i.test(trimmed)) return false;
-  // Icon references (e.g. tabler:brand-facebook)
-  if (/^[a-z][a-z0-9]*(:[a-z][a-z0-9-]*)+$/i.test(trimmed)) return false;
-  // Email addresses
-  if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(trimmed)) return false;
-  // Phone/fax numbers (mostly digits, +, spaces, dashes, parens)
-  if (/^[+\d\s\-()]{6,}$/.test(trimmed)) return false;
-  // Pure numbers
-  if (/^\d+$/.test(trimmed)) return false;
-  // HTML fragments (contain tags)
-  if (/<[a-z][\s\S]*>/i.test(trimmed)) return false;
-  return true;
 }
 
 /** Indexable type for traversing nested YAML/object structures. */

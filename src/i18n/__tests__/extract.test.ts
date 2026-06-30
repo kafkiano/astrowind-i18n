@@ -68,6 +68,7 @@ const apiKey = 'ABCD-1234';
     expect(ids).toContain('Click me');
     expect(ids).not.toContain('/about');
     expect(ids).not.toContain('ABCD-1234');
+    expect(ids).not.toContain('label');
   });
 });
 

@@ -15,24 +15,16 @@ export interface StringContext {
   scope: 'markup' | 'attribute' | 'script' | 'expression' | 'config';
   element?: string;
   attribute?: string;
-  call?: string;
-  declaring?: string;
 }
 
 /** Elements whose text content is never translatable */
-const IGNORE_ELEMENTS = new Set(['script', 'style', 'path', 'code', 'pre']);
+export const IGNORE_ELEMENTS = new Set(['script', 'style', 'path', 'code', 'pre']);
 
 /** Attribute values that are never translatable: [element, attribute] */
 const IGNORE_ATTRIBUTES: [string, string][] = [['form', 'method']];
 
-/** Function calls whose arguments are never translatable */
-const IGNORE_CALLS = new Set(['fetch']);
-
 /** Attributes whose values are URLs (detected, not translated) */
 const URL_ATTRIBUTES: [string, string][] = [['a', 'href']];
-
-/** Function calls whose string arguments are URLs */
-const URL_CALLS: string[] = [];
 
 /**
  * Classify a string as translatable, URL, or not translatable.
@@ -58,7 +50,6 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
   const looksLikeUrl = str.startsWith('/') && !str.includes(' ');
 
   if (looksLikeUrl && (ctx.scope === 'script' || ctx.scope === 'attribute' || ctx.scope === 'expression')) {
-    if (ctx.call && URL_CALLS.includes(ctx.call)) return 'url';
     if (ctx.attribute) {
       for (const [el, attr] of URL_ATTRIBUTES) {
         if (ctx.element === el && ctx.attribute === attr) return 'url';
@@ -66,7 +57,9 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
     }
   }
 
-  // Config scope: user-facing YAML values — permissive but filtered
+  // Config/frontmatter scope: user-facing YAML values — permissive but filtered.
+  // Serves both src/config.yaml and markdown frontmatter leaves (the unified
+  // classifier — src/i18n/markdown.ts delegates here via scope: 'config').
   if (ctx.scope === 'config') {
     // URLs / paths / protocols
     if (/^(https?:|mailto:|tel:|sms:|\/\/|\/|~\/|#)/i.test(str)) return false;
@@ -74,10 +67,12 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
     if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str)) return false;
     // Social handles / usernames
     if (str.startsWith('@')) return false;
-    // Icon identifiers
-    if (/^(tabler:|flat-color-icons:)/.test(str)) return false;
-    // Single-token lowercase identifier or Tailwind class-like token
-    if (!str.includes(' ') && /^[a-z][a-z0-9_:-]*$/.test(str)) return false;
+    // Icon identifiers (e.g. tabler:brand-github, lucide:menu, remix:home)
+    if (/^[a-z][a-z0-9]*(:[a-z][a-z0-9-]*)+$/.test(str)) return false;
+    // Asset filenames / file extensions (e.g. photo.jpg, logo.svg, data.json) — not prose
+    if (/\.(jpe?g|png|webp|svg|gif|avif|ico|pdf|mdx?|json|ya?ml|css)$/i.test(str)) return false;
+    // Single-token lowercase identifier / enum / slug / kebab-case (e.g. primary, _blank, landing-pages)
+    if (!str.includes(' ') && /^[_a-z][_a-z0-9_:-]*$/.test(str)) return false;
     return 'message';
   }
 
@@ -101,14 +96,6 @@ export function classifyString(str: string, ctx: StringContext): HeuristicResult
 
   // Expression: acceptable after filtering (same as attribute — UI text in expression props)
   if (ctx.scope === 'expression') return 'message';
-
-  // Script scope: expression without function context → skip
-  if (ctx.declaring === 'expression') return false;
-
-  // Function calls: skip console.* and ignored calls
-  if (ctx.call) {
-    if (ctx.call.startsWith('console.') || IGNORE_CALLS.has(ctx.call)) return false;
-  }
 
   return 'message';
 }

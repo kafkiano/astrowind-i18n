@@ -1,6 +1,7 @@
 ---
 title: 'Terms and Conditions'
 showIn: 'none'
+translate: false
 ---
 
 _Last updated_: January 06, 2023
