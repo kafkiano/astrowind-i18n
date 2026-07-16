@@ -66,7 +66,7 @@ switch (variant) {
     presetItemClasses = {
       container: 'gap-4 md:gap-6',
       panel:
-        'rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-slate-900 p-6',
+        'rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29] bg-white dark:bg-neutral-900 p-6',
       icon: 'w-12 h-12 mb-6 text-primary',
     };
     break;
@@ -101,12 +101,12 @@ const mergedItemClasses = { ...presetItemClasses, ...((classes?.items as Record<
   {
     variant === 'cards-image' && image && (
       <div aria-hidden="true" class="aspect-w-16 aspect-h-7">
-        <div class="w-full h-80 object-cover rounded-xl mx-auto bg-gray-500 shadow-lg">
+        <div class="w-full h-80 object-cover rounded-xl mx-auto bg-neutral-500 shadow-lg">
           {typeof image === 'string' ? (
             <Fragment set:html={image} />
           ) : (
             <Image
-              class="w-full h-80 object-cover rounded-xl mx-auto bg-gray-500 shadow-lg"
+              class="w-full h-80 object-cover rounded-xl mx-auto bg-neutral-500 shadow-lg"
               width="auto"
               height={320}
               widths={[400, 768]}

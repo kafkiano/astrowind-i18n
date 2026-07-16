@@ -26,19 +26,80 @@ import '@fontsource-variable/cairo';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(83 166 244);
-    --aw-color-secondary: rgb(255 18 127);
-    --aw-color-accent: rgb(0 239 209);
+    /*
+     * Brand color scales (bestvisual — black & gold). 500 is the brand anchor; the
+     * no-suffix token follows 500 (so `bg-primary` and `bg-primary-500` are identical).
+     * Scales generated with `bun run palette`; see dev/docs/theming-tokens.md.
+     * ui.theme is 'dark:only' on this client, so only the `.dark` palette renders —
+     * the `:root` ramp is kept for the contract and in case theme is loosened later.
+     */
+
+    /* primary — gold, 500 = #cfc09f */
+    --aw-color-primary-50: #f7f5ef;
+    --aw-color-primary-100: #efeadf;
+    --aw-color-primary-200: #e7e0cf;
+    --aw-color-primary-300: #dfd5bf;
+    --aw-color-primary-400: #d7caaf;
+    --aw-color-primary-500: #cfc09f;
+    --aw-color-primary-600: #a5977a;
+    --aw-color-primary-700: #7c7157;
+    --aw-color-primary-800: #564c36;
+    --aw-color-primary-900: #322a18;
+    --aw-color-primary-950: #130c01;
+    --aw-color-primary: var(--aw-color-primary-500);
+
+    /* secondary — charcoal (achromatic gray ramp), 500 = #0a0a0a */
+    --aw-color-secondary-50: #f5f5f5;
+    --aw-color-secondary-100: #bfbfbf;
+    --aw-color-secondary-200: #8c8c8c;
+    --aw-color-secondary-300: #5c5c5c;
+    --aw-color-secondary-400: #303030;
+    --aw-color-secondary-500: #0a0a0a;
+    --aw-color-secondary-600: #0b0b0b;
+    --aw-color-secondary-700: #0b0b0b;
+    --aw-color-secondary-800: #0c0c0c;
+    --aw-color-secondary-900: #0d0d0d;
+    --aw-color-secondary-950: #0d0d0d;
+    --aw-color-secondary: var(--aw-color-secondary-500);
+
+    /* accent — bronze, 500 = #b8975a */
+    --aw-color-accent-50: #f8f5ef;
+    --aw-color-accent-100: #ebe2d1;
+    --aw-color-accent-200: #decfb3;
+    --aw-color-accent-300: #d2bc96;
+    --aw-color-accent-400: #c5a978;
+    --aw-color-accent-500: #b8975a;
+    --aw-color-accent-600: #957741;
+    --aw-color-accent-700: #735928;
+    --aw-color-accent-800: #523d0f;
+    --aw-color-accent-900: #342200;
+    --aw-color-accent-950: #180a00;
+    --aw-color-accent: var(--aw-color-accent-500);
+
+    /* neutral — Tailwind `stone` (warm) to pair with gold */
+    --aw-color-neutral-50: #fafaf9;
+    --aw-color-neutral-100: #f5f5f4;
+    --aw-color-neutral-200: #e7e5e4;
+    --aw-color-neutral-300: #d6d3d1;
+    --aw-color-neutral-400: #a8a29e;
+    --aw-color-neutral-500: #78716c;
+    --aw-color-neutral-600: #57534e;
+    --aw-color-neutral-700: #44403c;
+    --aw-color-neutral-800: #292524;
+    --aw-color-neutral-900: #1c1917;
+    --aw-color-neutral-950: #0c0a09;
+
+    --aw-color-link: var(--aw-color-primary-700);
 
     --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
     --aw-color-text-muted: rgb(16 16 16 / 66%);
     --aw-color-bg-page: rgb(255 255 255);
 
-    --aw-color-bg-page-dark: rgb(15 17 23);
+    --aw-color-bg-page-dark: rgb(3 6 32);
 
     ::selection {
-      background-color: rgb(83 166 244 / 20%);
+      background-color: rgb(207 192 159 / 25%);
     }
   }
 
@@ -54,18 +115,30 @@ import '@fontsource-variable/cairo';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(109 185 255);
-    --aw-color-secondary: rgb(255 80 160);
-    --aw-color-accent: rgb(0 239 209);
+    /* Lighter gold for visibility on the dark navy bg (this is what renders, dark:only). */
+    --aw-color-primary-50: #f9f5e8;
+    --aw-color-primary-100: #f6f0dc;
+    --aw-color-primary-200: #f2eacf;
+    --aw-color-primary-300: #efe4c2;
+    --aw-color-primary-400: #ebdfb5;
+    --aw-color-primary-500: #e8d9a8;
+    --aw-color-primary-600: #b8ab7f;
+    --aw-color-primary-700: #8a7e59;
+    --aw-color-primary-800: #5f5534;
+    --aw-color-primary-900: #372e12;
+    --aw-color-primary-950: #130c00;
+    --aw-color-primary: var(--aw-color-primary-500);
 
-    --aw-color-text-heading: rgb(247 248 248);
+    --aw-color-link: var(--aw-color-primary-300);
+
+    --aw-color-text-heading: rgb(247, 248, 248);
     --aw-color-text-default: rgb(229 236 246);
     --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: rgb(15 17 23);
+    --aw-color-bg-page: rgb(3 6 32);
 
     ::selection {
-      background-color: rgb(109 185 255 / 25%);
-      color: rgb(255 255 255);
+      background-color: rgb(232 217 168 / 30%);
+      color: rgb(19 12 0);
     }
   }
 

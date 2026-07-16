@@ -93,7 +93,7 @@ export function initPriorityNav(): void {
               const subA = document.createElement('a');
               subA.href = link.getAttribute('href') || '#';
               subA.className =
-                'md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 pl-8 block whitespace-no-wrap';
+                'md:hover:bg-neutral-100 hover:text-link dark:hover:text-white dark:hover:bg-neutral-700 py-2 px-5 pl-8 block whitespace-no-wrap';
               subA.textContent = link.textContent || '';
               subLi.appendChild(subA);
               moreMenu.appendChild(subLi);

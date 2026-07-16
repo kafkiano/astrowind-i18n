@@ -33,10 +33,7 @@ const metadata = {
   <!-- Hero -->
   {
     heroSlider?.slides?.length ? (
-      <HeroSlider
-        autoplay={{ delay: 5000, disableOnInteraction: true }}
-        slides={heroSlider.slides}
-      />
+      <HeroSlider autoplay={{ delay: 5000, disableOnInteraction: true }} slides={heroSlider.slides} />
     ) : (
       <Hero
         variant="centered"

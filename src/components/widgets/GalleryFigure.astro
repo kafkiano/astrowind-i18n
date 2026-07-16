@@ -19,7 +19,7 @@ const { src, alt, caption, width, height, colSpan } = image;
   data-col-span={colSpan && colSpan > 1 ? colSpan : undefined}
   {...hidden ? { 'data-gallery-hidden-item': '' } : {}}
 >
-  <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-slate-700">
+  <div class="overflow-hidden rounded-xl shadow-lg dark:shadow-none dark:border dark:border-neutral-700">
     <Image
       class={`w-full hover:scale-105 transition-transform duration-300 ${isMasonry ? 'h-auto' : 'h-64 object-cover'}`}
       width={width || 400}

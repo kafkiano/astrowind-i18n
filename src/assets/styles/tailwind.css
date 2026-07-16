@@ -11,6 +11,55 @@
   --color-accent: var(--aw-color-accent);
   --color-default: var(--aw-color-text-default);
   --color-muted: var(--aw-color-text-muted);
+  --color-link: var(--aw-color-link);
+
+  --color-primary-50: var(--aw-color-primary-50);
+  --color-primary-100: var(--aw-color-primary-100);
+  --color-primary-200: var(--aw-color-primary-200);
+  --color-primary-300: var(--aw-color-primary-300);
+  --color-primary-400: var(--aw-color-primary-400);
+  --color-primary-500: var(--aw-color-primary-500);
+  --color-primary-600: var(--aw-color-primary-600);
+  --color-primary-700: var(--aw-color-primary-700);
+  --color-primary-800: var(--aw-color-primary-800);
+  --color-primary-900: var(--aw-color-primary-900);
+  --color-primary-950: var(--aw-color-primary-950);
+
+  --color-accent-50: var(--aw-color-accent-50);
+  --color-accent-100: var(--aw-color-accent-100);
+  --color-accent-200: var(--aw-color-accent-200);
+  --color-accent-300: var(--aw-color-accent-300);
+  --color-accent-400: var(--aw-color-accent-400);
+  --color-accent-500: var(--aw-color-accent-500);
+  --color-accent-600: var(--aw-color-accent-600);
+  --color-accent-700: var(--aw-color-accent-700);
+  --color-accent-800: var(--aw-color-accent-800);
+  --color-accent-900: var(--aw-color-accent-900);
+  --color-accent-950: var(--aw-color-accent-950);
+
+  --color-secondary-50: var(--aw-color-secondary-50);
+  --color-secondary-100: var(--aw-color-secondary-100);
+  --color-secondary-200: var(--aw-color-secondary-200);
+  --color-secondary-300: var(--aw-color-secondary-300);
+  --color-secondary-400: var(--aw-color-secondary-400);
+  --color-secondary-500: var(--aw-color-secondary-500);
+  --color-secondary-600: var(--aw-color-secondary-600);
+  --color-secondary-700: var(--aw-color-secondary-700);
+  --color-secondary-800: var(--aw-color-secondary-800);
+  --color-secondary-900: var(--aw-color-secondary-900);
+  --color-secondary-950: var(--aw-color-secondary-950);
+
+  --color-neutral-50: var(--aw-color-neutral-50);
+  --color-neutral-100: var(--aw-color-neutral-100);
+  --color-neutral-200: var(--aw-color-neutral-200);
+  --color-neutral-300: var(--aw-color-neutral-300);
+  --color-neutral-400: var(--aw-color-neutral-400);
+  --color-neutral-500: var(--aw-color-neutral-500);
+  --color-neutral-600: var(--aw-color-neutral-600);
+  --color-neutral-700: var(--aw-color-neutral-700);
+  --color-neutral-800: var(--aw-color-neutral-800);
+  --color-neutral-900: var(--aw-color-neutral-900);
+  --color-neutral-950: var(--aw-color-neutral-950);
 
   --font-sans:
     var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -69,7 +118,7 @@
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+  @apply inline-flex items-center justify-center rounded-full border-neutral-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-primary focus:ring-offset-primary-200 focus:ring-2 focus:ring-offset-2 hover:bg-neutral-100 hover:border-neutral-600 dark:text-neutral-300 dark:border-neutral-500 dark:hover:bg-neutral-800 dark:hover:border-neutral-800 cursor-pointer;
 }
 
 @utility btn-primary {
@@ -81,7 +130,7 @@
 }
 
 @utility btn-tertiary {
-  @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+  @apply btn border-none shadow-none text-muted hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white;
 }
 
 #header.scroll > div:first-child {
@@ -90,7 +139,7 @@
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
+  @apply bg-page md:bg-[#030621e6] border-b border-neutral-500/20;
   box-shadow: none;
 }
 

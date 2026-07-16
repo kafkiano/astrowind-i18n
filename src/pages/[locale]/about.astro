@@ -37,30 +37,16 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero -->
-  <Hero
-    variant="text-only"
-    tagline={hero?.tagline}
-    title={hero?.title}
-    subtitle={hero?.subtitle}
-  />
+  <Hero variant="text-only" tagline={hero?.tagline} title={hero?.title} subtitle={hero?.subtitle} />
 
   <!-- Company description -->
-  <Content
-    title={description?.title}
-    items={description?.items}
-    image={description?.image}
-  >
+  <Content title={description?.title} items={description?.items} image={description?.image}>
     <div slot="content">
-      {description?.paragraphs?.map((paragraph: string, index: number) => (
-        <p
-          class:list={[
-            "text-lg text-muted dark:text-slate-400",
-            index > 0 && "mt-4",
-          ]}
-        >
-          {paragraph}
-        </p>
-      ))}
+      {
+        description?.paragraphs?.map((paragraph: string, index: number) => (
+          <p class:list={['text-lg text-muted dark:text-neutral-400', index > 0 && 'mt-4']}>{paragraph}</p>
+        ))
+      }
     </div>
   </Content>
 
@@ -74,47 +60,38 @@ const metadata = {
   />
 
   <!-- Who we serve -->
-  <Content
-    isReversed
-    title={whoWeServe?.title}
-    items={whoWeServe?.items}
-    image={whoWeServe?.image}
-  />
+  <Content isReversed title={whoWeServe?.title} items={whoWeServe?.items} image={whoWeServe?.image} />
 
   <!-- Stats -->
-  <Stats
-    tagline={stats?.tagline}
-    title={stats?.title}
-    stats={stats?.items}
-  />
+  <Stats tagline={stats?.tagline} title={stats?.title} stats={stats?.items} />
 
   <!-- Company details -->
-  {companyDetails && (
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow">
-        <h2 class="text-xl font-bold text-heading dark:text-white mb-4">{companyDetails.title}</h2>
-        <dl class="space-y-3 text-sm">
-          {companyDetails.fields?.map((field: any) => (
-            <div class="flex flex-col sm:flex-row sm:gap-2">
-              <dt class="font-semibold text-heading dark:text-white sm:w-40 shrink-0">{field.label}:</dt>
-              <dd class="text-muted dark:text-slate-400">
-                {field.href ? (
-                  <a href={field.href} class="text-primary hover:underline">{field.value}</a>
-                ) : (
-                  field.value
-                )}
-              </dd>
-            </div>
-          ))}
-        </dl>
+  {
+    companyDetails && (
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow">
+          <h2 class="text-xl font-bold text-heading dark:text-white mb-4">{companyDetails.title}</h2>
+          <dl class="space-y-3 text-sm">
+            {companyDetails.fields?.map((field: any) => (
+              <div class="flex flex-col sm:flex-row sm:gap-2">
+                <dt class="font-semibold text-heading dark:text-white sm:w-40 shrink-0">{field.label}:</dt>
+                <dd class="text-muted dark:text-neutral-400">
+                  {field.href ? (
+                    <a href={field.href} class="text-primary hover:underline">
+                      {field.value}
+                    </a>
+                  ) : (
+                    field.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
-    </div>
-  )}
+    )
+  }
 
   <!-- CTA -->
-  <CallToAction
-    title={cta?.title}
-    subtitle={cta?.subtitle}
-    actions={cta?.actions}
-  />
+  <CallToAction title={cta?.title} subtitle={cta?.subtitle} actions={cta?.actions} />
 </Layout>

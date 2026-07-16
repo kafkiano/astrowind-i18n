@@ -34,16 +34,8 @@ const metadata = {
   <Hero variant="text-only" tagline={hero?.tagline} title={hero?.title} />
 
   <!-- FAQ accordion -->
-  <FAQs
-    columns={1}
-    classes={{ container: 'max-w-4xl' }}
-    items={items}
-  />
+  <FAQs columns={1} classes={{ container: 'max-w-4xl' }} items={items} />
 
   <!-- CTA -->
-  <CallToAction
-    title={cta?.title}
-    subtitle={cta?.subtitle}
-    actions={cta?.actions}
-  />
+  <CallToAction title={cta?.title} subtitle={cta?.subtitle} actions={cta?.actions} />
 </Layout>
