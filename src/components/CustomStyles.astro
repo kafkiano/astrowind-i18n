@@ -26,9 +26,69 @@ import '@fontsource-variable/cairo';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    /*
+     * Brand color scales — 500 is the brand anchor; the no-suffix token follows 500
+     * (so `bg-primary` and `bg-primary-500` are identical — no footgun). Scales are
+     * mode-invariant on the default theme; `.dark` overrides only link + text/bg.
+     * See dev/docs/theming-tokens.md.
+     */
+
+    /* primary — blue, 500 = #0161ef */
+    --aw-color-primary-50: #eff6ff;
+    --aw-color-primary-100: #dbeafe;
+    --aw-color-primary-200: #bfdbfe;
+    --aw-color-primary-300: #93c5fd;
+    --aw-color-primary-400: #60a5fa;
+    --aw-color-primary-500: rgb(1 97 239);
+    --aw-color-primary-600: #1d4ed8;
+    --aw-color-primary-700: #1e40af;
+    --aw-color-primary-800: #1e3a8a;
+    --aw-color-primary-900: #172554;
+    --aw-color-primary-950: #0b1838;
+    --aw-color-primary: var(--aw-color-primary-500);
+
+    /* secondary — blue, 500 = #0154cf */
+    --aw-color-secondary-50: #eff6ff;
+    --aw-color-secondary-100: #dbeafe;
+    --aw-color-secondary-200: #bfdbfe;
+    --aw-color-secondary-300: #93c5fd;
+    --aw-color-secondary-400: #60a5fa;
+    --aw-color-secondary-500: rgb(1 84 207);
+    --aw-color-secondary-600: #1d4ed8;
+    --aw-color-secondary-700: #1e40af;
+    --aw-color-secondary-800: #1e3a8a;
+    --aw-color-secondary-900: #172554;
+    --aw-color-secondary-950: #0b1838;
+    --aw-color-secondary: var(--aw-color-secondary-500);
+
+    /* accent — violet, 500 = #6d28d9 (= Tailwind violet-700) */
+    --aw-color-accent-50: #f5f3ff;
+    --aw-color-accent-100: #ede9fe;
+    --aw-color-accent-200: #ddd6fe;
+    --aw-color-accent-300: #c4b5fd;
+    --aw-color-accent-400: #a78bfa;
+    --aw-color-accent-500: rgb(109 40 217);
+    --aw-color-accent-600: #5b21b6;
+    --aw-color-accent-700: #4c1d95;
+    --aw-color-accent-800: #2e1065;
+    --aw-color-accent-900: #1e0a44;
+    --aw-color-accent-950: #11052a;
+    --aw-color-accent: var(--aw-color-accent-500);
+
+    /* neutral — Tailwind `slate` by default; clients swap to `stone` for warm. */
+    --aw-color-neutral-50: #f8fafc;
+    --aw-color-neutral-100: #f1f5f9;
+    --aw-color-neutral-200: #e2e8f0;
+    --aw-color-neutral-300: #cbd5e1;
+    --aw-color-neutral-400: #94a3b8;
+    --aw-color-neutral-500: #64748b;
+    --aw-color-neutral-600: #475569;
+    --aw-color-neutral-700: #334155;
+    --aw-color-neutral-800: #1e293b;
+    --aw-color-neutral-900: #0f172a;
+    --aw-color-neutral-950: #020817;
+
+    --aw-color-link: var(--aw-color-primary-700);
 
     --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
@@ -54,9 +114,8 @@ import '@fontsource-variable/cairo';
     --aw-font-serif: 'Inter Variable';
     --aw-font-heading: 'Inter Variable';
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    /* Color scales are mode-invariant on the default theme; only link flips. */
+    --aw-color-link: var(--aw-color-primary-300);
 
     --aw-color-text-heading: rgb(247, 248, 248);
     --aw-color-text-default: rgb(229 236 246);

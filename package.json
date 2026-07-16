@@ -19,7 +19,8 @@
     "test": "vitest run",
     "fix": "bun run fix:eslint && bun run fix:prettier",
     "fix:eslint": "eslint --fix .",
-    "fix:prettier": "prettier -w ."
+    "fix:prettier": "prettier -w .",
+    "palette": "bun run scripts/generate-palette.ts"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.10",

@@ -22,7 +22,7 @@ const animationClasses = animate
 {
   tagline && (
     <p
-      class={`text-sm md:text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase ${animationClasses}`}
+      class={`text-sm md:text-base text-secondary dark:text-secondary-200 font-bold tracking-wide uppercase ${animationClasses}`}
       set:html={tagline}
     />
   )
@@ -30,7 +30,7 @@ const animationClasses = animate
 {
   title && (
     <h1
-      class={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-4 font-heading dark:text-gray-200 ${animationClasses}`}
+      class={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter mb-4 font-heading dark:text-neutral-200 ${animationClasses}`}
       set:html={title}
     />
   )
@@ -38,7 +38,7 @@ const animationClasses = animate
 <div class={align === 'left' ? 'max-w-3xl mx-auto lg:max-w-none' : 'max-w-3xl mx-auto'}>
   {
     subtitle && (
-      <p class={`text-lg md:text-xl text-muted mb-6 dark:text-slate-300 ${animationClasses}`} set:html={subtitle} />
+      <p class={`text-lg md:text-xl text-muted mb-6 dark:text-neutral-300 ${animationClasses}`} set:html={subtitle} />
     )
   }
   {

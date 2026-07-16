@@ -53,7 +53,7 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count, locale }) : []
           </div>
         )}
 
-        {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+        {information && <p class="text-muted dark:text-neutral-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
       <Grid posts={posts} />

@@ -31,7 +31,7 @@ export function buildPagination(emblaApi: EmblaCarouselType, rootEl: HTMLElement
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className =
-      'w-3 h-3 rounded-full bg-slate-400 dark:bg-white/30 border-none cursor-pointer p-0 transition-colors data-[active]:bg-slate-700 dark:data-[active]:bg-white/90';
+      'w-3 h-3 rounded-full bg-neutral-400 dark:bg-white/30 border-none cursor-pointer p-0 transition-colors data-[active]:bg-neutral-700 dark:data-[active]:bg-white/90';
     dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
     dot.addEventListener('click', () => emblaApi.scrollTo(i));
     container.appendChild(dot);

@@ -23,8 +23,8 @@ if (!hasContent) return;
       {...(id ? { id } : {})}
       class={`absolute z-10 ${
         position === 'top-right'
-          ? 'top-0 right-0 rtl:right-auto rtl:left-0 translate-x-1/4 rtl:-translate-x-1/4 -translate-y-1/4'
-          : 'top-0 left-0 rtl:left-auto rtl:right-0 -translate-x-1/4 rtl:translate-x-1/4 -translate-y-1/4'
+          ? 'top-0 right-0 rtl:right-auto rtl:left-0 tranneutral-x-1/4 rtl:-tranneutral-x-1/4 -tranneutral-y-1/4'
+          : 'top-0 left-0 rtl:left-auto rtl:right-0 -tranneutral-x-1/4 rtl:tranneutral-x-1/4 -tranneutral-y-1/4'
       } ${(classes?.container as string) ?? ''}`}
     >
       {href ? (
@@ -114,7 +114,7 @@ if (!hasContent) return;
   variant === 'banner' && (
     <div
       {...(id ? { id } : {})}
-      class={`w-full bg-accent dark:bg-slate-800 text-white text-center py-4 md:py-6 ${(classes?.container as string) ?? ''}`}
+      class={`w-full bg-accent dark:bg-neutral-800 text-white text-center py-4 md:py-6 ${(classes?.container as string) ?? ''}`}
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-center gap-4">
         {href ? (
