@@ -122,7 +122,17 @@
 }
 
 @utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn font-semibold border-primary-700;
+  background-color: var(--aw-color-primary);
+  background-image: var(--aw-gradient-primary, none);
+  color: var(--aw-color-on-primary, #fff);
+
+  &:hover {
+    background-image: none;
+    background-color: var(--aw-color-secondary);
+    border-color: var(--aw-color-secondary);
+    color: #fff;
+  }
 }
 
 @utility btn-secondary {

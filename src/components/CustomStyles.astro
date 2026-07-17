@@ -91,6 +91,12 @@ import '@fontsource-variable/cairo';
 
     --aw-color-link: var(--aw-color-primary-700);
 
+    /* Opt-in gold gradient for primary surfaces (buttons). Subtle ±1-stop sheen around
+       the brand anchor — intentionally narrower than the logo gradient so it survives on
+       small buttons. Paired with --aw-color-on-primary (dark text) for contrast on gold. */
+    --aw-gradient-primary: linear-gradient(135deg, #d7caaf, #cfc09f 50%, #a5977a);
+    --aw-color-on-primary: #1a1407;
+
     --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
     --aw-color-text-muted: rgb(16 16 16 / 66%);
@@ -130,6 +136,10 @@ import '@fontsource-variable/cairo';
     --aw-color-primary: var(--aw-color-primary-500);
 
     --aw-color-link: var(--aw-color-primary-300);
+
+    /* Lighter gold gradient for dark mode (only mode that renders, dark:only). */
+    --aw-gradient-primary: linear-gradient(135deg, #ebdfb5, #e8d9a8 50%, #b8ab7f);
+    --aw-color-on-primary: #1a1407;
 
     --aw-color-text-heading: rgb(247, 248, 248);
     --aw-color-text-default: rgb(229 236 246);
