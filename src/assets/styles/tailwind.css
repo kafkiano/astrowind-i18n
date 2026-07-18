@@ -12,6 +12,7 @@
   --color-default: var(--aw-color-text-default);
   --color-muted: var(--aw-color-text-muted);
   --color-link: var(--aw-color-link);
+  --color-on-primary: var(--aw-color-on-primary, #fff);
 
   --color-primary-50: var(--aw-color-primary-50);
   --color-primary-100: var(--aw-color-primary-100);
@@ -129,7 +130,7 @@
   transition: filter 0.5s ease;
 
   &:hover {
-    filter: brightness(0.85); 
+    filter: brightness(0.85);
   }
 }
 
