@@ -12,6 +12,7 @@
   --color-default: var(--aw-color-text-default);
   --color-muted: var(--aw-color-text-muted);
   --color-link: var(--aw-color-link);
+  --color-on-primary: var(--aw-color-on-primary, #fff);
 
   --color-primary-50: var(--aw-color-primary-50);
   --color-primary-100: var(--aw-color-primary-100);
@@ -118,11 +119,19 @@
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-neutral-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-primary focus:ring-offset-primary-200 focus:ring-2 focus:ring-offset-2 hover:bg-neutral-100 hover:border-neutral-600 dark:text-neutral-300 dark:border-neutral-500 dark:hover:bg-neutral-800 dark:hover:border-neutral-800 cursor-pointer;
+  @apply inline-flex items-center justify-center rounded-full border-neutral-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-primary focus:ring-offset-primary-200 focus:ring-2 focus:ring-offset-2 hover:bg-neutral-100 dark:text-neutral-300 dark:border-neutral-500 dark:hover:bg-neutral-800 cursor-pointer;
 }
 
 @utility btn-primary {
-  @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+  @apply btn font-semibold border-primary-700;
+  background-color: var(--aw-color-primary);
+  background-image: var(--aw-gradient-primary, none);
+  color: var(--aw-color-on-primary, #fff);
+  transition: filter 0.5s ease;
+
+  &:hover {
+    filter: brightness(0.85);
+  }
 }
 
 @utility btn-secondary {
