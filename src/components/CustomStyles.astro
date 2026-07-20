@@ -157,4 +157,21 @@ import '@fontsource-variable/cairo';
     --aw-font-serif: 'Cairo Variable';
     --aw-font-heading: 'Cairo Variable';
   }
+
+  /* bestvisual: gold gradient footer (matches the primary buttons). The shared footer
+     is a normal dark surface by default; this client opts the footer into the brand
+     gradient with dark text (the same --aw-color-on-primary used on gold buttons). */
+  footer {
+    background-image: var(--aw-gradient-primary);
+    border-color: transparent;
+  }
+  footer .dark\:bg-dark {
+    background-color: transparent;
+  }
+  footer * {
+    color: var(--aw-color-on-primary) !important;
+  }
+  footer a:hover {
+    color: var(--aw-color-primary-700) !important;
+  }
 </style>
