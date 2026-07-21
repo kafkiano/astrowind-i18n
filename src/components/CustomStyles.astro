@@ -160,18 +160,20 @@ import '@fontsource-variable/cairo';
 
   /* bestvisual: gold gradient footer (matches the primary buttons). The shared footer
      is a normal dark surface by default; this client opts the footer into the brand
-     gradient with dark text (the same --aw-color-on-primary used on gold buttons). */
-  footer {
+     gradient with dark text (the same --aw-color-on-primary used on gold buttons).
+     Scoped with :not(article footer) so blog post <footer> tag rows (nested in
+     <article>) are NOT recolored — only the site footer (never inside an article). */
+  footer:not(article footer) {
     background-image: var(--aw-gradient-primary);
     border-color: transparent;
   }
-  footer .dark\:bg-dark {
+  footer:not(article footer) .dark\:bg-dark {
     background-color: transparent;
   }
-  footer * {
+  footer:not(article footer) * {
     color: var(--aw-color-on-primary) !important;
   }
-  footer a:hover {
+  footer:not(article footer) a:hover {
     color: var(--aw-color-primary-700) !important;
   }
 </style>

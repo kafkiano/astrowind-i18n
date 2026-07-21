@@ -52,10 +52,14 @@ const metadata = {
 
   <!-- Core service areas -->
   <Features
-    variant="cards-vertical"
+    variant="slider"
+    autoplay={{ delay: 4000, disableOnInteraction: false }}
+    pagination={true}
+    navigation={true}
+    loop={true}
+    columns={3}
     tagline={coreServices?.tagline}
     title={coreServices?.title}
-    columns={3}
     items={coreServices?.items}
   />
 
