@@ -25,7 +25,7 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4, locale) : [];
       }}
       title="Related Posts"
       linkText="View All Posts"
-      linkUrl={getBlogPermalink()}
+      linkUrl={getBlogPermalink(Astro.currentLocale)}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null
