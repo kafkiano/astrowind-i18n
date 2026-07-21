@@ -4,7 +4,7 @@ title: Best Visual | Real Estate, Business Setup & Project Management | UAE · G
 heroSlider:
   slides:
     - image:
-        src: https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1374&auto=format&fit=crop
+        src: ~/assets/images/heroSlider/ztv62.jpg
         alt: Modern architecture in the UAE
       title: Real Estate, Business Setup, and Project Management
       subtitle: across UAE, Germany, and Spain
@@ -17,7 +17,7 @@ heroSlider:
           href: /services
           icon: tabler:arrow-right
     - image:
-        src: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        src: ~/assets/images/heroSlider/9ru5a.jpeg
         alt: Contemporary commercial building exterior
       title: RAKEZ-Licensed in Ras Al Khaimah
       subtitle: Structured execution and reliable follow-through for corporate, property, and consulting engagements
@@ -27,7 +27,7 @@ heroSlider:
           variant: primary
           icon: tabler:phone
     - image:
-        src: https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80
+        src: ~/assets/images/heroSlider/kki2j.jpg
         alt: Real estate property interior
       title: Real Estate Consultancy & Brokerage
       subtitle: Advisory, sourcing, and transaction coordination across UAE, Germany, and Spain
@@ -37,7 +37,7 @@ heroSlider:
           variant: primary
           icon: tabler:building-estate
     - image:
-        src: https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80
+        src: ~/assets/images/heroSlider/e78di5.jpg
         alt: Project planning meeting
       title: Business Setup, Marketing & Project Delivery
       subtitle: From company formation to content creation — with weekly progress reporting and clear deliverables
@@ -46,26 +46,6 @@ heroSlider:
           href: /services
           variant: primary
           icon: tabler:arrow-right
-
-# Legacy hero fallback (kept until all locales migrate)
-hero:
-  title: Real Estate, Business Setup, and Project Management
-  subtitle: across UAE, Germany, and Spain
-  tagline: RAKEZ-Licensed · Ras Al Khaimah
-  content: Best Visual is a RAKEZ-licensed company based in Ras Al Khaimah, UAE. We support clients with Real Estate Consultancy & Brokerage, Marketing Management, Content Creation & Corporate Design, Project Management, Business Consulting, Business Setup support, and financing coordination. Our work spans the UAE, Germany, and Spain — delivering structured execution and reliable follow-through.
-  actions:
-    - text: Speak with us
-      href: /contact
-      variant: primary
-      icon: tabler:phone
-    - text: View services
-      href: /services
-      icon: tabler:arrow-right
-
-servicesIntro:
-  tagline: What we do
-  title: Execution-focused services
-  subtitle: Every engagement includes clear deliverables, a timeline, and reporting — so you always know what is happening and what comes next.
 
 services:
   items:

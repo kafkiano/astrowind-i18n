@@ -2,8 +2,8 @@
 publishDate: 2026-04-22
 title: Project Reporting That Actually Accelerates Decision-Making
 excerpt: Most project reports are read once and forgotten. Here is how to structure reporting so it drives action, not just documents activity.
-image: https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80
-category: project-management
+image: ~/assets/images/posts/ty67v.jpg
+category: insights
 tags:
   - project-management
   - reporting

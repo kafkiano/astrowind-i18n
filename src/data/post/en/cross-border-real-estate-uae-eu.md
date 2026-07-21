@@ -2,8 +2,8 @@
 publishDate: 2026-05-15
 title: How to Structure a Cross-Border Real Estate Purchase Between UAE and EU
 excerpt: Practical guidance for investors buying property across UAE and European markets — financing, legal coordination, tax considerations, and transaction management.
-image: https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80
-category: real-estate
+image: ~/assets/images/posts/sx1d2.jpg
+category: insights
 tags:
   - uae
   - europe

@@ -22,7 +22,7 @@ description:
       description: "You always know what is happening, what is next, and where things stand. Weekly reports, clear milestones, and no surprises."
       icon: tabler:eye
   image:
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+    src: ~/assets/images/about/9ewh3.jpg
     alt: Modern office space
   paragraphs:
     - "Best Visual is a RAKEZ-licensed company in Ras Al Khaimah, UAE. We deliver execution-focused services in real estate, marketing, content creation, corporate design, business consulting, project delivery, and business setup coordination."
@@ -67,7 +67,7 @@ whoWeServe:
       description: "Businesses requiring structured project delivery and coordination across borders, teams, and vendors."
       icon: tabler:chart-arrows
   image:
-    src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80"
+    src: ~/assets/images/about/d8fs3.jpg
     alt: Business meeting
 
 stats:

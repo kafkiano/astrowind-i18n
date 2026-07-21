@@ -2,8 +2,8 @@
 publishDate: 2026-05-28
 title: Free Zone vs Mainland vs Offshore — Which UAE Business Structure Is Right for You?
 excerpt: A clear comparison of the three UAE company structures, with decision criteria based on your business goals, target market, and operational needs.
-image: https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80
-category: business-setup
+image: ~/assets/images/posts/wn31v.jpg
+category: insights
 tags:
   - uae
   - free-zone

@@ -27,7 +27,7 @@ sections:
         description: "Coordinated services for clients active in UAE, Germany, and Spain."
         icon: tabler:world
     image:
-      src: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80"
+      src: ~/assets/images/services/g83df.jpg
       alt: Modern real estate building
     slotContent:
       heading: Typical deliverables
@@ -52,7 +52,7 @@ sections:
         description: "We track your application and keep you informed until you have an outcome."
         icon: tabler:progress
     image:
-      src: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      src: ~/assets/images/services/67vp3.jpg
       alt: Financial documents and calculator
     slotContent:
       disclaimer:
@@ -73,7 +73,7 @@ sections:
         description: "Visual identity: logos, color palettes, typography. Brand materials: business cards, corporate stationery. Poster and promotional material design. Corporate presentations, pitch decks, and brand guidelines."
         icon: tabler:paint
     image:
-      src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      src: ~/assets/images/services/vp8d5.jpg
       alt: Marketing team collaboration
     slotContent:
       heading: Typical deliverables
@@ -105,7 +105,7 @@ sections:
         description: "Clear reporting packs showing progress, next steps, and decisions needed."
         icon: tabler:report
     image:
-      src: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      src: ~/assets/images/services/1zd05.jpg
       alt: Project planning session
     slotContent:
       heading: Use cases
@@ -133,7 +133,7 @@ sections:
         description: "UAE market entry strategy, business structure evaluation (Free Zone vs Mainland vs Offshore), operational planning, financial projections, due diligence, and business plan development."
         icon: tabler:chart-bar
     image:
-      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+      src: ~/assets/images/services/vy67t.jpg
       alt: Dubai skyline
     slotContent:
       heading: Typical deliverables

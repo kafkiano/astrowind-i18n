@@ -2,8 +2,8 @@
 publishDate: 2026-06-10
 title: UAE Free Zone Company Setup — Complete Timeline & Checklist (2026)
 excerpt: A practical walkthrough of the Free Zone company formation process in the UAE, with realistic timelines, required documents, and what to expect at each stage.
-image: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80
-category: business-setup
+image: ~/assets/images/posts/2v0ho.jpg
+category: insights
 tags:
   - uae
   - free-zone

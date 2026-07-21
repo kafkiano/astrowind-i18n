@@ -2,8 +2,8 @@
 publishDate: 2026-04-08
 title: Building a Corporate Identity That Works Across International Markets
 excerpt: How to create a brand identity that stays consistent across borders while resonating locally — practical guidance for companies operating in UAE, Europe, and beyond.
-image: https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80
-category: corporate-design
+image: ~/assets/images/posts/gp89c.jpg
+category: insights
 tags:
   - branding
   - corporate-design
