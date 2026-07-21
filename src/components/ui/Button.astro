@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
+import { getPermalink } from '~/utils/permalinks';
 import type { CallToAction as Props } from '~/types';
 
 const {
@@ -10,8 +11,14 @@ const {
   icon = '',
   class: className = '',
   type,
+  href,
   ...rest
 } = Astro.props;
+
+// Localize internal hrefs through the permalink primitive so action buttons honor
+// /[locale]/ routing. Externals, anchors, mailto:, tel: pass through unchanged
+// (see getPermalink guard). Idempotent: an already-locale-prefixed href is safe.
+const resolvedHref = href ? getPermalink(String(href), 'page', Astro.currentLocale) : undefined;
 
 const variants = {
   primary: 'btn-primary',
@@ -29,6 +36,7 @@ const variants = {
     </button>
   ) : (
     <a
+      href={resolvedHref}
       class={twMerge(variants[variant] || '', className)}
       {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
       {...rest}

@@ -55,7 +55,9 @@ export const getPermalink = (rawSlug = '', type = 'page', locale?: string): stri
     rawSlug.startsWith('http://') ||
     rawSlug.startsWith('://') ||
     rawSlug.startsWith('#') ||
-    rawSlug.startsWith('javascript:')
+    rawSlug.startsWith('javascript:') ||
+    rawSlug.startsWith('mailto:') ||
+    rawSlug.startsWith('tel:')
   ) {
     return rawSlug;
   }
