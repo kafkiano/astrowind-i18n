@@ -20,7 +20,7 @@
  * The `post` collection (MDX) stays on the physical `glob` loader (deferred).
  */
 
-import { readFile } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { glob } from 'tinyglobby';
@@ -103,34 +103,74 @@ export function virtualLoader({ base }: { base: string }): Loader {
         const bodyKey = decodeEntities(body.trim());
 
         for (const locale of locales) {
-          const catalog = catalogs[locale] || {};
-          const tr = (src: string): string | null => {
-            if (!src) return null;
-            const t = catalog[normalizeKey(src)];
-            return t && t !== '' ? t : null;
-          };
-
-          // ── Frontmatter: substitute translatable leaves from the catalog;
-          //    non-translatable fields (image paths, hrefs, icons, enums) pass
-          //    through from the source unchanged. ──
-          const data = fm ? (structuredClone(fm) as Record<string, unknown>) : {};
-          for (const { path: leafPath, value } of translatable) {
-            const translated = tr(value);
-            if (translated !== null) setValueAtPath(data, leafPath, translated);
+          // ── Physical override: if a hand-authored file exists at
+          //    `${base}/${locale}/${relPath}`, it is the authoritative source
+          //    for that locale — read it verbatim (own frontmatter + body),
+          //    skip catalog substitution entirely. This is the opt-out hatch
+          //    for pages that must not be auto-translated (e.g. legal copy
+          //    reviewed by a native speaker). Requires a source-locale
+          //    counterpart (the source file declares the page exists). ──
+          const overrideAbsPath = path.resolve(path.join(base, locale, relPath));
+          let overrideExists = false;
+          try {
+            overrideExists = (await stat(overrideAbsPath)).isFile();
+          } catch {
+            // file doesn't exist — overrideExists stays false
           }
 
-          // ── Body: look up the whole-body translation; fall back to source. ──
-          let translatedBody = body;
-          if (bodyKey) {
-            const t = catalog[bodyKey];
-            if (t && t !== '') translatedBody = t;
+          let data: Record<string, unknown>;
+          let renderedBody: string;
+          let filePath: string;
+          let rendered;
+
+          if (overrideExists) {
+            let overrideContent: string;
+            try {
+              overrideContent = await readFile(overrideAbsPath, 'utf-8');
+            } catch (err) {
+              logger.warn(`Failed to read override ${overrideAbsPath}: ${(err as Error).message}`);
+              continue;
+            }
+            const { frontmatter: ovFm, body: ovBody } = splitFrontmatter(overrideContent);
+            const ovLoaded = ovFm.trim() ? yaml.load(ovFm) : {};
+            data = ovLoaded && typeof ovLoaded === 'object' ? (ovLoaded as Record<string, unknown>) : {};
+            renderedBody = ovBody;
+            filePath = path.join(base, locale, relPath);
+            rendered = await renderMarkdown(renderedBody, {
+              fileURL: new URL('file://' + overrideAbsPath),
+            });
+          } else {
+            const catalog = catalogs[locale] || {};
+            const tr = (src: string): string | null => {
+              if (!src) return null;
+              const t = catalog[normalizeKey(src)];
+              return t && t !== '' ? t : null;
+            };
+
+            // ── Frontmatter: substitute translatable leaves from the catalog;
+            //    non-translatable fields (image paths, hrefs, icons, enums) pass
+            //    through from the source unchanged. ──
+            data = fm ? (structuredClone(fm) as Record<string, unknown>) : {};
+            for (const { path: leafPath, value } of translatable) {
+              const translated = tr(value);
+              if (translated !== null) setValueAtPath(data, leafPath, translated);
+            }
+
+            // ── Body: look up the whole-body translation; fall back to source. ──
+            let translatedBody = body;
+            if (bodyKey) {
+              const t = catalog[bodyKey];
+              if (t && t !== '') translatedBody = t;
+            }
+            renderedBody = translatedBody;
+            filePath = path.join(base, defaultLocale, relPath);
+            rendered = await renderMarkdown(renderedBody, {
+              fileURL: new URL('file://' + srcAbsPath),
+            });
           }
 
           // ── Render the (possibly translated) body with the project's full
           //    markdown pipeline (remark/rehype plugins) via renderMarkdown. ──
-          const rendered = await renderMarkdown(translatedBody, {
-            fileURL: new URL('file://' + srcAbsPath),
-          });
 
           // Match glob's metadata.frontmatter shape: YAML frontmatter + plugin
           // additions (e.g. readingTime). Plugin values (already in rendered) win.
@@ -147,9 +187,9 @@ export function virtualLoader({ base }: { base: string }): Loader {
           store.set({
             id,
             data: validated,
-            body: translatedBody,
-            filePath: path.join(base, defaultLocale, relPath),
-            digest: generateDigest(JSON.stringify(validated) + translatedBody),
+            body: renderedBody,
+            filePath,
+            digest: generateDigest(JSON.stringify(validated) + renderedBody),
             rendered,
           });
         }
